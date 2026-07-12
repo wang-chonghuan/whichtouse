@@ -1,0 +1,552 @@
+{
+  "category": {
+    "slug": "lead-gen",
+    "name": "找客户/获客"
+  },
+  "overall": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "TheLibrarian.io",
+        "url": "https://thelibrarian.io/",
+        "homepage": "https://thelibrarian.io/",
+        "pricing": "Free",
+        "overall": 431,
+        "growth": 26,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "DoozerAI",
+        "url": "http://www.doozer.ai",
+        "homepage": "http://www.doozer.ai",
+        "pricing": "Paid",
+        "overall": 116,
+        "growth": 6,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "app",
+        "name": "Oraczen's Zen Platform",
+        "url": "https://www.oraczen.ai/",
+        "homepage": "https://www.oraczen.ai/",
+        "pricing": "Paid",
+        "overall": 74,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "app",
+        "name": "Beam AI",
+        "url": "https://beam.ai/platform",
+        "homepage": "https://beam.ai/platform",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "app",
+        "name": "THub",
+        "url": "https://thub.tech",
+        "homepage": "https://thub.tech",
+        "pricing": "Freemium",
+        "overall": 57,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "app",
+        "name": "Agentverse",
+        "url": "https://agentverse.ai/",
+        "homepage": "https://agentverse.ai/",
+        "pricing": "Free",
+        "overall": 50,
+        "growth": 2,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "MCP-Salesforce",
+        "url": "https://github.com/smn2gnt/MCP-Salesforce",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 178,
+        "growth": 9,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "mcp-server-salesforce",
+        "url": "https://github.com/tsmztech/mcp-server-salesforce",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 162,
+        "growth": 9,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "mcp-edd-analytics-vantage",
+        "url": "https://github.com/dhapat3927/mcp-edd-analytics-vantage",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 151,
+        "growth": 151,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "gtm-mcp",
+        "url": "https://github.com/impecablemee/gtm-mcp",
+        "homepage": "https://gtm-mcp.com",
+        "pricing": "open-source",
+        "overall": 62,
+        "growth": 18,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "odoo-mcp-improved",
+        "url": "https://github.com/hachecito/odoo-mcp-improved",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 48,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "skill",
+        "name": "salesforce-mcp-server",
+        "url": "https://github.com/kablewy/salesforce-mcp-server",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 44,
+        "growth": 2,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "skill",
+        "name": "salesforce-mcp-server",
+        "url": "https://github.com/jaworjar95/salesforce-mcp-server",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 42,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "skill",
+        "name": "amazon-sp-mcp",
+        "url": "https://github.com/mansournorouzi/amazon-sp-mcp",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 40,
+        "growth": 7,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "skill",
+        "name": "salesforce-mcp-server",
+        "url": "https://github.com/advancedcommunities/salesforce-mcp-server",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 32,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "skill",
+        "name": "vibeprospecting-mcp",
+        "url": "https://github.com/explorium-ai/vibeprospecting-mcp",
+        "homepage": "https://vibeprospecting.ai",
+        "pricing": "open-source",
+        "overall": 28,
+        "growth": 5,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "SalesGPT",
+        "url": "https://github.com/filip-michalsky/SalesGPT",
+        "homepage": "https://salesgpt.vercel.app",
+        "pricing": "open-source",
+        "overall": 2681,
+        "growth": 68,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "Knotie-AI",
+        "url": "https://github.com/avijeett007/Knotie-AI",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 165,
+        "growth": 7,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "b2b-sdr-agent-template",
+        "url": "https://github.com/iPythoning/b2b-sdr-agent-template",
+        "homepage": "https://pulseagent.io",
+        "pricing": "open-source",
+        "overall": 139,
+        "growth": 37,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "sales-ai-agent-langgraph",
+        "url": "https://github.com/lucasboscatti/sales-ai-agent-langgraph",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 95,
+        "growth": 5,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "AI-Sales-agent",
+        "url": "https://github.com/kaymen99/AI-Sales-agent",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 90,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "repo",
+        "name": "LIDR-car-salesman-agents",
+        "url": "https://github.com/LIDR-academy/LIDR-car-salesman-agents",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 89,
+        "growth": 6,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "repo",
+        "name": "cold-email-ai",
+        "url": "https://github.com/bdcorps/cold-email-ai",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 70,
+        "growth": 2,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "repo",
+        "name": "leadGenerationAgentADK",
+        "url": "https://github.com/MagnIeeT/leadGenerationAgentADK",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 54,
+        "growth": 5,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "repo",
+        "name": "AI-Lead-Generation-Agent",
+        "url": "https://github.com/GURPREETKAURJETHRA/AI-Lead-Generation-Agent",
+        "homepage": "https://github.com/GURPREETKAURJETHRA/END-TO-END-GENERATIVE-AI-PROJECTS",
+        "pricing": "open-source",
+        "overall": 53,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "repo",
+        "name": "B2B_Sales_Agent_Skill",
+        "url": "https://github.com/LiChang1125/B2B_Sales_Agent_Skill",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 53,
+        "growth": 53,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "growth": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "TheLibrarian.io",
+        "url": "https://thelibrarian.io/",
+        "homepage": "https://thelibrarian.io/",
+        "pricing": "Free",
+        "overall": 431,
+        "growth": 26,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "mcp-edd-analytics-vantage",
+        "url": "https://github.com/dhapat3927/mcp-edd-analytics-vantage",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 151,
+        "growth": 151,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "gtm-mcp",
+        "url": "https://github.com/impecablemee/gtm-mcp",
+        "homepage": "https://gtm-mcp.com",
+        "pricing": "open-source",
+        "overall": 62,
+        "growth": 18,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "MCP-Salesforce",
+        "url": "https://github.com/smn2gnt/MCP-Salesforce",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 178,
+        "growth": 9,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "mcp-server-salesforce",
+        "url": "https://github.com/tsmztech/mcp-server-salesforce",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 162,
+        "growth": 9,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "amazon-sp-mcp",
+        "url": "https://github.com/mansournorouzi/amazon-sp-mcp",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 40,
+        "growth": 7,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "SalesGPT",
+        "url": "https://github.com/filip-michalsky/SalesGPT",
+        "homepage": "https://salesgpt.vercel.app",
+        "pricing": "open-source",
+        "overall": 2681,
+        "growth": 68,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "B2B_Sales_Agent_Skill",
+        "url": "https://github.com/LiChang1125/B2B_Sales_Agent_Skill",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 53,
+        "growth": 53,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "b2b-sdr-agent-template",
+        "url": "https://github.com/iPythoning/b2b-sdr-agent-template",
+        "homepage": "https://pulseagent.io",
+        "pricing": "open-source",
+        "overall": 139,
+        "growth": 37,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "gtm-eng-skills",
+        "url": "https://github.com/getaero-io/gtm-eng-skills",
+        "homepage": "https://code.deepline.com",
+        "pricing": "open-source",
+        "overall": 39,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "Knotie-AI",
+        "url": "https://github.com/avijeett007/Knotie-AI",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 165,
+        "growth": 7,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "best3": [
+    {
+      "rank": 1,
+      "formFactor": "repo",
+      "name": "SalesGPT",
+      "url": "https://github.com/filip-michalsky/SalesGPT",
+      "homepage": "https://salesgpt.vercel.app",
+      "pricing": "open-source",
+      "overall": 2681,
+      "growth": 68,
+      "badge": "provisional"
+    },
+    {
+      "rank": 2,
+      "formFactor": "skill",
+      "name": "MCP-Salesforce",
+      "url": "https://github.com/smn2gnt/MCP-Salesforce",
+      "homepage": null,
+      "pricing": "open-source",
+      "overall": 178,
+      "growth": 9,
+      "badge": "provisional"
+    },
+    {
+      "rank": 3,
+      "formFactor": "app",
+      "name": "DigitalEmployees.io",
+      "url": "https://digitalemployees.io",
+      "homepage": "https://digitalemployees.io",
+      "pricing": "Freemium",
+      "overall": 1122,
+      "growth": 64,
+      "badge": "provisional"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# WhichToUse
+
+> The honest ranking of AI agents, by what you're doing.
+> Use-case categories x three form-factor tracks (app/SaaS, skill, open-source),
+> ranked by public signals (GitHub stars / directory upvotes). All provisional
+> (signal-ranked, not yet hands-on tested).
+
+## Machine-readable
+- Category index: /api/categories.json
+- Per category: /api/c/<slug>.json  (overall top-10/track, growth top-5/track, cross-form Best 3)
+
+## Categories
+- 找客户/获客: /api/c/lead-gen.json
+- SEO/GEO: /api/c/seo-geo.json
+- 内容写作: /api/c/content-writing.json
+- 生成视频: /api/c/video-generation.json
+- UI设计: /api/c/ui-design.json

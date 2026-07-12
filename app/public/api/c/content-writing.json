@@ -1,0 +1,508 @@
+{
+  "category": {
+    "slug": "content-writing",
+    "name": "内容写作"
+  },
+  "overall": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "Oraczen's Zen Platform",
+        "url": "https://www.oraczen.ai/",
+        "homepage": "https://www.oraczen.ai/",
+        "pricing": "Paid",
+        "overall": 74,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "app",
+        "name": "Beam AI",
+        "url": "https://beam.ai/platform",
+        "homepage": "https://beam.ai/platform",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "app",
+        "name": "THub",
+        "url": "https://thub.tech",
+        "homepage": "https://thub.tech",
+        "pricing": "Freemium",
+        "overall": 57,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "app",
+        "name": "Agentverse",
+        "url": "https://agentverse.ai/",
+        "homepage": "https://agentverse.ai/",
+        "pricing": "Free",
+        "overall": 50,
+        "growth": 2,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "app",
+        "name": "PPE Kit Detection Agents",
+        "url": "https://datenwissen.com/nwarch-ai/ppe-kit-detection/",
+        "homepage": "https://datenwissen.com/nwarch-ai/ppe-kit-detection/",
+        "pricing": "Paid",
+        "overall": 45,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "app",
+        "name": "aiXplain",
+        "url": "https://aixplain.com/",
+        "homepage": "https://aixplain.com/",
+        "pricing": "Freemium",
+        "overall": 44,
+        "growth": 2,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "mcp-chrome",
+        "url": "https://github.com/hangwin/mcp-chrome",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 12097,
+        "growth": 911,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "duckduckgo-mcp-server",
+        "url": "https://github.com/nickclyde/duckduckgo-mcp-server",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1332,
+        "growth": 79,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "fetcher-mcp",
+        "url": "https://github.com/jae-jae/fetcher-mcp",
+        "homepage": "https://1team.top",
+        "pricing": "open-source",
+        "overall": 1062,
+        "growth": 66,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "reddit-mcp-buddy",
+        "url": "https://github.com/karanb192/reddit-mcp-buddy",
+        "homepage": "https://www.npmjs.com/package/reddit-mcp-buddy",
+        "pricing": "open-source",
+        "overall": 750,
+        "growth": 75,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "mcp-cn-a-stock",
+        "url": "https://github.com/elsejj/mcp-cn-a-stock",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 460,
+        "growth": 28,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "skill",
+        "name": "bear-notes-mcp",
+        "url": "https://github.com/vasylenko/bear-notes-mcp",
+        "homepage": "https://bear-notes-mcp.vercel.app",
+        "pricing": "open-source",
+        "overall": 204,
+        "growth": 19,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "AI-Writer",
+        "url": "https://github.com/BlinkDL/AI-Writer",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 3787,
+        "growth": 63,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "MaliangAINovalWriter",
+        "url": "https://github.com/Deng-m1/MaliangAINovalWriter",
+        "homepage": "https://maliangwriter.com/",
+        "pricing": "open-source",
+        "overall": 833,
+        "growth": 82,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "tianming-novel-ai-writer",
+        "url": "https://github.com/zy-zmc/tianming-novel-ai-writer",
+        "homepage": "https://github.com/zy-zmc/tianming-skill",
+        "pricing": "open-source",
+        "overall": 345,
+        "growth": 158,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "xhs-ai-writer",
+        "url": "https://github.com/EBOLABOY/xhs-ai-writer",
+        "homepage": "https://xhs.izlx.de",
+        "pricing": "open-source",
+        "overall": 292,
+        "growth": 24,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "AIStoryWriter",
+        "url": "https://github.com/datacrystals/AIStoryWriter",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 255,
+        "growth": 10,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "repo",
+        "name": "Paddle-AI-Writer",
+        "url": "https://github.com/JunnYu/Paddle-AI-Writer",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 197,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "repo",
+        "name": "AI_Writer",
+        "url": "https://github.com/llSourcell/AI_Writer",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 165,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "repo",
+        "name": "ai-blog-article-generator",
+        "url": "https://github.com/tomitokko/ai-blog-article-generator",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 86,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "repo",
+        "name": "AI-writer_Data2Doc",
+        "url": "https://github.com/gau820827/AI-writer_Data2Doc",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 80,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "repo",
+        "name": "SEOArticlegenAI",
+        "url": "https://github.com/JamesEBall/SEOArticlegenAI",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 71,
+        "growth": 2,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "growth": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "Oraczen's Zen Platform",
+        "url": "https://www.oraczen.ai/",
+        "homepage": "https://www.oraczen.ai/",
+        "pricing": "Paid",
+        "overall": 74,
+        "growth": 4,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "mcp-chrome",
+        "url": "https://github.com/hangwin/mcp-chrome",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 12097,
+        "growth": 911,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "duckduckgo-mcp-server",
+        "url": "https://github.com/nickclyde/duckduckgo-mcp-server",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1332,
+        "growth": 79,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "reddit-mcp-buddy",
+        "url": "https://github.com/karanb192/reddit-mcp-buddy",
+        "homepage": "https://www.npmjs.com/package/reddit-mcp-buddy",
+        "pricing": "open-source",
+        "overall": 750,
+        "growth": 75,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "fetcher-mcp",
+        "url": "https://github.com/jae-jae/fetcher-mcp",
+        "homepage": "https://1team.top",
+        "pricing": "open-source",
+        "overall": 1062,
+        "growth": 66,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "mcp-cn-a-stock",
+        "url": "https://github.com/elsejj/mcp-cn-a-stock",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 460,
+        "growth": 28,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "tianming-novel-ai-writer",
+        "url": "https://github.com/zy-zmc/tianming-novel-ai-writer",
+        "homepage": "https://github.com/zy-zmc/tianming-skill",
+        "pricing": "open-source",
+        "overall": 345,
+        "growth": 158,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "MaliangAINovalWriter",
+        "url": "https://github.com/Deng-m1/MaliangAINovalWriter",
+        "homepage": "https://maliangwriter.com/",
+        "pricing": "open-source",
+        "overall": 833,
+        "growth": 82,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "AI-Writer",
+        "url": "https://github.com/BlinkDL/AI-Writer",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 3787,
+        "growth": 63,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "xhs-ai-writer",
+        "url": "https://github.com/EBOLABOY/xhs-ai-writer",
+        "homepage": "https://xhs.izlx.de",
+        "pricing": "open-source",
+        "overall": 292,
+        "growth": 24,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "AIStoryWriter",
+        "url": "https://github.com/datacrystals/AIStoryWriter",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 255,
+        "growth": 10,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "best3": [
+    {
+      "rank": 1,
+      "formFactor": "repo",
+      "name": "AI-Writer",
+      "url": "https://github.com/BlinkDL/AI-Writer",
+      "homepage": null,
+      "pricing": "open-source",
+      "overall": 3787,
+      "growth": 63,
+      "badge": "provisional"
+    },
+    {
+      "rank": 2,
+      "formFactor": "skill",
+      "name": "mcp-chrome",
+      "url": "https://github.com/hangwin/mcp-chrome",
+      "homepage": null,
+      "pricing": "open-source",
+      "overall": 12097,
+      "growth": 911,
+      "badge": "provisional"
+    },
+    {
+      "rank": 3,
+      "formFactor": "app",
+      "name": "DigitalEmployees.io",
+      "url": "https://digitalemployees.io",
+      "homepage": "https://digitalemployees.io",
+      "pricing": "Freemium",
+      "overall": 1122,
+      "growth": 64,
+      "badge": "provisional"
+    }
+  ]
+}

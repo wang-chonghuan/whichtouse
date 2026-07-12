@@ -1,0 +1,541 @@
+{
+  "category": {
+    "slug": "video-generation",
+    "name": "生成视频"
+  },
+  "overall": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "THub",
+        "url": "https://thub.tech",
+        "homepage": "https://thub.tech",
+        "pricing": "Freemium",
+        "overall": 57,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "VisualGPT",
+        "url": "https://visualgpt.io/",
+        "homepage": "https://visualgpt.io/",
+        "pricing": "Free",
+        "overall": 26,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "Will",
+        "url": "https://www.heywill.ai/",
+        "homepage": "https://www.heywill.ai/",
+        "pricing": "Paid",
+        "overall": 26,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "app",
+        "name": "Pexo",
+        "url": "https://pexo.ai/?utm_source=aiagentsdirectory&utm_medium=referral&utm_campaign=tool_site&invitation_code=UM3JC3",
+        "homepage": "https://pexo.ai/?utm_source=aiagentsdirectory&utm_medium=referral&utm_campaign=tool_site&invitation_code=UM3JC3",
+        "pricing": "Free",
+        "overall": 25,
+        "growth": 6,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "app",
+        "name": "Omnimind AI",
+        "url": "https://omnimind.ai/",
+        "homepage": "https://omnimind.ai/",
+        "pricing": "Freemium",
+        "overall": 25,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "app",
+        "name": "Qwen Chat",
+        "url": "https://chat.qwenlm.ai/",
+        "homepage": "https://chat.qwenlm.ai/",
+        "pricing": "Free",
+        "overall": 24,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "app",
+        "name": "Sales Layer PIM ",
+        "url": "https://www.saleslayer.com/",
+        "homepage": "https://www.saleslayer.com/",
+        "pricing": "Paid",
+        "overall": 23,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "app",
+        "name": "NoteGPT",
+        "url": "https://notegpt.io/",
+        "homepage": "https://notegpt.io/",
+        "pricing": "Freemium",
+        "overall": 22,
+        "growth": 5,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "d2mcpp",
+        "url": "https://github.com/mcpp-community/d2mcpp",
+        "homepage": "https://mcpp.d2learn.org",
+        "pricing": "open-source",
+        "overall": 1730,
+        "growth": 114,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "docker-mcp-tutorial",
+        "url": "https://github.com/theNetworkChuck/docker-mcp-tutorial",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1584,
+        "growth": 157,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "MiniMax-MCP",
+        "url": "https://github.com/MiniMax-AI/MiniMax-MCP",
+        "homepage": "https://www.minimax.io/platform",
+        "pricing": "open-source",
+        "overall": 1527,
+        "growth": 100,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "apple-docs-mcp",
+        "url": "https://github.com/kimsungwhee/apple-docs-mcp",
+        "homepage": "https://www.npmjs.com/package/@kimsungwhee/apple-docs-mcp",
+        "pricing": "open-source",
+        "overall": 1343,
+        "growth": 111,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "anam-mcp",
+        "url": "https://github.com/anam-org/anam-mcp",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 29,
+        "growth": 5,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "skill",
+        "name": "creatify-mcp",
+        "url": "https://github.com/TSavo/creatify-mcp",
+        "homepage": "https://www.npmjs.com/package/@tsavo/creatify-mcp",
+        "pricing": "open-source",
+        "overall": 22,
+        "growth": 2,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "skill",
+        "name": "blender-mcp",
+        "url": "https://github.com/sandraschi/blender-mcp",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 20,
+        "growth": 2,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "skill",
+        "name": "avatar-renderer-mcp",
+        "url": "https://github.com/ruslanmv/avatar-renderer-mcp",
+        "homepage": "https://avatar-renderer-mcp.vercel.app",
+        "pricing": "open-source",
+        "overall": 14,
+        "growth": 1,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "skill",
+        "name": "mcp-records-executor",
+        "url": "https://github.com/kingcarter64/mcp-records-executor",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 10,
+        "growth": 10,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "Open-Generative-AI",
+        "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+        "homepage": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai",
+        "pricing": "open-source",
+        "overall": 23229,
+        "growth": 601,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "FramePack",
+        "url": "https://github.com/lllyasviel/FramePack",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 17096,
+        "growth": 1124,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "Duix-Avatar",
+        "url": "https://github.com/duixcom/Duix-Avatar",
+        "homepage": "https://www.duix.com/",
+        "pricing": "open-source",
+        "overall": 13965,
+        "growth": 740,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "CogVideo",
+        "url": "https://github.com/zai-org/CogVideo",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 12863,
+        "growth": 256,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "HunyuanVideo",
+        "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+        "homepage": "https://aivideo.hunyuan.tencent.com",
+        "pricing": "open-source",
+        "overall": 12333,
+        "growth": 625,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "repo",
+        "name": "Toonflow-app",
+        "url": "https://github.com/HBAI-Ltd/Toonflow-app",
+        "homepage": "https://toonflow.net",
+        "pricing": "open-source",
+        "overall": 11385,
+        "growth": 2076,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "repo",
+        "name": "ViMax",
+        "url": "https://github.com/HKUDS/ViMax",
+        "homepage": "https://arxiv.org/abs/2606.07649",
+        "pricing": "open-source",
+        "overall": 11107,
+        "growth": 710,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "repo",
+        "name": "InfiniteTalk",
+        "url": "https://github.com/MeiGen-AI/InfiniteTalk",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 7426,
+        "growth": 669,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "repo",
+        "name": "Awesome-Video-Diffusion",
+        "url": "https://github.com/showlab/Awesome-Video-Diffusion",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 5715,
+        "growth": 145,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "repo",
+        "name": "Jellyfish",
+        "url": "https://github.com/Forget-C/Jellyfish",
+        "homepage": "https://forget-c.github.io/Jellyfish",
+        "pricing": "open-source",
+        "overall": 5200,
+        "growth": 1213,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "growth": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "Pexo",
+        "url": "https://pexo.ai/?utm_source=aiagentsdirectory&utm_medium=referral&utm_campaign=tool_site&invitation_code=UM3JC3",
+        "homepage": "https://pexo.ai/?utm_source=aiagentsdirectory&utm_medium=referral&utm_campaign=tool_site&invitation_code=UM3JC3",
+        "pricing": "Free",
+        "overall": 25,
+        "growth": 6,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "NoteGPT",
+        "url": "https://notegpt.io/",
+        "homepage": "https://notegpt.io/",
+        "pricing": "Freemium",
+        "overall": 22,
+        "growth": 5,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "THub",
+        "url": "https://thub.tech",
+        "homepage": "https://thub.tech",
+        "pricing": "Freemium",
+        "overall": 57,
+        "growth": 3,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "docker-mcp-tutorial",
+        "url": "https://github.com/theNetworkChuck/docker-mcp-tutorial",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1584,
+        "growth": 157,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "d2mcpp",
+        "url": "https://github.com/mcpp-community/d2mcpp",
+        "homepage": "https://mcpp.d2learn.org",
+        "pricing": "open-source",
+        "overall": 1730,
+        "growth": 114,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "apple-docs-mcp",
+        "url": "https://github.com/kimsungwhee/apple-docs-mcp",
+        "homepage": "https://www.npmjs.com/package/@kimsungwhee/apple-docs-mcp",
+        "pricing": "open-source",
+        "overall": 1343,
+        "growth": 111,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "MiniMax-MCP",
+        "url": "https://github.com/MiniMax-AI/MiniMax-MCP",
+        "homepage": "https://www.minimax.io/platform",
+        "pricing": "open-source",
+        "overall": 1527,
+        "growth": 100,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "mcp-records-executor",
+        "url": "https://github.com/kingcarter64/mcp-records-executor",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 10,
+        "growth": 10,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "Toonflow-app",
+        "url": "https://github.com/HBAI-Ltd/Toonflow-app",
+        "homepage": "https://toonflow.net",
+        "pricing": "open-source",
+        "overall": 11385,
+        "growth": 2076,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "Jellyfish",
+        "url": "https://github.com/Forget-C/Jellyfish",
+        "homepage": "https://forget-c.github.io/Jellyfish",
+        "pricing": "open-source",
+        "overall": 5200,
+        "growth": 1213,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "FramePack",
+        "url": "https://github.com/lllyasviel/FramePack",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 17096,
+        "growth": 1124,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "Duix-Avatar",
+        "url": "https://github.com/duixcom/Duix-Avatar",
+        "homepage": "https://www.duix.com/",
+        "pricing": "open-source",
+        "overall": 13965,
+        "growth": 740,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "ViMax",
+        "url": "https://github.com/HKUDS/ViMax",
+        "homepage": "https://arxiv.org/abs/2606.07649",
+        "pricing": "open-source",
+        "overall": 11107,
+        "growth": 710,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "best3": [
+    {
+      "rank": 1,
+      "formFactor": "repo",
+      "name": "Open-Generative-AI",
+      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "homepage": "https://muapi.ai/open-generative-ai?utm_source=github&utm_medium=about&utm_campaign=open-generative-ai",
+      "pricing": "open-source",
+      "overall": 23229,
+      "growth": 601,
+      "badge": "provisional"
+    },
+    {
+      "rank": 2,
+      "formFactor": "skill",
+      "name": "d2mcpp",
+      "url": "https://github.com/mcpp-community/d2mcpp",
+      "homepage": "https://mcpp.d2learn.org",
+      "pricing": "open-source",
+      "overall": 1730,
+      "growth": 114,
+      "badge": "provisional"
+    },
+    {
+      "rank": 3,
+      "formFactor": "app",
+      "name": "ACME.BOT",
+      "url": "https://acme.bot",
+      "homepage": "https://acme.bot",
+      "pricing": "Paid",
+      "overall": 202,
+      "growth": 14,
+      "badge": "provisional"
+    }
+  ]
+}

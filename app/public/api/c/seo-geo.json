@@ -1,0 +1,519 @@
+{
+  "category": {
+    "slug": "seo-geo",
+    "name": "SEO/GEO"
+  },
+  "overall": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "TheLibrarian.io",
+        "url": "https://thelibrarian.io/",
+        "homepage": "https://thelibrarian.io/",
+        "pricing": "Free",
+        "overall": 431,
+        "growth": 26,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "DoozerAI",
+        "url": "http://www.doozer.ai",
+        "homepage": "http://www.doozer.ai",
+        "pricing": "Paid",
+        "overall": 116,
+        "growth": 6,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "app",
+        "name": "Oraczen's Zen Platform",
+        "url": "https://www.oraczen.ai/",
+        "homepage": "https://www.oraczen.ai/",
+        "pricing": "Paid",
+        "overall": 74,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "app",
+        "name": "Nextvestment",
+        "url": "https://nextvestment.com/personal",
+        "homepage": "https://nextvestment.com/personal",
+        "pricing": "Freemium",
+        "overall": 71,
+        "growth": 4,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "app",
+        "name": "Beam AI",
+        "url": "https://beam.ai/platform",
+        "homepage": "https://beam.ai/platform",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 3,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "app",
+        "name": "THub",
+        "url": "https://thub.tech",
+        "homepage": "https://thub.tech",
+        "pricing": "Freemium",
+        "overall": 57,
+        "growth": 3,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "mcp-chrome",
+        "url": "https://github.com/hangwin/mcp-chrome",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 12097,
+        "growth": 911,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "DesktopCommanderMCP",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+        "homepage": "https://desktopcommander.app/",
+        "pricing": "open-source",
+        "overall": 7965,
+        "growth": 408,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "firecrawl-mcp-server",
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "homepage": "https://firecrawl.dev",
+        "pricing": "open-source",
+        "overall": 6925,
+        "growth": 356,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "exa-mcp-server",
+        "url": "https://github.com/exa-labs/exa-mcp-server",
+        "homepage": "https://exa.ai/docs/reference/exa-mcp",
+        "pricing": "open-source",
+        "overall": 4698,
+        "growth": 238,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "mcp-gsc",
+        "url": "https://github.com/AminForou/mcp-gsc",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1156,
+        "growth": 71,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "skill",
+        "name": "seo-mcp",
+        "url": "https://github.com/cnych/seo-mcp",
+        "homepage": "https://www.claube.ai/servers/seo-mcp",
+        "pricing": "open-source",
+        "overall": 251,
+        "growth": 16,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "skill",
+        "name": "mcp-server-typescript",
+        "url": "https://github.com/dataforseo/mcp-server-typescript",
+        "homepage": "http://dataforseo.com/",
+        "pricing": "open-source",
+        "overall": 230,
+        "growth": 15,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "gtm-engineer-skills",
+        "url": "https://github.com/onvoyage-ai/gtm-engineer-skills",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1253,
+        "growth": 275,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "openserp",
+        "url": "https://github.com/karust/openserp",
+        "homepage": "https://openserp.org",
+        "pricing": "open-source",
+        "overall": 1065,
+        "growth": 29,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "specification.website",
+        "url": "https://github.com/jdevalk/specification.website",
+        "homepage": "https://specification.website",
+        "pricing": "open-source",
+        "overall": 757,
+        "growth": 510,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "seo-audit-skill",
+        "url": "https://github.com/JeffLi1993/seo-audit-skill",
+        "homepage": "https://nanoskill.ai/skills/seo-audit",
+        "pricing": "open-source",
+        "overall": 602,
+        "growth": 145,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "geo-optimizer-skill",
+        "url": "https://github.com/Auriti-Labs/geo-optimizer-skill",
+        "homepage": "https://auriti-labs.github.io/geo-optimizer-skill/",
+        "pricing": "open-source",
+        "overall": 582,
+        "growth": 121,
+        "badge": "provisional"
+      },
+      {
+        "rank": 6,
+        "formFactor": "repo",
+        "name": "awesome-generative-engine-optimization",
+        "url": "https://github.com/amplifying-ai/awesome-generative-engine-optimization",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 446,
+        "growth": 33,
+        "badge": "provisional"
+      },
+      {
+        "rank": 7,
+        "formFactor": "repo",
+        "name": "agentic-seo",
+        "url": "https://github.com/addyosmani/agentic-seo",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 277,
+        "growth": 90,
+        "badge": "provisional"
+      },
+      {
+        "rank": 8,
+        "formFactor": "repo",
+        "name": "geo-optimizer",
+        "url": "https://github.com/geo-team-red/geo-optimizer",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 202,
+        "growth": 37,
+        "badge": "provisional"
+      },
+      {
+        "rank": 9,
+        "formFactor": "repo",
+        "name": "AutoGEO",
+        "url": "https://github.com/cxcscmu/AutoGEO",
+        "homepage": "https://cxcscmu.github.io/AutoGEO/",
+        "pricing": "open-source",
+        "overall": 182,
+        "growth": 19,
+        "badge": "provisional"
+      },
+      {
+        "rank": 10,
+        "formFactor": "repo",
+        "name": "awesome-geo",
+        "url": "https://github.com/luka2chat/awesome-geo",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 142,
+        "growth": 20,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "growth": {
+    "app": [
+      {
+        "rank": 1,
+        "formFactor": "app",
+        "name": "DigitalEmployees.io",
+        "url": "https://digitalemployees.io",
+        "homepage": "https://digitalemployees.io",
+        "pricing": "Freemium",
+        "overall": 1122,
+        "growth": 64,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "app",
+        "name": "TheLibrarian.io",
+        "url": "https://thelibrarian.io/",
+        "homepage": "https://thelibrarian.io/",
+        "pricing": "Free",
+        "overall": 431,
+        "growth": 26,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "app",
+        "name": "Vessium",
+        "url": "https://www.vessium.com",
+        "homepage": "https://www.vessium.com",
+        "pricing": "Paid",
+        "overall": 412,
+        "growth": 23,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "app",
+        "name": "ACME.BOT",
+        "url": "https://acme.bot",
+        "homepage": "https://acme.bot",
+        "pricing": "Paid",
+        "overall": 202,
+        "growth": 14,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "app",
+        "name": "Calk AI",
+        "url": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "homepage": "https://calk-ai.com?utm_source=aiagentsdirectory.com",
+        "pricing": "Freemium",
+        "overall": 65,
+        "growth": 8,
+        "badge": "provisional"
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "formFactor": "skill",
+        "name": "mcp-chrome",
+        "url": "https://github.com/hangwin/mcp-chrome",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 12097,
+        "growth": 911,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "skill",
+        "name": "DesktopCommanderMCP",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+        "homepage": "https://desktopcommander.app/",
+        "pricing": "open-source",
+        "overall": 7965,
+        "growth": 408,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "skill",
+        "name": "firecrawl-mcp-server",
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "homepage": "https://firecrawl.dev",
+        "pricing": "open-source",
+        "overall": 6925,
+        "growth": 356,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "skill",
+        "name": "exa-mcp-server",
+        "url": "https://github.com/exa-labs/exa-mcp-server",
+        "homepage": "https://exa.ai/docs/reference/exa-mcp",
+        "pricing": "open-source",
+        "overall": 4698,
+        "growth": 238,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "skill",
+        "name": "mcp-gsc",
+        "url": "https://github.com/AminForou/mcp-gsc",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1156,
+        "growth": 71,
+        "badge": "provisional"
+      }
+    ],
+    "repo": [
+      {
+        "rank": 1,
+        "formFactor": "repo",
+        "name": "specification.website",
+        "url": "https://github.com/jdevalk/specification.website",
+        "homepage": "https://specification.website",
+        "pricing": "open-source",
+        "overall": 757,
+        "growth": 510,
+        "badge": "provisional"
+      },
+      {
+        "rank": 2,
+        "formFactor": "repo",
+        "name": "gtm-engineer-skills",
+        "url": "https://github.com/onvoyage-ai/gtm-engineer-skills",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 1253,
+        "growth": 275,
+        "badge": "provisional"
+      },
+      {
+        "rank": 3,
+        "formFactor": "repo",
+        "name": "seo-audit-skill",
+        "url": "https://github.com/JeffLi1993/seo-audit-skill",
+        "homepage": "https://nanoskill.ai/skills/seo-audit",
+        "pricing": "open-source",
+        "overall": 602,
+        "growth": 145,
+        "badge": "provisional"
+      },
+      {
+        "rank": 4,
+        "formFactor": "repo",
+        "name": "geo-optimizer-skill",
+        "url": "https://github.com/Auriti-Labs/geo-optimizer-skill",
+        "homepage": "https://auriti-labs.github.io/geo-optimizer-skill/",
+        "pricing": "open-source",
+        "overall": 582,
+        "growth": 121,
+        "badge": "provisional"
+      },
+      {
+        "rank": 5,
+        "formFactor": "repo",
+        "name": "agentic-seo",
+        "url": "https://github.com/addyosmani/agentic-seo",
+        "homepage": null,
+        "pricing": "open-source",
+        "overall": 277,
+        "growth": 90,
+        "badge": "provisional"
+      }
+    ]
+  },
+  "best3": [
+    {
+      "rank": 1,
+      "formFactor": "repo",
+      "name": "gtm-engineer-skills",
+      "url": "https://github.com/onvoyage-ai/gtm-engineer-skills",
+      "homepage": null,
+      "pricing": "open-source",
+      "overall": 1253,
+      "growth": 275,
+      "badge": "provisional"
+    },
+    {
+      "rank": 2,
+      "formFactor": "skill",
+      "name": "mcp-chrome",
+      "url": "https://github.com/hangwin/mcp-chrome",
+      "homepage": null,
+      "pricing": "open-source",
+      "overall": 12097,
+      "growth": 911,
+      "badge": "provisional"
+    },
+    {
+      "rank": 3,
+      "formFactor": "app",
+      "name": "DigitalEmployees.io",
+      "url": "https://digitalemployees.io",
+      "homepage": "https://digitalemployees.io",
+      "pricing": "Freemium",
+      "overall": 1122,
+      "growth": 64,
+      "badge": "provisional"
+    }
+  ]
+}
