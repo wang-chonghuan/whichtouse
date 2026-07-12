@@ -1,0 +1,65 @@
+{
+  "_note": "WhichToUse Phase 1 ingest config (D2). wt-ingest (D3) reads this: seed_sources for discovery (a few directory pages, not a dump), signals per track. money_tier all green.",
+  "categories": [
+    {
+      "slug": "lead-gen",
+      "name": "找客户/获客",
+      "money_tier": "green",
+      "seed_sources": [
+        { "site": "aiagentsdirectory.com", "hint": "sales / marketing / lead generation category" },
+        { "site": "theaiagentindex.com", "hint": "sales" },
+        { "site": "producthunt.com", "hint": "topic: sales / marketing" }
+      ],
+      "github_keywords": ["lead generation agent", "sales agent", "outbound automation", "cold email ai", "sdr agent"]
+    },
+    {
+      "slug": "seo-geo",
+      "name": "SEO/GEO",
+      "money_tier": "green",
+      "seed_sources": [
+        { "site": "aiagentsdirectory.com", "hint": "SEO category" },
+        { "site": "producthunt.com", "hint": "topic: seo" },
+        { "site": "theresanaiforthat.com", "hint": "seo" }
+      ],
+      "github_keywords": ["seo agent", "generative engine optimization", "geo llm seo", "ai seo automation", "keyword research ai"]
+    },
+    {
+      "slug": "content-writing",
+      "name": "内容写作",
+      "money_tier": "green",
+      "seed_sources": [
+        { "site": "aiagentsdirectory.com", "hint": "writing / content category" },
+        { "site": "producthunt.com", "hint": "topic: writing" },
+        { "site": "theresanaiforthat.com", "hint": "copywriting" }
+      ],
+      "github_keywords": ["ai writer", "content generation agent", "copywriting ai", "blog writer llm", "article generator"]
+    },
+    {
+      "slug": "video-generation",
+      "name": "生成视频",
+      "money_tier": "green",
+      "seed_sources": [
+        { "site": "aiagentsdirectory.com", "hint": "video category" },
+        { "site": "producthunt.com", "hint": "topic: video" },
+        { "site": "theresanaiforthat.com", "hint": "video generation" }
+      ],
+      "github_keywords": ["text to video", "video generation", "ai video editor", "talking avatar", "video diffusion"]
+    },
+    {
+      "slug": "ui-design",
+      "name": "UI设计",
+      "money_tier": "green",
+      "seed_sources": [
+        { "site": "aiagentsdirectory.com", "hint": "design category" },
+        { "site": "producthunt.com", "hint": "topic: design tools" },
+        { "site": "theresanaiforthat.com", "hint": "ui design" }
+      ],
+      "github_keywords": ["design to code", "ui generation", "figma ai", "frontend generator", "component generator llm"]
+    }
+  ],
+  "signals": {
+    "repo": { "overall": "github_stars", "growth": "github_stars_last30d" },
+    "skill": { "overall": "smithery_use_count_or_github_stars", "growth": "github_stars_last30d_or_last30days" },
+    "app": { "overall": "producthunt_votes", "growth": "last30days_engagement_or_ph_recent" }
+  }
+}
