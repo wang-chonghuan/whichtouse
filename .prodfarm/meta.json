@@ -1,0 +1,40 @@
+{
+  "ticket_system": "plane",
+  "plane": {
+    "workspace_slug": "intentmill",
+    "project_id": "7fe305fd-b9ee-41f5-b739-4ae8b2d3deb5",
+    "identifier": "WHICHTOUSE",
+    "gap_register": "1e58dd97-ec27-4d3d-b852-e02e4f64f2d5",
+    "labels": {
+      "story": "46f9efff-37ef-4ae5-907c-3e9f624bd938",
+      "enabler": "163a2f30-8aa8-4479-beec-b264cdf8f65c",
+      "fix": "37418131-259b-432e-9b4c-33a6b7b1a4a4",
+      "chore": "56e88c8e-17e0-4744-8a32-6f6db7860e12",
+      "seed": "2a068698-f483-4d9a-8262-9d97d22e2640",
+      "gap-register": "11dd6bdf-bd13-4f8d-8082-81b0d67aa230"
+    },
+    "states": {
+      "backlog": "5c937d3d-00b9-4d03-9008-ae24c66c1c1c",
+      "queued": "3034b519-c2f5-43be-8fdd-f3895369b991",
+      "in_progress": "7ddfbc8f-9ec0-434f-bdb5-417b82df1800",
+      "done": "dda58800-3bc7-4d68-8d30-3c02a3896533",
+      "cancelled": "a03fdd6d-f680-43a0-b389-42aafe3c6b96"
+    },
+    "_note": "states cached for convenience; the backend live state list is authoritative — resolve at use time"
+  },
+  "governance": {
+    "charter/goal.md": { "writer": "human", "window": "any-time (human-only; never machine-modified)" },
+    "charter/redlines.md": { "writer": "human", "window": "batch-frozen; boundary settlement lands changes" },
+    "charter/engineering-rules.md": { "writer": "human", "window": "batch-frozen; boundary" },
+    "charter/architecture.md": { "writer": "human / cap6-sediment", "window": "human at boundary; cap6 may sediment a closed ticket's traceable decision" },
+    "charter/runbook.md": { "writer": "human / cap6-sediment", "window": "human at boundary; cap6 may sediment a closed ticket's traceable command change" },
+    "batches/<id>/story-list.md": { "writer": "cap3", "window": "frozen at establishment" },
+    "batches/<id>/grill.md": { "writer": "cap3", "window": "at establishment" },
+    "batches/<id>/status.json": { "writer": "cap3 creates / cap4 advances", "window": "lifecycle" },
+    "batches/<id>/report.md": { "writer": "cap4", "window": "at closeout" },
+    "timeline/ batch entries": { "writer": "cap3", "window": "append-only" },
+    "timeline/ tkt entries": { "writer": "cap6", "window": "append-only (code tickets only)" },
+    "timeline/ note entries": { "writer": "anyone", "window": "append-only" },
+    "meta.json": { "writer": "cap2", "window": "merge ticket_system + governance only" }
+  }
+}
