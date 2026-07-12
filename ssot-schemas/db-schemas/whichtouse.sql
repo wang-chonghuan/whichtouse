@@ -1,0 +1,8 @@
+-- WhichToUse — database schema (single source of truth)
+--
+-- Per-project schema on the shared Azure easy-app Postgres: "whichtouse-schema".
+-- The MVP hello-world uses no DB. The real tables — use-case categories, product
+-- items (form factor: app/SaaS / skill / open-source), and per-track + composite
+-- rankings — are added by the Phase 1 seed tickets (see PRODUCT-GOAL.md §3.4, §14.2).
+--
+-- (no tables yet)
