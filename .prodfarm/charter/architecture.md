@@ -24,7 +24,9 @@
 
 ## Phase 1 (MVP) 架构范围
 
-单源/轨、原生信号排序、算法 Best 3 v1、一次性 ingest、**不建 cron、不接多源/合成分/上升榜**（那些是 Phase 2）。约 5 个手挑分类。MVP 不碰 DB（hello-world 已上线）。
+- **数据管道（复用 stemrobin 模式）**：项目内 ingest skill `.agents/skills/wt-ingest/`（自带 package.json/node_modules，隔离 API 客户端依赖，不进 app bundle）**拉取 → 归一化/去重 → 原生信号打分 → 写入 PG（`whichtouse-schema`）**；**app 只从 PG 渲染**（分类 → 三轨 → 算法 Best 3）。手动跑一次，**不建 cron**（Phase 2 再加 cron + 多源 + LLM 分类 + 合成分/上升榜）。
+- 单源/轨、约 5 个手挑分类、全部 provisional。
+- **Phase 1 用 DB**（hello-world 阶段不用）：前置 enabler = provision PG role/schema（解 Gap #1）+ 给 Container App 注入 `DATABASE_URL`。**这两步涉及共享 PG admin / 项目库凭据，须按 redlines/凭据处理方式执行（人工跑或授权），不放命令行明文。**
 
 ## Complexity hotspots
 
