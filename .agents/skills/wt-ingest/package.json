@@ -1,0 +1,9 @@
+{
+  "name": "wt-ingest",
+  "private": true,
+  "type": "module",
+  "description": "WhichToUse Phase 1 ingest: discover candidates per category, investigate signals (GitHub / aiagentsdirectory), write items to Postgres.",
+  "dependencies": {
+    "postgres": "^3.4.9"
+  }
+}
