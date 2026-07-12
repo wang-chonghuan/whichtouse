@@ -26,7 +26,9 @@
 ## 数据库
 
 - 共享 Azure PG `pg-easyapp-shared`，db `easyapp`，per-project schema `whichtouse-schema`，role `whichtouse-user`。连接经 `EASYAPP_DATABASE_URL`/`DATABASE_URL`（`app/src/lib/db.ts`）。
-- **⚠️ Gap（见 Gap Register）**：PG role/schema **尚未创建**（MVP 不用 DB）。Phase 1 加 DB 功能时：以 admin 建 role+schema，再 `az containerapp update` 注入 `DATABASE_URL`/`DATABASE_SCHEMA`。admin 凭据在 n-easyapp 定值中，勿放命令行（用 .pgpass / 交互确认）。
+- **✅ 已 provision（D1/WHICHTOUSE-3）**：role `whichtouse-user`（派生密码）+ schema `whichtouse-schema` + 三表（categories/items/rankings，源 `ssot-schemas/db-schemas/whichtouse.sql`）已建；线上 `ca-whichtouse` 已注入 `DATABASE_URL`/`DATABASE_SCHEMA`。
+- **本地连库**（开发/迁移用）：`.pgpass` 放 `pg-easyapp-shared...:5432:easyapp:whichtouse-user:whichtouse-260126`（600 权限），`PGPASSFILE=<路径> psql "host=pg-easyapp-shared.postgres.database.azure.com port=5432 dbname=easyapp user=whichtouse-user sslmode=require"`。**凭据只走 .pgpass/env-file，不进命令行明文**。本机 IP 需在 PG 防火墙（规则 `allow-wt-dev-*`）。
+- 改 schema：编辑 `whichtouse.sql` → 以 admin 或 `whichtouse-user`（search_path 已设）psql `-f` 应用。
 
 ## Ticket 后端
 
