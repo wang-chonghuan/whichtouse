@@ -17,9 +17,17 @@ Repo-root-relative; secrets shown as placeholders.
 - Connection via `EASYAPP_DATABASE_URL` (local `.env`) or `DATABASE_URL` (deployed Container App injects it). See `app/src/lib/db.ts`.
 - Schema SSOT: `ssot-schemas/db-schemas/whichtouse.sql` (no tables yet — MVP hello-world uses no DB).
 
-## Deploy
-- Via **n-easyapp cap1** (create + first-deploy Container App on the tanstack-start base). Root `Dockerfile` builds `app/` (build context = repo root, hard-coded by n-easyapp).
-- **Status: PENDING** — local build + run verified (renders at `http://127.0.0.1:3000/`); Azure first-deploy not yet run.
+## Deploy (n-easyapp cap1 — DONE)
+- Container App **`ca-whichtouse`** in `rg-easyapp-shared` / env `cae-easyapp-shared`, region northeurope.
+- Live URL: **https://ca-whichtouse.kindsmoke-4d84c417.northeurope.azurecontainerapps.io/** (verified rendering in a real browser).
+- Image `acreasyapp.azurecr.io/whichtouse:latest` (ACR admin pull, identity=None — mirrors stemrobin). Port 3000, ingress external, min/max replicas 1.
+- Tags: `easyapp.repo`/`easyapp.branch=main`/`easyapp.commit=ade006d…`.
+- Env: `PORT=3000`, `EASYAPP_DEPLOY_COMMIT`.
+- **Redeploy** path: `az acr build --registry acreasyapp --image whichtouse:latest --file Dockerfile .` then `az containerapp update -g rg-easyapp-shared -n ca-whichtouse --image acreasyapp.azurecr.io/whichtouse:latest` (or n-easyapp cap2).
+
+## GAP — Postgres role/schema not yet provisioned
+- Derived: schema `whichtouse-schema`, role `whichtouse-user`, db `easyapp` on `pg-easyapp-shared`.
+- **Not created** (MVP hello-world uses no DB; the create step needs the shared PG admin credential, deferred). When Phase 1 adds DB-backed features: create role+schema as admin, then add `DATABASE_URL`/`DATABASE_SCHEMA` env via `az containerapp update`. → Gap Register entry in cap2.
 
 ## Local verification (done)
-- `npm ci` → OK; `npm run build` → OK; server renders WhichToUse hello page in browser. Full SSR chain confirmed locally.
+- `npm ci` → OK; `npm run build` → OK; server renders WhichToUse hello page. Full SSR chain confirmed locally and on the deployed URL.
