@@ -60,6 +60,9 @@ export async function searchSkills(terms, { perTerm = 12, minStars = 8 } = {}) {
       const body = await res.json()
       for (const r of body.items || []) {
         if ((r.stargazers_count || 0) < minStars || seen.has(r.full_name)) continue
+        // precision: real MCP servers/skills almost always carry "mcp" in the repo
+        // name (mcp-*, *-mcp-server). Keeps generic big repos out of the skill track.
+        if (!/mcp/i.test(r.name)) continue
         seen.set(r.full_name, {
           fullName: r.full_name,
           name: r.name,

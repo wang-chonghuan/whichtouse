@@ -61,11 +61,8 @@ async function ingestCategory(cat) {
 
   // repo + skill tracks: GitHub keyword search, split by skill heuristic.
   const repos = await searchRepos(cat.github_keywords || [], { limit: 50, minStars: 30 })
-  const skillDedicated = await searchSkills(SKILL_TERMS[cat.slug] || [cat.slug])
-  const skillMap = new Map()
-  for (const r of [...skillDedicated, ...repos.filter((r) => r.looksSkill)])
-    if (!skillMap.has(r.url)) skillMap.set(r.url, r)
-  const skillTrack = [...skillMap.values()].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, PER_TRACK)
+  // skill track: name-filtered MCP search only (precision over recall — no slop).
+  const skillTrack = (await searchSkills(SKILL_TERMS[cat.slug] || [cat.slug])).slice(0, PER_TRACK)
   const skillUrls = new Set(skillTrack.map((r) => r.url))
   const repoTrack = repos.filter((r) => !skillUrls.has(r.url)).slice(0, PER_TRACK)
   for (const [track, list] of [['repo', repoTrack], ['skill', skillTrack]]) {

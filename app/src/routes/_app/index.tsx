@@ -1,33 +1,32 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
+
+import { getCategories } from '~/lib/catalog'
 
 export const Route = createFileRoute('/_app/')({
   component: Home,
+  loader: async () => ({ categories: await getCategories() }),
 })
 
-// MVP hello-world. Proves the full chain (SSR build → deploy → renders in a real
-// browser). The real surface — use-case categories × three form-factor tracks —
-// lands via the Phase 1 seed.
+// Home = the category list itself (no landing page). One click into a category.
 function Home() {
+  const { categories } = Route.useLoaderData()
   return (
-    <main
-      style={{
-        minHeight: '100dvh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '0.75rem',
-        padding: '2rem',
-        textAlign: 'center',
-      }}
-    >
-      <h1 style={{ fontSize: '2rem', fontWeight: 700, letterSpacing: '-0.02em', margin: 0 }}>
-        WhichToUse
-      </h1>
-      <p style={{ fontSize: '1.05rem', opacity: 0.85, margin: 0, maxWidth: '32rem' }}>
-        The honest ranking of AI agents, by what you&rsquo;re doing.
+    <main className="wt-wrap">
+      <header className="wt-head">
+        <h1 className="wt-logo">WhichToUse</h1>
+        <p className="wt-tag">The honest ranking of AI agents, by what you&rsquo;re doing.</p>
+      </header>
+      <nav className="wt-cats">
+        {categories.map((c) => (
+          <Link key={c.slug} to="/c/$slug" params={{ slug: c.slug }} className="wt-cat">
+            <span className="wt-cat-name">{c.name}</span>
+            <span className="wt-cat-arrow">&rarr;</span>
+          </Link>
+        ))}
+      </nav>
+      <p className="wt-note">
+        📋 provisional — ranked by public signals (GitHub stars / directory upvotes), not yet hands-on tested.
       </p>
-      <p style={{ fontSize: '0.85rem', opacity: 0.5, margin: 0 }}>Coming soon.</p>
     </main>
   )
 }
