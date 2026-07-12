@@ -1,0 +1,7 @@
+{
+  "status": "running",
+  "seed": "WHICHTOUSE-2",
+  "tickets": ["WHICHTOUSE-3", "WHICHTOUSE-4", "WHICHTOUSE-5", "WHICHTOUSE-6", "WHICHTOUSE-7", "WHICHTOUSE-8"],
+  "started_at": "2026-07-12",
+  "ended_at": null
+}
