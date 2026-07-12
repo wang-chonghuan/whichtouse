@@ -144,3 +144,15 @@ vite.config.ts.timestamp-*
 
 # TanStack Start
 .tanstack/
+
+# evodocs scratch artifacts
+.evodocs/tmp/
+
+# local agent scratch
+.tmp/
+
+# AutoQA
+.autoqa/.auth/
+.autoqa/test-results/
+.autoqa/playwright-report/
+.autoqa/blob-report/

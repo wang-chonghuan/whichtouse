@@ -1,0 +1,13 @@
+{
+  "branch": "main",
+  "commit_id": "55babbcdd0e5bb0a5e37bc414cb587e2b41a3f26",
+  "updated_at": "2026-07-12T21:17:47+00:00",
+  "readme": "Evodocs are repo-local project understanding documents for coding agents. Start with .evodocs/modules/module-index.json to identify the relevant project modules, then read the matching .evodocs/modules/mod--<module>.md files, including parent, child, or neighboring module docs when a change crosses boundaries. Use those docs to understand responsibilities, flows, relationships, constraints, and known limits; inspect the actual code when more detail or verification is needed. Only after collecting enough context from the index, module docs, and necessary code should you analyze the project, design a plan, or modify code.",
+  "governance": {
+    "layer": "evodocs-understanding",
+    "single_writer": "n-evodocs helper (scripts/evodocs.py); no other tool writes .evodocs/",
+    "cadence": "rewritten whenever an evodocs capability runs (index create/recreate, module-doc apply, commit-diff update)",
+    "authoritative_intent": ".prodfarm/charter/ is the project intent (human/prodfarm); evodocs never authors intent, it only reverses documentation from code",
+    "preserved_on_rewrite": true
+  }
+}
