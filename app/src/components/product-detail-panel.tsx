@@ -375,9 +375,7 @@ export function ProductDetailPanel({
                   ))}
                 </div>
               </div>
-              <div {...stylex.props(s.caveat)}>
-                From aggregated reviews &amp; community — not our own hands-on test yet.
-              </div>
+              <div {...stylex.props(s.caveat)}>From aggregated reviews &amp; community</div>
             </>
           ) : (
             <div {...stylex.props(s.pending)}>

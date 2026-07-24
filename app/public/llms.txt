@@ -1,9 +1,9 @@
 # WhichToUse
 
-> Independent, evidence-backed rankings of the best AI tools for what you're doing.
-> Use-case categories x three form-factor tracks (app/SaaS, skill, open-source),
-> ranked by public signals (GitHub stars / directory upvotes). All provisional
-> (signal-ranked, not yet hands-on tested).
+> Hands-on AI tool reviews: we open each product, read its documentation, and try it
+> wherever we can, then rank apps and open-source skills by what you're doing.
+> Two tracks per use case (app/SaaS and open-source skill/repo), each pick carrying
+> the reasoning for its rank, verified pricing, strengths/limitations and sources.
 
 ## Machine-readable
 - Category index: /api/categories.json

@@ -1,11 +1,17 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router'
+import { useEffect } from 'react'
+import { createFileRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 
 import { getCatalogSearchEntries, getCategories } from '~/lib/catalog'
+import { useLayoutStore } from '~/lib/layout-store'
 import { NavBar } from '~/components/nav-bar'
 import { Sidebar } from '~/components/sidebar'
 
-// App shell: top nav + left use-case sidebar + main ranking area (Outlet).
+// App shell: top nav + use-case sidebar column + main area (Outlet).
+//
+// The sidebar is a layout column, open by default on desktop; the hero button
+// on Home collapses/expands it. Below 900px the same sidebar becomes a fixed
+// panel, closed by default and toggled from the nav bar or the hero button.
 export const Route = createFileRoute('/_app')({
   component: AppShell,
   loader: () => ({
@@ -22,11 +28,20 @@ const s = stylex.create({
 
 function AppShell() {
   const { categories, searchEntries } = Route.useLoaderData()
+  const pathname = useRouterState({ select: (state) => state.location.pathname })
+  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen)
+  const mobileOpen = useLayoutStore((state) => state.mobileOpen)
+  const setMobile = useLayoutStore((state) => state.setMobile)
+
+  // Dismiss the mobile panel once a destination is picked; the desktop column
+  // keeps whatever the reader chose.
+  useEffect(() => setMobile(false), [pathname, setMobile])
+
   return (
     <div {...stylex.props(s.root)}>
-      <NavBar entries={searchEntries} categories={categories} />
+      <NavBar entries={searchEntries} />
       <div {...stylex.props(s.body)}>
-        <Sidebar categories={categories} />
+        <Sidebar categories={categories} desktopOpen={sidebarOpen} mobileOpen={mobileOpen} />
         <main {...stylex.props(s.content)}>
           <Outlet />
         </main>

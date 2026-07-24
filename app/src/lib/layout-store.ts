@@ -1,17 +1,27 @@
 import { create } from 'zustand'
 
-// Catalog drawer state — persists across route navigation (the catalog itself
-// lives in the _app layout and is never unmounted). Mirrors houserobin's
-// drawer/scrim pattern: on desktop (≥1200px) the catalog is always visible and
-// this flag is ignored; below 1200px it drives the slide-in drawer + scrim.
+// Sidebar state. The desktop column and the mobile panel are tracked
+// separately on purpose: the column is open by default, while the mobile panel
+// must start closed. One shared flag would either hide the desktop sidebar on
+// load or pop the mobile panel open over the content, and picking between them
+// at render time would need the viewport — which the server does not have.
 type LayoutState = {
-  drawerOpen: boolean
-  setDrawer: (open: boolean) => void
-  toggleDrawer: () => void
+  /** desktop (>900px): the sidebar is a layout column, open by default */
+  sidebarOpen: boolean
+  /** mobile (≤900px): the same sidebar as a fixed panel, closed by default */
+  mobileOpen: boolean
+  toggleSidebar: () => void
+  setMobile: (open: boolean) => void
+  toggleMobile: () => void
 }
 
 export const useLayoutStore = create<LayoutState>((set) => ({
-  drawerOpen: false,
-  setDrawer: (drawerOpen) => set({ drawerOpen }),
-  toggleDrawer: () => set((s) => ({ drawerOpen: !s.drawerOpen })),
+  sidebarOpen: true,
+  mobileOpen: false,
+  toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
+  setMobile: (mobileOpen) => set({ mobileOpen }),
+  toggleMobile: () => set((state) => ({ mobileOpen: !state.mobileOpen })),
 }))
+
+/** Matches the sidebar's own breakpoint. */
+export const MOBILE_QUERY = '(max-width: 900px)'

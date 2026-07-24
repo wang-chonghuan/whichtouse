@@ -1,21 +1,20 @@
 import { useMemo, useRef, useState } from 'react'
-import { Link } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 import { Badge } from '@astryxdesign/core/Badge'
-import { ArrowRight, FolderGit2, LoaderCircle, Search, Star } from 'lucide-react'
+import { FolderGit2, LoaderCircle, PanelLeftClose, PanelLeftOpen, Star } from 'lucide-react'
 
 import {
   ProductDetailPanel,
   type DetailPanelItem,
 } from '~/components/product-detail-panel'
-import type { Category } from '~/lib/catalog'
-import { categoryIcon } from '~/lib/category-icons'
-import { openCatalogSearch } from '~/lib/catalog-search'
 import {
   getTrendingRepositoryDetail,
   type TrendingRepositoriesResult,
 } from '~/lib/github-trending'
 import type { TrendingRepository } from '~/lib/github-trending'
+import { SIDEBAR_ID } from '~/components/sidebar'
+import { useLayoutStore } from '~/lib/layout-store'
+import { useIsMobile } from '~/lib/use-is-mobile'
 
 const s = stylex.create({
   page: {
@@ -38,14 +37,10 @@ const s = stylex.create({
     },
   },
   // --- hero -------------------------------------------------------------
-  hero: {
-    maxWidth: 720,
-    marginBottom: 'var(--spacing-7)',
-  },
+  hero: { maxWidth: 720 },
   kicker: {
     display: 'inline-flex',
     alignItems: 'center',
-    gap: 6,
     color: 'var(--color-text-accent)',
     fontSize: 12,
     fontWeight: 700,
@@ -53,13 +48,10 @@ const s = stylex.create({
     textTransform: 'uppercase',
     marginBottom: 'var(--spacing-3)',
   },
-  h1: {
+  heroTitle: {
     margin: 0,
     color: 'var(--color-text-primary)',
-    fontSize: {
-      default: 38,
-      '@media (max-width: 640px)': 28,
-    },
+    fontSize: { default: 38, '@media (max-width: 640px)': 28 },
     fontWeight: 800,
     letterSpacing: '-0.02em',
     lineHeight: 1.1,
@@ -68,38 +60,46 @@ const s = stylex.create({
     marginTop: 'var(--spacing-4)',
     marginBottom: 0,
     color: 'var(--color-text-secondary)',
-    fontSize: {
-      default: 16,
-      '@media (max-width: 640px)': 15,
-    },
+    fontSize: { default: 16, '@media (max-width: 640px)': 15 },
     lineHeight: 1.55,
   },
-  ctaRow: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    gap: 'var(--spacing-3)',
-    marginTop: 'var(--spacing-5)',
-  },
-  searchCta: {
+  browseCta: {
     display: 'inline-flex',
     alignItems: 'center',
     gap: 'var(--spacing-2)',
-    height: 44,
-    paddingInline: 'var(--spacing-5)',
-    borderWidth: 0,
+    marginTop: 'var(--spacing-5)',
+    height: 52,
+    paddingInline: 'var(--spacing-6)',
     borderRadius: 'var(--radius-full)',
-    backgroundColor: {
-      default: 'var(--color-text-accent)',
-      ':hover': '#1d4ed8',
-    },
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: 600,
+    fontSize: 16,
+    fontWeight: 700,
     fontFamily: 'inherit',
     cursor: 'pointer',
+    transitionProperty: 'background-color, color, box-shadow, border-color',
+    transitionDuration: '0.14s',
+  },
+  // Closed: the inviting primary action.
+  ctaClosed: {
+    borderWidth: 0,
+    backgroundColor: { default: 'var(--color-text-accent)', ':hover': '#1d4ed8' },
+    color: '#fff',
+    boxShadow: '0 6px 20px -6px rgba(37,99,235,0.5)',
+  },
+  // Open: the job is done, so it steps back to a quiet secondary control.
+  ctaOpen: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'var(--color-border)',
+    backgroundColor: {
+      default: 'var(--color-background-surface)',
+      ':hover': 'var(--color-overlay-hover)',
+    },
+    color: 'var(--color-text-secondary)',
+    boxShadow: 'none',
   },
   trust: {
+    marginTop: 'var(--spacing-3)',
+    marginBottom: 0,
     color: 'var(--color-text-secondary)',
     fontSize: 13,
     fontWeight: 500,
@@ -107,6 +107,14 @@ const s = stylex.create({
   // --- section scaffolding ---------------------------------------------
   section: {
     marginTop: 'var(--spacing-7)',
+  },
+  h1: {
+    margin: 0,
+    marginBottom: 'var(--spacing-2)',
+    color: 'var(--color-text-primary)',
+    fontSize: 20,
+    fontWeight: 700,
+    letterSpacing: '-0.01em',
   },
   sectionHead: {
     display: 'flex',
@@ -135,67 +143,6 @@ const s = stylex.create({
     fontSize: 12,
     fontVariantNumeric: 'tabular-nums',
     whiteSpace: 'nowrap',
-  },
-  // --- use-case grid ----------------------------------------------------
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: {
-      default: 'repeat(auto-fill, minmax(210px, 1fr))',
-      '@media (max-width: 520px)': 'repeat(auto-fill, minmax(150px, 1fr))',
-    },
-    gap: 'var(--spacing-3)',
-  },
-  card: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 'var(--spacing-3)',
-    padding: 'var(--spacing-4)',
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: {
-      default: 'var(--color-border)',
-      ':hover': 'var(--color-accent)',
-    },
-    borderRadius: 'var(--radius-container)',
-    backgroundColor: {
-      default: 'var(--color-background-surface)',
-      ':hover': 'var(--color-accent-muted)',
-    },
-    color: 'var(--color-text-primary)',
-    textDecoration: 'none',
-    transitionProperty: 'transform, border-color, background-color',
-    transitionDuration: '0.14s',
-    transform: {
-      default: 'translateY(0)',
-      ':hover': 'translateY(-2px)',
-    },
-    '@media (prefers-reduced-motion: reduce)': {
-      transitionProperty: 'none',
-      transform: 'none',
-    },
-  },
-  cardIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 38,
-    height: 38,
-    flexShrink: 0,
-    borderRadius: 'var(--radius-element)',
-    backgroundColor: 'var(--color-accent-muted)',
-    color: 'var(--color-text-accent)',
-  },
-  cardBody: { minWidth: 0, flex: 1 },
-  cardName: {
-    fontSize: 14,
-    fontWeight: 650,
-    lineHeight: 1.25,
-    overflowWrap: 'anywhere',
-  },
-  cardArrow: {
-    color: 'var(--color-text-disabled)',
-    flexShrink: 0,
-    display: { default: 'flex', '@media (max-width: 520px)': 'none' },
   },
   // --- trending table ---------------------------------------------------
   table: {
@@ -346,25 +293,6 @@ const s = stylex.create({
     color: 'var(--color-error)',
     fontSize: 12.5,
   },
-  // --- footer -----------------------------------------------------------
-  footer: {
-    marginTop: 'var(--spacing-7)',
-    paddingTop: 'var(--spacing-5)',
-    borderTopWidth: 1,
-    borderTopStyle: 'solid',
-    borderTopColor: 'var(--color-border)',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: 'var(--spacing-3)',
-    color: 'var(--color-text-secondary)',
-    fontSize: 12.5,
-    lineHeight: 1.5,
-  },
-  footerLink: {
-    color: 'var(--color-text-accent)',
-    textDecoration: 'none',
-  },
 })
 
 function toPanelItem(repository: TrendingRepository): DetailPanelItem {
@@ -386,14 +314,22 @@ function toPanelItem(repository: TrendingRepository): DetailPanelItem {
 
 export function HomeView({
   trending,
-  categories,
+  categoryCount,
 }: {
   trending: TrendingRepositoriesResult
-  categories: Category[]
+  categoryCount: number
 }) {
   const [selectedItem, setSelectedItem] = useState<DetailPanelItem | null>(null)
   const [loadingId, setLoadingId] = useState<string | null>(null)
   const [detailError, setDetailError] = useState<string | null>(null)
+  const isMobile = useIsMobile()
+  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen)
+  const mobileOpen = useLayoutStore((state) => state.mobileOpen)
+  const toggleSidebar = useLayoutStore((state) => state.toggleSidebar)
+  const toggleMobile = useLayoutStore((state) => state.toggleMobile)
+  // One button, two surfaces: it drives whichever sidebar this viewport shows.
+  const catalogOpen = isMobile ? mobileOpen : sidebarOpen
+  const toggleCatalog = isMobile ? toggleMobile : toggleSidebar
   const requestId = useRef(0)
   const siblings = useMemo(
     () => trending.repositories.map(toPanelItem),
@@ -426,65 +362,39 @@ export function HomeView({
     <div {...stylex.props(s.page)}>
       <div {...stylex.props(s.inner)}>
         <section {...stylex.props(s.hero)}>
-          <span {...stylex.props(s.kicker)}>Independent AI tool rankings</span>
-          <h1 {...stylex.props(s.h1)}>Find the best AI tool for what you’re actually doing.</h1>
+          <span {...stylex.props(s.kicker)}>Hands-on AI tool reviews</span>
+          <h1 {...stylex.props(s.heroTitle)}>
+            We actually open the tools before we rank them.
+          </h1>
           <p {...stylex.props(s.tagline)}>
-            Rankings across {categories.length} real use cases — apps and open-source skills, side by
-            side — with the evidence behind every pick. No hype, no affiliate order.
+            For every pick we visit the product, read the documentation, and try it wherever we can —
+            then write down what it’s genuinely good at and where it falls short. No scraped
+            listicles. No affiliate order.
           </p>
-          <div {...stylex.props(s.ctaRow)}>
-            <button type="button" {...stylex.props(s.searchCta)} onClick={openCatalogSearch}>
-              <Search size={16} />
-              Search AI tools &amp; use cases
-            </button>
-            <span {...stylex.props(s.trust)}>
-              {categories.length} use cases · apps + open-source skills
-            </span>
-          </div>
+          <button
+            type="button"
+            aria-expanded={catalogOpen}
+            aria-controls={SIDEBAR_ID}
+            {...stylex.props(s.browseCta, catalogOpen ? s.ctaOpen : s.ctaClosed)}
+            onClick={toggleCatalog}
+          >
+            {catalogOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
+            {catalogOpen ? 'Hide categories' : `Browse all ${categoryCount} use cases`}
+          </button>
+          <p {...stylex.props(s.trust)}>
+            {categoryCount} use cases · apps + open-source skills · every claim traceable to a source
+          </p>
         </section>
 
         <section {...stylex.props(s.section)}>
           <div {...stylex.props(s.sectionHead)}>
-            <h2 {...stylex.props(s.sectionTitle)}>Browse by use case</h2>
-            <span {...stylex.props(s.count)}>{categories.length} categories</span>
-          </div>
-          <p {...stylex.props(s.sectionSub)}>
-            Start from the job you need done — each use case ranks the strongest apps and skills for it.
-          </p>
-          <div {...stylex.props(s.grid)}>
-            {categories.map((category) => {
-              const Icon = categoryIcon(category.slug)
-              return (
-                <Link
-                  key={category.slug}
-                  to="/c/$slug"
-                  params={{ slug: category.slug }}
-                  {...stylex.props(s.card)}
-                >
-                  <span {...stylex.props(s.cardIcon)}>
-                    <Icon size={19} />
-                  </span>
-                  <span {...stylex.props(s.cardBody)}>
-                    <span {...stylex.props(s.cardName)}>{category.name}</span>
-                  </span>
-                  <span {...stylex.props(s.cardArrow)}>
-                    <ArrowRight size={16} />
-                  </span>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-
-        <section {...stylex.props(s.section)}>
-          <div {...stylex.props(s.sectionHead)}>
-            <h2 {...stylex.props(s.sectionTitle)}>Trending on GitHub today</h2>
+            <h2 {...stylex.props(s.h1)}>Trending on GitHub today</h2>
             {!trending.error && (
               <span {...stylex.props(s.count)}>{trending.repositories.length} repositories</span>
             )}
           </div>
           <p {...stylex.props(s.sectionSub)}>
-            A live snapshot of fast-growing open-source AI projects. Tap any repo for an instant
+            A live snapshot of fast-growing open-source AI projects. Pick any repo for an instant
             breakdown.
           </p>
 
@@ -556,20 +466,6 @@ export function HomeView({
           {detailError && <div {...stylex.props(s.detailError)}>{detailError}</div>}
         </section>
 
-        <footer {...stylex.props(s.footer)}>
-          <span>
-            Rankings are built from a consensus of independent public sources, graded by confidence.
-            Hands-on testing upgrades a pick from 📋 provisional to 🧪 tested.
-          </span>
-          <a
-            {...stylex.props(s.footerLink)}
-            href="https://github.com/trending"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Trending data via GitHub ↗
-          </a>
-        </footer>
       </div>
 
       {selectedItem && (

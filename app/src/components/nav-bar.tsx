@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useNavigate, useRouterState } from '@tanstack/react-router'
+import { Link, useNavigate } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 import { Boxes, Menu, Package, Search, X } from 'lucide-react'
 
-import type { CatalogSearchEntry, Category } from '~/lib/catalog'
-import { categoryIcon } from '~/lib/category-icons'
+import type { CatalogSearchEntry } from '~/lib/catalog'
+import { SIDEBAR_ID } from '~/components/sidebar'
+import { useLayoutStore } from '~/lib/layout-store'
 import { OPEN_CATALOG_SEARCH_EVENT } from '~/lib/catalog-search'
 
 function normalize(value: string): string {
@@ -101,34 +102,6 @@ const s = stylex.create({
     whiteSpace: 'nowrap',
   },
   logoAccent: { color: 'var(--color-text-accent)' },
-  nav: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: { default: 'var(--spacing-5)', '@media (max-width: 640px)': 'var(--spacing-2)' },
-  },
-  link: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: 5,
-    fontSize: { default: 14, '@media (max-width: 640px)': 12 },
-    fontWeight: 500,
-    color: 'var(--color-text-secondary)',
-    textDecoration: 'none',
-    paddingBlock: 'var(--spacing-1)',
-    borderBottomWidth: 2,
-    borderBottomStyle: 'solid',
-    borderBottomColor: 'transparent',
-    cursor: 'pointer',
-    backgroundColor: 'transparent',
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    fontFamily: 'inherit',
-  },
-  active: {
-    color: 'var(--color-text-accent)',
-    borderBottomColor: 'var(--color-text-accent)',
-  },
   search: {
     display: 'flex',
     alignItems: 'center',
@@ -141,6 +114,32 @@ const s = stylex.create({
     borderWidth: 0,
     backgroundColor: { default: 'transparent', ':hover': 'var(--color-overlay-hover)' },
     padding: 0,
+  },
+  searchTrigger: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 'var(--spacing-2)',
+    flex: 1,
+    minWidth: 0,
+    maxWidth: 460,
+    marginInlineStart: 'auto',
+    height: 38,
+    paddingInline: 'var(--spacing-4)',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: { default: 'var(--color-border)', ':hover': 'var(--color-accent)' },
+    borderRadius: 'var(--radius-full)',
+    backgroundColor: { default: 'var(--color-background-surface)', ':hover': 'var(--color-overlay-hover)' },
+    color: 'var(--color-text-secondary)',
+    fontSize: 13.5,
+    fontFamily: 'inherit',
+    cursor: 'pointer',
+    textAlign: 'left',
+  },
+  searchTriggerText: {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   },
   searchMode: { display: 'flex', alignItems: 'center', gap: 'var(--spacing-3)', width: '100%' },
   searchInput: {
@@ -213,83 +212,19 @@ const s = stylex.create({
     padding: 0,
     fontFamily: 'inherit',
   },
-  menuScrim: {
-    position: 'fixed',
-    top: 60,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    backgroundColor: 'rgba(20,24,31,0.34)',
-    zIndex: 110,
-  },
-  menuPanel: {
-    position: 'fixed',
-    top: 60,
-    left: 0,
-    bottom: 0,
-    width: 'min(320px, 86vw)',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor: 'var(--color-background-surface)',
-    borderRightWidth: 1,
-    borderRightStyle: 'solid',
-    borderRightColor: 'var(--color-border)',
-    boxShadow: 'var(--shadow-high)',
-    zIndex: 115,
-    overflowY: 'auto',
-    paddingBlock: 'var(--spacing-3)',
-  },
-  menuLabel: {
-    paddingInline: 'var(--spacing-4)',
-    paddingBottom: 'var(--spacing-2)',
-    color: 'var(--color-text-secondary)',
-    fontSize: 11,
-    fontWeight: 700,
-    letterSpacing: '0.04em',
-  },
-  menuItem: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 'var(--spacing-3)',
-    paddingInline: 'var(--spacing-4)',
-    paddingBlock: 'var(--spacing-3)',
-    marginInline: 'var(--spacing-2)',
-    borderRadius: 'var(--radius-element)',
-    fontSize: 14,
-    fontWeight: 500,
-    color: 'var(--color-text-secondary)',
-    textDecoration: 'none',
-    backgroundColor: { default: 'transparent', ':hover': 'var(--color-overlay-hover)' },
-  },
-  menuItemActive: {
-    backgroundColor: 'var(--color-accent-muted)',
-    color: 'var(--color-text-accent)',
-    fontWeight: 600,
-  },
-  menuIcon: { display: 'flex', flexShrink: 0, opacity: 0.85 },
 })
 
 type ScoredEntry = CatalogSearchEntry & { score: number }
 
-export function NavBar({
-  entries,
-  categories,
-}: {
-  entries: CatalogSearchEntry[]
-  categories: Category[]
-}) {
+export function NavBar({ entries }: { entries: CatalogSearchEntry[] }) {
   const navigate = useNavigate()
   const rootRef = useRef<HTMLElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const pathname = useRouterState({ select: (state) => state.location.pathname })
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(0)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const activeSlug = pathname.match(/^\/c\/([^/]+)/)?.[1] ?? null
-
-  // Close the mobile category menu whenever the route changes.
-  useEffect(() => setMenuOpen(false), [pathname])
+  const mobileOpen = useLayoutStore((state) => state.mobileOpen)
+  const toggleMobile = useLayoutStore((state) => state.toggleMobile)
 
   const results = useMemo(() => {
     if (!query.trim()) return []
@@ -430,64 +365,28 @@ export function NavBar({
           <button
             type="button"
             aria-label="Browse use cases"
-            aria-expanded={menuOpen}
+            aria-expanded={mobileOpen}
+            aria-controls={SIDEBAR_ID}
             {...stylex.props(s.menuBtn)}
-            onClick={() => setMenuOpen((value) => !value)}
+            onClick={toggleMobile}
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
           <Link to="/" {...stylex.props(s.logo)}>
             Which<span {...stylex.props(s.logoAccent)}>ToUse</span>
           </Link>
-          <nav {...stylex.props(s.nav)}>
-            <Link to="/" {...stylex.props(s.link, pathname === '/' && s.active)}>
-              Home
-            </Link>
-            <Link
-              to="/c/$slug"
-              params={{ slug: 'coding' }}
-              {...stylex.props(s.link, pathname.startsWith('/c/') && s.active)}
-            >
-              Rankings
-            </Link>
-            <button
-              type="button"
-              aria-label="Search"
-              {...stylex.props(s.link, open && s.active)}
-              onClick={() => setOpen(true)}
-            >
-              <Search size={15} />
-              Search
-            </button>
-          </nav>
+          <button
+            type="button"
+            aria-label="Search"
+            {...stylex.props(s.searchTrigger)}
+            onClick={() => setOpen(true)}
+          >
+            <Search size={16} />
+            <span {...stylex.props(s.searchTriggerText)}>Search AI tools and use cases</span>
+          </button>
         </>
       )}
 
-      {menuOpen && !open && (
-        <>
-          <div {...stylex.props(s.menuScrim)} onClick={() => setMenuOpen(false)} />
-          <nav {...stylex.props(s.menuPanel)} aria-label="Use cases">
-            <div {...stylex.props(s.menuLabel)}>BROWSE BY USE CASE</div>
-            {categories.map((category) => {
-              const Icon = categoryIcon(category.slug)
-              return (
-                <Link
-                  key={category.slug}
-                  to="/c/$slug"
-                  params={{ slug: category.slug }}
-                  {...stylex.props(s.menuItem, category.slug === activeSlug && s.menuItemActive)}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span {...stylex.props(s.menuIcon)}>
-                    <Icon size={17} />
-                  </span>
-                  {category.name}
-                </Link>
-              )
-            })}
-          </nav>
-        </>
-      )}
     </header>
   )
 }

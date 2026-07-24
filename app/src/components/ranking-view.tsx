@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 import { Badge } from '@astryxdesign/core/Badge'
-import { Search } from 'lucide-react'
 
 import {
   monogramColor,
@@ -44,21 +43,7 @@ const s = stylex.create({
   main: { position: 'relative', height: '100%', overflowY: 'auto' },
   inner: { maxWidth: 1120, marginInline: 'auto', paddingInline: 'var(--spacing-6)', paddingBlock: 'var(--spacing-7)' },
   h1: { fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--color-text-primary)', margin: 0, marginBottom: 'var(--spacing-2)' },
-  lede: { fontSize: 14, lineHeight: 1.5, color: 'var(--color-text-secondary)', margin: 0, marginBottom: 'var(--spacing-5)', maxWidth: 620 },
-  searchWrap: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 'var(--spacing-2)',
-    paddingInline: 'var(--spacing-3)',
-    height: 44,
-    borderRadius: 'var(--radius-element)',
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'var(--color-border)',
-    backgroundColor: 'var(--color-background-surface)',
-    marginBottom: 'var(--spacing-6)',
-  },
-  searchInput: { flex: 1, border: 'none', outline: 'none', background: 'transparent', fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'inherit' },
+  lede: { fontSize: 14, lineHeight: 1.5, color: 'var(--color-text-secondary)', margin: 0, marginBottom: 'var(--spacing-6)', maxWidth: 620 },
   cols: {
     display: 'grid',
     gridTemplateColumns: { default: '1fr 1fr', '@media (max-width: 900px)': '1fr' },
@@ -110,7 +95,6 @@ const s = stylex.create({
   price: { fontSize: 11.5, color: 'var(--color-text-secondary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' },
   score: { fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: 'var(--color-text-primary)', fontSize: 15, flexShrink: 0 },
   empty: { fontSize: 13, color: 'var(--color-text-disabled)', paddingBlock: 'var(--spacing-4)' },
-  foot: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--spacing-2)', marginTop: 'var(--spacing-6)', fontSize: 12, color: 'var(--color-text-secondary)' },
 })
 
 function TrackColumn({
@@ -164,7 +148,6 @@ export function RankingView({ view }: { view: CategoryView }) {
   const skillRows = useMemo(() => toRows(view.tracks.skill, 'skill'), [view])
   const all = useMemo(() => [...appRows, ...skillRows], [appRows, skillRows])
   const hash = useRouterState({ select: (state) => state.location.hash })
-  const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<string | null>(null)
 
   useEffect(() => {
@@ -173,10 +156,8 @@ export function RankingView({ view }: { view: CategoryView }) {
     setSelected(itemId && all.some((row) => row.id === itemId) ? itemId : null)
   }, [all, hash, view.category.slug])
 
-  const q = query.trim().toLowerCase()
-  const flt = (rows: Row[]) => (q ? rows.filter((r) => r.name.toLowerCase().includes(q)) : rows)
-  const apps = flt(appRows)
-  const skills = flt(skillRows)
+  const apps = appRows
+  const skills = skillRows
 
   const selItem = selected ? all.find((r) => r.id === selected) ?? null : null
   const siblings = selItem ? all.filter((r) => r.track === selItem.track) : []
@@ -186,35 +167,15 @@ export function RankingView({ view }: { view: CategoryView }) {
       <div {...stylex.props(s.inner)}>
         <h1 {...stylex.props(s.h1)}>Best {view.category.name} AI tools</h1>
         <p {...stylex.props(s.lede)}>
-          The best apps and open-source skills for {view.category.name.toLowerCase()}, ranked side by
-          side — pick the form that fits how you work.
+          Apps and open-source skills for {view.category.name.toLowerCase()} that we opened, read up
+          on, and ranked — with the reasoning behind every pick.
         </p>
-
-        <div {...stylex.props(s.searchWrap)}>
-          <Search size={18} color="var(--color-text-secondary)" />
-          <input
-            {...stylex.props(s.searchInput)}
-            placeholder={`Search ${view.category.name.toLowerCase()} tools…`}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
 
         <div {...stylex.props(s.cols)}>
           <TrackColumn label="APP / SAAS" dotColor="#4257c9" rows={apps} selectedId={selected} onSelect={setSelected} />
           <TrackColumn label="SKILL / REPO" dotColor="#7a49d6" rows={skills} selectedId={selected} onSelect={setSelected} />
         </div>
 
-        {view.notes && (
-          <p {...stylex.props(s.foot)}>
-            <span>⚠ {view.notes}</span>
-          </p>
-        )}
-
-        <div {...stylex.props(s.foot)}>
-          <span>Last updated: {view.updated || '—'}</span>
-          <span>📋 provisional — ranked from public sources, not yet hands-on tested</span>
-        </div>
       </div>
 
       {selItem && (

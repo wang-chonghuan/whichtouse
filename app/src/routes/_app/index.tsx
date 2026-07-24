@@ -9,7 +9,7 @@ export const Route = createFileRoute('/_app/')({
   component: Home,
   loader: async () => ({
     trending: await getTrendingRepositories(),
-    categories: getCategories(),
+    categoryCount: getCategories().length,
   }),
   head: () =>
     buildPageMeta({
@@ -20,6 +20,6 @@ export const Route = createFileRoute('/_app/')({
 })
 
 function Home() {
-  const { trending, categories } = Route.useLoaderData()
-  return <HomeView trending={trending} categories={categories} />
+  const { trending, categoryCount } = Route.useLoaderData()
+  return <HomeView trending={trending} categoryCount={categoryCount} />
 }

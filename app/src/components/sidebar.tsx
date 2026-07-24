@@ -1,8 +1,15 @@
 import { Link, useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
+import { Home } from 'lucide-react'
 
 import type { Category } from '~/lib/catalog'
 import { categoryIcon } from '~/lib/category-icons'
+import { useLayoutStore } from '~/lib/layout-store'
+
+const MOBILE = '@media (max-width: 900px)'
+
+/** Referenced by the toggles' aria-controls. */
+export const SIDEBAR_ID = 'use-case-sidebar'
 
 const s = stylex.create({
   aside: {
@@ -18,14 +25,43 @@ const s = stylex.create({
     overflowY: 'auto',
     height: '100%',
   },
-  hideSm: { display: { default: 'flex', '@media (max-width: 900px)': 'none' } },
+  desktopHidden: { '@media (min-width: 901px)': { display: 'none' } },
+  // Below the breakpoint there is no room for a second column, so the same
+  // sidebar is lifted out of the flow as a fixed panel instead.
+  mobilePanel: {
+    [MOBILE]: {
+      position: 'fixed',
+      top: 60,
+      left: 0,
+      bottom: 0,
+      height: 'auto',
+      width: 'min(320px, 86vw)',
+      zIndex: 115,
+      boxShadow: 'var(--shadow-high)',
+      backgroundColor: 'var(--color-background-surface)',
+    },
+  },
+  mobileClosed: { [MOBILE]: { display: 'none' } },
+  scrim: {
+    display: 'none',
+    [MOBILE]: {
+      display: 'block',
+      position: 'fixed',
+      top: 60,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      backgroundColor: 'rgba(20,24,31,0.34)',
+      zIndex: 110,
+    },
+  },
   list: { display: 'flex', flexDirection: 'column', gap: 1 },
   item: {
     display: 'flex',
     alignItems: 'center',
     gap: 'var(--spacing-3)',
     paddingInline: 'var(--spacing-4)',
-    paddingBlock: 'var(--spacing-2)',
+    paddingBlock: { default: 'var(--spacing-2)', [MOBILE]: 'var(--spacing-3)' },
     marginInline: 'var(--spacing-2)',
     borderRadius: 'var(--radius-element)',
     fontSize: 13.5,
@@ -40,61 +76,73 @@ const s = stylex.create({
     fontWeight: 600,
   },
   icon: { display: 'flex', flexShrink: 0, opacity: 0.85 },
-  card: {
-    marginTop: 'var(--spacing-5)',
+  divider: {
+    height: 1,
+    marginBlock: 'var(--spacing-2)',
     marginInline: 'var(--spacing-4)',
-    padding: 'var(--spacing-4)',
-    borderRadius: 'var(--radius-container)',
-    backgroundColor: 'var(--color-background-muted)',
-  },
-  cardH: { fontSize: 13, fontWeight: 700, marginBottom: 'var(--spacing-2)', color: 'var(--color-text-primary)' },
-  cardB: { fontSize: 12, lineHeight: 1.5, color: 'var(--color-text-secondary)' },
-  cardLink: {
-    display: 'inline-block',
-    marginTop: 'var(--spacing-2)',
-    fontSize: 12,
-    fontWeight: 600,
-    color: 'var(--color-text-accent)',
-    textDecoration: 'none',
+    backgroundColor: 'var(--color-border)',
   },
 })
 
-function useActiveSlug(): string | null {
-  const pathname = useRouterState({ select: (st) => st.location.pathname })
-  const m = pathname.match(/^\/c\/([^/]+)/)
-  return m ? m[1] : null
+function usePathname(): string {
+  return useRouterState({ select: (st) => st.location.pathname })
 }
 
-export function Sidebar({ categories }: { categories: Category[] }) {
-  const active = useActiveSlug()
+export function Sidebar({
+  categories,
+  desktopOpen,
+  mobileOpen,
+}: {
+  categories: Category[]
+  /** desktop: is the layout column showing */
+  desktopOpen: boolean
+  /** mobile: is the fixed panel showing */
+  mobileOpen: boolean
+}) {
+  const pathname = usePathname()
+  const active = pathname.match(/^\/c\/([^/]+)/)?.[1] ?? null
+  const setMobile = useLayoutStore((state) => state.setMobile)
+
   return (
-    <aside {...stylex.props(s.aside, s.hideSm)}>
-      <nav {...stylex.props(s.list)}>
-        {categories.map((c) => {
-          const Icon = categoryIcon(c.slug)
-          const isActive = c.slug === active
-          return (
-            <Link
-              key={c.slug}
-              to="/c/$slug"
-              params={{ slug: c.slug }}
-              {...stylex.props(s.item, isActive && s.active)}
-            >
-              <span {...stylex.props(s.icon)}>
-                <Icon size={16} />
-              </span>
-              {c.name}
-            </Link>
-          )
-        })}
-      </nav>
-      <div {...stylex.props(s.card)}>
-        <div {...stylex.props(s.cardH)}>How rankings work</div>
-        <div {...stylex.props(s.cardB)}>
-          We rank apps and skills from a consensus of independent public sources, graded by
-          confidence. Hands-on testing upgrades a pick from 📋 provisional to 🧪 tested.
-        </div>
-      </div>
-    </aside>
+    <>
+      {mobileOpen && <div {...stylex.props(s.scrim)} onClick={() => setMobile(false)} />}
+      <aside
+        id={SIDEBAR_ID}
+        {...stylex.props(
+          s.aside,
+          s.mobilePanel,
+          !desktopOpen && s.desktopHidden,
+          !mobileOpen && s.mobileClosed,
+        )}
+        aria-label="Use cases"
+      >
+        <nav {...stylex.props(s.list)}>
+          <Link to="/" {...stylex.props(s.item, pathname === '/' && s.active)}>
+            <span {...stylex.props(s.icon)}>
+              <Home size={16} />
+            </span>
+            Home
+          </Link>
+          <div {...stylex.props(s.divider)} />
+          {categories.map((c) => {
+            const Icon = categoryIcon(c.slug)
+            const isActive = c.slug === active
+            return (
+              <Link
+                key={c.slug}
+                to="/c/$slug"
+                params={{ slug: c.slug }}
+                {...stylex.props(s.item, isActive && s.active)}
+              >
+                <span {...stylex.props(s.icon)}>
+                  <Icon size={16} />
+                </span>
+                {c.name}
+              </Link>
+            )
+          })}
+        </nav>
+      </aside>
+    </>
   )
 }

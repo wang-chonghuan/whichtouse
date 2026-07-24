@@ -7,9 +7,9 @@
 export const SITE_NAME = 'WhichToUse'
 export const SITE_URL = 'https://whichtouse.com'
 export const OG_IMAGE = `${SITE_URL}/og.png`
-export const DEFAULT_TITLE = 'WhichToUse — Find the best AI tool for what you’re doing'
+export const DEFAULT_TITLE = 'WhichToUse — Hands-on AI tool reviews and rankings'
 export const DEFAULT_DESCRIPTION =
-  'Independent, evidence-backed rankings of AI tools and open-source skills across 25 real use cases. See why each one ranks — and pick with confidence.'
+  'We open each AI tool, read its documentation, and try it wherever we can — then rank apps and open-source skills across 25 real use cases, with the reasoning and sources behind every pick.'
 
 type MetaTag = Record<string, string>
 

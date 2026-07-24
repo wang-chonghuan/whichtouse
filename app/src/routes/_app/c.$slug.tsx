@@ -16,7 +16,7 @@ export const Route = createFileRoute('/_app/c/$slug')({
     const slug = loaderData?.view.category.slug ?? ''
     return buildPageMeta({
       title: `Best ${name} AI Tools & Skills, Ranked — WhichToUse`,
-      description: `The best AI apps and open-source skills for ${name.toLowerCase()}, ranked side by side with the evidence behind every pick. Compare confidence, pricing and strengths.`,
+      description: `AI apps and open-source skills for ${name.toLowerCase()} that we opened, read up on, and ranked — with the reasoning, pricing and sources behind every pick.`,
       path: `/c/${slug}`,
     })
   },
