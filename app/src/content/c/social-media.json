@@ -1,0 +1,277 @@
+{
+  "slug": "social-media",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Buffer",
+        "homepage": "https://buffer.com",
+        "pricing": "Freemium (paid from ~$5/channel/mo)",
+        "bestFor": "The best value for small businesses and solo creators — clean, simple scheduling with a usable free plan.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Zapier",
+            "url": "https://zapier.com/blog/best-social-media-management-tools/"
+          },
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          },
+          {
+            "name": "Buffer",
+            "url": "https://buffer.com/resources/social-media-scheduling-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Hootsuite",
+        "homepage": "https://www.hootsuite.com",
+        "pricing": "Paid (~$99/mo)",
+        "bestFor": "Multi-platform teams at scale needing scheduling, listening, analytics and paid social in one governed environment.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Analytics Insight",
+            "url": "https://www.analyticsinsight.net/artificial-intelligence/top-ai-social-media-management-tools-for-content-and-automation-2026"
+          },
+          {
+            "name": "Zapier",
+            "url": "https://zapier.com/blog/best-ai-social-media-management/"
+          },
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Later",
+        "homepage": "https://later.com",
+        "pricing": "Paid (~$18.75/mo)",
+        "bestFor": "Visual-first creators and agencies — drag-and-drop calendar, feed preview, and AI Smart Scheduling across 8 platforms.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          },
+          {
+            "name": "Heropost",
+            "url": "https://heropost.io/best-social-media-scheduling-tools/"
+          },
+          {
+            "name": "Zapier",
+            "url": "https://zapier.com/blog/best-social-media-management-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Sprout Social",
+        "homepage": "https://sproutsocial.com",
+        "pricing": "Paid (~$249/seat/mo)",
+        "bestFor": "Enterprise brands needing the deepest sentiment analysis, customer intelligence and reporting.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Analytics Insight",
+            "url": "https://www.analyticsinsight.net/artificial-intelligence/top-ai-social-media-management-tools-for-content-and-automation-2026"
+          },
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          },
+          {
+            "name": "Zapier",
+            "url": "https://zapier.com/blog/best-ai-social-media-management/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "SocialPilot",
+        "homepage": "https://www.socialpilot.co",
+        "pricing": "Paid (~$30/mo)",
+        "bestFor": "Budget-conscious small teams and agencies wanting AI content generation plus multi-platform scheduling in one workflow.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SocialPilot",
+            "url": "https://www.socialpilot.co/ai-social-media-content-creation-tools"
+          },
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Metricool",
+        "homepage": "https://metricool.com",
+        "pricing": "Freemium (paid from ~$18/mo)",
+        "bestFor": "Analytics-heavy scheduling with a genuinely capable free tier, including ad management and competitor tracking.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Later",
+            "url": "https://later.com/blog/social-media-scheduling-tools/"
+          },
+          {
+            "name": "Buffer",
+            "url": "https://buffer.com/resources/social-media-scheduling-tools/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Postiz",
+        "homepage": "https://github.com/gitroomhq/postiz-app",
+        "pricing": "Free / OSS",
+        "bestFor": "The clear category leader (~33.7k stars, AGPL-3.0): a full self-hosted AI-powered scheduler and publisher for 20+ channels (X, Instagram, LinkedIn, TikTok, Bluesky, Mastodon and more). By far the most-adopted open-source tool in this space.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub gitroomhq/postiz-app — 33.7k★",
+            "url": "https://github.com/gitroomhq/postiz-app"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Mixpost",
+        "homepage": "https://github.com/inovector/mixpost",
+        "pricing": "Free / OSS",
+        "bestFor": "The established open-source Buffer alternative (~3.5k stars, MIT): a self-hosted Laravel scheduler with a one-time / no-subscription model, favored by privacy-conscious teams. The #2 most-adopted repo after Postiz.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub inovector/mixpost — 3.5k★",
+            "url": "https://github.com/inovector/mixpost"
+          },
+          {
+            "name": "OpenAlternative",
+            "url": "https://openalternative.co/mixpost"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "social-media-skills (blacktwist)",
+        "homepage": "https://github.com/blacktwist/social-media-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-referenced dedicated social-media Agent Skill bundle (~353 stars): SKILL.md skills for strategy, calendar, and post/thread/carousel/caption writing across LinkedIn, X, Threads and Bluesky. Advisory by default (drafts, does not publish) unless paired with a posting backend.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub blacktwist/social-media-skills — 353★",
+            "url": "https://github.com/blacktwist/social-media-skills"
+          },
+          {
+            "name": "Agent Skill Work",
+            "url": "https://agentskill.work/en/skills/blacktwist/social-media-skills"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Socioboard 5.0",
+        "homepage": "https://github.com/socioboard/Socioboard-5.0",
+        "pricing": "Free / OSS",
+        "bestFor": "A veteran open-source social platform (~1.5k stars) with CRM, analytics and approval flows across ~9 networks. Stars accrued over many years but the codebase is older and recent maintenance is unclear — treat as legacy.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub socioboard/Socioboard-5.0 — 1.5k★",
+            "url": "https://github.com/socioboard/Socioboard-5.0"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "TryPost",
+        "homepage": "https://github.com/trypostit/trypost",
+        "pricing": "Free / OSS",
+        "bestFor": "A newer full self-hosted app (~424 stars, AGPL-3.0) with an AI copilot and native publishing to 12 networks, positioned as a Postiz-style alternative. Small but active; a genuine functional app rather than a plugin.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub trypostit/trypost — 424★",
+            "url": "https://github.com/trypostit/trypost"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "social-media-manager (borghei/Claude-Skills)",
+        "homepage": "https://github.com/borghei/Claude-Skills/blob/main/marketing/social-media-manager/SKILL.md",
+        "pricing": "Free / OSS",
+        "bestFor": "A social-media-manager SKILL.md inside a large curated marketing/ops skill collection (~404 stars). Good if you want social alongside a broader library, but social is only one slice, so its own adoption is not separately measurable.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub borghei/Claude-Skills — 404★",
+            "url": "https://github.com/borghei/Claude-Skills"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Typefully Agent Skills",
+        "homepage": "https://github.com/typefully/agent-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Vendor-published SKILL.md skills (~56 stars) that create, schedule and publish to X, LinkedIn, Threads, Bluesky and Mastodon via the Typefully API — genuinely publish-capable and officially maintained, though posting depends on the Typefully (paid SaaS) account.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub typefully/agent-skills — official (56★)",
+            "url": "https://github.com/typefully/agent-skills"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "social-media-skills/skills",
+        "homepage": "https://github.com/social-media-skills/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The broadest bundle by sheer count — 106 SKILL.md skills spanning writing, platform playbooks, AI media, publishing and analytics — but essentially no adoption yet (~3 stars): comprehensive on paper, unproven in practice.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub social-media-skills/skills — 3★",
+            "url": "https://github.com/social-media-skills/skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes notable open-source repos and genuine SKILL.md Agent Skills. Postiz leads decisively (~33.7k stars) as the de-facto open-source social-media scheduler/publisher, with Mixpost the established #2 — both outrank the skills on adoption. The skills (blacktwist, Typefully, etc.) are mostly advisory content/strategy engines that draft posts and calendars; unless a posting backend (or Typefully's API) is attached they do not publish, so pair them with an app-track or self-hosted scheduler. No MCP servers; the prior MCP entries (Postiz/Zernio/OpenTweet/BrandGhost MCP) were removed as out of scope — Postiz appears here as its full open-source app repo."
+}

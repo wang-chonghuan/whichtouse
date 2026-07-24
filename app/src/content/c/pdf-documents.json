@@ -1,0 +1,332 @@
+{
+  "slug": "pdf-documents",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "ChatPDF",
+        "homepage": "https://www.chatpdf.com",
+        "pricing": "Freemium (Plus ~$20/mo)",
+        "bestFor": "Fast, no-friction chat with a single PDF for quick one-off questions and summaries.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/pdf-ai"
+          },
+          {
+            "name": "Denser.ai",
+            "url": "https://denser.ai/blog/chat-with-pdf/"
+          },
+          {
+            "name": "Atlas Workspace",
+            "url": "https://www.atlasworkspace.ai/blog/chatpdf-alternatives"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Adobe Acrobat AI Assistant",
+        "homepage": "https://www.adobe.com/acrobat/generative-ai-pdf.html",
+        "pricing": "Paid (AI Assistant add-on ~$5/mo on top of Acrobat)",
+        "bestFor": "Editing and summarizing existing PDFs with page-level citations plus enterprise security and redaction.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/pdf-ai"
+          },
+          {
+            "name": "Denser.ai",
+            "url": "https://denser.ai/blog/best-ai-pdf-reader/"
+          },
+          {
+            "name": "Medium/ILLUMINATION",
+            "url": "https://medium.com/illumination/7-best-pdf-ai-tools-in-2026-read-summarize-and-extract-content-with-ai-caa841d36f5a"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Google NotebookLM",
+        "homepage": "https://notebooklm.google.com",
+        "pricing": "Free (Plus via Google One AI)",
+        "bestFor": "Best free option; retrieves source text before answering, so it resists hallucinated citations.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Denser.ai",
+            "url": "https://denser.ai/blog/chat-with-pdf/"
+          },
+          {
+            "name": "Atlas Workspace",
+            "url": "https://www.atlasworkspace.ai/blog/pdf-chat-ai-tools"
+          },
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/ai-tools-to-chat-with-pdf/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "AskYourPDF",
+        "homepage": "https://askyourpdf.com",
+        "pricing": "Freemium (Premium ~$15/mo)",
+        "bestFor": "Free multi-document chat when you need to query across several PDFs at once.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/ai-tools-to-chat-with-pdf/"
+          },
+          {
+            "name": "Denser.ai",
+            "url": "https://denser.ai/blog/chat-with-pdf/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Humata AI",
+        "homepage": "https://www.humata.ai",
+        "pricing": "Freemium (Student ~$1.99/mo, Pro ~$9.99/mo)",
+        "bestFor": "Research-oriented Q&A over long technical and academic PDFs with cited answers.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/ai-tools-to-chat-with-pdf/"
+          },
+          {
+            "name": "Paperpal",
+            "url": "https://paperpal.com/blog/news-updates/best-ai-chat-with-pdf-tools"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "PDFgear",
+        "homepage": "https://www.pdfgear.com",
+        "pricing": "Free",
+        "bestFor": "Genuinely free editor with an AI copilot; the budget pick for students and small teams.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "aiproductivity.ai",
+            "url": "https://aiproductivity.ai/for/ai-pdf/"
+          },
+          {
+            "name": "Medium/ILLUMINATION",
+            "url": "https://medium.com/illumination/7-best-pdf-ai-tools-in-2026-read-summarize-and-extract-content-with-ai-caa841d36f5a"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Smallpdf",
+        "homepage": "https://smallpdf.com",
+        "pricing": "Freemium (Pro ~$9/mo)",
+        "bestFor": "All-in-one web PDF suite (convert, compress, sign) with AI summarize and chat layered on.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/ai-tools-to-chat-with-pdf/"
+          },
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/pdf-ai"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Stirling-PDF",
+        "homepage": "https://github.com/Stirling-Tools/Stirling-PDF",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto open-source PDF toolkit: 50+ local operations — merge, split, OCR, convert, sign, redact, compress — fully self-hosted. The recognized OSS PDF leader (~88k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~88k★)",
+            "url": "https://github.com/Stirling-Tools/Stirling-PDF"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "MarkItDown (Microsoft)",
+        "homepage": "https://github.com/microsoft/markitdown",
+        "pricing": "Free / OSS",
+        "bestFor": "Microsoft's document-to-Markdown converter (PDF, Office, images, audio) built to feed clean text to LLMs; the highest-starred tool in this space (~169k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~169k★)",
+            "url": "https://github.com/microsoft/markitdown"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "MinerU (OpenDataLab)",
+        "homepage": "https://github.com/opendatalab/MinerU",
+        "pricing": "Free / OSS",
+        "bestFor": "High-accuracy PDF-to-Markdown/JSON extraction; the standout for complex academic papers and CJK layouts (~76k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~76k★)",
+            "url": "https://github.com/opendatalab/MinerU"
+          },
+          {
+            "name": "PDF-to-Markdown roundup",
+            "url": "https://themenonlab.blog/blog/best-open-source-pdf-to-markdown-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Docling (IBM / DS4SD)",
+        "homepage": "https://github.com/docling-project/docling",
+        "pricing": "Free / OSS",
+        "bestFor": "IBM's document parser (PDF, DOCX, PPTX) with strong layout and table understanding; a default in the LlamaIndex/LangChain ecosystem (~64k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~64k★)",
+            "url": "https://github.com/docling-project/docling"
+          },
+          {
+            "name": "PDF-to-Markdown roundup",
+            "url": "https://themenonlab.blog/blog/best-open-source-pdf-to-markdown-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Anthropic pdf skill (official)",
+        "homepage": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+        "pricing": "Free / OSS",
+        "bestFor": "The official Anthropic SKILL.md that powers Claude's PDF work — form filling, text/table extraction, merge, and generation. The reference Agent Skill for PDFs (in anthropics/skills, ~164k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "anthropics/skills (~164k★)",
+            "url": "https://github.com/anthropics/skills/tree/main/skills/pdf"
+          },
+          {
+            "name": "Skills Catalog (DeepWiki)",
+            "url": "https://deepwiki.com/anthropics/skills/3-skills-catalog"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "marker (Datalab)",
+        "homepage": "https://github.com/datalab-to/marker",
+        "pricing": "Free / OSS",
+        "bestFor": "Fast, high-quality PDF/EPUB/DOCX to Markdown conversion with tables, math, and images; a general-purpose favorite (~38k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~38k★)",
+            "url": "https://github.com/datalab-to/marker"
+          },
+          {
+            "name": "PDF-to-Markdown roundup",
+            "url": "https://themenonlab.blog/blog/best-open-source-pdf-to-markdown-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "pdfplumber",
+        "homepage": "https://github.com/jsvine/pdfplumber",
+        "pricing": "Free / OSS",
+        "bestFor": "Precise text, table, and layout extraction from born-digital PDFs; the go-to Python library for table scraping (~11k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~11k★)",
+            "url": "https://github.com/jsvine/pdfplumber"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "PyMuPDF",
+        "homepage": "https://github.com/pymupdf/PyMuPDF",
+        "pricing": "Free / OSS",
+        "bestFor": "Fast low-level PDF/XPS parsing, rendering, and editing (MuPDF bindings); the performance workhorse under many pipelines (~10k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~10k★)",
+            "url": "https://github.com/pymupdf/PyMuPDF"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "pypdf",
+        "homepage": "https://github.com/py-pdf/pypdf",
+        "pricing": "Free / OSS",
+        "bestFor": "Pure-Python library to split, merge, crop, and extract PDF pages and metadata; a lightweight, dependency-free staple (~10k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~10k★)",
+            "url": "https://github.com/py-pdf/pypdf"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "claude-office-skills (tfriedel)",
+        "homepage": "https://github.com/tfriedel/claude-office-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Community office-document Agent Skills pack (PDF, DOCX, PPTX, XLSX) with automation helpers for Claude Code (~800 stars).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~800★)",
+            "url": "https://github.com/tfriedel/claude-office-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "App list draws on multiple independent test/comparison roundups; ChatPDF, Acrobat AI Assistant, and NotebookLM top several lists. Reviewers flag confident-wrong answers with plausible citations as the main failure mode, favoring retrieval-first tools (NotebookLM). Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes notable open-source PDF repos with genuine Agent Skills: Stirling-PDF is the recognized de-facto OSS PDF toolkit, followed by the big document-extraction repos (MarkItDown, MinerU, Docling, marker) and Anthropic's official pdf skill, with pdfplumber/PyMuPDF/pypdf as lower-level libraries and community skill packs in the tail. Star counts verified via the GitHub API (Jul 2026)."
+}

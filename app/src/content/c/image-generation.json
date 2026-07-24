@@ -1,0 +1,324 @@
+{
+  "slug": "image-generation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "GPT Image 2 (ChatGPT)",
+        "homepage": "https://chatgpt.com",
+        "pricing": "Freemium",
+        "bestFor": "Tops the Artificial Analysis and LMArena image arenas for prompt adherence and text. Best all-round pick.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "BuildMVPfast ranking",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/image-generation-ai"
+          },
+          {
+            "name": "DIYAI compared",
+            "url": "https://diyai.io/ai-tools/image-generation/best-ai-image-tools/"
+          },
+          {
+            "name": "Tech-Insider ranking",
+            "url": "https://tech-insider.org/best-ai-image-generator-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Nano Banana Pro (Google Gemini)",
+        "homepage": "https://gemini.google.com",
+        "pricing": "Freemium",
+        "bestFor": "Leads on photorealism, character consistency and UGC ad creatives. Tops CNET's 2026 ranking.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "BuildMVPfast ranking",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/image-generation-ai"
+          },
+          {
+            "name": "Miniloop best",
+            "url": "https://www.miniloop.ai/blog/best-ai-image-generators-2026"
+          },
+          {
+            "name": "Pixara comparison",
+            "url": "https://www.pixara.ai/blogs/midjourney-vs-nano-banana-which-ai-image-model-is-better-in-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Midjourney",
+        "homepage": "https://www.midjourney.com",
+        "pricing": "Paid (~$10/mo)",
+        "bestFor": "Still the king of artistic style — concept art, moodboards, stylized campaigns (V8.1).",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Miniloop best",
+            "url": "https://www.miniloop.ai/blog/best-ai-image-generators-2026"
+          },
+          {
+            "name": "Zapier 8 best",
+            "url": "https://zapier.com/blog/best-ai-image-generator/"
+          },
+          {
+            "name": "Gradually 9 models",
+            "url": "https://www.gradually.ai/en/ai-image-models/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "FLUX.2 (Black Forest Labs)",
+        "homepage": "https://blackforestlabs.ai",
+        "pricing": "Freemium",
+        "bestFor": "Strongest open-weight option. Go-to for product photography and embedding generation into an app.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "BuildMVPfast ranking",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/image-generation-ai"
+          },
+          {
+            "name": "Gradually 9 models",
+            "url": "https://www.gradually.ai/en/ai-image-models/"
+          },
+          {
+            "name": "3DAI Studio best",
+            "url": "https://www.3daistudio.com/blog/best-ai-image-generators-2026"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Ideogram",
+        "homepage": "https://ideogram.ai",
+        "pricing": "Freemium",
+        "bestFor": "Best at text inside images — logos, posters, typography. Generous free tier.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Zapier 8 best",
+            "url": "https://zapier.com/blog/best-ai-image-generator/"
+          },
+          {
+            "name": "Miniloop best",
+            "url": "https://www.miniloop.ai/blog/best-ai-image-generators-2026"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Stable Diffusion 3.5",
+        "homepage": "https://stability.ai",
+        "pricing": "Freemium",
+        "bestFor": "Self-hosted, fully controllable generation with a huge ecosystem of fine-tunes and LoRAs.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "BuildMVPfast ranking",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/image-generation-ai"
+          },
+          {
+            "name": "GetAIPerks comparison",
+            "url": "https://www.getaiperks.com/en/blogs/45-best-ai-image-generators-2026"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "DALL-E",
+        "homepage": "https://openai.com/dall-e",
+        "pricing": "Freemium",
+        "bestFor": "Easiest on-ramp for beginners, bundled inside ChatGPT. Increasingly superseded by GPT Image 2.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI realistic photos",
+            "url": "https://diyai.io/ai-tools/image-generation/best-ai-image-generator-realistic-photos/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Stable Diffusion WebUI (AUTOMATIC1111)",
+        "homepage": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-adopted local image-generation tool ever (~164k GitHub★) — the de-facto Stable Diffusion interface with a vast extension ecosystem.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub AUTOMATIC1111/stable-diffusion-webui (~164k★)",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+          },
+          {
+            "name": "Civitai WebUI comparison",
+            "url": "https://civitai.com/articles/5066/how-to-choose-a-webui-for-fluxstable-diffusion"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "ComfyUI",
+        "homepage": "https://github.com/comfyanonymous/ComfyUI",
+        "pricing": "Free / OSS",
+        "bestFor": "The node-based industry standard (~122k GitHub★) for pro Stable Diffusion / FLUX pipelines; 12k+ custom nodes and full pipeline control.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub comfyanonymous/ComfyUI (~122k★)",
+            "url": "https://github.com/comfyanonymous/ComfyUI"
+          },
+          {
+            "name": "Civitai WebUI comparison",
+            "url": "https://civitai.com/articles/5066/how-to-choose-a-webui-for-fluxstable-diffusion"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Fooocus (lllyasviel)",
+        "homepage": "https://github.com/lllyasviel/Fooocus",
+        "pricing": "Free / OSS",
+        "bestFor": "The simplest local generator (~51k GitHub★) — a Midjourney-like, prompt-only experience on SDXL. Best on-ramp for non-technical users.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub lllyasviel/Fooocus (~51k★)",
+            "url": "https://github.com/lllyasviel/Fooocus"
+          },
+          {
+            "name": "medevel open-source SD tools",
+            "url": "https://medevel.com/stable-diffusions-os-interfaces-1100/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Diffusers (Hugging Face)",
+        "homepage": "https://github.com/huggingface/diffusers",
+        "pricing": "Free / OSS",
+        "bestFor": "The standard library (~34k GitHub★) for running/embedding diffusion models (SD, SDXL, FLUX) into your own app — the developer default.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub huggingface/diffusers (~34k★)",
+            "url": "https://github.com/huggingface/diffusers"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "InvokeAI",
+        "homepage": "https://github.com/invoke-ai/InvokeAI",
+        "pricing": "Free / OSS",
+        "bestFor": "Clean, professional local studio (~27.7k GitHub★) with a powerful unified canvas — combines SD WebUI and ComfyUI strengths for creative workflows.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub invoke-ai/InvokeAI (~27.7k★)",
+            "url": "https://github.com/invoke-ai/InvokeAI"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Stability-AI generative-models (SDXL / SD3)",
+        "homepage": "https://github.com/Stability-AI/generative-models",
+        "pricing": "Free / OSS",
+        "bestFor": "Stability AI's official model repo (~27.2k GitHub★) — reference SDXL / SD3 weights and code from the maker of Stable Diffusion.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Stability-AI/generative-models (~27.2k★)",
+            "url": "https://github.com/Stability-AI/generative-models"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "FLUX (Black Forest Labs)",
+        "homepage": "https://github.com/black-forest-labs/flux",
+        "pricing": "Free / OSS",
+        "bestFor": "Official inference repo for FLUX (~25.8k GitHub★) — the strongest open-weight image model family, go-to for product photography quality.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub black-forest-labs/flux (~25.8k★)",
+            "url": "https://github.com/black-forest-labs/flux"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "nano-banana-pro (intellectronica/agent-skills)",
+        "homepage": "https://github.com/intellectronica/agent-skills",
+        "pricing": "Freemium (Gemini API key)",
+        "bestFor": "The most-cited image Agent Skill — generate/edit images up to 4K with Nano Banana Pro (Gemini 3 Pro Image), strong on legible in-image text.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub intellectronica/agent-skills",
+            "url": "https://github.com/intellectronica/agent-skills"
+          },
+          {
+            "name": "LobeHub nano-banana-pro",
+            "url": "https://lobehub.com/skills/intellectronica-agent-skills-nano-banana-pro"
+          },
+          {
+            "name": "explainx nano-banana-pro",
+            "url": "https://explainx.ai/skills/intellectronica/agent-skills/nano-banana-pro"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "ccskill-nanobanana (feedtailor)",
+        "homepage": "https://github.com/feedtailor/ccskill-nanobanana",
+        "pricing": "Freemium (Gemini API key)",
+        "bestFor": "Claude Code image-generation skill on the Gemini 3 Pro Image (Nano Banana Pro) model. Clean, well-documented but single-author.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub ccskill-nanobanana",
+            "url": "https://github.com/feedtailor/ccskill-nanobanana"
+          },
+          {
+            "name": "mkdev walkthrough",
+            "url": "https://mkdev.me/posts/unlimited-image-generation-with-nano-banana-pro-and-custom-claude-code-skill"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The open-source image-generation tools dominate and correctly outrank the agent skills: AUTOMATIC1111's WebUI (~164k★) and ComfyUI (~122k★) are the de-facto interfaces, followed by Fooocus, Diffusers, InvokeAI, Stability's official models and FLUX. The Nano-Banana Gemini-wrapper skills are genuine but far lower adoption, so they sit at the bottom. Previous MCP-server entries were removed."
+}

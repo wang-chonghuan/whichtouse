@@ -1,0 +1,296 @@
+{
+  "slug": "workflow-automation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "n8n",
+        "homepage": "https://n8n.io",
+        "pricing": "Freemium (self-host free; cloud from ~$24/mo)",
+        "bestFor": "The top pick when you want AI baked in, not bolted on — native agent nodes, RAG and tool-calling, self-hostable for full data control.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "n8n blog roundup",
+            "url": "https://blog.n8n.io/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "TechnologyAdvice",
+            "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "Zapier vs Make vs n8n",
+            "url": "https://www.digitalapplied.com/blog/zapier-vs-make-vs-n8n-2026-automation-comparison"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Zapier",
+        "homepage": "https://zapier.com",
+        "pricing": "Freemium (paid from ~$19.99/mo)",
+        "bestFor": "Fast, event-driven SaaS automations for non-technical teams, with an 8,000+ app connector catalog and minimal setup.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "TechnologyAdvice",
+            "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "Domo roundup",
+            "url": "https://www.domo.com/learn/article/ai-workflow-platforms"
+          },
+          {
+            "name": "Intuz comparison",
+            "url": "https://www.intuz.com/blog/make-vs-n8n-vs-zapier-detailed-comparison/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Make",
+        "homepage": "https://www.make.com",
+        "pricing": "Freemium (paid from ~$9/mo)",
+        "bestFor": "High-volume, multi-branch workflows where visual debugging and deterministic routing matter most.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "TechnologyAdvice",
+            "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "Zapier vs Make vs n8n",
+            "url": "https://www.digitalapplied.com/blog/zapier-vs-make-vs-n8n-2026-automation-comparison"
+          },
+          {
+            "name": "Intuz comparison",
+            "url": "https://www.intuz.com/blog/make-vs-n8n-vs-zapier-detailed-comparison/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Gumloop",
+        "homepage": "https://www.gumloop.com",
+        "pricing": "Freemium (paid, custom)",
+        "bestFor": "A no-code AI-first builder bundling visual flows, model connectors, hosted MCP and a build-assistant agent (\"Gummie\") in one place.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "n8n blog roundup",
+            "url": "https://blog.n8n.io/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "Vellum low-code list",
+            "url": "https://www.vellum.ai/blog/top-low-code-ai-workflow-automation-tools"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Microsoft Power Automate",
+        "homepage": "https://www.microsoft.com/power-platform/products/power-automate",
+        "pricing": "Paid (from ~$15/user/mo)",
+        "bestFor": "Enterprise workflow and RPA automation deeply wired into Microsoft 365 and the Power Platform.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "TechnologyAdvice",
+            "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
+          },
+          {
+            "name": "VisioneerIT enterprise guide",
+            "url": "https://www.visioneerit.com/blog/best-ai-automation-tools-in-2026-the-complete-guide-to-enterprise-workflow-automation"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Activepieces",
+        "homepage": "https://www.activepieces.com",
+        "pricing": "Freemium (self-host free; open-source)",
+        "bestFor": "Open-source Zapier alternative where each of ~750 integrations is also exposed as an MCP server for agents.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Composio Zapier alternatives",
+            "url": "https://composio.dev/content/zapier-alternatives"
+          },
+          {
+            "name": "Agensi alternatives",
+            "url": "https://www.agensi.io/learn/best-zapier-alternatives-ai-automation"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Workato",
+        "homepage": "https://www.workato.com",
+        "pricing": "Paid (enterprise, custom)",
+        "bestFor": "Enterprise iPaaS for governed, cross-department integration and automation at scale.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "TechnologyAdvice",
+            "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "n8n",
+        "homepage": "https://github.com/n8n-io/n8n",
+        "pricing": "Free / OSS (fair-code)",
+        "bestFor": "The dominant open-source workflow-automation platform (~197.8k★) — 400+ integrations, native AI/agent nodes, fully self-hostable. The de-facto leader.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — n8n-io/n8n (~197.8k★)",
+            "url": "https://github.com/n8n-io/n8n"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Activepieces",
+        "homepage": "https://github.com/activepieces/activepieces",
+        "pricing": "Free / OSS",
+        "bestFor": "The leading MIT-licensed Zapier alternative (~23.4k★) — self-hostable with a TypeScript pieces framework and AI-agent/MCP support.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — activepieces/activepieces (~23.4k★)",
+            "url": "https://github.com/activepieces/activepieces"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Node-RED",
+        "homepage": "https://github.com/node-red/node-red",
+        "pricing": "Free / OSS",
+        "bestFor": "Mature low-code, event-driven flow tool (~23.4k★, IBM origin) — the standard for wiring together devices, APIs and services, huge in IoT.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — node-red/node-red (~23.4k★)",
+            "url": "https://github.com/node-red/node-red"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Windmill",
+        "homepage": "https://github.com/windmill-labs/windmill",
+        "pricing": "Free / OSS",
+        "bestFor": "Fast Rust-based developer platform (~17.3k★) that turns scripts into workflows, UIs and cron jobs — for engineers who want code over drag-and-drop.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — windmill-labs/windmill (~17.3k★)",
+            "url": "https://github.com/windmill-labs/windmill"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Trigger.dev",
+        "homepage": "https://github.com/triggerdotdev/trigger.dev",
+        "pricing": "Free / OSS",
+        "bestFor": "Code-first background jobs and AI-agent workflows (~15.7k★) in TypeScript — durable, long-running tasks for developers.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — triggerdotdev/trigger.dev (~15.7k★)",
+            "url": "https://github.com/triggerdotdev/trigger.dev"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "n8n-skills (Członkowski)",
+        "homepage": "https://github.com/czlonkowski/n8n-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto Claude Code skill pack for workflow automation (~5.9k★) — 14 skills for building production n8n workflows, by the author of n8n-mcp.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — czlonkowski/n8n-skills (~5.9k★)",
+            "url": "https://github.com/czlonkowski/n8n-skills"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Kestra",
+        "homepage": "https://github.com/kestra-io/kestra",
+        "pricing": "Free / OSS",
+        "bestFor": "Event-driven, YAML-declarative orchestration and scheduling platform (~27.4k★) — broader/data-oriented, bridging workflow automation and pipeline orchestration.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — kestra-io/kestra (~27.4k★)",
+            "url": "https://github.com/kestra-io/kestra"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "n8n Skills (official, n8n-io)",
+        "homepage": "https://github.com/n8n-io/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The official n8n skill repo (~363★) — authoritative, first-party guidance for building n8n workflows in Claude Code; newer and smaller than Członkowski's pack.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — n8n-io/skills (~363★)",
+            "url": "https://github.com/n8n-io/skills"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "n8n-skills (haunchen)",
+        "homepage": "https://github.com/haunchen/n8n-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Independent n8n skill suite (~377★) documenting nodes and curated templates for Claude Code, Desktop and Web.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — haunchen/n8n-skills (~377★)",
+            "url": "https://github.com/haunchen/n8n-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS workflow-automation platforms lead as kind:repo — n8n (~197.8k★) is the runaway leader, followed by Activepieces, Node-RED, Windmill and Trigger.dev — with the genuine Claude skills ranked among them: Członkowski's n8n-skills (~5.9k★) is the de-facto skill pack, plus the official n8n-io/skills and haunchen alternatives. The dedicated skill ecosystem here is almost entirely n8n-focused; Kestra is included as a broader (data-adjacent) orchestration option. Removed all MCP entries (Zapier MCP, n8n MCP, Activepieces MCP, Composio; note czlonkowski/n8n-mcp ~22k★ is an MCP server, excluded). Huginn (~49.7k★) and Automatisch were left out as stalled/slow-maintenance. Star counts verified live 2026-07-24."
+}

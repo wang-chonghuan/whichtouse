@@ -1,0 +1,284 @@
+{
+  "slug": "customer-support",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Fin (Intercom)",
+        "homepage": "https://fin.ai",
+        "pricing": "Paid (~$0.99 per resolution)",
+        "bestFor": "The most-cited AI support agent — high autonomous resolution rates with outcome-based pricing on top of Intercom.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "TeamSupport",
+            "url": "https://www.teamsupport.com/best-ai-chatbots-customer-support-2026/"
+          },
+          {
+            "name": "Certainly",
+            "url": "https://certainly.io/blog/best-ai-chatbots-customer-service-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Zendesk AI Agents",
+        "homepage": "https://www.zendesk.com",
+        "pricing": "Paid (~$55/agent/mo + AI add-ons)",
+        "bestFor": "Best if you already run Zendesk — AI agents grounded in your help center with native ticketing and QA.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "Certainly",
+            "url": "https://certainly.io/blog/best-ai-chatbots-customer-service-2026"
+          },
+          {
+            "name": "ProProfs",
+            "url": "https://www.proprofschat.com/blog/best-customer-service-chatbots/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Ada",
+        "homepage": "https://www.ada.cx",
+        "pricing": "Paid (custom, enterprise)",
+        "bestFor": "Enterprise-scale automation for teams handling hundreds of thousands of conversations a year, with strong multilingual coverage.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "TeamSupport",
+            "url": "https://www.teamsupport.com/best-ai-chatbots-customer-support-2026/"
+          },
+          {
+            "name": "Certainly",
+            "url": "https://certainly.io/blog/best-ai-chatbots-customer-service-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Tidio (Lyro AI)",
+        "homepage": "https://www.tidio.com",
+        "pricing": "Freemium (Lyro from ~$39/mo)",
+        "bestFor": "Best for small businesses and Shopify stores wanting affordable AI chat with a genuine free tier.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Fin AI",
+            "url": "https://fin.ai/learn/best-ai-chatbots-customer-support"
+          },
+          {
+            "name": "ProProfs",
+            "url": "https://www.proprofschat.com/blog/best-customer-service-chatbots/"
+          },
+          {
+            "name": "thecxlead",
+            "url": "https://thecxlead.com/tools/best-ai-chatbot-for-customer-service/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Sierra",
+        "homepage": "https://sierra.ai",
+        "pricing": "Paid (outcome-based, enterprise)",
+        "bestFor": "Purpose-built conversational AI agents for large enterprises that need action execution, not just answers.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "TeamSupport",
+            "url": "https://www.teamsupport.com/best-ai-chatbots-customer-support-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Gorgias",
+        "homepage": "https://www.gorgias.com",
+        "pricing": "Paid (~$10-50/mo entry tiers)",
+        "bestFor": "The natural pick for e-commerce and Shopify support, with deep order-aware automation.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "Fin AI",
+            "url": "https://fin.ai/learn/best-ai-chatbots-customer-support"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Decagon",
+        "homepage": "https://decagon.ai",
+        "pricing": "Paid (enterprise)",
+        "bestFor": "Enterprise AI concierge agents built for very high conversation volumes and complex resolution flows.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "eesel AI",
+            "url": "https://www.eesel.ai/blog/best-ai-customer-support-chatbot"
+          },
+          {
+            "name": "TeamSupport",
+            "url": "https://www.teamsupport.com/best-ai-chatbots-customer-support-2026/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Chatwoot",
+        "homepage": "https://github.com/chatwoot/chatwoot",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized leader in open-source customer support (34.7k★) — a self-hostable omnichannel inbox (chat, email, WhatsApp, social) and the de-facto Intercom/Zendesk alternative, with AI assist.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (chatwoot, 34.7k★)",
+            "url": "https://github.com/chatwoot/chatwoot"
+          },
+          {
+            "name": "eesel AI (open source)",
+            "url": "https://www.eesel.ai/blog/best-open-source-ai-agents"
+          },
+          {
+            "name": "Featurebase",
+            "url": "https://www.featurebase.app/blog/open-source-chatbot"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Dify",
+        "homepage": "https://github.com/langgenius/dify",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred open-source LLM-app platform (150k★) — build a support bot with RAG and agents grounded in your own product docs. Highest adoption in this list, though general-purpose.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (langgenius/dify, 150.1k★)",
+            "url": "https://github.com/langgenius/dify"
+          },
+          {
+            "name": "eesel AI (open source)",
+            "url": "https://www.eesel.ai/blog/best-open-source-ai-agents"
+          },
+          {
+            "name": "Featurebase",
+            "url": "https://www.featurebase.app/blog/open-source-chatbot"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Rasa",
+        "homepage": "https://github.com/RasaHQ/rasa",
+        "pricing": "Free / OSS",
+        "bestFor": "The mature conversational-AI framework (21.3k★) for teams that want full control over intent, dialogue, and on-prem deployment — a favorite in regulated industries.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (RasaHQ/rasa, 21.3k★)",
+            "url": "https://github.com/RasaHQ/rasa"
+          },
+          {
+            "name": "eesel AI (open source)",
+            "url": "https://www.eesel.ai/blog/best-open-source-ai-agents"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Botpress",
+        "homepage": "https://github.com/botpress/botpress",
+        "pricing": "Free / OSS",
+        "bestFor": "A popular open-source chatbot builder (14.8k★) with a visual flow editor and LLM reasoning — good for custom support conversation flows.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (botpress, 14.8k★)",
+            "url": "https://github.com/botpress/botpress"
+          },
+          {
+            "name": "Fastio (chatbot frameworks)",
+            "url": "https://fast.io/resources/best-open-source-ai-chatbot-frameworks/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Typebot",
+        "homepage": "https://github.com/baptisteArno/typebot.io",
+        "pricing": "Free / OSS",
+        "bestFor": "An open-source conversational form/chatbot builder (10.2k★) for embeddable support and lead-capture flows on websites and apps.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (baptisteArno/typebot.io, 10.2k★)",
+            "url": "https://github.com/baptisteArno/typebot.io"
+          },
+          {
+            "name": "Featurebase",
+            "url": "https://www.featurebase.app/blog/open-source-chatbot"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "composio-community/support-skills",
+        "homepage": "https://github.com/composio-community/support-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The only support-specific Agent Skill set (Apache 2.0) — SKILL.md skills for ticket triage, SLA tracking, sentiment detection, and reply drafting. Very low adoption (~13★), so ranked last at low confidence.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (composio-community, 13★)",
+            "url": "https://github.com/composio-community/support-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "This track was rebuilt to fix a ranking bug where all skills sorted above all repos regardless of quality — a 13-star personal skill (composio-community/support-skills) previously ranked #1 above Chatwoot and Dify. Now everything is ranked by real quality, reputation, and adoption; kind (skill|repo) is only a tag. The recognized open-source support leaders lead: Chatwoot (34.7k★, the purpose-built Intercom/Zendesk alternative) at #1, then Dify (150k★, build a doc-grounded bot), Rasa (21.3k★), Botpress (14.8k★), and Typebot (10.2k★). Dedicated customer-support Agent Skills barely exist — composio-community/support-skills is the only one and it is tiny (~13★), so it now ranks last. No MCP servers. Star counts verified on GitHub. App track is contaminated by vendor blogs (Fin.ai, eesel, Certainly, TeamSupport all sell competing products); app rankings favor tools recurring across multiple independent lists."
+}

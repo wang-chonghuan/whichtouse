@@ -1,5 +1,5 @@
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import tailwindcss from '@tailwindcss/vite'
+import stylex from '@stylexjs/unplugin'
 import viteReact from '@vitejs/plugin-react'
 import { nitro } from 'nitro/vite'
 import { defineConfig } from 'vite'
@@ -15,9 +15,29 @@ export default defineConfig({
     alias: {
       '~': '/src',
     },
+    dedupe: ['react', 'react-dom'],
+  },
+  ssr: {
+    // Bundle Astryx with the app so it shares the app's React instance instead
+    // of being externalized by Nitro.
+    noExternal: [
+      '@astryxdesign/core',
+      '@astryxdesign/theme-butter',
+      '@stylexjs/stylex',
+    ],
+  },
+  optimizeDeps: {
+    include: ['@astryxdesign/core', '@astryxdesign/theme-butter'],
   },
   plugins: [
-    tailwindcss(),
+    // StyleX is the single styling authority (Tailwind + shadcn removed). The
+    // unplugin extracts atomic CSS into the app's CSS asset and must run before
+    // the React plugin per the official Vite integration.
+    stylex.vite({
+      useCSSLayers: true,
+      dev: process.env.NODE_ENV === 'development',
+      runtimeInjection: false,
+    }),
     tanstackStart(),
     viteReact(),
     nitro(),

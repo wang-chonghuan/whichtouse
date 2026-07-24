@@ -1,0 +1,317 @@
+{
+  "slug": "knowledge-base",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Glean",
+        "homepage": "https://www.glean.com",
+        "pricing": "Paid (enterprise, ~$40-100/user/mo)",
+        "bestFor": "Enterprise workplace search and RAG across many connected tools; strongest for broad cross-app knowledge retrieval.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Atlan",
+            "url": "https://atlan.com/know/llm-knowledge-base-tools/"
+          },
+          {
+            "name": "SphereIQ",
+            "url": "https://www.sphereinc.com/blogs/best-enterprise-rag-platforms-2026"
+          },
+          {
+            "name": "CodeBrewTools",
+            "url": "https://codebrewtools.com/blogs/ai-knowledge-management-systems-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Guru",
+        "homepage": "https://www.getguru.com",
+        "pricing": "Freemium (paid from ~$15/user/mo)",
+        "bestFor": "AI knowledge base that surfaces verified answers inside your workflow with source trust/verification built in.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Help Scout",
+            "url": "https://www.helpscout.com/blog/ai-knowledge-base/"
+          },
+          {
+            "name": "Atlan",
+            "url": "https://atlan.com/know/llm-knowledge-base-tools/"
+          },
+          {
+            "name": "CodeBrewTools",
+            "url": "https://codebrewtools.com/blogs/ai-knowledge-management-systems-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Notion AI",
+        "homepage": "https://www.notion.so/product/ai",
+        "pricing": "Freemium (AI add-on ~$10/user/mo)",
+        "bestFor": "Teams already in Notion who want RAG Q&A over their own docs and wiki without standing up separate infra.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Atlan",
+            "url": "https://atlan.com/know/llm-knowledge-base-tools/"
+          },
+          {
+            "name": "Help Scout",
+            "url": "https://www.helpscout.com/blog/ai-knowledge-base/"
+          },
+          {
+            "name": "CodeBrewTools",
+            "url": "https://codebrewtools.com/blogs/ai-knowledge-management-systems-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Confluence + Atlassian Intelligence",
+        "homepage": "https://www.atlassian.com/software/confluence",
+        "pricing": "Freemium (paid from ~$5-11/user/mo)",
+        "bestFor": "Atlassian shops that want AI search and answers layered onto existing Confluence documentation.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Atlan",
+            "url": "https://atlan.com/know/llm-knowledge-base-tools/"
+          },
+          {
+            "name": "Help Scout",
+            "url": "https://www.helpscout.com/blog/ai-knowledge-base/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Dashworks",
+        "homepage": "https://www.dashworks.ai",
+        "pricing": "Paid (from ~$15/user/mo)",
+        "bestFor": "AI assistant that answers questions across all connected company apps without pre-indexing everything.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Atlan",
+            "url": "https://atlan.com/know/llm-knowledge-base-tools/"
+          },
+          {
+            "name": "CodeBrewTools",
+            "url": "https://codebrewtools.com/blogs/ai-knowledge-management-systems-2026"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "CustomGPT.ai",
+        "homepage": "https://customgpt.ai",
+        "pricing": "Paid (from ~$99/mo)",
+        "bestFor": "No-code RAG deployment with anti-hallucination controls; pitched at compliance-heavy and regulated orgs.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SphereIQ",
+            "url": "https://www.sphereinc.com/blogs/best-enterprise-rag-platforms-2026"
+          },
+          {
+            "name": "Chitika",
+            "url": "https://www.chitika.com/best-rag-platforms-in-2026-features-benchmarks-and-comparisons/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "LangChain",
+        "homepage": "https://github.com/langchain-ai/langchain",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto framework for building RAG and knowledge-base apps — chains, agents, and connectors to every model and vector store. The category's recognized leader (~142k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~142k★)",
+            "url": "https://github.com/langchain-ai/langchain"
+          },
+          {
+            "name": "Top-10 RAG frameworks by stars",
+            "url": "https://florinelchis.medium.com/top-10-rag-frameworks-on-github-by-stars-january-2026-e6edff1e0d91"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Dify",
+        "homepage": "https://github.com/langgenius/dify",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source LLM app platform with a built-in knowledge base, document ingestion, and RAG pipeline behind a full UI; the highest-starred option here (~150k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~150k★)",
+            "url": "https://github.com/langgenius/dify"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "RAGFlow",
+        "homepage": "https://github.com/infiniflow/ragflow",
+        "pricing": "Free / OSS",
+        "bestFor": "Dedicated open-source RAG engine with deep document parsing, knowledge-base management, and a zero-code web UI (~86k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~86k★)",
+            "url": "https://github.com/infiniflow/ragflow"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "AnythingLLM",
+        "homepage": "https://github.com/Mintplex-Labs/anything-llm",
+        "pricing": "Free / OSS",
+        "bestFor": "All-in-one desktop/self-hosted app that turns your documents into a private chat knowledge base out of the box (~64k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~64k★)",
+            "url": "https://github.com/Mintplex-Labs/anything-llm"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "LlamaIndex",
+        "homepage": "https://github.com/run-llama/llama_index",
+        "pricing": "Free / OSS",
+        "bestFor": "The data framework for indexing and querying your private content; the reference toolkit for document-QA knowledge bases (~51k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~51k★)",
+            "url": "https://github.com/run-llama/llama_index"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "obsidian-skills (kepano)",
+        "homepage": "https://github.com/kepano/obsidian-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Official Obsidian Agent Skills that teach an agent to read/write your Markdown vault, Bases, and Canvas as a knowledge base (~43k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~43k★)",
+            "url": "https://github.com/kepano/obsidian-skills"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Quivr",
+        "homepage": "https://github.com/QuivrHQ/quivr",
+        "pricing": "Free / OSS",
+        "bestFor": "Opinionated RAG 'second brain' you can plug into your apps to store and query your documents (~39k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~39k★)",
+            "url": "https://github.com/QuivrHQ/quivr"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Khoj",
+        "homepage": "https://github.com/khoj-ai/khoj",
+        "pricing": "Free / OSS",
+        "bestFor": "Self-hostable AI second brain that searches and chats across your notes, docs, and PDFs (~36k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~36k★)",
+            "url": "https://github.com/khoj-ai/khoj"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Haystack (deepset)",
+        "homepage": "https://github.com/deepset-ai/haystack",
+        "pricing": "Free / OSS",
+        "bestFor": "deepset's modular, production-grade pipelines for search and RAG over your knowledge base (~26k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~26k★)",
+            "url": "https://github.com/deepset-ai/haystack"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "claude-obsidian (AgriciDaniel)",
+        "homepage": "https://github.com/AgriciDaniel/claude-obsidian",
+        "pricing": "Free / OSS",
+        "bestFor": "Self-organizing second-brain skill set: drop any source and Claude reads, links, and files it into one connected Markdown knowledge graph (~9.9k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~9.9k★)",
+            "url": "https://github.com/AgriciDaniel/claude-obsidian"
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "name": "obsidian-second-brain (eugeniughelbur)",
+        "homepage": "https://github.com/eugeniughelbur/obsidian-second-brain",
+        "pricing": "Free / OSS",
+        "bestFor": "Cross-CLI skill turning a vault into an AI-first knowledge base with hybrid semantic search and self-maintaining notes (~3.5k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~3.5k★)",
+            "url": "https://github.com/eugeniughelbur/obsidian-second-brain"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Category is contaminated by vendor blogs that rank their own product #1 (e.g. CustomGPT.ai, Chitika) — those are weighted down in the app track. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag, so a hugely-adopted RAG repo outranks a niche skill. It mixes the notable open-source RAG/knowledge-base frameworks (LangChain, Dify, RAGFlow, AnythingLLM, LlamaIndex, Quivr, Khoj, Haystack) with genuine Agent Skills for a personal knowledge base (kepano's official Obsidian skills and the Obsidian second-brain skill family). Star counts verified via the GitHub API (Jul 2026)."
+}

@@ -1,0 +1,384 @@
+{
+  "slug": "coding",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Claude Code",
+        "homepage": "https://www.claude.com/product/claude-code",
+        "pricing": "Paid (~$20-200/mo via Claude plans)",
+        "bestFor": "Terminal-first agentic coding on large repos; Reddit's top pick for hard repository work, with the deepest plugin/skills ecosystem.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (Reddit)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-coding-tools-on-reddit/"
+          },
+          {
+            "name": "Faros",
+            "url": "https://www.faros.ai/blog/best-ai-coding-agents-2026"
+          },
+          {
+            "name": "ValueAdd VC",
+            "url": "https://valueaddvc.com/blog/ai-coding-tools-ranked-2026-cursor-copilot-windsurf-devin-and-claude-code-compared"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Cursor",
+        "homepage": "https://cursor.com",
+        "pricing": "Freemium (Pro ~$20/mo)",
+        "bestFor": "The gold-standard AI IDE — most broadly adopted for daily editor-led development among individual devs and small teams.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (Reddit)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-coding-tools-on-reddit/"
+          },
+          {
+            "name": "Kanerika",
+            "url": "https://kanerika.com/blogs/github-copilot-vs-claude-code-vs-cursor-vs-windsurf/"
+          },
+          {
+            "name": "TLDL",
+            "url": "https://www.tldl.io/resources/ai-coding-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "GitHub Copilot",
+        "homepage": "https://github.com/features/copilot",
+        "pricing": "Freemium (~$10/mo)",
+        "bestFor": "Safest enterprise default with the broadest editor coverage and native GitHub workflow integration.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (Reddit)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-coding-tools-on-reddit/"
+          },
+          {
+            "name": "Faros",
+            "url": "https://www.faros.ai/blog/best-ai-coding-agents-2026"
+          },
+          {
+            "name": "Developers Digest",
+            "url": "https://www.developersdigest.tech/blog/ai-coding-tools-pricing-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "OpenAI Codex",
+        "homepage": "https://openai.com/codex",
+        "pricing": "Paid (via ChatGPT/API plans)",
+        "bestFor": "The strongest GPT-native agent (CLI + cloud), good for delegated tasks with auto-test loops.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Pinggy",
+            "url": "https://pinggy.io/blog/top_cli_based_ai_coding_agents/"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-ai-coding-agents"
+          },
+          {
+            "name": "Context Studios",
+            "url": "https://www.contextstudios.ai/guides/best-ai-coding-agents-2026"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Windsurf (Devin Desktop)",
+        "homepage": "https://windsurf.com",
+        "pricing": "Freemium (~$15/mo)",
+        "bestFor": "Clean agent-UX editor at a lower price point; rebranded under Devin/Cognition in mid-2026.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "ValueAdd VC",
+            "url": "https://valueaddvc.com/blog/ai-coding-tools-ranked-2026-cursor-copilot-windsurf-devin-and-claude-code-compared"
+          },
+          {
+            "name": "Shareuhack",
+            "url": "https://www.shareuhack.com/en/posts/cursor-vs-claude-code-vs-windsurf-2026"
+          },
+          {
+            "name": "Kanerika",
+            "url": "https://kanerika.com/blogs/github-copilot-vs-claude-code-vs-cursor-vs-windsurf/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Devin (Cognition)",
+        "homepage": "https://devin.ai",
+        "pricing": "Paid (from ~$20/mo)",
+        "bestFor": "The purest autonomous agent — delegate well-scoped tasks to parallel cloud VMs that open PRs when done.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (Reddit)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-coding-tools-on-reddit/"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-ai-coding-agents"
+          },
+          {
+            "name": "ValueAdd VC",
+            "url": "https://valueaddvc.com/blog/ai-coding-tools-ranked-2026-cursor-copilot-windsurf-devin-and-claude-code-compared"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Gemini CLI",
+        "homepage": "https://github.com/google-gemini/gemini-cli",
+        "pricing": "Freemium (generous free tier)",
+        "bestFor": "Strong large-repo ingestion with the most generous free tier; a solid no-cost CLI agent entry point.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Pinggy",
+            "url": "https://pinggy.io/blog/top_cli_based_ai_coding_agents/"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-ai-coding-agents"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Superpowers",
+        "homepage": "https://github.com/obra/superpowers",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized leader of the Claude Code skills ecosystem (~260k★): composable SKILL.md skills chaining brainstorming, planning, subagent-driven TDD and code review.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~260k★)",
+            "url": "https://github.com/obra/superpowers"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-claude-code-skills"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "OpenCode",
+        "homepage": "https://github.com/sst/opencode",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred open-source coding agent (~189k★): terminal-native, editor-agnostic, 75+ model providers — the leading OSS alternative to Claude Code.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~189k★)",
+            "url": "https://github.com/sst/opencode"
+          },
+          {
+            "name": "Morphllm (ranked by stars)",
+            "url": "https://www.morphllm.com/ai-coding-assistant-open-source"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Anthropic Skills (official)",
+        "homepage": "https://github.com/anthropics/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Anthropic's official SKILL.md skill library (~164k★) — production-grade skills like webapp testing, MCP-server building and document editing that any agent can load.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~164k★)",
+            "url": "https://github.com/anthropics/skills"
+          },
+          {
+            "name": "Claude Code Docs",
+            "url": "https://code.claude.com/docs/en/skills"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "awesome-claude-skills",
+        "homepage": "https://github.com/ComposioHQ/awesome-claude-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred curated directory of Agent Skills (~70k★): one place to discover and install community SKILL.md skills for coding and beyond.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~70k★)",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Cline",
+        "homepage": "https://github.com/cline/cline",
+        "pricing": "Free / OSS",
+        "bestFor": "The most widely installed open-source coding agent (~65k★, 5M+ installs): an autonomous plan/act agent in VS Code with human-in-the-loop control.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~65k★)",
+            "url": "https://github.com/cline/cline"
+          },
+          {
+            "name": "Frontman (OSS ranking)",
+            "url": "https://frontman.sh/blog/best-open-source-ai-coding-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "goose",
+        "homepage": "https://github.com/block/goose",
+        "pricing": "Free / OSS",
+        "bestFor": "Block's open-source on-machine agent (~52k★): a general-purpose local coding agent that runs tasks end-to-end via any LLM and MCP extensions.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~51.6k★)",
+            "url": "https://github.com/block/goose"
+          },
+          {
+            "name": "Pinggy",
+            "url": "https://pinggy.io/blog/best_open_source_cli_coding_agents/"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Aider",
+        "homepage": "https://github.com/Aider-AI/aider",
+        "pricing": "Free / OSS",
+        "bestFor": "The most mature, battle-tested terminal pair-programmer (~47k★, 4M+ installs): deep Git integration with auto-commits.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~47.7k★)",
+            "url": "https://github.com/Aider-AI/aider"
+          },
+          {
+            "name": "Morphllm (ranked by stars)",
+            "url": "https://www.morphllm.com/ai-coding-assistant-open-source"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Continue",
+        "homepage": "https://github.com/continuedev/continue",
+        "pricing": "Free / OSS",
+        "bestFor": "Popular open-source autopilot (~35k★) for VS Code and JetBrains, letting teams build and share custom AI code assistants and rules.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~35k★)",
+            "url": "https://github.com/continuedev/continue"
+          },
+          {
+            "name": "Frontman (OSS ranking)",
+            "url": "https://frontman.sh/blog/best-open-source-ai-coding-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Vercel Agent Skills",
+        "homepage": "https://github.com/vercel-labs/agent-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Vercel's official SKILL.md collection (~29k★): React/Next.js performance and composition best-practices plus project auditing and instant deploys.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~29k★)",
+            "url": "https://github.com/vercel-labs/agent-skills"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-claude-code-skills"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "agentskills.io (open standard + registry)",
+        "homepage": "https://agentskills.io",
+        "pricing": "Free / OSS",
+        "bestFor": "The open Agent Skills spec and directory (~23k★) — discover SKILL.md skills that work across Claude Code, Codex, Gemini CLI, Cursor and more.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~23k★)",
+            "url": "https://github.com/agentskills/agentskills"
+          },
+          {
+            "name": "agentskills.io",
+            "url": "https://agentskills.io"
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "name": "Trail of Bits Skills",
+        "homepage": "https://github.com/trailofbits/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Security-focused SKILL.md skills from a top audit firm (~6k★) — CodeQL and Semgrep vulnerability detection wired into the agent's workflow. Niche but high-signal.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~6.2k★)",
+            "url": "https://github.com/trailofbits/skills"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-claude-code-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Rich, high-consensus category with a genuine Agent Skill ecosystem. App track reflects settled 2026 developer consensus (Claude Code / Cursor / Copilot lead; Devin/Windsurf for autonomy). The skill track now ranks genuine SKILL.md skills AND notable open-source coding-agent repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only — NOT a rank determinant. This fixes the prior bug where all skills were forced above all repos regardless of quality (e.g. Trail of Bits ranked above agentskills.io): now Superpowers (~260k★ skill) leads, but hugely-adopted repos like OpenCode (~189k★) and Cline (~65k★) correctly outrank smaller skills, and agentskills.io (~23k★, high) sits above Trail of Bits (~6k★, medium). Confidence is consistent with rank (high→medium). Roo Code was excluded as its main repo is archived; Kilo Code is a live alternative not shown to keep the list focused. Previous MCP-server entries (Context7, GitHub, Playwright MCP) remain out of scope for this track."
+}

@@ -1,0 +1,301 @@
+{
+  "slug": "presentation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Gamma",
+        "homepage": "https://gamma.app",
+        "pricing": "Freemium (paid from ~$10/mo)",
+        "bestFor": "The fastest path to a polished first draft — a finished, web-style deck in under 90 seconds with strong visual consistency.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lindy",
+            "url": "https://www.lindy.ai/blog/best-ai-presentation-maker"
+          },
+          {
+            "name": "StoryChief",
+            "url": "https://storychief.io/blog/best-ai-presentation-maker"
+          },
+          {
+            "name": "Plus AI",
+            "url": "https://plusai.com/blog/best-ai-presentation-makers/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Plus AI",
+        "homepage": "https://plusai.com",
+        "pricing": "Paid (~$15/mo)",
+        "bestFor": "Professional users working inside Google Slides and PowerPoint — generate, rewrite and reformat slides natively.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lindy",
+            "url": "https://www.lindy.ai/blog/best-ai-presentation-maker"
+          },
+          {
+            "name": "StoryChief",
+            "url": "https://storychief.io/blog/best-ai-presentation-maker"
+          },
+          {
+            "name": "SlidesAI",
+            "url": "https://www.slidesai.io/blog/best-ai-presentation-makers"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Canva",
+        "homepage": "https://www.canva.com",
+        "pricing": "Freemium (paid from ~$15/mo)",
+        "bestFor": "Design polish with minimal effort — AI-assisted layouts and templates for visually clean, professional slides.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SlidesAI",
+            "url": "https://www.slidesai.io/blog/best-ai-presentation-makers"
+          },
+          {
+            "name": "StoryChief",
+            "url": "https://storychief.io/blog/best-ai-presentation-maker"
+          },
+          {
+            "name": "SlideEgg",
+            "url": "https://www.slideegg.com/blog/industry-information/best-ai-presentation-makers-in-2026-honest-comparison/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Microsoft Copilot for PowerPoint",
+        "homepage": "https://www.microsoft.com/microsoft-365/copilot",
+        "pricing": "Paid (Microsoft 365 Copilot add-on ~$30/user/mo)",
+        "bestFor": "Teams living in PowerPoint who want AI generation, redesign suggestions and Agent Mode inside the world's most-used deck tool.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "BuildMVPfast",
+            "url": "https://www.buildmvpfast.com/blog/best-ai-presentation-tools-2026"
+          },
+          {
+            "name": "SlideEgg",
+            "url": "https://www.slideegg.com/blog/industry-information/best-ai-presentation-makers-in-2026-honest-comparison/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "SlidesAI",
+        "homepage": "https://www.slidesai.io",
+        "pricing": "Freemium (paid from ~$10/mo)",
+        "bestFor": "Turning raw text or a script into a full deck — outlines, visuals and speaker notes — inside Google Slides.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SlidesAI",
+            "url": "https://www.slidesai.io/blog/best-ai-presentation-makers"
+          },
+          {
+            "name": "StoryChief",
+            "url": "https://storychief.io/blog/best-ai-presentation-maker"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Prezent.ai",
+        "homepage": "https://www.prezent.ai",
+        "pricing": "Paid (enterprise, custom pricing)",
+        "bestFor": "Enterprise teams producing on-brand investor decks and business reviews without leaning on designers.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SlidesAI",
+            "url": "https://www.slidesai.io/blog/best-ai-presentation-makers"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "reveal.js",
+        "homepage": "https://github.com/hakimel/reveal.js",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto standard open-source HTML presentation framework (~72k stars) — Markdown authoring, PDF export, speaker notes, LaTeX and auto-animate. The most-adopted tool in the entire category.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub hakimel/reveal.js — 72k★",
+            "url": "https://github.com/hakimel/reveal.js"
+          },
+          {
+            "name": "reveal.js site",
+            "url": "https://revealjs.com/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Slidev",
+        "homepage": "https://github.com/slidevjs/slidev",
+        "pricing": "Free / OSS",
+        "bestFor": "The modern developer favorite (~47.8k stars): Markdown-driven decks powered by Vite/Vue 3 with live coding, Mermaid, KaTeX and PPTX/PDF/PNG export. Also ships its own official Agent Skill (see below).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub slidevjs/slidev — 47.8k★",
+            "url": "https://github.com/slidevjs/slidev"
+          },
+          {
+            "name": "Slidev site",
+            "url": "https://sli.dev/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "impress.js",
+        "homepage": "https://github.com/impress/impress.js",
+        "pricing": "Free / OSS",
+        "bestFor": "Prezi-style CSS3 3D and zoom transitions with full HTML/CSS/JS control (~38.2k stars). Very high adoption, though less actively maintained than reveal.js and Slidev.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub impress/impress.js — 38.2k★",
+            "url": "https://github.com/impress/impress.js"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "pptx (Anthropic official skill)",
+        "homepage": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+        "pricing": "Free / OSS",
+        "bestFor": "Anthropic's first-party SKILL.md for building, reading and editing real .pptx/.potx files — HTML-to-PPTX generation plus raw OOXML editing. The strongest skill in the category and the one that produces genuinely editable PowerPoint; lives in the 163.9k-star anthropics/skills repo.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub anthropics/skills — official (163.9k★)",
+            "url": "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "remark",
+        "homepage": "https://github.com/gnab/remark",
+        "pricing": "Free / OSS",
+        "bestFor": "A simple in-browser, Markdown-driven slideshow (~13k stars) for people comfortable with HTML/CSS. A long-standing lightweight option.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub gnab/remark — 13k★",
+            "url": "https://github.com/gnab/remark"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Spectacle",
+        "homepage": "https://github.com/FormidableLabs/spectacle",
+        "pricing": "Free / OSS",
+        "bestFor": "A React/JSX-based presentation library (~10.1k stars) from Formidable Labs, strong for live code demos and the React ecosystem; actively maintained.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub FormidableLabs/spectacle — 10.1k★",
+            "url": "https://github.com/FormidableLabs/spectacle"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "python-pptx",
+        "homepage": "https://github.com/scanny/python-pptx",
+        "pricing": "Free / OSS",
+        "bestFor": "The foundational Python library for programmatically generating and reading .pptx (~3.5k stars). Star count is modest but real-world adoption is enormous — it is the engine the Anthropic pptx skill and most PPTX tooling depend on, so it ranks above higher-starred JS tools on adoption depth.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub scanny/python-pptx — 3.5k★",
+            "url": "https://github.com/scanny/python-pptx"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Marp (marp-cli)",
+        "homepage": "https://github.com/marp-team/marp-cli",
+        "pricing": "Free / OSS",
+        "bestFor": "A mature Markdown-to-slides ecosystem (~3.7k stars for the CLI, plus a popular VS Code extension) exporting HTML/PDF/PPTX. Lower star count than the leaders but a well-adopted Markdown-native toolchain.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub marp-team/marp-cli — 3.7k★",
+            "url": "https://github.com/marp-team/marp-cli"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Slidev official skill",
+        "homepage": "https://github.com/slidevjs/slidev/tree/main/skills/slidev",
+        "pricing": "Free / OSS",
+        "bestFor": "A first-party Agent Skill (SKILL.md) shipped inside the Slidev repo that teaches an agent Slidev syntax, animations, diagrams, themes and export. Official skill from a 47.8k-star project; adoption of the skill itself is still new, hence medium.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub slidevjs/slidev — official skill (47.8k★ repo)",
+            "url": "https://github.com/slidevjs/slidev/tree/main/skills/slidev"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "academic-pptx-skill (Gabberflast)",
+        "homepage": "https://github.com/Gabberflast/academic-pptx-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "A community SKILL.md (~716 stars) that layers academic-deck discipline (action titles, situation-complication-resolution, citation standards) on top of Anthropic's pptx skill. Well-scoped complement rather than a standalone generator.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub Gabberflast/academic-pptx-skill — 716★",
+            "url": "https://github.com/Gabberflast/academic-pptx-skill"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, official status) rather than by form factor — 'kind' is a tag only. It now mixes notable open-source repos and genuine SKILL.md Agent Skills. reveal.js leads (~72k stars) as the unambiguous open-source presentation leader, with Slidev and impress.js close behind. Anthropic's official pptx skill ranks 4th and is the top skill: unlike the JS frameworks it produces genuinely editable .pptx files, built on python-pptx (7th). Slidev also ships its own official skill. All stars verified via the GitHub API. No MCP servers; the prior MCP entries (Office-PowerPoint-MCP-Server, SlideSpeak/SlidesGPT MCP) were removed as out of scope."
+}

@@ -1,0 +1,312 @@
+{
+  "slug": "architecture-diagram",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Eraser (DiagramGPT)",
+        "homepage": "https://www.eraser.io",
+        "pricing": "Freemium (paid from ~$10/user/mo)",
+        "bestFor": "The top pick for technical diagrams — architecture, system design, ERDs and sequence flows generated from a text description.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Dupple tested 7",
+            "url": "https://dupple.com/learn/best-ai-diagram-tools"
+          },
+          {
+            "name": "Morphllm 10 tools",
+            "url": "https://www.morphllm.com/ai-architecture-diagram-generator"
+          },
+          {
+            "name": "AI Diagram Maker guide",
+            "url": "https://www.aidiagrammaker.com/blog/7-best-ai-diagram-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Mermaid Chart",
+        "homepage": "https://www.mermaidchart.com",
+        "pricing": "Freemium (paid from ~$8/mo)",
+        "bestFor": "AI-generated diagram-as-code you can version-control, with the widest integration support of any option.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Dupple tested 7",
+            "url": "https://dupple.com/learn/best-ai-diagram-tools"
+          },
+          {
+            "name": "Toolradar guide",
+            "url": "https://toolradar.com/guides/best-ai-diagram-tools"
+          },
+          {
+            "name": "ScreenApp UML list",
+            "url": "https://embed.screenapp.io/blog/best-ai-diagram-maker"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Lucidchart",
+        "homepage": "https://www.lucidchart.com",
+        "pricing": "Freemium (paid from ~$9/mo)",
+        "bestFor": "Broadest diagram-type coverage on an editable, collaborative canvas — strongest for enterprise, though more template- than AI-driven.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Dupple tested 7",
+            "url": "https://dupple.com/learn/best-ai-diagram-tools"
+          },
+          {
+            "name": "Toolradar guide",
+            "url": "https://toolradar.com/guides/best-ai-diagram-tools"
+          },
+          {
+            "name": "ConceptViz comparison",
+            "url": "https://conceptviz.app/blog/best-ai-diagram-generators-guide"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Whimsical AI",
+        "homepage": "https://whimsical.com",
+        "pricing": "Freemium (paid from ~$10/mo)",
+        "bestFor": "Fast, beautiful flowcharts and mind maps — the speed-and-aesthetics winner for lighter-weight diagramming.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Toolradar guide",
+            "url": "https://toolradar.com/guides/best-ai-diagram-tools"
+          },
+          {
+            "name": "ConceptViz comparison",
+            "url": "https://conceptviz.app/blog/best-ai-diagram-generators-guide"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Miro AI",
+        "homepage": "https://miro.com",
+        "pricing": "Freemium (paid from ~$8/mo)",
+        "bestFor": "Collaborative design sessions on an infinite canvas, best when a team is diagramming together in real time.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Dupple tested 7",
+            "url": "https://dupple.com/learn/best-ai-diagram-tools"
+          },
+          {
+            "name": "Morphllm 10 tools",
+            "url": "https://www.morphllm.com/ai-architecture-diagram-generator"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Napkin AI",
+        "homepage": "https://www.napkin.ai",
+        "pricing": "Freemium",
+        "bestFor": "Turning written text into clean presentation-ready visuals rather than rigorous engineering diagrams.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Dupple tested 7",
+            "url": "https://dupple.com/learn/best-ai-diagram-tools"
+          },
+          {
+            "name": "Toolradar guide",
+            "url": "https://toolradar.com/guides/best-ai-diagram-tools"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "InfraSketch",
+        "homepage": "https://infrasketch.net",
+        "pricing": "Freemium (paid, custom)",
+        "bestFor": "Purpose-built for software architecture, using Claude to turn system requirements into complete architecture diagrams.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "InfraSketch side-by-side",
+            "url": "https://infrasketch.net/blog/best-ai-diagram-tools-2026"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Mermaid",
+        "homepage": "https://github.com/mermaid-js/mermaid",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto text-to-diagram standard (~89.4k★) — natively rendered in GitHub/GitLab Markdown, making it the default diagram-as-code format agents produce for architecture, flow and sequence diagrams.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — mermaid-js/mermaid (~89.4k★)",
+            "url": "https://github.com/mermaid-js/mermaid"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Excalidraw",
+        "homepage": "https://github.com/excalidraw/excalidraw",
+        "pricing": "Free / OSS",
+        "bestFor": "The dominant open-source virtual whiteboard (~128.3k★) — hand-drawn aesthetic, hugely used for freeform architecture sketches and system diagrams.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — excalidraw/excalidraw (~128.3k★)",
+            "url": "https://github.com/excalidraw/excalidraw"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Diagrams (mingrammer)",
+        "homepage": "https://github.com/mingrammer/diagrams",
+        "pricing": "Free / OSS",
+        "bestFor": "The leading diagram-as-code library for cloud/system architecture (~42.5k★) — draw AWS/GCP/Azure/Kubernetes architecture from Python.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — mingrammer/diagrams (~42.5k★)",
+            "url": "https://github.com/mingrammer/diagrams"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "D2",
+        "homepage": "https://github.com/terrastruct/d2",
+        "pricing": "Free / OSS",
+        "bestFor": "Fast-rising modern diagram scripting language (~24.8k★) — cleaner syntax than PlantUML with strong automatic layout.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — terrastruct/d2 (~24.8k★)",
+            "url": "https://github.com/terrastruct/d2"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "tldraw",
+        "homepage": "https://github.com/tldraw/tldraw",
+        "pricing": "Free / OSS",
+        "bestFor": "Infinite-canvas whiteboard SDK (~49.2k★) — the toolkit developers build collaborative diagramming apps on.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — tldraw/tldraw (~49.2k★)",
+            "url": "https://github.com/tldraw/tldraw"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "PlantUML",
+        "homepage": "https://github.com/plantuml/plantuml",
+        "pricing": "Free / OSS",
+        "bestFor": "The long-standing text-to-UML workhorse (~13.2k★) — most complete UML coverage, ubiquitous in enterprise toolchains despite dated visuals.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — plantuml/plantuml (~13.2k★)",
+            "url": "https://github.com/plantuml/plantuml"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "C4-PlantUML",
+        "homepage": "https://github.com/plantuml-stdlib/C4-PlantUML",
+        "pricing": "Free / OSS",
+        "bestFor": "The standard way to render C4-model software architecture diagrams as code (~7.4k★) — the go-to for C4 + text.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — plantuml-stdlib/C4-PlantUML (~7.4k★)",
+            "url": "https://github.com/plantuml-stdlib/C4-PlantUML"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "draw.io (drawio)",
+        "homepage": "https://github.com/jgraph/drawio",
+        "pricing": "Free / OSS",
+        "bestFor": "The client-side GUI diagram editor behind diagrams.net (~7k★ source repo, but product usage is enormous) — broad diagram-type coverage with no lock-in.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — jgraph/drawio (~7k★)",
+            "url": "https://github.com/jgraph/drawio"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Mermaid Diagrams (softaworks agent-toolkit)",
+        "homepage": "https://github.com/softaworks/agent-toolkit",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-adopted diagram Claude Code skill (~2.2k★, whole toolkit) — a mermaid-diagrams SKILL.md for flowcharts, sequence and architecture diagrams.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — softaworks/agent-toolkit (~2.2k★)",
+            "url": "https://github.com/softaworks/agent-toolkit"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "Mermaid Skill (Agents365-ai)",
+        "homepage": "https://github.com/Agents365-ai/mermaid-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "The most complete standalone Mermaid skill (~146★) — natural language to validated .mmd with 11+ diagram types and mmdc/Kroki rendering to PNG/SVG/PDF.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — Agents365-ai/mermaid-skill (~146★)",
+            "url": "https://github.com/Agents365-ai/mermaid-skill"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS diagramming tools lead as kind:repo — Mermaid is placed #1 as the de-facto diagram-as-code / architecture standard (natively rendered on GitHub and what agents emit), ahead of the higher-starred but freeform Excalidraw whiteboard — followed by the diagram-as-code leaders (Diagrams, D2, PlantUML, C4-PlantUML, draw.io). Genuine diagram Claude skills are a young, entirely Mermaid-centric space topping out in the low thousands of stars, so softaworks' toolkit and the standalone Agents365 skill rank below the major tools. Removed all MCP-server entries (Mermaid MCP, Claude Mermaid, Whimsical MCP). Star counts verified live 2026-07-24."
+}

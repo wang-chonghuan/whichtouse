@@ -1,0 +1,344 @@
+{
+  "slug": "bookkeeping",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "QuickBooks Online",
+        "homepage": "https://quickbooks.intuit.com",
+        "pricing": "Paid (~$35-235/mo)",
+        "bestFor": "Default choice for small businesses that work with a CPA, with mature AI transaction categorization and the widest ecosystem.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Netgain",
+            "url": "https://www.netgain.tech/blog/ai-accounting-software"
+          },
+          {
+            "name": "ServiceAgent",
+            "url": "https://serviceagent.ai/blogs/best-bookkeeping-software-for-small-business/"
+          },
+          {
+            "name": "DualEntry",
+            "url": "https://www.dualentry.com/blog/best-ai-accounting-software"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Xero",
+        "homepage": "https://www.xero.com",
+        "pricing": "Paid (~$20-80/mo)",
+        "bestFor": "Growing teams that want unlimited users, a clean interface, and strong third-party integrations.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Netgain",
+            "url": "https://www.netgain.tech/blog/ai-accounting-software"
+          },
+          {
+            "name": "ServiceAgent",
+            "url": "https://serviceagent.ai/blogs/best-bookkeeping-software-for-small-business/"
+          },
+          {
+            "name": "Truewind",
+            "url": "https://www.truewind.ai/blog/top-5-ai-bookkeeping-software-for-accounting-firms-in-2025"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Puzzle",
+        "homepage": "https://puzzle.io",
+        "pricing": "Freemium",
+        "bestFor": "AI-native accounting for startups on modern fintech stacks (Stripe, Mercury, Ramp), automating up to 98% of transactions.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Puzzle blog",
+            "url": "https://puzzle.io/blog/best-ai-finance-agents"
+          },
+          {
+            "name": "Ramp",
+            "url": "https://ramp.com/blog/ai-accounting-software"
+          },
+          {
+            "name": "Carly",
+            "url": "https://www.usecarly.com/blog/ai-accounting-software/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Digits",
+        "homepage": "https://digits.com",
+        "pricing": "Paid (~$65-250/mo)",
+        "bestFor": "Built-from-scratch AI bookkeeping with 24/7 auto-categorization (reported ~96.5% accuracy) and real-time dashboards.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Finlens",
+            "url": "https://www.finlens.app/blogs/best-ai-bookkeeping-apps-for-small-businesses-in-2026"
+          },
+          {
+            "name": "Ramp",
+            "url": "https://ramp.com/blog/ai-accounting-software"
+          },
+          {
+            "name": "Puzzle vs Digits",
+            "url": "https://puzzle.io/blog/puzzle-vs-digits"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Zeni",
+        "homepage": "https://www.zeni.ai",
+        "pricing": "Paid (~$549+/mo)",
+        "bestFor": "Full-service AI finance for startups, pairing automated bookkeeping with CFO-level insight (cash runway, burn rate) and human support.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Netgain",
+            "url": "https://www.netgain.tech/blog/ai-accounting-software"
+          },
+          {
+            "name": "DualEntry",
+            "url": "https://www.dualentry.com/blog/best-ai-accounting-software"
+          },
+          {
+            "name": "Finlens",
+            "url": "https://www.finlens.app/blogs/best-ai-bookkeeping-apps-for-small-businesses-in-2026"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Ramp",
+        "homepage": "https://ramp.com",
+        "pricing": "Freemium",
+        "bestFor": "Finance ops platform (cards, expenses, bill pay) whose Accounting Agent auto-codes the GL and pushes in-policy spend to your ERP.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Ramp",
+            "url": "https://ramp.com/blog/ai-accounting-software"
+          },
+          {
+            "name": "Puzzle",
+            "url": "https://puzzle.io/blog/best-ai-finance-agents"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Botkeeper",
+        "homepage": "https://www.botkeeper.com",
+        "pricing": "Paid (custom)",
+        "bestFor": "Accounting-firm platform that pairs ML transaction handling with CPA review of the outputs.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Truewind",
+            "url": "https://www.truewind.ai/blog/top-5-ai-bookkeeping-software-for-accounting-firms-in-2025"
+          },
+          {
+            "name": "Hubifi",
+            "url": "https://www.hubifi.com/blog/ai-accounting-software-tools"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "ERPNext",
+        "homepage": "https://github.com/frappe/erpnext",
+        "pricing": "Free / OSS",
+        "bestFor": "Most-adopted open-source accounting/ERP (~37k★) — a full double-entry accounting module (GL, invoicing, tax, reports) positioned as the OSS QuickBooks/SAP alternative for SMBs.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~37.2k★)",
+            "url": "https://github.com/frappe/erpnext"
+          },
+          {
+            "name": "It's FOSS",
+            "url": "https://itsfoss.com/open-source-accounting-software/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Firefly III",
+        "homepage": "https://github.com/firefly-iii/firefly-iii",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized self-hosted double-entry finance manager (~24k★); the go-to open-source app for tracking accounts, budgets and transactions.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~24.1k★)",
+            "url": "https://github.com/firefly-iii/firefly-iii"
+          },
+          {
+            "name": "It's FOSS",
+            "url": "https://itsfoss.com/open-source-accounting-software/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Akaunting",
+        "homepage": "https://github.com/akaunting/akaunting",
+        "pricing": "Free / OSS",
+        "bestFor": "Popular self-hosted web accounting for small businesses and freelancers (~10k★): invoicing, expense tracking, banking and tax management.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~10.0k★)",
+            "url": "https://github.com/akaunting/akaunting"
+          },
+          {
+            "name": "Medevel",
+            "url": "https://medevel.com/12-accounting-open-source/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Invoice Ninja",
+        "homepage": "https://github.com/invoiceninja/invoiceninja",
+        "pricing": "Free / OSS",
+        "bestFor": "Widely used self-hosted invoicing, billing and expense platform (~9.9k★) for freelancers and small businesses.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~9.9k★)",
+            "url": "https://github.com/invoiceninja/invoiceninja"
+          },
+          {
+            "name": "Medevel",
+            "url": "https://medevel.com/12-accounting-open-source/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Ledger",
+        "homepage": "https://github.com/ledger/ledger",
+        "pricing": "Free / OSS",
+        "bestFor": "The original plain-text, command-line double-entry accounting tool (~6k★); the foundation of the plaintext-accounting movement.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~6.0k★)",
+            "url": "https://github.com/ledger/ledger"
+          },
+          {
+            "name": "Plain Text Accounting",
+            "url": "https://plaintextaccounting.org/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Beancount",
+        "homepage": "https://github.com/beancount/beancount",
+        "pricing": "Free / OSS",
+        "bestFor": "Plain-text double-entry accounting language and toolset (~5.8k★, with the Fava web UI); favored by developers who script and automate their books.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~5.8k★)",
+            "url": "https://github.com/beancount/beancount"
+          },
+          {
+            "name": "It's FOSS",
+            "url": "https://itsfoss.com/open-source-accounting-software/"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "hledger",
+        "homepage": "https://github.com/simonmichael/hledger",
+        "pricing": "Free / OSS",
+        "bestFor": "Robust, actively maintained plain-text accounting tool (~4.6k★) — a Ledger-compatible reimplementation with strong CLI, web and reporting.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~4.6k★)",
+            "url": "https://github.com/simonmichael/hledger"
+          },
+          {
+            "name": "hledger.org",
+            "url": "https://hledger.org/"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "GnuCash",
+        "homepage": "https://github.com/Gnucash/gnucash",
+        "pricing": "Free / OSS",
+        "bestFor": "Mature desktop double-entry accounting (~4.3k★) for personal and small-business use, with invoicing, investments and reports.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~4.3k★)",
+            "url": "https://github.com/Gnucash/gnucash"
+          },
+          {
+            "name": "Medevel",
+            "url": "https://medevel.com/12-accounting-open-source/"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Bigcapital",
+        "homepage": "https://github.com/bigcapitalhq/bigcapital",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source accounting and inventory platform (~3.8k★) positioned as a QuickBooks/Xero/Wave alternative with intelligent financial reporting.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~3.8k★)",
+            "url": "https://github.com/bigcapitalhq/bigcapital"
+          },
+          {
+            "name": "Medevel",
+            "url": "https://medevel.com/12-accounting-open-source/"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "App track has strong multi-source consensus. There is no dedicated Agent Skill (SKILL.md) ecosystem for bookkeeping, so the skill track is filled with notable open-source accounting repos (kind:repo) an agent can run or integrate against, ranked strictly by real adoption/reputation (GitHub stars) rather than form factor: ERPNext (~37k★, full accounting/ERP, the OSS QuickBooks analog) leads, followed by Firefly III (~24k★, the recognized self-hosted bookkeeping manager) and the popular business/plaintext accounting tools. maybe-finance (~54k★) was excluded as archived/discontinued; actualbudget was excluded as budgeting rather than bookkeeping; apache/fineract (core banking) is out of scope. MCP servers and vendor API connectors are intentionally excluded from this track."
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "email-outreach",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Instantly",
+        "homepage": "https://instantly.ai",
+        "pricing": "Freemium (paid from ~$37/mo)",
+        "bestFor": "High-volume senders and agencies running unlimited inboxes on a tight budget, with strong deliverability tooling.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-software"
+          },
+          {
+            "name": "Hunter.io",
+            "url": "https://hunter.io/blog/cold-email-software/"
+          },
+          {
+            "name": "Snov.io",
+            "url": "https://snov.io/blog/cold-email-ai/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Smartlead",
+        "homepage": "https://www.smartlead.ai",
+        "pricing": "Paid (~$39/mo)",
+        "bestFor": "Agency-scale cold email with white-label client portals and unlimited inboxes on every plan.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-software"
+          },
+          {
+            "name": "Amplemarket",
+            "url": "https://www.amplemarket.com/blog/best-cold-email-software-2026"
+          },
+          {
+            "name": "Saleshandy",
+            "url": "https://www.saleshandy.com/blog/cold-email-software/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Lemlist",
+        "homepage": "https://www.lemlist.com",
+        "pricing": "Freemium (paid from ~$39/mo)",
+        "bestFor": "Visual personalization — personalized images, GIFs, and video built into the sequence builder.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-ai-tools"
+          },
+          {
+            "name": "Snov.io",
+            "url": "https://snov.io/blog/cold-email-ai/"
+          },
+          {
+            "name": "Amplemarket",
+            "url": "https://www.amplemarket.com/blog/best-cold-email-software-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Apollo.io",
+        "homepage": "https://www.apollo.io",
+        "pricing": "Freemium (paid from ~$49/mo)",
+        "bestFor": "Combining prospecting and outreach in one tool with a 275M+ contact database.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-software"
+          },
+          {
+            "name": "Snov.io",
+            "url": "https://snov.io/blog/cold-email-ai/"
+          },
+          {
+            "name": "Hunter.io",
+            "url": "https://hunter.io/blog/cold-email-software/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Saleshandy",
+        "homepage": "https://www.saleshandy.com",
+        "pricing": "Paid (~$25/mo)",
+        "bestFor": "High-volume senders scaling AI outreach cheaply, bundling an 852M+ B2B lead database.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Saleshandy",
+            "url": "https://www.saleshandy.com/blog/cold-email-software/"
+          },
+          {
+            "name": "Snov.io",
+            "url": "https://snov.io/blog/cold-email-ai/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Snov.io",
+        "homepage": "https://snov.io",
+        "pricing": "Freemium (paid from ~$30/mo)",
+        "bestFor": "Startups on a tight budget wanting email finder, verifier, drip campaigns, and a CRM in one low-cost plan.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Snov.io",
+            "url": "https://snov.io/blog/cold-email-ai/"
+          },
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-software"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Clay",
+        "homepage": "https://www.clay.com",
+        "pricing": "Freemium (paid from ~$149/mo)",
+        "bestFor": "AI-driven prospect research and data enrichment to power deep personalization at scale.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/cold-email-ai-tools"
+          },
+          {
+            "name": "Amplemarket",
+            "url": "https://www.amplemarket.com/blog/best-cold-email-software-2026"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "marketingskills / cold-email (Corey Haines)",
+        "homepage": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/cold-email",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto leader for the cold-outreach craft: a SKILL.md that writes B2B cold emails and multi-touch follow-up sequences (subject lines, openers, CTAs, cadence). Lives in the most-adopted marketing Agent Skills repo (~41.5k stars). Writes copy — does not send.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub coreyhaines31/marketingskills — 41.5k★",
+            "url": "https://github.com/coreyhaines31/marketingskills/blob/main/skills/cold-email/SKILL.md"
+          },
+          {
+            "name": "TrueFoundry Skills Registry",
+            "url": "https://www.truefoundry.com/skills-registry/skill/coreyhaines31-marketingskills-cold-email"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Mautic",
+        "homepage": "https://github.com/mautic/mautic",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized open-source marketing-automation platform (~10.2k stars); its campaign/drip builder drives multi-step email sequences. Built for nurture more than pure cold prospecting, so it is adapted for outreach rather than cold-native.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub mautic/mautic — 10.2k★",
+            "url": "https://github.com/mautic/mautic"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "listmonk",
+        "homepage": "https://github.com/knadh/listmonk",
+        "pricing": "Free / OSS",
+        "bestFor": "The highest-star self-hosted bulk email / campaign sender (~22.4k stars). Newsletter and opt-in oriented rather than cold-native, so it is a strong sending backend but not a sequencing or copywriting tool — hence medium for cold outreach.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub knadh/listmonk — 22.4k★",
+            "url": "https://github.com/knadh/listmonk"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "BillionMail",
+        "homepage": "https://github.com/Billionmail/BillionMail",
+        "pricing": "Free / OSS",
+        "bestFor": "A self-hosted mail server plus marketing/newsletter stack (~15.4k stars) for sending on your own domain and IP at scale. Sending infrastructure and deliverability, not cold sequencing or copy.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Billionmail/BillionMail — 15.4k★",
+            "url": "https://github.com/Billionmail/BillionMail"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "OpenOutreach",
+        "homepage": "https://github.com/eracle/OpenOutreach",
+        "pricing": "Free / OSS",
+        "bestFor": "A purpose-built self-hosted AI cold-outreach agent (~2.5k stars) that finds ICP leads, resolves work emails and sends personalized outreach from your own mailbox. The closest OSS fit for an end-to-end cold pipeline, but younger and smaller than the platforms above.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub eracle/OpenOutreach — 2.5k★",
+            "url": "https://github.com/eracle/OpenOutreach"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "coldoutboundskills",
+        "homepage": "https://github.com/growthenginenowoslawski/coldoutboundskills",
+        "pricing": "Free / OSS",
+        "bestFor": "A 29-skill cold-outbound SKILL.md bundle (~559 stars) built from 1,000+ real B2B campaigns, covering strategy, deliverability setup, lead-gen, copywriting and campaign optimization — the deepest dedicated cold-outbound skill set after Corey Haines'.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub growthenginenowoslawski/coldoutboundskills — 559★",
+            "url": "https://github.com/growthenginenowoslawski/coldoutboundskills"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "LeadMagic GTM Skills",
+        "homepage": "https://github.com/LeadMagic/gtm-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "The largest open catalog of GTM / cold-outbound SKILL.md playbooks (200+ playbooks covering outbound, enrichment, ICP scoring, ABM), but minimal GitHub adoption so far (~26 stars) — broad on paper, unproven, hence low confidence.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub LeadMagic/gtm-skills — 26★",
+            "url": "https://github.com/LeadMagic/gtm-skills"
+          },
+          {
+            "name": "LeadMagic GTM Skills",
+            "url": "https://leadmagic.io/gtm-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source repos. Corey Haines' marketingskills cold-email skill leads (~41.5k stars) as the recognized cold-outreach craft resource. Honest caveat: the highest-star repos here (listmonk, BillionMail) are newsletter/sending infrastructure, and Mautic is nurture-oriented automation, so none is truly cold-native — they are marked medium for this use case and pair with an app-track cold-email platform for sending. OpenOutreach is the closest purpose-built OSS cold-outreach tool. No MCP servers; the prior MCP entries were removed as out of scope."
+}

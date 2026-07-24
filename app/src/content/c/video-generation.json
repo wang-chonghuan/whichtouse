@@ -1,0 +1,309 @@
+{
+  "slug": "video-generation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Google Veo (Flow)",
+        "homepage": "https://deepmind.google/models/veo/",
+        "pricing": "Paid (Google AI/Gemini plan)",
+        "bestFor": "Best realism plus native audio and 4K. Strongest all-rounder for cinematic and narrative scenes.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "AIViewer compared",
+            "url": "https://aiviewer.ai/guides/best-ai-video-generator-2026-sora-runway-veo-pika-and-kling-compared/"
+          },
+          {
+            "name": "DIYAI compared",
+            "url": "https://diyai.io/ai-tools/video-generation/best-ai-video-tools/"
+          },
+          {
+            "name": "Tech-Insider ranking",
+            "url": "https://tech-insider.org/best-ai-video-generator-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Runway",
+        "homepage": "https://runwayml.com",
+        "pricing": "Freemium",
+        "bestFor": "The creator's studio: camera moves, motion brush, reference control and an editor. Safest default.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "AIViewer compared",
+            "url": "https://aiviewer.ai/guides/best-ai-video-generator-2026-sora-runway-veo-pika-and-kling-compared/"
+          },
+          {
+            "name": "Pixflow best generators",
+            "url": "https://pixflow.net/blog/best-ai-video-generator/"
+          },
+          {
+            "name": "ChatCut 6 best",
+            "url": "https://chatcut.io/blog/best-ai-video-generator-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Kling AI",
+        "homepage": "https://klingai.com",
+        "pricing": "Freemium",
+        "bestFor": "Best value and the community workhorse for TikTok/Reels — photorealistic humans, generous free daily quota.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Pixflow best generators",
+            "url": "https://pixflow.net/blog/best-ai-video-generator/"
+          },
+          {
+            "name": "Tech-Insider ranking",
+            "url": "https://tech-insider.org/best-ai-video-generator-2026/"
+          },
+          {
+            "name": "DIYAI compared",
+            "url": "https://diyai.io/ai-tools/video-generation/best-ai-video-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Pika",
+        "homepage": "https://pika.art",
+        "pricing": "Freemium",
+        "bestFor": "Fast, playful short clips and effects for social. Easy on-ramp for casual creators.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Pixflow best generators",
+            "url": "https://pixflow.net/blog/best-ai-video-generator/"
+          },
+          {
+            "name": "PixVerse 10 best",
+            "url": "https://pixverse.ai/en/blog/best-ai-video-generators"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Luma Dream Machine",
+        "homepage": "https://lumalabs.ai/dream-machine",
+        "pricing": "Freemium",
+        "bestFor": "Smooth motion and image-to-video with a simple interface. Solid mid-tier option.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI compared",
+            "url": "https://diyai.io/ai-tools/video-generation/best-ai-video-tools/"
+          },
+          {
+            "name": "PixVerse 10 best",
+            "url": "https://pixverse.ai/en/blog/best-ai-video-generators"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Seedance (ByteDance)",
+        "homepage": "https://seed.bytedance.com",
+        "pricing": "Paid (usage-based)",
+        "bestFor": "Tops raw model benchmarks (Artificial Analysis) but less packaged as a consumer product.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Pinggy model ranking",
+            "url": "https://pinggy.io/blog/best_video_generation_ai_models/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Open-Sora (hpcaitech)",
+        "homepage": "https://github.com/hpcaitech/Open-Sora",
+        "pricing": "Free / OSS",
+        "bestFor": "The category-defining open-source video generator (~29k GitHub★) — text/image-to-video with performance comparable to HunyuanVideo on VBench.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub hpcaitech/Open-Sora (~29.2k★)",
+            "url": "https://github.com/hpcaitech/Open-Sora"
+          },
+          {
+            "name": "LTX best open-source video models",
+            "url": "https://ltx.io/blog/best-open-source-video-generation-models"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Wan (Alibaba, Wan2.2)",
+        "homepage": "https://github.com/Wan-Video/Wan2.2",
+        "pricing": "Free / OSS",
+        "bestFor": "Alibaba's Wan (~16.8k GitHub★) — widely regarded as the strongest open-weight text-to-video model; 1.3B variant runs on 8GB VRAM.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Wan-Video/Wan2.2 (~16.8k★)",
+            "url": "https://github.com/Wan-Video/Wan2.2"
+          },
+          {
+            "name": "VideoDubber open-source rankings",
+            "url": "https://videodubber.ai/blogs/best-opensource-ai-video-generator-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "HunyuanVideo (Tencent)",
+        "homepage": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+        "pricing": "Free / OSS",
+        "bestFor": "Tencent's 13B open video model (~12.4k GitHub★) — a benchmark reference for open-source cinematic text-to-video quality.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Tencent-Hunyuan/HunyuanVideo (~12.4k★)",
+            "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo"
+          },
+          {
+            "name": "LTX best open-source video models",
+            "url": "https://ltx.io/blog/best-open-source-video-generation-models"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "CogVideo / CogVideoX (Zhipu)",
+        "homepage": "https://github.com/zai-org/CogVideo",
+        "pricing": "Free / OSS",
+        "bestFor": "Apache-2.0 CogVideoX (~12.9k GitHub★) — loads natively in HF Diffusers, strong prompt following and smooth frames; a go-to for developers.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub zai-org/CogVideo (~12.9k★)",
+            "url": "https://github.com/zai-org/CogVideo"
+          },
+          {
+            "name": "VideoDubber open-source rankings",
+            "url": "https://videodubber.ai/blogs/best-opensource-ai-video-generator-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "LTX-Video (Lightricks)",
+        "homepage": "https://github.com/Lightricks/LTX-Video",
+        "pricing": "Free / OSS",
+        "bestFor": "Lightricks' real-time DiT video model (~10.7k GitHub★) — notable for fast, production-capable generation and active releases.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Lightricks/LTX-Video (~10.7k★)",
+            "url": "https://github.com/Lightricks/LTX-Video"
+          },
+          {
+            "name": "LTX best open-source video models",
+            "url": "https://ltx.io/blog/best-open-source-video-generation-models"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Mochi 1 (Genmo)",
+        "homepage": "https://github.com/genmoai/mochi",
+        "pricing": "Free / OSS",
+        "bestFor": "Genmo's Apache-2.0 Mochi 1 (~3.7k GitHub★) — a recognized open text-to-video model, lower adoption than the leaders above.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub genmoai/mochi (~3.7k★)",
+            "url": "https://github.com/genmoai/mochi"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Claude Code Video Toolkit (digitalsamba)",
+        "homepage": "https://github.com/digitalsamba/claude-code-video-toolkit",
+        "pricing": "Free / OSS",
+        "bestFor": "The standout Agent Skill for the space (~1.8k GitHub★): a skills bundle (Remotion, FFmpeg, voiceover, music) that scripts and renders an MP4 from one prompt.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub digitalsamba toolkit (~1.8k★)",
+            "url": "https://github.com/digitalsamba/claude-code-video-toolkit"
+          },
+          {
+            "name": "awesome-claude-code issue #785",
+            "url": "https://github.com/hesreallyhim/awesome-claude-code/issues/785"
+          },
+          {
+            "name": "Toolkit docs site",
+            "url": "https://kapildevv.github.io/-claude-code-video-toolkit/"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "video-generation (ByteDance DeerFlow)",
+        "homepage": "https://github.com/bytedance/deer-flow/tree/main/skills/public/video-generation",
+        "pricing": "Free / OSS",
+        "bestFor": "Structured-JSON prompt → video skill from ByteDance's DeerFlow SuperAgent, with reference-image / first-last-frame guidance.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "deer-flow SKILL.md",
+            "url": "https://github.com/bytedance/deer-flow/blob/main/skills/public/video-generation/SKILL.md"
+          },
+          {
+            "name": "agentskills.so listing",
+            "url": "https://agentskills.so/skills/bytedance-deer-flow-video-generation"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "claude-remotion-skill (haidrrrry)",
+        "homepage": "https://github.com/haidrrrry/claude-remotion-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source skill teaching Claude to create/edit motion-graphics videos with Remotion — B-roll, captions, sound design from a prompt. Thin/single-author.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub claude-remotion-skill",
+            "url": "https://github.com/haidrrrry/claude-remotion-skill"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The open-source video-generation models are the category leaders and correctly outrank the agent skills: Open-Sora (~29k★) is the recognized open leader, followed by Wan, HunyuanVideo, CogVideoX and LTX-Video. Agent Skills (Video Toolkit, DeerFlow, Remotion) orchestrate a render pipeline and sit below the models by adoption. Previous aggregator MCP entries (fal, Replicate, mcp.film) and the thin inference.sh listing were removed; Sora stays omitted (OpenAI shut the Sora app 2026-04-26)."
+}

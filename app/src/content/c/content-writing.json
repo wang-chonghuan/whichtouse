@@ -1,0 +1,252 @@
+{
+  "slug": "content-writing",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "ChatGPT",
+        "homepage": "https://chatgpt.com",
+        "pricing": "Freemium",
+        "bestFor": "The default all-rounder for drafting, rewriting and ideation. Flexible and good enough for most writing.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (reddit consensus)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-writing-tools-on-reddit/"
+          },
+          {
+            "name": "Nightwatch top 5",
+            "url": "https://nightwatch.io/blog/best-ai-writing-tools/"
+          },
+          {
+            "name": "NoGood 11 tools",
+            "url": "https://nogood.io/blog/ai-content-writing-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Claude",
+        "homepage": "https://claude.ai",
+        "pricing": "Freemium",
+        "bestFor": "Nuanced, natural long-form. Reddit's pick for voice-sensitive drafts and research-heavy articles.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (reddit consensus)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-writing-tools-on-reddit/"
+          },
+          {
+            "name": "Nightwatch top 5",
+            "url": "https://nightwatch.io/blog/best-ai-writing-tools/"
+          },
+          {
+            "name": "TheCMO tested",
+            "url": "https://thecmo.com/tools/best-ai-content-writing-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Jasper",
+        "homepage": "https://www.jasper.ai",
+        "pricing": "Paid (~$49/mo)",
+        "bestFor": "Full marketing-content platform: brand voice, templates, team workflows. The go-to for content teams.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Nightwatch top 5",
+            "url": "https://nightwatch.io/blog/best-ai-writing-tools/"
+          },
+          {
+            "name": "WsCube 9 tools",
+            "url": "https://www.wscubetech.com/blog/ai-writing-tools/"
+          },
+          {
+            "name": "TheCMO tested",
+            "url": "https://thecmo.com/tools/best-ai-content-writing-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Writesonic",
+        "homepage": "https://writesonic.com",
+        "pricing": "Freemium",
+        "bestFor": "Jasper-like features (templates, SEO, brand voice) at a lower price. Best value for solo marketers.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Nightwatch top 5",
+            "url": "https://nightwatch.io/blog/best-ai-writing-tools/"
+          },
+          {
+            "name": "NoGood 11 tools",
+            "url": "https://nogood.io/blog/ai-content-writing-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Grammarly",
+        "homepage": "https://www.grammarly.com",
+        "pricing": "Freemium",
+        "bestFor": "Polishing and editing writing you already own — grammar, clarity and tone, not generation.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (reddit consensus)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-writing-tools-on-reddit/"
+          },
+          {
+            "name": "EmailVendorSelection",
+            "url": "https://www.emailvendorselection.com/best-ai-writing-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Copy.ai",
+        "homepage": "https://www.copy.ai",
+        "pricing": "Freemium",
+        "bestFor": "Short-form marketing copy and go-to-market workflows (ads, emails, social).",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "NoGood 11 tools",
+            "url": "https://nogood.io/blog/ai-content-writing-tools/"
+          },
+          {
+            "name": "DIYAI (reddit consensus)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-writing-tools-on-reddit/"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Perplexity",
+        "homepage": "https://www.perplexity.ai",
+        "pricing": "Freemium",
+        "bestFor": "Research-led outlining, source discovery and briefing notes — not final prose.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "DIYAI (reddit consensus)",
+            "url": "https://diyai.io/ai-tools/reddit/best-ai-writing-tools-on-reddit/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Anthropic Document Skills (docx / pdf / pptx / xlsx)",
+        "homepage": "https://github.com/anthropics/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Official Anthropic skills (parent repo ~164k GitHub★) that turn drafts into polished Word, PDF, PowerPoint and Excel deliverables — the document skills Claude ships in production.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "anthropics/skills repo (~164k★, official)",
+            "url": "https://github.com/anthropics/skills/tree/main/skills/docx"
+          },
+          {
+            "name": "Apidog document skills",
+            "url": "https://apidog.com/blog/claude-skills-for-document-processing/"
+          },
+          {
+            "name": "Claude Directory docx",
+            "url": "https://www.claudedirectory.org/skills/docx"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Novel (steven-tey)",
+        "homepage": "https://github.com/steven-tey/novel",
+        "pricing": "Free / OSS",
+        "bestFor": "The best-known open-source AI writing surface (~16k GitHub★): a Notion-style WYSIWYG editor with native AI autocomplete, used as the base for many content tools.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub steven-tey/novel (~16.4k★)",
+            "url": "https://github.com/steven-tey/novel"
+          },
+          {
+            "name": "ai-writing GitHub topic",
+            "url": "https://github.com/topics/ai-writing"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "content-research-writer (ComposioHQ)",
+        "homepage": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+        "pricing": "Free / OSS",
+        "bestFor": "A research → outline → draft → refine writing partner that keeps your voice and adds citations; part of ComposioHQ's widely-referenced awesome-claude-skills collection.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "ComposioHQ awesome-claude-skills",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer"
+          },
+          {
+            "name": "skills.sh listing",
+            "url": "https://skills.sh/composiohq/awesome-claude-skills/content-research-writer"
+          },
+          {
+            "name": "findskills writers roundup",
+            "url": "https://findskills.co/blog/claude-skills-for-writers/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Reor",
+        "homepage": "https://github.com/reorproject/reor",
+        "pricing": "Free / OSS",
+        "bestFor": "Private, local-first AI note-taking / writing app (~8.6k GitHub★). Writing-adjacent (PKM rather than pure copywriting) but a genuinely notable OSS tool.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub reorproject/reor (~8.6k★)",
+            "url": "https://github.com/reorproject/reor"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "seo-content-writer (seo-geo-claude-skills)",
+        "homepage": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Keyword-research-driven SEO article drafting using CORE-EEAT + CITE frameworks. Thin/single-author but a real SKILL.md.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub seo-geo-claude-skills",
+            "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). Content writing has a genuinely thin OSS ecosystem, so this track is deliberately short rather than padded: the official Anthropic document skills (~164k★ parent repo, produce the actual deliverable) and steven-tey/novel (~16k★, the de-facto open AI editor) lead, then ComposioHQ's content-research-writer and Reor (writing-adjacent PKM), with a single-author SEO skill last. Previous SEO MCP-server entries were removed."
+}

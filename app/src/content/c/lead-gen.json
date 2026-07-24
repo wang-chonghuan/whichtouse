@@ -1,0 +1,225 @@
+{
+  "slug": "lead-gen",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Apollo.io",
+        "homepage": "https://www.apollo.io",
+        "pricing": "Freemium",
+        "bestFor": "All-in-one prospecting: 275M+ contact DB + AI email sequencing. SMB / early-stage default.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesforge",
+            "url": "https://www.salesforge.ai/blog/ai-lead-generation-tools"
+          },
+          {
+            "name": "Saleshandy",
+            "url": "https://www.saleshandy.com/blog/ai-lead-generation-tools/"
+          },
+          {
+            "name": "Cleanlist (tested)",
+            "url": "https://www.cleanlist.ai/blog/2026-03-31-best-ai-lead-generation-tools"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Clay",
+        "homepage": "https://www.clay.com",
+        "pricing": "Freemium",
+        "bestFor": "Programmable waterfall enrichment + custom plays. For GTM engineers who want to build.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesmotion",
+            "url": "https://salesmotion.io/blog/best-ai-sdr-tools-2026"
+          },
+          {
+            "name": "StackFYI",
+            "url": "https://www.stackfyi.com/guides/best-ai-sdr-tools-clay-vs-apollo-vs-artisan-vs-11x-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Instantly",
+        "homepage": "https://instantly.ai",
+        "pricing": "Freemium",
+        "bestFor": "Cold email at scale, built for deliverability (inbox rotation, send-rate control).",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Saleshandy",
+            "url": "https://www.saleshandy.com/blog/ai-lead-generation-tools/"
+          },
+          {
+            "name": "Prospeo",
+            "url": "https://prospeo.io/s/lead-generation-ai-tools-2025"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "11x",
+        "homepage": "https://www.11x.ai",
+        "pricing": "Paid (~$5k-10k/mo)",
+        "bestFor": "Fully autonomous outbound (agent 'Alice'). Enterprise, outbound-heavy teams that want volume.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesmotion",
+            "url": "https://salesmotion.io/blog/best-ai-sdr-tools-2026"
+          },
+          {
+            "name": "devcommx 11x alts",
+            "url": "https://www.devcommx.com/blogs/11x-alternatives-ai-sdr-platforms"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Artisan",
+        "homepage": "https://www.artisan.co",
+        "pricing": "Paid (~$850/mo)",
+        "bestFor": "Autonomous AI SDR (agent 'Ava') that finds, researches, writes and sends. More approachable.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Salesmotion",
+            "url": "https://salesmotion.io/blog/best-ai-sdr-tools-2026"
+          },
+          {
+            "name": "StackFYI",
+            "url": "https://www.stackfyi.com/guides/best-ai-sdr-tools-clay-vs-apollo-vs-artisan-vs-11x-2026"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Cleanlist",
+        "homepage": "https://www.cleanlist.ai",
+        "pricing": "Freemium",
+        "bestFor": "AI waterfall enrichment across 15+ providers, 98% email accuracy, no per-seat fees. Data quality.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Cleanlist (tested)",
+            "url": "https://www.cleanlist.ai/blog/2026-03-31-best-ai-lead-generation-tools"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Lead Research Assistant (ComposioHQ)",
+        "homepage": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant",
+        "pricing": "Free / OSS",
+        "bestFor": "Purpose-built Claude Agent Skill that analyzes your product, finds target companies and returns scored leads with outreach strategies — hosted in the ~69.7k★ awesome-claude-skills collection (stars are for the whole collection).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — ComposioHQ/awesome-claude-skills (~69.7k★)",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant"
+          },
+          {
+            "name": "SKILL.md",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/lead-research-assistant/SKILL.md"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Marketing Skills (Corey Haines)",
+        "homepage": "https://github.com/coreyhaines31/marketingskills",
+        "pricing": "Free / OSS",
+        "bestFor": "Very popular, fast-growing marketing skill collection (~41.5k★) — lead-magnets, cold-email and lead-capture tools are a subset of ~45 broader marketing skills.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — coreyhaines31/marketingskills (~41.5k★)",
+            "url": "https://github.com/coreyhaines31/marketingskills"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Google Maps Scraper (omkarcloud)",
+        "homepage": "https://github.com/omkarcloud/google-maps-scraper",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred genuine OSS lead-gen tool (~2.9k★) — extracts business emails, phones and socials from Google Maps with enrichment and an API.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — omkarcloud/google-maps-scraper (~2.9k★)",
+            "url": "https://github.com/omkarcloud/google-maps-scraper"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "OpenOutreach (eracle)",
+        "homepage": "https://github.com/eracle/OpenOutreach",
+        "pricing": "Free / OSS",
+        "bestFor": "Self-hosted agentic, email-first B2B lead-gen agent (~2.5k★) — describe your product and market, and it discovers, qualifies and emails leads.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — eracle/OpenOutreach (~2.5k★)",
+            "url": "https://github.com/eracle/OpenOutreach"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Goose Skills — GTM & Growth (gooseworks-ai)",
+        "homepage": "https://github.com/gooseworks-ai/goose-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Library of Growth/GTM Claude & Codex skills (~1.1k★) spanning lead-gen, ads, social, content, SEO and data scraping.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — gooseworks-ai/goose-skills (~1.1k★)",
+            "url": "https://github.com/gooseworks-ai/goose-skills"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Cold Outbound Skills (GrowthEngineX)",
+        "homepage": "https://github.com/growthenginenowoslawski/coldoutboundskills",
+        "pricing": "Free / OSS",
+        "bestFor": "The most focused, purpose-built cold-email skill set (~559★) — 28 skills covering ICP targeting, list building, Prospeo/Google Maps scraping, copy and deliverability.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — growthenginenowoslawski/coldoutboundskills (~559★)",
+            "url": "https://github.com/growthenginenowoslawski/coldoutboundskills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. This is a genuinely thin OSS/skill space, so it holds only 6 recognizable options and does NOT pad with the many sub-100★ personal skills that exist. The purpose-built Lead Research Assistant (in the ~69.7k★ awesome-claude-skills collection) and Corey Haines' ~41.5k★ marketing skills lead; two real OSS lead-gen tools (google-maps-scraper, OpenOutreach) rank as kind:repo above the smaller focused skills. Removed all MCP-server entries (HubSpot/Salesforce/Smartlead MCP). Star counts verified live 2026-07-24."
+}

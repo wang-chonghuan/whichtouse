@@ -1,0 +1,344 @@
+{
+  "slug": "data-analysis",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "ChatGPT (Advanced Data Analysis)",
+        "homepage": "https://chatgpt.com",
+        "pricing": "Freemium (Plus ~$20/mo)",
+        "bestFor": "The default for ad-hoc analysis on an uploaded file — writes and runs Python, charts, and explains results conversationally.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Domo",
+            "url": "https://www.domo.com/learn/article/ai-data-analysis-tools"
+          },
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/data-analysis-ai"
+          },
+          {
+            "name": "Cybernews",
+            "url": "https://cybernews.com/ai-tools/best-ai-for-data-analysis/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Julius AI",
+        "homepage": "https://julius.ai",
+        "pricing": "Freemium (~$20/mo)",
+        "bestFor": "Conversational analysis of spreadsheets and CSVs with expert-level insights and visualizations in seconds.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/data-analysis-ai"
+          },
+          {
+            "name": "Medium (Dan)",
+            "url": "https://medium.com/@yanlu_dou/10-best-ai-tools-for-spreadsheet-analysis-in-2026-ce7f808245a5"
+          },
+          {
+            "name": "Domo",
+            "url": "https://www.domo.com/learn/article/ai-data-analysis-tools"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Hex",
+        "homepage": "https://hex.tech",
+        "pricing": "Freemium (Paid tiers ~$36/user/mo)",
+        "bestFor": "AI-assisted notebooks for data teams that live in SQL and Python and want reproducible, shareable analysis.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/data-analysis-ai"
+          },
+          {
+            "name": "findanomaly",
+            "url": "https://www.findanomaly.ai/best-ai-tools-data-analysis-visualization-2026"
+          },
+          {
+            "name": "ML Clever",
+            "url": "https://www.mlclever.com/blog/best-ai-for-data-analysis-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Tableau (with Einstein/Pulse AI)",
+        "homepage": "https://www.tableau.com",
+        "pricing": "Paid (~$75/user/mo)",
+        "bestFor": "Enterprise BI dashboards with natural-language querying when your data already lives in a governed warehouse.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Domo",
+            "url": "https://www.domo.com/learn/article/ai-data-analysis-tools"
+          },
+          {
+            "name": "Cybernews",
+            "url": "https://cybernews.com/ai-tools/best-ai-for-data-analysis/"
+          },
+          {
+            "name": "Twelverays",
+            "url": "https://twelverays.agency/blog/best-ai-tools-for-data-analysis"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Microsoft Excel + Copilot",
+        "homepage": "https://www.microsoft.com/microsoft-365/excel",
+        "pricing": "Paid (Copilot ~$30/user/mo add-on)",
+        "bestFor": "Enterprise AI inside Excel itself — formulas, pivots, and trend explanations in plain English without leaving the sheet.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "GPT for Work",
+            "url": "https://gptforwork.com/blog/best-ai-tools-excel-google-sheets"
+          },
+          {
+            "name": "Medium (Dan)",
+            "url": "https://medium.com/@yanlu_dou/10-best-ai-tools-for-spreadsheet-analysis-in-2026-ce7f808245a5"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Quadratic",
+        "homepage": "https://www.quadratichq.com",
+        "pricing": "Freemium (~$15/user/mo)",
+        "bestFor": "An AI-native spreadsheet blending cells, Python, and SQL for analysts who want code and grid together.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "gptforwork/quadratic guide",
+            "url": "https://dev.to/quadraticai/the-ultimate-guide-to-ai-spreadsheet-analysis-4cb5"
+          },
+          {
+            "name": "Medium (Dan)",
+            "url": "https://medium.com/@yanlu_dou/10-best-ai-tools-for-spreadsheet-analysis-in-2026-ce7f808245a5"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Deepnote",
+        "homepage": "https://deepnote.com",
+        "pricing": "Freemium (~$31/user/mo)",
+        "bestFor": "Collaborative AI notebooks for teams standardizing on Python-based analysis and reporting.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/data-analysis-ai"
+          },
+          {
+            "name": "ML Clever",
+            "url": "https://www.mlclever.com/blog/best-ai-for-data-analysis-2026"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "xlsx (Anthropic Agent Skill)",
+        "homepage": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+        "pricing": "Free / OSS",
+        "bestFor": "Anthropic's official spreadsheet skill (from the 163k-star anthropics/skills repo, used in production Claude) — reads, analyzes, and builds Excel with formulas, pivots, and charts; the recognized leader for AI file-based analysis.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "anthropics/skills (163k★)",
+            "url": "https://github.com/anthropics/skills"
+          },
+          {
+            "name": "Agent Skills Library",
+            "url": "https://mcpservers.org/agent-skills/anthropic/xlsx"
+          },
+          {
+            "name": "aibuilderclub",
+            "url": "https://www.aibuilderclub.com/blog/claude-code-for-data-scientists-skills-guide"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "pandas",
+        "homepage": "https://github.com/pandas-dev/pandas",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto foundation of data analysis in Python (49k★) — the DataFrame library that ChatGPT Advanced Data Analysis and nearly every AI analysis tool run under the hood.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (pandas-dev, 49.3k★)",
+            "url": "https://github.com/pandas-dev/pandas"
+          },
+          {
+            "name": "GitHub Topics: data-analysis",
+            "url": "https://github.com/topics/data-analysis"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Apache Superset",
+        "homepage": "https://github.com/apache/superset",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred open-source BI/exploration platform (74k★) — a self-hostable Tableau/Looker alternative for SQL-driven dashboards and ad-hoc data exploration.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (apache/superset, 74k★)",
+            "url": "https://github.com/apache/superset"
+          },
+          {
+            "name": "NocoBase (OSS data tools)",
+            "url": "https://www.nocobase.com/en/blog/open-source-data-apps"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Metabase",
+        "homepage": "https://github.com/metabase/metabase",
+        "pricing": "Free / OSS",
+        "bestFor": "The easiest open-source BI tool to self-host (48k★) — no-SQL question builder plus full SQL for teams that want fast dashboards over their database.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (metabase, 48.3k★)",
+            "url": "https://github.com/metabase/metabase"
+          },
+          {
+            "name": "PostHog (OSS analytics)",
+            "url": "https://posthog.com/blog/best-open-source-analytics-tools"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Project Jupyter (JupyterLab)",
+        "homepage": "https://github.com/jupyterlab/jupyterlab",
+        "pricing": "Free / OSS",
+        "bestFor": "The universal notebook environment where interactive analysis actually happens (15k★, ACM Software System Award project) — Python/R/Julia cells, charts, and reproducible reports.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (jupyterlab, 15.2k★)",
+            "url": "https://github.com/jupyterlab/jupyterlab"
+          },
+          {
+            "name": "NocoBase (OSS data tools)",
+            "url": "https://www.nocobase.com/en/blog/open-source-data-apps"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "K-Dense scientific-agent-skills (EDA)",
+        "homepage": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Automated exploratory-data-analysis and publication-quality visualization skills from the most-starred science skills library (31.6k★, 148 SKILL.md skills).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (K-Dense-AI, 31.6k★)",
+            "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+          },
+          {
+            "name": "aibuilderclub",
+            "url": "https://www.aibuilderclub.com/blog/claude-code-for-data-scientists-skills-guide"
+          },
+          {
+            "name": "FastMCP",
+            "url": "https://fastmcp.me/Skills/Details/165/exploratory-data-analysis"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "PostHog",
+        "homepage": "https://github.com/PostHog/posthog",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source product analytics (37k★) — event data, funnels, session replay, and SQL when your analysis is about how users behave in a product.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (PostHog, 37.3k★)",
+            "url": "https://github.com/PostHog/posthog"
+          },
+          {
+            "name": "PostHog (OSS analytics)",
+            "url": "https://posthog.com/blog/best-open-source-analytics-tools"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "nimrodfisher/data-analytics-skills",
+        "homepage": "https://github.com/nimrodfisher/data-analytics-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "A small, focused community collection of Claude skills for the everyday analytics workflow — cleaning, aggregation, and charting on tabular data. Low star count, so ranked low.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (nimrodfisher)",
+            "url": "https://github.com/nimrodfisher/data-analytics-skills"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "juanlurg/data-science-claude-skills",
+        "homepage": "https://github.com/juanlurg/data-science-claude-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Environment-aware EDA skills (auto-eda, dataset-doctor) that detect your pandas/polars library and SQL dialect. Genuine but niche and low-star, so ranked low.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (juanlurg)",
+            "url": "https://github.com/juanlurg/data-science-claude-skills"
+          },
+          {
+            "name": "aibuilderclub",
+            "url": "https://www.aibuilderclub.com/blog/claude-code-for-data-scientists-skills-guide"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not by form factor; kind (skill|repo) is only a tag. Anthropic's official xlsx skill leads for AI file-based analysis (it is the purpose-built, production-used equivalent of the app track's ChatGPT ADA), followed by the foundational open-source data stack pandas, Superset, Metabase, and Jupyter, then K-Dense's large EDA skill library. PostHog covers product analytics. Small community skill collections (nimrodfisher, juanlurg) are genuine but low-star, so they rank last at low confidence. All entries are real Agent Skills (SKILL.md) or notable open-source repos — no MCP servers. Star counts verified on GitHub. App leaders (ChatGPT, Julius, Hex) recur across most independent lists; several data-analysis ranking sites are vendor/affiliate blogs, so app consensus weights tools appearing across multiple independent sources."
+}

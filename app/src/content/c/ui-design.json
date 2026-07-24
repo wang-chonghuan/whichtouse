@@ -1,0 +1,274 @@
+{
+  "slug": "ui-design",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "v0",
+        "homepage": "https://v0.app",
+        "pricing": "Freemium",
+        "bestFor": "Production React/Next.js components, deploy straight to Vercel. Developer default.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "EPAM (tested)",
+            "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
+          },
+          {
+            "name": "Muzli 2026",
+            "url": "https://muz.li/blog/best-ai-design-tools-for-ui-ux-designers-in-2026/"
+          },
+          {
+            "name": "Komposo Top 8",
+            "url": "https://www.komposo.ai/blog/best-ai-ui-generators-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Lovable",
+        "homepage": "https://lovable.dev",
+        "pricing": "Freemium",
+        "bestFor": "Turn a prompt into a full working MVP app. Best for non-developers.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Banani alternatives",
+            "url": "https://www.banani.co/blog/best-lovable-alternatives"
+          },
+          {
+            "name": "EPAM (tested)",
+            "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
+          },
+          {
+            "name": "Muzli 2026",
+            "url": "https://muz.li/blog/best-ai-design-tools-for-ui-ux-designers-in-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Bolt.new",
+        "homepage": "https://bolt.new",
+        "pricing": "Freemium",
+        "bestFor": "Full-stack apps (frontend + backend + DB) generated in-browser. Full prototypes.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "EPAM (tested)",
+            "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
+          },
+          {
+            "name": "Komposo Top 8",
+            "url": "https://www.komposo.ai/blog/best-ai-ui-generators-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Figma Make",
+        "homepage": "https://www.figma.com/make/",
+        "pricing": "Paid (Figma plan)",
+        "bestFor": "Highest design fidelity if you already live in Figma (reads real frame metadata).",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "EPAM (tested)",
+            "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
+          },
+          {
+            "name": "Banani alternatives",
+            "url": "https://www.banani.co/blog/best-figma-make-ai-alternatives"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Replit Agent",
+        "homepage": "https://replit.com",
+        "pricing": "Freemium",
+        "bestFor": "Build and host an app end-to-end. Most beginner-friendly.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "EPAM (tested)",
+            "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "shadcn/ui",
+        "homepage": "https://github.com/shadcn-ui/ui",
+        "pricing": "Free / OSS",
+        "bestFor": "The dominant modern UI approach (~119.7k★) — copy-paste, own-your-code React components (Radix + Tailwind) that coding agents build most component UIs from.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — shadcn-ui/ui (~119.7k★)",
+            "url": "https://github.com/shadcn-ui/ui"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Tailwind CSS",
+        "homepage": "https://github.com/tailwindlabs/tailwindcss",
+        "pricing": "Free / OSS",
+        "bestFor": "The utility-first CSS framework (~96k★) underpinning shadcn/ui and daisyUI — the de-facto styling layer for modern component work.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — tailwindlabs/tailwindcss (~96k★)",
+            "url": "https://github.com/tailwindlabs/tailwindcss"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Frontend Design (Anthropic official)",
+        "homepage": "https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design/skills/frontend-design",
+        "pricing": "Free / OSS",
+        "bestFor": "Anthropic's official, first-party Claude Code skill for distinctive, intentional UI — deliberate palette, typography and layout over templated defaults; auto-invoked for frontend work.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "Official SKILL.md — anthropics/claude-code",
+            "url": "https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md"
+          },
+          {
+            "name": "Mirror — anthropics/claude-plugins-official (~32.6k★)",
+            "url": "https://github.com/anthropics/claude-plugins-official"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "UI/UX Pro Max",
+        "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "Massively popular all-in-one design-intelligence skill (~109.6k★) — 50+ styles, 161 palettes, 57 font pairings and UX guidelines across 10 stacks (note: an 8-month-old repo whose star surge outpaces its real-world track record).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — nextlevelbuilder/ui-ux-pro-max-skill (~109.6k★)",
+            "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Material UI (MUI)",
+        "homepage": "https://github.com/mui/material-ui",
+        "pricing": "Free / OSS",
+        "bestFor": "The longest-standing React component library (~98.6k★) implementing Google's Material Design — the enterprise default for years.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — mui/material-ui (~98.6k★)",
+            "url": "https://github.com/mui/material-ui"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Ant Design",
+        "homepage": "https://github.com/ant-design/ant-design",
+        "pricing": "Free / OSS",
+        "bestFor": "Enterprise-class React component library (~98.8k★) — comprehensive components, hugely adopted in enterprise and across Asia.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — ant-design/ant-design (~98.8k★)",
+            "url": "https://github.com/ant-design/ant-design"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "daisyUI",
+        "homepage": "https://github.com/saadeghi/daisyui",
+        "pricing": "Free / OSS",
+        "bestFor": "The most popular Tailwind component library (~41.8k★) — semantic class names and themes layered on top of Tailwind.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — saadeghi/daisyui (~41.8k★)",
+            "url": "https://github.com/saadeghi/daisyui"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Chakra UI",
+        "homepage": "https://github.com/chakra-ui/chakra-ui",
+        "pricing": "Free / OSS",
+        "bestFor": "Accessible, composable React component system (~40.5k★) — a popular choice for SaaS product UIs.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — chakra-ui/chakra-ui (~40.5k★)",
+            "url": "https://github.com/chakra-ui/chakra-ui"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Radix UI (Primitives)",
+        "homepage": "https://github.com/radix-ui/primitives",
+        "pricing": "Free / OSS",
+        "bestFor": "Low-level accessible, unstyled React primitives (~19.1k★) — the foundation shadcn/ui is built on.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub — radix-ui/primitives (~19.1k★)",
+            "url": "https://github.com/radix-ui/primitives"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "Awesome Design Skills (bergside)",
+        "homepage": "https://github.com/bergside/awesome-design-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Curated, organically-adopted list (~2k★) of 67 DESIGN.md / SKILL.md files for agentic design work — a directory rather than a single installable skill.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub — bergside/awesome-design-skills (~2k★)",
+            "url": "https://github.com/bergside/awesome-design-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS UI leaders (shadcn/ui, Tailwind, MUI, Ant Design, and the primitives behind them) rank as kind:repo alongside the standout design skills: Anthropic's official first-party frontend-design skill and the very popular UI/UX Pro Max. Note: UI/UX Pro Max (~109.6k★) is real but its star surge on a young repo outpaces its actual track record, so it ranks below shadcn/Tailwind/the official skill rather than at the very top. Two other heavily-starred DESIGN.md collections (VoltAgent/awesome-design-md ~104k) show the same inflation pattern and were left out in favor of the more organic bergside list. Removed all MCP entries (shadcn MCP, Figma Dev Mode MCP, AIDesigner MCP). Star counts verified live 2026-07-24."
+}

@@ -1,0 +1,655 @@
+{
+  "slug": "web-scraping",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Firecrawl",
+        "homepage": "https://www.firecrawl.dev",
+        "pricing": "Freemium (paid from ~$16/mo)",
+        "bestFor": "Turning any URL into clean, LLM-ready Markdown or schema-defined JSON in a single call — the default for RAG and AI pipelines.",
+        "confidence": "high",
+        "badge": "📋",
+        "rankBasis": "Consistently ranks #1–2 across 2026 AI-scraping roundups (Bright Data, ScrapeOps, Apify comparisons); its open-source core is among the most-starred AI scrapers and it is the most-cited 'LLM-ready' scraper in AI-dev and r/webscraping discussion.",
+        "pricingFree": "Free tier: 1,000 credits/mo (2 concurrent requests)",
+        "pricingPaid": "Hobby $16/mo (billed yearly) — 5,000 credits/mo",
+        "features": [
+          "URL → clean Markdown/JSON in one call",
+          "schema-defined structured extraction",
+          "JS rendering & full-site crawling",
+          "LLM/RAG-ready output"
+        ],
+        "pros": [
+          "default choice for AI/RAG pipelines — clean, token-efficient output",
+          "simple API, very fast to integrate",
+          "open-source core plus a managed cloud"
+        ],
+        "cons": [
+          "credits don't roll over; extract/large crawls burn them fast",
+          "can struggle on the hardest anti-bot targets",
+          "costs climb quickly at scale"
+        ],
+        "sources": [
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "ScrapeOps tested",
+            "url": "https://scrapeops.io/web-scraping-playbook/best-ai-web-scraping-tools/"
+          },
+          {
+            "name": "Apify vs Firecrawl",
+            "url": "https://tomba.io/blog/apify-vs-firecrawl"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Bright Data",
+        "homepage": "https://brightdata.com",
+        "pricing": "Paid (usage-based, enterprise)",
+        "bestFor": "Maximum-scale, hard-target scraping via the Unlocker API, Agent Browser and the broadest proxy infrastructure available.",
+        "confidence": "high",
+        "badge": "📋",
+        "rankBasis": "Ranked top-2 for scale and hard-target scraping in nearly every 2026 roundup (its own blog, the DEV 30-tool test, imisofts); operates the industry's largest proxy network and has the strongest enterprise/G2 presence in the category.",
+        "pricingFree": "Free trial + $25–50 credits; 5,000 free Web MCP requests/mo",
+        "pricingPaid": "Pay-as-you-go from ~$1 per 1,000 requests (Unlocker/SERP/Crawl APIs); Web Scraper APIs ~$0.75–1 per 1k records",
+        "features": [
+          "Web Unlocker anti-bot API",
+          "largest residential/proxy network",
+          "Scraper APIs & Agent Browser",
+          "SERP & Crawl APIs"
+        ],
+        "pros": [
+          "unmatched scale and proxy infrastructure for hard targets",
+          "high success rate on heavily-protected sites",
+          "pay-for-success pricing with no monthly commitment"
+        ],
+        "cons": [
+          "complex product catalog and pricing",
+          "overkill and expensive for small jobs",
+          "steeper setup than plug-and-play tools"
+        ],
+        "sources": [
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "DEV 30-tool test",
+            "url": "https://dev.to/nitinfab/best-web-scraping-tools-in-2026-i-tested-30-tools-and-these-are-the-only-ones-worth-using-11l3"
+          },
+          {
+            "name": "imisofts comparison",
+            "url": "https://imisofts.com/blog/best-web-scraping-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Apify",
+        "homepage": "https://apify.com",
+        "pricing": "Freemium (compute-based, ~$0.20-0.30/CU)",
+        "bestFor": "A mature developer platform with 6,000+ prebuilt scrapers (Actors), scheduling and proxy management for complex, custom pipelines.",
+        "confidence": "high",
+        "badge": "📋",
+        "rankBasis": "Top-3 platform in most 2026 developer roundups; its Actor marketplace (6,000+ prebuilt scrapers) is the largest of any scraping platform and it holds strong developer mindshare on G2 and r/webscraping.",
+        "pricingFree": "Free plan: $5 platform credits/mo (no card required)",
+        "pricingPaid": "Starter ~$39/mo — monthly platform credits; compute from ~$0.30/CU",
+        "features": [
+          "6,000+ prebuilt Actors (scrapers)",
+          "scheduling & data storage",
+          "proxy management",
+          "developer SDK/API"
+        ],
+        "pros": [
+          "huge prebuilt scraper marketplace",
+          "flexible, mature developer platform",
+          "handles complex custom pipelines"
+        ],
+        "cons": [
+          "compute-unit billing is hard to predict",
+          "credits expire monthly (no rollover)",
+          "learning curve for non-developers"
+        ],
+        "sources": [
+          {
+            "name": "Apify vs Firecrawl",
+            "url": "https://tomba.io/blog/apify-vs-firecrawl"
+          },
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "imisofts comparison",
+            "url": "https://imisofts.com/blog/best-web-scraping-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Browse AI",
+        "homepage": "https://www.browse.ai",
+        "pricing": "Freemium (paid from ~$19/mo)",
+        "bestFor": "No-code scraping and scheduled change-monitoring of any site for non-technical users.",
+        "confidence": "high",
+        "badge": "📋",
+        "rankBasis": "The most-cited no-code scraper for non-technical users in 2026 roundups (Bright Data, Apify, imisofts); known for point-and-click 'robots' and scheduled change-monitoring, with a solid G2 review base.",
+        "pricingFree": "Free plan: 50 credits/mo, up to 5 robots",
+        "pricingPaid": "Starter/Personal from $19/mo (billed annually) — ~2,000 credits/mo",
+        "features": [
+          "no-code point-and-click robots",
+          "scheduled change monitoring & alerts",
+          "prebuilt task templates",
+          "integrations (Sheets, Zapier, API)"
+        ],
+        "pros": [
+          "genuinely no-code, easy for non-technical users",
+          "strong site-monitoring / change-detection",
+          "large library of prebuilt templates"
+        ],
+        "cons": [
+          "credit model gets expensive at volume",
+          "struggles on complex, heavily-protected sites",
+          "less flexible than code-based tools"
+        ],
+        "sources": [
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "Apify vs Firecrawl",
+            "url": "https://tomba.io/blog/apify-vs-firecrawl"
+          },
+          {
+            "name": "imisofts comparison",
+            "url": "https://imisofts.com/blog/best-web-scraping-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Octoparse",
+        "homepage": "https://www.octoparse.com",
+        "pricing": "Freemium (paid from ~$99/mo)",
+        "bestFor": "A visual, point-and-click desktop tool that handles complex extraction with zero code.",
+        "confidence": "medium",
+        "badge": "📋",
+        "rankBasis": "A long-established visual desktop scraper still listed in 2026 no-code roundups (Bright Data, ScraperAPI free-tools); large historical user base and G2 reviews, though newer AI-native tools have eroded its lead.",
+        "pricingFree": "Free plan (forever): 10 tasks, up to 50,000 rows/mo export",
+        "pricingPaid": "Standard ~$99/mo billed yearly (listed $69–119 depending on source/billing)",
+        "features": [
+          "visual point-and-click desktop workflow",
+          "cloud extraction & scheduling",
+          "auto-detect & site templates",
+          "IP rotation & CAPTCHA handling"
+        ],
+        "pros": [
+          "powerful visual scraping with zero code",
+          "handles complex multi-step extraction",
+          "prebuilt templates for popular sites"
+        ],
+        "cons": [
+          "desktop app with a real learning curve",
+          "pricing is steep and inconsistently listed",
+          "cloud features gated to higher tiers"
+        ],
+        "sources": [
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "ScraperAPI free tools",
+            "url": "https://www.scraperapi.com/web-scraping/tools/free/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Diffbot",
+        "homepage": "https://www.diffbot.com",
+        "pricing": "Paid (from ~$299/mo)",
+        "bestFor": "Enterprise AI extraction that returns structured entities from any page without per-site rules, backed by a knowledge graph.",
+        "confidence": "medium",
+        "badge": "📋",
+        "rankBasis": "The recognized enterprise 'AI extraction + knowledge graph' player, cited in 2026 extraction roundups (Bright Data, Firecrawl); niche but respected, with premium enterprise positioning and steady G2/Capterra coverage.",
+        "pricingFree": "Free plan: 10,000 credits/mo (5 calls/min)",
+        "pricingPaid": "Startup $299/mo — 250,000 credits, full API access",
+        "features": [
+          "automatic AI entity extraction (no per-site rules)",
+          "Knowledge Graph of web entities",
+          "Article/Product/Analyze APIs",
+          "crawl support"
+        ],
+        "pros": [
+          "rule-free structured extraction across any page",
+          "unique knowledge-graph backing",
+          "strong for large-scale entity/data enrichment"
+        ],
+        "cons": [
+          "expensive — entry paid tier starts at $299/mo",
+          "overkill for simple scraping needs",
+          "smaller community than mainstream tools"
+        ],
+        "sources": [
+          {
+            "name": "Bright Data roundup",
+            "url": "https://brightdata.com/blog/ai/best-ai-scraping-tools"
+          },
+          {
+            "name": "Firecrawl extraction list",
+            "url": "https://www.firecrawl.dev/blog/best-web-extraction-tools"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Kadoa",
+        "homepage": "https://www.kadoa.com",
+        "pricing": "Freemium (paid, custom)",
+        "bestFor": "Self-healing AI extraction that adapts to layout changes, aimed at ongoing structured-data feeds.",
+        "confidence": "low",
+        "badge": "📋",
+        "rankBasis": "A newer AI-native entrant with growing but still-limited mindshare; appears in 2026 AI-scraper reviews (Thunderbit, opentools) mainly for its self-healing extraction rather than as a roundup mainstay.",
+        "pricingFree": "Free trial available (free tier limited)",
+        "pricingPaid": "Usage-based Flex plan (custom consumption pricing, no public per-credit rate) — Enterprise custom",
+        "features": [
+          "self-healing AI extraction that adapts to layout changes",
+          "define-what-not-where workflows",
+          "ongoing structured data feeds",
+          "no-code setup"
+        ],
+        "pros": [
+          "self-healing extraction adapts automatically to site changes",
+          "context-based extraction (no rigid selectors)",
+          "good for continuous, monitored data feeds"
+        ],
+        "cons": [
+          "opaque, non-public pricing",
+          "smaller and less-proven than incumbents",
+          "limited independent review coverage"
+        ],
+        "sources": [
+          {
+            "name": "Kadoa honest review",
+            "url": "https://www.kadoa.com/blog/best-ai-web-scrapers-2026"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Crawl4AI",
+        "homepage": "https://github.com/unclecode/crawl4ai",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto king of open-source AI web scraping (~74.8k★) — LLM-friendly crawler turning pages into clean Markdown/JSON for RAG and agent pipelines.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~74.8k★ (unclecode/crawl4ai) — one of the most-starred crawlers ever; hit #1 on GitHub Trending after its mid-2024 launch and is named the top OSS AI-scraping pick alongside Firecrawl in 2026 roundups (Firecrawl, Scrapfly).",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "LLM-ready Markdown (fit_markdown boilerplate stripping)",
+          "async Playwright-based crawling",
+          "structured JSON extraction & RAG chunking",
+          "local-first, no external API calls"
+        ],
+        "pros": [
+          "purpose-built for AI/RAG — clean, token-optimized output",
+          "fully OSS (Apache 2.0), self-host with no per-request cost",
+          "very active, fast-growing community"
+        ],
+        "cons": [
+          "younger project — API churn between releases",
+          "heavier than a plain parser (bundles browser automation)",
+          "overkill for simple static-HTML parsing"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — unclecode/crawl4ai (~74.8k★)",
+            "url": "https://github.com/unclecode/crawl4ai"
+          },
+          {
+            "name": "Firecrawl — best OSS scraping libraries",
+            "url": "https://www.firecrawl.dev/blog/best-open-source-web-scraping-libraries"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Scrapy",
+        "homepage": "https://github.com/scrapy/scrapy",
+        "pricing": "Free / OSS",
+        "bestFor": "The classic, most battle-tested production Python crawling framework (~63.4k★) — unmatched for large, structured crawls at scale.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~63.4k★, maintained by Zyte and estimated to power a large share of production scraping projects; named the production default for large-scale Python crawling in every 2026 roundup (Firecrawl, Scrapfly, Apify).",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "async crawling framework (Twisted)",
+          "middleware, pipelines & request scheduling",
+          "auto-throttle, retries & export feeds",
+          "large plugin ecosystem"
+        ],
+        "pros": [
+          "battle-tested at scale for static-HTML crawls",
+          "complete batteries-included framework, not just a parser",
+          "huge mature community and extensive docs"
+        ],
+        "cons": [
+          "no native JS rendering — needs scrapy-playwright/Splash",
+          "steeper learning curve",
+          "Twisted foundation is at odds with the ecosystem's asyncio shift"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — scrapy/scrapy (~63.4k★)",
+            "url": "https://github.com/scrapy/scrapy"
+          },
+          {
+            "name": "Scrapfly — best OSS web scrapers 2026",
+            "url": "https://scrapfly.io/blog/posts/best-open-source-web-scrapers"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Playwright",
+        "homepage": "https://github.com/microsoft/playwright",
+        "pricing": "Free / OSS",
+        "bestFor": "Microsoft's cross-browser automation (~93k★) — the modern default for scraping JS-heavy, dynamically-rendered sites.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~93k★, backed by Microsoft; in 2026 widely declared the default recommendation for both E2E testing and browser-based scraping of JavaScript-heavy sites (Firecrawl, Scrapfly).",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "drives Chromium, WebKit & Firefox out of the box",
+          "native auto-waiting for elements",
+          "first-class Python/.NET/Java/JS clients",
+          "network interception & proxy config"
+        ],
+        "pros": [
+          "true cross-browser support",
+          "robust auto-waiting reduces flaky selectors",
+          "genuine first-class multi-language support (not just JS)"
+        ],
+        "cons": [
+          "heavy resource footprint (full browser per session)",
+          "an automation/testing tool — no built-in crawl queue/pipeline",
+          "browser-based scraping is slower and costlier at scale"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — microsoft/playwright (~93k★)",
+            "url": "https://github.com/microsoft/playwright"
+          },
+          {
+            "name": "Firecrawl — best OSS scraping libraries",
+            "url": "https://www.firecrawl.dev/blog/best-open-source-web-scraping-libraries"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Puppeteer",
+        "homepage": "https://github.com/puppeteer/puppeteer",
+        "pricing": "Free / OSS",
+        "bestFor": "Google's headless Chrome automation (~95k★) — ubiquitous and extremely mature for browser-driven scraping.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~95k★, maintained by the Chrome team — among the highest star counts in the category; 2026 comparisons still frame it as the right tool for Chrome-only automation despite Playwright's rise.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Chrome/Chromium automation via CDP",
+          "PDF generation & screenshot capture",
+          "headless browser scraping",
+          "lean, Chrome-first install"
+        ],
+        "pros": [
+          "mature, deeply Chrome-aligned API",
+          "leaner than Playwright for Chromium-only work",
+          "excellent for PDF/screenshot/stealth-scraping use cases"
+        ],
+        "cons": [
+          "no native WebKit/Safari; only experimental Firefox",
+          "JavaScript/TypeScript only — no official Python/Java/.NET",
+          "lacks native auto-waiting, so scripts are more flake-prone"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — puppeteer/puppeteer (~95k★)",
+            "url": "https://github.com/puppeteer/puppeteer"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Beautiful Soup",
+        "homepage": "https://www.crummy.com/software/BeautifulSoup/",
+        "pricing": "Free / OSS",
+        "bestFor": "The universally-adopted Python HTML/XML parser (beautifulsoup4, one of the most-downloaded packages ever) — the default for simple, static-page extraction.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "One of the most-downloaded Python packages ever (~200M+ monthly PyPI downloads for beautifulsoup4); the default recommendation for simple HTML parsing in essentially every 2026 Python-scraping guide (ZenRows, ScraperAPI, Firecrawl).",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "forgiving HTML/XML parser",
+          "simple, intuitive navigation & search API",
+          "CSS-selector support",
+          "pluggable parser backends (lxml, html.parser)"
+        ],
+        "pros": [
+          "extremely easy to learn with an intuitive API",
+          "handles malformed/messy HTML gracefully",
+          "near-universal tutorial coverage; pairs cleanly with Requests/HTTPX"
+        ],
+        "cons": [
+          "cannot render JavaScript-driven content",
+          "no built-in HTTP fetching, concurrency or async — parsing only",
+          "slower than lxml on large documents; no native XPath"
+        ],
+        "sources": [
+          {
+            "name": "Official homepage / PyPI (beautifulsoup4)",
+            "url": "https://www.crummy.com/software/BeautifulSoup/"
+          },
+          {
+            "name": "Firecrawl — best OSS scraping libraries",
+            "url": "https://www.firecrawl.dev/blog/best-open-source-web-scraping-libraries"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Scrapling",
+        "homepage": "https://github.com/D4Vinci/Scrapling",
+        "pricing": "Free / OSS",
+        "bestFor": "Fast-rising adaptive Python scraper (~71k★) that auto-heals when sites change and includes Cloudflare bypass — a genuine 2025-26 breakout.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~71k★ (D4Vinci/Scrapling); reached #1 on GitHub Trending in Feb 2026 — a genuine breakout — and is repeatedly flagged in 2026 roundups (The Web Scraping Club) as the most interesting adaptive/self-healing bet.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "adaptive parser auto-relocates elements when structure changes",
+          "built-in anti-bot (Cloudflare Turnstile) fetchers",
+          "concurrent crawling with per-domain throttling",
+          "checkpoint-based pause/resume"
+        ],
+        "pros": [
+          "self-healing selectors dramatically cut maintenance",
+          "out-of-the-box anti-bot handling without extra tooling",
+          "benchmarked as very fast among Python scrapers"
+        ],
+        "cons": [
+          "young project with a thinner production track record",
+          "adaptivity adds 'magic' that can be hard to debug",
+          "anti-bot claims still require real-world validation vs evolving defenses"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — D4Vinci/Scrapling (~71k★)",
+            "url": "https://github.com/D4Vinci/Scrapling"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Crawlee",
+        "homepage": "https://github.com/apify/crawlee",
+        "pricing": "Free / OSS",
+        "bestFor": "Apify's all-in-one Node.js scraping library (~25k★) wrapping Puppeteer/Playwright/Cheerio — the strongest JavaScript all-rounder.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~25k★, maintained by Apify; named the strongest all-in-one Node.js production default in 2026 roundups (Firecrawl, Scrapfly, Apify) and underpins most of the 19,000+ Actors in the Apify Store.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "unified API over HTTP (Cheerio) & headless browsers (Playwright/Puppeteer)",
+          "automatic proxy rotation & session management",
+          "built-in anti-blocking & fingerprinting",
+          "automatic retries & concurrency control"
+        ],
+        "pros": [
+          "batteries-included, production-grade defaults out of the box",
+          "seamless switch between HTTP and browser crawling in one library",
+          "strong anti-blocking defaults and active corporate maintenance"
+        ],
+        "cons": [
+          "Node.js/TypeScript only (Python port is newer/less mature)",
+          "gravitational pull toward the paid Apify cloud ecosystem",
+          "heavier and more opinionated than lightweight alternatives"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — apify/crawlee (~25k★)",
+            "url": "https://github.com/apify/crawlee"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Colly",
+        "homepage": "https://github.com/gocolly/colly",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto Go scraping framework (~25.4k★) — fast and idiomatic, the standard choice in the Go ecosystem.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "rankBasis": "~25.4k★, the de-facto standard Go scraping framework — named the Go production default in every 2026 roundup (Firecrawl, Scrapfly, HasData); some guides do flag its slower maintenance cadence.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "clean scraping/crawling API for Go",
+          "goroutine-based parallel requests",
+          "built-in rate limiting & form handling",
+          "caching support"
+        ],
+        "pros": [
+          "extremely fast and memory-efficient via Go's concurrency model",
+          "single-binary deployment makes it trivial to ship",
+          "clean, idiomatic API well-suited to concurrent crawling"
+        ],
+        "cons": [
+          "no JavaScript rendering — needs chromedp/Selenium for dynamic sites",
+          "smaller Go scraping ecosystem than Python/Node.js",
+          "maintenance cadence has drawn scrutiny in 2026 guides"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — gocolly/colly (~25.4k★)",
+            "url": "https://github.com/gocolly/colly"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Scrapling Skill (Cedriccmh)",
+        "homepage": "https://github.com/Cedriccmh/claude-code-skill-scrapling",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred standalone scraping Claude Code skill (~372★) — a SKILL.md wrapping Scrapling with automatic fetcher selection and Cloudflare bypass.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "rankBasis": "~372★ — one of the most-starred standalone (single-purpose) Claude Code scraping skills, rather than a skill buried in a large collection; its traction is largely downstream of the Scrapling library (~71k★) it wraps.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "automatic fetcher selection via a decision tree",
+          "Cloudflare/WAF bypass through StealthyFetcher (Camoufox)",
+          "session-based login with persistent cookies",
+          "pattern library + error-indexed troubleshooting"
+        ],
+        "pros": [
+          "auto-selects the right strategy — no Scrapling internals to learn",
+          "handles anti-bot, JS-rendered and authenticated sites out of the box",
+          "ships security guidance (credential isolation, prompt-injection awareness)"
+        ],
+        "cons": [
+          "niche adoption (~372★) next to mainstream tooling",
+          "entirely dependent on the external Scrapling library and Camoufox install",
+          "single-library focus — no fallback if Scrapling isn't the right fit"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — Cedriccmh/claude-code-skill-scrapling (~372★)",
+            "url": "https://github.com/Cedriccmh/claude-code-skill-scrapling"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "Web Scraping skills (Mindrally)",
+        "homepage": "https://github.com/Mindrally/skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Two genuine SKILL.md scraping skills (web-scraping + scrapy-web-scraping) inside a 240+ Claude Code skill collection (~197★).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "rankBasis": "~197★ — part of a large 240+ Claude Code skill collection (converted from Cursor rules); the two scraping skills are entries in that roster, so its standing comes from collection breadth rather than scraping depth, and its star count trails the dedicated Scrapling skill above.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "web-scraping skill spanning static, dynamic & large-scale approaches",
+          "scrapy-web-scraping skill covering the full Scrapy lifecycle",
+          "ethics/rate-limiting guidance (robots.txt, throttling, proxy rotation)",
+          "standardized SKILL.md + YAML-frontmatter format"
+        ],
+        "pros": [
+          "tool-agnostic advice covering many libraries",
+          "strong emphasis on ethical, robust practice",
+          "convenient if you already use Mindrally's broader collection"
+        ],
+        "cons": [
+          "scraping is a thin slice of a general 240+ skill dump",
+          "conventions/best-practices text, not executable tooling",
+          "lower adoption (~197★); no auto-fetcher or Cloudflare-bypass features"
+        ],
+        "sources": [
+          {
+            "name": "GitHub — Mindrally/skills (~197★)",
+            "url": "https://github.com/Mindrally/skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor (fixing the prior bug where a 78★ personal skill outranked Crawl4AI). Ranked by live GitHub stars and de-facto reputation: the recognized OSS scraping leaders (Crawl4AI, Scrapy, Playwright, Puppeteer, Beautiful Soup, Scrapling) lead as kind:repo, with the two most-adopted genuine SKILL.md scraping skills (Cedriccmh scrapling skill, Mindrally) below. Genuine Claude scraping skills top out in the low hundreds of stars, so they rank below the major libraries. Removed all MCP-server entries. Firecrawl OSS is omitted here as it already leads the App track. Star counts verified live 2026-07-24."
+}

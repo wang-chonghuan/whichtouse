@@ -5,9 +5,10 @@ import {
   Scripts,
   createRootRoute,
 } from '@tanstack/react-router'
+import { Theme } from '@astryxdesign/core'
+import { butterTheme } from '@astryxdesign/theme-butter'
 
 import '~/styles/app.css'
-import '~/styles/wt.css'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -46,7 +47,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <Theme theme={butterTheme}>{children}</Theme>
         <Scripts />
       </body>
     </html>

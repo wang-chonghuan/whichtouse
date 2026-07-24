@@ -1,0 +1,304 @@
+{
+  "slug": "seo-geo",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Semrush",
+        "homepage": "https://www.semrush.com",
+        "pricing": "Paid (~$140/mo)",
+        "bestFor": "Pairing a full-stack SEO toolkit with an AI Visibility Toolkit that tracks brand citations across ChatGPT, Gemini, Perplexity and AI Overviews.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Semrush",
+            "url": "https://www.semrush.com/blog/best-generative-engine-optimization-tools/"
+          },
+          {
+            "name": "SitePoint",
+            "url": "https://www.sitepoint.com/best-generative-engine-optimization-tools/"
+          },
+          {
+            "name": "Nick Lafferty",
+            "url": "https://nicklafferty.com/blog/best-generative-engine-optimization-tools-2025/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Profound",
+        "homepage": "https://www.tryprofound.com",
+        "pricing": "Paid (~$499/mo)",
+        "bestFor": "Enterprise-grade AI visibility with real user-facing data across 10+ AI engines plus a unique Prompt Volumes metric.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Profound",
+            "url": "https://www.tryprofound.com/blog/best-generative-engine-optimization-tools"
+          },
+          {
+            "name": "Surmado",
+            "url": "https://www.surmado.com/blog/best-ai-visibility-tools-2026"
+          },
+          {
+            "name": "MaxAEO",
+            "url": "https://maxaeo.ai/blog/the-12-best-ai-search-visibility-tracking-tools-for-2026-ranked-by-use-case-with-pricing/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Ahrefs",
+        "homepage": "https://ahrefs.com",
+        "pricing": "Paid (~$129/mo)",
+        "bestFor": "Backlink and keyword depth combined with a Brand Radar for monitoring AI mentions — a classic-SEO powerhouse extending into GEO.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "SitePoint",
+            "url": "https://www.sitepoint.com/best-generative-engine-optimization-tools/"
+          },
+          {
+            "name": "Nick Lafferty",
+            "url": "https://nicklafferty.com/blog/best-generative-engine-optimization-tools-2025/"
+          },
+          {
+            "name": "Rankability",
+            "url": "https://www.rankability.com/blog/best-ai-search-visibility-tracking-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Writesonic",
+        "homepage": "https://writesonic.com",
+        "pricing": "Freemium (paid from ~$49/mo)",
+        "bestFor": "Pairing GEO monitoring across ChatGPT, Gemini, Perplexity and Claude with an AI content-generation engine in one platform.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Semrush",
+            "url": "https://www.semrush.com/blog/best-generative-engine-optimization-tools/"
+          },
+          {
+            "name": "DevOpsSchool",
+            "url": "https://www.devopsschool.com/blog/9-best-generative-engine-optimization-geo-tools-2026-update/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "SE Ranking",
+        "homepage": "https://seranking.com",
+        "pricing": "Paid (~$65/mo)",
+        "bestFor": "Embedding AI visibility directly into a full-stack SEO performance suite at a mid-market price.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Semrush",
+            "url": "https://www.semrush.com/blog/best-generative-engine-optimization-tools/"
+          },
+          {
+            "name": "SitePoint",
+            "url": "https://www.sitepoint.com/best-generative-engine-optimization-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Otterly AI",
+        "homepage": "https://otterly.ai",
+        "pricing": "Paid (~$29/mo)",
+        "bestFor": "Affordable, accessible AI-search monitoring for smaller brands, freelancers and agencies.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Rankability",
+            "url": "https://www.rankability.com/blog/best-ai-search-visibility-tracking-tools/"
+          },
+          {
+            "name": "Surmado",
+            "url": "https://www.surmado.com/blog/best-ai-visibility-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "AthenaHQ",
+        "homepage": "https://www.athenahq.ai",
+        "pricing": "Paid (~$99/mo)",
+        "bestFor": "Growth-stage SaaS and mid-market teams wanting a single GEO Score plus an action center of optimization steps.",
+        "confidence": "low",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "MaxAEO",
+            "url": "https://maxaeo.ai/blog/the-12-best-ai-search-visibility-tracking-tools-for-2026-ranked-by-use-case-with-pricing/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "claude-seo (Daniel Agrici)",
+        "homepage": "https://github.com/AgriciDaniel/claude-seo",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized leader among SEO/GEO Agent Skills (~12.2k stars, MIT): 25+ sub-skills and sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO and local/international SEO with prioritized action plans. Notably pragmatic. Carries strategy and audit checklists — pair with an app-track suite for live rank/backlink data.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub AgriciDaniel/claude-seo — 12.2k★",
+            "url": "https://github.com/AgriciDaniel/claude-seo"
+          },
+          {
+            "name": "AgenticSkills.io",
+            "url": "https://agenticskills.io/skills/claude-seo"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "geo-seo-claude (Zubair Trabzada)",
+        "homepage": "https://github.com/zubair-trabzada/geo-seo-claude",
+        "pricing": "Free / OSS",
+        "bestFor": "A GEO-first SKILL.md bundle (~9.1k stars): citability scoring, AI-crawler / robots.txt analysis for 14+ bots, llms.txt and schema for ChatGPT, Perplexity, Gemini and AI Overviews. Honest caveat: the repo is overtly promotional (tied to a paid community), so raw stars may overstate maturity.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub zubair-trabzada/geo-seo-claude — 9.1k★",
+            "url": "https://github.com/zubair-trabzada/geo-seo-claude"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "SerpBear",
+        "homepage": "https://github.com/towfiqi/serpbear",
+        "pricing": "Free / OSS",
+        "bestFor": "The go-to self-hosted keyword rank tracker (~2.0k stars) — unlimited domains, Google Search Console integration and email alerts. Highest-star standalone OSS app in this set.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub towfiqi/serpbear — 2.0k★",
+            "url": "https://github.com/towfiqi/serpbear"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "advertools",
+        "homepage": "https://github.com/eliasdabbas/advertools",
+        "pricing": "Free / OSS",
+        "bestFor": "The practitioner reference library for scriptable technical SEO (~1.4k stars): a Python/pandas toolkit with a Scrapy crawler, robots.txt and sitemap parsing, SERP and log analysis. The most mature, respected pro-grade OSS SEO library.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub eliasdabbas/advertools — 1.4k★",
+            "url": "https://github.com/eliasdabbas/advertools"
+          },
+          {
+            "name": "advertools docs",
+            "url": "https://adver.tools/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "awesome-seo-tools (SerpApi)",
+        "homepage": "https://github.com/serpapi/awesome-seo-tools",
+        "pricing": "Free / OSS",
+        "bestFor": "A vetted directory of SEO tooling (~1.0k stars) across 10 categories, maintained by SerpApi. A starting point for discovery rather than a tool you run — hence medium.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub serpapi/awesome-seo-tools — 1.0k★",
+            "url": "https://github.com/serpapi/awesome-seo-tools"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "seo-audits-toolkit",
+        "homepage": "https://github.com/StanGirard/seo-audits-toolkit",
+        "pricing": "Free / OSS",
+        "bestFor": "An all-in-one self-hosted audit app (~802 stars) by Stan Girard (Quivr author): Lighthouse scoring, security headers, SERP rank, and keyword/image/sitemap extraction.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub StanGirard/seo-audits-toolkit — 802★",
+            "url": "https://github.com/StanGirard/seo-audits-toolkit"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "LibreCrawl",
+        "homepage": "https://github.com/PhialsBasement/LibreCrawl",
+        "pricing": "Free / OSS",
+        "bestFor": "A desktop SEO crawler (~787 stars) positioned as a free Screaming Frog / DeepCrawl alternative — JS rendering, link mapping, Core Web Vitals via PageSpeed, and CSV/JSON/XML export.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub PhialsBasement/LibreCrawl — 787★",
+            "url": "https://github.com/PhialsBasement/LibreCrawl"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "SEOnaut",
+        "homepage": "https://github.com/stjudewashere/seonaut",
+        "pricing": "Free / OSS",
+        "bestFor": "A mature self-hosted technical-SEO auditor (~741 stars, Go + MySQL) with severity-ranked crawl reports (broken links, redirects, meta issues, heading order) and a dashboard.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub stjudewashere/seonaut — 741★",
+            "url": "https://github.com/stjudewashere/seonaut"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "geo-optimizer-skill (Auriti Labs)",
+        "homepage": "https://github.com/Auriti-Labs/geo-optimizer-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "An AEO/GEO auditing toolkit (~615 stars) that measures whether ChatGPT, Perplexity, Gemini and AI Overviews cite your site and generates fixes (robots.txt bot rules, llms.txt, JSON-LD). Despite the name it is a CLI/Python/Astro toolkit, not an MCP server.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub Auriti-Labs/geo-optimizer-skill — 615★",
+            "url": "https://github.com/Auriti-Labs/geo-optimizer-skill"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, professional reputation) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source SEO/GEO repos. Daniel Agrici's claude-seo skill leads (~12.2k stars) as the most-adopted, most-comprehensive SEO Agent Skill. Skills carry strategy and audit checklists; repos (SerpBear, advertools, the crawlers/auditors) do the live crawling, rank tracking and GEO-citation measurement — pair both with an app-track suite for backlink/AI-visibility data. All stars verified via the GitHub API. No MCP servers; the prior MCP entries (Ahrefs/DataForSEO/GSC MCP) were removed as out of scope."
+}

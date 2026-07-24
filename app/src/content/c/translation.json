@@ -1,0 +1,300 @@
+{
+  "slug": "translation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "DeepL",
+        "homepage": "https://www.deepl.com",
+        "pricing": "Freemium (Pro from ~$8.74/mo)",
+        "bestFor": "Most natural output for European languages and professional documents, with glossaries and format fidelity.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lara/Laratranslate",
+            "url": "https://blog.laratranslate.com/best-deepl-alternatives-2026/"
+          },
+          {
+            "name": "Lokalise",
+            "url": "https://lokalise.com/blog/best-ai-translation-tools/"
+          },
+          {
+            "name": "AI Tool Discovery",
+            "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Google Translate",
+        "homepage": "https://translate.google.com",
+        "pricing": "Free",
+        "bestFor": "Broadest language coverage (240+ languages) and a free tier; best when you need reach over polish.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lara/Laratranslate",
+            "url": "https://blog.laratranslate.com/best-deepl-alternatives-2026/"
+          },
+          {
+            "name": "AI Tool Discovery",
+            "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
+          },
+          {
+            "name": "Delos",
+            "url": "https://www.delos.so/en/blog/best-ai-tool-for-document-translation-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "ChatGPT",
+        "homepage": "https://chatgpt.com",
+        "pricing": "Freemium (Plus ~$20/mo)",
+        "bestFor": "Tone-sensitive and creative translation where context and idiom matter more than raw language coverage.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lokalise",
+            "url": "https://lokalise.com/blog/best-ai-translation-tools/"
+          },
+          {
+            "name": "AI Tool Discovery",
+            "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
+          },
+          {
+            "name": "Bluente",
+            "url": "https://www.bluente.com/blog/ai-translation-tool"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Claude",
+        "homepage": "https://claude.ai",
+        "pricing": "Freemium (Pro ~$20/mo)",
+        "bestFor": "Strong on idioms, context, and Asian languages; a top pick for nuance-heavy passages.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "AI Tool Discovery",
+            "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Microsoft Translator",
+        "homepage": "https://www.microsoft.com/translator",
+        "pricing": "Freemium (API usage-based)",
+        "bestFor": "Business communication and Office-integrated workflows with reliable API scale.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lara/Laratranslate",
+            "url": "https://blog.laratranslate.com/best-deepl-alternatives-2026/"
+          },
+          {
+            "name": "Lokalise",
+            "url": "https://lokalise.com/blog/best-ai-translation-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Lara Translate",
+        "homepage": "https://laratranslate.com",
+        "pricing": "Freemium",
+        "bestFor": "Context-aware MT (from the ModernMT team) marketed as a professional DeepL alternative with adaptive quality.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lara/Laratranslate",
+            "url": "https://blog.laratranslate.com/best-deepl-alternatives-2026/"
+          },
+          {
+            "name": "Lokalise",
+            "url": "https://lokalise.com/blog/best-ai-translation-tools/"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Amazon Translate",
+        "homepage": "https://aws.amazon.com/translate",
+        "pricing": "Paid (usage-based; free tier for first 12 months)",
+        "bestFor": "High-volume, programmatic translation at scale inside AWS pipelines.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Lara/Laratranslate",
+            "url": "https://blog.laratranslate.com/best-deepl-alternatives-2026/"
+          },
+          {
+            "name": "AI Tool Discovery",
+            "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "openai-translator (yetone)",
+        "homepage": "https://github.com/yetone/openai-translator",
+        "pricing": "Free / OSS",
+        "bestFor": "Wildly popular LLM-based translation and polishing tool (browser extension, desktop app, userscript); a recognized OSS translation leader (~25k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~25k★)",
+            "url": "https://github.com/yetone/openai-translator"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Immersive Translate",
+        "homepage": "https://github.com/immersive-translate/immersive-translate",
+        "pricing": "Free / OSS",
+        "bestFor": "Bilingual side-by-side web-page, PDF, and ebook translation, loved for reading foreign content in context (~18k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~18k★)",
+            "url": "https://github.com/immersive-translate/immersive-translate"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "LibreTranslate",
+        "homepage": "https://github.com/LibreTranslate/LibreTranslate",
+        "pricing": "Free / OSS",
+        "bestFor": "The de-facto free, self-hosted machine-translation API — offline-capable, with no proprietary dependencies (~16k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~16k★)",
+            "url": "https://github.com/LibreTranslate/LibreTranslate"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "translate-shell",
+        "homepage": "https://github.com/soimort/translate-shell",
+        "pricing": "Free / OSS",
+        "bestFor": "Command-line translator wrapping Google/Bing/DeepL and more; a Unix-workflow staple for quick terminal translation (~7.5k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~7.5k★)",
+            "url": "https://github.com/soimort/translate-shell"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "OpenNMT-py",
+        "homepage": "https://github.com/OpenNMT/OpenNMT-py",
+        "pricing": "Free / OSS",
+        "bestFor": "Research-grade neural machine-translation toolkit for training and serving your own translation models (~7k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~7k★)",
+            "url": "https://github.com/OpenNMT/OpenNMT-py"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Argos Translate",
+        "homepage": "https://github.com/argosopentech/argos-translate",
+        "pricing": "Free / OSS",
+        "bestFor": "Offline neural translation library (the engine under LibreTranslate) usable as a Python lib, CLI, or GUI (~6k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~6k★)",
+            "url": "https://github.com/argosopentech/argos-translate"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "translate skill (feiskyer/claude-code-settings)",
+        "homepage": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/translate/SKILL.md",
+        "pricing": "Free / OSS",
+        "bestFor": "Well-maintained translate SKILL.md inside a popular curated Claude Code settings/skills collection (~1.6k stars overall).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~1.6k★)",
+            "url": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/translate/SKILL.md"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "translate-book (deusyu)",
+        "homepage": "https://github.com/deusyu/translate-book",
+        "pricing": "Free / OSS",
+        "bestFor": "Agent skill (Codex/Claude Code) that translates whole books — PDF/DOCX/EPUB — into any language using parallel subagents (~1k stars).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~1k★)",
+            "url": "https://github.com/deusyu/translate-book"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "translate skill (djyde/ccmate)",
+        "homepage": "https://github.com/djyde/ccmate",
+        "pricing": "Free / OSS",
+        "bestFor": "Localization-focused translate skill (updates existing locales, protects reserved terms); rated Grade A in the skills directory (~630 stars).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~630★)",
+            "url": "https://github.com/djyde/ccmate"
+          },
+          {
+            "name": "Skills Directory",
+            "url": "https://www.skillsdirectory.com/skills/djyde-translate"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "There is no single winner in the app track — sources agree the right tool depends on workflow: DeepL for European/professional docs, Google for coverage, ChatGPT/Claude for tone and Asian languages. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes notable open-source translation repos (openai-translator, Immersive Translate, LibreTranslate, translate-shell, OpenNMT, Argos Translate) with the genuine translate Agent Skills that lead this still-emerging niche. The previous top-of-list translate-book skill now ranks below the far more adopted repos. Star counts verified via the GitHub API (Jul 2026); the tiny senshinji/claude-translation-skill (~14 stars) was dropped as below the quality bar."
+}

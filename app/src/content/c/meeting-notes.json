@@ -1,0 +1,296 @@
+{
+  "slug": "meeting-notes",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Fathom",
+        "homepage": "https://fathom.video",
+        "pricing": "Freemium (Pro ~$19/mo)",
+        "bestFor": "Best free AI notetaker — unlimited recording, ~30-second summaries, and the highest G2 rating in the category.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "tldv",
+            "url": "https://tldv.io/blog/free-ai-note-taking/"
+          },
+          {
+            "name": "get-alfred",
+            "url": "https://get-alfred.ai/blog/best-ai-meeting-notetakers"
+          },
+          {
+            "name": "Luminix",
+            "url": "https://www.useluminix.com/reports/industry-analysis/ai-meeting-notes-comparison-granola-vs-otter-vs-fireflies-vs-fathom-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Granola",
+        "homepage": "https://www.granola.ai",
+        "pricing": "Freemium (~$18/mo)",
+        "bestFor": "Best bot-free option — captures audio silently without a visible bot joining the call, ideal for solo users.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "zackproser",
+            "url": "https://zackproser.com/blog/best-ai-meeting-notes-2026"
+          },
+          {
+            "name": "get-alfred",
+            "url": "https://get-alfred.ai/blog/best-ai-meeting-notetakers"
+          },
+          {
+            "name": "Luminix",
+            "url": "https://www.useluminix.com/reports/industry-analysis/ai-meeting-notes-comparison-granola-vs-otter-vs-fireflies-vs-fathom-2026"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Fireflies.ai",
+        "homepage": "https://fireflies.ai",
+        "pricing": "Freemium (~$10/user/mo)",
+        "bestFor": "Best for sales teams — broad CRM and integration coverage with searchable transcript history.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Luminix",
+            "url": "https://www.useluminix.com/reports/industry-analysis/ai-meeting-notes-comparison-granola-vs-otter-vs-fireflies-vs-fathom-2026"
+          },
+          {
+            "name": "meetingnotes",
+            "url": "https://meetingnotes.com/blog/best-ai-note-takers"
+          },
+          {
+            "name": "TicNote",
+            "url": "https://ticnote.com/en/blog/best-ai-transcription-tools-meetings-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Otter.ai",
+        "homepage": "https://otter.ai",
+        "pricing": "Freemium (Pro ~$17/mo)",
+        "bestFor": "Best for real-time live captions during meetings and team transcript collaboration.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Luminix",
+            "url": "https://www.useluminix.com/reports/industry-analysis/ai-meeting-notes-comparison-granola-vs-otter-vs-fireflies-vs-fathom-2026"
+          },
+          {
+            "name": "meetingnotes",
+            "url": "https://meetingnotes.com/blog/best-ai-note-takers"
+          },
+          {
+            "name": "TicNote",
+            "url": "https://ticnote.com/en/blog/best-ai-transcription-tools-meetings-2026"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Fellow",
+        "homepage": "https://fellow.app",
+        "pricing": "Freemium (~$7/user/mo)",
+        "bestFor": "Full meeting lifecycle — agendas before, notes during, and AI follow-ups after; a Wirecutter top pick.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "meetingnotes",
+            "url": "https://meetingnotes.com/blog/best-ai-note-takers"
+          },
+          {
+            "name": "perfectwikiforteams",
+            "url": "https://perfectwikiforteams.com/blog/best-ai-meeting-notes-for-teams/"
+          },
+          {
+            "name": "simular",
+            "url": "https://www.simular.ai/alternatives/ai-meeting-note-takers"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "tl;dv",
+        "homepage": "https://tldv.io",
+        "pricing": "Freemium (~$18/user/mo)",
+        "bestFor": "Best free tier for teams — unlimited video, transcripts, and AI summaries across Zoom, Meet, and Teams.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "tldv",
+            "url": "https://tldv.io/blog/free-ai-note-taking/"
+          },
+          {
+            "name": "meetingnotes",
+            "url": "https://meetingnotes.com/blog/best-ai-note-takers"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Jamie",
+        "homepage": "https://www.meetjamie.ai",
+        "pricing": "Freemium (~$24/mo)",
+        "bestFor": "Best for privacy — bot-free, on-device capture that keeps recordings off the cloud.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Jamie",
+            "url": "https://www.meetjamie.ai/blog/ai-note-taker"
+          },
+          {
+            "name": "simular",
+            "url": "https://www.simular.ai/alternatives/ai-meeting-note-takers"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Meetily",
+        "homepage": "https://github.com/Zackriya-Solutions/meetily",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized #1 self-hosted, open-source meeting notetaker (26.4k★) — local Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization, 100% on-device with no cloud.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (Zackriya-Solutions, 26.4k★)",
+            "url": "https://github.com/Zackriya-Solutions/meetily"
+          },
+          {
+            "name": "Meetily blog",
+            "url": "https://meetily.ai/blog/best-self-hosted-meeting-transcription-tools-2026"
+          },
+          {
+            "name": "dev.to (Zackriya)",
+            "url": "https://dev.to/zackriya/10-best-self-hosted-meeting-transcription-tools-in-2026-58oi"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Whisper (OpenAI)",
+        "homepage": "https://github.com/openai/whisper",
+        "pricing": "Free / OSS",
+        "bestFor": "The open-source transcription foundation (105k★) behind most local meeting-notes stacks — accurate, multilingual, and fully offline. The engine, not a full notetaker.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (openai/whisper, 105.5k★)",
+            "url": "https://github.com/openai/whisper"
+          },
+          {
+            "name": "digitalapplied",
+            "url": "https://www.digitalapplied.com/blog/local-speech-to-text-whisper-self-hosted-transcription-2026"
+          },
+          {
+            "name": "localaimaster",
+            "url": "https://localaimaster.com/blog/whisper-local-speech-to-text"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "whisper.cpp",
+        "homepage": "https://github.com/ggml-org/whisper.cpp",
+        "pricing": "Free / OSS",
+        "bestFor": "The high-performance C/C++ port of Whisper (52.2k★) — fast, dependency-light on-device transcription that powers Meetily and many local meeting-notes tools.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (ggml-org/whisper.cpp, 52.2k★)",
+            "url": "https://github.com/ggml-org/whisper.cpp"
+          },
+          {
+            "name": "Meetily blog",
+            "url": "https://meetily.ai/blog/best-self-hosted-meeting-transcription-tools-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "WhisperX",
+        "homepage": "https://github.com/m-bain/whisperX",
+        "pricing": "Free / OSS",
+        "bestFor": "Whisper plus accurate word-level timestamps and speaker diarization (23.2k★) — the who-said-what layer that makes raw transcripts usable as meeting minutes.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (m-bain/whisperX, 23.2k★)",
+            "url": "https://github.com/m-bain/whisperX"
+          },
+          {
+            "name": "dev.to (Zackriya)",
+            "url": "https://dev.to/zackriya/10-best-self-hosted-meeting-transcription-tools-in-2026-58oi"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "meeting-notes (claude-office-skills)",
+        "homepage": "https://github.com/claude-office-skills/skills/tree/main/meeting-notes",
+        "pricing": "Free / OSS",
+        "bestFor": "A dedicated MIT-licensed Claude skill that turns a raw transcript into structured minutes — decisions, owned action items, and a recap. Small community repo (~326★), so ranked mid.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (claude-office-skills, 326★)",
+            "url": "https://github.com/claude-office-skills/skills"
+          },
+          {
+            "name": "Claude Marketplaces",
+            "url": "https://claudemarketplaces.com/skills/claude-office-skills/skills/meeting-notes"
+          },
+          {
+            "name": "Awesome Skills",
+            "url": "https://awesomeskill.ai/skill/claude-office-skills-skills-meeting-notes"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "meeting-insights-analyzer (ComposioHQ)",
+        "homepage": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/meeting-insights-analyzer",
+        "pricing": "Free / OSS",
+        "bestFor": "A meeting-insights skill from Composio's 69.7k-star skills collection — extracts themes, decisions, speaking ratios, and follow-ups from transcripts.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (ComposioHQ/awesome-claude-skills, 69.7k★)",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills"
+          },
+          {
+            "name": "SKILL.md",
+            "url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/meeting-insights-analyzer/SKILL.md"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not form factor; kind (skill|repo) is only a tag. Meetily (26.4k★) leads as the recognized #1 self-hosted, purpose-built meeting notetaker; the massively adopted transcription engines Whisper (105k★), whisper.cpp (52.2k★), and WhisperX (23.2k★, diarization) produce the transcript most stacks are built on. The small community Agent Skills that turn a transcript into structured minutes (claude-office-skills meeting-notes ~326★, ComposioHQ meeting-insights-analyzer) fill the mid tier — genuine but low-adoption, so they no longer sit above the far larger repos. No MCP servers. Star counts verified on GitHub. App consensus is strong: Fathom, Granola, Fireflies, and Otter recur across nearly every independent list; some review sites (tldv, Jamie, alfred) are vendors ranking within their own comparisons."
+}

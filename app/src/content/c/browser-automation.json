@@ -1,0 +1,262 @@
+{
+  "slug": "browser-automation",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "ChatGPT Agent (Operator)",
+        "homepage": "https://openai.com/index/introducing-chatgpt-agent/",
+        "pricing": "Paid (via ChatGPT plans)",
+        "bestFor": "Consumer-facing agent that operates a real browser inside ChatGPT to complete multi-step web tasks end to end.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          },
+          {
+            "name": "Minded",
+            "url": "https://www.minded.com/blog/best-ai-browser-agents-2026"
+          },
+          {
+            "name": "Bright Data",
+            "url": "https://brightdata.com/blog/ai/best-agent-browsers"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Claude for Chrome",
+        "homepage": "https://www.anthropic.com/news/claude-for-chrome",
+        "pricing": "Paid (via Claude plans)",
+        "bestFor": "Anthropic's browser agent that drives Chrome to read pages and take actions on the user's behalf.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          },
+          {
+            "name": "Minded",
+            "url": "https://www.minded.com/blog/best-ai-browser-agents-2026"
+          },
+          {
+            "name": "Bright Data",
+            "url": "https://brightdata.com/blog/ai/best-agent-browsers"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Perplexity Comet",
+        "homepage": "https://www.perplexity.ai/comet",
+        "pricing": "Freemium",
+        "bestFor": "AI-native consumer browser that combines answering and agentic actions across tabs for research-heavy workflows.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Bright Data",
+            "url": "https://brightdata.com/blog/ai/best-agent-browsers"
+          },
+          {
+            "name": "Unbrowse",
+            "url": "https://www.unbrowse.ai/blog/best-ai-browser-agents-2026"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Gemini in Chrome",
+        "homepage": "https://gemini.google/overview/gemini-in-chrome/",
+        "pricing": "Freemium (Workspace)",
+        "bestFor": "Google's built-in Chrome agent, generally available to Workspace users for in-browser assistance and actions.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          },
+          {
+            "name": "Minded",
+            "url": "https://www.minded.com/blog/best-ai-browser-agents-2026"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "OpenAI Atlas",
+        "homepage": "https://openai.com/index/introducing-chatgpt-atlas/",
+        "pricing": "Freemium",
+        "bestFor": "OpenAI's standalone AI browser for agentic browsing, competing directly with Comet and Dia.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          },
+          {
+            "name": "Unbrowse",
+            "url": "https://www.unbrowse.ai/blog/best-ai-browser-agents-2026"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Browser Use",
+        "homepage": "https://github.com/browser-use/browser-use",
+        "pricing": "Freemium",
+        "bestFor": "The recognized leader for AI browser agents (~107k★, ~89% WebVoyager): gives the LLM full control of the browser through an agent loop — the default for building custom browser agents.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~106.5k★)",
+            "url": "https://github.com/browser-use/browser-use"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Playwright",
+        "homepage": "https://github.com/microsoft/playwright",
+        "pricing": "Free / OSS",
+        "bestFor": "Microsoft's foundational browser-automation framework (~93k★) — the deterministic substrate many AI agents (Stagehand, Skyvern) build on; the de-facto standard for scripted control and E2E testing.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~93.4k★)",
+            "url": "https://github.com/microsoft/playwright"
+          },
+          {
+            "name": "Scrapfly",
+            "url": "https://scrapfly.io/blog/posts/best-browser-automation-tools"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Stagehand",
+        "homepage": "https://github.com/browserbase/stagehand",
+        "pricing": "Free / OSS",
+        "bestFor": "Playwright-based framework (~24k★) exposing structured act/extract/observe actions — deterministic where possible, AI only when needed.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~23.6k★)",
+            "url": "https://github.com/browserbase/stagehand"
+          },
+          {
+            "name": "Firecrawl",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Skyvern",
+        "homepage": "https://github.com/Skyvern-AI/skyvern",
+        "pricing": "Freemium",
+        "bestFor": "Vision + LLM open-source agent (~23k★) resilient to layout changes; leads on form-filling (~85.85% WebVoyager).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~22.6k★)",
+            "url": "https://github.com/Skyvern-AI/skyvern"
+          },
+          {
+            "name": "dev.to framework wars",
+            "url": "https://dev.to/stevengonsalvez/browser-tools-for-ai-agents-part-2-the-framework-wars-browser-use-stagehand-skyvern-4gn"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Nanobrowser",
+        "homepage": "https://github.com/nanobrowser/nanobrowser",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source Chrome extension (~13.5k★) for multi-agent web automation, running on your own LLM API keys as a free OpenAI-Operator alternative.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~13.5k★)",
+            "url": "https://github.com/nanobrowser/nanobrowser"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Steel Browser",
+        "homepage": "https://github.com/steel-dev/steel-browser",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source browser API purpose-built for AI agents (~7.4k★): a self-hostable headless-browser backend for running web automations at scale.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~7.4k★)",
+            "url": "https://github.com/steel-dev/steel-browser"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "Playwright Skill",
+        "homepage": "https://github.com/lackeyjb/playwright-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "A genuine SKILL.md browser-automation skill (~2.9k★): Claude autonomously writes and runs Playwright to test pages, fill forms and validate flows with screenshots. Ranked by adoption, not by being a skill.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~2.9k★)",
+            "url": "https://github.com/lackeyjb/playwright-skill"
+          },
+          {
+            "name": "TestDino",
+            "url": "https://testdino.com/blog/playwright-skill-claude-code"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Browserable",
+        "homepage": "https://github.com/browserable/browserable",
+        "pricing": "Free / OSS",
+        "bestFor": "Smaller but notable open-source library and API (~1.2k★) for building AI browser agents and automations; self-hostable.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~1.2k★)",
+            "url": "https://github.com/browserable/browserable"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Rich two-sided category. App track = consumer agentic browsers (ChatGPT Agent, Claude for Chrome, Comet, Gemini, Atlas). The skill track ranks the genuine SKILL.md skill AND the notable open-source browser-automation frameworks/repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only. This fixes the prior bug where Playwright Skill was placed #1 purely for being a skill: by real adoption Browser Use (~107k★, the recognized leader), Playwright (~93k★, the foundational framework) and Stagehand/Skyvern (~23k★) correctly outrank the ~2.9k★ Playwright Skill, which now sits at #7. Confidence tracks rank (high→medium→low). LaVague (~6k★) was excluded as unmaintained since early 2025. Benchmark figures (WebVoyager) and star counts come from cited sources / live GitHub. MCP servers (Playwright MCP) and managed-service-only offerings (Browserbase, Bright Data Agent Browser) remain out of scope for this track."
+}

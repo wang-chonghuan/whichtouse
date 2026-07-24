@@ -1,0 +1,236 @@
+{
+  "slug": "legal-contract",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Spellbook",
+        "homepage": "https://www.spellbook.legal",
+        "pricing": "Paid (~$120+/user/mo)",
+        "bestFor": "Word-native drafting and review co-pilot favored by transactional lawyers and in-house counsel doing high volumes of commercial agreements.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Spellbook",
+            "url": "https://spellbook.com/learn/ai-legal-contract-review-faster-analysis"
+          },
+          {
+            "name": "Juro",
+            "url": "https://juro.com/learn/contract-review-software"
+          },
+          {
+            "name": "GC AI",
+            "url": "https://gc.ai/blog/legal-ai-tools"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "LegalOn",
+        "homepage": "https://www.legalontech.com",
+        "pricing": "Paid (custom)",
+        "bestFor": "Attorney-built playbooks in Word for in-house teams that want fast, standardized contract review with pre-approved positions.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "LegalOn",
+            "url": "https://www.legalontech.com/post/best-ai-contract-review-tools"
+          },
+          {
+            "name": "Signeasy",
+            "url": "https://signeasy.com/blog/business/ai-contract-review-software"
+          },
+          {
+            "name": "Bind",
+            "url": "https://bindlegal.com/resources/best-software/ai-contract-review-software/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Harvey",
+        "homepage": "https://www.harvey.ai",
+        "pricing": "Paid (custom, enterprise)",
+        "bestFor": "Enterprise legal AI for large law firms — research, document analysis and contract review at scale via conversational queries.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Spellbook law firms",
+            "url": "https://www.spellbook.legal/learn/best-ai-tools-for-law-firms"
+          },
+          {
+            "name": "GC AI",
+            "url": "https://gc.ai/blog/legal-ai-tools"
+          },
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/legal-ai"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Thomson Reuters CoCounsel",
+        "homepage": "https://legal.thomsonreuters.com/en/c/cocounsel",
+        "pricing": "Paid (custom, enterprise)",
+        "bestFor": "Research and document review deeply integrated with Westlaw and Practical Law for firms already in the Thomson Reuters stack.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "GC AI",
+            "url": "https://gc.ai/blog/legal-ai-tools"
+          },
+          {
+            "name": "buildmvpfast",
+            "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/legal-ai"
+          },
+          {
+            "name": "Spellbook law firms",
+            "url": "https://www.spellbook.legal/learn/best-ai-tools-for-law-firms"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Definely",
+        "homepage": "https://www.definely.com",
+        "pricing": "Paid (custom)",
+        "bestFor": "In-Word review and negotiation assistant for teams handling complex contracts where context and definition-tracking matter.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Definely",
+            "url": "https://www.definely.com/blogs/ai-contract-review-software"
+          },
+          {
+            "name": "Juro",
+            "url": "https://juro.com/learn/contract-review-software"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Luminance",
+        "homepage": "https://www.luminance.com",
+        "pricing": "Paid (custom)",
+        "bestFor": "Pattern-recognition contract analysis across large document sets, strong for due diligence and bulk review.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Spellbook",
+            "url": "https://spellbook.com/learn/ai-legal-contract-review-faster-analysis"
+          },
+          {
+            "name": "LitSLink",
+            "url": "https://litslink.com/blog/top-10-best-ai-tools-for-lawyers-legal-firms-in-2026"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "LEGALFLY",
+        "homepage": "https://www.legalfly.com",
+        "pricing": "Paid (custom)",
+        "bestFor": "Privacy-first, jurisdiction-aware review for in-house teams in regulated industries, with Microsoft integration.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "LegalFly",
+            "url": "https://www.legalfly.com/post/best-ai-contract-review-software"
+          },
+          {
+            "name": "Signeasy",
+            "url": "https://signeasy.com/blog/business/ai-contract-review-software"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "OpenContracts",
+        "homepage": "https://github.com/Open-Source-Legal/OpenContracts",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred open-source contract/legal-document platform (~1.4k★): annotate, analyze and run LLM extraction over contracts — the closest OSS analog to the AI contract-review apps above.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~1.4k★)",
+            "url": "https://github.com/Open-Source-Legal/OpenContracts"
+          },
+          {
+            "name": "OpenContracts docs",
+            "url": "https://opencontracts.opensource.legal/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "docassemble",
+        "homepage": "https://github.com/jhpyle/docassemble",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized open-source legal document-assembly platform (~1k★, used by courts and legal-aid orgs): guided interviews that generate contracts, court forms and letters from user input.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~1.0k★)",
+            "url": "https://github.com/jhpyle/docassemble"
+          },
+          {
+            "name": "LexRatio",
+            "url": "https://lexratio.eu/2024/10/08/docassemble-legal-document-automation/"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Accord Project (Cicero)",
+        "homepage": "https://github.com/accordproject/cicero",
+        "pricing": "Free / OSS",
+        "bestFor": "Linux Foundation project for smart legal contracts (~0.4k★): templates that bind natural-language clauses to a data model and executable logic. Niche but the de-facto open standard.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~0.4k★)",
+            "url": "https://github.com/accordproject/cicero"
+          },
+          {
+            "name": "Accord Project docs",
+            "url": "https://docs.accordproject.org/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "open-agreements",
+        "homepage": "https://github.com/open-agreements/open-agreements",
+        "pricing": "Free / OSS",
+        "bestFor": "Small but on-point niche tool: fills standard legal agreement templates (Common Paper, Bonterms, Y Combinator) and outputs signable DOCX files.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~45★)",
+            "url": "https://github.com/open-agreements/open-agreements"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Contract review is dominated by integrated SaaS products; there is no meaningful Agent Skill (SKILL.md) ecosystem for legal/contract work, so the skill track lists notable open-source legal-automation repos (kind:repo) ranked by real adoption/reputation rather than form factor. This is a genuinely thin OSS niche, so the list is intentionally short (4) rather than padded: OpenContracts (~1.4k★, contract analytics — the closest parallel to the review apps) and docassemble (~1k★, the recognized document-assembly leader) lead, then Accord Project and open-agreements as smaller niche tools. Catala (~2.3k★, law-as-code for statutes/tax) and Blackstone (legal NLP, unmaintained since 2024) were considered but excluded as off-topic to contract drafting/review. MCP servers are excluded. On the app track, several sources (LegalOn, Spellbook, Definely) are vendor blogs ranking their own product #1; app ranking weights cross-source consensus (Spellbook, LegalOn, Harvey, CoCounsel recur across independent lists) over any single vendor's self-placement."
+}

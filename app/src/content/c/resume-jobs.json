@@ -1,0 +1,297 @@
+{
+  "slug": "resume-jobs",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "Teal",
+        "homepage": "https://www.tealhq.com",
+        "pricing": "Freemium (Teal+ ~$9/wk or ~$29/mo)",
+        "bestFor": "Most complete all-in-one job hunt: resume builder plus a job tracker and keyword match scoring against listings.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "TripleTen",
+            "url": "https://tripleten.com/blog/posts/best-ai-resume-builder"
+          },
+          {
+            "name": "Resume Optimizer Pro (Reddit)",
+            "url": "https://resumeoptimizerpro.com/blog/best-ai-resume-builder-reddit"
+          },
+          {
+            "name": "SkillScouter",
+            "url": "https://skillscouter.com/best-ai-tools-for-job-seekers/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Rezi",
+        "homepage": "https://www.rezi.ai",
+        "pricing": "Freemium (Pro ~$29/mo; lifetime option)",
+        "bestFor": "Deepest ATS-optimization focus, built around an internal ATS scoring system; a Reddit favorite for beating filters.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Rezi Blog",
+            "url": "https://www.rezi.ai/posts/best-ai-resume-builders"
+          },
+          {
+            "name": "Resume Optimizer Pro (Reddit)",
+            "url": "https://resumeoptimizerpro.com/blog/best-ai-resume-builder-reddit"
+          },
+          {
+            "name": "ATS Resume AI",
+            "url": "https://www.atsresumeai.com/blog/best-resume-builder-reddit"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Simplify",
+        "homepage": "https://simplify.jobs",
+        "pricing": "Freemium (Pro ~$14/mo)",
+        "bestFor": "Chrome extension that autofills applications across Greenhouse, Lever, Ashby, Workday and LinkedIn (you still hit submit).",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "FastApply",
+            "url": "https://blog.fastapply.co/best-ai-job-application-automation-tools-2026"
+          },
+          {
+            "name": "JobAgent",
+            "url": "https://www.jobagent.sh/blog/best-ai-auto-apply-tools-2026"
+          },
+          {
+            "name": "Medium/Dandrautomation",
+            "url": "https://medium.com/@dandrautomation/linkedin-auto-apply-tools-compared-which-one-actually-works-2026-review-8e277e75df0c"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Kickresume",
+        "homepage": "https://www.kickresume.com",
+        "pricing": "Freemium (Premium ~$19/mo)",
+        "bestFor": "Strongest AI first drafts for summaries and bullet points, with a large polished template library.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Resume.io",
+            "url": "https://resume.io/blog/what-is-the-best-ai-resume-builder"
+          },
+          {
+            "name": "TripleTen",
+            "url": "https://tripleten.com/blog/posts/best-ai-resume-builder"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Zety",
+        "homepage": "https://zety.com",
+        "pricing": "Paid (subscription, ~$5.99 trial then ~$23.70/mo)",
+        "bestFor": "Cleanest template output and guided step-by-step building for a fast, polished-looking resume.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Rezi Blog",
+            "url": "https://www.rezi.ai/posts/best-ai-resume-builders"
+          },
+          {
+            "name": "TripleTen",
+            "url": "https://tripleten.com/blog/posts/best-ai-resume-builder"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Sheets Resume",
+        "homepage": "https://sheetsresume.com",
+        "pricing": "Freemium",
+        "bestFor": "Simple Google-Docs-style approach from an ex-recruiter; favored on Reddit for clean, no-nonsense resumes.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Resume Optimizer Pro (Reddit)",
+            "url": "https://resumeoptimizerpro.com/blog/best-ai-resume-builder-reddit"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "Reactive-Resume",
+        "homepage": "https://github.com/AmruthPillai/Reactive-Resume",
+        "pricing": "Free / OSS",
+        "bestFor": "The gold-standard open-source resume builder — privacy-first, self-hostable, dozens of templates, one-click PDF export. The recognized category leader (~40k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~40k★)",
+            "url": "https://github.com/AmruthPillai/Reactive-Resume"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Awesome-CV",
+        "homepage": "https://github.com/posquit0/Awesome-CV",
+        "pricing": "Free / OSS",
+        "bestFor": "The iconic LaTeX résumé/CV template used across tech — clean, ATS-parseable typography (~28k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~28k★)",
+            "url": "https://github.com/posquit0/Awesome-CV"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "RenderCV",
+        "homepage": "https://github.com/rendercv/rendercv",
+        "pricing": "Free / OSS",
+        "bestFor": "YAML-to-PDF résumé engine with version-controllable source and ATS-friendly output; hugely popular with engineers (~17k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~17k★)",
+            "url": "https://github.com/rendercv/rendercv"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "best-resume-ever (salomonelli)",
+        "homepage": "https://github.com/salomonelli/best-resume-ever",
+        "pricing": "Free / OSS",
+        "bestFor": "Vue-based builder that generates multiple polished résumé designs from one data file (~16k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~16k★)",
+            "url": "https://github.com/salomonelli/best-resume-ever"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "OpenResume",
+        "homepage": "https://github.com/xitanggg/open-resume",
+        "pricing": "Free / OSS",
+        "bestFor": "Open-source résumé builder and parser focused on ATS compatibility; runs fully in your browser, no signup (~9k stars).",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~9k★)",
+            "url": "https://github.com/xitanggg/open-resume"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "sb2nov/resume",
+        "homepage": "https://github.com/sb2nov/resume",
+        "pricing": "Free / OSS",
+        "bestFor": "Widely-forked LaTeX software-engineer résumé template; a de-facto GitHub starting point (~7k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~7k★)",
+            "url": "https://github.com/sb2nov/resume"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "JSON Resume (resume-cli)",
+        "homepage": "https://github.com/jsonresume/resume-cli",
+        "pricing": "Free / OSS",
+        "bestFor": "Official CLI for the JSON Resume standard — one JSON file, many community themes and export formats (~5k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (~5k★)",
+            "url": "https://github.com/jsonresume/resume-cli"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "ResumeSkills (Paramchoudhary)",
+        "homepage": "https://github.com/Paramchoudhary/ResumeSkills",
+        "pricing": "Free / OSS",
+        "bestFor": "The most complete Agent Skills pack for job seekers: 20 SKILL.md skills covering ATS optimization, bullet writing, job-fit analysis, and interview prep (~1.3k stars).",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~1.3k★)",
+            "url": "https://github.com/Paramchoudhary/ResumeSkills"
+          },
+          {
+            "name": "Claude Code Playbooks",
+            "url": "https://www.claudecodehq.com/blog/claude-skills-job-seekers"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "resume-cover-letter (jezweb/claude-skills)",
+        "homepage": "https://github.com/jezweb/claude-skills/blob/main/plugins/writing/skills/resume-cover-letter/SKILL.md",
+        "pricing": "Free / OSS",
+        "bestFor": "Resume + cover-letter SKILL.md inside a popular general Claude Code skills/plugins collection (~940 stars overall).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~940★)",
+            "url": "https://github.com/jezweb/claude-skills/blob/main/plugins/writing/skills/resume-cover-letter/SKILL.md"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "proficiently-claude-skills (proficientlyjobs)",
+        "homepage": "https://github.com/proficientlyjobs/proficiently-claude-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "Claude Code skills for AI-powered job search, resume tailoring, and cover-letter writing with a structured per-application workflow (~300 stars).",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (~300★)",
+            "url": "https://github.com/proficientlyjobs/proficiently-claude-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "App track has strong, Reddit-corroborated consensus (Teal, Rezi, Simplify). Note that mass auto-apply bots like LazyApply are widely criticized (low Trustpilot scores, LinkedIn now flags 'human-impossible' velocity), so autofill-with-review tools (Simplify) are ranked over spray-and-pray automation. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes the notable open-source résumé repos (Reactive-Resume, Awesome-CV, RenderCV, best-resume-ever, OpenResume, sb2nov, JSON Resume) with the leading resume Agent Skills; Paramchoudhary's ResumeSkills is the strongest dedicated skill but now ranks below the far more adopted builder repos. Star counts verified via the GitHub API (Jul 2026); the tiny jananthan30/Resume-Builder (~64 stars) was dropped as below the quality bar."
+}

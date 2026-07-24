@@ -1,89 +1,136 @@
-import { createServerFn } from '@tanstack/react-start'
+// Static content layer for the ranking site. Source of truth is version-controlled
+// JSON under src/content (categories.json + c/<slug>.json), authored from consensus
+// research. No database: the catalog is read-only, periodically-refreshed content, so
+// git IS the store. (The Postgres client in lib/db.ts is kept but no longer used.)
 
-import { sql } from '~/lib/db'
+import categoriesJson from '~/content/categories.json'
 
-// Server-side data delivery for the ranking site. All reads hit the Azure
-// easy-app Postgres (whichtouse-schema): categories / items / rankings.
-// Kept in server functions so the DB connection never reaches the client bundle.
+export type FormFactor = 'app' | 'skill'
+export type MoneyTier = 'green' | 'yellow' | 'red'
+export type Confidence = 'high' | 'medium' | 'low'
 
-export type Category = { slug: string; name: string; moneyTier: string }
+export type Source = { name: string; url: string }
+
+/** Non-app track item kind. Agent Skills (SKILL.md packages) are preferred; a
+ * notable open-source repo fills in where no established skill exists yet. MCP
+ * servers are intentionally excluded. */
+export type ItemKind = 'skill' | 'repo'
 
 export type RankItem = {
   rank: number
-  formFactor: 'app' | 'skill' | 'repo'
   name: string
-  url: string | null
   homepage: string | null
   pricing: string | null
-  overall: number | null
-  growth: number | null
+  bestFor: string
+  confidence: Confidence
+  /** testing depth: 📋 provisional (consensus only) · 🆓 free-tier tested · 🧪 sandbox tested */
   badge: string
+  sources: Source[]
+  /** only on the skill/repo track: whether this is a genuine Agent Skill or a repo */
+  kind?: ItemKind
+
+  // --- richer detail fields (optional; shown in the detail panel) ---
+  /** concrete reason it ranks here (avg rank across roundups / stars / buzz) */
+  rankBasis?: string
+  /** free plan in concrete terms, or null if none */
+  pricingFree?: string | null
+  /** most basic/common paid plan + what it includes, or null if fully free */
+  pricingPaid?: string | null
+  /** 2–4 main features */
+  features?: string[]
+  /** competitive strengths, from aggregated reviews/community (not hands-on) */
+  pros?: string[]
+  /** real shortcomings, from aggregated reviews/community (not hands-on) */
+  cons?: string[]
+}
+
+export type Category = {
+  slug: string
+  name: string
+  moneyTier: MoneyTier
+  sort: number
+  /** whether authored ranking content exists yet */
+  ready: boolean
+}
+
+type CategoryContent = {
+  slug: string
+  updated: string
+  tracks: { app: RankItem[]; skill: RankItem[] }
+  notes?: string
 }
 
 export type CategoryView = {
   category: Category
-  overall: Record<'app' | 'skill' | 'repo', RankItem[]>
-  growth: Record<'app' | 'skill' | 'repo', RankItem[]>
-  best3: RankItem[]
+  updated: string
+  tracks: { app: RankItem[]; skill: RankItem[] }
+  notes: string | null
 }
 
-export const getCategories = createServerFn({ method: 'GET' }).handler(
-  async (): Promise<Category[]> => {
-    const rows = await sql()`
-      select slug, name, money_tier from categories order by sort
-    `
-    return rows.map((r) => ({ slug: r.slug, name: r.name, moneyTier: r.money_tier }))
-  },
+type RawCategory = Omit<Category, 'ready'>
+
+// Eagerly bundle every authored category file at build time.
+// NOTE: import.meta.glob does not resolve the `~` alias — the pattern must be
+// a relative/absolute literal. This file is src/lib, content is src/content.
+const contentModules = import.meta.glob<{ default: CategoryContent }>(
+  '../content/c/*.json',
+  { eager: true },
 )
 
-const emptyTracks = (): Record<'app' | 'skill' | 'repo', RankItem[]> => ({
-  app: [],
-  skill: [],
-  repo: [],
-})
+const contentBySlug = new Map<string, CategoryContent>()
+for (const path in contentModules) {
+  const data = contentModules[path].default
+  contentBySlug.set(data.slug, data)
+}
 
-export const getCategoryView = createServerFn({ method: 'GET' })
-  .validator((slug: string) => slug)
-  .handler(async ({ data: slug }): Promise<CategoryView | null> => {
-    const cat = await sql()`select slug, name, money_tier from categories where slug = ${slug}`
-    if (!cat.length) return null
+const rawCategories = (categoriesJson as RawCategory[])
+  .slice()
+  .sort((a, b) => a.sort - b.sort)
 
-    const rows = await sql()`
-      select r.form_factor as rank_track, r.dimension, r.rank,
-             i.form_factor as item_track, i.name, i.url, i.homepage, i.pricing,
-             i.overall_signal, i.growth_signal, i.badge
-      from rankings r
-      join items i on i.id = r.item_id
-      join categories c on c.id = r.category_id
-      where c.slug = ${slug}
-      order by r.dimension, r.form_factor, r.rank
-    `
+export function getCategories(): Category[] {
+  return rawCategories.map((c) => ({ ...c, ready: contentBySlug.has(c.slug) }))
+}
 
-    const toItem = (r: any): RankItem => ({
-      rank: r.rank,
-      formFactor: r.item_track,
-      name: r.name,
-      url: r.url,
-      homepage: r.homepage,
-      pricing: r.pricing,
-      overall: r.overall_signal != null ? Number(r.overall_signal) : null,
-      growth: r.growth_signal != null ? Number(r.growth_signal) : null,
-      badge: r.badge,
-    })
+export function getCategoryView(slug: string): CategoryView | null {
+  const raw = rawCategories.find((c) => c.slug === slug)
+  if (!raw) return null
+  const content = contentBySlug.get(slug)
+  return {
+    category: { ...raw, ready: !!content },
+    updated: content?.updated ?? '',
+    tracks: content?.tracks ?? { app: [], skill: [] },
+    notes: content?.notes ?? null,
+  }
+}
 
-    const overall = emptyTracks()
-    const growth = emptyTracks()
-    const best3: RankItem[] = []
-    for (const r of rows) {
-      if (r.rank_track === 'best3') best3.push(toItem(r))
-      else if (r.dimension === 'overall') overall[r.rank_track as 'app' | 'skill' | 'repo'].push(toItem(r))
-      else if (r.dimension === 'growth') growth[r.rank_track as 'app' | 'skill' | 'repo'].push(toItem(r))
-    }
+/** The default category shown at the site root. */
+export const DEFAULT_SLUG = 'coding'
 
-    return {
-      category: { slug: cat[0].slug, name: cat[0].name, moneyTier: cat[0].money_tier },
-      overall,
-      growth,
-      best3,
-    }
-  })
+export type Track = 'app' | 'skill'
+
+export type RankedItem = RankItem & {
+  track: Track
+  /** display label for the Type column */
+  typeLabel: 'App / SaaS' | 'Skill / Repo'
+  /** merged rank across both tracks (1-based) */
+  overallRank: number
+  /** derived display score (0-10). NOTE: placeholder derived from confidence +
+   * position — NOT an independent measurement. Real scores arrive with hands-on
+   * testing; see the honesty note in the detail panel. */
+  score: number
+}
+
+// App track ranks above the skill track (matching the reference layout), score
+// descends by merged position. Deterministic — no randomness.
+export function rankItems(view: CategoryView): RankedItem[] {
+  const merged: Array<RankItem & { track: Track }> = [
+    ...view.tracks.app.map((i) => ({ ...i, track: 'app' as const })),
+    ...view.tracks.skill.map((i) => ({ ...i, track: 'skill' as const })),
+  ]
+  return merged.map((it, i) => ({
+    ...it,
+    typeLabel: it.track === 'app' ? 'App / SaaS' : 'Skill / Repo',
+    overallRank: i + 1,
+    score: Math.max(0, Math.round((9.4 - i * 0.42) * 10) / 10),
+  }))
+}

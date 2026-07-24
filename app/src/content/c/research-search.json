@@ -1,0 +1,284 @@
+{
+  "slug": "research-search",
+  "updated": "2026-07-23",
+  "tracks": {
+    "app": [
+      {
+        "rank": 1,
+        "name": "OpenAI Deep Research",
+        "homepage": "https://chatgpt.com",
+        "pricing": "Paid (Plus/Pro ~$20-200/mo)",
+        "bestFor": "Best overall for breadth and report quality — runs a multi-step autonomous loop reading full pages and citing sources.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "The AI Rankings",
+            "url": "https://theairankings.com/best-ai-for-research/"
+          },
+          {
+            "name": "Awesome Agents",
+            "url": "https://awesomeagents.ai/tools/best-ai-deep-research-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Perplexity (Deep Research)",
+        "homepage": "https://www.perplexity.ai",
+        "pricing": "Freemium (Pro ~$20/mo)",
+        "bestFor": "Fast citation-backed answers with a generous free tier — the go-to for quick sourced web research.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "The AI Rankings",
+            "url": "https://theairankings.com/best-ai-for-research/"
+          },
+          {
+            "name": "Build Fast with AI",
+            "url": "https://www.buildfastwithai.com/ai-tools/deep-research"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "Claude Research",
+        "homepage": "https://claude.ai",
+        "pricing": "Freemium (Pro ~$20/mo)",
+        "bestFor": "Best for analytical depth and reasoning over sources when you want careful synthesis over sheer breadth.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "The AI Rankings",
+            "url": "https://theairankings.com/best-ai-for-research/"
+          },
+          {
+            "name": "Awesome Agents",
+            "url": "https://awesomeagents.ai/tools/best-ai-deep-research-tools-2026/"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "Gemini Deep Research",
+        "homepage": "https://gemini.google.com",
+        "pricing": "Freemium (free tier available)",
+        "bestFor": "Strong long-form research reports with a meaningful free tier and deep Google ecosystem integration.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "deepwriter",
+            "url": "https://deepwriter.com/blog/best-ai-deep-research-tools-in-2026/"
+          },
+          {
+            "name": "The AI Rankings",
+            "url": "https://theairankings.com/best-ai-for-research/"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "Elicit",
+        "homepage": "https://elicit.com",
+        "pricing": "Freemium (~$12/mo)",
+        "bestFor": "Academic literature review across millions of papers — extraction and screening for systematic reviews.",
+        "confidence": "high",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/best-ai-research-assistant-tools/"
+          },
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "Paperguide (scientific)",
+            "url": "https://paperguide.ai/blog/ai-research-assistant-tools-for-scientific-research/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Consensus",
+        "homepage": "https://consensus.app",
+        "pricing": "Freemium (~$9/mo)",
+        "bestFor": "Evidence-based answers to factual research questions, pulling directly from peer-reviewed studies.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "Paperguide",
+            "url": "https://paperguide.ai/blog/best-ai-research-assistant-tools/"
+          },
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "NotebookLM",
+        "homepage": "https://notebooklm.google.com",
+        "pricing": "Free",
+        "bestFor": "Research grounded in your own uploaded documents — Q&A and audio overviews over a private source set.",
+        "confidence": "medium",
+        "badge": "📋",
+        "sources": [
+          {
+            "name": "index.dev",
+            "url": "https://www.index.dev/blog/ai-tools-for-deep-research"
+          },
+          {
+            "name": "The AI Rankings",
+            "url": "https://theairankings.com/best-ai-for-research/"
+          }
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "rank": 1,
+        "name": "last30days",
+        "homepage": "https://github.com/mvanhorn/last30days-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "The most-starred research skill (53.4k★, MIT, reached #1 on GitHub Trending) — sweeps Reddit, X, YouTube, HN, and the web for a topic and synthesizes a grounded, cited summary.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (mvanhorn, 53.4k★)",
+            "url": "https://github.com/mvanhorn/last30days-skill"
+          },
+          {
+            "name": "Agent Skills Library",
+            "url": "https://mcpservers.org/agent-skills/mvanhorn/last30days"
+          },
+          {
+            "name": "explainx",
+            "url": "https://explainx.ai/blog/last30days-skill-ai-agent-search-reddit-x-youtube-polymarket-2026"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "imbad0202/academic-research-skills",
+        "homepage": "https://github.com/imbad0202/academic-research-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "A full research -> write -> review -> revise pipeline skill (39.3k★) with a multi-agent research team, systematic-review modes, and citation verification.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (imbad0202, 39.3k★)",
+            "url": "https://github.com/imbad0202/academic-research-skills"
+          },
+          {
+            "name": "GitHub search (deep research skills)",
+            "url": "https://github.com/search?q=claude+deep+research+skill"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "name": "GPT Researcher",
+        "homepage": "https://github.com/assafelovic/gpt-researcher",
+        "pricing": "Free / OSS",
+        "bestFor": "The recognized open-source deep-research agent (28k★) — plans, searches, reads many sources, and writes a long, cited report; ships as a Python package and full web app.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (assafelovic, 28.1k★)",
+            "url": "https://github.com/assafelovic/gpt-researcher"
+          },
+          {
+            "name": "NocoBase (OSS AI agents)",
+            "url": "https://www.nocobase.com/en/blog/github-open-source-ai-agent-projects"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "STORM (Stanford OVAL)",
+        "homepage": "https://github.com/stanford-oval/storm",
+        "pricing": "Free / OSS",
+        "bestFor": "Stanford's LLM knowledge-curation system (30.3k★) — researches a topic and generates a full-length, Wikipedia-style report with citations; Co-STORM adds human-in-the-loop.",
+        "confidence": "high",
+        "badge": "📋",
+        "kind": "repo",
+        "sources": [
+          {
+            "name": "GitHub (stanford-oval, 30.3k★)",
+            "url": "https://github.com/stanford-oval/storm"
+          },
+          {
+            "name": "Awesome Deep Research",
+            "url": "https://github.com/DavidZWZ/Awesome-Deep-Research"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "name": "claude-deep-research-skill",
+        "homepage": "https://github.com/199-biotechnologies/claude-deep-research-skill",
+        "pricing": "Free / OSS",
+        "bestFor": "An 8-phase deep-research skill with source-credibility scoring and automated citation/DOI verification for long reports. Smaller/newer, so ranked mid at medium confidence.",
+        "confidence": "medium",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (199-biotechnologies)",
+            "url": "https://github.com/199-biotechnologies/claude-deep-research-skill"
+          },
+          {
+            "name": "NVIDIA Technical Blog",
+            "url": "https://developer.nvidia.com/blog/add-a-specialized-deep-research-skill-to-agent-harnesses/"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "lingzhi227/agent-research-skills",
+        "homepage": "https://github.com/lingzhi227/agent-research-skills",
+        "pricing": "Free / OSS",
+        "bestFor": "A systematic academic literature-review skill running a 6-phase survey from frontier scan to compiled report. Niche and low-star, so ranked last.",
+        "confidence": "low",
+        "badge": "📋",
+        "kind": "skill",
+        "sources": [
+          {
+            "name": "GitHub (lingzhi227)",
+            "url": "https://github.com/lingzhi227/agent-research-skills"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not form factor; kind (skill|repo) is only a tag. last30days (53.4k★, #1 trending) and imbad0202's research pipeline (39.3k★) are the highest-adoption skills; GPT Researcher (28k★) is the recognized de-facto open-source deep-research agent and STORM (30.3k★) is Stanford's report generator — both major repos now ranked alongside the skills on merit. Deep-research/citation skills fill the mid and low tiers. All still depend on an underlying web-search tool and can fabricate citations — verify before citing. No MCP servers. Star counts verified on GitHub. App-track deep-research consensus is stable: OpenAI, Perplexity, Claude, and Gemini lead general research; Elicit/Consensus/NotebookLM lead academic and document-grounded work."
+}
