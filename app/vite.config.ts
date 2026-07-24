@@ -9,7 +9,7 @@ export default defineConfig({
   // (the content skills + n-easyapp read it there), so load env from the parent.
   envDir: '..',
   server: {
-    port: 3000,
+    port: 5200,
   },
   resolve: {
     alias: {

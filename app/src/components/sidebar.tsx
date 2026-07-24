@@ -1,63 +1,8 @@
-import type { ComponentType } from 'react'
 import { Link, useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
-import {
-  AudioLines,
-  BarChart3,
-  BookOpen,
-  Briefcase,
-  Calculator,
-  Code2,
-  FileText,
-  Globe,
-  Image as ImageIcon,
-  Languages,
-  Mail,
-  MessagesSquare,
-  MousePointerClick,
-  Network,
-  NotebookPen,
-  Palette,
-  PenLine,
-  Presentation,
-  Scale,
-  Search,
-  Share2,
-  Telescope,
-  Users,
-  Video,
-  Workflow,
-} from 'lucide-react'
 
 import type { Category } from '~/lib/catalog'
-
-const ICONS: Record<string, ComponentType<{ size?: number }>> = {
-  'content-writing': PenLine,
-  'video-generation': Video,
-  'image-generation': ImageIcon,
-  'voice-audio': AudioLines,
-  'lead-gen': Users,
-  'email-outreach': Mail,
-  'seo-geo': Search,
-  'social-media': Share2,
-  'ui-design': Palette,
-  presentation: Presentation,
-  'data-analysis': BarChart3,
-  'research-search': Telescope,
-  'customer-support': MessagesSquare,
-  'meeting-notes': NotebookPen,
-  'pdf-documents': FileText,
-  'knowledge-base': BookOpen,
-  translation: Languages,
-  'resume-jobs': Briefcase,
-  bookkeeping: Calculator,
-  'legal-contract': Scale,
-  coding: Code2,
-  'browser-automation': MousePointerClick,
-  'web-scraping': Globe,
-  'workflow-automation': Workflow,
-  'architecture-diagram': Network,
-}
+import { categoryIcon } from '~/lib/category-icons'
 
 const s = stylex.create({
   aside: {
@@ -126,7 +71,7 @@ export function Sidebar({ categories }: { categories: Category[] }) {
     <aside {...stylex.props(s.aside, s.hideSm)}>
       <nav {...stylex.props(s.list)}>
         {categories.map((c) => {
-          const Icon = ICONS[c.slug] ?? Code2
+          const Icon = categoryIcon(c.slug)
           const isActive = c.slug === active
           return (
             <Link

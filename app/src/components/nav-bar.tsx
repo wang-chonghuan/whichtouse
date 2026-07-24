@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
-import { Boxes, Package, Search, X } from 'lucide-react'
+import { Boxes, Menu, Package, Search, X } from 'lucide-react'
 
-import type { CatalogSearchEntry } from '~/lib/catalog'
+import type { CatalogSearchEntry, Category } from '~/lib/catalog'
+import { categoryIcon } from '~/lib/category-icons'
 import { OPEN_CATALOG_SEARCH_EVENT } from '~/lib/catalog-search'
 
 function normalize(value: string): string {
@@ -196,11 +197,87 @@ const s = stylex.create({
   resultName: { display: 'block', fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
   resultMeta: { display: 'block', marginTop: 2, fontSize: 12, color: 'var(--color-text-secondary)' },
   empty: { padding: 'var(--spacing-5)', color: 'var(--color-text-secondary)', fontSize: 13, textAlign: 'center' },
+  // Mobile category menu (the sidebar is hidden ≤900px; this replaces it).
+  menuBtn: {
+    display: { default: 'none', '@media (max-width: 900px)': 'inline-flex' },
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 34,
+    height: 34,
+    marginInlineEnd: 'calc(var(--spacing-1) * -1)',
+    borderWidth: 0,
+    borderRadius: 'var(--radius-element)',
+    color: 'var(--color-text-secondary)',
+    backgroundColor: { default: 'transparent', ':hover': 'var(--color-overlay-hover)' },
+    cursor: 'pointer',
+    padding: 0,
+    fontFamily: 'inherit',
+  },
+  menuScrim: {
+    position: 'fixed',
+    top: 60,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(20,24,31,0.34)',
+    zIndex: 110,
+  },
+  menuPanel: {
+    position: 'fixed',
+    top: 60,
+    left: 0,
+    bottom: 0,
+    width: 'min(320px, 86vw)',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: 'var(--color-background-surface)',
+    borderRightWidth: 1,
+    borderRightStyle: 'solid',
+    borderRightColor: 'var(--color-border)',
+    boxShadow: 'var(--shadow-high)',
+    zIndex: 115,
+    overflowY: 'auto',
+    paddingBlock: 'var(--spacing-3)',
+  },
+  menuLabel: {
+    paddingInline: 'var(--spacing-4)',
+    paddingBottom: 'var(--spacing-2)',
+    color: 'var(--color-text-secondary)',
+    fontSize: 11,
+    fontWeight: 700,
+    letterSpacing: '0.04em',
+  },
+  menuItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 'var(--spacing-3)',
+    paddingInline: 'var(--spacing-4)',
+    paddingBlock: 'var(--spacing-3)',
+    marginInline: 'var(--spacing-2)',
+    borderRadius: 'var(--radius-element)',
+    fontSize: 14,
+    fontWeight: 500,
+    color: 'var(--color-text-secondary)',
+    textDecoration: 'none',
+    backgroundColor: { default: 'transparent', ':hover': 'var(--color-overlay-hover)' },
+  },
+  menuItemActive: {
+    backgroundColor: 'var(--color-accent-muted)',
+    color: 'var(--color-text-accent)',
+    fontWeight: 600,
+  },
+  menuIcon: { display: 'flex', flexShrink: 0, opacity: 0.85 },
 })
 
 type ScoredEntry = CatalogSearchEntry & { score: number }
 
-export function NavBar({ entries }: { entries: CatalogSearchEntry[] }) {
+export function NavBar({
+  entries,
+  categories,
+}: {
+  entries: CatalogSearchEntry[]
+  categories: Category[]
+}) {
   const navigate = useNavigate()
   const rootRef = useRef<HTMLElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -208,6 +285,11 @@ export function NavBar({ entries }: { entries: CatalogSearchEntry[] }) {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const activeSlug = pathname.match(/^\/c\/([^/]+)/)?.[1] ?? null
+
+  // Close the mobile category menu whenever the route changes.
+  useEffect(() => setMenuOpen(false), [pathname])
 
   const results = useMemo(() => {
     if (!query.trim()) return []
@@ -345,6 +427,15 @@ export function NavBar({ entries }: { entries: CatalogSearchEntry[] }) {
         </div>
       ) : (
         <>
+          <button
+            type="button"
+            aria-label="Browse use cases"
+            aria-expanded={menuOpen}
+            {...stylex.props(s.menuBtn)}
+            onClick={() => setMenuOpen((value) => !value)}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
           <Link to="/" {...stylex.props(s.logo)}>
             Which<span {...stylex.props(s.logoAccent)}>ToUse</span>
           </Link>
@@ -368,6 +459,32 @@ export function NavBar({ entries }: { entries: CatalogSearchEntry[] }) {
               <Search size={15} />
               Search
             </button>
+          </nav>
+        </>
+      )}
+
+      {menuOpen && !open && (
+        <>
+          <div {...stylex.props(s.menuScrim)} onClick={() => setMenuOpen(false)} />
+          <nav {...stylex.props(s.menuPanel)} aria-label="Use cases">
+            <div {...stylex.props(s.menuLabel)}>BROWSE BY USE CASE</div>
+            {categories.map((category) => {
+              const Icon = categoryIcon(category.slug)
+              return (
+                <Link
+                  key={category.slug}
+                  to="/c/$slug"
+                  params={{ slug: category.slug }}
+                  {...stylex.props(s.menuItem, category.slug === activeSlug && s.menuItemActive)}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span {...stylex.props(s.menuIcon)}>
+                    <Icon size={17} />
+                  </span>
+                  {category.name}
+                </Link>
+              )
+            })}
           </nav>
         </>
       )}

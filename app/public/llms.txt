@@ -1,6 +1,6 @@
 # WhichToUse
 
-> The honest ranking of AI agents, by what you're doing.
+> Independent, evidence-backed rankings of the best AI tools for what you're doing.
 > Use-case categories x three form-factor tracks (app/SaaS, skill, open-source),
 > ranked by public signals (GitHub stars / directory upvotes). All provisional
 > (signal-ranked, not yet hands-on tested).

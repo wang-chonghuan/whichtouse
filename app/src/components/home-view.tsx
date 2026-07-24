@@ -1,12 +1,16 @@
 import { useMemo, useRef, useState } from 'react'
+import { Link } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 import { Badge } from '@astryxdesign/core/Badge'
-import { FolderGit2, LoaderCircle, Star } from 'lucide-react'
+import { ArrowRight, FolderGit2, LoaderCircle, Search, Star } from 'lucide-react'
 
 import {
   ProductDetailPanel,
   type DetailPanelItem,
 } from '~/components/product-detail-panel'
+import type { Category } from '~/lib/catalog'
+import { categoryIcon } from '~/lib/category-icons'
+import { openCatalogSearch } from '~/lib/catalog-search'
 import {
   getTrendingRepositoryDetail,
   type TrendingRepositoriesResult,
@@ -33,45 +37,167 @@ const s = stylex.create({
       '@media (max-width: 640px)': 'var(--spacing-5)',
     },
   },
-  intro: {
-    maxWidth: 760,
+  // --- hero -------------------------------------------------------------
+  hero: {
+    maxWidth: 720,
     marginBottom: 'var(--spacing-7)',
+  },
+  kicker: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 6,
+    color: 'var(--color-text-accent)',
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: '0.06em',
+    textTransform: 'uppercase',
+    marginBottom: 'var(--spacing-3)',
   },
   h1: {
     margin: 0,
     color: 'var(--color-text-primary)',
     fontSize: {
-      default: 30,
-      '@media (max-width: 640px)': 26,
+      default: 38,
+      '@media (max-width: 640px)': 28,
     },
     fontWeight: 800,
-    lineHeight: 1.15,
+    letterSpacing: '-0.02em',
+    lineHeight: 1.1,
   },
   tagline: {
-    marginTop: 'var(--spacing-3)',
+    marginTop: 'var(--spacing-4)',
     marginBottom: 0,
     color: 'var(--color-text-secondary)',
-    fontSize: 15,
-    lineHeight: 1.5,
+    fontSize: {
+      default: 16,
+      '@media (max-width: 640px)': 15,
+    },
+    lineHeight: 1.55,
+  },
+  ctaRow: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    gap: 'var(--spacing-3)',
+    marginTop: 'var(--spacing-5)',
+  },
+  searchCta: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 'var(--spacing-2)',
+    height: 44,
+    paddingInline: 'var(--spacing-5)',
+    borderWidth: 0,
+    borderRadius: 'var(--radius-full)',
+    backgroundColor: {
+      default: 'var(--color-text-accent)',
+      ':hover': '#1d4ed8',
+    },
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 600,
+    fontFamily: 'inherit',
+    cursor: 'pointer',
+  },
+  trust: {
+    color: 'var(--color-text-secondary)',
+    fontSize: 13,
+    fontWeight: 500,
+  },
+  // --- section scaffolding ---------------------------------------------
+  section: {
+    marginTop: 'var(--spacing-7)',
   },
   sectionHead: {
     display: 'flex',
     alignItems: 'baseline',
     justifyContent: 'space-between',
     gap: 'var(--spacing-4)',
-    marginBottom: 'var(--spacing-3)',
+    marginBottom: 'var(--spacing-2)',
   },
   sectionTitle: {
     margin: 0,
     color: 'var(--color-text-primary)',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 700,
+    letterSpacing: '-0.01em',
+  },
+  sectionSub: {
+    margin: 0,
+    marginBottom: 'var(--spacing-4)',
+    color: 'var(--color-text-secondary)',
+    fontSize: 13.5,
+    lineHeight: 1.5,
+    maxWidth: 640,
   },
   count: {
     color: 'var(--color-text-secondary)',
     fontSize: 12,
     fontVariantNumeric: 'tabular-nums',
+    whiteSpace: 'nowrap',
   },
+  // --- use-case grid ----------------------------------------------------
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: {
+      default: 'repeat(auto-fill, minmax(210px, 1fr))',
+      '@media (max-width: 520px)': 'repeat(auto-fill, minmax(150px, 1fr))',
+    },
+    gap: 'var(--spacing-3)',
+  },
+  card: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 'var(--spacing-3)',
+    padding: 'var(--spacing-4)',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: {
+      default: 'var(--color-border)',
+      ':hover': 'var(--color-accent)',
+    },
+    borderRadius: 'var(--radius-container)',
+    backgroundColor: {
+      default: 'var(--color-background-surface)',
+      ':hover': 'var(--color-accent-muted)',
+    },
+    color: 'var(--color-text-primary)',
+    textDecoration: 'none',
+    transitionProperty: 'transform, border-color, background-color',
+    transitionDuration: '0.14s',
+    transform: {
+      default: 'translateY(0)',
+      ':hover': 'translateY(-2px)',
+    },
+    '@media (prefers-reduced-motion: reduce)': {
+      transitionProperty: 'none',
+      transform: 'none',
+    },
+  },
+  cardIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 38,
+    height: 38,
+    flexShrink: 0,
+    borderRadius: 'var(--radius-element)',
+    backgroundColor: 'var(--color-accent-muted)',
+    color: 'var(--color-text-accent)',
+  },
+  cardBody: { minWidth: 0, flex: 1 },
+  cardName: {
+    fontSize: 14,
+    fontWeight: 650,
+    lineHeight: 1.25,
+    overflowWrap: 'anywhere',
+  },
+  cardArrow: {
+    color: 'var(--color-text-disabled)',
+    flexShrink: 0,
+    display: { default: 'flex', '@media (max-width: 520px)': 'none' },
+  },
+  // --- trending table ---------------------------------------------------
   table: {
     borderWidth: 1,
     borderStyle: 'solid',
@@ -220,6 +346,25 @@ const s = stylex.create({
     color: 'var(--color-error)',
     fontSize: 12.5,
   },
+  // --- footer -----------------------------------------------------------
+  footer: {
+    marginTop: 'var(--spacing-7)',
+    paddingTop: 'var(--spacing-5)',
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
+    borderTopColor: 'var(--color-border)',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    gap: 'var(--spacing-3)',
+    color: 'var(--color-text-secondary)',
+    fontSize: 12.5,
+    lineHeight: 1.5,
+  },
+  footerLink: {
+    color: 'var(--color-text-accent)',
+    textDecoration: 'none',
+  },
 })
 
 function toPanelItem(repository: TrendingRepository): DetailPanelItem {
@@ -239,7 +384,13 @@ function toPanelItem(repository: TrendingRepository): DetailPanelItem {
   }
 }
 
-export function HomeView({ trending }: { trending: TrendingRepositoriesResult }) {
+export function HomeView({
+  trending,
+  categories,
+}: {
+  trending: TrendingRepositoriesResult
+  categories: Category[]
+}) {
   const [selectedItem, setSelectedItem] = useState<DetailPanelItem | null>(null)
   const [loadingId, setLoadingId] = useState<string | null>(null)
   const [detailError, setDetailError] = useState<string | null>(null)
@@ -274,21 +425,68 @@ export function HomeView({ trending }: { trending: TrendingRepositoriesResult })
   return (
     <div {...stylex.props(s.page)}>
       <div {...stylex.props(s.inner)}>
-        <section {...stylex.props(s.intro)}>
-          <h1 {...stylex.props(s.h1)}>WhichToUse</h1>
+        <section {...stylex.props(s.hero)}>
+          <span {...stylex.props(s.kicker)}>Independent AI tool rankings</span>
+          <h1 {...stylex.props(s.h1)}>Find the best AI tool for what you’re actually doing.</h1>
           <p {...stylex.props(s.tagline)}>
-            Find the best AI tools for the work you need to do, with rankings and evidence you can
-            inspect.
+            Rankings across {categories.length} real use cases — apps and open-source skills, side by
+            side — with the evidence behind every pick. No hype, no affiliate order.
           </p>
+          <div {...stylex.props(s.ctaRow)}>
+            <button type="button" {...stylex.props(s.searchCta)} onClick={openCatalogSearch}>
+              <Search size={16} />
+              Search AI tools &amp; use cases
+            </button>
+            <span {...stylex.props(s.trust)}>
+              {categories.length} use cases · apps + open-source skills
+            </span>
+          </div>
         </section>
 
-        <section>
+        <section {...stylex.props(s.section)}>
           <div {...stylex.props(s.sectionHead)}>
-            <h2 {...stylex.props(s.sectionTitle)}>GitHub Trending</h2>
+            <h2 {...stylex.props(s.sectionTitle)}>Browse by use case</h2>
+            <span {...stylex.props(s.count)}>{categories.length} categories</span>
+          </div>
+          <p {...stylex.props(s.sectionSub)}>
+            Start from the job you need done — each use case ranks the strongest apps and skills for it.
+          </p>
+          <div {...stylex.props(s.grid)}>
+            {categories.map((category) => {
+              const Icon = categoryIcon(category.slug)
+              return (
+                <Link
+                  key={category.slug}
+                  to="/c/$slug"
+                  params={{ slug: category.slug }}
+                  {...stylex.props(s.card)}
+                >
+                  <span {...stylex.props(s.cardIcon)}>
+                    <Icon size={19} />
+                  </span>
+                  <span {...stylex.props(s.cardBody)}>
+                    <span {...stylex.props(s.cardName)}>{category.name}</span>
+                  </span>
+                  <span {...stylex.props(s.cardArrow)}>
+                    <ArrowRight size={16} />
+                  </span>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+
+        <section {...stylex.props(s.section)}>
+          <div {...stylex.props(s.sectionHead)}>
+            <h2 {...stylex.props(s.sectionTitle)}>Trending on GitHub today</h2>
             {!trending.error && (
               <span {...stylex.props(s.count)}>{trending.repositories.length} repositories</span>
             )}
           </div>
+          <p {...stylex.props(s.sectionSub)}>
+            A live snapshot of fast-growing open-source AI projects. Tap any repo for an instant
+            breakdown.
+          </p>
 
           {trending.error ? (
             <div {...stylex.props(s.table, s.error)}>{trending.error}</div>
@@ -357,6 +555,21 @@ export function HomeView({ trending }: { trending: TrendingRepositoriesResult })
 
           {detailError && <div {...stylex.props(s.detailError)}>{detailError}</div>}
         </section>
+
+        <footer {...stylex.props(s.footer)}>
+          <span>
+            Rankings are built from a consensus of independent public sources, graded by confidence.
+            Hands-on testing upgrades a pick from 📋 provisional to 🧪 tested.
+          </span>
+          <a
+            {...stylex.props(s.footerLink)}
+            href="https://github.com/trending"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Trending data via GitHub ↗
+          </a>
+        </footer>
       </div>
 
       {selectedItem && (

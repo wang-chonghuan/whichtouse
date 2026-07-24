@@ -1,0 +1,62 @@
+import type { ComponentType } from 'react'
+import {
+  AudioLines,
+  BarChart3,
+  BookOpen,
+  Briefcase,
+  Calculator,
+  Code2,
+  FileText,
+  Globe,
+  Image as ImageIcon,
+  Languages,
+  Mail,
+  MessagesSquare,
+  MousePointerClick,
+  Network,
+  NotebookPen,
+  Palette,
+  PenLine,
+  Presentation,
+  Scale,
+  Search,
+  Share2,
+  Telescope,
+  Users,
+  Video,
+  Workflow,
+} from 'lucide-react'
+
+// Single source of truth for the per-use-case icon, shared by the sidebar,
+// the home "browse by use case" grid, and the mobile category menu.
+export const CATEGORY_ICONS: Record<string, ComponentType<{ size?: number }>> = {
+  'content-writing': PenLine,
+  'video-generation': Video,
+  'image-generation': ImageIcon,
+  'voice-audio': AudioLines,
+  'lead-gen': Users,
+  'email-outreach': Mail,
+  'seo-geo': Search,
+  'social-media': Share2,
+  'ui-design': Palette,
+  presentation: Presentation,
+  'data-analysis': BarChart3,
+  'research-search': Telescope,
+  'customer-support': MessagesSquare,
+  'meeting-notes': NotebookPen,
+  'pdf-documents': FileText,
+  'knowledge-base': BookOpen,
+  translation: Languages,
+  'resume-jobs': Briefcase,
+  bookkeeping: Calculator,
+  'legal-contract': Scale,
+  coding: Code2,
+  'browser-automation': MousePointerClick,
+  'web-scraping': Globe,
+  'workflow-automation': Workflow,
+  'architecture-diagram': Network,
+}
+
+export function categoryIcon(slug: string): ComponentType<{ size?: number }> {
+  return CATEGORY_ICONS[slug] ?? Code2
+}

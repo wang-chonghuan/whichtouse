@@ -24,7 +24,7 @@ function AppShell() {
   const { categories, searchEntries } = Route.useLoaderData()
   return (
     <div {...stylex.props(s.root)}>
-      <NavBar entries={searchEntries} />
+      <NavBar entries={searchEntries} categories={categories} />
       <div {...stylex.props(s.body)}>
         <Sidebar categories={categories} />
         <main {...stylex.props(s.content)}>

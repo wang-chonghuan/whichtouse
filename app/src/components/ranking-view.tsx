@@ -43,7 +43,8 @@ function toRows(items: RankItem[], track: Track): Row[] {
 const s = stylex.create({
   main: { position: 'relative', height: '100%', overflowY: 'auto' },
   inner: { maxWidth: 1120, marginInline: 'auto', paddingInline: 'var(--spacing-6)', paddingBlock: 'var(--spacing-7)' },
-  h1: { fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--color-text-primary)', margin: 0, marginBottom: 'var(--spacing-4)' },
+  h1: { fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--color-text-primary)', margin: 0, marginBottom: 'var(--spacing-2)' },
+  lede: { fontSize: 14, lineHeight: 1.5, color: 'var(--color-text-secondary)', margin: 0, marginBottom: 'var(--spacing-5)', maxWidth: 620 },
   searchWrap: {
     display: 'flex',
     alignItems: 'center',
@@ -58,8 +59,6 @@ const s = stylex.create({
     marginBottom: 'var(--spacing-6)',
   },
   searchInput: { flex: 1, border: 'none', outline: 'none', background: 'transparent', fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'inherit' },
-  secTitle: { fontSize: 18, fontWeight: 700, color: 'var(--color-text-primary)', margin: 0 },
-  secSub: { fontSize: 13.5, color: 'var(--color-text-secondary)', marginTop: 'var(--spacing-1)', marginBottom: 'var(--spacing-5)' },
   cols: {
     display: 'grid',
     gridTemplateColumns: { default: '1fr 1fr', '@media (max-width: 900px)': '1fr' },
@@ -97,7 +96,16 @@ const s = stylex.create({
   rank: { color: 'var(--color-text-secondary)', fontVariantNumeric: 'tabular-nums', width: 18, textAlign: 'center', fontSize: 13, flexShrink: 0 },
   mono: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: 28, height: 28, borderRadius: 'var(--radius-element)', color: '#fff', fontSize: 13, fontWeight: 700, flexShrink: 0 },
   body: { flex: 1, minWidth: 0 },
-  name: { fontWeight: 600, color: 'var(--color-text-primary)', fontSize: 14, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' },
+  name: {
+    fontWeight: 600,
+    color: 'var(--color-text-primary)',
+    fontSize: 14,
+    display: '-webkit-box',
+    overflow: 'hidden',
+    overflowWrap: 'anywhere',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
+  },
   meta: { display: 'flex', alignItems: 'center', gap: 'var(--spacing-2)', marginTop: 3 },
   price: { fontSize: 11.5, color: 'var(--color-text-secondary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' },
   score: { fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: 'var(--color-text-primary)', fontSize: 15, flexShrink: 0 },
@@ -176,23 +184,21 @@ export function RankingView({ view }: { view: CategoryView }) {
   return (
     <div {...stylex.props(s.main)}>
       <div {...stylex.props(s.inner)}>
-        <h1 {...stylex.props(s.h1)}>Find the beste AI tools for what you&rsquo;re doing</h1>
+        <h1 {...stylex.props(s.h1)}>Best {view.category.name} AI tools</h1>
+        <p {...stylex.props(s.lede)}>
+          The best apps and open-source skills for {view.category.name.toLowerCase()}, ranked side by
+          side — pick the form that fits how you work.
+        </p>
 
         <div {...stylex.props(s.searchWrap)}>
           <Search size={18} color="var(--color-text-secondary)" />
           <input
             {...stylex.props(s.searchInput)}
-            placeholder="Search tools in this use case…"
+            placeholder={`Search ${view.category.name.toLowerCase()} tools…`}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-
-        <h2 {...stylex.props(s.secTitle)}>{view.category.name}</h2>
-        <p {...stylex.props(s.secSub)}>
-          The best apps and skills for {view.category.name.toLowerCase()}, ranked side by side — pick the
-          form that fits how you work.
-        </p>
 
         <div {...stylex.props(s.cols)}>
           <TrackColumn label="APP / SAAS" dotColor="#4257c9" rows={apps} selectedId={selected} onSelect={setSelected} />
