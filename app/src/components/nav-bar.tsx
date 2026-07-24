@@ -80,7 +80,10 @@ function fuzzyScore(query: string, value: string): number | null {
 
 const s = stylex.create({
   bar: {
-    position: 'relative',
+    // sticky (not relative) so the bar stays put even if an ancestor ever
+    // scrolls; it still forms the containing block for the results dropdown.
+    position: 'sticky',
+    top: 0,
     display: 'flex',
     alignItems: 'center',
     gap: { default: 'var(--spacing-8)', '@media (max-width: 640px)': 'var(--spacing-3)' },

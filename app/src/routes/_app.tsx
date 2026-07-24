@@ -21,7 +21,15 @@ export const Route = createFileRoute('/_app')({
 })
 
 const s = stylex.create({
-  root: { display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    // 100dvh tracks the *visible* viewport, so the mobile URL bar collapsing
+    // can't push the document taller than the screen and scroll the nav bar
+    // out of view. 100vh stays as the fallback for older browsers.
+    height: stylex.firstThatWorks('100dvh', '100vh'),
+    overflow: 'hidden',
+  },
   body: { display: 'flex', flex: 1, minHeight: 0 },
   content: { flex: 1, minWidth: 0, height: '100%' },
 })
