@@ -4,7 +4,7 @@
 FROM node:24-alpine AS build
 WORKDIR /app
 # install from the app's own manifest + lockfile (context paths are repo-root relative)
-COPY app/package.json app/package-lock.json ./
+COPY app/package.json app/package-lock.json app/.npmrc ./
 RUN npm ci
 COPY app/ ./
 RUN npm run build
