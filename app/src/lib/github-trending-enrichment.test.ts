@@ -1,10 +1,31 @@
 import { describe, expect, it } from 'vitest'
 
+import { CURATED_TRENDING_REVIEWS } from '~/content/github-trending-curated'
+
 import {
   buildTrendingDetailItem,
   classifyTrendingRepository,
   extractReadmeFeatures,
 } from './github-trending-enrichment'
+
+const TRENDING_REPOSITORIES = [
+  'block/buzz',
+  'koala73/worldmonitor',
+  'ComposioHQ/awesome-claude-skills',
+  'Pumpkin-MC/Pumpkin',
+  'shiyu-coder/Kronos',
+  'Automattic/harper',
+  'likec4/likec4',
+  'citrolabs/ego-lite',
+  'yorukot/superfile',
+  'ruvnet/RuView',
+  'CoreBunch/Instatic',
+  'chrislgarry/Apollo-11',
+  'mattpocock/skills',
+  'Lordog/dive-into-llms',
+  'diegosouzapw/OmniRoute',
+  'OtterMind/Chat2DB',
+] as const
 
 describe('GitHub Trending enrichment', () => {
   it('maps repository descriptions to highlighted WhichToUse categories', () => {
@@ -120,5 +141,36 @@ describe('GitHub Trending enrichment', () => {
       ]),
     )
     expect(item.pricingPaid).toContain('$39.99/month')
+  })
+
+  it('has complete researched reviews for every repository in the Trending snapshot', () => {
+    expect(Object.keys(CURATED_TRENDING_REVIEWS)).toEqual(TRENDING_REPOSITORIES)
+
+    for (const name of TRENDING_REPOSITORIES) {
+      const review = CURATED_TRENDING_REVIEWS[name]
+
+      expect(review.homepage, `${name} homepage`).toMatch(/^https:\/\//)
+      expect(review.bestFor, `${name} bestFor`).not.toHaveLength(0)
+      expect(review.rankBasis, `${name} rankBasis`).not.toHaveLength(0)
+      expect(review.pricing, `${name} pricing`).not.toHaveLength(0)
+      expect(review.features, `${name} features`).toHaveLength(4)
+      expect(review.pros.length, `${name} pros`).toBeGreaterThanOrEqual(2)
+      expect(review.cons.length, `${name} cons`).toBeGreaterThanOrEqual(2)
+      expect(review.sources.length, `${name} sources`).toBeGreaterThanOrEqual(2)
+    }
+  })
+
+  it('keeps curated popularity explanations causal and pros repository-specific', () => {
+    const metricLedRankBasis =
+      /^(?:#?\d+|rank(?:s|ed)?|trending|with [\d,.]+|[\d,.]+ (?:stars?|forks?))/i
+    const metricShapedPro =
+      /\b(?:stars today|total stars|strong current momentum|concrete adoption signal|latest push|active repository|many stars)\b/i
+
+    for (const [name, review] of Object.entries(CURATED_TRENDING_REVIEWS)) {
+      expect(review.rankBasis, `${name} rankBasis`).not.toMatch(metricLedRankBasis)
+      for (const pro of review.pros) {
+        expect(pro, `${name} pro`).not.toMatch(metricShapedPro)
+      }
+    }
   })
 })
