@@ -11,6 +11,25 @@
         "bestFor": "High-volume senders and agencies running unlimited inboxes on a tight budget, with strong deliverability tooling.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Consistently placed in the top tier of 2026 cold-email comparisons from Salesforge, Hunter and Snov.io, with strong agency mindshare for unlimited sending accounts and deliverability tooling.",
+        "pricingFree": null,
+        "pricingPaid": "Growth $47/mo — unlimited email accounts, 5,000 uploaded contacts and 10,000 emails/mo; trial available",
+        "features": [
+          "unlimited sending-account campaigns",
+          "email warmup and deliverability monitoring",
+          "lead database and verification",
+          "AI sequence writing and reply management"
+        ],
+        "pros": [
+          "reviewers value unlimited inbox connections for agency-scale sending",
+          "fast campaign setup with integrated warmup",
+          "strong value at high mailbox counts"
+        ],
+        "cons": [
+          "no permanent free plan",
+          "lead and email limits still require upgrades at volume",
+          "users report that analytics and CRM depth lag specialist systems"
+        ],
         "sources": [
           {
             "name": "Salesforge",
@@ -34,6 +53,25 @@
         "bestFor": "Agency-scale cold email with white-label client portals and unlimited inboxes on every plan.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A recurring top-three cold-email platform in Salesforge, Amplemarket and Saleshandy comparisons, especially cited for agency client management and unlimited mailboxes.",
+        "pricingFree": null,
+        "pricingPaid": "Basic $39/mo — unlimited email accounts, 2,000 active leads and 6,000 emails/mo; trial available",
+        "features": [
+          "multi-mailbox campaign rotation",
+          "automated warmup and deliverability controls",
+          "unified reply inbox",
+          "white-label client workspaces"
+        ],
+        "pros": [
+          "strong agency and white-label workflows",
+          "unlimited mailboxes on the entry plan",
+          "useful sender rotation and infrastructure controls"
+        ],
+        "cons": [
+          "no standing free plan",
+          "active-lead and send caps are low on the basic tier",
+          "interface and reporting can feel technical for first-time users"
+        ],
         "sources": [
           {
             "name": "Salesforge",
@@ -57,6 +95,25 @@
         "bestFor": "Visual personalization — personalized images, GIFs, and video built into the sequence builder.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A long-running top cold-outreach recommendation across 2026 comparisons, differentiated by personalized images/video and backed by one of the category's larger independent-review communities.",
+        "pricingFree": "Free plan: limited lead database and email-finder/verifier credits; campaign sending is not included",
+        "pricingPaid": "Email Pro $79/user/mo — 3 sending emails/user, 150 free emails/day and personalization features",
+        "features": [
+          "multistep email and LinkedIn sequences",
+          "personalized images, video and landing pages",
+          "email warmup and deliverability",
+          "lead database and enrichment"
+        ],
+        "pros": [
+          "best-in-class visual personalization workflows",
+          "reviewers praise sequence flexibility and multichannel outreach",
+          "large template, integration and community ecosystem"
+        ],
+        "cons": [
+          "substantially more expensive than volume-first competitors",
+          "mailbox and seat pricing gets costly for agencies",
+          "feature breadth creates a steeper setup curve"
+        ],
         "sources": [
           {
             "name": "Salesforge",
@@ -80,6 +137,25 @@
         "bestFor": "Combining prospecting and outreach in one tool with a 275M+ contact database.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "One of the most frequently included sales-engagement platforms in major cold-email roundups, with a very large G2 review footprint and a proprietary B2B database that pure senders do not match.",
+        "pricingFree": "Free plan: basic prospecting, 2 sequences and limited email/mobile credits",
+        "pricingPaid": "Basic from $49/user/mo billed annually — advanced search, enrichment credits and expanded sequences",
+        "features": [
+          "B2B contact and company database",
+          "email and call sequences",
+          "intent and account scoring",
+          "CRM enrichment and workflow automation"
+        ],
+        "pros": [
+          "combines prospect data and outreach in one system",
+          "large database and strong filtering",
+          "broad CRM and sales-tool integrations"
+        ],
+        "cons": [
+          "contact data accuracy varies by region and segment",
+          "credit rules and plan entitlements are complex",
+          "less specialized deliverability control than cold-email-only tools"
+        ],
         "sources": [
           {
             "name": "Salesforge",
@@ -103,6 +179,25 @@
         "bestFor": "High-volume senders scaling AI outreach cheaply, bundling an 852M+ B2B lead database.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A regular value pick in 2026 cold-email comparisons, with solid independent reviews for high sending allowances and a large bundled lead database but less mindshare than the top three.",
+        "pricingFree": null,
+        "pricingPaid": "Outreach Starter $36/mo billed annually — unlimited email accounts, 5,000 prospects and 30,000 emails/mo; trial available",
+        "features": [
+          "unlimited mailbox sequences",
+          "sender rotation and warmup",
+          "B2B lead database",
+          "unified inbox and deliverability tools"
+        ],
+        "pros": [
+          "high sending limits for the entry price",
+          "unlimited account connections suit small agencies",
+          "straightforward campaign and inbox workflow"
+        ],
+        "cons": [
+          "no permanent free plan",
+          "advanced agency and automation features require higher tiers",
+          "database coverage and enrichment quality are inconsistent in niche markets"
+        ],
         "sources": [
           {
             "name": "Saleshandy",
@@ -122,6 +217,25 @@
         "bestFor": "Startups on a tight budget wanting email finder, verifier, drip campaigns, and a CRM in one low-cost plan.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Frequently recommended as a lower-cost all-in-one option in Snov.io and independent sales-tool comparisons, supported by a broad user base for finder, verifier, CRM and campaigns.",
+        "pricingFree": null,
+        "pricingPaid": "Starter $39/mo — 1,000 credits, 5,000 recipients and 3 mailbox warmups; trial includes 50 credits and 100 recipients",
+        "features": [
+          "email finder and verifier",
+          "drip outreach campaigns",
+          "mailbox warmup",
+          "lightweight sales CRM"
+        ],
+        "pros": [
+          "broad prospecting-to-outreach toolkit in one subscription",
+          "accessible pricing for startups",
+          "useful browser extension and domain search"
+        ],
+        "cons": [
+          "credit consumption across tools can be difficult to forecast",
+          "CRM and analytics are basic compared with dedicated products",
+          "contact accuracy still requires verification and cleanup"
+        ],
         "sources": [
           {
             "name": "Snov.io",
@@ -141,6 +255,25 @@
         "bestFor": "AI-driven prospect research and data enrichment to power deep personalization at scale.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A leading enrichment and workflow platform repeatedly featured in AI-outreach comparisons, with exceptional GTM-community mindshare even though it is an upstream research tool rather than a native email sender.",
+        "pricingFree": "Free plan: 500 actions/mo",
+        "pricingPaid": "Launch from $167/mo — 15,000 actions/mo and expanded enrichment/workflow capacity",
+        "features": [
+          "multi-provider lead enrichment",
+          "AI web research and personalization",
+          "waterfall data lookups",
+          "CRM and outbound-tool workflow automation"
+        ],
+        "pros": [
+          "unusually flexible enrichment and research workflows",
+          "waterfall providers improve data coverage",
+          "excellent for generating deeply personalized outbound inputs"
+        ],
+        "cons": [
+          "not a complete sending platform by itself",
+          "usage-based actions can become expensive and hard to forecast",
+          "table and automation design has a significant learning curve"
+        ],
         "sources": [
           {
             "name": "Salesforge",
@@ -163,6 +296,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The cold-email skill sits in the category's dominant marketing Agent Skills repository at roughly 42k GitHub stars, giving it far more adoption and citation than any dedicated outreach prompt bundle.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "cold-email copy frameworks",
+          "subject line and opener generation",
+          "multi-touch follow-up sequences",
+          "CTA and cadence guidance"
+        ],
+        "pros": [
+          "clear, practical craft guidance from a widely adopted repository",
+          "covers full sequences rather than one-off messages",
+          "vendor-neutral and easy to customize"
+        ],
+        "cons": [
+          "writes copy but does not find leads, send mail or track replies",
+          "repository-level stars do not measure this skill independently",
+          "generated claims and personalization still require human review"
+        ],
         "sources": [
           {
             "name": "GitHub coreyhaines31/marketingskills — 41.5k★",
@@ -183,6 +335,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A recognized open-source marketing-automation platform with roughly 10k GitHub stars and a long-standing enterprise/community ecosystem, though its reputation is for nurture automation rather than cold outreach.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Managed Mautic hosting is sold by third parties; no single official hosted entry price",
+        "features": [
+          "visual campaign automation",
+          "email builder and segmentation",
+          "lead scoring and forms",
+          "CRM and channel integrations"
+        ],
+        "pros": [
+          "mature, extensible marketing-automation platform",
+          "full data ownership and deep campaign logic",
+          "large integration and implementation ecosystem"
+        ],
+        "cons": [
+          "heavy to install, upgrade and operate",
+          "designed for consent-based nurture, not mailbox-based cold sending",
+          "deliverability infrastructure and compliance remain the operator's responsibility"
+        ],
         "sources": [
           {
             "name": "GitHub mautic/mautic — 10.2k★",
@@ -199,6 +370,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "At roughly 22k GitHub stars it is the most-adopted self-hosted bulk campaign sender in this set, but community recognition centers on newsletters and opt-in lists rather than cold sequences.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "high-performance bulk campaigns",
+          "subscriber lists and segmentation",
+          "email templates and analytics",
+          "multiple SMTP backends"
+        ],
+        "pros": [
+          "fast and resource-efficient at large list sizes",
+          "simple deployment and clean administration UI",
+          "full control over data and sending infrastructure"
+        ],
+        "cons": [
+          "no native cold-email sequencing or mailbox rotation",
+          "SMTP reputation, bounces and compliance are self-managed",
+          "best suited to opted-in broadcasts rather than prospecting"
+        ],
         "sources": [
           {
             "name": "GitHub knadh/listmonk — 22.4k★",
@@ -215,6 +405,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A fast-growing self-hosted mail-server and marketing project at roughly 15k GitHub stars, notable for bundling infrastructure and campaigns but still young relative to mature mail stacks.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "self-hosted mail server",
+          "newsletter and campaign sending",
+          "domain and reputation monitoring",
+          "templates and delivery analytics"
+        ],
+        "pros": [
+          "combines mail infrastructure and campaign tooling",
+          "avoids per-contact SaaS pricing",
+          "active project with strong early adoption"
+        ],
+        "cons": [
+          "operating a mail server carries significant security and deliverability work",
+          "not purpose-built for personalized cold sequences",
+          "you own IP reputation, abuse handling and compliance"
+        ],
         "sources": [
           {
             "name": "GitHub Billionmail/BillionMail — 15.4k★",
@@ -231,6 +440,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The closest purpose-built open cold-outreach agent in the set at roughly 2.5k GitHub stars; promising adoption, but far smaller and less proven than general mail platforms.",
+        "pricingFree": "Free & open-source (self-host); external model, search and email-provider costs may apply",
+        "pricingPaid": null,
+        "features": [
+          "ICP-based lead discovery",
+          "work-email resolution",
+          "AI-personalized outreach",
+          "mailbox sending and campaign tracking"
+        ],
+        "pros": [
+          "covers more of the end-to-end cold workflow than most OSS alternatives",
+          "self-hosted control over lead and campaign data",
+          "agentic research can improve personalization"
+        ],
+        "cons": [
+          "you must configure several external services and credentials",
+          "young project with limited production-scale evidence",
+          "automated lead sourcing and sending require close compliance oversight"
+        ],
         "sources": [
           {
             "name": "GitHub eracle/OpenOutreach — 2.5k★",
@@ -247,6 +475,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A dedicated 29-skill outbound bundle with roughly 560 GitHub stars and a claimed basis in 1,000+ campaigns, making it the deepest focused playbook set after the much larger marketingskills repo.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "outbound strategy and ICP design",
+          "deliverability setup playbooks",
+          "lead generation and copywriting",
+          "campaign diagnosis and optimization"
+        ],
+        "pros": [
+          "unusually comprehensive cold-outbound coverage",
+          "practical playbooks span setup through optimization",
+          "free, modular and vendor-neutral"
+        ],
+        "cons": [
+          "skills provide guidance rather than working sender integrations",
+          "performance claims are difficult to verify independently",
+          "users must adapt tactics to current law and platform policies"
+        ],
         "sources": [
           {
             "name": "GitHub growthenginenowoslawski/coldoutboundskills — 559★",
@@ -263,6 +510,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "More than 200 GTM playbooks provide unusual breadth, but roughly 25 GitHub stars and little independent discussion indicate minimal real-world adoption so far.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "outbound and ABM playbooks",
+          "lead enrichment workflows",
+          "ICP scoring and segmentation",
+          "GTM research and messaging skills"
+        ],
+        "pros": [
+          "very broad catalog for GTM teams",
+          "modular playbooks cover more than email copy",
+          "free and inspectable"
+        ],
+        "cons": [
+          "almost no independent adoption evidence",
+          "quality and maintenance consistency are hard to assess across 200+ skills",
+          "playbooks do not provide a sending or data platform"
+        ],
         "sources": [
           {
             "name": "GitHub LeadMagic/gtm-skills — 26★",

@@ -11,6 +11,25 @@
         "bestFor": "Consumer-facing agent that operates a real browser inside ChatGPT to complete multi-step web tasks end to end.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed at or near the top across all three cited 2026 browser-agent roundups and had first-party ChatGPT distribution; however, OpenAI's current help page now says the standalone ChatGPT Agent is no longer available and directs users to ChatGPT Work/cloud-browser workflows.",
+        "pricingFree": null,
+        "pricingPaid": "No longer sold as a standalone product; its former paid access was bundled with ChatGPT plans (Plus included 40 agent requests/mo)",
+        "features": [
+          "multi-step web research and actions",
+          "visual browser with user takeover",
+          "forms, bookings and scheduled tasks",
+          "connected-app data access"
+        ],
+        "pros": [
+          "deeply integrated into ChatGPT rather than requiring a separate automation stack",
+          "combined browsing, research and action in one guided workflow",
+          "asked for confirmation before consequential actions"
+        ],
+        "cons": [
+          "the standalone ChatGPT Agent is now officially unavailable",
+          "complex tasks could be slow and still require user intervention",
+          "logged-in browsing carries prompt-injection and sensitive-data risk"
+        ],
         "sources": [
           {
             "name": "Firecrawl",
@@ -34,6 +53,25 @@
         "bestFor": "Anthropic's browser agent that drives Chrome to read pages and take actions on the user's behalf.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Featured as a top-tier browser agent in all three cited 2026 roundups; Anthropic has expanded it from research preview to a Chrome beta available across every paid Claude plan.",
+        "pricingFree": null,
+        "pricingPaid": "Claude Pro $20/mo ($200/yr) - Claude in Chrome beta included with standard Pro usage capacity",
+        "features": [
+          "read, click and navigate in Chrome",
+          "form filling and multi-step web actions",
+          "manual or automatic approval modes",
+          "Claude Code and Cowork browser workflows"
+        ],
+        "pros": [
+          "works alongside the user's real logged-in Chrome session",
+          "strong fit for live debugging, UI verification and developer workflows",
+          "granular permission modes keep users in control"
+        ],
+        "cons": [
+          "paid-only and still labeled beta in the Chrome browser",
+          "prompt injection remains an inherent browser-agent risk",
+          "site visibility and extension reliability can still require troubleshooting"
+        ],
         "sources": [
           {
             "name": "Firecrawl",
@@ -57,6 +95,25 @@
         "bestFor": "AI-native consumer browser that combines answering and agentic actions across tabs for research-heavy workflows.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Included by both cited 2026 agent-browser roundups and widely reviewed as the research-first AI browser; its free Chromium distribution, cited answers and cross-tab assistant give it broader consumer reach than most standalone agents.",
+        "pricingFree": "Free Comet browser and Assistant with standard Perplexity limits",
+        "pricingPaid": "Perplexity Pro $20/mo - extended Pro Search, advanced models and higher browser-agent limits",
+        "features": [
+          "cited AI search in the browser",
+          "cross-tab context and summarization",
+          "form filling, shopping and scheduling actions",
+          "Chrome extension compatibility"
+        ],
+        "pros": [
+          "excellent research flow with answers and citations beside the page",
+          "familiar Chromium interface and extension support",
+          "useful cross-tab context without constant copy-paste"
+        ],
+        "cons": [
+          "agent actions and newer features can be inconsistent",
+          "desktop-focused experience has a learning curve",
+          "broad tab, history and account context raises privacy and prompt-injection concerns"
+        ],
         "sources": [
           {
             "name": "Bright Data",
@@ -76,6 +133,25 @@
         "bestFor": "Google's built-in Chrome agent, generally available to Workspace users for in-browser assistance and actions.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited 2026 browser-agent roundups and is the only contender distributed natively through Chrome; its automation rank is tempered because multi-step Auto Browse is still a gradual US-only rollout for paid personal accounts.",
+        "pricingFree": "Free Gemini in Chrome assistance where available; no multi-step Auto Browse",
+        "pricingPaid": "Google AI Pro $19.99/mo - Auto Browse in Chrome (US only), 4x Gemini limits and 5 TB storage",
+        "features": [
+          "current-page and up-to-10-tab context",
+          "summaries, explanations and comparisons",
+          "voice interaction while browsing",
+          "Auto Browse for shopping, travel and reservations"
+        ],
+        "pros": [
+          "native Chrome surface with no separate browser to adopt",
+          "strong integration with Google Search and Workspace context",
+          "useful multi-tab understanding and voice interaction"
+        ],
+        "cons": [
+          "Auto Browse requires a paid personal plan and is US-only",
+          "Gemini in Chrome is still not available to every eligible user",
+          "sharing tabs and personal details with sites creates privacy risk"
+        ],
         "sources": [
           {
             "name": "Firecrawl",
@@ -95,6 +171,25 @@
         "bestFor": "OpenAI's standalone AI browser for agentic browsing, competing directly with Comet and Dia.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Named by both cited 2026 agent-browser roundups and backed by OpenAI's first-party browser distribution; it ranks below longer-established options because Agent Mode remains a paid preview and the browser is still comparatively new.",
+        "pricingFree": "Free Atlas browser with Ask ChatGPT sidebar; Agent Mode not included",
+        "pricingPaid": "ChatGPT Plus $20/mo - Agent Mode preview in Atlas with plan usage limits",
+        "features": [
+          "ChatGPT sidebar on every page",
+          "optional browser memories and history context",
+          "cross-tab research and analysis",
+          "Agent Mode for end-to-end web tasks"
+        ],
+        "pros": [
+          "the most direct browser experience for existing ChatGPT users",
+          "strong page, tab and browsing-context awareness",
+          "optional memories reduce repeated context setup"
+        ],
+        "cons": [
+          "Agent Mode requires a paid ChatGPT plan",
+          "newer browser with occasional reliability and compatibility issues",
+          "prompt injection remains a material risk for logged-in agent actions"
+        ],
         "sources": [
           {
             "name": "Firecrawl",
@@ -117,6 +212,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~106.5k GitHub stars make it the category's most-adopted AI-native browser-agent framework; it is the autonomous-agent reference point in 2026 comparisons against Stagehand and Skyvern.",
+        "pricingFree": "Free & open-source (self-host); cloud free tier: 10 agent tasks/mo and 3 concurrent sessions",
+        "pricingPaid": "Browser Use Cloud Dev $29/mo - $29 monthly credits and 25 concurrent sessions",
+        "features": [
+          "natural-language autonomous browser agent",
+          "clicking, typing and form completion",
+          "structured extraction and file handling",
+          "self-hosted library or managed cloud"
+        ],
+        "pros": [
+          "largest community and ecosystem among AI-native browser frameworks",
+          "quick path from a natural-language goal to a working agent",
+          "flexible model and browser-provider support"
+        ],
+        "cons": [
+          "continuous LLM reasoning adds latency and token cost",
+          "less deterministic than code-first automation for repeated flows",
+          "self-hosting still requires browser, proxy and scaling infrastructure"
+        ],
         "sources": [
           {
             "name": "GitHub (~106.5k★)",
@@ -137,6 +251,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~93.4k GitHub stars, Microsoft backing and an 8.7/10 TrustRadius score from 38 reviews make Playwright the most established deterministic browser-automation foundation in this track.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Chromium, Firefox and WebKit automation",
+          "auto-waiting and web-first assertions",
+          "isolated browser contexts",
+          "test runner, CLI and agent integrations"
+        ],
+        "pros": [
+          "reliable cross-browser API with strong auto-waiting",
+          "mature documentation, tooling and developer ecosystem",
+          "fast isolated contexts suit parallel test execution"
+        ],
+        "cons": [
+          "requires programming expertise and framework setup",
+          "selectors and test suites still need ongoing maintenance",
+          "full-browser execution is resource-heavy at large scale"
+        ],
         "sources": [
           {
             "name": "GitHub (~93.4k★)",
@@ -157,6 +290,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~23.6k GitHub stars and repeated top-three placement in 2026 framework comparisons establish Stagehand as the leading hybrid alternative: deterministic Playwright/CDP code where possible, AI actions where needed.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "act, extract and observe primitives",
+          "hybrid natural-language and code control",
+          "action preview and workflow caching",
+          "self-healing repeatable automations"
+        ],
+        "pros": [
+          "better control and repeatability than fully autonomous agents",
+          "caching can reduce model calls on stable repeated workflows",
+          "fits naturally into TypeScript browser-automation projects"
+        ],
+        "cons": [
+          "TypeScript-first approach is less convenient for Python teams",
+          "still requires an LLM and browser infrastructure in production",
+          "smaller ecosystem than Playwright or Browser Use"
+        ],
         "sources": [
           {
             "name": "GitHub (~23.6k★)",
@@ -177,6 +329,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~22.6k GitHub stars plus an independently cited ~85.8% WebVoyager result make Skyvern a top-four framework, especially for visual form-filling and workflows that must survive layout changes.",
+        "pricingFree": "Free & open-source (self-host); cloud Starter includes 1,000 credits/mo",
+        "pricingPaid": "Skyvern Cloud Hobby $29/mo - 30,000 credits/mo, faster execution and webhooks",
+        "features": [
+          "vision-and-LLM browser automation",
+          "Playwright-compatible act and extract SDK",
+          "no-code workflow builder",
+          "managed CAPTCHA, proxy and 2FA support"
+        ],
+        "pros": [
+          "resilient on unfamiliar pages without hand-written selectors",
+          "particularly strong for forms and cross-site workflows",
+          "offers both developer SDKs and a no-code builder"
+        ],
+        "cons": [
+          "vision and model calls add latency and variable cost",
+          "self-hosting is heavier than a simple browser library",
+          "AGPL license is more restrictive for proprietary deployments"
+        ],
         "sources": [
           {
             "name": "GitHub (~22.6k★)",
@@ -197,6 +368,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~13.5k GitHub stars make Nanobrowser the most-adopted open-source in-browser Operator alternative; 2026 reviews consistently highlight its local Chrome execution and bring-your-own-model flexibility.",
+        "pricingFree": "Free & open-source Chrome extension (bring your own LLM API key)",
+        "pricingPaid": null,
+        "features": [
+          "multi-agent Planner and Navigator workflow",
+          "natural-language browser automation",
+          "local Chrome execution",
+          "multiple bring-your-own LLM providers"
+        ],
+        "pros": [
+          "no subscription and no vendor-controlled browser session",
+          "credentials remain in the user's local browser",
+          "flexible models let users balance quality and API cost"
+        ],
+        "cons": [
+          "LLM API usage is still paid separately",
+          "extension-based design is less suited to unattended server workloads",
+          "less production orchestration and observability than hosted platforms"
+        ],
         "sources": [
           {
             "name": "GitHub (~13.5k★)",
@@ -213,6 +403,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~7.4k GitHub stars and more than one million browser hours served give Steel meaningful infrastructure adoption; it ranks as an agent-ready browser backend rather than a complete reasoning agent.",
+        "pricingFree": "Free & open-source (self-host); cloud Launch is $0/mo + usage with $30 one-time credits",
+        "pricingPaid": "Steel Cloud Scale $250/mo + usage - $100 monthly credits and production support",
+        "features": [
+          "managed browser sessions and contexts",
+          "proxy, fingerprint and CAPTCHA tooling",
+          "Playwright, Puppeteer and Selenium connections",
+          "live session viewer and recordings"
+        ],
+        "pros": [
+          "purpose-built browser infrastructure for AI-agent workloads",
+          "self-hostable with a managed cloud upgrade path",
+          "strong session persistence, debugging and observability"
+        ],
+        "cons": [
+          "provides browser infrastructure, not the agent's reasoning loop",
+          "managed usage and proxy bandwidth can become expensive",
+          "self-hosting transfers fleet operations and anti-bot maintenance to the user"
+        ],
         "sources": [
           {
             "name": "GitHub (~7.4k★)",
@@ -229,6 +438,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~2.9k GitHub stars and 200+ forks make it one of the most-adopted genuine browser-automation Agent Skills; it ranks below the larger frameworks because it is a Claude-centric instruction layer over Playwright.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "model-invoked Playwright script generation",
+          "visible browser execution by default",
+          "screenshots and flow validation",
+          "Claude Code plugin or standalone skill install"
+        ],
+        "pros": [
+          "turns natural-language QA tasks into inspectable Playwright code",
+          "loads on demand with a small persistent context footprint",
+          "generated scripts can be retained and rerun"
+        ],
+        "cons": [
+          "primarily designed around Claude Code's skill system",
+          "AI-generated tests still require review for assertions and edge cases",
+          "depends on a working Node, Playwright and browser environment"
+        ],
         "sources": [
           {
             "name": "GitHub (~2.9k★)",
@@ -249,6 +477,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~1.2k GitHub stars and a claimed 90.4% WebVoyager score make Browserable a notable emerging self-hosted option, but its community and independent review footprint remain far smaller than the leaders above it.",
+        "pricingFree": "Free & open-source (self-host; bring your own LLM and remote-browser keys)",
+        "pricingPaid": null,
+        "features": [
+          "natural-language browser agents",
+          "navigation, forms and extraction",
+          "self-hosted dashboard and API",
+          "configurable LLM and remote-browser providers"
+        ],
+        "pros": [
+          "simple self-hosted path with an npx setup flow",
+          "provider-neutral LLM and browser configuration",
+          "promising published WebVoyager performance"
+        ],
+        "cons": [
+          "small community and limited independent review evidence",
+          "requires separate LLM and remote-browser accounts for practical use",
+          "less mature documentation and production ecosystem than top frameworks"
+        ],
         "sources": [
           {
             "name": "GitHub (~1.2k★)",

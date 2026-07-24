@@ -24,6 +24,25 @@
             "name": "DualEntry",
             "url": "https://www.dualentry.com/blog/best-ai-accounting-software"
           }
+        ],
+        "rankBasis": "The established default across the sampled bookkeeping roundups, backed by 3,700+ QuickBooks Online reviews on G2 and the largest U.S. accountant and app ecosystem in this set.",
+        "pricingFree": null,
+        "pricingPaid": "Simple Start $38/mo — 1 user, automated bookkeeping, invoicing, bank feeds and expense tracking",
+        "features": [
+          "Automated transaction categorization and matching",
+          "Invoicing, bill pay and expense tracking",
+          "Bank feeds and reconciliation",
+          "Payroll, payments and app integrations"
+        ],
+        "pros": [
+          "widest accountant familiarity and third-party integration ecosystem",
+          "broad small-business accounting feature set in one product",
+          "reviewers frequently praise accessibility and everyday ease of use"
+        ],
+        "cons": [
+          "frequent price increases and plan limits are recurring community complaints",
+          "support quality and resolution times receive mixed reviews",
+          "interface changes and occasional sluggishness frustrate long-time users"
         ]
       },
       {
@@ -47,6 +66,25 @@
             "name": "Truewind",
             "url": "https://www.truewind.ai/blog/top-5-ai-bookkeeping-software-for-accounting-firms-in-2025"
           }
+        ],
+        "rankBasis": "A consistent top-two roundup choice with a 4.4/5 G2 seller rating from roughly 1,674 verified reviews; G2 also scores its ease of use at 92% and ease of setup at 90%.",
+        "pricingFree": null,
+        "pricingPaid": "Early $25/mo — bank reconciliation, invoicing, bill entry and standard ACH bill payments, with no per-user license fee",
+        "features": [
+          "Automated bank feeds and reconciliation",
+          "Invoicing, bills and online payments",
+          "Unlimited users on every plan",
+          "App marketplace and financial analytics"
+        ],
+        "pros": [
+          "unlimited users make collaboration economical",
+          "reviewers consistently praise fast, intuitive bank reconciliation",
+          "large integration marketplace and clean cloud workflow"
+        ],
+        "cons": [
+          "some reviewers find the interface clunky and onboarding guidance thin",
+          "advanced inventory, payroll and some expense workflows require add-ons or partners",
+          "users report occasional bugs and unresolved support issues"
         ]
       },
       {
@@ -70,6 +108,25 @@
             "name": "Carly",
             "url": "https://www.usecarly.com/blog/ai-accounting-software/"
           }
+        ],
+        "rankBasis": "Included across the sampled AI-accounting roundups and praised in founder/bookkeeper community discussion for real-time visibility, but major review-platform volume remains limited versus incumbents.",
+        "pricingFree": "Accounting Basics $0 — 1 user, cash and accrual books, automatic bank reconciliation and a tax package; aimed at pre-revenue companies under $5k monthly expenses",
+        "pricingPaid": "Core $60/mo billed yearly — multi-user access, cash/burn/runway insights, no integration limits and multi-entity support via Joiin",
+        "features": [
+          "AI transaction categorization and reconciliation",
+          "Real-time cash, burn and runway insights",
+          "Automated cash and accrual accounting",
+          "Native startup-finance integrations"
+        ],
+        "pros": [
+          "modern interface makes startup financials easier for non-accountants to understand",
+          "strong integrations with Mercury, Stripe, Ramp, Brex and payroll tools",
+          "real-time books and AI review can shorten month-end close"
+        ],
+        "cons": [
+          "independent verified-review volume is still thin",
+          "non-U.S. bank accounts and true multi-currency workflows are not supported",
+          "Puzzle does not provide bookkeeping services or file taxes itself"
         ]
       },
       {
@@ -93,6 +150,25 @@
             "name": "Puzzle vs Digits",
             "url": "https://puzzle.io/blog/puzzle-vs-digits"
           }
+        ],
+        "rankBasis": "A recurring AI-bookkeeping roundup pick with a 4.8/5 G2 rating, though from only 5 reviews; community threads show interest but also caution about trusting a still-maturing AI ledger.",
+        "pricingFree": null,
+        "pricingPaid": "Essentials $65/mo per business — live financials, invoicing and bill pay, 24/7 AI bookkeeping and reconciliation, integrations, API/MCP and mobile access",
+        "features": [
+          "24/7 AI bookkeeping and reconciliation",
+          "Live dashboards and financial statements",
+          "Invoicing and bill pay",
+          "Ask Digits financial analysis"
+        ],
+        "pros": [
+          "reviewers praise rapid setup and a polished AI-native interface",
+          "real-time financials reduce routine categorization work",
+          "no per-seat fees and an extensible API/MCP"
+        ],
+        "cons": [
+          "the 4.8 G2 score is based on only five reviews",
+          "feature breadth is still narrower than mature accounting suites",
+          "U.S.-only availability and no tax filing limit its fit"
         ]
       },
       {
@@ -116,6 +192,25 @@
             "name": "Finlens",
             "url": "https://www.finlens.app/blogs/best-ai-bookkeeping-apps-for-small-businesses-in-2026"
           }
+        ],
+        "rankBasis": "The strongest reviewed full-service entrant here: it appears in multiple AI-accounting roundups and holds about 4.7/5 on G2 from 73 reviews, with praise centered on dashboards and real-time visibility.",
+        "pricingFree": null,
+        "pricingPaid": "Starter $549/mo plus $2,000 setup — AI bookkeeping for pre-revenue companies with a dedicated bookkeeping manager and analyst",
+        "features": [
+          "AI bookkeeping with human finance-team review",
+          "Real-time cash, burn and runway dashboards",
+          "Bill pay and employee reimbursements",
+          "Tax, payroll and fractional-CFO services"
+        ],
+        "pros": [
+          "combines automation with a dedicated human finance team",
+          "reviewers praise centralized reporting and real-time startup metrics",
+          "broad service coverage can replace several finance vendors"
+        ],
+        "cons": [
+          "high monthly price and mandatory setup fee",
+          "primarily designed for U.S.-based startups rather than general SMBs",
+          "pricing rises with bookkeeping complexity, expenses and revenue"
         ]
       },
       {
@@ -135,6 +230,25 @@
             "name": "Puzzle",
             "url": "https://puzzle.io/blog/best-ai-finance-agents"
           }
+        ],
+        "rankBasis": "The best-supported finance-ops choice by review volume: Ramp Financial has a 4.8/5 G2 seller rating from roughly 2,452 verified reviews, with repeated praise for expense usability and automation.",
+        "pricingFree": "Free $0/user — corporate cards, expense management, bill pay, approval workflows, accounting integrations and AI reporting",
+        "pricingPaid": "Plus $15/user/mo — adds AI approval recommendations, advanced controls, payment-release approvals and expanded workflows",
+        "features": [
+          "Corporate cards and expense management",
+          "Bill pay, procurement and approvals",
+          "AI receipt capture and policy enforcement",
+          "Accounting Agent and ERP synchronization"
+        ],
+        "pros": [
+          "large review base consistently praises its intuitive expense workflow",
+          "substantial card, bill-pay and accounting functionality is free",
+          "automation reduces receipt chasing and manual coding"
+        ],
+        "cons": [
+          "it complements rather than replaces a general ledger",
+          "advanced controls become per-user costs on Plus",
+          "legacy-system integrations and broader procurement rollouts can be complex"
         ]
       },
       {
@@ -154,6 +268,25 @@
             "name": "Hubifi",
             "url": "https://www.hubifi.com/blog/ai-accounting-software-tools"
           }
+        ],
+        "rankBasis": "A specialist accounting-firm platform with 30 G2 reviews and 71 verified Capterra reviews; reviewers value tedious-work automation, while glitches and categorization quality remain recurring caveats.",
+        "pricingFree": null,
+        "pricingPaid": "Infinite $149/client entity/mo month-to-month ($134/mo billed annually for 1–4 licenses) — transaction manager, transaction insights and client/user management",
+        "features": [
+          "AI transaction categorization",
+          "Autonomous month-end review and anomaly detection",
+          "Client and user management",
+          "Transaction performance insights"
+        ],
+        "pros": [
+          "automates repetitive transaction work for accounting firms",
+          "reviewers praise current books, management reports and time savings",
+          "volume pricing supports multi-client firm workflows"
+        ],
+        "cons": [
+          "output quality depends on the accuracy of the existing general ledger",
+          "unmatched transactions can land in miscellaneous or unassigned accounts",
+          "reviewers report occasional glitches and inconsistent support resolution"
         ]
       }
     ],
@@ -176,6 +309,25 @@
             "name": "It's FOSS",
             "url": "https://itsfoss.com/open-source-accounting-software/"
           }
+        ],
+        "rankBasis": "The clear adoption leader in this track at 37,223 GitHub stars, with repeated inclusion in open-source accounting roundups and active ERP/self-hosting community discussion.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "General ledger, receivables and payables",
+          "Invoicing, tax and financial reporting",
+          "Inventory and order management",
+          "Projects, payroll and CRM modules"
+        ],
+        "pros": [
+          "unusually complete business suite around the accounting core",
+          "highly customizable through Frappe, APIs and custom apps",
+          "large open-source community and implementation ecosystem"
+        ],
+        "cons": [
+          "implementation, upgrades and process design require real ERP expertise",
+          "community users report uneven or outdated documentation",
+          "self-hosting adds operational and database administration work"
         ]
       },
       {
@@ -196,6 +348,25 @@
             "name": "It's FOSS",
             "url": "https://itsfoss.com/open-source-accounting-software/"
           }
+        ],
+        "rankBasis": "The dominant self-hosted personal-finance ledger at 24,120 GitHub stars, widely discussed in r/selfhosted comparisons and repeatedly recommended for feature depth and privacy.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Double-entry account and transaction tracking",
+          "Budgets, bills and savings goals",
+          "Rules-based categorization and recurring transactions",
+          "Importer, REST API and reporting"
+        ],
+        "pros": [
+          "rich feature set with full control of financial data",
+          "powerful rules, reports and automation for detailed tracking",
+          "active project with mobile and importer ecosystem"
+        ],
+        "cons": [
+          "built for personal finance rather than business invoicing or payroll",
+          "community users find setup and the separate importer unintuitive",
+          "investment tracking is limited and often requires manual workarounds"
         ]
       },
       {
@@ -216,6 +387,25 @@
             "name": "Medevel",
             "url": "https://medevel.com/12-accounting-open-source/"
           }
+        ],
+        "rankBasis": "A leading web-based OSS accounting option with 9,975 GitHub stars and regular roundup coverage, though self-hosting communities frequently flag its paid-app model.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Invoices, bills and expense tracking",
+          "Customers, vendors and bank accounts",
+          "Multi-currency financial reporting",
+          "Modular accounting app marketplace"
+        ],
+        "pros": [
+          "accessible browser-based interface for small businesses",
+          "modular ecosystem covers many country and workflow needs",
+          "self-hosting keeps core financial data under user control"
+        ],
+        "cons": [
+          "critical capabilities such as double-entry and bank feeds may require paid apps",
+          "add-on costs accumulate quickly despite the free core",
+          "users report upgrade, support and self-hosted app compatibility problems"
         ]
       },
       {
@@ -236,6 +426,25 @@
             "name": "Medevel",
             "url": "https://medevel.com/12-accounting-open-source/"
           }
+        ],
+        "rankBasis": "A mature invoicing specialist with 9,906 GitHub stars, broad self-hosting recognition and a long-running community around its hosted and open-source editions.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Invoices, quotes and recurring billing",
+          "Online payments and client portal",
+          "Time tracking, tasks and projects",
+          "Expenses, vendors and purchase orders"
+        ],
+        "pros": [
+          "polished invoicing workflow with many payment gateways",
+          "hosted and self-hosted deployment choices",
+          "strong automation for freelancers and service businesses"
+        ],
+        "cons": [
+          "not a full double-entry general ledger",
+          "self-hosted upgrades, mail and payment configuration require maintenance",
+          "community feedback notes occasional UI and mobile workflow friction"
         ]
       },
       {
@@ -256,6 +465,25 @@
             "name": "Plain Text Accounting",
             "url": "https://plaintextaccounting.org/"
           }
+        ],
+        "rankBasis": "The original plaintext-accounting standard with 5,994 GitHub stars and enduring mindshare in the plaintextaccounting community, where later tools still inherit its journal format.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Plain-text double-entry journals",
+          "Flexible balance, register and income reports",
+          "Multi-commodity and investment accounting",
+          "Command-line queries and scripting"
+        ],
+        "pros": [
+          "fast, portable data that works naturally with version control",
+          "powerful reporting and automation for technical users",
+          "stable format with a mature surrounding ecosystem"
+        ],
+        "cons": [
+          "steep command-line and accounting-syntax learning curve",
+          "no built-in GUI, bank sync or collaborative workflow",
+          "imports and data cleanup generally require scripts or manual work"
         ]
       },
       {
@@ -276,6 +504,25 @@
             "name": "It's FOSS",
             "url": "https://itsfoss.com/open-source-accounting-software/"
           }
+        ],
+        "rankBasis": "A major developer-oriented plaintext ledger with 5,835 GitHub stars and a dedicated community that commonly pairs it with Fava for browser-based analysis.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Structured plain-text double-entry language",
+          "Ledger validation and balance assertions",
+          "Python plugins and programmable imports",
+          "Fava web reports and visualization ecosystem"
+        ],
+        "pros": [
+          "strict data model catches errors early",
+          "highly programmable for custom imports and analysis",
+          "plain-text portability plus a strong Fava web interface"
+        ],
+        "cons": [
+          "community users describe the documentation as difficult to parse",
+          "budgeting and forecasting are not built in",
+          "useful automation often requires Python and custom import rules"
         ]
       },
       {
@@ -296,6 +543,25 @@
             "name": "hledger.org",
             "url": "https://hledger.org/"
           }
+        ],
+        "rankBasis": "The most active Ledger-compatible alternative at 4,595 GitHub stars, with recurring plaintextaccounting recommendations for its maintained CLI, terminal UI and web interface.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "CLI, terminal and web interfaces",
+          "Ledger-compatible double-entry journals",
+          "Balance, cash-flow and income reports",
+          "Rule-based CSV importing"
+        ],
+        "pros": [
+          "actively maintained with several interfaces over one journal",
+          "portable data works well with version control",
+          "strong reporting and repeatable CSV import rules"
+        ],
+        "cons": [
+          "still aimed primarily at technically confident users",
+          "no managed bank feeds or turnkey collaboration",
+          "business workflows such as invoicing and payroll require other tools"
         ]
       },
       {
@@ -316,6 +582,25 @@
             "name": "Medevel",
             "url": "https://medevel.com/12-accounting-open-source/"
           }
+        ],
+        "rankBasis": "The mature desktop benchmark with 4,293 GitHub stars, decades of usage and frequent open-source accounting recommendations for its documentation and complete double-entry model.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Double-entry personal and business accounting",
+          "Customer invoicing and vendor bills",
+          "Investment and multi-currency tracking",
+          "Scheduled transactions and financial reports"
+        ],
+        "pros": [
+          "mature, comprehensive accounting engine",
+          "strong documentation and long-established user community",
+          "handles both small-business books and investments"
+        ],
+        "cons": [
+          "dated desktop interface is a common community complaint",
+          "local-file architecture is awkward for team collaboration",
+          "bank imports and account setup require more manual work than cloud tools"
         ]
       },
       {
@@ -336,6 +621,25 @@
             "name": "Medevel",
             "url": "https://medevel.com/12-accounting-open-source/"
           }
+        ],
+        "rankBasis": "A newer modern-web contender with 3,794 GitHub stars and open-source accounting roundup coverage, but substantially less independent community evidence than the projects above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Double-entry ledger and journal entries",
+          "Invoices, bills and expense tracking",
+          "Inventory and sales management",
+          "Financial reports and headless API"
+        ],
+        "pros": [
+          "modern web interface compared with older OSS accounting tools",
+          "combines accounting and inventory in one system",
+          "API-first design supports custom integrations"
+        ],
+        "cons": [
+          "smaller community and thinner independent review history",
+          "self-hosting the multi-service stack requires technical effort",
+          "documentation and ecosystem are less mature than ERPNext or GnuCash"
         ]
       }
     ]

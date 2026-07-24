@@ -24,6 +24,25 @@
             "name": "GC AI",
             "url": "https://gc.ai/blog/legal-ai-tools"
           }
+        ],
+        "rankBasis": "Recurs in independent 2026 legal-AI roundups as the Word-native contract specialist, and G2 rates it 4.7/5 from 29 verified reviews.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "Microsoft Word contract review and redlining",
+          "AI clause drafting and rewriting",
+          "playbook-guided review",
+          "market-standard clause comparisons"
+        ],
+        "pros": [
+          "Word-native workflow avoids context switching",
+          "users report faster drafting and review with an easy-to-use interface",
+          "focused product fit for transactional contract work"
+        ],
+        "cons": [
+          "no public rate card; procurement is sales-led",
+          "not a full CLM for approvals, signing, and lifecycle reporting",
+          "not primarily a case-law research platform"
         ]
       },
       {
@@ -47,6 +66,25 @@
             "name": "Bind",
             "url": "https://bindlegal.com/resources/best-software/ai-contract-review-software/"
           }
+        ],
+        "rankBasis": "Appears repeatedly in 2026 contract-review comparisons, while G2 review summaries cite time savings, Word integration, and playbook consistency across its verified user feedback.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "unlimited AI contract review and redlining",
+          "50+ attorney-built playbooks",
+          "contract repository and search",
+          "Microsoft Word add-in and web platform"
+        ],
+        "pros": [
+          "attorney-built playbooks make review standards repeatable",
+          "users value faster review and streamlined workflows",
+          "Word integration and translation support fit existing legal work"
+        ],
+        "cons": [
+          "limited document merging and advanced file-management features are reported pain points",
+          "some users report friction accessing older translation workflows",
+          "no public rate card for team plans"
         ]
       },
       {
@@ -70,6 +108,25 @@
             "name": "buildmvpfast",
             "url": "https://www.buildmvpfast.com/articles/best-llms-2026-guide/legal-ai"
           }
+        ],
+        "rankBasis": "Independent 2026 reviews consistently place Harvey among enterprise legal-AI leaders; Lawyerist rates it 4.4/5 and covers research, drafting, document analysis, and contract review.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "end-to-end legal agents and workflows",
+          "secure document storage and bulk analysis",
+          "legal, regulatory, and tax research",
+          "contract analysis and due diligence"
+        ],
+        "pros": [
+          "broad coverage across research, drafting, review, and due diligence",
+          "enterprise-oriented security, collaboration, and integrations",
+          "agentic workflows can automate multi-step legal tasks"
+        ],
+        "cons": [
+          "enterprise sales and implementation make it a poor fit for many small teams",
+          "pricing is opaque and commonly described as expensive",
+          "lawyers still need to verify citations, legal conclusions, and generated work"
         ]
       },
       {
@@ -93,6 +150,25 @@
             "name": "Spellbook law firms",
             "url": "https://www.spellbook.legal/learn/best-ai-tools-for-law-firms"
           }
+        ],
+        "rankBasis": "G2 rates CoCounsel Legal 4.5/5 from 310 reviews, and independent legal-AI reviews repeatedly position it as the Thomson Reuters option for research plus document work.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "Westlaw and Practical Law-grounded research",
+          "document analysis and drafting",
+          "contract review in Microsoft Word",
+          "Deep Research and agentic workflows"
+        ],
+        "pros": [
+          "authoritative Thomson Reuters content improves research grounding",
+          "covers research, document analysis, drafting, and litigation preparation in one product",
+          "users praise fast, intuitive legal research"
+        ],
+        "cons": [
+          "cost can rise substantially when paired with Westlaw or Practical Law",
+          "plan boundaries matter; Essentials does not include Westlaw primary-law research",
+          "generated citations and legal conclusions still require attorney verification"
         ]
       },
       {
@@ -112,6 +188,25 @@
             "name": "Juro",
             "url": "https://juro.com/learn/contract-review-software"
           }
+        ],
+        "rankBasis": "G2 shows Definely at 4.5/5 from 1 verified review, while its official customer footprint is 150+ law firms and in-house teams and independent 2026 guides single it out for complex contracts.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "Word-native definitions and cross-reference navigation",
+          "AI impact analysis across clauses and schedules",
+          "automated proofreading and gap detection",
+          "tracked changes, redlines, and issues lists"
+        ],
+        "pros": [
+          "preserves context in dense, negotiated contracts",
+          "Word-native tools reduce navigation and review friction",
+          "users report straightforward deployment and useful undefined-term checks"
+        ],
+        "cons": [
+          "independent review volume is very limited",
+          "pricing is enterprise and quote-based",
+          "specialized contract-review focus is narrower than general legal research suites"
         ]
       },
       {
@@ -131,6 +226,25 @@
             "name": "LitSLink",
             "url": "https://litslink.com/blog/top-10-best-ai-tools-for-lawyers-legal-firms-in-2026"
           }
+        ],
+        "rankBasis": "Appears in independent 2026 enterprise contract-analytics roundups, and Luminance reports 1,000+ customers; reviewers emphasize its fit for large-scale due diligence and portfolio work.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "automated contract review and negotiation",
+          "contract intelligence and obligation tracking",
+          "AI contract generation and workflow automation",
+          "compliance monitoring and investigation support"
+        ],
+        "pros": [
+          "strong fit for bulk review, due diligence, and pattern recognition",
+          "connects drafting, negotiation, repository intelligence, and compliance",
+          "enterprise security, integrations, and dedicated support"
+        ],
+        "cons": [
+          "pricing is opaque and requires a vendor quote",
+          "implementation is heavier than a focused Word add-in",
+          "independent reviews note better fit for large M&A and portfolio work than everyday legal tasks"
         ]
       },
       {
@@ -150,6 +264,25 @@
             "name": "Signeasy",
             "url": "https://signeasy.com/blog/business/ai-contract-review-software"
           }
+        ],
+        "rankBasis": "G2 rates LEGALFLY 4.2/5 from 3 reviews and Capterra rates it 4.6/5 from 8 verified reviews; 2026 in-house comparisons include it, but the independent review base remains small.",
+        "pricingFree": null,
+        "pricingPaid": "Paid tiers available",
+        "features": [
+          "playbook-aligned contract review and redlining",
+          "legal research across 130+ jurisdictions",
+          "regulatory monitoring and impact alerts",
+          "automatic anonymisation and audit trails"
+        ],
+        "pros": [
+          "privacy-first anonymisation is a clear differentiator",
+          "broad intake, review, research, compliance, and procurement workflows",
+          "users praise the simple layout and flexible support"
+        ],
+        "cons": [
+          "independent review volume is small compared with the leading tools",
+          "one verified review reports that legal-search results do not always lead to primary sources",
+          "pricing is custom and not publicly itemized"
         ]
       }
     ],
@@ -172,6 +305,25 @@
             "name": "OpenContracts docs",
             "url": "https://opencontracts.opensource.legal/"
           }
+        ],
+        "rankBasis": "The leading repo in this niche at roughly 1.4k GitHub stars and 171 forks, with commits landing within days; its docs position it as an open document-intelligence platform rather than a narrow template filler.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "document corpora and human annotation",
+          "structured extraction with custom schemas",
+          "programmable citation graph",
+          "AI agents and built-in MCP/API access"
+        ],
+        "pros": [
+          "self-hosting keeps legal documents under the operator's control",
+          "extensible annotation, extraction, and citation-graph model",
+          "active repository with substantial recent development"
+        ],
+        "cons": [
+          "production deployment needs Docker and additional security configuration",
+          "developer-oriented setup is heavier than a hosted contract-review app",
+          "operators must provide and maintain storage, models, and scaling infrastructure"
         ]
       },
       {
@@ -192,6 +344,25 @@
             "name": "LexRatio",
             "url": "https://lexratio.eu/2024/10/08/docassemble-legal-document-automation/"
           }
+        ],
+        "rankBasis": "A mature open-source leader with 967 GitHub stars, 305 forks, 4,612 commits, and a release updated within the last week; it is also documented as a legal guided-interview and document-assembly platform.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "guided web interviews with branching logic",
+          "PDF, RTF, and DOCX document assembly",
+          "Python, YAML, and Markdown authoring",
+          "APIs, OCR, signatures, and multilingual workflows"
+        ],
+        "pros": [
+          "mature and actively maintained with a large legal-automation community",
+          "highly extensible interview logic and document templates",
+          "supports many outputs, integrations, and deployment patterns"
+        ],
+        "cons": [
+          "production deployments require Docker plus database, storage, and service configuration",
+          "implementation quality depends on careful interview logic and integration testing",
+          "teams must build and maintain their own jurisdiction-specific content"
         ]
       },
       {
@@ -212,6 +383,25 @@
             "name": "Accord Project docs",
             "url": "https://docs.accordproject.org/"
           }
+        ],
+        "rankBasis": "A Linux Foundation open-standard project with roughly 250 GitHub stars on Cicero and a distinctive template ecosystem; its adoption is smaller than docassemble but its executable-contract model is unusually specific.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "natural-language contract templates",
+          "Concerto data models and generated types",
+          "TypeScript executable contract logic",
+          "render, validate, and run workflows"
+        ],
+        "pros": [
+          "strongly typed models can validate contract logic before execution",
+          "open standard and human-readable templates reduce vendor lock-in",
+          "connects legal text, structured data, and executable business rules"
+        ],
+        "cons": [
+          "small, specialized ecosystem and lower adoption than general document-assembly tools",
+          "the text-model-logic architecture has a steeper learning curve",
+          "it is not a turnkey contract-review or lifecycle-management application"
         ]
       },
       {
@@ -228,6 +418,25 @@
             "name": "GitHub (~45★)",
             "url": "https://github.com/open-agreements/open-agreements"
           }
+        ],
+        "rankBasis": "A small but active niche repo with 44 GitHub stars, 8 forks, 675 commits, and updates within days; its value is template coverage and primary-source legal content, not broad community adoption.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "standard agreement template catalog",
+          "CLI data filling to DOCX",
+          "primary-source-backed legal content",
+          "jurisdiction-aware guides and reviewer checklists"
+        ],
+        "pros": [
+          "practical path from structured inputs to editable DOCX agreements",
+          "content is anchored to primary legal sources and explicit review checklists",
+          "recent commits and releases show active maintenance"
+        ],
+        "cons": [
+          "very small community and limited independent review evidence",
+          "content is primarily U.S.-focused and jurisdiction-specific",
+          "users still need to review generated documents and operate the local toolchain"
         ]
       }
     ]

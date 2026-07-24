@@ -24,6 +24,25 @@
             "name": "AI Tool Discovery",
             "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
           }
+        ],
+        "rankBasis": "Consistently ranks #1-2 in 2026 AI-translation roundups; G2 rates it 4.6/5 from 167 reviews, and Reddit comparisons favor it for European language pairs.",
+        "pricingFree": "Free account: text translation plus document uploads up to 5 MB/100,000 characters per file",
+        "pricingPaid": "Pro Individual $8.74/month billed annually - 300,000 characters and 3 file translations/month",
+        "features": [
+          "Text, document, and image translation",
+          "Glossaries and style rules",
+          "Layout-preserving file translation",
+          "Formal/informal tone controls"
+        ],
+        "pros": [
+          "Natural-sounding, accurate output for major European language pairs",
+          "Simple workflow with strong document formatting preservation",
+          "Glossaries improve terminology consistency"
+        ],
+        "cons": [
+          "Smaller language coverage than Google Translate",
+          "Free usage and file limits are restrictive for heavier work",
+          "Users still report occasional inaccuracies and stability issues"
         ]
       },
       {
@@ -47,6 +66,25 @@
             "name": "Delos",
             "url": "https://www.delos.so/en/blog/best-ai-tool-for-document-translation-2026"
           }
+        ],
+        "rankBasis": "Ranks highly for coverage and accessibility in 2026 comparisons; G2 shows 4.6/5 from 554 reviews and Capterra shows 4.5/5 from 691 reviews, while Reddit comparisons call it the coverage/free-tier leader.",
+        "pricingFree": "Free consumer translator; Cloud Translation API includes the first 500,000 characters/month",
+        "pricingPaid": "Consumption-based Cloud Translation API - billed per character or document page by model and method",
+        "features": [
+          "Text, speech, image, document, and website translation",
+          "Broad language coverage",
+          "Offline mobile translation packs",
+          "Cloud API with Basic and Advanced editions"
+        ],
+        "pros": [
+          "Broad language coverage and instant results",
+          "Free, familiar, and easy to use across web and mobile",
+          "Useful API and offline options"
+        ],
+        "cons": [
+          "Complex sentences and idioms can be inaccurate",
+          "Offline packs do not cover every language equally well",
+          "Camera translation can be slow or inconsistent"
         ]
       },
       {
@@ -70,6 +108,25 @@
             "name": "Bluente",
             "url": "https://www.bluente.com/blog/ai-translation-tool"
           }
+        ],
+        "rankBasis": "G2 rates ChatGPT 4.6/5 from 2,739 reviews, and 2026 Reddit comparisons place it among the leading choices for idioms, context, and Asian-language translation.",
+        "pricingFree": "Free plan: limited messages, uploads, image generation, and deep research; limits vary",
+        "pricingPaid": "Plus $20/month - expanded messages/uploads, advanced reasoning, deep research, memory, and projects",
+        "features": [
+          "Context-aware text and document translation",
+          "Tone, style, and terminology instructions",
+          "File, image, and voice input",
+          "Interactive revision and explanation of choices"
+        ],
+        "pros": [
+          "Handles idioms, tone, and cultural context well",
+          "Flexible for translation plus editing and explanation",
+          "Strong support for long documents and multimodal inputs"
+        ],
+        "cons": [
+          "Output can be inaccurate and needs verification",
+          "Users report context drift and repetitive responses",
+          "Usage limits and model changes complicate repeatable workflows"
         ]
       },
       {
@@ -85,6 +142,25 @@
             "name": "AI Tool Discovery",
             "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
           }
+        ],
+        "rankBasis": "G2 rates Claude 4.6/5 from 398 reviews, while 2026 Reddit comparisons consistently favor its human-like writing, long-document handling, and context-sensitive translation.",
+        "pricingFree": "Free plan: limited usage with chat, web search, memory, file/code creation, and connectors",
+        "pricingPaid": "Pro $20/month, or $17/month billed annually - more usage, Claude Code, unlimited projects, and Research",
+        "features": [
+          "Context-aware text and document translation",
+          "Long-context file analysis",
+          "Style and tone-controlled rewriting",
+          "Artifacts and file creation"
+        ],
+        "pros": [
+          "Natural writing style for nuanced and literary passages",
+          "Strong long-document and context handling",
+          "Good community reputation for Asian-language and idiom-heavy work"
+        ],
+        "cons": [
+          "Free-tier rate limits frustrate heavy users",
+          "No built-in image generation",
+          "Translation-specific independent review volume is smaller than ChatGPT's"
         ]
       },
       {
@@ -104,6 +180,25 @@
             "name": "Lokalise",
             "url": "https://lokalise.com/blog/best-ai-translation-tools/"
           }
+        ],
+        "rankBasis": "G2 rates Microsoft Translator 4.3/5 from 95 reviews; reviewers emphasize ease, accuracy, real-time conversations, and Office/Azure integration, but note weaker handling of complex and idiomatic sentences.",
+        "pricingFree": "Azure F0 free tier: 2 million characters/month for standard translation and custom-translation training",
+        "pricingPaid": "Azure S1 pay-as-you-go: $10 per million text characters or $15 per million document characters",
+        "features": [
+          "Text, speech, document, and image translation",
+          "Real-time conversation translation",
+          "Language detection and transliteration",
+          "Office, Bing, and Azure integration"
+        ],
+        "pros": [
+          "Strong fit for Microsoft and Azure workflows",
+          "Useful real-time conversation and speech features",
+          "Generous API free tier for prototyping"
+        ],
+        "cons": [
+          "Complex sentences and idioms can produce inaccuracies",
+          "Polished prose often trails DeepL in comparisons",
+          "Azure setup and billing add enterprise overhead"
         ]
       },
       {
@@ -123,6 +218,25 @@
             "name": "Lokalise",
             "url": "https://lokalise.com/blog/best-ai-translation-tools/"
           }
+        ],
+        "rankBasis": "A newer entrant with limited independent review volume; G2 shows 4.7/5 from only 6 reviews, while 2026 updates and comparisons highlight its context-aware quality and growing document/media scope.",
+        "pricingFree": "Free plan: 60,000 characters/month across text, documents, audio, images, and Interpreter",
+        "pricingPaid": "Pro $9.99/month billed annually - 500,000 characters/month plus scanned PDFs, mobile apps, and integrations",
+        "features": [
+          "Context-aware text and document translation",
+          "Faithful, fluid, and creative styles",
+          "Layout-preserving documents and web pages",
+          "Audio, image, and live interpretation"
+        ],
+        "pros": [
+          "Strong context and idiom handling in early user reviews",
+          "Broad document and media workflow in one product",
+          "Privacy-focused incognito mode and style controls"
+        ],
+        "cons": [
+          "Small independent review base makes quality claims less established",
+          "Desktop app coverage is still a gap noted by reviewers",
+          "Character quotas and per-character overage can complicate budgeting"
         ]
       },
       {
@@ -142,6 +256,25 @@
             "name": "AI Tool Discovery",
             "url": "https://www.aitooldiscovery.com/guides/best-translation-ai-reddit"
           }
+        ],
+        "rankBasis": "G2 rates Amazon Translate 4.4/5 from 21 reviews and Gartner Peer Insights 4.4/5 from 4 ratings; reviewers cite AWS scalability, speed, and integration, while noting fewer languages than rivals.",
+        "pricingFree": "AWS Free Tier: 2 million characters/month for standard text and batch translation for the first 12 months",
+        "pricingPaid": "Standard text and batch translation $15 per million characters; real-time document rates vary by format",
+        "features": [
+          "Real-time text translation",
+          "Batch and real-time document translation",
+          "Custom terminology and Active Custom Translation",
+          "AWS-native integration and scaling"
+        ],
+        "pros": [
+          "Scales cleanly inside AWS data and application pipelines",
+          "Fast API with batch and real-time modes",
+          "Custom terminology supports domain vocabulary"
+        ],
+        "cons": [
+          "Fewer supported languages than Google and some rivals",
+          "AWS configuration and billing are complex for small teams",
+          "Contextual accuracy still needs review for difficult text"
         ]
       }
     ],
@@ -160,6 +293,25 @@
             "name": "GitHub (~25k★)",
             "url": "https://github.com/yetone/openai-translator"
           }
+        ],
+        "rankBasis": "One of the most adopted open translation clients at roughly 22k GitHub stars, with a large user-facing browser/desktop footprint and ongoing provider-support activity.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Browser extension, desktop app, and userscript",
+          "Selected-text and page translation",
+          "Multiple LLM/provider backends",
+          "Translation polishing and proofreading"
+        ],
+        "pros": [
+          "Ready-to-use cross-platform workflow rather than a bare API",
+          "Large community and broad provider compatibility",
+          "Useful for both translation and rewriting"
+        ],
+        "cons": [
+          "You must configure a provider API and pay its usage costs",
+          "Output quality depends on the selected model and endpoint",
+          "Support and troubleshooting are primarily community-driven"
         ]
       },
       {
@@ -176,6 +328,25 @@
             "name": "GitHub (~18k★)",
             "url": "https://github.com/immersive-translate/immersive-translate"
           }
+        ],
+        "rankBasis": "Roughly 18k GitHub stars and more than 20 million claimed users make it the most visibly adopted bilingual-reading extension in this list; community feedback centers on web, PDF, and subtitle workflows.",
+        "pricingFree": "Free plan: unlimited web-page, standard-PDF, text, subtitle, and e-book translation subject to fair-use rules",
+        "pricingPaid": "Pro $9.99/month - 20 million advanced-model tokens/month plus PDF Pro, layout retention, image/comic translation, and cloud sync",
+        "features": [
+          "Side-by-side bilingual web pages",
+          "Layout-preserving PDF, EPUB, and document translation",
+          "Video subtitle and meeting translation",
+          "Multi-engine AI model switching"
+        ],
+        "pros": [
+          "Excellent bilingual reading experience with original context visible",
+          "Unusually broad coverage of pages, PDFs, videos, and e-books",
+          "Multiple engines let users trade quality, speed, and cost"
+        ],
+        "cons": [
+          "The current repository is release/feedback code, not source-available software",
+          "Advanced PDF, image, and model access requires a subscription",
+          "Quality and quotas vary with the selected third-party engine"
         ]
       },
       {
@@ -192,6 +363,25 @@
             "name": "GitHub (~16k★)",
             "url": "https://github.com/LibreTranslate/LibreTranslate"
           }
+        ],
+        "rankBasis": "About 15.5k GitHub stars and an active issue/community stream make LibreTranslate the best-known self-hosted translation API in this list, with adoption reinforced by its Argos-based ecosystem.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Paid hosted API tiers available",
+        "features": [
+          "REST API for text and file translation",
+          "Self-hosted offline operation",
+          "Automatic language detection",
+          "Docker and API-key quota controls"
+        ],
+        "pros": [
+          "No proprietary cloud dependency when self-hosted",
+          "Simple API and easy local deployment",
+          "Active community and integration ecosystem"
+        ],
+        "cons": [
+          "Translation quality and language coverage vary by Argos model",
+          "Self-hosting requires operations, updates, and resource management",
+          "GitHub issues show recurring installation, file, and model-quality problems"
         ]
       },
       {
@@ -208,6 +398,25 @@
             "name": "GitHub (~7.5k★)",
             "url": "https://github.com/soimort/translate-shell"
           }
+        ],
+        "rankBasis": "About 7.5k GitHub stars and long-standing Unix adoption keep it a recognizable terminal translator, but the last tagged release and main development activity are several years old.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Command-line translation",
+          "Google, Bing, Yandex, and Apertium backends",
+          "Automatic language selection",
+          "Pronunciation and text-to-speech output"
+        ],
+        "pros": [
+          "Fast, scriptable, and well suited to Unix pipelines",
+          "One CLI covers several translation engines",
+          "Small footprint and permissive Unlicense"
+        ],
+        "cons": [
+          "External engine changes can break backends",
+          "Community issues document stale or unreliable voice and engine paths",
+          "No modern GUI, document, or layout-preservation workflow"
         ]
       },
       {
@@ -224,6 +433,25 @@
             "name": "GitHub (~7k★)",
             "url": "https://github.com/OpenNMT/OpenNMT-py"
           }
+        ],
+        "rankBasis": "Roughly 7k GitHub stars and a long-running OpenNMT research community give it strong credibility, but the latest OpenNMT-py release is from March 2024 and the project points users toward Eole for ongoing work.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Train and fine-tune neural translation models",
+          "PyTorch inference and model serving",
+          "Data transforms, evaluation, and beam search",
+          "LLM inference and quantization utilities"
+        ],
+        "pros": [
+          "Research-friendly and highly configurable",
+          "MIT-licensed with established academic and industry adoption",
+          "Broad tooling for training, evaluation, and deployment"
+        ],
+        "cons": [
+          "Steep setup and ML-operations burden compared with hosted APIs",
+          "You must supply data, models, and compute",
+          "Maintenance is less active than newer successor projects"
         ]
       },
       {
@@ -240,6 +468,25 @@
             "name": "GitHub (~6k★)",
             "url": "https://github.com/argosopentech/argos-translate"
           }
+        ],
+        "rankBasis": "About 6.3k GitHub stars, a current PyPI release, and its role as the engine beneath LibreTranslate make Argos the leading lightweight offline translation library in this group.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Offline neural translation",
+          "Python library, CLI, and GUI",
+          "Downloadable language-model packages",
+          "Pivot translation through intermediate languages"
+        ],
+        "pros": [
+          "Works offline without external API calls or per-character bills",
+          "Easy to embed in Python applications",
+          "Model packages and pivoting broaden usable language pairs"
+        ],
+        "cons": [
+          "Output quality can trail cloud systems for difficult language pairs",
+          "Language models must be downloaded and maintained locally",
+          "Pivoting through an intermediate language can reduce quality"
         ]
       },
       {
@@ -256,6 +503,25 @@
             "name": "GitHub (~1.6k★)",
             "url": "https://github.com/feiskyer/claude-code-settings/blob/main/skills/translate/SKILL.md"
           }
+        ],
+        "rankBasis": "A niche skill inside a curated Claude Code collection with roughly 1.6k repository stars; the skill has clear scope and directory listings, but little translation-specific independent review evidence.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "English/Japanese-to-Chinese technical translation",
+          "Markdown formatting preservation",
+          "Protected technical-term glossary",
+          "Chinese-only output constraints"
+        ],
+        "pros": [
+          "Clear, repeatable rules for technical localization",
+          "Protects common AI and engineering terms from accidental translation",
+          "Small skill is easy to inspect and adapt"
+        ],
+        "cons": [
+          "Only targets English or Japanese source text into Chinese",
+          "Requires an LLM runtime and does not provide a translation engine",
+          "Limited independent review and usage evidence"
         ]
       },
       {
@@ -272,6 +538,25 @@
             "name": "GitHub (~1k★)",
             "url": "https://github.com/deusyu/translate-book"
           }
+        ],
+        "rankBasis": "A newer niche skill with roughly 971 GitHub stars and recent releases/fixes; its growing adoption is credible, but independent review volume remains limited.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Parallel subagent translation",
+          "PDF, DOCX, and EPUB input",
+          "Manifest-based integrity checks",
+          "Resumable runs, glossary, and layout-aware output"
+        ],
+        "pros": [
+          "Handles whole-book workflows instead of isolated snippets",
+          "Recent maintenance adds resumability and integrity checks",
+          "Supports multiple agent runtimes and common book formats"
+        ],
+        "cons": [
+          "Requires Claude/Codex-compatible model access and its usage costs",
+          "Parallel orchestration adds setup and debugging complexity",
+          "Independent quality evidence is still sparse"
         ]
       },
       {
@@ -292,6 +577,25 @@
             "name": "Skills Directory",
             "url": "https://www.skillsdirectory.com/skills/djyde-translate"
           }
+        ],
+        "rankBasis": "The parent ccmate project has roughly 629 GitHub stars and the skill is indexed by multiple agent-skill directories, but it remains a small niche localization skill with limited independent review volume.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Updates existing locale files only",
+          "Protected Agent and Sub Agent terms",
+          "Placeholder and formatting preservation",
+          "Localization validation rules"
+        ],
+        "pros": [
+          "Strong guardrails against accidental locale or terminology changes",
+          "Focused on practical software-localization maintenance",
+          "Easy to audit because the rules are compact and explicit"
+        ],
+        "cons": [
+          "Not a general-purpose translation workflow",
+          "Requires Claude Code and an available model",
+          "Limited community evidence beyond directory listings and the parent repo"
         ]
       }
     ]

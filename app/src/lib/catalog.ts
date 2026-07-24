@@ -67,6 +67,14 @@ export type CategoryView = {
   notes: string | null
 }
 
+export type CatalogSearchEntry = {
+  kind: 'category' | 'product'
+  label: string
+  categoryName: string
+  categorySlug: string
+  itemId?: string
+}
+
 type RawCategory = Omit<Category, 'ready'>
 
 // Eagerly bundle every authored category file at build time.
@@ -101,6 +109,34 @@ export function getCategoryView(slug: string): CategoryView | null {
     tracks: content?.tracks ?? { app: [], skill: [] },
     notes: content?.notes ?? null,
   }
+}
+
+export function getCatalogSearchEntries(): CatalogSearchEntry[] {
+  return rawCategories.flatMap((category) => {
+    const entries: CatalogSearchEntry[] = [
+      {
+        kind: 'category',
+        label: category.name,
+        categoryName: category.name,
+        categorySlug: category.slug,
+      },
+    ]
+    const content = contentBySlug.get(category.slug)
+    if (!content) return entries
+
+    for (const track of ['app', 'skill'] as const) {
+      for (const item of content.tracks[track]) {
+        entries.push({
+          kind: 'product',
+          label: item.name,
+          categoryName: category.name,
+          categorySlug: category.slug,
+          itemId: `${track}:${item.rank}`,
+        })
+      }
+    }
+    return entries
+  })
 }
 
 /** The default category shown at the site root. */

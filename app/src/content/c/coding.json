@@ -11,6 +11,25 @@
         "bestFor": "Terminal-first agentic coding on large repos; Reddit's top pick for hard repository work, with the deepest plugin/skills ecosystem.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The consensus #1 for hard repository work across the three cited 2026 comparisons, with especially strong Reddit preference and the deepest first-party skills/plugin ecosystem among terminal agents.",
+        "pricingFree": "Free Claude plan includes limited Claude Code access on the web",
+        "pricingPaid": "Claude Pro $20/mo ($17/mo billed annually) - Claude Code in terminal and web with higher usage limits",
+        "features": [
+          "agentic terminal and web coding",
+          "repository-wide code understanding",
+          "tool use, tests and Git workflows",
+          "skills, plugins and subagents"
+        ],
+        "pros": [
+          "strongest consensus for difficult multi-file repository work",
+          "excellent instruction following and long-context reasoning",
+          "large and fast-growing skills/plugin ecosystem"
+        ],
+        "cons": [
+          "usage limits can feel tight on long agent sessions",
+          "terminal-first workflow is less approachable than an IDE",
+          "autonomous edits still require careful review and testing"
+        ],
         "sources": [
           {
             "name": "DIYAI (Reddit)",
@@ -34,6 +53,25 @@
         "bestFor": "The gold-standard AI IDE — most broadly adopted for daily editor-led development among individual devs and small teams.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Consistently placed in the top two across all three cited 2026 comparisons and remains the most broadly adopted AI-native editor for everyday individual and small-team development.",
+        "pricingFree": "Hobby: limited Agent requests and limited Tab completions, no card required",
+        "pricingPaid": "Pro $20/mo ($16/mo billed annually) - extended Agent limits, frontier models, skills, hooks and cloud agents",
+        "features": [
+          "AI-native VS Code-style editor",
+          "repository-aware Agent and Composer",
+          "Tab code completion",
+          "cloud agents, skills and MCP support"
+        ],
+        "pros": [
+          "polished editor experience with very low workflow friction",
+          "fast codebase indexing and context-aware completions",
+          "broad model choice and mature agent features"
+        ],
+        "cons": [
+          "included model usage can be difficult to predict",
+          "power users often need higher-priced Pro+ or usage billing",
+          "large autonomous changes still need close developer review"
+        ],
         "sources": [
           {
             "name": "DIYAI (Reddit)",
@@ -57,6 +95,25 @@
         "bestFor": "Safest enterprise default with the broadest editor coverage and native GitHub workflow integration.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A top-three pick in every cited 2026 comparison, backed by GitHub's distribution, the broadest IDE coverage and the strongest native integration with repositories, pull requests and enterprise policy.",
+        "pricingFree": "Copilot Free: 2,000 completions and 50 chat/agent requests per month",
+        "pricingPaid": "Copilot Pro $10/mo - unlimited completions, coding agent and 300 premium requests/mo",
+        "features": [
+          "inline code completion and chat",
+          "multi-editor agent mode",
+          "GitHub coding agent and pull requests",
+          "code review and CLI assistance"
+        ],
+        "pros": [
+          "broadest editor and GitHub workflow integration",
+          "lowest-cost mainstream paid coding assistant",
+          "strong enterprise administration and policy controls"
+        ],
+        "cons": [
+          "agent quality can trail specialist tools on complex repo work",
+          "premium-request accounting adds usage complexity",
+          "generated code can contain bugs or insecure patterns and needs review"
+        ],
         "sources": [
           {
             "name": "DIYAI (Reddit)",
@@ -80,6 +137,25 @@
         "bestFor": "The strongest GPT-native agent (CLI + cloud), good for delegated tasks with auto-test loops.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A top CLI/cloud-agent recommendation across all three cited 2026 roundups, differentiated by one account spanning local Codex, the desktop app and delegated cloud tasks with isolated worktrees.",
+        "pricingFree": "Limited Codex access is available on ChatGPT Free and Go during the current introductory period",
+        "pricingPaid": "ChatGPT Plus $20/mo - Codex CLI/app/cloud tasks with plan-based usage limits",
+        "features": [
+          "local CLI and desktop coding agent",
+          "delegated cloud tasks",
+          "parallel worktrees and subagents",
+          "tool execution, tests and code review"
+        ],
+        "pros": [
+          "strong integration between local work and cloud delegation",
+          "effective test-run-fix loops for scoped engineering tasks",
+          "good Git and multi-task workflow ergonomics"
+        ],
+        "cons": [
+          "plan limits vary with model and task complexity",
+          "cloud tasks require repository access and careful permissions",
+          "agent output still needs human architectural judgment"
+        ],
         "sources": [
           {
             "name": "Pinggy",
@@ -103,6 +179,25 @@
         "bestFor": "Clean agent-UX editor at a lower price point; rebranded under Devin/Cognition in mid-2026.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Still appears in all three cited editor comparisons and now benefits from Cognition's unified Devin Desktop/Cloud product; its clean agent UX remains the main alternative to Cursor.",
+        "pricingFree": "Free: light agent quota, limited models, unlimited inline edits and Tab completions",
+        "pricingPaid": "Devin Pro $20/mo - higher quotas, frontier models and access to Devin Cloud agents",
+        "features": [
+          "agent-first desktop editor",
+          "inline edits and Tab completions",
+          "multi-model chat and agent workflows",
+          "Devin Cloud task delegation"
+        ],
+        "pros": [
+          "clean, approachable agent-oriented editor UX",
+          "unified local editor and cloud-agent workflow",
+          "useful free tier for lightweight daily coding"
+        ],
+        "cons": [
+          "product naming and ownership changes have caused user uncertainty",
+          "paid usage allowances are described as quotas rather than fixed requests",
+          "smaller extension and community ecosystem than Cursor or VS Code"
+        ],
         "sources": [
           {
             "name": "ValueAdd VC",
@@ -126,6 +221,25 @@
         "bestFor": "The purest autonomous agent — delegate well-scoped tasks to parallel cloud VMs that open PRs when done.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The autonomy specialist across all three cited 2026 comparisons: unlike editor copilots, Devin is repeatedly selected for parallel cloud tasks that work through repositories and return pull requests.",
+        "pricingFree": "Free: light agent quota, limited models, unlimited inline edits and Tab completions",
+        "pricingPaid": "Devin Pro $20/mo - increased quotas, frontier models and Devin Cloud access; extra usage at API pricing",
+        "features": [
+          "parallel cloud coding sessions",
+          "repository and ticket integrations",
+          "automated tests and pull requests",
+          "Devin Desktop editor"
+        ],
+        "pros": [
+          "strongest product focus on asynchronous task delegation",
+          "isolated cloud sessions can run multiple tasks in parallel",
+          "integrates with Git providers and issue trackers"
+        ],
+        "cons": [
+          "works best only when tasks are tightly scoped and well specified",
+          "long autonomous runs can consume substantial usage",
+          "reviewing an agent-produced pull request can offset time saved"
+        ],
         "sources": [
           {
             "name": "DIYAI (Reddit)",
@@ -149,6 +263,25 @@
         "bestFor": "Strong large-repo ingestion with the most generous free tier; a solid no-cost CLI agent entry point.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Included by both cited CLI-agent roundups and distinguished by Google's unusually generous individual quota plus a very large context window; independent adoption is newer than the leaders above it.",
+        "pricingFree": "Free with a personal Google account: up to 60 requests/min and 1,000 requests/day",
+        "pricingPaid": "Google AI Pro $19.99/mo - higher Gemini limits; API pay-as-you-go also available",
+        "features": [
+          "open-source terminal coding agent",
+          "large-context repository analysis",
+          "Google Search grounding",
+          "MCP tools and headless scripting"
+        ],
+        "pros": [
+          "most generous no-cost quota among major CLI agents",
+          "large context window suits broad repository ingestion",
+          "open-source and easy to extend with tools"
+        ],
+        "cons": [
+          "agent behavior is less mature than Claude Code or Codex",
+          "quality varies substantially by task and selected model",
+          "Google account and cloud-service dependencies reduce local privacy"
+        ],
         "sources": [
           {
             "name": "Pinggy",
@@ -171,6 +304,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~260.4k GitHub stars make Superpowers the most-adopted coding-skill framework by a wide margin; it is also the first recommendation in the cited 2026 Claude Code skills roundup.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "brainstorming and specification skills",
+          "subagent-driven implementation",
+          "test-driven development workflow",
+          "code review and debugging skills"
+        ],
+        "pros": [
+          "opinionated end-to-end engineering process rather than isolated prompts",
+          "very large community and broad agent compatibility",
+          "strong emphasis on tests, review and incremental execution"
+        ],
+        "cons": [
+          "rigid workflow can feel heavy for small or exploratory tasks",
+          "many coordinated skills increase context and execution time",
+          "quality still depends on the host model following the process"
+        ],
         "sources": [
           {
             "name": "GitHub (~260k★)",
@@ -191,6 +343,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~189.2k GitHub stars make OpenCode the most-starred open-source coding agent; it leads the cited OSS ranking and has exceptional adoption for a provider-neutral terminal tool.",
+        "pricingFree": "Free & open-source (self-host; bring your own model credentials)",
+        "pricingPaid": null,
+        "features": [
+          "terminal-native coding agent",
+          "75+ model-provider integrations",
+          "client/server architecture",
+          "sessions, tools and permission controls"
+        ],
+        "pros": [
+          "provider-neutral alternative to proprietary coding agents",
+          "fast terminal UI with a very large community",
+          "open architecture supports local and hosted models"
+        ],
+        "cons": [
+          "model API usage is paid separately",
+          "rapid development can introduce breaking changes",
+          "users must manage providers, permissions and configuration"
+        ],
         "sources": [
           {
             "name": "GitHub (~189k★)",
@@ -211,6 +382,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~163.9k GitHub stars plus Anthropic's first-party ownership make this the canonical Agent Skills reference library and the strongest source for production-grade SKILL.md examples.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "official Agent Skills examples",
+          "document and spreadsheet workflows",
+          "web-app testing and MCP development",
+          "portable SKILL.md packages"
+        ],
+        "pros": [
+          "canonical examples maintained by the creator of the skills format",
+          "high-quality production-oriented instructions and resources",
+          "useful as both runnable skills and authoring references"
+        ],
+        "cons": [
+          "collection is selective rather than a comprehensive registry",
+          "some skills require extra runtimes or external tools",
+          "best integration remains within Anthropic's agent products"
+        ],
         "sources": [
           {
             "name": "GitHub (~164k★)",
@@ -231,6 +421,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~69.8k GitHub stars make it the largest curated Claude-skills directory, but it ranks below executable frameworks because adoption measures the list itself rather than any individual skill's quality.",
+        "pricingFree": "Free & open-source directory",
+        "pricingPaid": null,
+        "features": [
+          "curated community skill links",
+          "coding and workflow categories",
+          "installation resources",
+          "skill-authoring references"
+        ],
+        "pros": [
+          "broad discovery surface for the fragmented skills ecosystem",
+          "easy way to compare many community projects",
+          "actively followed and frequently updated"
+        ],
+        "cons": [
+          "curation does not guarantee each linked skill is safe or maintained",
+          "quality and installation conventions vary widely",
+          "the directory itself does not execute or validate skills"
+        ],
         "sources": [
           {
             "name": "GitHub (~70k★)",
@@ -247,6 +456,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~65k GitHub stars and more than five million reported installs make Cline the most widely deployed open-source IDE coding agent in this list; it is a top pick in the cited OSS roundup.",
+        "pricingFree": "Free & open-source extension/CLI (bring your own model credentials)",
+        "pricingPaid": null,
+        "features": [
+          "plan-and-act autonomous coding",
+          "VS Code extension, CLI and SDK",
+          "browser and terminal tools",
+          "human approval for file and command actions"
+        ],
+        "pros": [
+          "mature human-in-the-loop controls for autonomous changes",
+          "large install base and active extension ecosystem",
+          "works with many hosted and local model providers"
+        ],
+        "cons": [
+          "model API costs can grow quickly during long tasks",
+          "approval-heavy flows can become tedious",
+          "autonomous loops can consume large context windows"
+        ],
         "sources": [
           {
             "name": "GitHub (~65k★)",
@@ -267,6 +495,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~51.6k GitHub stars, Block stewardship and top placement in the cited open-source CLI roundup establish goose as a leading extensible on-machine agent.",
+        "pricingFree": "Free & open-source (self-host; bring your own model credentials)",
+        "pricingPaid": null,
+        "features": [
+          "desktop and terminal agent",
+          "multi-provider LLM support",
+          "MCP extension ecosystem",
+          "code execution, editing and testing"
+        ],
+        "pros": [
+          "runs locally while remaining model-provider neutral",
+          "strong extensibility through MCP tools",
+          "backed by an experienced production engineering organization"
+        ],
+        "cons": [
+          "provider setup and API billing remain the user's responsibility",
+          "general-purpose design is less coding-specialized than some rivals",
+          "tool permissions require careful configuration"
+        ],
         "sources": [
           {
             "name": "GitHub (~51.6k★)",
@@ -287,6 +534,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~47.7k GitHub stars and more than four million reported installs give Aider the longest battle-tested record among terminal pair-programmers; it remains near the top of star-based OSS rankings.",
+        "pricingFree": "Free & open-source (self-host; bring your own model credentials)",
+        "pricingPaid": null,
+        "features": [
+          "terminal pair programming",
+          "repository maps and multi-file edits",
+          "automatic Git commits",
+          "lint and test integration"
+        ],
+        "pros": [
+          "mature Git-native workflow with inspectable commits",
+          "works across a very broad range of models",
+          "efficient repository maps reduce unnecessary context"
+        ],
+        "cons": [
+          "terminal UX has a real learning curve",
+          "API costs and quality depend on the chosen model",
+          "less autonomous task management than newer agent platforms"
+        ],
         "sources": [
           {
             "name": "GitHub (~47.7k★)",
@@ -307,6 +573,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "~35.1k GitHub stars and placement in the cited OSS ranking make Continue the leading open-source option for teams that want configurable assistants inside both VS Code and JetBrains.",
+        "pricingFree": "Free & open-source core (self-host; bring your own model credentials)",
+        "pricingPaid": null,
+        "features": [
+          "VS Code and JetBrains agents",
+          "custom models, rules and tools",
+          "shared team configurations",
+          "autocomplete, chat and edit modes"
+        ],
+        "pros": [
+          "strong cross-editor support including JetBrains",
+          "highly configurable for private models and team rules",
+          "open-source foundation avoids single-provider lock-in"
+        ],
+        "cons": [
+          "setup is more involved than turnkey commercial assistants",
+          "experience quality varies with model and configuration",
+          "team deployment and model hosting can require real operations work"
+        ],
         "sources": [
           {
             "name": "GitHub (~35k★)",
@@ -327,6 +612,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~29.4k GitHub stars and Vercel's first-party authorship make this the most-adopted framework-specific skill collection, with unusually concrete React and Next.js engineering guidance.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "React and Next.js performance guidance",
+          "composition-pattern skills",
+          "project auditing",
+          "Vercel deployment workflows"
+        ],
+        "pros": [
+          "first-party, framework-specific recommendations",
+          "codifies detailed performance and composition practices",
+          "useful for both implementation and automated review"
+        ],
+        "cons": [
+          "narrowly optimized for the React, Next.js and Vercel ecosystem",
+          "framework guidance can age as platform conventions change",
+          "skills provide instructions rather than deterministic enforcement"
+        ],
         "sources": [
           {
             "name": "GitHub (~29k★)",
@@ -347,6 +651,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~23.4k GitHub stars plus support across Claude Code, Codex, Gemini CLI and Cursor make agentskills.io the central open specification rather than another vendor-specific skill list.",
+        "pricingFree": "Free & open-source specification and directory",
+        "pricingPaid": null,
+        "features": [
+          "portable Agent Skills specification",
+          "SKILL.md authoring guidance",
+          "cross-agent compatibility",
+          "public skill discovery"
+        ],
+        "pros": [
+          "reduces lock-in through a simple portable format",
+          "supported by several major coding-agent ecosystems",
+          "clear reference material for skill authors"
+        ],
+        "cons": [
+          "compatibility details still differ between host agents",
+          "the open format does not guarantee skill quality or security",
+          "registry coverage is smaller than broad community lists"
+        ],
         "sources": [
           {
             "name": "GitHub (~23k★)",
@@ -367,6 +690,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "~6.2k GitHub stars are modest beside general coding tools, but Trail of Bits' security-audit reputation and specialized CodeQL/Semgrep workflows give this collection unusually high signal in its niche.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "CodeQL vulnerability workflows",
+          "Semgrep rule development",
+          "security audit methodology",
+          "smart-contract and systems analysis"
+        ],
+        "pros": [
+          "authored by a respected security research and audit firm",
+          "encodes concrete specialist workflows rather than generic prompts",
+          "valuable for repeatable vulnerability-analysis tasks"
+        ],
+        "cons": [
+          "niche collection rather than a general coding toolkit",
+          "effective use requires security-domain expertise",
+          "some workflows depend on heavyweight external analysis tools"
+        ],
         "sources": [
           {
             "name": "GitHub (~6.2k★)",

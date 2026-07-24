@@ -19,13 +19,24 @@ Read this when you need the exact per-field rules, the JSON shape, or a referenc
 ## Field rules
 
 ### rankBasis
-One sentence. Must name at least one CONCRETE signal, ideally several:
+One or two sentences. First explain the causal reason users adopt/share it and why it earns its
+position:
+- the expensive, fragmented, or difficult job it compresses,
+- the product or technical mechanism that makes the promise work,
+- the immediate user outcome or distribution hook.
+
+Then use at least one concrete signal as confirmation:
 - average / typical position across major "best <use case> 2026" roundups ("consistently #1–2 across…"),
 - GitHub stars (for OSS) with the rough number,
 - G2 / Capterra rating **and review count** (a 4.9 from 12 reviews ≠ a 4.6 from 500),
 - Reddit / community mention volume or being "the most-cited X".
-Forbidden: "it's the best", "high quality", or restating the derived score. If signals are thin,
-say so honestly ("newer entrant, limited independent review volume").
+
+For a repo/skill, the popularity thesis must follow a code-reading pass: README/architecture,
+package manifest, runtime entry point, primary orchestration layer, and one representative
+data/service path.
+
+Forbidden: "it ranks here because it is trending", leading with today's star growth, "it's the
+best", "high quality", or restating the derived score. If signals are thin, say so honestly.
 
 ### pricingFree / pricingPaid
 From the OFFICIAL pricing page only. `pricingFree` = the standing free plan with its concrete limit
@@ -40,9 +51,18 @@ hosted cloud tier exists (e.g. Firecrawl Cloud).
 2–4 of the tool's MAIN capabilities, short noun phrases from the official site. Not marketing fluff.
 
 ### pros / cons
-2–3 each, drawn from aggregated third-party sentiment (G2, Capterra, Reddit, independent roundups) —
-what real users and reviewers actually say. `cons` must be real, specific limitations, not soft
-"could be better" filler. This is consensus, not our own hands-on test; the UI labels it as such.
+2–3 each, grounded in official docs/code plus aggregated third-party sentiment (G2, Capterra,
+Reddit, independent roundups) or repository issues/discussions.
+
+Every pro must use **mechanism → outcome**:
+- Good: `"dual map plus cross-stream correlation lets analysts connect physical and market signals without switching tools"`.
+- Bad: `"popular repository"`, `"many stars"`, `"active development"`, `"easy to use"`.
+
+Every con must name a real failure mode, tradeoff, or constraint:
+- Good: `"mobile hydration currently creates 20 long tasks / 9.5s TBT (issue #5165)"`.
+- Bad: `"may require setup"`, `"could be more polished"`.
+
+This is source-backed synthesis, not our own hands-on test; the UI labels it as such.
 
 ## Worked example 1 — SaaS app (Firecrawl, web-scraping app track)
 
@@ -61,12 +81,12 @@ what real users and reviewers actually say. `cons` must be real, specific limita
 
 ```json
 {
-  "rankBasis": "The recognized king of open-source AI/LLM scraping — ~75k★, the tool r/webscraping most often recommends over paid scrapers, and top of most 'open-source scraper' roundups.",
+  "rankBasis": "Crawl4AI became the default open-source choice because it collapses browser rendering, content cleanup, and LLM-ready extraction into one self-hosted crawl pipeline instead of forcing teams to assemble those layers themselves. Its ~75k★ adoption and repeated r/webscraping recommendations confirm that the integration and no-credit model resonate.",
   "pricingFree": "Free & open-source (self-host)",
   "pricingPaid": null,
   "features": ["LLM-ready markdown extraction", "async high-throughput crawling", "adaptive/heuristic content extraction", "browser automation with stealth"],
-  "pros": ["free and self-hostable — no per-page credits", "purpose-built for feeding LLMs/RAG", "very active project, fast-moving community"],
-  "cons": ["you run and scale the infra yourself", "no managed proxies/anti-bot out of the box", "steeper setup than a hosted API"]
+  "pros": ["markdown cleanup and extraction strategies reduce the post-processing needed before RAG ingestion", "async crawling and browser sessions can be tuned inside the same pipeline instead of split across separate tools", "self-hosting removes per-page credit accounting and keeps crawled data on infrastructure you control"],
+  "cons": ["proxy rotation and hard-target anti-bot infrastructure are not bundled", "production scaling, browser capacity, and retries remain the operator's responsibility", "rapid API evolution can require migration work between releases"]
 }
 ```
 

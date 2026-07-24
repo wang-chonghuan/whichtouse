@@ -11,6 +11,12 @@
         "bestFor": "All-in-one prospecting: 275M+ contact DB + AI email sequencing. SMB / early-stage default.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The only app present in all three source roundups here, with a large independent review footprint and broad SMB sales-team adoption; that combination supports its #1 all-in-one position.",
+        "pricingFree": "Free Starter plan — limited database access and Gmail-only email connection; no card required",
+        "pricingPaid": "Basic $49/user/mo — contact access, CRM integrations and email automation",
+        "features": ["B2B contact and company database", "email sequencing and automation", "CRM enrichment and integrations", "buyer-intent and workflow tools"],
+        "pros": ["large database plus outreach in one product", "fast onboarding for small sales teams", "strong integrations and workflow coverage"],
+        "cons": ["credit rules and add-ons can be difficult to predict", "users report uneven data accuracy by market", "advanced automation and non-Gmail connections require paid tiers"],
         "sources": [
           {
             "name": "Salesforge",
@@ -34,6 +40,12 @@
         "bestFor": "Programmable waterfall enrichment + custom plays. For GTM engineers who want to build.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A recurring top recommendation in 2026 AI-SDR comparisons and the category's best-known programmable enrichment workspace, with especially strong GTM-engineering community mindshare.",
+        "pricingFree": "Free plan — 100 data credits/mo and 500 actions/mo",
+        "pricingPaid": "Launch $167/mo — 3,000 data credits and 15,000 actions/mo",
+        "features": ["multi-provider waterfall enrichment", "Claygent AI web research", "signals and job-change monitoring", "sequencing and campaign integrations"],
+        "pros": ["exceptionally flexible enrichment and routing", "large provider and integration ecosystem", "lets technical GTM teams build highly custom plays"],
+        "cons": ["separate data-credit and action meters add complexity", "learning curve is steep for simple list building", "cost can rise quickly with large waterfalls and AI research"],
         "sources": [
           {
             "name": "Salesmotion",
@@ -53,6 +65,12 @@
         "bestFor": "Cold email at scale, built for deliverability (inbox rotation, send-rate control).",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Repeatedly included in lead-generation and cold-email shortlists and widely discussed by outbound operators for high-volume sending and deliverability controls.",
+        "pricingFree": null,
+        "pricingPaid": "Growth $47/mo — unlimited email accounts, 1,000 uploaded contacts and 5,000 emails/mo",
+        "features": ["unlimited sending-account connections", "inbox rotation and warm-up", "campaign sequencing and analytics", "B2B lead database and CRM"],
+        "pros": ["strong value for teams operating many inboxes", "simple campaign setup and scaling controls", "deliverability tooling is central rather than an add-on"],
+        "cons": ["no standing free plan beyond trial access", "lead data and outreach modules use separate pricing", "high-volume use still requires careful domain and inbox operations"],
         "sources": [
           {
             "name": "Saleshandy",
@@ -72,6 +90,12 @@
         "bestFor": "Fully autonomous outbound (agent 'Alice'). Enterprise, outbound-heavy teams that want volume.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Frequently shortlisted in 2026 AI-SDR comparisons for its autonomous 'Alice' agent, but its independent review volume and pricing transparency remain thinner than Apollo, Clay or Instantly.",
+        "pricingFree": null,
+        "pricingPaid": "Custom enterprise pricing (no public rate)",
+        "features": ["autonomous prospect research", "multichannel outbound execution", "message personalization", "campaign optimization and reporting"],
+        "pros": ["can automate a large share of repetitive SDR work", "single agent-style workflow from research to outreach", "built for enterprise outbound volume"],
+        "cons": ["no public self-serve pricing", "community reports cite long commitments and high total cost", "teams have less granular control than with a composable stack"],
         "sources": [
           {
             "name": "Salesmotion",
@@ -91,6 +115,12 @@
         "bestFor": "Autonomous AI SDR (agent 'Ava') that finds, researches, writes and sends. More approachable.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A recurring AI-SDR shortlist entry for its 'Ava' agent and broad outbound workflow, though public review depth is still modest compared with established sales platforms.",
+        "pricingFree": null,
+        "pricingPaid": "Custom sales-led pricing (no public rate)",
+        "features": ["automated lead discovery and research", "personalized email generation", "campaign sending and follow-up", "deliverability and performance analytics"],
+        "pros": ["consolidates research, copy and sending", "more guided experience than assembling separate tools", "strong focus on autonomous outbound execution"],
+        "cons": ["pricing is not published", "less flexible than Clay for custom enrichment logic", "independent reviewers flag the need for human QA on messaging and targeting"],
         "sources": [
           {
             "name": "Salesmotion",
@@ -110,6 +140,12 @@
         "bestFor": "AI waterfall enrichment across 15+ providers, 98% email accuracy, no per-seat fees. Data quality.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A newer entrant with limited independent review volume; it ranks here on a tested comparison, transparent pricing and a focused 15-plus-provider enrichment workflow rather than broad market adoption.",
+        "pricingFree": "Free plan — 30 credits/mo (30 email enrichments or about 3 phone enrichments)",
+        "pricingPaid": "Starter $79/mo — 1,500 credits/mo; unused paid credits roll over for up to 3 months",
+        "features": ["waterfall contact enrichment", "email verification", "Sales Navigator scraping", "AI research agents and scheduled workflows"],
+        "pros": ["transparent credit accounting with no per-seat fee", "full feature set is available on the free plan", "combines enrichment and verification in one workflow"],
+        "cons": ["much smaller review base than established vendors", "phone enrichment consumes substantially more credits", "primarily an enrichment layer rather than a full outreach suite"],
         "sources": [
           {
             "name": "Cleanlist (tested)",
@@ -128,6 +164,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Hosted inside ComposioHQ's 69.8k-star awesome-claude-skills collection, the largest adoption signal in this track, although the stars belong to the collection rather than this individual skill.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["product and ICP analysis", "target-company discovery", "lead scoring and prioritization", "outreach-strategy generation"],
+        "pros": ["purpose-built end-to-end lead-research workflow", "plain SKILL.md format is easy to inspect and adapt", "benefits from a very visible skill collection"],
+        "cons": ["no independent adoption count for this sub-skill", "research quality depends on the agent's available web tools", "does not provide a contact database or sending infrastructure"],
         "sources": [
           {
             "name": "GitHub — ComposioHQ/awesome-claude-skills (~69.7k★)",
@@ -148,6 +190,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "About 41.5k GitHub stars and 6.5k forks make this one of the most-adopted marketing skill libraries; lead generation is a useful subset rather than the repository's sole focus.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["lead-magnet planning", "cold-email guidance", "lead-capture optimization", "CRO, analytics and growth workflows"],
+        "pros": ["large community and unusually broad marketing coverage", "modular skills can be adopted individually", "active maintenance and clear written playbooks"],
+        "cons": ["not a dedicated prospecting application", "requires external data and execution tools", "large scope can be more than a focused outbound team needs"],
         "sources": [
           {
             "name": "GitHub — coreyhaines31/marketingskills (~41.5k★)",
@@ -164,6 +212,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "At about 2.9k GitHub stars and 447 forks, it is the most-adopted standalone open-source lead-list builder in this set and remains actively maintained.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Google Maps business extraction", "email, phone and social enrichment", "50-plus business data points", "API and export support"],
+        "pros": ["focused route to local-business lead lists", "no recurring software fee when self-hosted", "richer enrichment than basic Maps exporters"],
+        "cons": ["users must operate the scraper and handle blocking risk", "data quality varies by listing and geography", "large runs can require proxies and careful rate control"],
         "sources": [
           {
             "name": "GitHub — omkarcloud/google-maps-scraper (~2.9k★)",
@@ -180,6 +234,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 2.5k GitHub stars and 474 forks give it the second-strongest standalone OSS adoption signal here; active development reinforces its position despite a sizable issue backlog.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["agentic lead discovery", "ICP-based qualification", "personalized email generation", "automated outreach workflows"],
+        "pros": ["covers discovery through email in one self-hosted project", "source is inspectable and customizable", "focused specifically on B2B outbound"],
+        "cons": ["self-hosting and provider setup are required", "email automation creates compliance and deliverability responsibility", "you supply external model, search and sending services"],
         "sources": [
           {
             "name": "GitHub — eracle/OpenOutreach (~2.5k★)",
@@ -196,6 +256,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "About 1.1k GitHub stars and 193 forks show meaningful early adoption for a newer cross-agent GTM library, but lead generation is only one part of its broader scope.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["lead-generation playbooks", "GTM and growth workflows", "data and scraping integrations", "skills for ads, social, content and SEO"],
+        "pros": ["works across Claude Code, Codex and Cursor", "broad GTM workflow coverage", "active project with reusable skill modules"],
+        "cons": ["external APIs may add cost and setup", "quality and depth vary across a broad skill library", "smaller community than the leading marketing-skill collection"],
         "sources": [
           {
             "name": "GitHub — gooseworks-ai/goose-skills (~1.1k★)",
@@ -212,6 +278,12 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Its roughly 559 GitHub stars and 200 forks are modest but concrete adoption for a highly focused cold-outbound skill pack; it ranks behind broader, more established repositories.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["ICP and campaign grading", "cold-email copy workflows", "Prospeo search export", "Google Maps list scraping"],
+        "pros": ["unusually focused on practical outbound work", "covers targeting, copy and deliverability", "skills are transparent and easy to customize"],
+        "cons": ["small independent community and review footprint", "several workflows depend on third-party services", "agent-generated campaigns still require compliance and quality review"],
         "sources": [
           {
             "name": "GitHub — growthenginenowoslawski/coldoutboundskills (~559★)",

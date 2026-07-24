@@ -24,6 +24,25 @@
             "name": "Zapier vs Make vs n8n",
             "url": "https://www.digitalapplied.com/blog/zapier-vs-make-vs-n8n-2026-automation-comparison"
           }
+        ],
+        "rankBasis": "Consistently appears in top positions in AI-workflow roundups from n8n, TechnologyAdvice, and Digital Applied; its GitHub repository has about 197.8k stars and community discussions repeatedly position it as the technical, self-hostable alternative.",
+        "pricingFree": "Cloud Free: 50 executions/month, 1 user, and 1 shared project; Community Edition is also self-hosted",
+        "pricingPaid": "Starter €20/month billed annually (€24 monthly) — 2,500 workflow executions/month, 5 concurrent executions, and 2,300 AI credits/month",
+        "features": [
+          "visual workflow canvas with JavaScript and Python",
+          "1,500+ integrations",
+          "AI agents, tool use, and RAG workflows",
+          "self-hosting with RBAC and audit trails"
+        ],
+        "pros": [
+          "high flexibility for technical teams and unusual workflows",
+          "self-hosting gives stronger data and deployment control",
+          "execution-based billing can be more predictable than per-step billing"
+        ],
+        "cons": [
+          "steeper learning curve than simpler no-code tools",
+          "self-hosting adds upgrades, backups, and operational work",
+          "community support is stronger than dedicated support on lower tiers"
         ]
       },
       {
@@ -47,6 +66,25 @@
             "name": "Intuz comparison",
             "url": "https://www.intuz.com/blog/make-vs-n8n-vs-zapier-detailed-comparison/"
           }
+        ],
+        "rankBasis": "Repeatedly included in broad workflow-automation roundups from TechnologyAdvice, Domo, and Intuz, with a large G2/Capterra review footprint and the strongest mainstream adoption signal among no-code automation tools.",
+        "pricingFree": "Free forever — 100 tasks/month with Zaps, Tables, and Forms",
+        "pricingPaid": "Professional from $19.99/month — task-based plans starting at 750 tasks/month",
+        "features": [
+          "9,000+ app integrations",
+          "multi-step Zaps and webhooks",
+          "AI-powered workflow automation",
+          "Tables and Forms"
+        ],
+        "pros": [
+          "fastest setup for common business automations",
+          "broad connector catalog and mature templates",
+          "accessible to non-technical teams"
+        ],
+        "cons": [
+          "task-based pricing becomes expensive at higher volume",
+          "complex branching and data transformations are less flexible",
+          "reviewers often report limits around debugging and support"
         ]
       },
       {
@@ -70,6 +108,25 @@
             "name": "Intuz comparison",
             "url": "https://www.intuz.com/blog/make-vs-n8n-vs-zapier-detailed-comparison/"
           }
+        ],
+        "rankBasis": "Repeatedly shortlisted alongside Zapier and n8n in TechnologyAdvice, Digital Applied, and Intuz comparisons, with a substantial G2/Capterra review base and strong community mindshare for visual scenario building.",
+        "pricingFree": "Free plan — 1,000 credits/month",
+        "pricingPaid": "Core from $9/month — 10,000 credits/month",
+        "features": [
+          "visual scenario builder",
+          "routers and conditional branching",
+          "webhooks and API integrations",
+          "error handling and data transformation"
+        ],
+        "pros": [
+          "visual routing and branching are more expressive than basic Zaps",
+          "good feature-to-price ratio for multi-step scenarios",
+          "strong execution visibility for debugging"
+        ],
+        "cons": [
+          "the visual builder has a noticeable learning curve",
+          "large scenarios can become difficult to read and maintain",
+          "reviewers report occasional support and documentation gaps"
         ]
       },
       {
@@ -89,6 +146,25 @@
             "name": "Vellum low-code list",
             "url": "https://www.vellum.ai/blog/top-low-code-ai-workflow-automation-tools"
           }
+        ],
+        "rankBasis": "Appears in the n8n AI-workflow roundup and Vellum's low-code AI list, but has a smaller independent review footprint than the established leaders; the ranking is driven mainly by its AI-first workflow positioning.",
+        "pricingFree": null,
+        "pricingPaid": "Pro starts at $37/month — 20k+ credits/month, with a 14-day free trial",
+        "features": [
+          "visual AI agents and workflows",
+          "model and application integrations",
+          "MCP server proxying",
+          "team usage and analytics"
+        ],
+        "pros": [
+          "fast way to prototype AI agents and automations",
+          "AI models and business integrations sit in one visual builder",
+          "strong fit for teams experimenting with agent workflows"
+        ],
+        "cons": [
+          "smaller independent review and community footprint",
+          "credit-based usage can be harder to forecast",
+          "less mature general-purpose automation coverage than Zapier or n8n"
         ]
       },
       {
@@ -108,6 +184,25 @@
             "name": "VisioneerIT enterprise guide",
             "url": "https://www.visioneerit.com/blog/best-ai-automation-tools-in-2026-the-complete-guide-to-enterprise-workflow-automation"
           }
+        ],
+        "rankBasis": "Included in TechnologyAdvice and VisioneerIT enterprise automation roundups and backed by a large G2/Capterra review base; Microsoft 365 reach, governance, and RPA are its clearest adoption signals.",
+        "pricingFree": null,
+        "pricingPaid": "Power Automate Premium $15/user/month paid yearly — cloud flows, attended desktop flows, process mining, and 250 MB Dataverse database plus 2 GB file",
+        "features": [
+          "cloud flows",
+          "desktop flows with attended RPA",
+          "standard, premium, and custom connectors",
+          "process and task mining"
+        ],
+        "pros": [
+          "deep integration with Microsoft 365, Dataverse, and Azure",
+          "broad enterprise governance and connector coverage",
+          "combines cloud workflow automation with desktop RPA"
+        ],
+        "cons": [
+          "licensing and connector entitlements are difficult to understand",
+          "the platform has a substantial learning curve",
+          "users report brittle flows and troubleshooting friction in some RPA scenarios"
         ]
       },
       {
@@ -127,6 +222,25 @@
             "name": "Agensi alternatives",
             "url": "https://www.agensi.io/learn/best-zapier-alternatives-ai-automation"
           }
+        ],
+        "rankBasis": "Appears in Zapier-alternative roundups from Composio and Agensi, and its public repository has about 23.4k GitHub stars; community coverage is smaller than n8n's but unusually strong for an open-source alternative.",
+        "pricingFree": "Cloud Free — 10 active flows and unlimited runs; self-hosting is free",
+        "pricingPaid": "Cloud paid usage — $5 per active flow/month after the 10 free active flows",
+        "features": [
+          "visual AI automation flows",
+          "700+ integrations and pieces",
+          "TypeScript piece extensibility",
+          "MCP servers for integrations"
+        ],
+        "pros": [
+          "open-source and self-hostable with a low-cost cloud option",
+          "intuitive interface for technical and non-technical users",
+          "TypeScript pieces make custom integrations approachable"
+        ],
+        "cons": [
+          "smaller connector and template ecosystem than Zapier or n8n",
+          "self-hosted deployments still require maintenance",
+          "rapid product changes can leave edge cases and integrations uneven"
         ]
       },
       {
@@ -142,6 +256,25 @@
             "name": "TechnologyAdvice",
             "url": "https://technologyadvice.com/blog/information-technology/best-ai-workflow-automation-tools/"
           }
+        ],
+        "rankBasis": "Included in TechnologyAdvice's enterprise automation roundup and supported by a large G2/Capterra enterprise-review footprint; its iPaaS adoption, governance, and 1,200+ connector catalog are the clearest ranking signals.",
+        "pricingFree": null,
+        "pricingPaid": "Consumption-based enterprise pricing (no public rate; contact sales)",
+        "features": [
+          "1,200+ prebuilt connectors",
+          "recipe-based workflow automation",
+          "AI workflows and agent orchestration",
+          "RPA and data orchestration"
+        ],
+        "pros": [
+          "strong enterprise integration breadth and governance",
+          "good fit for cross-department automation at scale",
+          "enterprise support and implementation ecosystem"
+        ],
+        "cons": [
+          "sales-led pricing is difficult to compare publicly",
+          "implementation and administration are heavier than lightweight tools",
+          "cost is commonly cited as a barrier for smaller teams"
         ]
       }
     ],
@@ -160,6 +293,25 @@
             "name": "GitHub — n8n-io/n8n (~197.8k★)",
             "url": "https://github.com/n8n-io/n8n"
           }
+        ],
+        "rankBasis": "About 197.8k GitHub stars make n8n the runaway adoption leader in this track; its official repository describes 1,500+ integrations, AI-native workflows, and self-hosting, while its community is one of the most active in this category.",
+        "pricingFree": "Free self-hosted edition (fair-code license)",
+        "pricingPaid": null,
+        "features": [
+          "visual AI-agent and workflow builder",
+          "1,500+ integrations",
+          "JavaScript and Python code steps",
+          "self-hosting and workflow observability"
+        ],
+        "pros": [
+          "largest integration and template ecosystem in this set",
+          "combines visual building with real code flexibility",
+          "strong community and self-hosting control"
+        ],
+        "cons": [
+          "self-hosting requires operational ownership",
+          "fair-code licensing is more restrictive than a permissive OSS license",
+          "the breadth of nodes and options can overwhelm new users"
         ]
       },
       {
@@ -176,6 +328,25 @@
             "name": "GitHub — activepieces/activepieces (~23.4k★)",
             "url": "https://github.com/activepieces/activepieces"
           }
+        ],
+        "rankBasis": "About 23.4k GitHub stars place Activepieces among the most-adopted open-source Zapier alternatives; its MIT license, active TypeScript pieces ecosystem, and community Discord provide stronger signals than most newer competitors.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "visual AI automation flows",
+          "700+ integrations and TypeScript pieces",
+          "MCP servers generated from pieces",
+          "hot-reload local piece development"
+        ],
+        "pros": [
+          "permissive MIT license and straightforward self-hosting",
+          "custom integrations fit naturally into a TypeScript codebase",
+          "friendly UI and relatively quick learning curve"
+        ],
+        "cons": [
+          "smaller ecosystem and less maturity than n8n",
+          "self-hosting still shifts upgrades and reliability work to the user",
+          "community-contributed pieces vary in depth and maintenance"
         ]
       },
       {
@@ -192,6 +363,25 @@
             "name": "GitHub — node-red/node-red (~23.4k★)",
             "url": "https://github.com/node-red/node-red"
           }
+        ],
+        "rankBasis": "About 23.4k GitHub stars, more than 5,000 community nodes, and a long-running Node.js/IBM lineage make Node-RED one of the most established low-code event-driven tools in this category.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "browser-based flow editor",
+          "event-driven Node.js runtime",
+          "5,000+ community nodes",
+          "shareable JSON flows and reusable templates"
+        ],
+        "pros": [
+          "mature, lightweight, and especially strong for IoT and edge use",
+          "large community node and flow library",
+          "easy to run on inexpensive hardware or in the cloud"
+        ],
+        "cons": [
+          "large flows can become hard to organize and review",
+          "custom-node quality and maintenance vary across the ecosystem",
+          "less built-in governance and testing than enterprise orchestrators"
         ]
       },
       {
@@ -208,6 +398,25 @@
             "name": "GitHub — windmill-labs/windmill (~17.3k★)",
             "url": "https://github.com/windmill-labs/windmill"
           }
+        ],
+        "rankBasis": "About 17.3k GitHub stars and active Discord/docs adoption support its position as a leading code-first alternative; the repository is explicitly positioned for APIs, background jobs, workflows, and internal UIs.",
+        "pricingFree": "Free Community Edition — open-source and self-hostable",
+        "pricingPaid": "Team $10/seat/month — compute-unit based usage",
+        "features": [
+          "scripts in Python, TypeScript, Go, Bash, SQL, and Rust",
+          "DAG workflows and background jobs",
+          "auto-generated UIs and APIs",
+          "self-hosted workers and cron schedules"
+        ],
+        "pros": [
+          "excellent fit for engineers who want code instead of drag-and-drop",
+          "turns scripts into reusable workflows, APIs, and UIs",
+          "fast self-hosting with strong infrastructure control"
+        ],
+        "cons": [
+          "developer-centric model is not ideal for business-only users",
+          "self-hosting and worker sizing require engineering judgment",
+          "smaller connector ecosystem and review base than mainstream SaaS tools"
         ]
       },
       {
@@ -224,6 +433,25 @@
             "name": "GitHub — triggerdotdev/trigger.dev (~15.7k★)",
             "url": "https://github.com/triggerdotdev/trigger.dev"
           }
+        ],
+        "rankBasis": "About 15.7k GitHub stars, an active Discord, and a maintained Apache-2.0 repository support its position as a leading code-first workflow runtime for TypeScript AI tasks.",
+        "pricingFree": "Free & open-source (self-host); Trigger.dev Cloud Free includes $5/month in credits",
+        "pricingPaid": "Cloud Hobby $30/month — $10/month in credits included",
+        "features": [
+          "long-running TypeScript tasks without timeouts",
+          "durable retries, queues, and checkpointing",
+          "real-time logs, tracing, and monitoring",
+          "human-in-the-loop waits and scheduled tasks"
+        ],
+        "pros": [
+          "durable execution is a strong fit for long AI jobs",
+          "excellent TypeScript developer experience and observability",
+          "supports retries, queues, streaming, and human approval flows"
+        ],
+        "cons": [
+          "code-first design excludes non-technical workflow builders",
+          "production deployments still require careful concurrency and cost planning",
+          "smaller general-purpose integration ecosystem than n8n or Zapier"
         ]
       },
       {
@@ -240,6 +468,25 @@
             "name": "GitHub — czlonkowski/n8n-skills (~5.9k★)",
             "url": "https://github.com/czlonkowski/n8n-skills"
           }
+        ],
+        "rankBasis": "About 5.9k GitHub stars make this the most-adopted dedicated n8n skill pack in the list; its README documents 14 complementary skills, hooks, and patterns based on more than 2,600 n8n templates.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "14 Claude Code skills for n8n",
+          "n8n expression and node-configuration guidance",
+          "validation and error-fixing workflows",
+          "production workflow patterns and templates"
+        ],
+        "pros": [
+          "unusually comprehensive guidance for AI-assisted n8n building",
+          "validation-focused patterns reduce common configuration mistakes",
+          "large adoption signal for a workflow-specific skill pack"
+        ],
+        "cons": [
+          "requires n8n and the n8n-mcp server to be useful",
+          "unofficial guidance can drift as n8n changes",
+          "a skill pack is not itself a workflow runtime"
         ]
       },
       {
@@ -256,6 +503,25 @@
             "name": "GitHub — kestra-io/kestra (~27.4k★)",
             "url": "https://github.com/kestra-io/kestra"
           }
+        ],
+        "rankBasis": "About 27.5k GitHub stars and an active official Slack/community support a strong adoption signal, but Kestra is more data, AI, and infrastructure orchestration than lightweight SaaS automation, so it ranks below the direct workflow tools.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Kestra Cloud is consumption-based with no public flat rate; Enterprise pricing is contact-sales",
+        "features": [
+          "declarative YAML workflow definitions",
+          "scheduled and event-driven orchestration",
+          "hundreds of plugins for data, APIs, and infrastructure",
+          "retries, backfills, branching, and Git versioning"
+        ],
+        "pros": [
+          "strong production resilience and orchestration semantics",
+          "YAML plus UI and Git workflows suit infrastructure-minded teams",
+          "broad plugin ecosystem across data and cloud systems"
+        ],
+        "cons": [
+          "more infrastructure-oriented than simple business automations",
+          "YAML and orchestration concepts add complexity for beginners",
+          "self-hosting a production cluster is a substantial operational commitment"
         ]
       },
       {
@@ -272,6 +538,25 @@
             "name": "GitHub — n8n-io/skills (~363★)",
             "url": "https://github.com/n8n-io/skills"
           }
+        ],
+        "rankBasis": "The official n8n skills repository has about 363 GitHub stars and first-party authority; its 13 capability skills, 50+ reference documents, and hook-based workflow guidance make it more authoritative but much smaller than the leading community pack.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "13 first-party n8n capability skills",
+          "50+ reference docs and worked examples",
+          "SessionStart and PreToolUse hooks",
+          "guidance for agents, loops, errors, and credentials"
+        ],
+        "pros": [
+          "first-party guidance tracks n8n's supported MCP workflow",
+          "hooks nudge agents toward the right skill before risky actions",
+          "focused coverage of the full workflow lifecycle"
+        ],
+        "cons": [
+          "requires an n8n instance with instance-level MCP enabled",
+          "newer and much smaller community footprint",
+          "not a standalone automation engine or connector runtime"
         ]
       },
       {
@@ -288,6 +573,25 @@
             "name": "GitHub — haunchen/n8n-skills (~377★)",
             "url": "https://github.com/haunchen/n8n-skills"
           }
+        ],
+        "rankBasis": "About 378 GitHub stars and a maintained README covering 545 n8n nodes and 20 curated templates show meaningful specialist adoption, but the independent community signal remains small.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "documentation for 545 n8n nodes",
+          "20 curated workflow templates",
+          "node search and configuration validation",
+          "Claude Code, Claude Web, and Claude Desktop support"
+        ],
+        "pros": [
+          "broad node reference coverage for AI assistants",
+          "supports multiple Claude surfaces rather than one editor",
+          "includes compatibility checks and reusable templates"
+        ],
+        "cons": [
+          "small community and adoption base compared with the other n8n pack",
+          "pinned n8n-version support can create maintenance lag",
+          "documentation assists n8n but does not execute workflows itself"
         ]
       }
     ]

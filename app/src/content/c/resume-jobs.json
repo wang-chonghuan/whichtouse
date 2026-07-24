@@ -24,6 +24,24 @@
             "name": "SkillScouter",
             "url": "https://skillscouter.com/best-ai-tools-for-job-seekers/"
           }
+        ],
+        "rankBasis": "The broadest app-track consensus: it appears in all three cited job-search roundups, serves 4M+ job seekers, and has 113 Trustpilot reviews alongside strong community recognition for combining resume tailoring with job tracking.",
+        "pricingFree": "Free forever: unlimited resumes, downloads, and job tracking; limited surfaced match keywords plus starter AI-generation credits",
+        "pricingPaid": "Teal+ $13/week - unlimited keywords, advanced analysis, and unlimited AI generation",
+        "features": [
+          "ATS-focused resume builder and analyzer",
+          "Job-description keyword matching",
+          "Chrome job-saving extension",
+          "Application, contact, and interview tracking"
+        ],
+        "pros": [
+          "Reviewers consistently value having resume tailoring and the full job-search pipeline in one workspace",
+          "The free tier is unusually usable, with unlimited resumes, exports, and tracked jobs"
+        ],
+        "cons": [
+          "Independent reviews repeatedly flag the weekly subscription as expensive for a long job search",
+          "Billing and cancellation friction appears in a cluster of lower-rated community reviews",
+          "It organizes and improves applications but does not submit them"
         ]
       },
       {
@@ -47,6 +65,25 @@
             "name": "ATS Resume AI",
             "url": "https://www.atsresumeai.com/blog/best-resume-builder-reddit"
           }
+        ],
+        "rankBasis": "Its ATS specialization is corroborated by all three cited roundups and a larger independent footprint than most focused resume optimizers, including 254 Trustpilot reviews and repeated Reddit recommendations.",
+        "pricingFree": "Free: 1 resume, limited AI tools, 1 standard template, and 3 PDF downloads",
+        "pricingPaid": "Pro $29/month - unlimited resumes, AI use, templates, and downloads plus 1 human resume review each month",
+        "features": [
+          "ATS resume scoring",
+          "Job-description keyword targeting",
+          "AI bullet and summary writing",
+          "Automatic resume formatting"
+        ],
+        "pros": [
+          "Reviewers value the focused ATS workflow and clear keyword-targeting feedback",
+          "Automatic formatting makes it fast to produce a clean, conventional resume",
+          "The $149 lifetime option can be better value than recurring subscriptions"
+        ],
+        "cons": [
+          "Independent testing finds that AI text can be generic or inaccurate without substantial editing",
+          "The template library is plainer and less varied than design-led builders",
+          "The proprietary Rezi score should not be treated as a guarantee of ATS performance"
         ]
       },
       {
@@ -70,6 +107,25 @@
             "name": "Medium/Dandrautomation",
             "url": "https://medium.com/@dandrautomation/linkedin-auto-apply-tools-compared-which-one-actually-works-2026-review-8e277e75df0c"
           }
+        ],
+        "rankBasis": "The clear autofill leader in the set: it appears in all three cited automation roundups, while its Chrome extension reports a 4.9/5 aggregate rating from about 3,700 ratings and 500K+ users.",
+        "pricingFree": "Free: unlimited Copilot autofill, job tracking, job matching, and core resume tools",
+        "pricingPaid": "Simplify+ $19.99/week - AI resume tailoring, cover letters, application answers, networking outreach, and job analytics",
+        "features": [
+          "Cross-site application autofill",
+          "Automatic application tracking",
+          "Resume-to-job match scoring",
+          "AI application answers and tailored documents"
+        ],
+        "pros": [
+          "Users consistently praise the free extension for removing repetitive form entry",
+          "Particularly strong support for common tech ATS platforms such as Greenhouse, Lever, and Ashby",
+          "Applications remain human-reviewed because the user controls final submission"
+        ],
+        "cons": [
+          "It is autofill rather than true auto-apply, so users still find jobs and submit each form",
+          "Community testing reports less reliable autofill on complex enterprise and government forms",
+          "Paid-tier reviews mention high short-term pricing and AI drafts that still need editing"
         ]
       },
       {
@@ -89,6 +145,25 @@
             "name": "TripleTen",
             "url": "https://tripleten.com/blog/posts/best-ai-resume-builder"
           }
+        ],
+        "rankBasis": "It is a recurring top-five pick in both cited builder roundups and has one of the category's strongest review signals, with a 4.6/5 Trustpilot score across roughly 3,800 reviews.",
+        "pricingFree": "Free: 4 resume templates with free customization and downloads; verified students can access Premium at no charge",
+        "pricingPaid": "Premium EUR19.20 for the first month - all AI tools, 40 premium templates, ATS checker, cover letters, and mobile access",
+        "features": [
+          "AI resume and cover-letter writing",
+          "ATS resume checker",
+          "40 premium resume templates",
+          "Mobile editing and job tracking"
+        ],
+        "pros": [
+          "Large-scale review sentiment strongly favors its intuitive workflow and polished templates",
+          "AI drafting makes first versions fast, especially for summaries and experience bullets",
+          "Free Premium for verified students is a meaningful differentiator"
+        ],
+        "cons": [
+          "Many of the most useful templates and customization options require Premium",
+          "AI-generated phrasing can sound generic and needs factual, personal editing",
+          "Visual templates may require restraint when applying through conservative ATS workflows"
         ]
       },
       {
@@ -108,6 +183,25 @@
             "name": "TripleTen",
             "url": "https://tripleten.com/blog/posts/best-ai-resume-builder"
           }
+        ],
+        "rankBasis": "It remains a mainstream builder pick in both cited roundups and has the largest independent review volume here: a 4.0/5 Trustpilot score from more than 12,500 reviews and 10,000+ builder reviews cited on its site.",
+        "pricingFree": "Free Basic package: build resumes and download plain-text files; PDF and Word exports require a paid plan",
+        "pricingPaid": "Paid subscription required for PDF/Word downloads and premium features; current public pricing page does not expose a verifiable checkout price",
+        "features": [
+          "Guided step-by-step resume builder",
+          "Ready-made content suggestions",
+          "ATS resume checker",
+          "Matching cover-letter builder"
+        ],
+        "pros": [
+          "High-volume reviews consistently praise the beginner-friendly wizard and fast workflow",
+          "A large template and prewritten-content library helps users avoid a blank page",
+          "Real-time previews make design changes easy to understand"
+        ],
+        "cons": [
+          "Standard PDF and Word downloads are paywalled after the resume is built",
+          "Subscription and cancellation confusion is a recurring theme in negative Trustpilot reviews",
+          "Content suggestions can become generic unless users rewrite them around specific achievements"
         ]
       },
       {
@@ -123,6 +217,24 @@
             "name": "Resume Optimizer Pro (Reddit)",
             "url": "https://resumeoptimizerpro.com/blog/best-ai-resume-builder-reddit"
           }
+        ],
+        "rankBasis": "A niche community pick rather than a review-platform leader: its clean template is highlighted in the cited Reddit-derived roundup, but independent rating volume is limited compared with the five products above it.",
+        "pricingFree": "Free: basic resume builder, resume template, and cover-letter generator",
+        "pricingPaid": "Premium $39/month - unlimited use of the AI resume builder, cover letters, interview practice, and other job-search tools",
+        "features": [
+          "Recruiter-designed resume template",
+          "AI resume rewriting and scoring",
+          "Cover-letter generator",
+          "Interview practice and job-search tools"
+        ],
+        "pros": [
+          "Community recommendations favor its simple, recruiter-led formatting over decorative templates",
+          "The core template and basic document tools can be used without paying"
+        ],
+        "cons": [
+          "Independent review volume is thin, so its broader product quality is less well established",
+          "The $39 monthly tier is expensive relative to more widely reviewed competitors",
+          "The design-first simplicity offers less template variety than larger builders"
         ]
       }
     ],
@@ -141,6 +253,25 @@
             "name": "GitHub (~40k★)",
             "url": "https://github.com/AmruthPillai/Reactive-Resume"
           }
+        ],
+        "rankBasis": "The dominant open-source resume builder by adoption at 39,786 GitHub stars, more than 11,000 ahead of the next repository in this track, with frequent self-hosting recommendations in open-source communities.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "No-account browser resume builder",
+          "PDF, JSON, and DOCX export",
+          "Drag-and-drop sections and multiple templates",
+          "Self-hosting and JSON Resume import"
+        ],
+        "pros": [
+          "Category-leading community adoption and a polished visual editor",
+          "Privacy-friendly design with no ads, tracking, or required account",
+          "Broad export, language, import, and self-hosting support"
+        ],
+        "cons": [
+          "Self-hosting the full application requires infrastructure and ongoing maintenance",
+          "Community reports note that browser/PDF rendering can vary across templates and deployments",
+          "It builds documents but does not provide job matching or application workflow automation"
         ]
       },
       {
@@ -157,6 +288,25 @@
             "name": "GitHub (~28k★)",
             "url": "https://github.com/posquit0/Awesome-CV"
           }
+        ],
+        "rankBasis": "The most established LaTeX CV package in the track at 28,127 GitHub stars, with long-running Overleaf templates and widespread use across engineering and academic communities.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "LaTeX resume, CV, and cover-letter templates",
+          "Clean semantic document markup",
+          "Overleaf quick-start templates",
+          "XeLaTeX and Docker build options"
+        ],
+        "pros": [
+          "Mature, widely recognized typography with reproducible PDF output",
+          "One source supports coordinated resumes, CVs, and cover letters",
+          "Version-controllable and highly customizable for LaTeX users"
+        ],
+        "cons": [
+          "Community discussions consistently cite the LaTeX learning curve and TeX installation burden",
+          "Its default multi-column visual style may need simplification for strict ATS parsing",
+          "Content editing lacks the live guided workflow of browser-based builders"
         ]
       },
       {
@@ -173,6 +323,25 @@
             "name": "GitHub (~17k★)",
             "url": "https://github.com/rendercv/rendercv"
           }
+        ],
+        "rankBasis": "The fastest-growing code-first resume engine in this set at 17,195 GitHub stars, with active releases, PyPI distribution, and repeated developer-community recommendations for YAML-based, version-controlled CVs.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "YAML-to-PDF resume generation",
+          "Strict schema validation and editor autocomplete",
+          "Multiple professional themes",
+          "Localization and reproducible builds"
+        ],
+        "pros": [
+          "Users value separating structured resume content from presentation",
+          "Strong validation catches malformed data before PDF generation",
+          "Active development and version control suit engineering workflows"
+        ],
+        "cons": [
+          "YAML and command-line workflows are less accessible to nontechnical job seekers",
+          "Theme customization requires learning RenderCV configuration rather than direct visual editing",
+          "Users must run the tooling themselves and review generated PDFs after changes"
         ]
       },
       {
@@ -189,6 +358,25 @@
             "name": "GitHub (~16k★)",
             "url": "https://github.com/salomonelli/best-resume-ever"
           }
+        ],
+        "rankBasis": "Its 16,460 GitHub stars show enduring interest, but it ranks below RenderCV because the repository still documents a Node 8.5-era Vue workflow and carries a much older maintenance profile.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "YAML-driven resume data",
+          "Multiple Vue-based visual templates",
+          "Local browser preview",
+          "Batch PDF export"
+        ],
+        "pros": [
+          "One data file can generate several distinct resume designs",
+          "The large star count and template contributions provide substantial community examples",
+          "Local generation keeps personal resume data under the user's control"
+        ],
+        "cons": [
+          "The documented Node 8.5/Vue toolchain is dated and can require dependency troubleshooting",
+          "Setup is developer-oriented compared with modern no-install builders",
+          "Several decorative and multi-column templates need ATS suitability checked individually"
         ]
       },
       {
@@ -205,6 +393,25 @@
             "name": "GitHub (~9k★)",
             "url": "https://github.com/xitanggg/open-resume"
           }
+        ],
+        "rankBasis": "A well-adopted ATS-first browser project at 8,771 GitHub stars, distinguished in community comparisons by combining a resume builder with a parser rather than offering templates alone.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Real-time resume preview",
+          "ATS-friendly single-column output",
+          "Existing PDF resume import",
+          "In-browser ATS parser"
+        ],
+        "pros": [
+          "No signup and local-only processing are repeatedly highlighted as privacy strengths",
+          "The focused single-column design reduces formatting decisions and ATS risk",
+          "Import and parser tools help users diagnose existing resumes"
+        ],
+        "cons": [
+          "The deliberate single-template approach provides little visual variety",
+          "PDF import and parsing can require manual correction when source layouts are complex",
+          "It lacks integrated job tracking, cover letters, and application automation"
         ]
       },
       {
@@ -221,6 +428,25 @@
             "name": "GitHub (~7k★)",
             "url": "https://github.com/sb2nov/resume"
           }
+        ],
+        "rankBasis": "A de-facto software-engineering template with 6,836 GitHub stars and extensive forks, Overleaf reuse, and Reddit references under the related 'Jake's Resume' style.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Single-page one-column LaTeX layout",
+          "Reusable formatting commands",
+          "Documented education, experience, and project sections",
+          "Overleaf and Docker build paths"
+        ],
+        "pros": [
+          "Community adoption shows the compact engineering format is proven and easy to recognize",
+          "The restrained one-column structure is generally straightforward for ATS parsers",
+          "Small source files are easy to version and customize for technical roles"
+        ],
+        "cons": [
+          "Editing requires LaTeX knowledge or an Overleaf workflow",
+          "The software-engineer structure needs significant adaptation for other professions",
+          "Manual spacing changes can make the template brittle as content length grows"
         ]
       },
       {
@@ -237,6 +463,25 @@
             "name": "GitHub (~5k★)",
             "url": "https://github.com/jsonresume/resume-cli"
           }
+        ],
+        "rankBasis": "The official CLI for the JSON Resume ecosystem has 4,720 GitHub stars and a durable standard behind it, but ranks seventh because active CLI development moved to the jsonresume.org monorepo in 2026.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "JSON Resume initialization and validation",
+          "HTML and PDF export",
+          "Local preview server",
+          "Community theme support"
+        ],
+        "pros": [
+          "A portable open schema lets one resume feed many themes and tools",
+          "Validation and CLI automation fit version-controlled developer workflows",
+          "The revived Node 18+ package preserves a long-standing ecosystem"
+        ],
+        "cons": [
+          "The standalone repository is no longer the active development home, which can confuse contributors",
+          "Community themes vary widely in maintenance, rendering quality, and ATS behavior",
+          "JSON editing and command-line use are less approachable than a visual builder"
         ]
       },
       {
@@ -257,6 +502,25 @@
             "name": "Claude Code Playbooks",
             "url": "https://www.claudecodehq.com/blog/claude-skills-job-seekers"
           }
+        ],
+        "rankBasis": "The strongest dedicated agent-skill pack in the track at 1,252 GitHub stars, with 20 documented career skills and independent coverage from Claude Code Playbooks, but far less adoption than the builder repositories above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "ATS optimization and job-fit analysis",
+          "Resume tailoring and bullet rewriting",
+          "Cover letters and LinkedIn optimization",
+          "Interview and salary-negotiation preparation"
+        ],
+        "pros": [
+          "The 20-skill collection covers more of the job-search lifecycle than a single resume prompt",
+          "Modular SKILL.md files are easy to inspect, adapt, and invoke selectively",
+          "Workflows explicitly emphasize role-specific tailoring and ATS conventions"
+        ],
+        "cons": [
+          "Independent user-review volume remains limited beyond GitHub adoption and directory coverage",
+          "Output quality depends on the host model and still requires factual verification",
+          "Some workflows encourage estimating missing metrics, which users must constrain to avoid unsupported claims"
         ]
       },
       {
@@ -273,6 +537,25 @@
             "name": "GitHub (~940★)",
             "url": "https://github.com/jezweb/claude-skills/blob/main/plugins/writing/skills/resume-cover-letter/SKILL.md"
           }
+        ],
+        "rankBasis": "Its parent collection has 942 GitHub stars and 60 production-oriented skills, but this resume capability is one skill inside a broad plugin and has little resume-specific independent review evidence.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Role-tailored resumes and cover letters",
+          "AU/NZ, US, and UK format guidance",
+          "Achievement-focused bullet frameworks",
+          "ATS formatting and special-circumstance guidance"
+        ],
+        "pros": [
+          "The instructions are unusually concrete about regional conventions and ATS-safe formatting",
+          "It requires target-role context and pushes output toward measurable achievements",
+          "The skill is transparent, editable, and easy to install with the broader writing plugin"
+        ],
+        "cons": [
+          "The star count measures the entire multi-purpose repository rather than this resume skill",
+          "There is little independent review volume for the resume workflow itself",
+          "It outputs Markdown guidance rather than a finished DOCX or PDF document"
         ]
       },
       {
@@ -289,6 +572,25 @@
             "name": "GitHub (~300★)",
             "url": "https://github.com/proficientlyjobs/proficiently-claude-skills"
           }
+        ],
+        "rankBasis": "A promising but early dedicated workflow at exactly 300 GitHub stars, offering more application automation than the other skills but with the smallest adoption base and almost no independent review record.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Preference-aware job search",
+          "Per-job resume and cover-letter tailoring",
+          "Greenhouse, Lever, and Workday form filling",
+          "Network scanning and Telegram control"
+        ],
+        "pros": [
+          "The shared per-application workspace creates a coherent search-to-apply workflow",
+          "It combines document tailoring, contact matching, and form filling in one open plugin",
+          "Users retain inspectable local files for each application"
+        ],
+        "cons": [
+          "The 300-star project has too little independent usage evidence for high confidence",
+          "Setup spans personal files, browser automation, contacts, and optional Telegram integration",
+          "Automated searches, generated documents, and filled forms all require careful human review"
         ]
       }
     ]

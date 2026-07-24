@@ -11,6 +11,25 @@
         "bestFor": "The default for ad-hoc analysis on an uploaded file — writes and runs Python, charts, and explains results conversationally.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited AI data-analysis roundups and is the only top-ranked general assistant here with a built-in Python execution environment for uploaded files.",
+        "pricingFree": "Free plan includes limited file uploads and data analysis",
+        "pricingPaid": "ChatGPT Plus $20/month — expanded uploads, data analysis, and model access",
+        "features": [
+          "Python execution over uploaded files",
+          "Spreadsheet and CSV analysis",
+          "Automatic charts and statistical summaries",
+          "Conversational follow-up analysis"
+        ],
+        "pros": [
+          "Reviewers consistently praise the low learning curve for ad-hoc analysis",
+          "Combines code generation, execution, charts, and explanation in one conversation",
+          "Useful across many file formats without a separate BI setup"
+        ],
+        "cons": [
+          "Generated analysis still requires validation for statistical and business correctness",
+          "Upload, context, and usage limits constrain large or repeated workloads",
+          "Less reproducible and governable than a shared notebook or BI project"
+        ],
         "sources": [
           {
             "name": "Domo",
@@ -34,6 +53,25 @@
         "bestFor": "Conversational analysis of spreadsheets and CSVs with expert-level insights and visualizations in seconds.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in all three cited spreadsheet-analysis roundups and repeatedly positioned as a purpose-built conversational analyst rather than a general chatbot.",
+        "pricingFree": "Free plan with a limited monthly message allowance",
+        "pricingPaid": "Paid individual and team plans available; current allowance and billing price are shown at checkout",
+        "features": [
+          "Natural-language spreadsheet analysis",
+          "Automatic charts and visualizations",
+          "Python-backed calculations",
+          "CSV, Excel, and connected-data imports"
+        ],
+        "pros": [
+          "Users value getting useful charts and explanations without writing code",
+          "Purpose-built workflow is simpler than prompting a general assistant",
+          "Fast for exploratory questions on ordinary spreadsheets"
+        ],
+        "cons": [
+          "Message limits can interrupt iterative analysis",
+          "Results still need checking when source data is messy or ambiguous",
+          "Less suitable for governed, repeatable enterprise reporting"
+        ],
         "sources": [
           {
             "name": "buildmvpfast",
@@ -57,6 +95,25 @@
         "bestFor": "AI-assisted notebooks for data teams that live in SQL and Python and want reproducible, shareable analysis.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited 2026 data-analysis roundups and has substantial independent G2 review volume as a collaborative analytics workspace.",
+        "pricingFree": "Free Community plan for small projects with limited editors and compute",
+        "pricingPaid": "Team plan from $36/editor/month when billed annually — shared workspaces, scheduled runs, and additional compute",
+        "features": [
+          "SQL, Python, and no-code notebook cells",
+          "AI-assisted analysis and query generation",
+          "Interactive data apps",
+          "Warehouse connections and scheduled runs"
+        ],
+        "pros": [
+          "Reviewers praise the polished collaboration and presentation layer",
+          "Keeps analysis, narrative, and interactive outputs in one reproducible project",
+          "Strong fit for teams already working in SQL and Python"
+        ],
+        "cons": [
+          "Per-editor pricing becomes expensive for broad audiences",
+          "Compute and workspace limits matter on lower tiers",
+          "More platform setup than a file-upload assistant"
+        ],
         "sources": [
           {
             "name": "buildmvpfast",
@@ -80,6 +137,25 @@
         "bestFor": "Enterprise BI dashboards with natural-language querying when your data already lives in a governed warehouse.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Named by all three cited AI-analysis comparisons and backed by one of the largest enterprise BI review footprints on G2 and Gartner Peer Insights.",
+        "pricingFree": null,
+        "pricingPaid": "Tableau Creator $75/user/month billed annually — Tableau Cloud/Server authoring, Desktop, and Prep Builder",
+        "features": [
+          "Drag-and-drop visual analytics",
+          "Einstein-assisted insights and natural-language queries",
+          "Governed dashboards and semantic models",
+          "Broad database and warehouse connectivity"
+        ],
+        "pros": [
+          "Review consensus highlights visualization depth and dashboard flexibility",
+          "Mature governance and sharing for large organizations",
+          "Large ecosystem of connectors, training, and implementation partners"
+        ],
+        "cons": [
+          "Licensing and administration are costly and complex",
+          "Authors face a meaningful learning curve for advanced dashboards",
+          "Performance tuning is often required on large or poorly modeled data"
+        ],
         "sources": [
           {
             "name": "Domo",
@@ -103,6 +179,25 @@
         "bestFor": "Enterprise AI inside Excel itself — formulas, pivots, and trend explanations in plain English without leaving the sheet.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in both cited AI-spreadsheet roundups and benefits from Excel's dominant installed base, giving its in-grid Copilot workflow unmatched distribution.",
+        "pricingFree": null,
+        "pricingPaid": "Microsoft 365 Copilot $30/user/month with annual commitment — requires an eligible Microsoft 365 business license",
+        "features": [
+          "Natural-language formula and chart creation",
+          "Data summaries and trend explanations",
+          "Python in Excel analysis",
+          "Copilot access inside the spreadsheet grid"
+        ],
+        "pros": [
+          "Users can keep established Excel files and workflows",
+          "Strong fit for organizations already governed through Microsoft 365",
+          "Reduces friction for formula writing and first-pass exploration"
+        ],
+        "cons": [
+          "Copilot requires an additional eligible subscription and can be costly at scale",
+          "Output quality depends heavily on clean tables and explicit prompts",
+          "Advanced spreadsheet logic still needs human review and Excel expertise"
+        ],
         "sources": [
           {
             "name": "GPT for Work",
@@ -122,6 +217,25 @@
         "bestFor": "An AI-native spreadsheet blending cells, Python, and SQL for analysts who want code and grid together.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited AI-spreadsheet guides and stands out as the only ranked grid that natively mixes cells, Python, SQL, and AI in one canvas.",
+        "pricingFree": "Free personal plan with core spreadsheet, AI, Python, and SQL capabilities",
+        "pricingPaid": "Team plans available with collaboration and administration features; no stable public entry price was verified",
+        "features": [
+          "Infinite spreadsheet grid",
+          "Python and SQL directly in cells",
+          "Natural-language AI analysis",
+          "Database and file connections"
+        ],
+        "pros": [
+          "Reviewers like the direct combination of spreadsheet interaction and code",
+          "Open-source client and modern interface appeal to technical analysts",
+          "Useful bridge between conventional sheets and notebooks"
+        ],
+        "cons": [
+          "Younger ecosystem and fewer enterprise controls than Excel or Tableau",
+          "Compatibility with complex Excel workbooks is limited",
+          "Team pricing and plan limits are not consistently published"
+        ],
         "sources": [
           {
             "name": "gptforwork/quadratic guide",
@@ -141,6 +255,25 @@
         "bestFor": "Collaborative AI notebooks for teams standardizing on Python-based analysis and reporting.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited 2026 AI-analysis roundups and has sustained independent review coverage as one of the better-known collaborative cloud notebooks.",
+        "pricingFree": "Free plan for small teams with limited editors, projects, and compute",
+        "pricingPaid": "Paid team plans use per-editor pricing with additional compute and collaboration limits; current price is shown by the vendor",
+        "features": [
+          "Real-time collaborative notebooks",
+          "AI code generation and editing",
+          "SQL and Python data workflows",
+          "Scheduled notebooks and shareable apps"
+        ],
+        "pros": [
+          "Reviewers frequently praise real-time collaboration and quick onboarding",
+          "Managed environment removes much notebook infrastructure work",
+          "Good presentation and commenting workflow for mixed teams"
+        ],
+        "cons": [
+          "Larger machines and sustained compute increase cost",
+          "Cloud-only workflow may not fit strict local-data requirements",
+          "Some users report weaker flexibility than a fully controlled Jupyter environment"
+        ],
         "sources": [
           {
             "name": "buildmvpfast",
@@ -163,6 +296,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Ships in Anthropic's official skills repository, which the existing source set records at roughly 163k GitHub stars, and is the canonical spreadsheet skill used by Claude's file workflow.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Excel workbook reading and creation",
+          "Formula and pivot-table generation",
+          "Chart formatting",
+          "Spreadsheet recalculation and validation workflow"
+        ],
+        "pros": [
+          "Official Anthropic implementation provides a strong reference workflow",
+          "Handles both analysis and production of deliverable workbooks",
+          "Plain skill instructions are inspectable and adaptable"
+        ],
+        "cons": [
+          "Requires a compatible agent runtime and spreadsheet tooling",
+          "Complex workbook fidelity still needs visual verification",
+          "Repository-level popularity does not measure adoption of this individual skill"
+        ],
         "sources": [
           {
             "name": "anthropics/skills (163k★)",
@@ -187,6 +339,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing GitHub sources place pandas at roughly 49k stars, and it remains the standard DataFrame dependency behind a large share of Python analysis and AI-generated analysis code.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "DataFrame data manipulation",
+          "File and database input/output",
+          "Grouping, joins, and time-series operations",
+          "Statistical summaries"
+        ],
+        "pros": [
+          "Very large ecosystem and extensive documentation",
+          "Integrates with nearly every Python data and ML library",
+          "Expressive API for tabular cleaning and transformation"
+        ],
+        "cons": [
+          "In-memory workloads can exhaust RAM on large datasets",
+          "API breadth and indexing behavior create a learning curve",
+          "Performance often trails columnar or distributed engines at scale"
+        ],
         "sources": [
           {
             "name": "GitHub (pandas-dev, 49.3k★)",
@@ -207,6 +378,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing sources record roughly 74k GitHub stars, making Superset the highest-starred full open-source BI platform in this category and a frequent open-source Tableau alternative.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "SQL exploration workspace",
+          "Interactive dashboards",
+          "Semantic dataset layer",
+          "Role-based access and database connectors"
+        ],
+        "pros": [
+          "Broad visualization and SQL feature set without license fees",
+          "Scales to substantial enterprise deployments with the right infrastructure",
+          "Active Apache-governed project and connector ecosystem"
+        ],
+        "cons": [
+          "Installation, upgrades, and production operations require engineering effort",
+          "Nontechnical users face a steeper learning curve than simpler BI tools",
+          "Dashboard polish and workflow consistency can lag commercial suites"
+        ],
         "sources": [
           {
             "name": "GitHub (apache/superset, 74k★)",
@@ -227,6 +417,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing sources place Metabase at roughly 48k GitHub stars, and independent open-source analytics comparisons consistently single it out for fast setup and no-SQL exploration.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Optional Metabase Cloud and commercial editions are available with hosted operations and enterprise controls",
+        "features": [
+          "No-code question builder",
+          "Native SQL editor",
+          "Dashboards and alerts",
+          "Database embedding and permissions"
+        ],
+        "pros": [
+          "Reviewers consistently cite ease of setup and approachable querying",
+          "Useful dashboards can be built quickly by nontechnical teams",
+          "Open-source edition covers a meaningful core feature set"
+        ],
+        "cons": [
+          "Advanced permissions, embedding, and governance require paid editions",
+          "Complex semantic modeling is less capable than enterprise BI suites",
+          "Large deployments require careful query and application tuning"
+        ],
         "sources": [
           {
             "name": "GitHub (metabase, 48.3k★)",
@@ -247,6 +456,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing sources record roughly 15k GitHub stars, while Jupyter's ACM Software System Award and broad institutional adoption make it the category's established notebook standard.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Interactive computational notebooks",
+          "Python, R, Julia, and other kernels",
+          "Rich visual outputs",
+          "Extension-based IDE environment"
+        ],
+        "pros": [
+          "Ubiquitous format with a very large scientific ecosystem",
+          "Excellent for exploratory and reproducible code-plus-narrative work",
+          "Runs locally, on servers, and through many managed services"
+        ],
+        "cons": [
+          "Hidden execution state can make notebooks hard to reproduce",
+          "Collaboration and deployment need additional infrastructure",
+          "Large notebooks become difficult to test, review, and maintain"
+        ],
         "sources": [
           {
             "name": "GitHub (jupyterlab, 15.2k★)",
@@ -267,6 +495,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The existing source set records roughly 31.6k stars for the broader K-Dense scientific skills library, the strongest adoption signal among specialist science and EDA skill collections here.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Exploratory data-analysis workflows",
+          "Publication-quality visualization guidance",
+          "Statistical testing procedures",
+          "Reusable scientific agent skills"
+        ],
+        "pros": [
+          "Broad collection covers analysis beyond basic spreadsheet summaries",
+          "Skill files are transparent and easy to adapt",
+          "Strong community interest for a specialist scientific repository"
+        ],
+        "cons": [
+          "Quality and dependencies vary across the large skill collection",
+          "Requires an agent plus local scientific Python tooling",
+          "Repository stars do not establish validation of every statistical workflow"
+        ],
         "sources": [
           {
             "name": "GitHub (K-Dense-AI, 31.6k★)",
@@ -291,6 +538,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing GitHub source records roughly 37k stars, giving PostHog one of the largest open-source adoption signals for product-focused behavioral analysis.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Hosted PostHog Cloud offers usage-based pricing with monthly free allowances",
+        "features": [
+          "Event and product analytics",
+          "Session replay",
+          "Feature flags and experiments",
+          "SQL querying over product data"
+        ],
+        "pros": [
+          "Combines several product-data tools in one platform",
+          "Generous cloud allowances and a self-host option lower adoption friction",
+          "Reviewers value rapid instrumentation and active product development"
+        ],
+        "cons": [
+          "Breadth makes the interface and configuration complex",
+          "High event volume can create significant hosting or cloud cost",
+          "Self-hosting the full stack is operationally demanding"
+        ],
         "sources": [
           {
             "name": "GitHub (PostHog, 37.3k★)",
@@ -311,6 +577,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A focused public repository for analytics skills, but its single GitHub source and low star count provide much thinner independent adoption evidence than the projects ranked above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Tabular data cleaning workflows",
+          "Aggregation guidance",
+          "Chart-generation workflows",
+          "Claude-compatible skill files"
+        ],
+        "pros": [
+          "Small scope makes the skills easy to inspect",
+          "Targets common analyst tasks rather than a broad generic framework",
+          "Free to fork and customize"
+        ],
+        "cons": [
+          "Very limited community and independent review evidence",
+          "Maintenance continuity is uncertain for a small repository",
+          "Users must supply and validate the underlying analysis environment"
+        ],
         "sources": [
           {
             "name": "GitHub (nimrodfisher)",
@@ -327,6 +612,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The repository offers distinctive environment-aware EDA skills, but the cited GitHub and community coverage indicate niche adoption and a much smaller user signal than the leading projects.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Automatic exploratory data analysis",
+          "Dataset health checks",
+          "Pandas and Polars environment detection",
+          "SQL-dialect-aware analysis guidance"
+        ],
+        "pros": [
+          "Environment awareness reduces generic or incompatible code suggestions",
+          "Focused dataset-doctor workflow is practical for early analysis",
+          "Skill definitions can be audited and modified"
+        ],
+        "cons": [
+          "Low star and review volume make reliability hard to assess",
+          "Depends on local libraries and agent execution quality",
+          "Narrower maintenance base than established data tooling"
+        ],
         "sources": [
           {
             "name": "GitHub (juanlurg)",

@@ -11,6 +11,12 @@
         "bestFor": "Best realism plus native audio and 4K. Strongest all-rounder for cinematic and narrative scenes.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Ranks at or near the top of all three cited 2026 comparisons for realism, prompt adherence and native audio, with Veo also serving as Google's flagship video model in Flow.",
+        "pricingFree": "Limited Flow generations may be available through promotional or regional access; no dependable standing free-credit allowance",
+        "pricingPaid": "Google AI Pro $19.99/mo — includes 1,000 monthly AI credits shared across Flow and supported Google AI tools",
+        "features": ["Text-to-video and image-to-video", "Native synchronized audio generation", "Cinematic camera and scene controls", "High-resolution output in supported tiers"],
+        "pros": ["leading realism and prompt adherence in comparisons", "native dialogue, effects and ambience reduce separate audio work", "Flow provides a coherent scene-building workflow"],
+        "cons": ["credit use rises quickly for higher-quality generations", "availability and model versions vary by country and plan", "fine-grained timeline editing is weaker than a full video editor"],
         "sources": [
           {
             "name": "AIViewer compared",
@@ -34,6 +40,12 @@
         "bestFor": "The creator's studio: camera moves, motion brush, reference control and an editor. Safest default.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited best-video-generator lists and has the strongest established creator-tool reputation here, combining generation with an editing workspace.",
+        "pricingFree": "Free plan with 125 one-time credits and limited model/export access",
+        "pricingPaid": "Standard from $12/user/mo billed annually — 625 monthly credits, more models, upscale and watermark removal",
+        "features": ["Text and image-to-video generation", "Camera and motion controls", "Reference-driven character and scene tools", "Integrated editing and asset workspace"],
+        "pros": ["most complete generation-to-editing workflow", "strong creative controls beyond a single prompt", "frequent model and feature releases"],
+        "cons": ["credits disappear quickly during iteration", "best models and resolution options require paid tiers", "output consistency still varies across longer shots"],
         "sources": [
           {
             "name": "AIViewer compared",
@@ -57,6 +69,12 @@
         "bestFor": "Best value and the community workhorse for TikTok/Reels — photorealistic humans, generous free daily quota.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in all three cited comparisons and repeatedly highlighted for photorealistic human motion and value, making it a common community choice for short social clips.",
+        "pricingFree": "Free plan with a daily credit allowance; exact credits and queue priority can vary by region or promotion",
+        "pricingPaid": "Standard from about $7/mo — monthly credits, faster generation and watermark-free downloads; regional pricing varies",
+        "features": ["Text-to-video and image-to-video", "Motion brush and camera controls", "Start/end-frame guidance", "Lip-sync and short-form effects"],
+        "pros": ["strong human motion and photorealistic output", "useful free daily access for experimentation", "good value for frequent short-form creators"],
+        "cons": ["queues can be slow on the free plan", "credit rules and pricing vary by region", "prompt adherence and anatomy can fail on complex motion"],
         "sources": [
           {
             "name": "Pixflow best generators",
@@ -80,6 +98,12 @@
         "bestFor": "Fast, playful short clips and effects for social. Easy on-ramp for casual creators.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited creator comparisons and is consistently singled out for approachable social effects rather than maximum cinematic fidelity.",
+        "pricingFree": "Free plan with a limited monthly video-credit allowance and watermarked or restricted outputs",
+        "pricingPaid": "Paid tiers from about $8/mo when billed annually — larger monthly credit pools, faster generation and expanded effects",
+        "features": ["Text and image-to-video", "Pikaffects object transformations", "Scene additions and replacements", "Lip-sync and social-ready effects"],
+        "pros": ["very easy for first-time video generators", "distinctive effects work well for social posts", "fast iteration on short clips"],
+        "cons": ["short clips and effects are stronger than narrative continuity", "free credits are limited", "less camera and production control than Runway"],
         "sources": [
           {
             "name": "Pixflow best generators",
@@ -99,6 +123,12 @@
         "bestFor": "Smooth motion and image-to-video with a simple interface. Solid mid-tier option.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Selected by both cited comparisons for smooth image-to-video motion and ease of use, though it has less consistent top-rank support than Veo, Runway or Kling.",
+        "pricingFree": "Free plan with limited monthly generations, lower priority and restricted commercial/output options",
+        "pricingPaid": "Lite from $7.99/mo — a monthly credit pool with faster queues and broader usage rights",
+        "features": ["Text and image-to-video generation", "Keyframe and extend controls", "Camera-motion prompting", "Boards for visual ideation"],
+        "pros": ["smooth, visually appealing motion from still images", "simple interface with little setup", "useful keyframe and extension workflow"],
+        "cons": ["free generations can queue slowly", "credits are expensive for repeated high-resolution attempts", "character and object consistency can drift"],
         "sources": [
           {
             "name": "DIYAI compared",
@@ -118,6 +148,12 @@
         "bestFor": "Tops raw model benchmarks (Artificial Analysis) but less packaged as a consumer product.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "The cited model ranking places Seedance among the raw quality leaders, but independent consumer-product reviews remain thin because access is primarily through ByteDance platforms and APIs.",
+        "pricingFree": null,
+        "pricingPaid": "Consumption-based API pricing through supported ByteDance/Volcengine platforms; no stable public flat subscription for this model page",
+        "features": ["Text-to-video and image-to-video", "Multi-shot narrative generation", "Reference-image conditioning", "Cinematic motion and camera control"],
+        "pros": ["very strong benchmarked visual quality", "good multi-shot and narrative coherence", "competitive motion and prompt following"],
+        "cons": ["not packaged as a consistent global consumer app", "pricing and access depend on platform and region", "limited independent long-term user-review evidence"],
         "sources": [
           {
             "name": "Pinggy model ranking",
@@ -136,6 +172,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 29k GitHub stars and top placement in the cited open-source model comparison make Open-Sora the highest-adoption general open video project in this track.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Text and image-to-video models", "Multi-resolution and variable-duration training", "Distributed training and inference", "Published checkpoints and evaluation tooling"],
+        "pros": ["large research and contributor community", "transparent training and inference stack", "useful baseline for experimentation and fine-tuning"],
+        "cons": ["substantial GPU requirements", "setup is research-oriented rather than consumer-friendly", "quality and temporal consistency trail the best closed models"],
         "sources": [
           {
             "name": "GitHub hpcaitech/Open-Sora (~29.2k★)",
@@ -156,6 +198,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 16.8k GitHub stars plus strong placement in open-video roundups support Wan as one of the most adopted and capable open-weight families, with a practical small model.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Text and image-to-video", "Multiple model sizes", "First/last-frame conditioning", "Consumer-GPU-capable 1.3B variant"],
+        "pros": ["excellent open-weight quality for its size", "small variant lowers hardware barriers", "active official releases and broad community support"],
+        "cons": ["larger checkpoints still need high-end GPUs", "generation is slow without optimization", "licensing and commercial terms must be checked per checkpoint"],
         "sources": [
           {
             "name": "GitHub Wan-Video/Wan2.2 (~16.8k★)",
@@ -176,6 +224,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Approximately 12.4k GitHub stars and repeated inclusion in open-source video comparisons make HunyuanVideo a benchmark reference for large cinematic open models.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["13B text-to-video model", "Image-to-video variants", "Bilingual prompt encoding", "Published inference and training code"],
+        "pros": ["strong cinematic detail among open models", "official Tencent research release", "widely supported by community workflows"],
+        "cons": ["very high VRAM and storage demands", "slow inference on consumer hardware", "complex setup compared with hosted generators"],
         "sources": [
           {
             "name": "GitHub Tencent-Hunyuan/HunyuanVideo (~12.4k★)",
@@ -196,6 +250,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 12.9k GitHub stars, Apache-2.0 licensing and first-class Diffusers support give CogVideoX unusually strong developer adoption in this cohort.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Text and image-to-video models", "Diffusers integration", "Quantized and memory-saving inference", "Fine-tuning support"],
+        "pros": ["permissive license and mature developer tooling", "good prompt following for an open model", "easier integration through Hugging Face"],
+        "cons": ["large models still require significant VRAM", "short clips and limited native editing controls", "visual quality varies with quantization and hardware settings"],
         "sources": [
           {
             "name": "GitHub zai-org/CogVideo (~12.9k★)",
@@ -216,6 +276,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 10.7k GitHub stars and recognition in the cited open-model comparison distinguish LTX-Video for unusually fast generation and active production-oriented releases.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Fast text and image-to-video", "Audio-video generation in newer variants", "Multi-scale rendering", "Diffusers and ComfyUI workflows"],
+        "pros": ["much faster inference than many large open models", "active releases and ecosystem integrations", "practical for iterative production workflows"],
+        "cons": ["best performance still needs modern GPUs", "fast modes trade some detail and consistency", "model/version choices can be confusing"],
         "sources": [
           {
             "name": "GitHub Lightricks/LTX-Video (~10.7k★)",
@@ -236,6 +302,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 3.7k GitHub stars and an Apache-2.0 release make Mochi a credible open model, but adoption is materially below the five projects ranked above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Text-to-video generation", "Open model weights and inference code", "High-fidelity motion modeling", "Diffusers/community workflow support"],
+        "pros": ["permissive open-source release", "good motion for a first-generation open model", "clear research implementation"],
+        "cons": ["very demanding hardware footprint", "slower project momentum than newer rivals", "limited editing and conditioning features"],
         "sources": [
           {
             "name": "GitHub genmoai/mochi (~3.7k★)",
@@ -252,6 +324,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Around 1.8k GitHub stars plus coverage in the cited Claude Code ecosystem make this the best-adopted agent skill here, well ahead of the two thinner workflow skills below.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Remotion-based video composition", "FFmpeg editing workflows", "Voiceover and music generation hooks", "Prompt-to-MP4 project orchestration"],
+        "pros": ["covers scripting, assets, audio and rendering end to end", "produces editable code rather than only a generated clip", "well documented for agent-driven workflows"],
+        "cons": ["requires Node, FFmpeg and external media services", "render quality depends on generated code and assets", "not a foundation video model"],
         "sources": [
           {
             "name": "GitHub digitalsamba toolkit (~1.8k★)",
@@ -276,6 +354,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Backed by ByteDance's cited DeerFlow repository and a concrete public SKILL.md, but the individual skill has no independent star count or meaningful review corpus.",
+        "pricingFree": "Free & open-source skill; underlying video model/API costs may apply",
+        "pricingPaid": null,
+        "features": ["Structured video-prompt generation", "Reference-image guidance", "First/last-frame planning", "Async generation task handling"],
+        "pros": ["official example inside a larger agent framework", "clear structured parameters for repeatable calls", "supports reference and boundary-frame workflows"],
+        "cons": ["depends on configured external generation providers", "little independent feedback on the skill itself", "not useful as a standalone video engine"],
         "sources": [
           {
             "name": "deer-flow SKILL.md",
@@ -296,6 +380,12 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A genuine public Remotion skill, but it is a thin single-author project with limited stars and no substantial independent review signal.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Remotion composition guidance", "B-roll and caption workflows", "Sound-design instructions", "Programmatic video editing patterns"],
+        "pros": ["inspectable code-first video workflow", "useful conventions for captions and motion graphics", "easy to customize for a specific brand"],
+        "cons": ["very limited adoption evidence", "requires Remotion and media-development knowledge", "does not generate source footage by itself"],
         "sources": [
           {
             "name": "GitHub claude-remotion-skill",

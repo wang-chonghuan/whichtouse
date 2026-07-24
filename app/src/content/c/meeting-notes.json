@@ -11,6 +11,12 @@
         "bestFor": "Best free AI notetaker — unlimited recording, ~30-second summaries, and the highest G2 rating in the category.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The strongest independent review signal in this set: G2 lists Fathom at 5.0/5 from roughly 6,900 reviews, and 2026 meeting-assistant roundups consistently place it among the top picks.",
+        "pricingFree": "Free forever for individuals — unlimited recordings and instant AI summaries",
+        "pricingPaid": "Team $15/user/mo billed annually ($19 monthly; 2-user minimum) — collaboration, playlists, keyword alerts and team controls",
+        "features": ["Automatic recording, transcription and summaries", "AI-generated action items and follow-ups", "Searchable meeting assistant", "CRM and productivity integrations"],
+        "pros": ["exceptionally generous individual free plan", "reviewers consistently praise summary quality and ease of setup", "large integration ecosystem and strong CRM workflow"],
+        "cons": ["team plans require at least two seats", "a meeting bot or desktop capture can be undesirable in sensitive calls", "advanced collaboration and administration require paid tiers"],
         "sources": [
           {
             "name": "tldv",
@@ -34,6 +40,12 @@
         "bestFor": "Best bot-free option — captures audio silently without a visible bot joining the call, ideal for solo users.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A frequent top-two pick in 2026 comparisons for bot-free note taking; its independent review footprint is still much smaller than Fathom, with G2 showing only a few dozen reviews.",
+        "pricingFree": "Basic $0/user/mo — limited meeting history, AI meeting notes and cross-meeting chat",
+        "pricingPaid": "Business $14/user/mo — unlimited meeting notes/history, advanced AI models, recipes, integrations and API access",
+        "features": ["Bot-free system-audio capture", "AI-enhanced personal notes", "Cross-meeting chat and search", "Custom templates and recipes"],
+        "pros": ["keeps a human-written notepad at the center of the workflow", "no visible bot joins the meeting", "reviewers praise concise, well-structured notes"],
+        "cons": ["smaller independent review base than established competitors", "free plan limits meeting history", "less suited to teams needing video recordings or sales coaching"],
         "sources": [
           {
             "name": "zackproser",
@@ -57,6 +69,12 @@
         "bestFor": "Best for sales teams — broad CRM and integration coverage with searchable transcript history.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A long-running category leader with a 4.7/5 G2 rating from about 750 reviews and repeated placement in 2026 meeting-note roundups.",
+        "pricingFree": "Free forever — unlimited transcription and AI summaries, 400 minutes of team storage and 20 AI credits",
+        "pricingPaid": "Pro $10/user/mo billed annually ($18 monthly) — 8,000 storage minutes/seat, video recording, downloads and API access",
+        "features": ["Meeting recording, transcription and summaries", "Conversation intelligence and topic tracking", "CRM and task-management integrations", "Search and AskFred assistant"],
+        "pros": ["broad conferencing and business-app integrations", "strong automation for sales and customer-success workflows", "unlimited transcription even on the free plan"],
+        "cons": ["reviewers report weaker accuracy with accents and noisy audio", "AI credits and storage limits add complexity", "the meeting bot can be intrusive or blocked by some organizations"],
         "sources": [
           {
             "name": "Luminix",
@@ -80,6 +98,12 @@
         "bestFor": "Best for real-time live captions during meetings and team transcript collaboration.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "One of the most established transcription brands, with more than 15 million registered users and a 4.4/5 G2 rating from about 500 reviews, though newer tools now rank above it for summaries.",
+        "pricingFree": "Basic free plan — 300 transcription minutes/mo, 30 minutes per conversation and 3 lifetime file imports",
+        "pricingPaid": "Pro from $8.33/user/mo billed annually — 1,200 transcription minutes/mo and 90 minutes per conversation",
+        "features": ["Live transcription with speaker identification", "AI meeting summaries and action items", "Calendar-based automatic meeting capture", "Searchable transcripts and chat"],
+        "pros": ["mature real-time transcription experience", "widely used across meetings, interviews and education", "good collaborative transcript editing and search"],
+        "cons": ["free tier has strict monthly and per-meeting limits", "accuracy drops with overlapping speech, accents or poor audio", "users report occasional bot-permission and subscription friction"],
         "sources": [
           {
             "name": "Luminix",
@@ -103,6 +127,12 @@
         "bestFor": "Full meeting lifecycle — agendas before, notes during, and AI follow-ups after; a Wirecutter top pick.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A recurring team-workflow pick in 2026 roundups and a security-focused choice with a substantial established G2 review base, though it is less dominant for individual note taking.",
+        "pricingFree": "Free plan available — core collaborative meeting notes and limited AI meeting assistance",
+        "pricingPaid": "Paid tiers available; current public page does not expose a stable self-serve price in static content",
+        "features": ["Bot and bot-free meeting recording", "Collaborative agendas and meeting notes", "AI summaries and action items", "Meeting templates and accountability workflows"],
+        "pros": ["combines preparation, notes and follow-through in one workspace", "strong privacy, administration and team collaboration controls", "reviewers value templates and recurring-meeting workflows"],
+        "cons": ["heavier workflow than a simple personal transcript tool", "best value depends on broad team adoption", "pricing and plan boundaries are less transparent than several rivals"],
         "sources": [
           {
             "name": "meetingnotes",
@@ -126,6 +156,12 @@
         "bestFor": "Best free tier for teams — unlimited video, transcripts, and AI summaries across Zoom, Meet, and Teams.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A well-reviewed remote-team option with roughly 500 G2 reviews and repeated 2026 roundup inclusion, especially for clips and multi-meeting analysis.",
+        "pricingFree": "Free forever — unlimited meetings/viewers and recording/transcription, plus limited AI notes, queries and reports",
+        "pricingPaid": "Pro $18/user/mo — unlimited AI notes, Ask tl;dv, multi-meeting reports and uploads, plus 5,000+ integrations",
+        "features": ["Automatic video recording and transcription", "Timestamped clips and highlights", "AI notes and multi-meeting reports", "CRM and workflow integrations"],
+        "pros": ["feature-rich free plan with unlimited recordings", "strong clips, sharing and cross-meeting analysis", "reviewers praise transcription and reusable note templates"],
+        "cons": ["business plan is a steep price jump for coaching features", "mobile experience trails its desktop workflow", "the range of controls can feel complex for individual users"],
         "sources": [
           {
             "name": "tldv",
@@ -145,6 +181,12 @@
         "bestFor": "Best for privacy — bot-free, on-device capture that keeps recordings off the cloud.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A differentiated bot-free option appearing in multiple 2026 comparisons, but with a thinner independent review footprint than the top six products.",
+        "pricingFree": "Free — 10 meetings/mo with a 30-minute meeting limit",
+        "pricingPaid": "Plus €21/mo billed annually — 20 meetings/mo, 2-hour meetings and productivity-app exports",
+        "features": ["Bot-free system-audio transcription", "Editable transcripts and speaker memory", "AI summaries, action items and templates", "Cross-meeting search and Ask AI"],
+        "pros": ["works across online and in-person meetings without a visible bot", "editable transcripts and remembered speaker labels", "privacy-focused desktop capture"],
+        "cons": ["free and entry paid plans impose meeting-count limits", "smaller community and integration ecosystem than category leaders", "unlimited use starts on the considerably more expensive Pro tier"],
         "sources": [
           {
             "name": "Jamie",
@@ -167,6 +209,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The leading purpose-built self-hosted meeting assistant here at about 26.4k GitHub stars, with active 2026 development and repeated self-hosted roundup coverage.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Local live transcription", "Speaker diarization", "Ollama-powered meeting summaries", "Desktop apps for macOS and Windows"],
+        "pros": ["meeting audio can remain entirely on-device", "complete note-taking workflow rather than only a speech model", "active project with a large self-hosting community"],
+        "cons": ["local models need meaningful CPU, GPU and storage resources", "setup and model management are more involved than SaaS", "fewer polished integrations and admin controls than commercial tools"],
         "sources": [
           {
             "name": "GitHub (Zackriya-Solutions, 26.4k★)",
@@ -191,6 +239,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The category's foundational open-source speech model, with about 105.5k GitHub stars and extensive downstream adoption across transcription tools.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Multilingual speech recognition", "Speech translation into English", "Multiple model sizes", "Command-line and Python interfaces"],
+        "pros": ["widely tested model with broad language support", "large ecosystem of ports, wrappers and tutorials", "runs locally without sending audio to a service"],
+        "cons": ["not a complete meeting-notes application", "large models are slow and memory-intensive without a GPU", "no built-in diarization or polished real-time workflow"],
         "sources": [
           {
             "name": "GitHub (openai/whisper, 105.5k★)",
@@ -215,6 +269,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The dominant lightweight Whisper runtime at about 52.3k GitHub stars, widely recommended when local speed, portability and CPU execution matter.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["C/C++ Whisper inference", "CPU and GPU acceleration", "Quantized model support", "Real-time microphone transcription examples"],
+        "pros": ["portable with minimal runtime dependencies", "efficient quantized inference on laptops and edge devices", "broad hardware and platform support"],
+        "cons": ["still requires users to build the meeting workflow around it", "quality and speed depend heavily on model and hardware choices", "speaker diarization and summarization are not core features"],
         "sources": [
           {
             "name": "GitHub (ggml-org/whisper.cpp, 52.2k★)",
@@ -235,6 +295,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A heavily adopted Whisper enhancement with about 23.2k GitHub stars, known in transcription communities for word-level alignment and diarization.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Batched Whisper transcription", "Word-level timestamp alignment", "Speaker diarization", "Voice activity detection"],
+        "pros": ["more precise timestamps than base Whisper", "useful speaker-aware output for meeting pipelines", "substantial speed gains through batching"],
+        "cons": ["installation spans several models and dependencies", "best performance generally requires a CUDA-capable GPU", "diarization may require external model access and tuning"],
         "sources": [
           {
             "name": "GitHub (m-bain/whisperX, 23.2k★)",
@@ -255,6 +321,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A focused office-work skill in a small but relevant repository of about 327 GitHub stars, also indexed by multiple Claude skill catalogs; independent usage evidence remains limited.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Structured meeting-minute generation", "Decisions and action-item extraction", "Agenda and attendee organization", "Reusable Markdown workflow"],
+        "pros": ["purpose-built output structure for business minutes", "easy to inspect and customize as plain instructions", "fits existing Claude skill workflows"],
+        "cons": ["does not record or transcribe audio by itself", "quality depends on the supplied transcript and model", "small repository and limited independent user feedback"],
         "sources": [
           {
             "name": "GitHub (claude-office-skills, 326★)",
@@ -279,6 +351,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Hosted in the highly visible ComposioHQ skill collection at about 69.8k GitHub stars, but the individual analyzer has no separate adoption count or substantial independent review base.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Meeting transcript analysis", "Decision and action-item extraction", "Theme and sentiment identification", "Structured insight reports"],
+        "pros": ["goes beyond minutes into reusable meeting insights", "transparent, editable skill instructions", "easy to combine with other agent workflows"],
+        "cons": ["parent-repository stars do not measure this skill's usage", "requires a transcript and a compatible agent runtime", "no dedicated UI, capture pipeline or independent review corpus"],
         "sources": [
           {
             "name": "GitHub (ComposioHQ/awesome-claude-skills, 69.7k★)",

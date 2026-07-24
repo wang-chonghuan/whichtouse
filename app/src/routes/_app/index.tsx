@@ -1,18 +1,14 @@
-import { createFileRoute, notFound } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
-import { DEFAULT_SLUG, getCategoryView } from '~/lib/catalog'
-import { RankingView } from '~/components/ranking-view'
+import { HomeView } from '~/components/home-view'
+import { getTrendingRepositories } from '~/lib/github-trending'
 
 export const Route = createFileRoute('/_app/')({
   component: Home,
-  loader: () => {
-    const view = getCategoryView(DEFAULT_SLUG)
-    if (!view) throw notFound()
-    return { view }
-  },
+  loader: async () => ({ trending: await getTrendingRepositories() }),
 })
 
 function Home() {
-  const { view } = Route.useLoaderData()
-  return <RankingView view={view} />
+  const { trending } = Route.useLoaderData()
+  return <HomeView trending={trending} />
 }

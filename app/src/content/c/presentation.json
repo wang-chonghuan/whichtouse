@@ -11,6 +11,12 @@
         "bestFor": "The fastest path to a polished first draft — a finished, web-style deck in under 90 seconds with strong visual consistency.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The most consistent #1–2 pick across the three 2026 AI-presentation roundups in this file, with strong community mindshare for rapid first drafts and web-native sharing.",
+        "pricingFree": "Free plan — limited AI credits and basic presentation generation",
+        "pricingPaid": "Plus and Pro tiers available; the current official page does not expose stable plan pricing in static content",
+        "features": ["Prompt-to-deck generation", "AI rewriting and restyling", "Interactive embeds and web publishing", "PDF and PowerPoint export"],
+        "pros": ["exceptionally fast polished first drafts", "strong visual consistency without manual layout work", "easy web sharing and lightweight collaboration"],
+        "cons": ["less precise slide-level control than native PowerPoint", "PowerPoint exports can require cleanup", "credit and export limits make the free tier best for evaluation"],
         "sources": [
           {
             "name": "Lindy",
@@ -34,6 +40,12 @@
         "bestFor": "Professional users working inside Google Slides and PowerPoint — generate, rewrite and reformat slides natively.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A frequent top-three recommendation in 2026 comparisons for professional deck work, differentiated by native Google Slides and PowerPoint operation rather than a separate editor.",
+        "pricingFree": null,
+        "pricingPaid": "Basic $10/user/mo billed annually ($15 monthly) — 1,500 AI credits/mo in Google Slides and PowerPoint",
+        "features": ["Prompt and document-to-presentation generation", "Slide insertion, rewriting and remixing", "Native Google Slides and PowerPoint add-ins", "Custom branding on higher tiers"],
+        "pros": ["keeps output in familiar editable slide applications", "strong rewriting and reformatting of existing decks", "reviewers value professional layouts and workflow fit"],
+        "cons": ["only a 7-day trial rather than a standing free plan", "credit usage varies by task and can be hard to predict", "advanced document upload and branding require higher tiers"],
         "sources": [
           {
             "name": "Lindy",
@@ -57,6 +69,12 @@
         "bestFor": "Design polish with minimal effort — AI-assisted layouts and templates for visually clean, professional slides.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The broadest-adoption design platform in the set, with more than 200 million monthly users and thousands of independent reviews; every cited 2026 roundup includes it for templates and visual polish.",
+        "pricingFree": "Free — core presentation editor, templates and limited AI usage",
+        "pricingPaid": "Canva Pro and Business pricing is localized by country; paid tiers add premium assets, brand tools and higher AI limits",
+        "features": ["Template-based presentation design", "Magic Design and AI media tools", "Brand kits and asset library", "Collaboration, recording and publishing"],
+        "pros": ["huge template and stock-asset ecosystem", "accessible to non-designers", "strong collaboration and multi-format content reuse"],
+        "cons": ["AI-generated decks can look generic without manual editing", "large template library makes consistency harder to govern", "PowerPoint export may shift fonts, animations or layouts"],
         "sources": [
           {
             "name": "SlidesAI",
@@ -80,6 +98,12 @@
         "bestFor": "Teams living in PowerPoint who want AI generation, redesign suggestions and Agent Mode inside the world's most-used deck tool.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Benefits from PowerPoint's dominant enterprise installed base and appears in 2026 roundups for native workflow integration, though independent reviews remain mixed on output quality versus specialist generators.",
+        "pricingFree": null,
+        "pricingPaid": "Microsoft 365 Copilot is a paid add-on to an eligible Microsoft 365 plan; public price varies by business or enterprise agreement",
+        "features": ["Prompt and file-to-presentation generation", "Slide rewriting and summarization", "Designer-assisted layouts and imagery", "Microsoft Graph and organizational context"],
+        "pros": ["works directly in the standard enterprise presentation tool", "can ground drafts in existing Word files and company content", "retains native PowerPoint editability and governance"],
+        "cons": ["requires both an eligible Microsoft 365 plan and Copilot license", "generated decks often need substantial visual and factual review", "feature availability varies by tenant, channel and administrator"],
         "sources": [
           {
             "name": "BuildMVPfast",
@@ -99,6 +123,12 @@
         "bestFor": "Turning raw text or a script into a full deck — outlines, visuals and speaker notes — inside Google Slides.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Included in multiple 2026 presentation roundups and reports a large user base, but has a smaller independent review corpus than Canva or Microsoft.",
+        "pricingFree": "Free — 1 AI-generated presentation/mo with limited input and AI credits",
+        "pricingPaid": "Pro $12/mo on annual billing — more presentations, larger inputs, document uploads and higher AI limits",
+        "features": ["Text-to-presentation generation", "Google Slides and PowerPoint add-ins", "AI image and citation assistance", "Slide remixing and speaker notes"],
+        "pros": ["quickly turns long text into an editable deck", "runs inside existing slide editors", "simple onboarding with a real no-card free plan"],
+        "cons": ["free plan allows very little monthly generation", "design quality and text density still need manual cleanup", "advanced exports and higher limits require paid plans"],
         "sources": [
           {
             "name": "SlidesAI",
@@ -118,6 +148,12 @@
         "bestFor": "Enterprise teams producing on-brand investor decks and business reviews without leaning on designers.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "A specialized enterprise entrant cited by one source here; it has strong life-sciences customer claims but much thinner independent review and broad-community evidence than the top five.",
+        "pricingFree": null,
+        "pricingPaid": "Enterprise custom pricing — contact sales; free trial available",
+        "features": ["On-brand prompt and file-to-deck generation", "Enterprise slide and template library", "Story Builder and audience personalization", "PowerPoint integration and governance"],
+        "pros": ["strong brand-control and enterprise template workflows", "deep specialization in life sciences and business communication", "large reusable slide library and administrative controls"],
+        "cons": ["no public self-serve price", "sales-led deployment is excessive for individuals and small teams", "limited independent review volume outside its target industries"],
         "sources": [
           {
             "name": "SlidesAI",
@@ -136,6 +172,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The most-starred dedicated presentation framework at about 72k GitHub stars, with long-running adoption, active maintenance and a large plugin/theme ecosystem.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["HTML and Markdown slide authoring", "Nested slides, notes and overview mode", "Code highlighting, math and auto-animate", "PDF export and plugin API"],
+        "pros": ["mature, highly customizable web presentation standard", "large ecosystem and excellent documentation", "works well for technical talks and interactive demos"],
+        "cons": ["requires web-development skills for deep customization", "browser rendering and print-to-PDF can vary", "does not create native editable PowerPoint files"],
         "sources": [
           {
             "name": "GitHub hakimel/reveal.js — 72k★",
@@ -156,6 +198,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The fastest-growing modern developer slide framework here at about 47.8k GitHub stars, with active 2026 development and strong conference-talk adoption.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Markdown and Vue component authoring", "Live code, Monaco and presenter tools", "Mermaid, KaTeX and animation support", "PDF, PNG and PPTX export"],
+        "pros": ["excellent developer experience and rapid local preview", "rich technical-content components out of the box", "theme and addon ecosystem supports reusable decks"],
+        "cons": ["Vue/Vite concepts add a learning curve", "PPTX export is less faithful and editable than native PowerPoint authoring", "complex decks can depend on browser-specific rendering"],
         "sources": [
           {
             "name": "GitHub slidevjs/slidev — 47.8k★",
@@ -176,6 +224,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A historically influential presentation framework at about 38.2k GitHub stars, still maintained but less central in current developer workflows than reveal.js or Slidev.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["CSS3 pan, zoom and 3D transitions", "Spatial canvas-based slide paths", "HTML, CSS and JavaScript authoring", "Plugin and presentation-control APIs"],
+        "pros": ["distinctive nonlinear visual storytelling", "complete browser-level styling control", "small core with no proprietary runtime"],
+        "cons": ["motion-heavy decks can distract audiences or cause discomfort", "authoring spatial layouts is labor-intensive", "smaller modern ecosystem and fewer built-in content tools"],
         "sources": [
           {
             "name": "GitHub impress/impress.js — 38.2k★",
@@ -192,6 +246,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The official Anthropic PPTX skill inside the roughly 163.9k-star anthropics/skills repository; it is the reference agent workflow for editable PowerPoint, though parent stars do not measure the skill alone.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Create and edit native PPTX files", "HTML-to-PowerPoint conversion", "Raw OOXML inspection and repair", "Render-based visual QA"],
+        "pros": ["produces genuinely editable PowerPoint rather than screenshots", "official workflow includes collision and overflow checks", "supports both high-level generation and low-level repair"],
+        "cons": ["requires a compatible agent plus Node, Python and rendering dependencies", "high-quality decks still need iterative visual inspection", "repository popularity cannot be attributed to this skill alone"],
         "sources": [
           {
             "name": "GitHub anthropics/skills — official (163.9k★)",
@@ -208,6 +268,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A long-standing lightweight Markdown slideshow project at about 13k GitHub stars, but its last repository push was in 2024 and current momentum is limited.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Markdown-to-slides in the browser", "Presenter mode and notes", "Syntax highlighting", "Custom CSS and ratio controls"],
+        "pros": ["minimal setup and a very small conceptual surface", "plain Markdown makes decks easy to version", "works from a single HTML page"],
+        "cons": ["maintenance activity is low", "fewer modern export, animation and component features", "no native PowerPoint editing workflow"],
         "sources": [
           {
             "name": "GitHub gnab/remark — 13k★",
@@ -224,6 +290,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The main React-native presentation framework at about 10.1k GitHub stars, with active maintenance and clear adoption among JavaScript conference speakers.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["React and JSX slide composition", "Themes and responsive layouts", "Code panes and live demos", "Presenter mode and PDF export"],
+        "pros": ["natural fit for React teams", "components enable interactive technical demonstrations", "reusable themes and programmatic content"],
+        "cons": ["requires a React build toolchain", "more code-heavy than Markdown-first alternatives", "not designed to produce editable PPTX files"],
         "sources": [
           {
             "name": "GitHub FormidableLabs/spectacle — 10.1k★",
@@ -240,6 +312,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Only about 3.5k GitHub stars, but it is the dominant Python PPTX library with deep downstream usage in document automation and agent tooling; repository development is comparatively slow.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Create and modify PPTX files", "Slides, shapes, text and images", "Charts and tables", "Template and placeholder manipulation"],
+        "pros": ["creates standard editable PowerPoint files", "stable API and broad Python ecosystem usage", "excellent foundation for repeatable deck automation"],
+        "cons": ["no rendering engine, so visual QA needs PowerPoint or LibreOffice", "many advanced PowerPoint features are unsupported or low-level", "maintenance cadence is slower than newer presentation projects"],
         "sources": [
           {
             "name": "GitHub scanny/python-pptx — 3.5k★",
@@ -256,6 +334,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The CLI has about 3.7k GitHub stars, supplemented by a widely used VS Code extension and active 2026 releases; adoption is broader than the CLI star count alone suggests.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Markdown-to-HTML, PDF and PPTX export", "Theme CSS and directives", "Watch mode and local server", "Image and speaker-note support"],
+        "pros": ["simple Markdown workflow with strong editor integration", "reliable multi-format command-line export", "good fit for version-controlled documentation teams"],
+        "cons": ["PPTX output is not as editable as a natively authored deck", "custom visual design requires CSS", "interactive browser content does not transfer to static exports"],
         "sources": [
           {
             "name": "GitHub marp-team/marp-cli — 3.7k★",
@@ -272,6 +356,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "An official skill in the actively maintained 47.8k-star Slidev repository; it has strong project provenance but no separate adoption or independent review count yet.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Slidev syntax and layout guidance", "Animation and diagram patterns", "Theme and component usage", "Build and export workflows"],
+        "pros": ["maintained alongside the framework it teaches", "gives agents concrete Slidev-specific conventions", "covers technical content and export behavior"],
+        "cons": ["new skill with no independent usage signal", "requires Slidev and its Node/Vue toolchain", "inherits Slidev's limited native PPTX editability"],
         "sources": [
           {
             "name": "GitHub slidevjs/slidev — official skill (47.8k★ repo)",
@@ -288,6 +378,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A focused community skill at about 717 GitHub stars with active 2026 updates; its niche academic scope is clear, but independent review evidence remains limited.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Academic narrative and action-title guidance", "Conference, seminar and defense deck patterns", "Citation and evidence standards", "Exhibit and visual-discipline checks"],
+        "pros": ["addresses academic storytelling rather than only file generation", "clear citation and argument-structure rules", "complements the official Anthropic PPTX workflow"],
+        "cons": ["not a standalone renderer or PPTX engine", "small community and limited external validation", "opinionated communication rules may need adapting by discipline"],
         "sources": [
           {
             "name": "GitHub Gabberflast/academic-pptx-skill — 716★",

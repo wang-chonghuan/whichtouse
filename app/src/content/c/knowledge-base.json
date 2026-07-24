@@ -11,6 +11,25 @@
         "bestFor": "Enterprise workplace search and RAG across many connected tools; strongest for broad cross-app knowledge retrieval.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed in all three cited enterprise knowledge and RAG roundups, with a 4.7/5 G2 rating from 163 reviews and 4.5/5 across more than 350 Gartner Peer Insights ratings in July 2026.",
+        "pricingFree": null,
+        "pricingPaid": "Enterprise contract pricing — per-user licenses include pooled AI credits, with overage charges for advanced usage",
+        "features": [
+          "Permission-aware enterprise search",
+          "AI assistant and agent builder",
+          "Connectors across workplace applications",
+          "Governance, analytics, and administration"
+        ],
+        "pros": [
+          "Reviewers consistently praise fast cross-application information retrieval",
+          "Permissions-aware indexing is built for complex enterprise estates",
+          "Broad connector coverage and polished user experience support company-wide adoption"
+        ],
+        "cons": [
+          "No public self-service price and procurement is enterprise-led",
+          "Connector rollout and permissions mapping require substantial administration",
+          "Value is harder to justify for smaller organizations with few data sources"
+        ],
         "sources": [
           {
             "name": "Atlan",
@@ -34,6 +53,25 @@
         "bestFor": "AI knowledge base that surfaces verified answers inside your workflow with source trust/verification built in.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited AI knowledge-base roundups and has extensive independent review coverage, especially for verified knowledge and in-workflow answers.",
+        "pricingFree": null,
+        "pricingPaid": "Custom enterprise package pricing — platform access, solution engineering, knowledge architecture, and ongoing optimization",
+        "features": [
+          "Enterprise AI search and chat",
+          "Verified knowledge cards",
+          "Slack, browser, and workflow delivery",
+          "Knowledge analytics and governance"
+        ],
+        "pros": [
+          "Users value answers appearing inside tools such as Slack and the browser",
+          "Verification workflows help teams assign ownership and freshness",
+          "Combines wiki, search, and intranet capabilities"
+        ],
+        "cons": [
+          "Current pricing is sales-led and less transparent than the former per-seat plans",
+          "Content verification creates an ongoing owner-maintenance burden",
+          "Search quality depends on disciplined source organization and connector setup"
+        ],
         "sources": [
           {
             "name": "Help Scout",
@@ -57,6 +95,25 @@
         "bestFor": "Teams already in Notion who want RAG Q&A over their own docs and wiki without standing up separate infra.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in all three cited knowledge-management comparisons and benefits from Notion's large installed base, making it the lowest-friction AI knowledge layer for existing Notion workspaces.",
+        "pricingFree": "Free and Plus plans include only trial AI capabilities",
+        "pricingPaid": "Notion Business $20/member/month on monthly billing — full Notion AI, Enterprise Search, AI Meeting Notes, and agents",
+        "features": [
+          "Workspace search and source-grounded Q&A",
+          "Writing and database assistance",
+          "AI Meeting Notes",
+          "Enterprise Search across connected apps"
+        ],
+        "pros": [
+          "Users can apply AI directly where their wiki and project content already lives",
+          "Flexible page and database model supports many knowledge workflows",
+          "Strong collaborative editing and low onboarding friction"
+        ],
+        "cons": [
+          "Full AI moved to the Business tier for new customers rather than a low-cost add-on",
+          "Flexible workspaces can become inconsistent and difficult to govern",
+          "Search quality falls when pages are duplicated, stale, or poorly structured"
+        ],
         "sources": [
           {
             "name": "Atlan",
@@ -80,6 +137,25 @@
         "bestFor": "Atlassian shops that want AI search and answers layered onto existing Confluence documentation.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Recommended in both cited enterprise knowledge-base roundups and backed by Confluence's large, mature review footprint among software and IT teams.",
+        "pricingFree": "Free plan for up to 10 users with core pages, spaces, and templates",
+        "pricingPaid": "Standard is sold per user with the published rate varying by team size and billing term — adds permissions, audit logs, and larger storage",
+        "features": [
+          "Collaborative wiki spaces",
+          "Rovo AI search and answers",
+          "Jira and Atlassian integration",
+          "Templates, permissions, and page history"
+        ],
+        "pros": [
+          "Reviewers value tight integration with Jira and established engineering workflows",
+          "Mature permissions, templates, and marketplace ecosystem",
+          "Strong fit when substantial documentation already lives in Confluence"
+        ],
+        "cons": [
+          "Large instances often accumulate stale pages and difficult navigation",
+          "Editing and information architecture can feel cumbersome",
+          "AI answer quality depends on documentation freshness and access configuration"
+        ],
         "sources": [
           {
             "name": "Atlan",
@@ -99,6 +175,25 @@
         "bestFor": "AI assistant that answers questions across all connected company apps without pre-indexing everything.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited enterprise knowledge roundups and earned positive early review signals for Slack-centric cross-app answers, but its independent-product signal weakened after HubSpot announced the acquisition in April 2025.",
+        "pricingFree": null,
+        "pricingPaid": "Legacy Team, Business, and Enterprise plans were quote-based; standalone new-customer availability is no longer clearly published after the HubSpot acquisition",
+        "features": [
+          "Federated search across workplace apps",
+          "Slack and browser assistants",
+          "Verified answers and custom bots",
+          "Permission-aware real-time retrieval"
+        ],
+        "pros": [
+          "Reviewers highlighted fast deployment without a large migration project",
+          "Strong Slack and browser workflow integration",
+          "Federated retrieval can surface current information across many systems"
+        ],
+        "cons": [
+          "Product roadmap and standalone availability are uncertain after the HubSpot acquisition",
+          "Public pricing is no longer transparent",
+          "Smaller review and ecosystem footprint than Glean, Guru, or Atlassian"
+        ],
         "sources": [
           {
             "name": "Atlan",
@@ -118,6 +213,25 @@
         "bestFor": "No-code RAG deployment with anti-hallucination controls; pitched at compliance-heavy and regulated orgs.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "Included in both cited 2026 RAG-platform comparisons, but it has less independent review volume than the enterprise-search leaders and is primarily evaluated as a no-code custom chatbot builder.",
+        "pricingFree": null,
+        "pricingPaid": "Standard paid tier supports 2 agents, 1 team member, and up to 5,000 documents per agent; the current dollar price is shown on the official checkout",
+        "features": [
+          "No-code retrieval-augmented chatbots",
+          "Website and document ingestion",
+          "Citation and anti-hallucination controls",
+          "Embed, API, and agent customization"
+        ],
+        "pros": [
+          "Users value quick deployment without building a RAG stack",
+          "Source citations and controlled content are useful for customer-facing answers",
+          "Broad ingestion formats and straightforward embedding"
+        ],
+        "cons": [
+          "No standing free plan and lower tiers impose agent, document, and team limits",
+          "Less suitable for broad permission-aware enterprise search across live applications",
+          "Independent review volume is modest relative to larger knowledge platforms"
+        ],
         "sources": [
           {
             "name": "SphereIQ",
@@ -140,6 +254,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing source set records roughly 142k GitHub stars and places LangChain in the top tier of RAG frameworks, giving it the broadest developer mindshare in this track.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Composable retrieval chains",
+          "Model and vector-store integrations",
+          "Document loaders and text splitters",
+          "Agents and tool orchestration"
+        ],
+        "pros": [
+          "Largest integration ecosystem among general LLM application frameworks",
+          "Extensive examples, community support, and provider coverage",
+          "Flexible enough for highly customized RAG architectures"
+        ],
+        "cons": [
+          "Rapid API evolution and abstraction churn can complicate upgrades",
+          "Many layers make debugging harder than using provider SDKs directly",
+          "Production reliability, evaluation, and infrastructure remain the user's responsibility"
+        ],
         "sources": [
           {
             "name": "GitHub (~142k★)",
@@ -160,6 +293,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing GitHub source records roughly 150k stars, the largest raw star signal in this file, and Dify is widely compared as a full open-source alternative to commercial LLM app builders.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Optional Dify Cloud plans provide managed hosting with message, storage, and team limits",
+        "features": [
+          "Visual LLM workflow builder",
+          "Built-in knowledge bases and retrieval",
+          "Prompt and agent orchestration",
+          "Model management and observability"
+        ],
+        "pros": [
+          "Full UI makes RAG application building accessible beyond developers",
+          "Combines ingestion, workflows, model access, and deployment in one platform",
+          "Large and active open-source community"
+        ],
+        "cons": [
+          "Self-hosting involves multiple services and nontrivial upgrades",
+          "Complex workflows can become difficult to version and debug",
+          "Cloud and model usage limits add cost beyond the open-source license"
+        ],
         "sources": [
           {
             "name": "GitHub (~150k★)",
@@ -176,6 +328,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing GitHub source records roughly 86k stars, the strongest adoption signal among dedicated document-centric RAG engines in this category.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Deep document parsing and layout analysis",
+          "Knowledge-base ingestion and management",
+          "Hybrid retrieval and reranking",
+          "Visual RAG and agent workflow UI"
+        ],
+        "pros": [
+          "Users highlight strong parsing of complex PDFs and structured documents",
+          "End-to-end UI reduces the amount of custom ingestion code",
+          "Retrieval components remain configurable for specialist corpora"
+        ],
+        "cons": [
+          "Deployment is resource-heavy and operationally complex",
+          "Documentation and upgrade experience can lag the project's rapid development",
+          "Production quality still depends on model, parser, and retrieval tuning"
+        ],
         "sources": [
           {
             "name": "GitHub (~86k★)",
@@ -192,6 +363,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing source records roughly 64k GitHub stars, making AnythingLLM one of the most adopted turnkey private-document chat applications rather than a developer-only framework.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Desktop and self-hosted document chat",
+          "Multiple model and vector-database providers",
+          "Workspace-based knowledge separation",
+          "Agents and embeddable chat widgets"
+        ],
+        "pros": [
+          "Reviewers value the fast path from installation to private document chat",
+          "Supports local models for privacy-sensitive use cases",
+          "All-in-one interface avoids assembling a RAG stack manually"
+        ],
+        "cons": [
+          "Retrieval quality on complex corpora needs manual tuning",
+          "Desktop simplicity gives way to infrastructure work for multi-user deployment",
+          "Advanced governance and evaluation are thinner than enterprise platforms"
+        ],
         "sources": [
           {
             "name": "GitHub (~64k★)",
@@ -208,6 +398,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing GitHub source records roughly 51k stars, and developer comparisons consistently identify LlamaIndex as a reference framework for connecting private data to LLMs.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Optional LlamaCloud provides managed parsing, extraction, indexing, and retrieval on usage-based plans",
+        "features": [
+          "Document ingestion and indexing",
+          "Retrievers and query engines",
+          "LlamaParse document parsing",
+          "Evaluation and agent data tools"
+        ],
+        "pros": [
+          "Purpose-built data abstractions cover many RAG ingestion patterns",
+          "Broad connector and vector-store ecosystem",
+          "Strong documentation and examples for document-QA systems"
+        ],
+        "cons": [
+          "Large API surface and frequent evolution create a learning burden",
+          "Choosing among overlapping abstractions can be confusing",
+          "Managed parsing and production services introduce additional usage cost"
+        ],
         "sources": [
           {
             "name": "GitHub (~51k★)",
@@ -224,6 +433,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The existing source records roughly 43k GitHub stars, the largest adoption signal among Obsidian-specific agent-skill projects, and it is maintained by Obsidian's CEO.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Obsidian Markdown editing conventions",
+          "Bases creation and querying",
+          "Canvas JSON manipulation",
+          "Vault-aware agent instructions"
+        ],
+        "pros": [
+          "Maintainer provenance makes it the clearest reference for Obsidian file formats",
+          "Plain-text skills preserve local ownership and portability",
+          "Covers newer Obsidian primitives beyond ordinary Markdown notes"
+        ],
+        "cons": [
+          "Provides agent instructions rather than a complete search or RAG engine",
+          "Safe operation still depends on the agent respecting vault structure",
+          "Obsidian-specific conventions limit use outside that ecosystem"
+        ],
         "sources": [
           {
             "name": "GitHub (~43k★)",
@@ -240,6 +468,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing source records roughly 39k GitHub stars, a strong adoption signal for an opinionated open-source second-brain and RAG backend.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Document ingestion and vector storage",
+          "Chat and retrieval APIs",
+          "Configurable RAG workflows",
+          "Second-brain knowledge organization"
+        ],
+        "pros": [
+          "Provides more application structure than a low-level RAG library",
+          "Open-source backend can be embedded into custom products",
+          "Supports multiple model and storage choices"
+        ],
+        "cons": [
+          "Project direction and documentation have changed substantially across versions",
+          "Self-hosting requires database, model, and worker operations",
+          "Smaller integration and support ecosystem than LangChain or LlamaIndex"
+        ],
         "sources": [
           {
             "name": "GitHub (~39k★)",
@@ -256,6 +503,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing source records roughly 36k GitHub stars, placing Khoj among the most adopted self-hostable personal knowledge assistants.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Optional hosted Khoj service offers managed access and higher usage limits",
+        "features": [
+          "Semantic search across notes and documents",
+          "Chat with citations",
+          "Obsidian, Emacs, and web clients",
+          "Self-hosted personal AI agents"
+        ],
+        "pros": [
+          "Users value local-first integrations with existing note workflows",
+          "Can combine private documents with web and model tools",
+          "Self-hosting preserves control over personal knowledge data"
+        ],
+        "cons": [
+          "Setup and model configuration are more involved than a consumer note app",
+          "Best experience depends on specific editor integrations",
+          "Small-team governance is limited compared with enterprise knowledge platforms"
+        ],
         "sources": [
           {
             "name": "GitHub (~36k★)",
@@ -272,6 +538,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The existing source records roughly 26k GitHub stars, and Haystack has a long-standing production reputation in open-source search and RAG pipelines.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Typed component-based pipelines",
+          "Retrieval, ranking, and generation components",
+          "Document-store and model integrations",
+          "Evaluation and production deployment patterns"
+        ],
+        "pros": [
+          "Reviewers and developers value explicit, testable pipeline composition",
+          "Strong fit for production search systems and custom retrieval logic",
+          "Mature project backed by deepset and an active community"
+        ],
+        "cons": [
+          "More engineering-oriented than turnkey knowledge-base products",
+          "Major-version migration requires meaningful code changes",
+          "Users must operate storage, models, monitoring, and scaling themselves"
+        ],
         "sources": [
           {
             "name": "GitHub (~26k★)",
@@ -288,6 +573,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The existing GitHub source records roughly 9.9k stars, a meaningful community signal for a specialist skill set but well below the general RAG platforms ranked above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Automatic note classification and filing",
+          "Bidirectional Markdown linking",
+          "Knowledge-graph organization",
+          "Claude-driven source ingestion"
+        ],
+        "pros": [
+          "Opinionated automation reduces manual filing work",
+          "Plain Markdown output avoids proprietary storage",
+          "Useful end-to-end workflow for turning mixed inputs into linked notes"
+        ],
+        "cons": [
+          "Autonomous reorganizing can create unwanted links or file changes",
+          "Requires Claude tooling and careful vault backups",
+          "Independent review evidence is limited relative to its star count"
+        ],
         "sources": [
           {
             "name": "GitHub (~9.9k★)",
@@ -304,6 +608,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The existing source records roughly 3.5k GitHub stars, showing credible niche interest in an AI-first Obsidian workflow but substantially less adoption than the leading vault and RAG projects.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Hybrid semantic and keyword search",
+          "Self-maintaining note workflows",
+          "Cross-CLI agent support",
+          "Obsidian knowledge-base conventions"
+        ],
+        "pros": [
+          "Hybrid search addresses limitations of filename or keyword lookup alone",
+          "Cross-agent design avoids locking the workflow to one CLI",
+          "Markdown vault remains portable and user-controlled"
+        ],
+        "cons": [
+          "Smaller community means fewer independent reliability signals",
+          "Embedding and index setup add local complexity",
+          "Automated note maintenance can make surprising changes without strict review"
+        ],
         "sources": [
           {
             "name": "GitHub (~3.5k★)",

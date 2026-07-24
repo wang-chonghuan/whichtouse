@@ -11,6 +11,25 @@
         "bestFor": "The top pick for technical diagrams — architecture, system design, ERDs and sequence flows generated from a text description.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed #1 in both Dupple's tested 2026 list and Toolradar's 2026 ranking, and appears in all three cited roundups; reviewers consistently single out its architecture, ER and sequence-diagram focus over general whiteboards.",
+        "pricingFree": "Free: 3 files, 3 AI credits, 7-day version history, unlimited guests",
+        "pricingPaid": "Starter $15/member/mo billed annually ($20 monthly) — unlimited files, 40 AI credits and 90-day version history",
+        "features": [
+          "prompt-to-architecture, ER and sequence diagrams",
+          "editable diagram-as-code on an infinite canvas",
+          "Markdown technical documents beside diagrams",
+          "GitHub, Notion, Confluence and VS Code integrations"
+        ],
+        "pros": [
+          "reviewers rate it the strongest specialist for technical and architecture diagrams",
+          "keeps diagrams, Markdown notes and version-controlled source in one engineering workspace",
+          "3,000+ technical icons and editable AI output reduce cleanup for system designs"
+        ],
+        "cons": [
+          "the 3-file free cap is restrictive for ongoing work",
+          "40 monthly AI credits on Starter can run out quickly during iteration",
+          "technical focus and diagram-as-code workflow are less suitable for casual business diagrams"
+        ],
         "sources": [
           {
             "name": "Dupple tested 7",
@@ -34,6 +53,25 @@
         "bestFor": "AI-generated diagram-as-code you can version-control, with the widest integration support of any option.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed #4 in Dupple's tested 2026 list and #2 in ScreenApp's developer-focused review, appears in all three cited roundups, and builds on Mermaid's ~89.4k-star ecosystem plus native GitHub rendering.",
+        "pricingFree": "Basic: 3 diagrams, limited diagram size, 15 AI credits and 1 team/project",
+        "pricingPaid": "Plus €8/user/mo billed annually — unlimited diagrams, 300 AI credits/year and view/comment collaboration",
+        "features": [
+          "natural-language generation of Mermaid diagrams",
+          "Mermaid code and visual editing",
+          "team projects, sharing and co-editing",
+          "PNG/SVG export and documentation integrations"
+        ],
+        "pros": [
+          "diagram source is plain text that works well in Git and documentation reviews",
+          "inherits Mermaid's broad diagram-type and integration ecosystem",
+          "AI lowers the syntax barrier while keeping the output editable"
+        ],
+        "cons": [
+          "the Basic plan's diagram and AI limits are tight",
+          "complex diagrams still require Mermaid syntax knowledge and manual cleanup",
+          "automatic layout offers less precise placement than a full canvas editor"
+        ],
         "sources": [
           {
             "name": "Dupple tested 7",
@@ -57,6 +95,25 @@
         "bestFor": "Broadest diagram-type coverage on an editable, collaborative canvas — strongest for enterprise, though more template- than AI-driven.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited 2026 roundups; Toolradar reports 4.5/5 on G2 from 8,430 reviews and 4.5/5 on Capterra from 2,244, the deepest independent review base in this list.",
+        "pricingFree": "Free: 3 editable documents, 75 shapes/document and 100 templates",
+        "pricingPaid": "Individual plan — unlimited editable documents and objects, 1 GB storage and Visio import/export; price is shown during checkout",
+        "features": [
+          "flowcharts, UML, ER, network and org diagrams",
+          "real-time co-editing, comments and presentation mode",
+          "Lucid AI generation and formatting assistance",
+          "Visio import/export and enterprise integrations"
+        ],
+        "pros": [
+          "large template and shape library covers far more diagram types than specialist AI tools",
+          "mature collaboration and enterprise administration are repeatedly praised",
+          "approachable canvas works for technical and non-technical teammates"
+        ],
+        "cons": [
+          "per-user pricing adds up for larger teams",
+          "the free plan's 3-document and 75-shape limits are restrictive",
+          "reviewers find its AI less architecture-specific than Eraser and the app heavy for quick sketches"
+        ],
         "sources": [
           {
             "name": "Dupple tested 7",
@@ -80,6 +137,25 @@
         "bestFor": "Fast, beautiful flowcharts and mind maps — the speed-and-aesthetics winner for lighter-weight diagramming.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Placed #2 in Toolradar's 2026 ranking with a reported 4.6/5 G2 rating from 188 reviews and #3 in Dupple's tested list; it appears in both cited roundups for polished flowcharts.",
+        "pricingFree": "Free: 3 team boards, 3 teams, 10 guests, 7-day history and 20 AI credits/workspace total",
+        "pricingPaid": "Pro $10/editor/mo billed annually — unlimited team boards, 50 guests, 1 GB uploads and 90-day history",
+        "features": [
+          "AI-generated flowcharts and mind maps",
+          "diagrams, wireframes and documents on one canvas",
+          "real-time collaboration and public sharing",
+          "templates, embeds and GitHub/Slack integrations"
+        ],
+        "pros": [
+          "reviewers consistently praise its clean interface and minimal learning curve",
+          "AI output is among the most polished and presentation-ready",
+          "fast flowchart, wireframe and product-planning workflow"
+        ],
+        "cons": [
+          "limited architecture-specific shapes and formal UML/ER support",
+          "20 free AI credits are a one-time workspace allowance, not monthly",
+          "advanced security, unlimited boards and longer history require paid tiers"
+        ],
         "sources": [
           {
             "name": "Toolradar guide",
@@ -99,6 +175,25 @@
         "bestFor": "Collaborative design sessions on an infinite canvas, best when a team is diagramming together in real time.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in both cited 2026 roundups as the collaboration-first option; Miro reports 20,000+ aggregate reviews across G2, Capterra and TrustRadius, far more community signal than newer AI-native entrants.",
+        "pricingFree": "Free: 3 editable boards, 7,000+ templates, 250+ integrations and limited AI trial usage",
+        "pricingPaid": "Starter $8/member/mo billed annually — unlimited private boards, 25 AI credits/member/mo and 500 MCP calls/day",
+        "features": [
+          "infinite collaborative whiteboard",
+          "AI-generated diagrams, tables and summaries",
+          "Mermaid, UML, AWS and process-diagram shapes",
+          "250+ integrations and facilitation tools"
+        ],
+        "pros": [
+          "real-time workshops and cross-functional collaboration are its clearest review strength",
+          "large template, shape and integration ecosystem",
+          "AI can turn brainstorm content into diagrams without leaving the shared board"
+        ],
+        "cons": [
+          "reviewers describe the broad interface as overwhelming for diagram-only use",
+          "large boards can become cluttered and harder to navigate",
+          "many technical-system features and higher AI allowances sit above Starter"
+        ],
         "sources": [
           {
             "name": "Dupple tested 7",
@@ -118,6 +213,25 @@
         "bestFor": "Turning written text into clean presentation-ready visuals rather than rigorous engineering diagrams.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Ranked #2 in Dupple's tested 2026 list for text-to-visual work and highlighted in independent comparisons for design-forward output; it ranks lower here because reviewers say technical structures are not guaranteed.",
+        "pricingFree": "Free: 500 AI credits/week, unlimited visual editing and Napkin branding on exports",
+        "pricingPaid": "Plus $9/person/mo billed annually ($12 monthly) — 10,000 AI credits/mo and unbranded visuals",
+        "features": [
+          "paragraph-to-visual generation",
+          "multiple editable visual alternatives",
+          "icons, connectors and color customization",
+          "PNG, SVG and PDF export"
+        ],
+        "pros": [
+          "reviewers praise how quickly prose becomes presentation-ready visuals",
+          "multiple generated options make visual iteration easy",
+          "friendly for non-designers and non-technical users"
+        ],
+        "cons": [
+          "technical diagram structures and notation are not guaranteed",
+          "less precise layout and relationship control than architecture-specific tools",
+          "free exports retain Napkin branding"
+        ],
         "sources": [
           {
             "name": "Dupple tested 7",
@@ -137,6 +251,25 @@
         "bestFor": "Purpose-built for software architecture, using Claude to turn system requirements into complete architecture diagrams.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "The only cited comparison is InfraSketch's own vendor-authored test and independent review volume remains sparse, so it ranks seventh despite a differentiated architecture-diagram plus design-document workflow.",
+        "pricingFree": "Free: 10 credits/mo; diagram generation costs 5–15 credits",
+        "pricingPaid": "Starter $1/mo — 50 credits/mo plus design-document generation and export",
+        "features": [
+          "natural-language architecture generation",
+          "chat-based diagram refinement",
+          "automatic technical design documents",
+          "PNG, PDF and Markdown export"
+        ],
+        "pros": [
+          "purpose-built around software architecture rather than generic whiteboarding",
+          "combines diagrams and design-document generation in one workflow",
+          "published entry pricing is unusually low"
+        ],
+        "cons": [
+          "very limited independent review and community validation",
+          "the 10-credit free allowance may not cover one maximum-cost 15-credit generation",
+          "the vendor says real-time collaboration is not yet available"
+        ],
         "sources": [
           {
             "name": "InfraSketch side-by-side",
@@ -155,6 +288,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The default diagram-as-code standard at ~89.4k GitHub stars, native rendering in GitHub/GitLab and most documentation platforms, and the #1 recommendation in 2026 diagram-as-code comparisons.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "30+ text-defined diagram types",
+          "native Markdown and documentation rendering",
+          "themes and automatic layout",
+          "browser, npm and CLI rendering"
+        ],
+        "pros": [
+          "largest ecosystem and widest native integration support in diagram-as-code",
+          "plain-text diagrams version and review cleanly with source code",
+          "low barrier for common flow, sequence and architecture diagrams"
+        ],
+        "cons": [
+          "layout control is limited and nodes cannot be positioned precisely",
+          "large diagrams become difficult to read in source and rendered form",
+          "syntax mistakes can break rendering and architecture-specific icon support is limited"
+        ],
         "sources": [
           {
             "name": "GitHub — mermaid-js/mermaid (~89.4k★)",
@@ -171,6 +323,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The most-starred project here at ~128.3k GitHub stars and #4 in Dupple's tested 2026 diagram-tool list; it ranks second because its adoption is for freeform sketching rather than structured diagram-as-code.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "infinite hand-drawn whiteboard",
+          "real-time encrypted collaboration",
+          "local-first files and shareable links",
+          "PNG/SVG and open JSON export"
+        ],
+        "pros": [
+          "reviewers repeatedly praise its instant start and near-zero learning curve",
+          "hand-drawn style works especially well for early architecture discussion",
+          "free, local-first and easy to share for collaborative sketches"
+        ],
+        "cons": [
+          "manual layout and freeform shapes are weak for formal UML or precise documentation",
+          "smaller structured shape library than dedicated architecture tools",
+          "complex drawings require manual organization and are harder to maintain as living docs"
+        ],
         "sources": [
           {
             "name": "GitHub — excalidraw/excalidraw (~128.3k★)",
@@ -187,6 +358,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The leading Python cloud-architecture library at ~42.5k GitHub stars and the dedicated Python pick in 2026 diagram-as-code comparisons, with documented use in projects such as Apache Airflow.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Python-defined architecture diagrams",
+          "AWS, Azure, GCP and Kubernetes icon sets",
+          "clusters and directional relationships",
+          "Graphviz image rendering"
+        ],
+        "pros": [
+          "excellent provider-icon coverage for cloud and infrastructure diagrams",
+          "Python makes diagrams programmable from configuration or loops",
+          "diagram source versions cleanly beside infrastructure code"
+        ],
+        "cons": [
+          "requires Python plus a separate Graphviz installation",
+          "limited to architecture/infrastructure rather than sequence, ER or general flow diagrams",
+          "automatic layout offers little precise node placement or interactive editing"
+        ],
         "sources": [
           {
             "name": "GitHub — mingrammer/diagrams (~42.5k★)",
@@ -203,6 +393,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A fast-growing modern DSL at ~24.8k GitHub stars and the #2 recommendation in 2026 diagram-as-code comparisons, behind Mermaid mainly because its ecosystem and native integrations are smaller.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "readable declarative diagram language",
+          "Dagre, ELK and optional TALA layouts",
+          "themes, containers and Markdown labels",
+          "SVG, PNG and PDF export"
+        ],
+        "pros": [
+          "clean syntax and attractive defaults are repeatedly preferred over older DSLs",
+          "multiple layout engines provide more control than Mermaid",
+          "nested containers work well for grouped architecture views"
+        ],
+        "cons": [
+          "smaller integration and documentation ecosystem than Mermaid",
+          "no native GitHub rendering, so publishing needs a build step",
+          "the TALA layout engine requires a separate paid license"
+        ],
         "sources": [
           {
             "name": "GitHub — terrastruct/d2 (~24.8k★)",
@@ -219,6 +428,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Strong developer adoption at ~49.2k GitHub stars and a polished canvas SDK, but it ranks fifth because it is a source-available application toolkit rather than an out-of-box architecture-diagram format.",
+        "pricingFree": "Free for development; free 100-day production trial and discretionary hobby license",
+        "pricingPaid": "Commercial production license with value-based annual pricing via sales; no public rate",
+        "features": [
+          "extensible React infinite-canvas SDK",
+          "custom shapes, tools and UI",
+          "multiplayer sync and persistence primitives",
+          "image export and Mermaid integration"
+        ],
+        "pros": [
+          "widely adopted, polished foundation for building custom collaborative diagram apps",
+          "deep customization across shapes, tools, storage and interface",
+          "active project with strong developer documentation"
+        ],
+        "cons": [
+          "the SDK is source-available, not permissively open-source",
+          "production use requires a license key after the 100-day trial",
+          "developers must build the architecture semantics, icons and workflows themselves"
+        ],
         "sources": [
           {
             "name": "GitHub — tldraw/tldraw (~49.2k★)",
@@ -235,6 +463,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The long-standing UML workhorse at ~13.2k GitHub stars, ranked #3 in 2026 diagram-as-code comparisons and backed by decades of enterprise integrations despite a smaller GitHub footprint.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "comprehensive UML diagram coverage",
+          "sequence, component, deployment and activity diagrams",
+          "large cloud and technology icon libraries",
+          "IDE, wiki and CI integrations"
+        ],
+        "pros": [
+          "broadest mature UML coverage among text-based tools",
+          "battle-tested integrations across enterprise IDEs and documentation systems",
+          "extensive standard-library icons for technical architecture"
+        ],
+        "cons": [
+          "verbose syntax has a steeper learning curve than Mermaid or D2",
+          "local rendering requires Java or a PlantUML server",
+          "automatic layouts can be awkward and default visuals look dated"
+        ],
         "sources": [
           {
             "name": "GitHub — plantuml/plantuml (~13.2k★)",
@@ -251,6 +498,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The de-facto C4 extension for PlantUML at ~7.4k GitHub stars, with dedicated macros and examples for every C4 level; it ranks below general tools because its scope is intentionally architecture-model specific.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "C4 context, container and component diagrams",
+          "dynamic, deployment and sequence views",
+          "layout macros, tags and custom styling",
+          "VS Code snippets and PlantUML compatibility"
+        ],
+        "pros": [
+          "well-established text workflow for teams already using the C4 model",
+          "consistent notation across multiple architecture abstraction levels",
+          "inherits PlantUML's rendering and integration ecosystem"
+        ],
+        "cons": [
+          "requires PlantUML and its Java/server toolchain",
+          "narrower use case than general diagramming libraries",
+          "layout macros and version compatibility can require manual tuning"
+        ],
         "sources": [
           {
             "name": "GitHub — plantuml-stdlib/C4-PlantUML (~7.4k★)",
@@ -267,6 +533,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Dupple ranks diagrams.net #2 among tested 2026 diagram tools and calls it the strongest fully free option; the source repo has ~7k stars, while product adoption is much larger than that repo count suggests.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "web, desktop and self-hosted diagram editor",
+          "large stencil and template library",
+          "local, cloud-drive and Git storage",
+          "PNG, SVG, PDF and XML export"
+        ],
+        "pros": [
+          "fully featured with no account, document cap or core paywall",
+          "broad architecture and business diagram coverage",
+          "offline use and portable XML files avoid vendor lock-in"
+        ],
+        "cons": [
+          "reviewers commonly describe the interface as dated and less polished",
+          "real-time collaboration is not available in the open-source editor",
+          "no native AI generation and source XML is less readable than text DSLs"
+        ],
         "sources": [
           {
             "name": "GitHub — jgraph/drawio (~7k★)",
@@ -283,6 +568,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The parent toolkit has ~2.2k GitHub stars, the strongest adoption signal among the two dedicated agent skills here, but there is no skill-specific star count or meaningful independent review base.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "guidance for 9 Mermaid diagram categories",
+          "architecture, C4, ER and sequence references",
+          "theming and layout best practices",
+          "multi-agent installation format"
+        ],
+        "pros": [
+          "broad reference material covers the Mermaid diagrams software teams use most",
+          "clear selection guidance and examples help agents choose an appropriate diagram type",
+          "portable Agent Skills packaging works across multiple coding agents"
+        ],
+        "cons": [
+          "the ~2.2k-star signal belongs to the whole toolkit, not this skill",
+          "no automated syntax validation or render-and-review loop is bundled",
+          "independent user reviews and skill-specific adoption data are sparse"
+        ],
         "sources": [
           {
             "name": "GitHub — softaworks/agent-toolkit (~2.2k★)",
@@ -299,6 +603,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A newer standalone skill at ~146 GitHub stars with 11+ diagram types and a documented validation/export loop; it ranks tenth because adoption and independent community feedback remain small.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "natural language to validated Mermaid source",
+          "11+ diagram types including C4",
+          "PNG, SVG and PDF export",
+          "visual self-check and revision loop"
+        ],
+        "pros": [
+          "validation-first workflow catches syntax errors before export",
+          "supports local mmdc rendering with a zero-install Kroki fallback",
+          "adds visual review and iterative cleanup beyond basic Mermaid generation"
+        ],
+        "cons": [
+          "small ~146-star adoption base and almost no independent review signal",
+          "rendering depends on an external mmdc installation or Kroki service",
+          "limited to Mermaid rather than supporting multiple diagram engines"
+        ],
         "sources": [
           {
             "name": "GitHub — Agents365-ai/mermaid-skill (~146★)",

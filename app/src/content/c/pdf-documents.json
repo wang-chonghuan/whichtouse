@@ -11,6 +11,12 @@
         "bestFor": "Fast, no-friction chat with a single PDF for quick one-off questions and summaries.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The most consistently cited dedicated PDF-chat tool across the three 2026 comparison sources in this file, with a large consumer footprint but limited verified enterprise review volume.",
+        "pricingFree": "Free plan with daily document and question limits",
+        "pricingPaid": "Plus plan available; current official page does not expose a stable public price and allowance in static content",
+        "features": ["Chat-based PDF questions", "Automatic summaries", "Page-linked citations", "Multi-language document support"],
+        "pros": ["very low-friction upload-and-chat workflow", "answers link back to source pages", "reviewers find it effective for quick one-document research"],
+        "cons": ["free usage is tightly limited", "less capable than research workspaces for cross-document synthesis", "scanned or complex-layout PDFs can reduce answer quality"],
         "sources": [
           {
             "name": "eesel AI",
@@ -34,6 +40,12 @@
         "bestFor": "Editing and summarizing existing PDFs with page-level citations plus enterprise security and redaction.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Backed by Acrobat's category-leading installed base and thousands of G2 reviews; 2026 PDF-AI roundups repeatedly rank it near the top for combining AI with full PDF editing.",
+        "pricingFree": "No standing full AI Assistant plan; limited trial prompts may be offered",
+        "pricingPaid": "AI Assistant is sold with qualifying Acrobat plans; current price varies by Acrobat plan and region",
+        "features": ["Document summaries and cited answers", "Contract and multi-document analysis", "PDF editing, redaction and e-signing", "Voice and meeting-transcript insights"],
+        "pros": ["AI works inside a mature full-featured PDF editor", "page-level citations make answers easier to verify", "strong enterprise security and document controls"],
+        "cons": ["AI access is layered onto an already complex Acrobat plan structure", "desktop software can feel heavy and crowded", "reviewers frequently criticize subscription cost and upselling"],
         "sources": [
           {
             "name": "eesel AI",
@@ -57,6 +69,12 @@
         "bestFor": "Best free option; retrieves source text before answering, so it resists hallucinated citations.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The leading free research-workspace choice across 2026 PDF-chat comparisons, supported by Google's broad adoption and strong community enthusiasm for grounded citations and Audio Overviews.",
+        "pricingFree": "Free — up to 100 notebooks, 50 sources/notebook, 50 chat queries/day and 3 audio generations/day",
+        "pricingPaid": "Higher limits included with eligible Google AI and Workspace plans; price depends on the parent subscription",
+        "features": ["Grounded chat across uploaded sources", "Inline source citations", "Audio and video overviews", "Study guides, mind maps and reports"],
+        "pros": ["answers are tightly grounded in selected source material", "excellent multi-document synthesis at no cost", "distinctive Audio Overviews make long material accessible"],
+        "cons": ["not a PDF editor or form-filling tool", "output quality depends on source parsing and notebook organization", "higher limits are bundled into broader Google subscriptions"],
         "sources": [
           {
             "name": "Denser.ai",
@@ -80,6 +98,12 @@
         "bestFor": "Free multi-document chat when you need to query across several PDFs at once.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Appears in multiple 2026 PDF-chat roundups and claims more than five million users, but has a smaller independent review base than ChatPDF, Adobe or Google.",
+        "pricingFree": "Free — 1 document/day, 100 pages/document, 15 MB uploads, 50 questions/day and 3 conversations/day",
+        "pricingPaid": "Premium $11.99/mo billed annually — 50 documents/day, 2,500 pages/document and 1,200 questions/day",
+        "features": ["Single and multi-document chat", "Knowledge-base queries", "Document summaries", "OCR and browser extension"],
+        "pros": ["generous question allowance on the free tier", "supports querying multiple documents together", "wide model choice on paid tiers"],
+        "cons": ["advanced models consume separate credits", "free tier permits only one document upload per day", "interface and plan limits are more complex than simpler rivals"],
         "sources": [
           {
             "name": "Paperguide",
@@ -99,6 +123,12 @@
         "bestFor": "Research-oriented Q&A over long technical and academic PDFs with cited answers.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A recurring research-oriented recommendation in PDF-chat roundups, though its independent review footprint and community mention volume remain modest.",
+        "pricingFree": "Free — basic features for up to 60 pages/mo",
+        "pricingPaid": "Expert $9.99/mo — 500 pages/mo for up to 3 users; additional pages $0.02 each",
+        "features": ["Long-document Q&A", "Cited summaries and explanations", "Multi-file organization", "Embeddable document chat"],
+        "pros": ["focused interface for technical and academic reading", "answers include document references", "entry plan supports a small group rather than only one user"],
+        "cons": ["usage is metered by processed pages", "OCR and stronger controls are reserved for higher tiers", "less useful for editing or visually manipulating PDFs"],
         "sources": [
           {
             "name": "Paperguide",
@@ -118,6 +148,12 @@
         "bestFor": "Genuinely free editor with an AI copilot; the budget pick for students and small teams.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A prominent free-editor recommendation in 2026 roundups; PDFgear reports a 4.9 rating from 10,000+ reviews, although those reviews are not from one independently audited marketplace.",
+        "pricingFree": "Free — desktop, mobile and online PDF editing, conversion and AI tools",
+        "pricingPaid": null,
+        "features": ["PDF editing and annotation", "Chatbot summaries and questions", "Conversion, merge and split tools", "OCR, signing and form filling"],
+        "pros": ["unusually complete editor without a subscription", "clean desktop experience for common PDF tasks", "reviewers value the breadth of free conversion and editing tools"],
+        "cons": ["AI and online features can still require uploading document content", "advanced enterprise administration is absent", "some complex editing and OCR cases trail Acrobat-grade tools"],
         "sources": [
           {
             "name": "aiproductivity.ai",
@@ -137,6 +173,12 @@
         "bestFor": "All-in-one web PDF suite (convert, compress, sign) with AI summarize and chat layered on.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A mature, widely reviewed PDF utility with thousands of G2 and Trustpilot reviews; 2026 AI-PDF roundups include it mainly for its broad tool suite rather than best-in-class chat.",
+        "pricingFree": "Free plan — limited daily access to core web tools",
+        "pricingPaid": "Pro subscription available; official price is localized and varies by billing region",
+        "features": ["PDF conversion and compression", "Editing, signing and form tools", "AI chat and summarization", "Desktop and mobile applications"],
+        "pros": ["very broad set of everyday PDF utilities", "simple web workflow with no installation required", "large user base and polished cross-platform apps"],
+        "cons": ["free users face task and feature limits", "subscriptions can be expensive for occasional use", "AI analysis is less research-focused than dedicated PDF-chat products"],
         "sources": [
           {
             "name": "Paperguide",
@@ -159,6 +201,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The recognized all-in-one open-source PDF leader at about 87.9k GitHub stars, with active daily development and unusually broad self-hosting community adoption.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Merge, split and reorganize PDFs", "OCR, conversion and compression", "Signing, redaction and form tools", "Docker-based self-hosting"],
+        "pros": ["keeps sensitive documents on infrastructure you control", "replaces dozens of single-purpose PDF web tools", "large active community and frequent releases"],
+        "cons": ["self-hosters own upgrades, storage and security", "large feature surface can make the UI feel busy", "resource-heavy OCR and conversion jobs require capable hardware"],
         "sources": [
           {
             "name": "GitHub (~88k★)",
@@ -175,6 +223,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The highest-starred document-conversion project in this category at about 168.7k GitHub stars, with Microsoft stewardship and broad LLM-pipeline adoption.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["PDF and Office-to-Markdown conversion", "Image OCR and metadata extraction", "Audio transcription", "CLI, Python API and plugin support"],
+        "pros": ["simple output format designed for LLM consumption", "handles many common document types behind one API", "lightweight integration and strong project visibility"],
+        "cons": ["prioritizes text conversion over faithful layout reconstruction", "complex tables and multi-column PDFs can lose structure", "not an editor, viewer or full document-management system"],
         "sources": [
           {
             "name": "GitHub (~169k★)",
@@ -191,6 +245,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A leading complex-document parser at about 75.6k GitHub stars, repeatedly highlighted in PDF-to-Markdown comparisons for academic, formula and CJK layouts.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["PDF-to-Markdown and JSON conversion", "Layout, table and formula recognition", "Reading-order reconstruction", "OCR for scanned and multilingual documents"],
+        "pros": ["strong results on dense academic and technical layouts", "good handling of formulas, tables and CJK text", "produces assets and structure useful for RAG pipelines"],
+        "cons": ["model downloads and GPU acceleration add operational weight", "installation is more involved than lightweight parsers", "results still need review on unusual scans and layouts"],
         "sources": [
           {
             "name": "GitHub (~76k★)",
@@ -211,6 +271,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A fast-growing IBM-originated parser at about 63.7k GitHub stars, with first-class integrations across major RAG frameworks and frequent 2026 comparison coverage.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Multi-format document parsing", "Table and layout understanding", "Structured JSON and Markdown export", "OCR and local model execution"],
+        "pros": ["strong structured output for retrieval pipelines", "supports more than PDFs in one toolkit", "active ecosystem integrations and enterprise-grade provenance"],
+        "cons": ["large dependency stack compared with basic PDF libraries", "accurate complex parsing can be compute-intensive", "not intended for interactive PDF editing"],
         "sources": [
           {
             "name": "GitHub (~64k★)",
@@ -231,6 +297,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The official Anthropic reference PDF skill inside the roughly 163.9k-star anthropics/skills repository; the parent-star count signals visibility, not isolated skill usage.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["PDF extraction and visual inspection", "Form filling and annotation", "Merge, split and transformation workflows", "Programmatic PDF generation"],
+        "pros": ["official, inspectable guidance for reliable agent PDF work", "covers creation, editing and QA rather than one narrow operation", "uses established PDF libraries and render verification"],
+        "cons": ["requires a compatible agent runtime and local dependencies", "repository stars cannot be attributed to this skill alone", "complex visual edits still need iterative rendering and inspection"],
         "sources": [
           {
             "name": "anthropics/skills (~164k★)",
@@ -251,6 +323,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A popular conversion-focused project at about 37.8k GitHub stars, regularly included in 2026 PDF-to-Markdown comparisons for its accuracy and broad format support.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["PDF, EPUB and Office conversion", "Markdown, JSON and HTML output", "Table, equation and image extraction", "Optional LLM-assisted cleanup"],
+        "pros": ["high-quality structured output across varied documents", "good table, math and image handling", "usable locally with configurable models"],
+        "cons": ["high-quality conversion can require substantial RAM or GPU resources", "some advanced modes depend on external model services", "not a general-purpose PDF editor"],
         "sources": [
           {
             "name": "GitHub (~38k★)",
@@ -271,6 +349,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A long-standing Python extraction staple at about 10.6k GitHub stars, widely cited for inspectable character-level layout and table extraction.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Character-level text extraction", "Table detection and extraction", "Page geometry inspection", "Visual debugging and cropping"],
+        "pros": ["fine-grained control over PDF layout primitives", "excellent debugging tools for table extraction", "pure Python workflow familiar to data teams"],
+        "cons": ["works best on machine-generated rather than scanned PDFs", "table settings often need document-specific tuning", "does not provide OCR or high-level AI understanding by itself"],
         "sources": [
           {
             "name": "GitHub (~11k★)",
@@ -287,6 +371,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A performance-oriented PDF foundation at about 10.3k GitHub stars, broadly used in production pipelines for fast rendering, extraction and manipulation.",
+        "pricingFree": "Free & open-source under AGPL (self-host)",
+        "pricingPaid": "Commercial licensing available from Artifex for proprietary distribution",
+        "features": ["Fast text and image extraction", "Page rendering and rasterization", "PDF editing, annotation and redaction", "Search, OCR hooks and format conversion"],
+        "pros": ["very fast and memory-efficient core", "broad low-level manipulation API", "handles rendering and editing as well as extraction"],
+        "cons": ["AGPL obligations can conflict with closed-source distribution", "low-level API requires more engineering than turnkey converters", "documentation and coordinate systems have a learning curve"],
         "sources": [
           {
             "name": "GitHub (~10k★)",
@@ -303,6 +393,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A widely used pure-Python PDF library at about 10.1k GitHub stars, valued for lightweight page manipulation and an active maintenance cadence.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Split, merge and crop pages", "Text and metadata extraction", "Encryption and decryption", "Page transformations and form handling"],
+        "pros": ["pure Python with a small dependency footprint", "straightforward API for common structural operations", "permissive license and active community"],
+        "cons": ["no built-in rendering or OCR engine", "text extraction struggles with visually complex layouts", "large or malformed PDFs can be slow and memory-intensive"],
         "sources": [
           {
             "name": "GitHub (~10k★)",
@@ -319,6 +415,12 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A niche community office-skill pack with about 796 GitHub stars; useful cross-format coverage, but little independent review or usage evidence for its PDF workflow specifically.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["PDF creation and editing workflows", "DOCX, PPTX and XLSX companion skills", "Automation scripts and helper references", "Claude Code-oriented instructions"],
+        "pros": ["covers an entire office-document workflow in one pack", "plain-text skills are easy to inspect and adapt", "useful starting automation for repeated document tasks"],
+        "cons": ["small independent community signal", "quality depends on local tools and the agent runtime", "parent repository adoption does not validate each document skill"],
         "sources": [
           {
             "name": "GitHub (~800★)",

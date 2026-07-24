@@ -24,6 +24,25 @@
             "name": "Komposo Top 8",
             "url": "https://www.komposo.ai/blog/best-ai-ui-generators-2026"
           }
+        ],
+        "rankBasis": "The only app placed near the top across all three cited 2026 UI-generation roundups (EPAM, Muzli, and Komposo), reinforced by its first-party Vercel integration and dominant visibility in React/shadcn workflows.",
+        "pricingFree": "Free plan: $5 of included monthly credits",
+        "pricingPaid": "Plus $30/user/month — $30 of included monthly credits, higher rate limits, and private projects",
+        "features": [
+          "Prompt-to-React and Next.js UI generation",
+          "Image or Figma input to editable code",
+          "Iterative visual and code editing",
+          "One-click Vercel deployment"
+        ],
+        "pros": [
+          "reviewers consistently rate its React/shadcn output among the most production-ready",
+          "generated code stays visible, editable, and easy to move into an existing repository",
+          "very short path from prompt to a deployed Vercel preview"
+        ],
+        "cons": [
+          "strong Next.js and Vercel bias makes it less neutral for other stacks",
+          "repeated visual iterations can consume credits quickly",
+          "less complete than full-stack builders for backend-heavy applications"
         ]
       },
       {
@@ -47,6 +66,25 @@
             "name": "Muzli 2026",
             "url": "https://muz.li/blog/best-ai-design-tools-for-ui-ux-designers-in-2026/"
           }
+        ],
+        "rankBasis": "Featured as a leading prompt-to-app choice in all three cited comparisons (Banani, EPAM, and Muzli), with reviewers repeatedly singling it out as the easiest route from an idea to a working MVP.",
+        "pricingFree": "Free plan: daily build-credit grants with public projects; grants expire each day",
+        "pricingPaid": "Pro $25/month — 100 monthly credits, daily build-credit grants, custom domains, and user roles",
+        "features": [
+          "Prompt-to-full-stack web app generation",
+          "Built-in database and authentication",
+          "GitHub synchronization and code editing",
+          "Publishing with custom domains"
+        ],
+        "pros": [
+          "non-developers can reach a functional, polished MVP unusually quickly",
+          "integrated backend, authentication, and deployment reduce setup work",
+          "conversational iteration is approachable for product and design users"
+        ],
+        "cons": [
+          "credit use becomes noticeable during debugging and repeated revisions",
+          "users report that larger generated codebases become harder to steer reliably",
+          "complex fixes can trigger iteration loops that still require developer intervention"
         ]
       },
       {
@@ -66,6 +104,25 @@
             "name": "Komposo Top 8",
             "url": "https://www.komposo.ai/blog/best-ai-ui-generators-2026"
           }
+        ],
+        "rankBasis": "A top-tier pick in both cited hands-on 2026 comparisons (EPAM and Komposo), distinguished from UI-only generators by building and running a full-stack project directly in its browser environment.",
+        "pricingFree": "Free plan: 300,000-token daily limit and 1M tokens/month",
+        "pricingPaid": "Pro $25/month — starts at 10M tokens/month, no daily token limit, and unused tokens roll over for one additional month",
+        "features": [
+          "Browser-based full-stack app generation",
+          "Live WebContainer development environment",
+          "Integrated databases and hosting",
+          "GitHub import and export"
+        ],
+        "pros": [
+          "reviewers value seeing and running the complete application without local setup",
+          "handles frontend, backend, and database scaffolding in one workflow",
+          "fast live previews make early prototype iteration highly tangible"
+        ],
+        "cons": [
+          "token usage rises sharply as project files and context grow",
+          "community reports describe regressions or repeated fixes on longer sessions",
+          "browser execution is less flexible than a fully controlled local development environment"
         ]
       },
       {
@@ -85,6 +142,25 @@
             "name": "Banani alternatives",
             "url": "https://www.banani.co/blog/best-figma-make-ai-alternatives"
           }
+        ],
+        "rankBasis": "Ranks prominently in both cited 2026 comparisons, and uniquely benefits from Figma's established design-system workflow by bringing library styling context and editable design layers into prompt-to-code generation.",
+        "pricingFree": "Starter: free with 500 AI credits/month",
+        "pricingPaid": "Professional Full seat $16/month billed annually — 3,000 AI credits/month and full access to Figma Make, Design, Dev Mode, Sites, and FigJam",
+        "features": [
+          "Prompt-to-interactive prototype generation",
+          "Figma library and styling context",
+          "Preview-to-editable Figma design layers",
+          "Reference files and product-document connectors"
+        ],
+        "pros": [
+          "strongest workflow continuity for teams already designing in Figma",
+          "can use real design-system context instead of approximating a brand from text",
+          "generated prototypes remain easy to share and critique with design stakeholders"
+        ],
+        "cons": [
+          "serious usage is tied to a paid Full seat and finite AI credits",
+          "reviewers find generated code less maintainable than hand-structured production code",
+          "backend and deployment workflows are less complete than dedicated full-stack builders"
         ]
       },
       {
@@ -100,6 +176,25 @@
             "name": "EPAM (tested)",
             "url": "https://www.epam.com/insights/ai/blogs/best-vibe-coding-tools-v0-lovable-bolt-replit-and-figma-make"
           }
+        ],
+        "rankBasis": "Included in EPAM's tested five-tool comparison and backed by Replit's much broader, mature browser-IDE community, but it has fewer UI-design-specific roundup placements than the four products above it.",
+        "pricingFree": "Starter: free with daily Agent credit grants",
+        "pricingPaid": "Replit Core $20/month billed annually ($25 monthly) — $25 of monthly usage credits and access to the full Agent",
+        "features": [
+          "Agentic full-stack app building",
+          "Browser IDE and collaborative editing",
+          "Managed databases and authentication",
+          "Integrated deployment and hosting"
+        ],
+        "pros": [
+          "beginners get coding, runtime, hosting, and deployment in one workspace",
+          "the agent can inspect and modify a real running project rather than only output snippets",
+          "collaboration and remixing benefit from Replit's established developer community"
+        ],
+        "cons": [
+          "usage-based Agent and hosting charges can be difficult to predict",
+          "users report agent loops and incomplete fixes on complex projects",
+          "applications can become dependent on Replit-specific deployment and infrastructure"
         ]
       }
     ],
@@ -118,6 +213,25 @@
             "name": "GitHub — shadcn-ui/ui (~119.7k★)",
             "url": "https://github.com/shadcn-ui/ui"
           }
+        ],
+        "rankBasis": "The dominant own-your-code React UI project at roughly 120k GitHub stars, with unusually broad adoption in AI-generated interfaces and a component registry used directly by major coding tools.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Copy-in accessible React components",
+          "Radix-based interaction primitives",
+          "Tailwind styling with full source ownership",
+          "CLI and registry for component distribution"
+        ],
+        "pros": [
+          "developers own and can freely modify every component instead of depending on a runtime package",
+          "excellent compatibility with coding agents because its patterns are widely represented",
+          "accessible primitives and polished defaults accelerate production UI work"
+        ],
+        "cons": [
+          "copied components do not receive centralized package upgrades automatically",
+          "teams still have to assemble and govern their own coherent component system",
+          "heavy default adoption can make products look visually similar without deliberate customization"
         ]
       },
       {
@@ -134,6 +248,25 @@
             "name": "GitHub — tailwindlabs/tailwindcss (~96k★)",
             "url": "https://github.com/tailwindlabs/tailwindcss"
           }
+        ],
+        "rankBasis": "One of the most adopted styling projects in the category at roughly 96k GitHub stars and hundreds of millions of recent npm downloads, underpinning shadcn/ui, daisyUI, and a large share of agent-generated web UIs.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Utility-first CSS composition",
+          "Responsive and state variants",
+          "Theme tokens and custom utilities",
+          "Build-time CSS generation"
+        ],
+        "pros": [
+          "reviewers consistently value the speed of styling without switching between component and CSS files",
+          "shared utility constraints make spacing and visual tokens more consistent",
+          "large ecosystem and strong agent familiarity make examples and integrations easy to find"
+        ],
+        "cons": [
+          "long utility strings can make markup dense and difficult to scan",
+          "the class vocabulary has an upfront learning curve",
+          "dynamically constructed class names require care to be detected by the build process"
         ]
       },
       {
@@ -154,6 +287,25 @@
             "name": "Mirror — anthropics/claude-plugins-official (~32.6k★)",
             "url": "https://github.com/anthropics/claude-plugins-official"
           }
+        ],
+        "rankBasis": "The first-party frontend-design skill shipped in Anthropic's roughly 50k-star Claude Code repository, giving it stronger provenance and distribution than third-party prompt packs despite limited standalone review data.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Automatic frontend-task activation",
+          "Deliberate typography and palette guidance",
+          "Layout and motion direction",
+          "Anti-generic visual-design constraints"
+        ],
+        "pros": [
+          "official maintenance keeps the guidance aligned with Claude Code behavior",
+          "directly targets common generic AI-interface patterns",
+          "works across frameworks because it guides design decisions rather than prescribing a component library"
+        ],
+        "cons": [
+          "primarily useful inside Claude Code rather than as a universal package",
+          "provides design direction, not reusable components or a tested design system",
+          "visual quality remains model- and prompt-dependent, with little independent benchmark evidence"
         ]
       },
       {
@@ -170,6 +322,25 @@
             "name": "GitHub — nextlevelbuilder/ui-ux-pro-max-skill (~109.6k★)",
             "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
           }
+        ],
+        "rankBasis": "Its roughly 110k GitHub stars make it the largest dedicated UI-design skill by raw adoption signal, but the repository is young and its exceptionally rapid star growth provides less proven usage history than the projects ranked above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Searchable UI style and pattern library",
+          "Palette and typography recommendations",
+          "UX guidelines and anti-pattern checks",
+          "Multi-framework implementation guidance"
+        ],
+        "pros": [
+          "broad reference coverage gives agents concrete options instead of vague aesthetic instructions",
+          "supports many popular frontend stacks and agent environments",
+          "bundles visual direction and UX checks into one installable skill"
+        ],
+        "cons": [
+          "independent usage evidence is thin relative to its unusually fast star growth",
+          "large prescriptive reference sets can produce formulaic output if applied without judgment",
+          "quality varies by stack and still depends on the host agent following the guidance correctly"
         ]
       },
       {
@@ -186,6 +357,25 @@
             "name": "GitHub — mui/material-ui (~98.6k★)",
             "url": "https://github.com/mui/material-ui"
           }
+        ],
+        "rankBasis": "A long-standing enterprise React default with roughly 99k GitHub stars, very high package adoption, and years of Stack Overflow and community coverage that substantially exceed newer component libraries.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Comprehensive Material Design components",
+          "Theme and design-token customization",
+          "Accessible responsive layout primitives",
+          "SSR and TypeScript support"
+        ],
+        "pros": [
+          "one of the broadest and best-documented React component catalogs",
+          "mature accessibility, theming, and enterprise support patterns",
+          "large user base makes troubleshooting and hiring familiarity easier"
+        ],
+        "cons": [
+          "the default Material visual language takes significant work to make distinctive",
+          "styling and component APIs can feel complex for deeply customized designs",
+          "major-version migrations and bundle weight are recurring community concerns"
         ]
       },
       {
@@ -202,6 +392,25 @@
             "name": "GitHub — ant-design/ant-design (~98.8k★)",
             "url": "https://github.com/ant-design/ant-design"
           }
+        ],
+        "rankBasis": "Roughly 99k GitHub stars and deep enterprise adoption make Ant Design one of the category's two most established full React suites, with especially strong usage in data-heavy products and Asian engineering communities.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Enterprise React component suite",
+          "Advanced forms, tables, and data display",
+          "Theme tokens and localization",
+          "TypeScript and SSR support"
+        ],
+        "pros": [
+          "exceptionally complete controls for admin, analytics, and internal-tool interfaces",
+          "consistent interaction patterns reduce design work on large enterprise products",
+          "strong localization and international community support"
+        ],
+        "cons": [
+          "the highly opinionated visual system can be difficult to rebrand deeply",
+          "full-suite usage can add substantial bundle and CSS weight",
+          "community reports often cite complexity around advanced forms, tables, and customization"
         ]
       },
       {
@@ -218,6 +427,25 @@
             "name": "GitHub — saadeghi/daisyui (~41.8k★)",
             "url": "https://github.com/saadeghi/daisyui"
           }
+        ],
+        "rankBasis": "The leading semantic component layer for Tailwind at roughly 42k GitHub stars, with multi-million monthly npm usage and far broader adoption than most Tailwind component plugins.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Semantic Tailwind component classes",
+          "Built-in theme collection",
+          "CSS-only interactive components",
+          "Custom theme generation"
+        ],
+        "pros": [
+          "dramatically shortens markup compared with composing every component from raw utilities",
+          "large built-in theme set makes prototyping and dark mode quick",
+          "framework-agnostic CSS approach adds no JavaScript runtime"
+        ],
+        "cons": [
+          "semantic abstractions reduce fine-grained control compared with plain Tailwind",
+          "default components and themes can look generic without customization",
+          "teams inherit both daisyUI conventions and the underlying Tailwind dependency"
         ]
       },
       {
@@ -234,6 +462,25 @@
             "name": "GitHub — chakra-ui/chakra-ui (~40.5k★)",
             "url": "https://github.com/chakra-ui/chakra-ui"
           }
+        ],
+        "rankBasis": "A mature accessible React system with roughly 41k GitHub stars and years of SaaS adoption, though its current ecosystem momentum and component breadth trail MUI and Ant Design.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Accessible composable React components",
+          "Style-prop authoring",
+          "Token-based themes and recipes",
+          "Responsive and color-mode utilities"
+        ],
+        "pros": [
+          "developers praise its approachable component APIs and fast layout composition",
+          "accessible defaults remove substantial keyboard and ARIA work",
+          "theme tokens work well for custom SaaS design systems"
+        ],
+        "cons": [
+          "the v3 architecture and migration introduced meaningful upgrade churn",
+          "component breadth is smaller than the largest enterprise suites",
+          "runtime styling and generated CSS can complicate performance and debugging"
         ]
       },
       {
@@ -250,6 +497,25 @@
             "name": "GitHub — radix-ui/primitives (~19.1k★)",
             "url": "https://github.com/radix-ui/primitives"
           }
+        ],
+        "rankBasis": "Roughly 19k GitHub stars understate its influence: Radix is the interaction and accessibility foundation beneath shadcn/ui and many modern React design systems.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Unstyled accessible React primitives",
+          "Keyboard and focus management",
+          "Composable controlled or uncontrolled APIs",
+          "State attributes for custom styling"
+        ],
+        "pros": [
+          "handles difficult accessibility and interaction behavior without imposing a visual style",
+          "composable primitives fit highly custom design systems",
+          "battle-tested indirectly through shadcn/ui and many downstream libraries"
+        ],
+        "cons": [
+          "teams must supply all visual styling and higher-level component conventions",
+          "low-level composition requires more code than a finished component suite",
+          "portals, focus behavior, and state-based animations have a learning curve"
         ]
       },
       {
@@ -266,6 +532,25 @@
             "name": "GitHub — bergside/awesome-design-skills (~2k★)",
             "url": "https://github.com/bergside/awesome-design-skills"
           }
+        ],
+        "rankBasis": "A roughly 2k-star curated directory covering 67 agent design skills, a credible organic discovery signal but much smaller adoption than the installable skills and libraries ranked above it.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Curated design-skill directory",
+          "DESIGN.md and SKILL.md examples",
+          "Coverage across visual and UX disciplines",
+          "Links to reusable agent instructions"
+        ],
+        "pros": [
+          "saves time discovering specialized design prompts and workflows",
+          "shows multiple approaches instead of locking users into one design philosophy",
+          "useful reference material for authoring or evaluating custom design skills"
+        ],
+        "cons": [
+          "it is a directory rather than one directly installable, maintained skill",
+          "linked resources vary in quality, scope, and update cadence",
+          "adoption and independent validation are modest compared with the leading repositories"
         ]
       }
     ]

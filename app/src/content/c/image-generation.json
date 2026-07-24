@@ -11,6 +11,12 @@
         "bestFor": "Tops the Artificial Analysis and LMArena image arenas for prompt adherence and text. Best all-round pick.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Ranks first or near first across all three cited 2026 comparisons, supported by leading arena results for instruction following, editing and legible text.",
+        "pricingFree": "ChatGPT Free includes limited image generation with rate limits",
+        "pricingPaid": "ChatGPT Plus $20/mo — expanded image generation, editing and access to higher-capability models",
+        "features": ["Prompt-based image generation", "Conversational image editing", "Reference-image transformation", "Accurate in-image text rendering"],
+        "pros": ["excellent prompt adherence and iterative editing", "strong text rendering and layout understanding", "integrated naturally into a general assistant workflow"],
+        "cons": ["strict rate limits on the free plan", "less low-level control than node-based local tools", "safety filters can reject benign edge cases"],
         "sources": [
           {
             "name": "BuildMVPfast ranking",
@@ -34,6 +40,12 @@
         "bestFor": "Leads on photorealism, character consistency and UGC ad creatives. Tops CNET's 2026 ranking.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed at or near the top of all three cited comparisons for photorealism and character consistency, with particularly strong reviewer support for product and UGC-style creative.",
+        "pricingFree": "Gemini Free includes limited image generation and editing subject to daily capacity",
+        "pricingPaid": "Google AI Pro $19.99/mo — higher Gemini limits plus 1,000 monthly AI credits for supported creative tools",
+        "features": ["Text-to-image generation", "Conversational image editing", "Multi-image reference consistency", "High-resolution text and product imagery"],
+        "pros": ["strong photorealism and character consistency", "excellent for iterative edits using natural language", "good typography and commercial-creative output"],
+        "cons": ["limits and available model variants change by region", "creative styling can be less distinctive than Midjourney", "advanced usage consumes shared Google AI credits"],
         "sources": [
           {
             "name": "BuildMVPfast ranking",
@@ -57,6 +69,12 @@
         "bestFor": "Still the king of artistic style — concept art, moodboards, stylized campaigns (V8.1).",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited image-generator roundups and remains their most consistent recommendation for distinctive artistic style and concept work.",
+        "pricingFree": null,
+        "pricingPaid": "Basic $10/mo — 3.3 hours of Fast GPU time monthly with unlimited relaxed image generations unavailable on this entry tier",
+        "features": ["High-style text-to-image generation", "Image prompting and style references", "Character and object references", "Web editor and variation tools"],
+        "pros": ["exceptionally strong aesthetics with minimal prompting", "large community and mature style vocabulary", "fast ideation for concept art and campaigns"],
+        "cons": ["no standing free plan", "less precise for iterative local edits than conversational tools", "subscription uses GPU-time accounting that takes learning"],
         "sources": [
           {
             "name": "Miniloop best",
@@ -80,6 +98,12 @@
         "bestFor": "Strongest open-weight option. Go-to for product photography and embedding generation into an app.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in all three cited 2026 comparisons as a leading open-weight/API family, especially for product imagery and developer-controlled deployment.",
+        "pricingFree": "Eligible FLUX open-weight models can be self-hosted under model-specific licenses; compute is not included",
+        "pricingPaid": "BFL API is consumption-based per generated image; rates vary by FLUX model and output settings",
+        "features": ["Text-to-image generation", "Image editing and variation models", "Open-weight deployment options", "Developer API and finetuning ecosystem"],
+        "pros": ["excellent image quality with deployment flexibility", "strong product photography and prompt adherence", "large third-party tooling and hosting ecosystem"],
+        "cons": ["licenses differ across models and may restrict commercial use", "self-hosting needs substantial GPU resources", "API price varies by model and resolution"],
         "sources": [
           {
             "name": "BuildMVPfast ranking",
@@ -103,6 +127,12 @@
         "bestFor": "Best at text inside images — logos, posters, typography. Generous free tier.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Both cited roundups distinguish Ideogram for typography and graphic-design prompts, giving it a clear specialist reputation despite less overall adoption than the top four.",
+        "pricingFree": "Free plan with a weekly allowance of slow-generation credits and public creations",
+        "pricingPaid": "Basic from $8/mo — monthly priority credits, private generation and expanded editing/download features",
+        "features": ["Typography-focused text-to-image", "Canvas editing and inpainting", "Style and character references", "Background removal and upscaling"],
+        "pros": ["best-in-class legible text for posters and logos", "easy browser workflow", "useful design-oriented editing tools"],
+        "cons": ["free creations are public and use slow credits", "less flexible ecosystem than open models", "photorealism and complex compositions can be inconsistent"],
         "sources": [
           {
             "name": "Zapier 8 best",
@@ -122,6 +152,12 @@
         "bestFor": "Self-hosted, fully controllable generation with a huge ecosystem of fine-tunes and LoRAs.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "The two cited comparisons continue to select Stable Diffusion for self-hosting and control, while its broader ecosystem of fine-tunes, LoRAs and interfaces remains unmatched.",
+        "pricingFree": "Free self-hosting under the Stability Community License for eligible users; hardware and hosting costs are separate",
+        "pricingPaid": "Stability API uses prepaid credits; published credit packs start at $10 for 1,000 credits and model usage varies",
+        "features": ["Open model weights for local generation", "ControlNet, LoRA and fine-tuning ecosystem", "Text-to-image and image editing", "API and third-party interface support"],
+        "pros": ["maximum control and privacy when self-hosted", "largest customization ecosystem", "works across many local and cloud interfaces"],
+        "cons": ["setup and model selection are complex", "high-quality local use requires capable hardware", "license eligibility and API credit math require attention"],
         "sources": [
           {
             "name": "BuildMVPfast ranking",
@@ -141,6 +177,12 @@
         "bestFor": "Easiest on-ramp for beginners, bundled inside ChatGPT. Increasingly superseded by GPT Image 2.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "Only one cited 2026 source still recommends DALL-E, and OpenAI's newer GPT Image line has superseded it for ChatGPT image generation, so its current relevance is primarily legacy API compatibility.",
+        "pricingFree": null,
+        "pricingPaid": "Legacy DALL-E API usage is charged per image; current ChatGPT subscriptions use GPT Image rather than a separate DALL-E plan",
+        "features": ["Legacy text-to-image API", "Prompt-based image variations", "Built-in safety filtering", "Simple API integration"],
+        "pros": ["historically simple and widely documented API", "good compatibility with existing integrations", "requires little image-generation expertise"],
+        "cons": ["superseded by GPT Image for new OpenAI workflows", "no separate consumer product or free plan", "weaker editing and text rendering than current models"],
         "sources": [
           {
             "name": "DIYAI realistic photos",
@@ -159,6 +201,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Approximately 164k GitHub stars and top billing in the cited WebUI comparison make AUTOMATIC1111 the most adopted local Stable Diffusion interface by a wide margin.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Local Stable Diffusion generation", "Inpainting, outpainting and upscaling", "LoRA, checkpoint and ControlNet support", "Large extension ecosystem"],
+        "pros": ["largest user community and tutorial ecosystem", "broad model and extension compatibility", "powerful controls in a familiar web interface"],
+        "cons": ["interface is dense and dated", "extension conflicts and updates can break setups", "performance and installation depend heavily on local hardware"],
         "sources": [
           {
             "name": "GitHub AUTOMATIC1111/stable-diffusion-webui (~164k★)",
@@ -179,6 +227,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 122k GitHub stars, 12k+ community nodes and strong placement in the cited comparison establish ComfyUI as the professional node-workflow standard.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Node-based diffusion workflows", "Reusable workflow JSON and templates", "Broad SD, FLUX and video-model support", "Custom-node ecosystem"],
+        "pros": ["complete control over every generation stage", "efficiently reuses models and intermediate results", "fast-moving ecosystem supports new models early"],
+        "cons": ["steep learning curve for node graphs", "custom-node dependency conflicts are common", "complex workflows are difficult to debug and maintain"],
         "sources": [
           {
             "name": "GitHub comfyanonymous/ComfyUI (~122k★)",
@@ -199,6 +253,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 51k GitHub stars and inclusion in the cited open-source UI roundup make Fooocus the best-adopted simplicity-first local generator after the two major power-user interfaces.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Prompt-first SDXL generation", "Automatic quality and style settings", "Inpainting and image prompting", "Minimal local setup"],
+        "pros": ["easiest local interface for beginners", "good defaults reduce prompt and sampler tuning", "produces polished SDXL results quickly"],
+        "cons": ["project is in limited maintenance mode", "far less workflow control than ComfyUI", "new model support lags more active interfaces"],
         "sources": [
           {
             "name": "GitHub lllyasviel/Fooocus (~51k★)",
@@ -219,6 +279,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Approximately 34k GitHub stars and first-party Hugging Face integration across major model releases make Diffusers the default developer library rather than an end-user UI.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["Python pipelines for diffusion models", "Training and fine-tuning utilities", "Memory and speed optimizations", "Broad model-hub integration"],
+        "pros": ["standardized API across many model families", "strong documentation and active maintenance", "best fit for embedding generation into applications"],
+        "cons": ["requires Python and ML engineering knowledge", "not a ready-made creative interface", "dependency and GPU compatibility can be difficult"],
         "sources": [
           {
             "name": "GitHub huggingface/diffusers (~34k★)",
@@ -235,6 +301,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 27.7k GitHub stars support substantial adoption, with its Unified Canvas giving InvokeAI a distinct professional-studio position among local interfaces.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Commercial hosted and team offerings are available separately; public pricing may require sales contact",
+        "features": ["Unified Canvas for generative editing", "Node workflows and model management", "Inpainting, outpainting and regional guidance", "Team-oriented asset organization"],
+        "pros": ["polished interface for iterative creative work", "canvas bridges simple editing and advanced workflows", "good model and gallery management"],
+        "cons": ["heavier installation than simpler local UIs", "smaller extension ecosystem than AUTOMATIC1111 or ComfyUI", "some team features belong to commercial offerings"],
         "sources": [
           {
             "name": "GitHub invoke-ai/InvokeAI (~27.7k★)",
@@ -251,6 +323,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Approximately 27.2k GitHub stars and official-source status make this the reference implementation for SDXL/SD3 research, though it is less convenient than application-focused interfaces.",
+        "pricingFree": "Free source code and eligible model use under Stability's model-specific licenses; self-hosting costs apply",
+        "pricingPaid": null,
+        "features": ["Reference SDXL and SD3 implementations", "Training and inference configs", "Model architecture components", "Research examples and checkpoints"],
+        "pros": ["authoritative code from the model publisher", "valuable for research and custom training", "transparent architecture and configuration"],
+        "cons": ["research repository rather than an end-user app", "model licenses are not uniformly unrestricted open source", "setup and hardware demands are substantial"],
         "sources": [
           {
             "name": "GitHub Stability-AI/generative-models (~27.2k★)",
@@ -267,6 +345,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 25.8k GitHub stars and official inference code give FLUX the strongest direct adoption signal among newer open-weight image-model repositories.",
+        "pricingFree": "Free source code; model weights are governed by model-specific licenses and self-hosting costs apply",
+        "pricingPaid": null,
+        "features": ["Official FLUX inference code", "Text-to-image model variants", "Image editing and conditioning examples", "Local and API-oriented integration"],
+        "pros": ["high-quality official implementation", "strong photorealism and prompt adherence", "widely integrated into community tooling"],
+        "cons": ["large models require substantial VRAM", "some weights restrict commercial use", "repository is code-first with no polished creator UI"],
         "sources": [
           {
             "name": "GitHub black-forest-labs/flux (~25.8k★)",
@@ -283,6 +367,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The skill is repeatedly indexed by the cited skill directories and benefits from adoption of the broader intellectronica/agent-skills collection, but lacks a clean standalone usage count.",
+        "pricingFree": "Free & open-source skill; limited Gemini API free quota may apply",
+        "pricingPaid": "Gemini API usage is consumption-based when free quota is exhausted",
+        "features": ["Prompt-based image generation", "Image editing with references", "Up-to-4K output workflow", "Gemini API setup and file handling"],
+        "pros": ["simple agent workflow for generation and editing", "strong in-image text and instruction following", "portable skill with inspectable instructions"],
+        "cons": ["requires a Gemini API key and external billing", "inherits model rate limits and regional availability", "adoption signal is mostly from the parent collection"],
         "sources": [
           {
             "name": "GitHub intellectronica/agent-skills",
@@ -307,6 +397,12 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A documented public skill with one cited independent walkthrough, but it remains a low-adoption single-author wrapper with limited community evidence.",
+        "pricingFree": "Free & open-source skill; limited Gemini API free quota may apply",
+        "pricingPaid": "Gemini API usage is consumption-based when free quota is exhausted",
+        "features": ["Claude Code image-generation command", "Gemini image API integration", "Reference-image editing", "Local output-file workflow"],
+        "pros": ["small and easy to inspect", "straightforward Claude Code setup", "supports both generation and edits"],
+        "cons": ["very limited maintenance and adoption signal", "depends entirely on Gemini API access", "narrower workflow and documentation than the higher-ranked skill"],
         "sources": [
           {
             "name": "GitHub ccskill-nanobanana",

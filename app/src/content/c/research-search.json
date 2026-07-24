@@ -11,6 +11,25 @@
         "bestFor": "Best overall for breadth and report quality — runs a multi-step autonomous loop reading full pages and citing sources.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Ranked at or near the top in all three cited 2026 deep-research comparisons, with the strongest consensus for broad autonomous browsing and polished cited reports.",
+        "pricingFree": "Free ChatGPT includes limited lightweight deep-research usage",
+        "pricingPaid": "ChatGPT Plus $20/month — expanded deep-research access; higher tiers provide larger allowances",
+        "features": [
+          "Multi-step autonomous web research",
+          "Source selection and browsing plan",
+          "Cited long-form reports",
+          "File and connected-app research"
+        ],
+        "pros": [
+          "Comparisons consistently praise report breadth and structure",
+          "Handles open-ended research plans with little manual orchestration",
+          "Citations make source checking easier than ordinary chat answers"
+        ],
+        "cons": [
+          "Full runs can take several minutes and consume limited monthly allowances",
+          "Citation presence does not guarantee that every claim is supported correctly",
+          "Web access and source availability can leave important paywalled material uncovered"
+        ],
         "sources": [
           {
             "name": "index.dev",
@@ -34,6 +53,25 @@
         "bestFor": "Fast citation-backed answers with a generous free tier — the go-to for quick sourced web research.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited deep-research comparisons and is repeatedly recommended as the fastest mainstream option for citation-backed web answers.",
+        "pricingFree": "Free plan includes a limited number of Research queries and standard searches",
+        "pricingPaid": "Perplexity Pro $20/month — higher Research limits, premium models, and file analysis",
+        "features": [
+          "Citation-backed web search",
+          "Deep Research reports",
+          "Model selection",
+          "File and collection-based research"
+        ],
+        "pros": [
+          "Reviewers consistently value speed and visible inline citations",
+          "Low-friction interface works well for iterative fact finding",
+          "Broad search coverage is useful for current web topics"
+        ],
+        "cons": [
+          "Answers can over-rely on secondary sources or misread cited pages",
+          "Research limits apply even on paid plans",
+          "Long-form synthesis is often less nuanced than slower specialist workflows"
+        ],
         "sources": [
           {
             "name": "index.dev",
@@ -57,6 +95,25 @@
         "bestFor": "Best for analytical depth and reasoning over sources when you want careful synthesis over sheer breadth.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Placed among the leaders in all three cited 2026 comparisons, with reviewers particularly distinguishing its careful source synthesis and analytical writing.",
+        "pricingFree": "Free Claude plan does not provide a dependable standing Research allowance",
+        "pricingPaid": "Claude Pro $20/month — Research access with usage limits; Max and team tiers provide higher capacity",
+        "features": [
+          "Agentic web and connected-source research",
+          "Multi-source synthesis",
+          "Inline citations",
+          "Google Workspace integration"
+        ],
+        "pros": [
+          "Comparisons praise nuanced reasoning and readable synthesis",
+          "Strong at reconciling and explaining conflicting source material",
+          "Large context helps when research includes user-provided documents"
+        ],
+        "cons": [
+          "Research availability and limits vary by plan and region",
+          "Lower paid tiers can hit usage caps during intensive work",
+          "Coverage may be narrower than search-first tools on fast-moving topics"
+        ],
         "sources": [
           {
             "name": "index.dev",
@@ -80,6 +137,25 @@
         "bestFor": "Strong long-form research reports with a meaningful free tier and deep Google ecosystem integration.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Included in all three cited deep-research roundups and stands out for combining broad web research with Google's search and Workspace ecosystem.",
+        "pricingFree": "Free Gemini plan includes limited Deep Research access",
+        "pricingPaid": "Google AI Pro $19.99/month — higher Deep Research limits plus expanded Gemini and NotebookLM access",
+        "features": [
+          "Editable multi-step research plans",
+          "Long-form cited reports",
+          "Google Search grounding",
+          "Workspace and uploaded-file context"
+        ],
+        "pros": [
+          "Reviewers value the substantial report depth available at low entry cost",
+          "Research plans can be inspected and adjusted before execution",
+          "Strong integration with Google documents and services"
+        ],
+        "cons": [
+          "Reports can be verbose and repetitive",
+          "Source quality still varies despite Google Search grounding",
+          "Feature limits and model availability change across regions and account types"
+        ],
         "sources": [
           {
             "name": "index.dev",
@@ -103,6 +179,25 @@
         "bestFor": "Academic literature review across millions of papers — extraction and screening for systematic reviews.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Appears in all three cited academic-research comparisons and has a strong specialist reputation for structured literature screening and evidence extraction rather than general web search.",
+        "pricingFree": "Free Basic plan with limited automated reports and workflow credits",
+        "pricingPaid": "Plus from $12/month when billed annually — larger report, extraction, and screening allowances",
+        "features": [
+          "Semantic search across academic papers",
+          "Structured evidence extraction",
+          "Systematic-review screening",
+          "Paper chat and research reports"
+        ],
+        "pros": [
+          "Researchers value the structured extraction tables and screening workflow",
+          "More reproducible for literature review than general chat assistants",
+          "Links claims back to papers and extracted passages"
+        ],
+        "cons": [
+          "Best coverage is scholarly literature, not the open web",
+          "Automated extraction still needs domain-expert verification",
+          "Meaningful systematic-review workloads can exhaust lower-tier credits"
+        ],
         "sources": [
           {
             "name": "Paperguide",
@@ -126,6 +221,25 @@
         "bestFor": "Evidence-based answers to factual research questions, pulling directly from peer-reviewed studies.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Recommended in both cited research-assistant roundups and differentiated by a purpose-built corpus of peer-reviewed papers plus evidence-oriented answer summaries.",
+        "pricingFree": "Free plan with limited Pro analyses and Deep Searches",
+        "pricingPaid": "Premium plans available with higher Deep Search and analysis limits; current price depends on billing cadence",
+        "features": [
+          "Natural-language academic search",
+          "Consensus Meter across study findings",
+          "Deep Search literature synthesis",
+          "Study-quality and citation filters"
+        ],
+        "pros": [
+          "Users value fast answers grounded in peer-reviewed studies",
+          "Consensus summaries help expose whether evidence is mixed",
+          "Much easier than constructing equivalent database queries manually"
+        ],
+        "cons": [
+          "A simplified consensus label can hide study-design differences",
+          "Coverage depends on indexed papers and accessible abstracts or full text",
+          "Not designed for broad market, news, or web research"
+        ],
         "sources": [
           {
             "name": "Paperguide",
@@ -145,6 +259,25 @@
         "bestFor": "Research grounded in your own uploaded documents — Q&A and audio overviews over a private source set.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Included in both cited general-research comparisons and has become the default source-grounded notebook for Google users, although it researches a supplied corpus rather than the whole web.",
+        "pricingFree": "Free plan supports up to 100 notebooks, 50 sources per notebook, and daily chat and Audio Overview limits",
+        "pricingPaid": "Google AI Pro $19.99/month — substantially higher notebook, source, chat, and Audio Overview limits",
+        "features": [
+          "Source-grounded question answering",
+          "Automatic citations to uploaded sources",
+          "Audio Overviews",
+          "Briefing, study-guide, and timeline generation"
+        ],
+        "pros": [
+          "Users praise accurate navigation back to the supplied source passage",
+          "Audio Overviews make large source sets easier to consume",
+          "Free tier is generous for personal research projects"
+        ],
+        "cons": [
+          "Does not replace open-web discovery because answers are bounded by imported sources",
+          "Source ingestion and output limits still constrain large corpora",
+          "Generated audio and summaries can flatten nuance or omit details"
+        ],
         "sources": [
           {
             "name": "index.dev",
@@ -167,6 +300,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The cited GitHub source records roughly 53.4k stars and a #1 GitHub Trending run, making it the clearest adoption leader among standalone recency-research skills.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Last-30-days cross-platform search",
+          "Reddit, X, YouTube, Hacker News, and web coverage",
+          "Cited trend synthesis",
+          "Agent-skill installation workflow"
+        ],
+        "pros": [
+          "Strong community adoption for a narrowly defined research job",
+          "Combines community discussion with conventional web sources",
+          "Transparent skill workflow is easy to inspect and adapt"
+        ],
+        "cons": [
+          "Some sources require external credentials, cookies, or changing integrations",
+          "Recency focus is a poor fit for historical or foundational research",
+          "Cross-platform scraping can break when upstream sites change"
+        ],
         "sources": [
           {
             "name": "GitHub (mvanhorn, 53.4k★)",
@@ -191,6 +343,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The existing GitHub source records roughly 39.3k stars, an unusually strong signal for an academic agent-skill collection and second only to last30days in this track.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Multi-agent academic research pipeline",
+          "Systematic-review modes",
+          "Citation verification",
+          "Draft-review-revision workflow"
+        ],
+        "pros": [
+          "Covers the full research-to-writing loop rather than a single search step",
+          "Explicit review and citation stages encourage more disciplined output",
+          "Large community signal for a specialist skill repository"
+        ],
+        "cons": [
+          "Complex multi-agent runs require substantial model tokens and setup",
+          "Output quality depends on the chosen models and search tools",
+          "Automated citation checks do not replace scholarly review"
+        ],
         "sources": [
           {
             "name": "GitHub (imbad0202, 39.3k★)",
@@ -211,6 +382,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The cited GitHub source records roughly 28k stars, and independent open-source agent roundups consistently treat GPT Researcher as the reference implementation for autonomous cited reports.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Optional hosted service and external model/search APIs may incur usage charges",
+        "features": [
+          "Autonomous research planning",
+          "Multi-source web retrieval",
+          "Cited report generation",
+          "Python package and web application"
+        ],
+        "pros": [
+          "Mature open-source project with many integrations and deployment paths",
+          "Produces structured reports with traceable sources",
+          "Can be customized for private or specialist research workflows"
+        ],
+        "cons": [
+          "Self-hosting requires API keys, infrastructure, and cost controls",
+          "Long research runs can consume substantial model and search credits",
+          "Source selection and citation accuracy still require review"
+        ],
         "sources": [
           {
             "name": "GitHub (assafelovic, 28.1k★)",
@@ -231,6 +421,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The cited GitHub source records roughly 30.3k stars, and Stanford provenance plus inclusion in the Awesome Deep Research index give it a strong research-community signal.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Wikipedia-style article generation",
+          "Multi-perspective question discovery",
+          "Cited web research",
+          "Co-STORM human-agent collaboration"
+        ],
+        "pros": [
+          "Research design explicitly seeks diverse perspectives before drafting",
+          "Academic origin and published evaluation make the approach inspectable",
+          "Produces organized long-form reports with citations"
+        ],
+        "cons": [
+          "Setup requires external model and retrieval services",
+          "Wikipedia-style output is not appropriate for every research deliverable",
+          "Runs can be slow, costly, and sensitive to retrieval quality"
+        ],
         "sources": [
           {
             "name": "GitHub (stanford-oval, 30.3k★)",
@@ -251,6 +460,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Its NVIDIA technical-blog coverage provides credible external validation of the workflow, but its smaller GitHub community keeps it below the established open-source research agents.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Eight-phase research workflow",
+          "Source-credibility scoring",
+          "DOI and citation verification",
+          "Long-form report assembly"
+        ],
+        "pros": [
+          "Explicit credibility and citation checks address common research-agent failures",
+          "Phased workflow is clear enough to audit and customize",
+          "Designed to plug into multiple agent harnesses"
+        ],
+        "cons": [
+          "Independent user-review volume remains limited",
+          "A complex workflow increases runtime and model cost",
+          "Verification heuristics cannot establish that a source or conclusion is scientifically sound"
+        ],
         "sources": [
           {
             "name": "GitHub (199-biotechnologies)",
@@ -271,6 +499,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The repository documents a complete six-phase literature-survey workflow, but its single GitHub source and low star count indicate limited adoption and independent validation.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "Frontier-scan literature search",
+          "Six-phase survey workflow",
+          "Paper clustering and synthesis",
+          "Compiled academic report generation"
+        ],
+        "pros": [
+          "Focused workflow is useful for structured literature surveys",
+          "Open skill instructions can be inspected and modified",
+          "Phased process gives agents clearer checkpoints than a single prompt"
+        ],
+        "cons": [
+          "Very small community and little independent review evidence",
+          "Requires external academic search and model tooling",
+          "Maintenance and compatibility risk are higher than for established projects"
+        ],
         "sources": [
           {
             "name": "GitHub (lingzhi227)",

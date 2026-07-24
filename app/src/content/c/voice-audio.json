@@ -11,6 +11,25 @@
         "bestFor": "The default for the most human-sounding TTS, best voice cloning, 70+ languages and voice agents.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The most consistently recommended premium AI voice platform across 2026 TTS roundups, with a large creator/developer user base and especially strong independent recognition for natural speech and voice cloning.",
+        "pricingFree": "Free tier: 10,000 credits/mo",
+        "pricingPaid": "Starter $5/mo — 30,000 credits/mo, commercial license and instant voice cloning",
+        "features": [
+          "multilingual text-to-speech",
+          "instant and professional voice cloning",
+          "voice agents and conversational AI",
+          "sound effects, dubbing and music generation"
+        ],
+        "pros": [
+          "reviewers consistently rate its speech naturalness and emotional range among the best",
+          "broad API and creator-tool ecosystem",
+          "strong multilingual voice-cloning quality"
+        ],
+        "cons": [
+          "high-quality models consume credits quickly",
+          "usage costs rise sharply for long-form or production-scale audio",
+          "voice-cloning consent and rights require careful governance"
+        ],
         "sources": [
           {
             "name": "AI/ML API best TTS",
@@ -34,6 +53,25 @@
         "bestFor": "The quality benchmark for AI music generation (full songs with vocals). Suno v5 leads audio-fidelity ELO.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A top-two pick in current AI-music comparisons and the best-known full-song generator, with unusually broad mainstream adoption and benchmark leadership for prompt-to-song output with vocals.",
+        "pricingFree": "Free plan: 50 credits/day (about 10 songs), non-commercial use",
+        "pricingPaid": "Pro $10/mo — 2,500 credits/mo, commercial-use rights and priority generation",
+        "features": [
+          "prompt-to-full-song generation",
+          "AI vocals and lyrics",
+          "song extension and remixing",
+          "stem and audio upload workflows"
+        ],
+        "pros": [
+          "fastest path from a short prompt to a complete, polished song",
+          "strong vocals and genre coverage",
+          "generous daily free allowance for experimentation"
+        ],
+        "cons": [
+          "fine-grained composition and arrangement control remains limited",
+          "results can sound formulaic across repeated generations",
+          "free-plan songs cannot be used commercially"
+        ],
         "sources": [
           {
             "name": "TeamDay music models",
@@ -57,6 +95,25 @@
         "bestFor": "Studio-style TTS for voiceovers, e-learning and presentations. Reddit's top workhorse pick.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A recurring top enterprise/creator TTS recommendation in major roundups, backed by a substantial G2/Capterra review footprint and particularly strong mindshare for presentation and e-learning voiceovers.",
+        "pricingFree": "Free plan: 10 minutes of voice generation; no downloads",
+        "pricingPaid": "Creator from $19/mo billed annually — 2 projects and 24 hours of voice generation/year",
+        "features": [
+          "studio-style text-to-speech editor",
+          "voice changing and dubbing",
+          "team review and collaboration",
+          "presentation and e-learning integrations"
+        ],
+        "pros": [
+          "reviewers praise the approachable studio workflow",
+          "good fit for business voiceovers and training content",
+          "useful collaboration and pronunciation controls"
+        ],
+        "cons": [
+          "free output cannot be downloaded",
+          "less convincing for highly emotional performance than specialist voice tools",
+          "plan limits and annual usage accounting can be confusing"
+        ],
         "sources": [
           {
             "name": "Murf reddit roundup",
@@ -76,6 +133,25 @@
         "bestFor": "Best for listening — turn articles, docs and books into natural speech across devices.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "One of the most widely installed consumer text-to-speech readers and a frequent top pick for accessibility and document listening, with far broader end-user awareness than most creator-focused TTS tools.",
+        "pricingFree": "Free plan: basic voices and standard reading speeds across web and mobile",
+        "pricingPaid": "Premium $29/mo — 200+ natural voices, 60+ languages, higher speeds and offline listening",
+        "features": [
+          "read web pages, PDFs and documents aloud",
+          "mobile, desktop and browser apps",
+          "OCR scanning for printed text",
+          "speed, voice and language controls"
+        ],
+        "pros": [
+          "strong cross-device reading experience",
+          "especially useful for accessibility, study and long documents",
+          "simple browser and document ingestion"
+        ],
+        "cons": [
+          "premium subscription is expensive for a reading utility",
+          "best voices and offline features are paywalled",
+          "not a full production voiceover studio"
+        ],
         "sources": [
           {
             "name": "AI/ML API best TTS",
@@ -95,6 +171,25 @@
         "bestFor": "Music generation rival to Suno, favored by some for vocal texture and remixing.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Regularly compared directly with Suno as the other leading consumer AI-music generator; independent creator discussions often favor its vocal texture, editing workflow and remixability despite lower overall adoption.",
+        "pricingFree": "Free plan: 10 daily credits plus a 100-credit monthly pool",
+        "pricingPaid": "Standard $10/mo — 2,400 credits/mo and priority processing",
+        "features": [
+          "prompt-to-music generation",
+          "audio upload, remix and extend",
+          "inpainting and section editing",
+          "track publishing and sharing"
+        ],
+        "pros": [
+          "creators often prefer its vocal texture and musical detail",
+          "more useful editing and remix controls than simple prompt-only tools",
+          "free tier supports meaningful evaluation"
+        ],
+        "cons": [
+          "generation can be slower and less predictable than Suno",
+          "complete-song coherence varies across extensions",
+          "commercial and upload rights depend on plan and source ownership"
+        ],
         "sources": [
           {
             "name": "AI Magicx showdown",
@@ -110,6 +205,25 @@
         "bestFor": "Closest open/low-cost alternative to ElevenLabs quality for cloning and TTS.",
         "confidence": "low",
         "badge": "📋",
+        "rankBasis": "A fast-growing lower-cost ElevenLabs alternative with a heavily starred open model behind it, but still a thinner independent-review footprint than the category leaders.",
+        "pricingFree": "Free tier available with limited monthly TTS and voice-cloning usage",
+        "pricingPaid": "Paid credit packs and subscription tiers available; public allowances vary by model",
+        "features": [
+          "multilingual text-to-speech",
+          "instant voice cloning",
+          "community voice library",
+          "API and batch generation"
+        ],
+        "pros": [
+          "strong quality-to-cost ratio in community comparisons",
+          "fast cloning with broad language support",
+          "open-model ecosystem reduces vendor lock-in"
+        ],
+        "cons": [
+          "smaller independent review base than ElevenLabs or Murf",
+          "voice quality varies across community models",
+          "pricing and model-specific credit consumption are not always easy to compare"
+        ],
         "sources": [
           {
             "name": "Nerdynav open-source TTS",
@@ -128,6 +242,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "One of the most-starred open-source TTS toolkits at roughly 46k GitHub stars and a standard recommendation in open voice-cloning roundups, though the original repository is now archived.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "multilingual XTTS voice cloning",
+          "training and fine-tuning pipelines",
+          "pretrained TTS and vocoder models",
+          "Python API and command-line tools"
+        ],
+        "pros": [
+          "mature toolkit with broad model and language coverage",
+          "high-quality zero-shot cloning from a short reference clip",
+          "large body of community examples and integrations"
+        ],
+        "cons": [
+          "upstream repository is archived and no longer actively maintained",
+          "GPU setup and model compatibility can be difficult",
+          "license terms differ across included models and must be checked"
+        ],
         "sources": [
           {
             "name": "GitHub coqui-ai/TTS (~45.8k★)",
@@ -148,6 +281,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 39k GitHub stars and still one of the best-known expressive open speech generators, repeatedly included in local-TTS lists for producing speech, laughter, music and other audio from one model.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "expressive text-to-audio generation",
+          "speech plus laughter, sighs and music",
+          "multilingual voice presets",
+          "local inference"
+        ],
+        "pros": [
+          "unusually expressive output beyond conventional TTS",
+          "simple experimentation with pretrained checkpoints",
+          "large community and extensive derivative tooling"
+        ],
+        "cons": [
+          "slow and memory-heavy compared with newer TTS models",
+          "limited deterministic control over timing and wording",
+          "voice cloning and commercial usage are not its strongest path"
+        ],
         "sources": [
           {
             "name": "GitHub suno-ai/bark (~39.2k★)",
@@ -168,6 +320,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 37k GitHub stars and broad citation in open voice-cloning comparisons make it one of the most adopted instant-cloning projects, especially for cross-lingual tone and style transfer.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "instant voice cloning",
+          "cross-lingual speech generation",
+          "tone, accent and emotion control",
+          "low-latency inference"
+        ],
+        "pros": [
+          "clones a speaker from a short reference sample",
+          "strong style control across languages and accents",
+          "lighter inference path than many training-based cloners"
+        ],
+        "cons": [
+          "setup spans multiple checkpoints and dependencies",
+          "output quality depends heavily on the base TTS model",
+          "less turnkey than a hosted voice API"
+        ],
         "sources": [
           {
             "name": "GitHub myshell-ai/OpenVoice (~37k★)",
@@ -188,6 +359,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The de-facto open voice-conversion WebUI at roughly 37k GitHub stars, with the largest hobbyist model-sharing ecosystem and frequent community recommendations for real-time singing and speech conversion.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "retrieval-based voice conversion",
+          "real-time microphone conversion",
+          "model training from custom audio",
+          "WebUI and batch processing"
+        ],
+        "pros": [
+          "strong quality and speed for voice-to-voice conversion",
+          "large community model ecosystem",
+          "accessible WebUI for training and inference"
+        ],
+        "cons": [
+          "not text-to-speech; it requires a source performance",
+          "CUDA, audio-driver and model setup can be fragile",
+          "community voice models can create serious consent and copyright risks"
+        ],
         "sources": [
           {
             "name": "GitHub RVC-Project (~36.6k★)",
@@ -208,6 +398,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Around 31k GitHub stars and rapid adoption in local-TTS communities place it among the leading newer multilingual speech models, with notable recognition for its speed-to-quality balance.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "multilingual text-to-speech",
+          "zero-shot voice cloning",
+          "long-form speech generation",
+          "fast local inference"
+        ],
+        "pros": [
+          "strong naturalness and multilingual cloning quality",
+          "efficient inference relative to many large speech models",
+          "active development and a growing ecosystem"
+        ],
+        "cons": [
+          "hardware requirements remain substantial for best performance",
+          "installation and checkpoint choices can confuse new users",
+          "model licensing is more restrictive than permissive OSS code alone suggests"
+        ],
         "sources": [
           {
             "name": "GitHub fishaudio/fish-speech (~31.4k★)",
@@ -228,6 +437,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A breakout open TTS project at roughly 26k GitHub stars and a recurring 2026 recommendation for expressive local speech, backed by an established commercial voice vendor.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "zero-shot text-to-speech",
+          "emotion and exaggeration controls",
+          "multilingual generation",
+          "voice conversion"
+        ],
+        "pros": [
+          "expressive output with direct emotion controls",
+          "production-oriented project from an experienced voice vendor",
+          "good cloning quality from short references"
+        ],
+        "cons": [
+          "newer project with less long-term operational evidence",
+          "GPU inference and model downloads are substantial",
+          "watermarking and model-license constraints may affect some workflows"
+        ],
         "sources": [
           {
             "name": "GitHub resemble-ai/chatterbox (~25.7k★)",
@@ -248,6 +476,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Approximately 15k GitHub stars and strong research/community visibility make it a notable zero-shot TTS implementation, though adoption and production tooling remain below the larger open projects.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "flow-matching diffusion TTS",
+          "zero-shot voice cloning",
+          "multilingual model variants",
+          "training and inference recipes"
+        ],
+        "pros": [
+          "high-quality cloning with natural prosody",
+          "fast architecture relative to older diffusion TTS",
+          "useful research code and reproducible recipes"
+        ],
+        "cons": [
+          "more research-oriented than turnkey",
+          "checkpoint and dependency setup requires ML experience",
+          "commercial rights depend on the selected model and training data"
+        ],
         "sources": [
           {
             "name": "GitHub SWivid/F5-TTS (~15k★)",
@@ -264,6 +511,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The vendor-official ElevenLabs Agent Skills bundle, but only about 400 GitHub stars; its authority and breadth justify inclusion while adoption remains far below the open speech-model leaders.",
+        "pricingFree": "Free skill code; ElevenLabs API free tier provides 10,000 credits/mo",
+        "pricingPaid": "ElevenLabs Starter $5/mo — 30,000 credits/mo and commercial license",
+        "features": [
+          "agent-ready text-to-speech",
+          "music and sound-effect generation",
+          "voice changing and audio isolation",
+          "official ElevenLabs API workflows"
+        ],
+        "pros": [
+          "officially maintained examples for the vendor API",
+          "covers several audio tasks in one skill bundle",
+          "quick path to high-quality managed speech"
+        ],
+        "cons": [
+          "requires an ElevenLabs account and API key",
+          "inherits API credit costs and rate limits",
+          "small independent user base compared with the underlying service"
+        ],
         "sources": [
           {
             "name": "GitHub elevenlabs/skills (~400★, official)",
@@ -284,6 +550,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "A thin single-author skill with 18 ready-made ElevenLabs personas and little measurable GitHub adoption; useful as a preset library but not independently validated at scale.",
+        "pricingFree": "Free skill code; ElevenLabs API free tier provides 10,000 credits/mo",
+        "pricingPaid": "ElevenLabs Starter $5/mo — 30,000 credits/mo and commercial license",
+        "features": [
+          "18 predefined voice personas",
+          "ElevenLabs text-to-speech calls",
+          "consistent persona selection",
+          "agent-oriented usage instructions"
+        ],
+        "pros": [
+          "reduces prompt and voice-selection setup",
+          "useful for repeatable character voices",
+          "simple, inspectable skill implementation"
+        ],
+        "cons": [
+          "minimal community adoption and independent evidence",
+          "depends entirely on the ElevenLabs API",
+          "preset coverage is narrow compared with the full voice catalog"
+        ],
         "sources": [
           {
             "name": "GitHub elevenlabs-voices SKILL.md",

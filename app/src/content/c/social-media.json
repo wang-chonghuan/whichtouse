@@ -11,6 +11,25 @@
         "bestFor": "The best value for small businesses and solo creators — clean, simple scheduling with a usable free plan.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Consistently appears among the top small-business schedulers in Zapier, Later and other major comparisons, with one of the category's largest long-running user and review footprints.",
+        "pricingFree": "Free plan: up to 3 channels, 10 scheduled posts per channel",
+        "pricingPaid": "Essentials $6/channel/mo — unlimited scheduled posts and analytics",
+        "features": [
+          "multi-network post scheduling",
+          "visual content calendar",
+          "engagement inbox",
+          "analytics and AI writing assistant"
+        ],
+        "pros": [
+          "reviewers consistently praise its clean, easy scheduling workflow",
+          "useful permanent free plan for individuals",
+          "transparent per-channel pricing"
+        ],
+        "cons": [
+          "cost grows with every additional channel",
+          "reporting and social listening are lighter than enterprise suites",
+          "free plan's 10-post queue is restrictive"
+        ],
         "sources": [
           {
             "name": "Zapier",
@@ -34,6 +53,25 @@
         "bestFor": "Multi-platform teams at scale needing scheduling, listening, analytics and paid social in one governed environment.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A perennial top-three social-management suite across 2026 comparisons, supported by one of the largest enterprise customer and independent-review bases in the category.",
+        "pricingFree": null,
+        "pricingPaid": "Standard $99/mo — 1 user and up to 10 social accounts; 30-day trial available",
+        "features": [
+          "cross-network scheduling and approvals",
+          "social inbox and listening",
+          "analytics and competitive reporting",
+          "paid-social and team governance"
+        ],
+        "pros": [
+          "broadest all-in-one workflow for established social teams",
+          "mature analytics, listening and governance",
+          "large integration and training ecosystem"
+        ],
+        "cons": [
+          "expensive for solo users and small teams",
+          "advanced features are concentrated in higher tiers",
+          "reviewers report a steeper learning curve and busy interface"
+        ],
         "sources": [
           {
             "name": "Analytics Insight",
@@ -57,6 +95,25 @@
         "bestFor": "Visual-first creators and agencies — drag-and-drop calendar, feed preview, and AI Smart Scheduling across 8 platforms.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Regularly ranks among the leading visual-first schedulers in Later, Zapier and creator-tool comparisons, with especially strong recognition for Instagram and TikTok planning.",
+        "pricingFree": null,
+        "pricingPaid": "Starter from $18.75/mo billed annually — 1 social set, 1 user and 30 posts/profile/mo",
+        "features": [
+          "visual drag-and-drop calendar",
+          "Instagram feed preview",
+          "multi-platform publishing",
+          "link-in-bio and creator analytics"
+        ],
+        "pros": [
+          "excellent visual planning for image and video workflows",
+          "strong Instagram, TikTok and creator features",
+          "approachable calendar and media library"
+        ],
+        "cons": [
+          "no standing free plan",
+          "post, user and social-set limits make upgrades arrive quickly",
+          "listening and enterprise reporting are limited versus larger suites"
+        ],
         "sources": [
           {
             "name": "Later",
@@ -80,6 +137,25 @@
         "bestFor": "Enterprise brands needing the deepest sentiment analysis, customer intelligence and reporting.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Frequently ranked the enterprise analytics and social-intelligence leader in major comparisons, with a large G2/Capterra review base despite its premium per-seat price.",
+        "pricingFree": null,
+        "pricingPaid": "Standard $199/seat/mo — 5 social profiles, publishing, inbox and reporting; 30-day trial available",
+        "features": [
+          "publishing and approval workflows",
+          "unified social inbox",
+          "listening and sentiment analysis",
+          "advanced reporting and customer intelligence"
+        ],
+        "pros": [
+          "reviewers praise its reporting depth and polished interface",
+          "strong social listening and customer-care workflows",
+          "enterprise-grade collaboration and governance"
+        ],
+        "cons": [
+          "one of the most expensive options, especially per seat",
+          "listening and premium analytics require higher-cost packages",
+          "too complex for simple solo scheduling"
+        ],
         "sources": [
           {
             "name": "Analytics Insight",
@@ -103,6 +179,25 @@
         "bestFor": "Budget-conscious small teams and agencies wanting AI content generation plus multi-platform scheduling in one workflow.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A recurring value pick in agency and small-team scheduler comparisons, with a substantial independent-review base but less enterprise mindshare than Hootsuite or Sprout Social.",
+        "pricingFree": null,
+        "pricingPaid": "Essentials $30/mo ($25.50/mo billed annually) — 7 social accounts and 1 user",
+        "features": [
+          "bulk multi-network scheduling",
+          "content calendar and AI assistant",
+          "social inbox and analytics",
+          "client approvals and white-label reports"
+        ],
+        "pros": [
+          "competitive account allowances for the price",
+          "reviewers value bulk scheduling and agency workflows",
+          "simpler onboarding than enterprise suites"
+        ],
+        "cons": [
+          "no permanent free plan",
+          "advanced client and white-label features need higher tiers",
+          "listening and analytics are less deep than premium platforms"
+        ],
         "sources": [
           {
             "name": "SocialPilot",
@@ -122,6 +217,25 @@
         "bestFor": "Analytics-heavy scheduling with a genuinely capable free tier, including ad management and competitor tracking.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A frequent best-value analytics pick in Buffer and Later comparisons, with strong creator and agency word of mouth for combining scheduling, ads and competitor tracking.",
+        "pricingFree": "Free plan: 1 brand, 20 scheduled posts/mo and 3 months of analytics",
+        "pricingPaid": "Starter from $20/mo — 5 brands, unlimited publishing and extended analytics",
+        "features": [
+          "publishing calendar",
+          "cross-network analytics",
+          "competitor and hashtag tracking",
+          "ad campaign reporting"
+        ],
+        "pros": [
+          "unusually capable analytics for its price",
+          "useful free tier for one brand",
+          "combines organic, competitor and ad reporting"
+        ],
+        "cons": [
+          "free plan excludes LinkedIn and X connections",
+          "interface can feel dense because many tools share one workspace",
+          "team approvals and premium reporting require upgrades"
+        ],
         "sources": [
           {
             "name": "Later",
@@ -144,6 +258,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "The clear open-source category leader at roughly 34k GitHub stars, an order of magnitude ahead of alternatives and the most frequently cited self-hosted Buffer/Hootsuite replacement.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "publishing to 20+ social channels",
+          "content calendar and team approvals",
+          "AI content generation",
+          "analytics and marketplace integrations"
+        ],
+        "pros": [
+          "widest network coverage among actively maintained open schedulers",
+          "modern interface and strong development momentum",
+          "self-hosting avoids per-channel SaaS fees"
+        ],
+        "cons": [
+          "self-hosting and OAuth app setup are operationally demanding",
+          "social-network API changes can break connectors",
+          "AGPL licensing may constrain proprietary redistribution"
+        ],
         "sources": [
           {
             "name": "GitHub gitroomhq/postiz-app — 33.7k★",
@@ -160,6 +293,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 3.5k GitHub stars make it the established number-two open scheduler after Postiz, with recurring recommendations as a privacy-focused, Laravel-based Buffer alternative.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Commercial Pro edition uses a one-time license; price varies by deployment package",
+        "features": [
+          "multi-platform scheduling",
+          "content calendar and queues",
+          "team workspaces",
+          "analytics and media library"
+        ],
+        "pros": [
+          "polished self-hosted experience for Laravel teams",
+          "no recurring per-account SaaS subscription for the Lite edition",
+          "privacy and data ownership"
+        ],
+        "cons": [
+          "fewer supported networks and integrations than Postiz",
+          "advanced features are reserved for the commercial edition",
+          "deployment and social API credentials remain the user's responsibility"
+        ],
         "sources": [
           {
             "name": "GitHub inovector/mixpost — 3.5k★",
@@ -180,6 +332,25 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "The most visible dedicated social-content Agent Skill bundle at roughly 350 GitHub stars, with third-party skill-directory references but far less adoption evidence than full publishing platforms.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "social strategy and calendar planning",
+          "LinkedIn, X, Threads and Bluesky writing",
+          "thread, carousel and caption templates",
+          "platform-specific content repurposing"
+        ],
+        "pros": [
+          "broad set of practical platform-specific playbooks",
+          "transparent prompt-based workflows that are easy to customize",
+          "useful for drafting without granting posting credentials"
+        ],
+        "cons": [
+          "does not publish or collect analytics by itself",
+          "output quality depends on model context and human review",
+          "small adoption base compared with mainstream social tools"
+        ],
         "sources": [
           {
             "name": "GitHub blacktwist/social-media-skills — 353★",
@@ -200,6 +371,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 1.5k GitHub stars accumulated over many years show historical adoption, but limited recent activity and an aging stack make it a legacy option rather than a current open-source leader.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "multi-network scheduling",
+          "social CRM",
+          "team approvals",
+          "analytics and reporting"
+        ],
+        "pros": [
+          "broad traditional social-suite feature set",
+          "self-hosted data control",
+          "includes CRM and approval concepts missing from simpler schedulers"
+        ],
+        "cons": [
+          "older codebase with unclear current maintenance",
+          "deployment is complex and documentation is dated",
+          "network integrations may lag current platform APIs"
+        ],
         "sources": [
           {
             "name": "GitHub socioboard/Socioboard-5.0 — 1.5k★",
@@ -216,6 +406,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "A newer functional self-hosted scheduler with roughly 400 GitHub stars and active development, but still a small community with limited independent production evidence.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": [
+          "publishing to 12 social networks",
+          "AI content copilot",
+          "content calendar",
+          "team and workspace management"
+        ],
+        "pros": [
+          "modern all-in-one alternative with native publishing",
+          "active development and straightforward self-hosting",
+          "AI assistance is integrated into the scheduling flow"
+        ],
+        "cons": [
+          "small contributor and user community",
+          "limited independent reliability evidence",
+          "users must maintain infrastructure and platform API credentials"
+        ],
         "sources": [
           {
             "name": "GitHub trypostit/trypost — 424★",
@@ -232,6 +441,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Part of a broad Claude marketing-skill collection with roughly 400 repository stars; useful breadth, but adoption of the social-media-manager skill itself cannot be separated from the parent repo.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "social strategy planning",
+          "content-calendar creation",
+          "platform-specific post drafting",
+          "performance review guidance"
+        ],
+        "pros": [
+          "fits into a larger marketing workflow library",
+          "easy to inspect and adapt",
+          "covers planning as well as copy generation"
+        ],
+        "cons": [
+          "no direct publishing or platform integration",
+          "skill-specific usage and quality evidence are sparse",
+          "requires manual validation of generated strategy and claims"
+        ],
         "sources": [
           {
             "name": "GitHub borghei/Claude-Skills — 404★",
@@ -248,6 +476,25 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "An official vendor-maintained Agent Skills repository with roughly 50 GitHub stars; low independent adoption is offset by direct support for Typefully's real publishing API.",
+        "pricingFree": "Free skill code; Typefully offers a limited free account",
+        "pricingPaid": "Requires a Typefully plan with API access for publishing; paid tiers available",
+        "features": [
+          "create and edit social drafts",
+          "schedule and publish through Typefully",
+          "support for X, LinkedIn, Threads, Bluesky and Mastodon",
+          "queue and account management"
+        ],
+        "pros": [
+          "officially maintained and genuinely publish-capable",
+          "clear bridge between agent drafting and scheduled delivery",
+          "supports several text-first networks"
+        ],
+        "cons": [
+          "depends on a Typefully account and API availability",
+          "small community and limited independent reviews",
+          "narrower network coverage than full social suites"
+        ],
         "sources": [
           {
             "name": "GitHub typefully/agent-skills — official (56★)",
@@ -264,6 +511,25 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Offers 100+ social-media skills but has only about 3 GitHub stars, so its breadth is measurable while real-world adoption and independent validation are effectively absent.",
+        "pricingFree": "Free & open-source",
+        "pricingPaid": null,
+        "features": [
+          "platform-specific writing playbooks",
+          "AI image and video guidance",
+          "publishing workflow prompts",
+          "analytics and optimization skills"
+        ],
+        "pros": [
+          "very broad catalog across social disciplines",
+          "modular skills can be selected independently",
+          "free and inspectable"
+        ],
+        "cons": [
+          "almost no measurable community adoption",
+          "quality and maintenance consistency vary across a large catalog",
+          "most skills provide guidance rather than working integrations"
+        ],
         "sources": [
           {
             "name": "GitHub social-media-skills/skills — 3★",

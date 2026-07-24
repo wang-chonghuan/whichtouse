@@ -29,7 +29,7 @@ import {
   Workflow,
 } from 'lucide-react'
 
-import { DEFAULT_SLUG, type Category } from '~/lib/catalog'
+import type { Category } from '~/lib/catalog'
 
 const ICONS: Record<string, ComponentType<{ size?: number }>> = {
   'content-writing': PenLine,
@@ -74,14 +74,6 @@ const s = stylex.create({
     height: '100%',
   },
   hideSm: { display: { default: 'flex', '@media (max-width: 900px)': 'none' } },
-  label: {
-    fontSize: 11,
-    fontWeight: 700,
-    letterSpacing: '0.06em',
-    color: 'var(--color-text-secondary)',
-    paddingInline: 'var(--spacing-4)',
-    marginBottom: 'var(--spacing-2)',
-  },
   list: { display: 'flex', flexDirection: 'column', gap: 1 },
   item: {
     display: 'flex',
@@ -122,17 +114,16 @@ const s = stylex.create({
   },
 })
 
-function useActiveSlug(): string {
+function useActiveSlug(): string | null {
   const pathname = useRouterState({ select: (st) => st.location.pathname })
   const m = pathname.match(/^\/c\/([^/]+)/)
-  return m ? m[1] : DEFAULT_SLUG
+  return m ? m[1] : null
 }
 
 export function Sidebar({ categories }: { categories: Category[] }) {
   const active = useActiveSlug()
   return (
     <aside {...stylex.props(s.aside, s.hideSm)}>
-      <div {...stylex.props(s.label)}>USE CASES</div>
       <nav {...stylex.props(s.list)}>
         {categories.map((c) => {
           const Icon = ICONS[c.slug] ?? Code2

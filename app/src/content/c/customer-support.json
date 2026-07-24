@@ -11,6 +11,12 @@
         "bestFor": "The most-cited AI support agent — high autonomous resolution rates with outcome-based pricing on top of Intercom.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "The only product appearing in all three support-agent roundups here, with Intercom's large review base and the strongest cross-source recognition for outcome-priced autonomous support.",
+        "pricingFree": null,
+        "pricingPaid": "$0.99 per resolved outcome; standalone helpdesk integrations have a minimum commitment such as 50 outcomes/mo, while Intercom seats start separately",
+        "features": ["knowledge-grounded AI answers", "procedures that execute support actions", "multichannel handoff and routing", "resolution analytics and optimization"],
+        "pros": ["high-quality answers and polished deployment workflow", "charges for defined outcomes rather than every message", "works with Intercom and selected external helpdesks"],
+        "cons": ["outcome fees can become expensive at high volume", "Intercom seats and other usage charges may apply separately", "best experience is tied to Intercom's broader platform"],
         "sources": [
           {
             "name": "eesel AI",
@@ -34,6 +40,12 @@
         "bestFor": "Best if you already run Zendesk — AI agents grounded in your help center with native ticketing and QA.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Repeatedly shortlisted across all three comparison sources and backed by one of the category's largest enterprise helpdesk review bases; native fit for existing Zendesk customers drives rank #2.",
+        "pricingFree": null,
+        "pricingPaid": "Paid Zendesk Suite plus AI usage/add-ons; current public price varies by region and package",
+        "features": ["knowledge-grounded AI agents", "native ticketing and omnichannel routing", "agent copilot and suggested replies", "quality assurance and conversation analytics"],
+        "pros": ["deep integration with a mature helpdesk", "large app and implementation ecosystem", "strong reporting, routing and governance for support teams"],
+        "cons": ["AI packaging and total cost are complex", "administration can be heavy for small teams", "reviewers often cite support and customization learning curves"],
         "sources": [
           {
             "name": "eesel AI",
@@ -57,6 +69,12 @@
         "bestFor": "Enterprise-scale automation for teams handling hundreds of thousands of conversations a year, with strong multilingual coverage.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "Present in all three enterprise chatbot roundups and established in high-volume automation, but public review and pricing transparency are weaker than Fin or Zendesk.",
+        "pricingFree": null,
+        "pricingPaid": "Custom enterprise pricing (no public rate)",
+        "features": ["multilingual AI customer-service agent", "knowledge and policy grounding", "action execution through integrations", "testing, coaching and performance analytics"],
+        "pros": ["strong multilingual and enterprise-scale automation", "no-code tooling for support teams", "robust governance and handoff controls"],
+        "cons": ["sales-led pricing and onboarding", "best suited to large conversation volumes", "reviewers cite setup effort for complex integrations and content"],
         "sources": [
           {
             "name": "eesel AI",
@@ -80,6 +98,12 @@
         "bestFor": "Best for small businesses and Shopify stores wanting affordable AI chat with a genuine free tier.",
         "confidence": "high",
         "badge": "📋",
+        "rankBasis": "A recurring SMB pick across three comparison sources and one of the few products here with a permanent free helpdesk tier and a broad independent review footprint.",
+        "pricingFree": "Free plan — 50 billable human conversations/mo and basic chatbot flows; 0 Lyro AI conversations",
+        "pricingPaid": "Lyro AI from $39/mo — 50 AI conversations/mo; human-conversation limits are priced separately",
+        "features": ["live chat and shared inbox", "Lyro knowledge-grounded AI agent", "visual chatbot flows", "Shopify and ecommerce integrations"],
+        "pros": ["easy setup for small businesses", "real free tier for live support", "combines human chat, flows and AI in one interface"],
+        "cons": ["AI and human conversation quotas are separate", "cost rises as both traffic and Lyro usage grow", "less flexible governance than enterprise platforms"],
         "sources": [
           {
             "name": "Fin AI",
@@ -103,6 +127,12 @@
         "bestFor": "Purpose-built conversational AI agents for large enterprises that need action execution, not just answers.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Repeatedly cited as an enterprise innovator in the two 2026 roundups here, but it has limited public customer-review depth and no transparent self-serve pricing.",
+        "pricingFree": null,
+        "pricingPaid": "Outcome-based enterprise pricing (no public rate)",
+        "features": ["long-horizon conversational agents", "action execution across business systems", "voice, chat, email and SMS support", "agent analytics and multivariate testing"],
+        "pros": ["designed for complex actions rather than FAQ deflection", "strong multichannel and enterprise integration story", "outcome optimization extends beyond single conversations"],
+        "cons": ["no public pricing or self-serve plan", "limited independent review evidence", "enterprise implementation and governance requirements are substantial"],
         "sources": [
           {
             "name": "eesel AI",
@@ -122,6 +152,12 @@
         "bestFor": "The natural pick for e-commerce and Shopify support, with deep order-aware automation.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "A recurring ecommerce-specific recommendation with a substantial Shopify-merchant review base; it ranks below general support leaders because its strongest fit is retail.",
+        "pricingFree": null,
+        "pricingPaid": "Starter $10/mo — 50 tickets/mo and 30 included automated AI interactions; overage $0.40/ticket",
+        "features": ["ecommerce-focused shared inbox", "order-aware AI Agent", "social, chat, email, SMS and voice channels", "revenue and support analytics"],
+        "pros": ["deep Shopify and ecommerce integrations", "pricing is based on volume rather than agent seats", "agents can act on orders without switching tools"],
+        "cons": ["AI interactions also count as helpdesk tickets", "overage and AI charges make total cost harder to forecast", "less compelling outside ecommerce"],
         "sources": [
           {
             "name": "eesel AI",
@@ -141,6 +177,12 @@
         "bestFor": "Enterprise AI concierge agents built for very high conversation volumes and complex resolution flows.",
         "confidence": "medium",
         "badge": "📋",
+        "rankBasis": "Included in both enterprise-agent roundups and associated with high-profile large deployments, but independent review volume and pricing evidence remain sparse.",
+        "pricingFree": null,
+        "pricingPaid": "Custom enterprise pricing (no public rate)",
+        "features": ["AI agents for chat and voice", "contextual email resolution", "workflow and action integrations", "conversation analytics and agent optimization"],
+        "pros": ["supports complex, high-volume service flows", "covers voice as well as digital channels", "analytics focus on improving agent behavior over time"],
+        "cons": ["no self-serve pricing or free plan", "limited public user-review evidence", "deployment is aimed at enterprise teams with integration resources"],
         "sources": [
           {
             "name": "eesel AI",
@@ -163,6 +205,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 34.7k GitHub stars and 8.3k forks plus repeated inclusion in open-source support roundups make Chatwoot the clearest purpose-built OSS helpdesk leader.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Managed Chatwoot Cloud plans available; self-hosted Community Edition remains free",
+        "features": ["omnichannel shared inbox", "live chat and help center", "automation, assignments and reporting", "AI-assisted replies and summaries"],
+        "pros": ["closest open-source replacement for Intercom or Zendesk", "broad channel coverage and active community", "self-hosting provides data control"],
+        "cons": ["production self-hosting needs ongoing operations", "advanced enterprise features are not all in Community Edition", "large installations require careful performance tuning"],
         "sources": [
           {
             "name": "GitHub (chatwoot, 34.7k★)",
@@ -187,6 +235,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "At roughly 150.1k GitHub stars and 23.7k forks, Dify has by far the largest OSS adoption signal here and appears in multiple open-source agent roundups, though it is general-purpose rather than a helpdesk.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Managed Dify Cloud plans available; model/API usage is billed separately",
+        "features": ["visual LLM workflows and agents", "RAG knowledge bases", "multi-model and tool integrations", "API and web-app deployment"],
+        "pros": ["very large ecosystem and rapid development", "fast route to a document-grounded support bot", "flexible deployment across cloud, VPC and self-hosting"],
+        "cons": ["not a complete ticketing or omnichannel support desk", "self-hosted upgrades and workers add operational complexity", "model and vector-service costs remain external"],
         "sources": [
           {
             "name": "GitHub (langgenius/dify, 150.1k★)",
@@ -211,6 +265,12 @@
         "confidence": "high",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 21.3k GitHub stars and 4.9k forks, years of production use and continued active maintenance make Rasa the most established code-first conversational framework in this set.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Enterprise products and support available from Rasa; no public standard rate",
+        "features": ["NLU and intent classification", "dialogue and flow management", "custom actions and integrations", "text and voice channel connectors"],
+        "pros": ["fine-grained control over dialogue behavior", "strong on-prem and regulated-industry fit", "mature framework with extensive integration patterns"],
+        "cons": ["steeper engineering and training-data burden than no-code tools", "not a ready-made support inbox", "production tuning and maintenance require specialist skills"],
         "sources": [
           {
             "name": "GitHub (RasaHQ/rasa, 21.3k★)",
@@ -231,6 +291,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "About 14.8k GitHub stars and 2.3k forks plus recurring framework-roundup mentions show strong developer awareness, though the current commercial platform is more cloud-centric than the repository label suggests.",
+        "pricingFree": "Open-source repository available for self-hosting; current Botpress Cloud also offers a limited free tier",
+        "pricingPaid": "Botpress Cloud paid tiers available; usage and AI spend vary by plan",
+        "features": ["visual agent and workflow builder", "knowledge bases and RAG", "LLM and tool integrations", "webchat and channel deployment"],
+        "pros": ["approachable visual builder for custom agents", "large integration and template ecosystem", "good balance of low-code flow control and LLM behavior"],
+        "cons": ["open-source and cloud feature sets are not equivalent", "usage-based cloud pricing can be difficult to estimate", "not a full customer-support ticketing suite"],
         "sources": [
           {
             "name": "GitHub (botpress, 14.8k★)",
@@ -251,6 +317,12 @@
         "confidence": "medium",
         "badge": "📋",
         "kind": "repo",
+        "rankBasis": "Roughly 10.2k GitHub stars and 3.2k forks plus open-source chatbot-roundup coverage make it a well-adopted visual builder, but its core strength is guided forms rather than autonomous support.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": "Managed Typebot Cloud plans available; self-hosting remains free",
+        "features": ["visual conversational-flow builder", "embeddable web chat and forms", "variables, logic and integrations", "analytics and response collection"],
+        "pros": ["excellent for deterministic guided conversations", "polished builder and embeddable experience", "self-hostable with a large community"],
+        "cons": ["not designed as an autonomous support agent", "no native full helpdesk or agent inbox", "complex branching flows become difficult to maintain"],
         "sources": [
           {
             "name": "GitHub (baptisteArno/typebot.io, 10.2k★)",
@@ -271,6 +343,12 @@
         "confidence": "low",
         "badge": "📋",
         "kind": "skill",
+        "rankBasis": "Only about 13 GitHub stars and 2 forks make this a very early project; it ranks last despite being the sole repository here focused specifically on reusable support-agent skills.",
+        "pricingFree": "Free & open-source (self-host)",
+        "pricingPaid": null,
+        "features": ["ticket triage", "SLA tracking", "sentiment detection", "customer lookup and reply drafting"],
+        "pros": ["support-specific workflows rather than a generic agent framework", "small, inspectable SKILL.md modules", "useful reference patterns for agent teams"],
+        "cons": ["extremely limited adoption and independent validation", "requires an agent runtime and connected support tools", "not a deployable helpdesk or chatbot on its own"],
         "sources": [
           {
             "name": "GitHub (composio-community, 13★)",
