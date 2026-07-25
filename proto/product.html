@@ -56,6 +56,151 @@ const P = {
 const label = (t) => `<h2 class="text-[11px] font-bold uppercase tracking-[0.09em] text-neutral-500">${t}</h2>`;
 
 main.innerHTML = `
+<div class="mx-auto max-w-[860px] px-6 py-7">
+ <article class="rounded-2xl border border-neutral-200 bg-white px-8 py-7">
+
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+    <a href="category.html"
+       class="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-[13px] font-semibold text-white transition hover:bg-blue-700">
+      <span>←</span> ${TASK.name}
+    </a>
+    <h1 class="text-[30px] font-extrabold tracking-tight">${P.owner ? P.owner + '/' : ''}${P.n}</h1>
+    <span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-[11.5px] font-semibold text-blue-700">${P.track}</span>
+    <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[11.5px] font-semibold text-neutral-600">${P.standing} · #${P.rank}</span>
+  </div>
+
+  <p class="mt-4 text-[15px] leading-[1.6] text-neutral-700">${P.desc}</p>
+
+  <a href="https://${P.site}" target="_blank" rel="noreferrer"
+     class="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-[13.5px] font-semibold text-white transition hover:bg-blue-700">
+    Visit ${P.site} <span class="text-[12px]">↗</span>
+  </a>
+
+  <section class="mt-8">
+    ${label(`Why it ranks #${P.rank}`)}
+    <p class="mt-2.5 text-[14px] leading-[1.6]">${P.rankBasis}</p>
+  </section>
+
+  <!-- valence: the two sides of the judgement, and the only place colour earns
+       its keep. Showing the drawback at the same weight as the strength is the
+       point of the site, so they are a matched pair, not a warning box. -->
+  <section class="mt-8 grid gap-4 sm:grid-cols-2">
+    <div class="rounded-xl bg-emerald-50/70 p-4">
+      <h3 class="text-[11px] font-bold uppercase tracking-[0.09em] text-emerald-800">What it does well</h3>
+      <ul class="mt-2.5 space-y-2">
+        ${P.pros.map((x) => `
+          <li class="flex gap-2 text-[13.5px] leading-snug text-emerald-950">
+            <span class="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500"></span><span>${x}</span>
+          </li>`).join('')}
+      </ul>
+    </div>
+    <div class="rounded-xl bg-rose-50/70 p-4">
+      <h3 class="text-[11px] font-bold uppercase tracking-[0.09em] text-rose-800">Where it falls short</h3>
+      <ul class="mt-2.5 space-y-2">
+        ${P.cons.map((x) => `
+          <li class="flex gap-2 text-[13.5px] leading-snug text-rose-950">
+            <span class="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span><span>${x}</span>
+          </li>`).join('')}
+      </ul>
+    </div>
+  </section>
+  <p class="mt-2 text-[11.5px] text-neutral-400">From our own use plus aggregated reviews and community reports.</p>
+
+  <section class="mt-8">
+    ${label('Pricing')}
+    <div class="mt-3 overflow-hidden rounded-xl bg-neutral-50">
+      <div class="flex gap-4 border-b border-neutral-200/70 px-4 py-3">
+        <span class="w-[86px] flex-shrink-0 text-[12.5px] text-neutral-400">Free plan</span>
+        <span class="text-[13.5px]">${P.pricingFree}</span>
+      </div>
+      <div class="flex gap-4 px-4 py-3">
+        <span class="w-[86px] flex-shrink-0 text-[12.5px] text-neutral-400">Entry paid</span>
+        <span class="text-[13.5px]">${P.pricingPaid}</span>
+      </div>
+    </div>
+    <p class="mt-2 text-[11.5px] text-neutral-400">Verified by hand on ${P.checked}. Prices in this category change often — if this looks wrong, it probably is, and we want to know.</p>
+  </section>
+
+  <section class="mt-8">
+    ${label('Key features')}
+    <div class="mt-3 flex flex-wrap gap-2">
+      ${P.features.map((f) => `<span class="rounded-full bg-neutral-100 px-3 py-1 text-[12.5px]">${f}</span>`).join('')}
+    </div>
+  </section>
+
+  <section class="mt-8">
+    ${label(`Sources (${P.sources.length})`)}
+    <div class="mt-2.5 flex flex-wrap gap-x-4 gap-y-1.5">
+      ${P.sources.map((x) => `<a href="#" class="text-[12.5px] text-blue-700 underline decoration-neutral-300 underline-offset-2 hover:decoration-blue-400">${x}</a>`).join('')}
+    </div>
+  </section>
+
+  <section class="mt-8 border-t border-neutral-100 pt-6">
+    ${label(`Other ${P.track} options`)}
+    <div class="mt-3 grid gap-2 sm:grid-cols-2">
+      ${P.others.map((o) => `
+        <a href="product.html" class="group rounded-xl bg-neutral-50 px-4 py-3 transition hover:bg-blue-50">
+          <div class="text-[13.5px] font-semibold group-hover:text-blue-700">${o.n}</div>
+          <div class="mt-0.5 text-[12.5px] text-neutral-500">${o.s}</div>
+        </a>`).join('')}
+    </div>
+  </section>
+
+ </article>
+ <div class="h-14"></div>
+</div>`;
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{font-family:Outfit,system-ui,sans-serif}</style>
+</head>
+<body class="flex h-screen flex-col overflow-hidden bg-white text-[#171a21]">
+<script src="shared.js"></script>
+<script>
+const main = shell({ active: 'content-writing' });
+
+/* Everything the drawer carried, on a page of its own. The list decided what to
+ * open; this is where the evidence lives. */
+const P = {
+  track: 'App / SaaS',
+  owner: '',
+  n: 'ChatGPT',
+  rank: 1,
+  standing: 'Leading',
+  site: 'openai.com',
+  desc: 'OpenAI’s general assistant, used here as a drafting tool. It is the default first draft for most people writing anything longer than a paragraph — a blank page in, a usable draft out, with no setup and no per-tool learning curve.',
+  rankBasis: 'Every round-up we cite puts it at or near the top for raw generation, and the Reddit consensus in writing communities matches. Nothing else in this task turns a blank page into a usable draft as reliably, which is what this ranking is ordered by. Its ceiling — voice drift over long documents — costs it nothing here because the tools below it have the same problem or worse.',
+  pricingFree: 'Full chat access on the current model, with usage limits that reset over a few hours',
+  pricingPaid: 'Plus at $20/mo — higher limits, priority access during peak, and the newest models first',
+  checked: 'Jul 23, 2026',
+  features: ['Long-form drafting', 'Outline → draft in one thread', 'File and image input', 'Custom instructions for voice', 'Browsing for current facts'],
+  pros: [
+    'Strongest raw generation from a blank page',
+    'One tool covers most writing jobs, so nothing else to learn',
+    'Free tier is genuinely usable, not a demo',
+    'Custom instructions hold a rough voice across sessions',
+  ],
+  cons: [
+    'Drifts off-voice past a few thousand words',
+    'Confidently invents specifics unless you make it cite',
+    'No real brand-voice or team controls',
+    'Output has a recognisable register that editors notice',
+  ],
+  sources: [
+    'Reddit r/writing consensus threads',
+    '2026 writing-tool round-ups',
+    'Vendor pricing page',
+  ],
+  others: [
+    { n:'Claude', s:'Holds one voice across a whole document' },
+    { n:'Jasper', s:'Real brand-voice and team controls' },
+    { n:'Grammarly', s:'Works inside almost every writing surface' },
+    { n:'Notion AI', s:'No context-switching if you already live there' },
+  ],
+};
+
+const label = (t) => `<h2 class="text-[11px] font-bold uppercase tracking-[0.09em] text-neutral-500">${t}</h2>`;
+
+main.innerHTML = `
 <div class="mx-auto max-w-[820px] px-6 py-7">
 
   <div class="rounded-2xl border border-neutral-200 bg-white p-6">

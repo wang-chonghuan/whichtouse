@@ -59,7 +59,7 @@ const standing = (track, list) => {
 };
 
 const column = (track) => `
-  <div class="min-w-0 rounded-2xl border border-neutral-200 bg-white p-5">
+  <div class="min-w-0 xl:border-l xl:border-neutral-200 xl:pl-7 xl:first:border-l-0 xl:first:pl-0">
     <div class="flex items-center gap-2 pb-3">
       <span class="h-2.5 w-2.5 rounded-full" style="background:${track.dot}"></span>
       <h2 class="text-[15px] font-bold tracking-tight">${track.label}</h2>
@@ -68,7 +68,8 @@ const column = (track) => `
   </div>`;
 
 main.innerHTML = `
-<div class="mx-auto max-w-[1180px] px-6 py-6">
+<div class="mx-auto max-w-[1220px] px-6 py-6">
+ <article class="rounded-2xl border border-neutral-200 bg-white px-8 py-7">
 
   <h1 class="text-[26px] font-extrabold tracking-tight">${TASK.name}</h1>
   <p class="mt-2 max-w-[740px] text-[13.5px] leading-relaxed text-neutral-600">${TASK.note}</p>
@@ -78,11 +79,11 @@ main.innerHTML = `
     coming for it.
   </p>
 
-  <div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+  <div class="mt-7 grid gap-x-7 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
     ${TRACKS.map(column).join('')}
   </div>
 
-  <section class="mt-12">
+  <section class="mt-12 border-t border-neutral-100 pt-6">
     <div class="flex items-baseline gap-2.5">
       <h2 class="text-[15px] font-bold tracking-tight">Watchlist</h2>
       <span class="text-[12px] text-neutral-400">pulled or being re-checked</span>
@@ -93,11 +94,12 @@ main.innerHTML = `
     </div>
   </section>
 
-  <p class="mt-10 text-[12px] leading-relaxed text-neutral-400">
+  <p class="mt-8 text-[12px] leading-relaxed text-neutral-400">
     Five per standing by default, ten at most. Removing an entry is as much of the job as adding one.
   </p>
 
-  <div class="h-14"></div>
+ </article>
+ <div class="h-14"></div>
 </div>`;
 
 /* Expand in place: the list grows, the cards do not change. */
