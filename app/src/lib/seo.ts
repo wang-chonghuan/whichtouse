@@ -4,6 +4,10 @@
 // variable OpenGraph/Twitter fields. Keeping the variable tags out of the root
 // avoids duplicate <meta> entries after TanStack's head merge.
 
+/** Cloudflare Web Analytics site identifier. Public by design — it only names
+ * which site a page view belongs to and grants no account access. */
+export const CF_BEACON_TOKEN = '7b865c217db54a438ad2f5d118483264'
+
 export const SITE_NAME = 'WhichToUse'
 export const SITE_URL = 'https://whichtouse.com'
 export const OG_IMAGE = `${SITE_URL}/og.png`

@@ -10,6 +10,7 @@ import { butterTheme } from '@astryxdesign/theme-butter'
 
 import '~/styles/app.css'
 import {
+  CF_BEACON_TOKEN,
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
   OG_IMAGE,
@@ -61,6 +62,16 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body>
         <Theme theme={butterTheme}>{children}</Theme>
+        {/* Cloudflare Web Analytics — manual beacon. The apex stays grey-cloud
+         * (DNS only) so the Azure managed certificate keeps renewing, which
+         * means Cloudflare's proxy never sees a request and cannot auto-inject
+         * this. Deferred, cookie-free, and carries no personal data, so it adds
+         * no consent obligation. The token is a public site identifier. */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}
+        />
         <Scripts />
       </body>
     </html>
