@@ -48,7 +48,7 @@ function shell({ active = '', home = false } = {}) {
       </button>
     </header>
     <div class="flex min-h-0 flex-1">
-      <aside class="hidden w-[228px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-3 lg:block">
+      <aside id="use-case-sidebar" class="hidden w-[228px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-3 lg:block">
         <nav class="flex flex-col gap-px px-2 pb-3">
           <a href="home.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
             home ? 'bg-blue-50 font-semibold text-blue-700' : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'

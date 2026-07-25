@@ -13,67 +13,119 @@
 <script>
 const main = shell({ home: true });
 
-/* Five claims, in the order someone meets them: how you arrive, what you get
- * shown, how much of it, how honest it is, and what happens next. */
+/* One line each. A claim that needs a paragraph is not a claim, it is an
+ * explanation, and it belongs on the page that proves it. */
 const POINTS = [
-  {
-    t: 'Start from the job, not the tool.',
-    b: 'You arrive with something to do — draft a post, automate a browser, build a deck. Pick the job and the ranking is already scoped. There is no A-to-Z directory to wander through, because a directory answers a question nobody asked.',
-  },
-  {
-    t: 'Three forms, ranked side by side.',
-    b: 'For every job we rank a hosted product, an open-source repo you run, and a skill you drop into an agent — separately. They are not the same decision: the budget, the control and the setup cost all differ, so the comparison should differ too.',
-  },
-  {
-    t: 'Five, not five hundred.',
-    b: 'Each standing shows five by default and ten at most. A list you can finish reading is worth more than a list that contains everything, and deciding what to remove is as much of the work as deciding what to add.',
-  },
-  {
-    t: 'The drawback is in the first two lines.',
-    b: 'Every entry states the one thing it does best and the single biggest reason not to pick it, at the same weight. Hidden costs — the seat minimum, the self-hosting bill, the missing interface — belong up front, not in a footnote you find after you have committed.',
-  },
-  {
-    t: 'Emerging, tracked continuously.',
-    b: 'Beside what has held the top for a year sits a second standing for what is climbing and unproven. We watch where new tools actually surface — repositories, launch boards, registries — and nothing appears until we have opened it ourselves.',
-  },
+  ['Start from the job',       'Pick what you need done, not a tool name off an A-to-Z list.'],
+  ['Three forms side by side', 'Hosted product, open-source repo and agent skill, ranked separately.'],
+  ['Five, not five hundred',   'Each standing shows five by default, ten at most.'],
+  ['Drawbacks up front',       'Every entry names the single biggest reason not to pick it.'],
+  ['Emerging, tracked',        'A second standing for what is climbing but still unproven.'],
 ];
 
-main.innerHTML = `
-<div class="mx-auto max-w-[880px] px-6 py-10">
- <article class="rounded-2xl border border-neutral-200 bg-white px-8 py-10 sm:px-12 sm:py-12">
+const TRENDING = [
+  ['block/buzz', 'A hive mind communication platform', '11,829', '+2,506', 'Workflow Automation'],
+  ['alibaba/open-code-review', 'Deterministic review pipelines plus an LLM agent', '12,917', '+439', 'Diagrams & Architecture'],
+  ['citrolabs/ego-lite', 'A browser for AI agents that reuses your logged-in session', '3,529', '+986', 'Browser Automation'],
+  ['ComposioHQ/awesome-claude-skills', 'A curated list of Claude Skills, resources and tools', '70,554', '+574', 'Workflow Automation'],
+  ['anthropics/claude-cookbooks', 'Official recipes for building with Claude', '42,860', '+366', 'Coding'],
+  ['menloresearch/jan', 'A fully offline desktop assistant', '39,204', '+284', 'Content Writing'],
+];
 
-  <h1 class="text-[40px] font-extrabold leading-[1.08] tracking-[-0.025em] sm:text-[46px]">
+/* Lifted from the live site so the two match exactly: filled blue while the
+ * sidebar is hidden and the button is an invitation, outlined and quiet once
+ * the sidebar is showing and the job is done. */
+const PANEL_OPEN  = '<rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m14 9 3 3-3 3"></path>';
+const PANEL_CLOSE = '<rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m16 15-3-3 3-3"></path>';
+const CTA_BASE   = 'inline-flex items-center gap-2 h-[52px] px-6 rounded-full text-[16px] font-bold transition';
+const CTA_CLOSED = 'bg-blue-600 text-white shadow-[0_6px_20px_-6px_rgba(37,99,235,0.5)] hover:bg-blue-700';
+const CTA_OPEN   = 'bg-white text-[#6b7280] border border-[#e6e8ec] hover:bg-neutral-50';
+
+main.innerHTML = `
+<div class="mx-auto max-w-[1220px] px-6 py-8">
+ <article class="rounded-2xl border border-neutral-200 bg-white px-8 py-8">
+
+  <span class="text-[12px] font-bold uppercase tracking-[0.14em] text-blue-600">Hands-on AI tool reviews</span>
+
+  <h1 class="mt-3 text-[38px] font-extrabold leading-[1.08] tracking-[-0.025em]">
     Pick by the job,<br class="hidden sm:block"> not by the tool.
   </h1>
 
-  <p class="mt-6 max-w-[620px] text-[16.5px] leading-[1.6] text-neutral-600">
+  <p class="mt-4 max-w-[720px] text-[16px] leading-[1.55] text-neutral-600">
     Short lists, three forms compared side by side, and the drawback written where you cannot miss it.
   </p>
 
-  <a href="category.html"
-     class="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-[14px] font-semibold text-white transition hover:bg-blue-700">
-    Browse the tasks <span>→</span>
-  </a>
+  <button id="sidebarToggle" type="button" aria-expanded="true" aria-controls="use-case-sidebar"
+          class="mt-5 ${CTA_BASE} ${CTA_OPEN}">
+    <svg id="sidebarToggleIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${PANEL_CLOSE}</svg>
+    <span id="sidebarToggleText">Hide categories</span>
+  </button>
 
-  <div class="mt-12 border-t border-neutral-100 pt-2">
-    ${POINTS.map((p, i) => `
-      <section class="flex gap-5 border-b border-neutral-100 py-7 last:border-0 sm:gap-7">
-        <span class="w-7 flex-shrink-0 pt-0.5 text-[26px] font-extrabold leading-none tabular-nums text-neutral-200">${i + 1}</span>
-        <div class="min-w-0">
-          <h2 class="text-[18px] font-bold tracking-tight">${p.t}</h2>
-          <p class="mt-2 max-w-[640px] text-[14.5px] leading-[1.65] text-neutral-600">${p.b}</p>
-        </div>
-      </section>`).join('')}
-  </div>
-
-  <p class="mt-10 max-w-[640px] text-[13px] leading-relaxed text-neutral-400">
-    Rankings come from independent public sources and our own use. Pricing is re-checked by hand and
-    dated on every product page. We take no payment for placement.
+  <p class="mt-3 text-[13px] font-medium text-neutral-500">
+    25 use cases · apps + open-source skills · every claim traceable to a source
   </p>
 
+  <div class="mt-9 grid gap-x-9 gap-y-10 lg:grid-cols-[1.55fr_1fr]">
+
+    <section class="min-w-0">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-[19px] font-bold tracking-tight">Trending today</h2>
+        <span class="text-[12px] text-neutral-400">${TRENDING.length} repositories</span>
+      </div>
+      <p class="mt-1.5 text-[13px] text-neutral-500">
+        A live snapshot of fast-growing open-source AI projects. Pick any repo for an instant breakdown.
+      </p>
+      <div class="mt-4">
+        ${TRENDING.map(([n, d, stars, today, cat]) => `
+          <a href="product.html" class="group flex items-start gap-4 border-b border-neutral-100 py-3 last:border-0">
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-[14px] font-semibold group-hover:text-blue-700">${n}</span>
+              <span class="mt-0.5 block text-[12.5px] leading-snug text-neutral-500">${d}</span>
+            </span>
+            <span class="flex flex-shrink-0 items-baseline gap-3 pt-0.5">
+              <span class="text-[13px] font-semibold tabular-nums">${stars}</span>
+              <span class="w-[52px] text-right text-[13px] font-semibold tabular-nums text-emerald-600">${today}</span>
+            </span>
+            <span class="hidden flex-shrink-0 rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-semibold text-blue-700 xl:block">${cat}</span>
+          </a>`).join('')}
+      </div>
+    </section>
+
+    <section class="min-w-0 lg:border-l lg:border-neutral-200 lg:pl-9">
+      <h2 class="text-[19px] font-bold tracking-tight">What makes this different</h2>
+      <div class="mt-4">
+        ${POINTS.map(([t, b], i) => `
+          <div class="flex gap-3.5 border-b border-neutral-100 py-3.5 last:border-0">
+            <span class="w-4 flex-shrink-0 pt-px text-[15px] font-extrabold tabular-nums leading-tight text-neutral-200">${i + 1}</span>
+            <div class="min-w-0">
+              <div class="text-[14px] font-bold">${t}</div>
+              <p class="mt-0.5 text-[12.5px] leading-snug text-neutral-500">${b}</p>
+            </div>
+          </div>`).join('')}
+      </div>
+      <p class="mt-4 text-[11.5px] leading-relaxed text-neutral-400">We take no payment for placement.</p>
+    </section>
+
+  </div>
  </article>
  <div class="h-14"></div>
 </div>`;
+
+/* Same behaviour as the live site: the button drives the sidebar and swaps both
+   its label and its own emphasis. */
+const aside  = document.getElementById('use-case-sidebar');
+const toggle = document.getElementById('sidebarToggle');
+const icon   = document.getElementById('sidebarToggleIcon');
+const text   = document.getElementById('sidebarToggleText');
+
+toggle.addEventListener('click', () => {
+  const open = !aside.classList.toggle('lg:hidden');
+  toggle.setAttribute('aria-expanded', String(open));
+  icon.innerHTML = open ? PANEL_CLOSE : PANEL_OPEN;
+  text.textContent = open ? 'Hide categories' : 'Browse all 25 use cases';
+  toggle.className = `mt-5 ${CTA_BASE} ${open ? CTA_OPEN : CTA_CLOSED}`;
+});
 </script>
 </body>
 </html>
