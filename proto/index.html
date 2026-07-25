@@ -1,96 +1,11 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>WhichToUse 原型</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>body{font-family:Outfit,system-ui,sans-serif}</style>
+<meta http-equiv="refresh" content="0; url=home.html" />
+<title>WhichToUse v2 mockup</title>
 </head>
-<body class="bg-neutral-50 text-[#171a21]">
-<div class="mx-auto max-w-[860px] px-6 py-12">
-
-  <h1 class="text-3xl font-extrabold tracking-tight">WhichToUse 产品结构原型</h1>
-  <p class="mt-3 leading-relaxed text-neutral-600">
-    用来<b>在动手写产品代码之前</b>把结构吵清楚：有哪些页面、每页放什么块、每块的数据从哪来。
-    这里的东西不发布，改起来没有代价 —— 请直接对具体块提意见。
-  </p>
-
-  <div class="mt-6 rounded-xl border border-neutral-200 bg-white p-5">
-    <div class="text-sm font-bold">每页右上角有「显示数据来源」开关</div>
-    <p class="mt-1 text-[13.5px] text-neutral-600">打开后每个块会显示它的数据出处，颜色即证据强度：</p>
-    <div class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
-      <span class="rounded px-1.5 py-0.5 ring-1 bg-blue-50 text-blue-700 ring-blue-200">你的判断 · 护城河</span>
-      <span class="rounded px-1.5 py-0.5 ring-1 bg-emerald-50 text-emerald-700 ring-emerald-200">硬数据 · 公开 API 可算</span>
-      <span class="rounded px-1.5 py-0.5 ring-1 bg-amber-50 text-amber-700 ring-amber-200">人工核实 · 会过期</span>
-      <span class="rounded px-1.5 py-0.5 ring-1 bg-neutral-100 text-neutral-600 ring-neutral-300">软信号 · 证据较弱</span>
-    </div>
-  </div>
-
-  <div class="mt-8 space-y-3">
-    <a href="home.html" class="block rounded-xl border border-neutral-200 bg-white p-5 hover:border-blue-400">
-      <div class="flex items-center gap-3">
-        <span class="rounded bg-neutral-100 px-2 py-0.5 text-[11px] font-bold text-neutral-500">P1</span>
-        <span class="text-lg font-bold">首页</span>
-      </div>
-      <p class="mt-2 text-[13.5px] leading-relaxed text-neutral-600">
-        要验证：<b>撤掉裸 GitHub Trending</b>，换成「本周值得一看」（每条带你的一句判断），
-        再加一张跨分类的「稳妥之选 vs 新王候选」总表。
-      </p>
-    </a>
-
-    <a href="category.html" class="block rounded-xl border border-neutral-200 bg-white p-5 hover:border-blue-400">
-      <div class="flex items-center gap-3">
-        <span class="rounded bg-neutral-100 px-2 py-0.5 text-[11px] font-bold text-neutral-500">P2</span>
-        <span class="text-lg font-bold">分类页 <span class="font-normal text-neutral-400">— 主战场</span></span>
-      </div>
-      <p class="mt-2 text-[13.5px] leading-relaxed text-neutral-600">
-        要验证：顶部两张<b>稳妥/新王</b>对置卡；中部维持现有双轨排行；
-        下部新增<b>「价格与短板一览」横向表</b>（护城河可视化）；末尾是筛过的新品雷达。
-      </p>
-    </a>
-
-    <a href="product.html" class="block rounded-xl border border-blue-300 bg-white p-5 hover:border-blue-500">
-      <div class="flex items-center gap-3">
-        <span class="rounded bg-blue-600 px-2 py-0.5 text-[11px] font-bold text-white">P3</span>
-        <span class="text-lg font-bold">产品详情页 <span class="font-normal text-blue-600">— 优先级最高</span></span>
-      </div>
-      <p class="mt-2 text-[13.5px] leading-relaxed text-neutral-600">
-        要验证：<b>从抽屉改成独立 URL</b>。现在详情是 <code>#item=app:1</code>，
-        搜索引擎和 AI 引擎<b>完全看不到</b>你最有价值的内容。这一项不需要任何新数据源。
-      </p>
-    </a>
-
-    <a href="compare.html" class="block rounded-xl border border-neutral-200 bg-white p-5 hover:border-blue-400">
-      <div class="flex items-center gap-3">
-        <span class="rounded bg-neutral-100 px-2 py-0.5 text-[11px] font-bold text-neutral-500">P4</span>
-        <span class="text-lg font-bold">对比页 <span class="font-normal text-neutral-400">— 用已有数据换高意图流量</span></span>
-      </div>
-      <p class="mt-2 text-[13.5px] leading-relaxed text-neutral-600">
-        要验证：<code>/vs/a-vs-b</code> 能否<b>用已有数据自动生成</b>。
-        「X vs Y」是转化意图最强的词之一，而成本接近零。
-      </p>
-    </a>
-  </div>
-
-  <div class="mt-8 rounded-xl border border-neutral-200 bg-white p-5">
-    <div class="text-sm font-bold">建议的落地顺序</div>
-    <ol class="mt-2 list-decimal space-y-1 pl-5 text-[13.5px] text-neutral-600">
-      <li>P3 详情独立页 —— 解锁已有内容的 SEO/GEO 价值，<b>不需要新数据</b></li>
-      <li>价格新鲜度标记（<code>核实于 7月23日</code>）—— 把护城河变成可见的信任</li>
-      <li>P4 对比页 —— 已有数据换高意图流量</li>
-      <li>稳妥/新王 —— 要接外部 API，工作量最大，放最后</li>
-      <li>首页撤掉裸 trending</li>
-    </ol>
-  </div>
-
-  <div class="mt-8 rounded-xl border border-dashed border-neutral-300 p-5 text-[13px] leading-relaxed text-neutral-600">
-    <b class="text-neutral-800">一个必须设计进去的不对称：</b>
-    OSS 侧有 npm / Homebrew / PyPI 的真实采纳量（硬数据），
-    SaaS 侧<b>拿不到下载量</b>，只能用存在年限、被测评收录频率这类软信号。
-    两条轨道不能用同一套话术假装同样严谨 —— 这恰恰是你的诚实定位能吃到的红利。
-  </div>
-
-</div>
+<body>
+<p style="font-family:system-ui;padding:2rem">Redirecting to <a href="home.html">home.html</a>…</p>
 </body>
 </html>

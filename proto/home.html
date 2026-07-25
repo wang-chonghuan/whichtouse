@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>PROTO · 首页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WhichToUse — Hands-on AI tool reviews and rankings</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>body{font-family:Outfit,system-ui,sans-serif}</style>
@@ -10,86 +11,106 @@
 <body class="flex h-screen flex-col overflow-hidden bg-white text-[#171a21]">
 <script src="shared.js"></script>
 <script>
-const main = shell({ page: 'Home' });
+const main = shell({ home: true });
+
+const picks = [
+  ['Automattic/harper', 'Content Writing', 'Offline, Rust-powered grammar checking. A real answer when privacy rules out Grammarly — but it only checks, it does not write.'],
+  ['citrolabs/ego-lite', 'Browser Automation', 'A browser for agents that reuses your logged-in session. The zero-config claim holds; stability under long runs is still unproven.'],
+  ['shiyu-coder/Kronos', 'Data Analysis', 'A foundation model for financial time series. Do not let the framing fool you — this is a model, not a product you can use today.'],
+];
+
+const duel = [
+  ['Coding', 'Claude Code', 'Superpowers', 'coding'],
+  ['Content Writing', 'ChatGPT', 'Anthropic Document Skills', 'content-writing'],
+  ['Image Generation', 'Midjourney', 'FLUX.2', 'image-generation'],
+  ['Browser Automation', 'Playwright', 'ego-lite', 'browser-automation'],
+  ['Research & Search', 'Perplexity', 'World Monitor', 'research-search'],
+];
 
 main.innerHTML = `
-<div class="mx-auto max-w-[1120px] px-6 py-7">
+<div class="mx-auto max-w-[1140px] px-6 py-10">
 
-  <section class="max-w-[720px]">
-    <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Hands-on AI tool reviews</span>
-    <h1 class="mt-3 text-[38px] font-extrabold leading-[1.1] tracking-tight">
-      We actually open the tools before we rank them.
+  <section class="max-w-[760px]">
+    <span class="text-[11.5px] font-bold uppercase tracking-[0.14em] text-blue-600">Hands-on AI tool reviews</span>
+    <h1 class="mt-3.5 text-[42px] font-extrabold leading-[1.06] tracking-[-0.025em]">
+      We actually open the tools<br class="hidden sm:block"> before we rank them.
     </h1>
-    <p class="mt-4 text-base leading-relaxed text-neutral-500">
+    <p class="mt-5 text-[16.5px] leading-[1.6] text-neutral-600">
       For every pick we visit the product, read the documentation, and try it wherever we can —
-      then write down what it's genuinely good at and where it falls short. No scraped listicles.
-      No affiliate order.
+      then write down what it is genuinely good at and where it falls short.
+      No scraped listicles. No affiliate order.
     </p>
-    <p class="mt-3 text-[13px] font-medium text-neutral-500">
-      25 use cases · apps + open-source skills · every claim traceable to a source
-    </p>
+    <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-neutral-500">
+      <span><b class="text-[#171a21]">25</b> use cases</span>
+      <span class="text-neutral-300">·</span>
+      <span>apps <b class="text-[#171a21]">+</b> open-source skills</span>
+      <span class="text-neutral-300">·</span>
+      <span>every claim traceable to a source</span>
+    </div>
   </section>
 
-  <!-- ③ 有什么新东西：筛过的，不是裸列表 -->
-  <section class="mt-10">
-    <div class="flex items-baseline justify-between">
-      <h2 class="text-xl font-bold">本周值得一看 ${src('soft','雷达 → 你筛过')}</h2>
-      <span class="text-xs text-neutral-400">每条都看过，并给一句判断</span>
+  <!-- curated, not a feed -->
+  <section class="mt-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-[21px] font-bold tracking-tight">Worth a look this week</h2>
+        <p class="mt-1.5 text-[13.5px] text-neutral-500">Three we opened. One line each on whether it deserves your time.</p>
+      </div>
+      <span class="hidden whitespace-nowrap text-[12.5px] text-neutral-400 sm:block">Updated Jul 25</span>
     </div>
-    <p class="mt-1 max-w-[640px] text-[13.5px] text-neutral-500">
-      我们盯着 GitHub / HN / Product Hunt / Hugging Face，但<b>只把看过的放上来</b>。
-    </p>
-    <div class="mt-4 grid gap-3 md:grid-cols-3">
-      ${[
-        ['Automattic/harper','Content Writing','离线、Rust 实现的语法检查。隐私敏感场景可替代 Grammarly 基础功能，但不写作。'],
-        ['citrolabs/ego-lite','Browser Automation','给 agent 用的浏览器，复用你已登录的会话。零配置是真的，稳定性还要看。'],
-        ['shiyu-coder/Kronos','Data Analysis','金融时序基座模型。别被"AI 工具"名头骗了，它是模型不是产品。'],
-      ].map(([n,c,v]) => `
-        <a href="product.html" class="rounded-xl border border-neutral-200 p-4 hover:border-blue-400">
-          <div class="text-[11px] font-semibold text-blue-600">${c}</div>
-          <div class="mt-1 font-semibold">${n}</div>
-          <div class="mt-2 text-[13px] leading-relaxed text-neutral-500">${v}</div>
+    <div class="mt-5 grid gap-4 md:grid-cols-3">
+      ${picks.map(([n, c, verdict]) => `
+        <a href="product.html" class="group flex flex-col rounded-2xl border border-neutral-200 p-5 transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.35)]">
+          <span class="text-[11px] font-bold uppercase tracking-[0.08em] text-blue-600">${c}</span>
+          <span class="mt-2 text-[15.5px] font-semibold group-hover:text-blue-700">${n}</span>
+          <span class="mt-2.5 text-[13.5px] leading-[1.55] text-neutral-600">${verdict}</span>
         </a>`).join('')}
     </div>
   </section>
 
-  <!-- ④ 稳 vs 新，跨分类精选 -->
-  <section class="mt-10">
-    <h2 class="text-xl font-bold">稳妥之选 vs 新王候选 ${src('hard','采纳量时间序列')}</h2>
-    <p class="mt-1 max-w-[640px] text-[13.5px] text-neutral-500">
-      同一个问题的两种答案：要少踩坑，还是要吃红利。
+  <!-- safe vs rising, across categories -->
+  <section class="mt-14">
+    <h2 class="text-[21px] font-bold tracking-tight">The safe pick and the rising one</h2>
+    <p class="mt-1.5 max-w-[620px] text-[13.5px] text-neutral-500">
+      Two answers to the same question: what you choose when you cannot afford a mistake,
+      and what you choose when you want the upside.
     </p>
-    <div class="mt-4 overflow-x-auto rounded-xl border border-neutral-200">
-      <table class="w-full min-w-[640px] text-sm">
-        <thead class="bg-neutral-50 text-left text-[11px] font-bold text-neutral-500">
-          <tr><th class="px-4 py-3">用途</th><th class="px-4 py-3">🏛 稳妥之选</th><th class="px-4 py-3">🚀 新王候选</th></tr>
+    <div class="mt-5 overflow-hidden rounded-2xl border border-neutral-200">
+      <table class="w-full text-sm">
+        <thead class="bg-neutral-50/80 text-left text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+          <tr>
+            <th class="px-5 py-3">Use case</th>
+            <th class="px-5 py-3">Safe pick</th>
+            <th class="px-5 py-3">Rising</th>
+          </tr>
         </thead>
         <tbody>
-          ${[
-            ['Coding','Claude Code','Superpowers'],
-            ['Content Writing','ChatGPT','Anthropic Document Skills'],
-            ['Image Generation','Midjourney','FLUX.2'],
-            ['Browser Automation','Playwright','ego-lite'],
-          ].map(([c,a,b]) => `
-            <tr class="border-t border-neutral-100">
-              <td class="px-4 py-3"><a href="category.html" class="font-medium text-blue-700 hover:underline">${c}</a></td>
-              <td class="px-4 py-3">${a}</td>
-              <td class="px-4 py-3">${b}</td>
+          ${duel.map(([c, safe, rising], i) => `
+            <tr class="${i ? 'border-t border-neutral-100' : ''} transition hover:bg-neutral-50/70">
+              <td class="px-5 py-3.5">
+                <a href="category.html" class="font-semibold text-blue-700 hover:underline">${c}</a>
+              </td>
+              <td class="px-5 py-3.5 text-neutral-700">${safe}</td>
+              <td class="px-5 py-3.5">
+                <span class="text-neutral-700">${rising}</span>
+                <span class="ml-2 rounded-full bg-blue-50 px-1.5 py-px text-[10.5px] font-semibold text-blue-700">rising</span>
+              </td>
             </tr>`).join('')}
         </tbody>
       </table>
     </div>
+    <a href="category.html" class="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-blue-700 hover:gap-2.5 transition-all">
+      Browse all 25 use cases <span>→</span>
+    </a>
   </section>
 
-  <div class="mt-10 rounded-xl border border-dashed border-neutral-300 p-5 text-[13px] leading-relaxed text-neutral-500">
-    <b class="text-neutral-700">这里原本是 16 条 GitHub Trending 裸列表。</b>
-    建议撤掉：那是别人的数据、你没看过、还占着首屏，和「我们真的打开用过」直接冲突。
-    换成上面「本周值得一看」——同样的新鲜感，但每条都带你的判断。
-  </div>
+  <footer class="mt-16 border-t border-neutral-200 pt-6 text-[12.5px] leading-relaxed text-neutral-400">
+    We rank from a consensus of independent public sources, then check each pick ourselves.
+    Pricing is re-verified by hand and dated on every product page.
+  </footer>
 
   <div class="h-16"></div>
 </div>`;
-refreshBadges();
 </script>
 </body>
 </html>
