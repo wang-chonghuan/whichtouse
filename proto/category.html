@@ -51,7 +51,7 @@ const standing = (track, list) => {
     ${top.map((it, i) => card(it, i)).join('')}
     ${rest.length ? `
       <div data-more class="hidden border-t border-neutral-100">${rest.map((it, i) => card(it, i + 5)).join('')}</div>
-      <button data-expand data-count="${rest.length}" class="mt-2.5 w-full rounded-lg border border-neutral-200 py-1.5 text-[12px] font-semibold text-neutral-500 transition hover:border-blue-300 hover:text-blue-700">
+      <button data-expand data-count="${rest.length}" class="mt-2.5 w-full rounded-lg bg-neutral-100 py-1.5 text-[12px] font-semibold text-neutral-600 transition hover:bg-blue-50 hover:text-blue-700">
         Show ${rest.length} more
       </button>` : `
       <p class="mt-2.5 text-center text-[11.5px] text-neutral-400">Only ${all.length} clear the bar here.</p>`}
@@ -59,7 +59,7 @@ const standing = (track, list) => {
 };
 
 const column = (track) => `
-  <div class="min-w-0">
+  <div class="min-w-0 rounded-2xl border border-neutral-200 bg-white p-5">
     <div class="flex items-center gap-2 pb-3">
       <span class="h-2.5 w-2.5 rounded-full" style="background:${track.dot}"></span>
       <h2 class="text-[15px] font-bold tracking-tight">${track.label}</h2>
@@ -78,7 +78,7 @@ main.innerHTML = `
     coming for it.
   </p>
 
-  <div class="mt-7 grid gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+  <div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
     ${TRACKS.map(column).join('')}
   </div>
 

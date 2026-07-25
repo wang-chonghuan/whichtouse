@@ -52,7 +52,7 @@ function shell({ active = '' } = {}) {
         <div class="px-4 pb-2 text-[10.5px] font-bold uppercase tracking-[0.09em] text-neutral-400">Tasks</div>
         <nav class="flex flex-col gap-px px-2">${items}</nav>
       </aside>
-      <main id="main" class="min-w-0 flex-1 overflow-y-auto"></main>
+      <main id="main" class="min-w-0 flex-1 overflow-y-auto bg-[#f7f8fa]"></main>
     </div>
   `);
   return document.getElementById('main');
