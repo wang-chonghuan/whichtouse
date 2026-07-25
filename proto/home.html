@@ -13,24 +13,36 @@
 <script>
 const main = shell({ active: 'content-writing' });
 
-/* Compact preview row: name, form is implied by the column, one-line verdict. */
+/* Home shows the top three of each standing — enough to answer "what would I
+ * pick" without reproducing the task page. Detail is a click away, never here. */
 const previewRow = (it, i) => `
-  <a href="category.html" class="group flex items-start gap-2.5 border-b border-neutral-100 py-2.5 last:border-0">
-    <span class="w-4 pt-[3px] text-center text-[12px] tabular-nums text-neutral-400">${i + 1}</span>
+  <a href="category.html" class="group flex items-start gap-2 border-b border-neutral-100 py-2 last:border-0">
+    <span class="w-3.5 pt-[3px] text-center text-[11.5px] tabular-nums text-neutral-400">${i + 1}</span>
     <span class="min-w-0 flex-1">
-      <span class="block truncate text-[13.5px] font-semibold group-hover:text-blue-700">${it.n}</span>
-      <span class="mt-0.5 block text-[12px] leading-[1.4] text-neutral-500">${it.verdict}</span>
+      <span class="block truncate text-[13px] font-semibold group-hover:text-blue-700">${it.n}</span>
+      <span class="mt-0.5 block text-[11.5px] leading-[1.4] text-neutral-500">${it.verdict}</span>
     </span>
   </a>`;
 
+const previewStanding = (track, list) => {
+  const isChallenger = list.key === 'challengers';
+  return `
+    <div class="mt-4 first:mt-0">
+      <div class="mb-0.5 flex items-baseline gap-2 border-b pb-1 ${isChallenger ? 'border-blue-200' : 'border-neutral-200'}">
+        <span class="text-[10.5px] font-bold tracking-[0.05em] ${isChallenger ? 'text-blue-700' : 'text-neutral-700'}">${list.label.toUpperCase()}</span>
+        <span class="ml-auto text-[10px] text-neutral-400">${TASK[track.key][list.key].length}</span>
+      </div>
+      ${TASK[track.key][list.key].slice(0, 3).map(previewRow).join('')}
+    </div>`;
+};
+
 const previewCol = (track) => `
   <section class="min-w-0">
-    <div class="mb-1 flex items-center gap-2 border-b-2 border-neutral-200 pb-1.5">
-      <span class="h-1.5 w-1.5 rounded-full" style="background:${track.dot}"></span>
-      <span class="text-[11px] font-bold tracking-[0.05em]">${track.label.toUpperCase()}</span>
-      <span class="ml-auto text-[10.5px] font-semibold text-neutral-400">TOP 5</span>
+    <div class="flex items-center gap-2 pb-2">
+      <span class="h-2 w-2 rounded-full" style="background:${track.dot}"></span>
+      <span class="text-[13.5px] font-bold">${track.label}</span>
     </div>
-    ${TASK[track.key].map(previewRow).join('')}
+    ${LISTS.map((list) => previewStanding(track, list)).join('')}
   </section>`;
 
 main.innerHTML = `
@@ -41,12 +53,15 @@ main.innerHTML = `
     <span class="text-[12.5px] text-neutral-400">default task · pick another on the left</span>
   </div>
   <p class="mt-2 max-w-[720px] text-[13.5px] leading-relaxed text-neutral-600">${TASK.note}</p>
+  <p class="mt-1.5 max-w-[720px] text-[12.5px] text-neutral-400">
+    Each form carries two standings — what has held the top, and what is coming for it.
+  </p>
 
   <div class="mt-6 grid gap-x-8 gap-y-7 md:grid-cols-2 xl:grid-cols-3">
     ${TRACKS.map(previewCol).join('')}
   </div>
 
-  <a href="category.html" class="mt-6 inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-4 py-2 text-[13px] font-semibold transition hover:border-blue-400 hover:text-blue-700">
+  <a href="category.html" class="mt-7 inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-4 py-2 text-[13px] font-semibold transition hover:border-blue-400 hover:text-blue-700">
     Open full ${TASK.name} ranking <span>→</span>
   </a>
 
@@ -61,7 +76,7 @@ main.innerHTML = `
         <div class="flex items-start gap-2.5 rounded-lg bg-white px-3.5 py-2.5 ring-1 ring-neutral-200">
           <span class="min-w-0 flex-1">
             <span class="flex flex-wrap items-center gap-2">
-              <a href="#" class="truncate text-[13px] font-semibold hover:text-blue-700">${r.n}</a>
+              <span class="truncate text-[13px] font-semibold">${r.n}</span>
               <span class="rounded-full px-1.5 py-px text-[10px] font-semibold ring-1 ${STATUS[r.status][1]}">${STATUS[r.status][0]}</span>
             </span>
             <span class="mt-0.5 block text-[12px] text-neutral-500">${r.note}</span>
