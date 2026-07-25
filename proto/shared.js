@@ -28,7 +28,7 @@ const TRACKS = [
 const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
 const mono = (n, i) => MONO[(n.charCodeAt(0) + i) % MONO.length];
 
-function shell({ active = '' } = {}) {
+function shell({ active = '', home = false } = {}) {
   const items = TASKS.map(
     ([slug, name]) => `<a href="category.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
       slug === active
@@ -39,7 +39,7 @@ function shell({ active = '' } = {}) {
 
   document.body.insertAdjacentHTML('afterbegin', `
     <header class="z-30 flex h-[58px] flex-shrink-0 items-center gap-5 border-b border-neutral-200 bg-white px-5">
-      <a href="category.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
+      <a href="home.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
       <span class="hidden text-[12.5px] text-neutral-400 md:block">Pick by the job, not by the tool</span>
       <button class="ml-auto flex h-[36px] w-full max-w-[380px] items-center gap-2.5 rounded-full border border-neutral-200 px-4 text-left text-[13px] text-neutral-400 transition hover:border-neutral-300 hover:bg-neutral-50">
         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -49,6 +49,11 @@ function shell({ active = '' } = {}) {
     </header>
     <div class="flex min-h-0 flex-1">
       <aside class="hidden w-[228px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-3 lg:block">
+        <nav class="flex flex-col gap-px px-2 pb-3">
+          <a href="home.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
+            home ? 'bg-blue-50 font-semibold text-blue-700' : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'
+          }">Home</a>
+        </nav>
         <div class="px-4 pb-2 text-[10.5px] font-bold uppercase tracking-[0.09em] text-neutral-400">Tasks</div>
         <nav class="flex flex-col gap-px px-2">${items}</nav>
       </aside>
