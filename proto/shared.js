@@ -25,13 +25,12 @@ const TRACKS = [
   { key: 'skill', label: 'Skills / Agents', dot: '#7a49d6' },
 ];
 
-/* Lifecycle: discovered -> watching -> listed, or delisted / rejected. */
+/* Why something is no longer in a standing. Only these three exist: anything
+ * still under evaluation is editorial workflow and never reaches the page. */
 const STATUS = {
-  listed:     ['Listed',     'bg-emerald-50 text-emerald-700 ring-emerald-200'],
-  watching:   ['Watching',   'bg-amber-50 text-amber-700 ring-amber-200'],
-  discovered: ['Discovered', 'bg-blue-50 text-blue-700 ring-blue-200'],
-  delisted:   ['Delisted',   'bg-neutral-100 text-neutral-500 ring-neutral-300'],
-  rejected:   ['Rejected',   'bg-rose-50 text-rose-600 ring-rose-200'],
+  watching: ['Re-checking', 'bg-amber-50 text-amber-700 ring-amber-200'],
+  delisted: ['Delisted',    'bg-neutral-100 text-neutral-500 ring-neutral-300'],
+  rejected: ['Rejected',    'bg-rose-50 text-rose-600 ring-rose-200'],
 };
 
 const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
@@ -280,16 +279,14 @@ const TASK = {
     ],
   },
 
-  radar: [
-    { n:'Automattic/harper', src:'GitHub Trending', note:'Offline grammar checker climbing fast', status:'watching', found:'Jul 24' },
-    { n:'Kortix/suna', src:'Hacker News', note:'General agent claiming long-form output', status:'discovered', found:'Jul 25' },
-    { n:'writer-mcp', src:'MCP registry', note:'Style-transfer server, unverified', status:'discovered', found:'Jul 25' },
-    { n:'DraftPilot', src:'Product Hunt', note:'Launch-day SaaS, pricing unclear', status:'discovered', found:'Jul 23' },
-  ],
+  /* how many found-but-not-yet-judged items sit in the queue; the queue itself
+   * is editorial workflow, not something a reader can act on */
+  inReview: 4,
   archive: [
     { n:'Office-PowerPoint-MCP-Server', url:'#', status:'rejected', why:'MCP server — out of scope' },
     { n:'SlideSpeak MCP', url:'#', status:'rejected', why:'MCP server — out of scope' },
     { n:'Peppertype', url:'#', status:'delisted', why:'Product discontinued' },
     { n:'Smart Copy (Unbounce)', url:'#', status:'delisted', why:'Shut down by the vendor' },
+    { n:'Wordtune', url:'#', status:'watching', why:'Pulled after the 2026 pricing change — re-checking' },
   ],
 };

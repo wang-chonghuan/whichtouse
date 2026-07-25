@@ -65,26 +65,10 @@ main.innerHTML = `
     Open full ${TASK.name} ranking <span>→</span>
   </a>
 
-  <!-- discovery, kept deliberately small -->
-  <section class="mt-10 rounded-2xl border border-neutral-200 bg-neutral-50/50 p-5">
-    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-      <h2 class="text-[15px] font-bold tracking-tight">Discovery radar</h2>
-      <span class="text-[12px] text-neutral-500">found, not yet judged — verification comes after</span>
-    </div>
-    <div class="mt-3 grid gap-2 sm:grid-cols-2">
-      ${TASK.radar.map((r) => `
-        <div class="flex items-start gap-2.5 rounded-lg bg-white px-3.5 py-2.5 ring-1 ring-neutral-200">
-          <span class="min-w-0 flex-1">
-            <span class="flex flex-wrap items-center gap-2">
-              <span class="truncate text-[13px] font-semibold">${r.n}</span>
-              <span class="rounded-full px-1.5 py-px text-[10px] font-semibold ring-1 ${STATUS[r.status][1]}">${STATUS[r.status][0]}</span>
-            </span>
-            <span class="mt-0.5 block text-[12px] text-neutral-500">${r.note}</span>
-          </span>
-          <span class="whitespace-nowrap pt-0.5 text-[11px] text-neutral-400">${r.src}</span>
-        </div>`).join('')}
-    </div>
-  </section>
+  <p class="mt-8 max-w-[720px] text-[12px] leading-relaxed text-neutral-400">
+    Tracking GitHub, Hacker News, Product Hunt and the MCP registry daily —
+    ${TASK.inReview} in review. Nothing appears above until we have opened it.
+  </p>
 
   <div class="h-14"></div>
 </div>`;
