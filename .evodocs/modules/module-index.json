@@ -1,3 +1,42 @@
 {
-  "modules": {}
+  "modules": {
+    "enrichment-workflow": {
+      "description": "Agent skill for source-grounded product research and validated enrichment of ranked catalog item details.",
+      "paths": [
+        ".agents/skills/wt-enrich"
+      ]
+    },
+    "ingest-pipeline": {
+      "description": "Agent skill for candidate discovery, signal collection, deduplication, PostgreSQL ranking, and static AI exports.",
+      "paths": [
+        ".agents/skills/wt-ingest"
+      ]
+    },
+    "web-app": {
+      "description": "TanStack Start application shell, ranking interface, responsive navigation, detail panels, SEO, and deployment runtime.",
+      "paths": [
+        "app"
+      ],
+      "children": {
+        "catalog": {
+          "description": "Version-controlled category and ranking content, domain types, search entries, and deterministic display ranking.",
+          "paths": [
+            "app/src/lib/catalog.ts",
+            "app/src/lib/catalog-search.ts",
+            "app/src/content/categories.json",
+            "app/src/content/c"
+          ]
+        },
+        "github-trending": {
+          "description": "GitHub Trending acquisition, parsing, classification, repository research, caching, and curated detail enrichment.",
+          "paths": [
+            "app/src/lib/github-trending.ts",
+            "app/src/lib/github-trending-parser.ts",
+            "app/src/lib/github-trending-enrichment.ts",
+            "app/src/content/github-trending-curated.ts"
+          ]
+        }
+      }
+    }
+  }
 }
