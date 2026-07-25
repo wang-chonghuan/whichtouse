@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>PROTO · 分类页</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{font-family:Outfit,system-ui,sans-serif}</style>
+</head>
+<body class="flex h-screen flex-col overflow-hidden bg-white text-[#171a21]">
+<script src="shared.js"></script>
+<script>
+const main = shell({ active: 'content-writing', page: '分类页' });
+
+const apps = [
+  { n:'ChatGPT', c:'High', p:'Freemium · Plus $20/mo', s:9.4, v:'7月23日', bad:'长文容易跑调，需要反复纠正语气' },
+  { n:'Claude', c:'High', p:'Freemium · Pro $20/mo', s:9.1, v:'7月23日', bad:'免费额度紧，长会话易被限流' },
+  { n:'Jasper', c:'High', p:'Paid · 从 $49/mo', s:8.8, v:'7月20日', bad:'贵，且模板化痕迹明显' },
+  { n:'Writesonic', c:'Medium', p:'Freemium · 从 $16/mo', s:7.3, v:'7月20日', bad:'输出质量波动大' },
+  { n:'Grammarly', c:'Medium', p:'Freemium · Pro $12/mo', s:7.0, v:'7月23日', bad:'只改不写，建议会磨平个人语气' },
+];
+const skills = [
+  { n:'Anthropic Document Skills', c:'High', p:'Free / OSS', s:9.4, v:'7月23日', bad:'需自行安装，无 GUI' },
+  { n:'Novel (steven-tey)', c:'High', p:'Free / OSS', s:9.1, v:'7月23日', bad:'偏编辑器，非写作代理' },
+  { n:'content-research-writer', c:'Medium', p:'Free / OSS', s:7.3, v:'7月18日', bad:'独立评测少，口碑继承自母仓库' },
+];
+
+const conf = { High:'bg-emerald-50 text-emerald-700', Medium:'bg-amber-50 text-amber-700', Low:'bg-rose-50 text-rose-700' };
+
+const row = (it, i) => `
+  <a href="product.html" class="flex items-center gap-3 border-b border-neutral-100 px-2 py-3 hover:bg-neutral-50">
+    <span class="w-5 text-center text-[13px] text-neutral-400">${i+1}</span>
+    <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg text-[13px] font-bold text-white" style="background:${['#3b6fb0','#8e5bb5','#0d7d78','#c0662f','#2f9e6b'][i%5]}">${it.n[0]}</span>
+    <span class="min-w-0 flex-1">
+      <span class="block truncate text-sm font-semibold">${it.n}</span>
+      <span class="mt-0.5 flex items-center gap-2">
+        <span class="rounded-full px-2 py-0.5 text-[11px] font-semibold ${conf[it.c]}">${it.c}</span>
+        <span class="truncate text-[11.5px] text-neutral-500">${it.p}</span>
+      </span>
+    </span>
+    <span class="text-[15px] font-bold tabular-nums">${it.s.toFixed(1)}</span>
+  </a>`;
+
+main.innerHTML = `
+<div class="mx-auto max-w-[1120px] px-6 py-7">
+
+  <h1 class="text-[26px] font-bold tracking-tight">Best Content Writing AI tools</h1>
+  <p class="mt-2 max-w-[620px] text-sm leading-relaxed text-neutral-500">
+    这个分类的现状：通用大模型已经吃掉了大部分写作场景，专用写作 SaaS 的价值退回到「团队协作 + 品牌语气」。
+    开源侧生态很薄，能打的是官方文档技能。${src('judgement','你的判断')}
+  </p>
+
+  <!-- ④ 要稳的还是要新的 -->
+  <div class="mt-6 grid gap-4 sm:grid-cols-2">
+    <div class="rounded-xl border border-neutral-200 p-5">
+      <div class="flex items-center gap-2 text-[11px] font-bold tracking-wider text-neutral-500">
+        🏛 稳妥之选 ${src('hard','npm/brew 12个月')}
+      </div>
+      <div class="mt-2 text-lg font-bold">ChatGPT</div>
+      <p class="mt-1 text-[13px] leading-relaxed text-neutral-500">
+        连续 12 个月稳居本分类主流测评首位，价格与能力都无意外。
+      </p>
+      <div class="mt-3 text-[11.5px] text-neutral-400">证据：多年稳居主流测评推荐 ${src('soft','SaaS 只有软信号')}</div>
+    </div>
+    <div class="rounded-xl border border-blue-200 bg-blue-50/40 p-5">
+      <div class="flex items-center gap-2 text-[11px] font-bold tracking-wider text-blue-700">
+        🚀 新王候选 ${src('hard','created_at + 90天增速')}
+      </div>
+      <div class="mt-2 text-lg font-bold">Anthropic Document Skills</div>
+      <p class="mt-1 text-[13px] leading-relaxed text-neutral-500">
+        仓库 5 个月，90 天 star 增速进入本分类前 5%，且产出的是真正可编辑的交付物。
+      </p>
+      <div class="mt-3 text-[11.5px] text-neutral-400">证据：164k★ 母仓库 · 90d 增速 +38% ${src('hard','GitHub API')}</div>
+    </div>
+  </div>
+
+  <!-- ① 我要做这件事用什么 -->
+  <div class="mt-8 grid gap-8 lg:grid-cols-2">
+    <section>
+      <div class="mb-1 flex items-center gap-2 border-b-2 border-neutral-200 pb-2">
+        <span class="h-2 w-2 rounded-full bg-[#4257c9]"></span>
+        <span class="text-xs font-bold tracking-wider">APP / SAAS</span>
+        <span class="rounded-full bg-neutral-100 px-2 text-[11px] font-semibold text-neutral-500">${apps.length}</span>
+        ${src('judgement','你的评测')}
+      </div>
+      ${apps.map(row).join('')}
+    </section>
+    <section>
+      <div class="mb-1 flex items-center gap-2 border-b-2 border-neutral-200 pb-2">
+        <span class="h-2 w-2 rounded-full bg-[#7a49d6]"></span>
+        <span class="text-xs font-bold tracking-wider">SKILL / REPO</span>
+        <span class="rounded-full bg-neutral-100 px-2 text-[11px] font-semibold text-neutral-500">${skills.length}</span>
+        ${src('judgement','你的评测')}
+      </div>
+      ${skills.map(row).join('')}
+    </section>
+  </div>
+
+  <!-- 护城河块：价格 + 缺点 横向对比 -->
+  <section class="mt-10">
+    <h2 class="text-lg font-bold">价格与短板一览 ${src('manual','人工核实 + 官网diff监控')}</h2>
+    <p class="mt-1 text-[13px] text-neutral-500">别处不会告诉你的两列：真实月费，和它到底差在哪。</p>
+    <div class="mt-3 overflow-x-auto rounded-xl border border-neutral-200">
+      <table class="w-full min-w-[720px] text-sm">
+        <thead class="bg-neutral-50 text-left text-[11px] font-bold text-neutral-500">
+          <tr><th class="px-4 py-3">产品</th><th class="px-4 py-3 w-[190px]">价格</th><th class="px-4 py-3">主要短板</th><th class="px-4 py-3 w-[110px]">核实于</th></tr>
+        </thead>
+        <tbody>
+          ${[...apps, ...skills].map((it) => `
+            <tr class="border-t border-neutral-100">
+              <td class="px-4 py-3 font-semibold">${it.n}</td>
+              <td class="px-4 py-3 text-neutral-600">${it.p}</td>
+              <td class="px-4 py-3 text-neutral-600">${it.bad}</td>
+              <td class="px-4 py-3 text-[12px] text-neutral-400">${it.v}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ③ 有什么新东西 -->
+  <section class="mt-10">
+    <h2 class="text-lg font-bold">本分类新品雷达 ${src('soft','GitHub/HN/PH → 你筛过')}</h2>
+    <p class="mt-1 text-[13px] text-neutral-500">只放我们看过一眼、并给出一句判断的。不是自动列表。</p>
+    <div class="mt-3 space-y-2">
+      ${[
+        ['Automattic/harper','离线语法检查，Rust 实现','值得关注：隐私敏感场景可替代 Grammarly 的基础功能'],
+        ['ComposioHQ/awesome-claude-skills','技能集合仓库','先别当工具用——它是索引，不是产品'],
+      ].map(([n,d,v]) => `
+        <div class="rounded-lg border border-neutral-200 p-4">
+          <div class="flex items-baseline gap-2">
+            <span class="font-semibold">${n}</span>
+            <span class="text-[12.5px] text-neutral-500">${d}</span>
+          </div>
+          <div class="mt-1 text-[13px] text-blue-700">→ ${v}</div>
+        </div>`).join('')}
+    </div>
+  </section>
+
+  <div class="h-16"></div>
+</div>`;
+refreshBadges();
+</script>
+</body>
+</html>

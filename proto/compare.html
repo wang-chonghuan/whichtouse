@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>PROTO · 对比页</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{font-family:Outfit,system-ui,sans-serif}</style>
+</head>
+<body class="flex h-screen flex-col overflow-hidden bg-white text-[#171a21]">
+<script src="shared.js"></script>
+<script>
+const main = shell({ active: 'content-writing', page: '对比页' });
+
+const A = { n:'Grammarly', s:7.0, price:'免费版 · Pro $12/mo（年付）', v:'7月23日',
+  pros:['几乎所有写作界面都能用','免费版够解决基础错误'],
+  cons:['会磨平个人语气','只改不写'], best:'已经写完了，要把它改干净' };
+const B = { n:'ChatGPT', s:9.4, price:'免费版 · Plus $20/mo', v:'7月23日',
+  pros:['首稿生成能力最强','一个工具覆盖多数写作场景'],
+  cons:['长文容易跑调','语气需要反复纠正'], best:'从零开始写，需要产出量' };
+
+const col = (x, accent) => `
+  <div class="flex-1 rounded-xl border ${accent ? 'border-blue-300 bg-blue-50/30' : 'border-neutral-200'} p-5">
+    <div class="text-lg font-bold">${x.n}</div>
+    <div class="mt-1 text-3xl font-extrabold tabular-nums">${x.s.toFixed(1)}</div>
+    <div class="mt-4 text-[11px] font-bold tracking-wider text-neutral-500">价格</div>
+    <div class="mt-1 text-[13.5px]">${x.price}
+      <span class="ml-1 rounded bg-neutral-100 px-1.5 py-0.5 text-[11px] font-semibold text-neutral-500">核实于 ${x.v}</span>
+    </div>
+    <div class="mt-4 text-[11px] font-bold tracking-wider text-neutral-500">优势</div>
+    <ul class="mt-1 space-y-1 text-[13px]">${x.pros.map(p=>`<li class="flex gap-2"><span class="text-emerald-600">✓</span>${p}</li>`).join('')}</ul>
+    <div class="mt-4 text-[11px] font-bold tracking-wider text-neutral-500">短板</div>
+    <ul class="mt-1 space-y-1 text-[13px]">${x.cons.map(p=>`<li class="flex gap-2"><span class="text-rose-500">—</span>${p}</li>`).join('')}</ul>
+    <div class="mt-4 rounded-lg bg-white/70 p-3 text-[13px]">
+      <b>什么时候选它：</b>${x.best}
+    </div>
+  </div>`;
+
+main.innerHTML = `
+<div class="mx-auto max-w-[900px] px-6 py-7">
+
+  <div class="rounded-lg border border-blue-200 bg-blue-50 px-4 py-2.5 text-[12.5px] text-blue-900">
+    <b>为什么值得做：</b>「X vs Y」是转化意图最强的搜索词之一，而这一整页
+    <b>可以用你已有的数据自动生成</b> —— 25 个分类里每两个产品都是一个候选页面，成本接近零。
+  </div>
+
+  <nav class="mt-5 text-[12.5px] text-neutral-500">
+    <a href="home.html" class="hover:text-blue-600">Home</a> ›
+    <a href="category.html" class="hover:text-blue-600">Content Writing</a> › Grammarly vs ChatGPT
+  </nav>
+
+  <h1 class="mt-3 text-[28px] font-extrabold tracking-tight">Grammarly vs ChatGPT</h1>
+  <p class="mt-2 max-w-[620px] text-sm leading-relaxed text-neutral-500">
+    一句话结论：<b class="text-[#171a21]">它们不是替代关系。</b>ChatGPT 负责把东西写出来，
+    Grammarly 负责把写出来的东西改干净。预算只够一个、且你写得出初稿 —— 选 Grammarly。
+    ${src('judgement','你的判断')}
+  </p>
+
+  <div class="mt-6 flex flex-col gap-4 sm:flex-row">
+    ${col(A,false)}${col(B,true)}
+  </div>
+
+  <section class="mt-8">
+    <h2 class="text-sm font-bold">逐项对照 ${src('manual','人工核实')}</h2>
+    <div class="mt-3 overflow-x-auto rounded-xl border border-neutral-200">
+      <table class="w-full min-w-[560px] text-sm">
+        <tbody>
+          ${[
+            ['首稿生成','弱（不是它的定位）','强'],
+            ['语法/清晰度','强','中等，需要提示'],
+            ['保留个人语气','弱 — 会磨平','中等'],
+            ['免费版可用度','高','高'],
+            ['入门月费','$12','$20'],
+          ].map(([k,a,b],i) => `
+            <tr class="${i? 'border-t border-neutral-100':''}">
+              <td class="w-[160px] px-4 py-3 text-[12.5px] font-semibold text-neutral-500">${k}</td>
+              <td class="px-4 py-3">${a}</td>
+              <td class="px-4 py-3">${b}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="h-16"></div>
+</div>`;
+refreshBadges();
+</script>
+</body>
+</html>
