@@ -81,9 +81,7 @@ const column = (track) => `
 main.innerHTML = `
 <div class="mx-auto max-w-[1180px] px-6 py-6">
 
-  <nav class="text-[12.5px] text-neutral-400"><a href="home.html" class="hover:text-blue-600">Home</a><span class="px-1">›</span>${TASK.name}</nav>
-
-  <h1 class="mt-1.5 text-[26px] font-extrabold tracking-tight">${TASK.name}</h1>
+  <h1 class="text-[26px] font-extrabold tracking-tight">${TASK.name}</h1>
   <p class="mt-2 max-w-[740px] text-[13.5px] leading-relaxed text-neutral-600">${TASK.note}</p>
   <p class="mt-2 max-w-[740px] text-[12.5px] text-neutral-400">
     Three forms, ranked separately — a hosted product, a repo you run, and a skill you drop into an
@@ -95,32 +93,19 @@ main.innerHTML = `
     ${TRACKS.map(column).join('')}
   </div>
 
-  <!-- what we removed or are still holding -->
-  <section class="mt-6">
-    <button id="archiveBtn" class="flex w-full items-center gap-2 rounded-xl border border-neutral-200 px-4 py-3 text-left transition hover:bg-neutral-50">
-      <span class="text-[13.5px] font-semibold">Previously listed &amp; watchlist</span>
-      <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-semibold text-neutral-500">${TASK.archive.length}</span>
-      <span class="ml-auto text-[12px] text-neutral-400">what we removed, and why</span>
-      <span id="archiveChev" class="text-neutral-400 transition">▾</span>
-    </button>
-    <div id="archive" class="hidden overflow-hidden rounded-b-xl border border-t-0 border-neutral-200">
-      <table class="w-full text-sm">
-        <tbody>
-          ${TASK.archive.map((a, i) => `
-            <tr class="${i ? 'border-t border-neutral-100' : ''}">
-              <td class="px-4 py-2.5 text-[13px] font-medium">${a.n}</td>
-              <td class="w-[110px] px-4 py-2.5"><span class="rounded-full px-1.5 py-px text-[10.5px] font-semibold ring-1 ${STATUS[a.status][1]}">${STATUS[a.status][0]}</span></td>
-              <td class="px-4 py-2.5 text-[12.5px] text-neutral-500">${a.why}</td>
-            </tr>`).join('')}
-        </tbody>
-      </table>
+  <section class="mt-12">
+    <div class="flex items-baseline gap-2.5">
+      <h2 class="text-[15px] font-bold tracking-tight">Watchlist</h2>
+      <span class="text-[12px] text-neutral-400">pulled or being re-checked</span>
+    </div>
+    <div class="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5">
+      ${TASK.watchlist.map((w) => `
+        <a href="${w.url}" class="text-[13px] text-neutral-500 underline decoration-neutral-300 underline-offset-2 transition hover:text-blue-700 hover:decoration-blue-400">${w.n}</a>`).join('')}
     </div>
   </section>
 
-  <p class="mt-8 text-[12px] leading-relaxed text-neutral-400">
+  <p class="mt-10 text-[12px] leading-relaxed text-neutral-400">
     Five per standing by default, ten at most. Removing an entry is as much of the job as adding one.
-    Tracking GitHub, Hacker News, Product Hunt and the MCP registry daily — ${TASK.inReview} in review,
-    listed here only once we have opened them.
   </p>
 
   <div class="h-14"></div>
@@ -133,12 +118,6 @@ document.querySelectorAll('[data-expand]').forEach((btn) => {
     const open = !btn.previousElementSibling.classList.toggle('hidden');
     btn.textContent = open ? 'Show top 5 only' : `Show ${count} more`;
   });
-});
-
-const archiveBtn = document.getElementById('archiveBtn');
-archiveBtn.addEventListener('click', () => {
-  const open = !document.getElementById('archive').classList.toggle('hidden');
-  document.getElementById('archiveChev').style.transform = open ? 'rotate(180deg)' : '';
 });
 </script>
 </body>

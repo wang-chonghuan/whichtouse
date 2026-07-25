@@ -25,18 +25,10 @@ const TRACKS = [
   { key: 'skill', label: 'Skills / Agents', dot: '#7a49d6' },
 ];
 
-/* Why something is no longer in a standing. Only these three exist: anything
- * still under evaluation is editorial workflow and never reaches the page. */
-const STATUS = {
-  watching: ['Re-checking', 'bg-amber-50 text-amber-700 ring-amber-200'],
-  delisted: ['Delisted',    'bg-neutral-100 text-neutral-500 ring-neutral-300'],
-  rejected: ['Rejected',    'bg-rose-50 text-rose-600 ring-rose-200'],
-};
-
 const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
 const mono = (n, i) => MONO[(n.charCodeAt(0) + i) % MONO.length];
 
-function shell({ active = '', home = false } = {}) {
+function shell({ active = '' } = {}) {
   const items = TASKS.map(
     ([slug, name]) => `<a href="category.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
       slug === active
@@ -47,7 +39,7 @@ function shell({ active = '', home = false } = {}) {
 
   document.body.insertAdjacentHTML('afterbegin', `
     <header class="z-30 flex h-[58px] flex-shrink-0 items-center gap-5 border-b border-neutral-200 bg-white px-5">
-      <a href="home.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
+      <a href="category.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
       <span class="hidden text-[12.5px] text-neutral-400 md:block">Pick by the job, not by the tool</span>
       <button class="ml-auto flex h-[36px] w-full max-w-[380px] items-center gap-2.5 rounded-full border border-neutral-200 px-4 text-left text-[13px] text-neutral-400 transition hover:border-neutral-300 hover:bg-neutral-50">
         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -279,14 +271,13 @@ const TASK = {
     ],
   },
 
-  /* how many found-but-not-yet-judged items sit in the queue; the queue itself
-   * is editorial workflow, not something a reader can act on */
-  inReview: 4,
-  archive: [
-    { n:'Office-PowerPoint-MCP-Server', url:'#', status:'rejected', why:'MCP server — out of scope' },
-    { n:'SlideSpeak MCP', url:'#', status:'rejected', why:'MCP server — out of scope' },
-    { n:'Peppertype', url:'#', status:'delisted', why:'Product discontinued' },
-    { n:'Smart Copy (Unbounce)', url:'#', status:'delisted', why:'Shut down by the vendor' },
-    { n:'Wordtune', url:'#', status:'watching', why:'Pulled after the 2026 pricing change — re-checking' },
+  /* Things we pulled or are re-checking. Names and links only — a reader either
+   * recognises one and wonders where it went, or does not care. */
+  watchlist: [
+    { n:'Office-PowerPoint-MCP-Server', url:'#' },
+    { n:'SlideSpeak MCP', url:'#' },
+    { n:'Peppertype', url:'#' },
+    { n:'Smart Copy (Unbounce)', url:'#' },
+    { n:'Wordtune', url:'#' },
   ],
 };
