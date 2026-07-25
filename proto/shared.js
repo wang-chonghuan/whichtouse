@@ -68,13 +68,14 @@ function shell({ active = '', home = false } = {}) {
 }
 
 /* Two standings per form. Vocabulary chosen deliberately:
- * "Incumbents" is the plain business word for who currently holds the position
- * and has held it — it claims durability without borrowing an analyst firm's
- * quadrant, which we have no methodology to back. "Challengers" is its natural
- * opposite and says the useful thing: climbing, unproven, may not last. */
+ * Both are participles, not nouns. "Leaders" would read as a title conferred;
+ * "Leading" reads as a state that currently holds and can stop holding — which
+ * is what a standing re-checked every few weeks actually is. A bare participle
+ * heading is standard in this context (Trending, Featured), and the one-line
+ * definition beside it supplies the noun. */
 const LISTS = [
-  { key: 'incumbents',  label: 'Incumbents',  note: 'held the top for 12+ months' },
-  { key: 'challengers', label: 'Challengers', note: 'climbing fast, not yet proven' },
+  { key: 'incumbents',  label: 'Leading',  note: 'held the top for 12+ months' },
+  { key: 'challengers', label: 'Emerging', note: 'climbing fast, not yet proven' },
 ];
 
 /* ---- one task's data: Content Writing, used by both screens ---- */
