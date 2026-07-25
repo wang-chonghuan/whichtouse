@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Best Content Writing AI Tools & Skills, Ranked — WhichToUse</title>
+<title>Content Writing — which tool to use — WhichToUse</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>body{font-family:Outfit,system-ui,sans-serif}</style>
@@ -13,164 +13,141 @@
 <script>
 const main = shell({ active: 'content-writing' });
 
-const apps = [
-  { n:'ChatGPT', c:'High', price:'Freemium', paid:'$20/mo', s:9.4, v:'Jul 23',
-    good:'The strongest all-round first draft.', bad:'Loses the thread on long pieces.' },
-  { n:'Claude', c:'High', price:'Freemium', paid:'$20/mo', s:9.1, v:'Jul 23',
-    good:'Best at holding a voice across a long document.', bad:'Free tier throttles quickly.' },
-  { n:'Jasper', c:'High', price:'Paid', paid:'from $49/mo', s:8.8, v:'Jul 20',
-    good:'Built for brand voice and team workflows.', bad:'Expensive, and output reads templated.' },
-  { n:'Writesonic', c:'Medium', price:'Freemium', paid:'from $16/mo', s:7.3, v:'Jul 20',
-    good:'Cheap way to get bulk marketing copy.', bad:'Quality swings hard between runs.' },
-  { n:'Grammarly', c:'Medium', price:'Freemium', paid:'$12/mo', s:7.0, v:'Jul 23',
-    good:'Works inside almost every writing surface.', bad:'Flattens a deliberate voice.' },
-  { n:'Copy.ai', c:'Medium', price:'Freemium', paid:'from $49/mo', s:6.7, v:'Jul 20',
-    good:'Fast at short-form ad and email variants.', bad:'Little to offer beyond templates.' },
-];
+/* One entry carries: name, link, form, verdict, who it suits, one strength,
+ * one catch, a price signal, and when we last checked it. */
+const card = (it, i, track) => `
+  <article class="border-b border-neutral-100 py-3.5 last:border-0">
+    <div class="flex items-start gap-2.5">
+      <span class="w-4 pt-1 text-center text-[12px] tabular-nums text-neutral-400">${i + 1}</span>
+      <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md text-[11px] font-bold text-white" style="background:${mono(it.n, i)}">${it.n[0]}</span>
+      <div class="min-w-0 flex-1">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <a href="https://${it.url}" target="_blank" rel="noreferrer"
+             class="text-[14px] font-semibold hover:text-blue-700">${it.n}</a>
+          <span class="text-[11px] text-neutral-400">${it.url}&nbsp;↗</span>
+        </div>
 
-const skills = [
-  { n:'Anthropic Document Skills', c:'High', price:'Free / OSS', paid:'—', s:9.4, v:'Jul 23',
-    good:'Produces genuinely editable .docx and .pptx.', bad:'No GUI — you install and wire it yourself.' },
-  { n:'Novel (steven-tey)', c:'High', price:'Free / OSS', paid:'—', s:9.1, v:'Jul 23',
-    good:'The de-facto open AI editor.', bad:'An editor, not a writing agent.' },
-  { n:'content-research-writer', c:'Medium', price:'Free / OSS', paid:'—', s:7.3, v:'Jul 18',
-    good:'Research → outline → draft in one skill.', bad:'Adoption is inherited from its parent repo.' },
-  { n:'Reor', c:'Medium', price:'Free / OSS', paid:'—', s:7.0, v:'Jul 18',
-    good:'Local-first notes with retrieval built in.', bad:'Writing is adjacent, not the focus.' },
-];
+        <p class="mt-1 text-[13px] font-medium leading-snug">${it.verdict}</p>
 
-const row = (it, i) => `
-  <a href="product.html" class="group grid grid-cols-[26px_28px_1fr_auto] items-start gap-3 border-b border-neutral-100 px-2 py-3.5 transition hover:bg-neutral-50/80">
-    <span class="pt-1.5 text-center text-[13px] tabular-nums text-neutral-400">${i + 1}</span>
-    <span class="mt-0.5 flex h-7 w-7 items-center justify-center rounded-lg text-[13px] font-bold text-white" style="background:${mono(it.n, i)}">${it.n[0]}</span>
-    <span class="min-w-0">
-      <span class="flex flex-wrap items-center gap-x-2 gap-y-1">
-        <span class="text-[14.5px] font-semibold group-hover:text-blue-700">${it.n}</span>
-        <span class="rounded-full px-1.5 py-px text-[10.5px] font-semibold ${CONF[it.c]}">${it.c}</span>
-      </span>
-      <span class="mt-1 block text-[12.5px] leading-[1.45] text-neutral-500">
-        ${it.good}
-        <span class="text-rose-600/90">${it.bad}</span>
-      </span>
-    </span>
-    <span class="pt-0.5 text-right">
-      <span class="block text-[15px] font-bold tabular-nums">${it.s.toFixed(1)}</span>
-      <span class="mt-0.5 block whitespace-nowrap text-[11.5px] text-neutral-400">${it.paid === '—' ? it.price : it.paid}</span>
-    </span>
-  </a>`;
+        <p class="mt-1.5 text-[12.5px] leading-snug text-neutral-500">
+          <span class="text-neutral-400">Good for</span> ${it.who}
+        </p>
 
-const track = (label, dot, list) => `
-  <section class="min-w-0">
-    <div class="mb-1 flex items-center gap-2 border-b-2 border-neutral-200 pb-2">
-      <span class="h-2 w-2 rounded-full" style="background:${dot}"></span>
-      <span class="text-[11.5px] font-bold tracking-[0.05em]">${label}</span>
-      <span class="rounded-full bg-neutral-100 px-1.5 text-[11px] font-semibold text-neutral-500">${list.length}</span>
+        <div class="mt-2 grid gap-1 text-[12.5px] leading-snug sm:grid-cols-2">
+          <div class="flex gap-1.5"><span class="text-emerald-600">✓</span><span>${it.pro}</span></div>
+          <div class="flex gap-1.5"><span class="text-rose-500">✗</span><span class="text-rose-700/90">${it.con}</span></div>
+        </div>
+
+        <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11.5px] text-neutral-400">
+          <span class="font-medium text-neutral-600">${it.price}</span>
+          <span class="text-neutral-300">·</span>
+          <span>checked ${it.checked}</span>
+        </div>
+      </div>
     </div>
-    ${list.map(row).join('')}
+  </article>`;
+
+const column = (track) => {
+  const top = TASK[track.key];
+  const rest = TASK.more[track.key] || [];
+  return `
+  <section class="min-w-0" data-track="${track.key}">
+    <div class="mb-1 flex items-center gap-2 border-b-2 border-neutral-200 pb-2">
+      <span class="h-2 w-2 rounded-full" style="background:${track.dot}"></span>
+      <span class="text-[11.5px] font-bold tracking-[0.05em]">${track.label.toUpperCase()}</span>
+      <span class="ml-auto text-[10.5px] font-semibold text-neutral-400">TOP 5</span>
+    </div>
+    ${top.map((it, i) => card(it, i, track)).join('')}
+    <div data-more class="hidden">
+      ${rest.map((it, i) => card(it, i + 5, track)).join('')}
+    </div>
+    ${rest.length ? `
+      <button data-viewall class="mt-3 w-full rounded-lg border border-neutral-200 py-2 text-[12.5px] font-semibold text-neutral-600 transition hover:border-blue-300 hover:text-blue-700">
+        View all (${top.length + rest.length})
+      </button>` : `
+      <p class="mt-3 text-center text-[12px] text-neutral-400">Only ${top.length} clear the bar here.</p>`}
   </section>`;
+};
 
 main.innerHTML = `
-<div class="mx-auto max-w-[1140px] px-6 py-8">
+<div class="mx-auto max-w-[1180px] px-6 py-6">
 
-  <nav class="text-[12.5px] text-neutral-400">
-    <a href="home.html" class="hover:text-blue-600">Home</a>
-    <span class="px-1">›</span>Content Writing
-  </nav>
+  <nav class="text-[12.5px] text-neutral-400"><a href="home.html" class="hover:text-blue-600">Home</a><span class="px-1">›</span>${TASK.name}</nav>
 
-  <h1 class="mt-2 text-[30px] font-extrabold leading-[1.12] tracking-tight">Best Content Writing AI tools</h1>
-  <p class="mt-3 max-w-[660px] text-[15px] leading-relaxed text-neutral-600">
-    General-purpose models have absorbed most of this category. What is left for dedicated
-    writing tools is brand voice and team workflow — and on the open-source side, the ecosystem
-    is genuinely thin. Here is what we found after opening each one.
+  <h1 class="mt-1.5 text-[26px] font-extrabold tracking-tight">${TASK.name}</h1>
+  <p class="mt-2 max-w-[740px] text-[13.5px] leading-relaxed text-neutral-600">${TASK.note}</p>
+  <p class="mt-2 text-[12.5px] text-neutral-400">
+    Three forms, ranked separately — a hosted product, a repo you run, and a skill you drop into an agent are not the same decision.
   </p>
 
-  <!-- the safe pick vs the rising one -->
-  <div class="mt-7 grid gap-4 md:grid-cols-2">
-    <div class="rounded-2xl border border-neutral-200 p-5">
-      <div class="flex items-center gap-2">
-        <span class="text-[11px] font-bold uppercase tracking-[0.09em] text-neutral-500">Safe pick</span>
-        <span class="text-[11px] text-neutral-300">·</span>
-        <span class="text-[11px] text-neutral-400">12 months at the top</span>
-      </div>
-      <div class="mt-2.5 flex items-center gap-2.5">
-        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#3b6fb0] text-[15px] font-bold text-white">C</span>
-        <span class="text-[19px] font-bold">ChatGPT</span>
-      </div>
-      <p class="mt-2.5 text-[13.5px] leading-relaxed text-neutral-600">
-        Has held the top of every serious round-up we track for a year. No surprises in price
-        or capability — the choice you pick when you cannot afford to be wrong.
-      </p>
-    </div>
-
-    <div class="relative overflow-hidden rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50/70 to-transparent p-5">
-      <div class="flex items-center gap-2">
-        <span class="text-[11px] font-bold uppercase tracking-[0.09em] text-blue-700">Rising</span>
-        <span class="text-[11px] text-blue-300">·</span>
-        <span class="text-[11px] text-blue-500">+38% in 90 days</span>
-      </div>
-      <div class="mt-2.5 flex items-center gap-2.5">
-        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2f9e6b] text-[15px] font-bold text-white">A</span>
-        <span class="text-[19px] font-bold">Anthropic Document Skills</span>
-      </div>
-      <p class="mt-2.5 text-[13.5px] leading-relaxed text-neutral-600">
-        Five months old and climbing fast. Unlike everything above it, what comes out is a real
-        editable file rather than text you still have to format.
-      </p>
-    </div>
+  <div class="mt-7 grid gap-x-8 gap-y-9 md:grid-cols-2 xl:grid-cols-3">
+    ${TRACKS.map(column).join('')}
   </div>
 
-  <!-- the two tracks -->
-  <div class="mt-9 grid gap-x-10 gap-y-8 lg:grid-cols-2">
-    ${track('APP / SAAS', '#4257c9', apps)}
-    ${track('SKILL / REPO', '#7a49d6', skills)}
-  </div>
+  <!-- radar for this task -->
+  <section class="mt-11 rounded-2xl border border-neutral-200 bg-neutral-50/50 p-5">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <h2 class="text-[15px] font-bold tracking-tight">Emerging radar</h2>
+      <span class="text-[12px] text-neutral-500">found daily · judged later · nothing here is a recommendation yet</span>
+    </div>
+    <div class="mt-3 grid gap-2 sm:grid-cols-2">
+      ${TASK.radar.map((r) => `
+        <div class="flex items-start gap-2.5 rounded-lg bg-white px-3.5 py-2.5 ring-1 ring-neutral-200">
+          <span class="min-w-0 flex-1">
+            <span class="flex flex-wrap items-center gap-2">
+              <a href="#" class="truncate text-[13px] font-semibold hover:text-blue-700">${r.n}</a>
+              <span class="rounded-full px-1.5 py-px text-[10px] font-semibold ring-1 ${STATUS[r.status][1]}">${STATUS[r.status][0]}</span>
+            </span>
+            <span class="mt-0.5 block text-[12px] text-neutral-500">${r.note}</span>
+          </span>
+          <span class="whitespace-nowrap pt-0.5 text-right text-[11px] text-neutral-400">${r.src}<br>${r.found}</span>
+        </div>`).join('')}
+    </div>
+  </section>
 
-  <!-- pricing, side by side -->
-  <section class="mt-12">
-    <h2 class="text-[19px] font-bold tracking-tight">What they actually cost</h2>
-    <p class="mt-1.5 text-[13.5px] text-neutral-500">Entry paid tier, normalised. We re-check these by hand.</p>
-    <div class="mt-4 overflow-x-auto rounded-2xl border border-neutral-200">
-      <table class="w-full min-w-[640px] text-sm">
-        <thead class="bg-neutral-50/80 text-left text-[11px] font-bold uppercase tracking-wide text-neutral-500">
-          <tr>
-            <th class="px-5 py-3">Tool</th>
-            <th class="px-5 py-3 w-[140px]">Free tier</th>
-            <th class="px-5 py-3 w-[150px]">Entry paid</th>
-            <th class="px-5 py-3 w-[120px]">Verified</th>
-          </tr>
-        </thead>
+  <!-- what we removed or are still holding: names and status only -->
+  <section class="mt-6">
+    <button id="archiveBtn" class="flex w-full items-center gap-2 rounded-xl border border-neutral-200 px-4 py-3 text-left transition hover:bg-neutral-50">
+      <span class="text-[13.5px] font-semibold">Previously listed &amp; watchlist</span>
+      <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-[11px] font-semibold text-neutral-500">${TASK.archive.length}</span>
+      <span class="ml-auto text-[12px] text-neutral-400">what we removed, and why</span>
+      <span id="archiveChev" class="text-neutral-400 transition">▾</span>
+    </button>
+    <div id="archive" class="hidden overflow-hidden rounded-b-xl border border-t-0 border-neutral-200">
+      <table class="w-full text-sm">
         <tbody>
-          ${[...apps, ...skills].map((it, i) => `
+          ${TASK.archive.map((a, i) => `
             <tr class="${i ? 'border-t border-neutral-100' : ''}">
-              <td class="px-5 py-3 font-semibold">${it.n}</td>
-              <td class="px-5 py-3 text-neutral-600">${it.price === 'Paid' ? '<span class="text-neutral-400">None</span>' : it.price}</td>
-              <td class="px-5 py-3 font-medium tabular-nums">${it.paid}</td>
-              <td class="px-5 py-3 text-[12.5px] text-neutral-400">${it.v}</td>
+              <td class="px-4 py-2.5"><a href="${a.url}" class="text-[13px] font-medium hover:text-blue-700">${a.n}</a></td>
+              <td class="px-4 py-2.5 w-[110px]"><span class="rounded-full px-1.5 py-px text-[10.5px] font-semibold ring-1 ${STATUS[a.status][1]}">${STATUS[a.status][0]}</span></td>
+              <td class="px-4 py-2.5 text-[12.5px] text-neutral-500">${a.why}</td>
             </tr>`).join('')}
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- curated new arrivals -->
-  <section class="mt-12">
-    <h2 class="text-[19px] font-bold tracking-tight">New in this category</h2>
-    <p class="mt-1.5 text-[13.5px] text-neutral-500">Only things we have opened. One line on whether it is worth your time.</p>
-    <div class="mt-4 grid gap-3 md:grid-cols-2">
-      ${[
-        ['Automattic/harper', 'Offline, Rust-powered grammar checker', 'Worth a look if privacy rules out Grammarly. It checks; it does not write.'],
-        ['ComposioHQ/awesome-claude-skills', 'Curated skill collection', 'Useful as an index — do not mistake it for a tool.'],
-      ].map(([n, d, verdict]) => `
-        <a href="product.html" class="group rounded-2xl border border-neutral-200 p-4 transition hover:border-blue-300 hover:bg-blue-50/20">
-          <div class="text-[14.5px] font-semibold group-hover:text-blue-700">${n}</div>
-          <div class="mt-0.5 text-[12.5px] text-neutral-400">${d}</div>
-          <div class="mt-2 text-[13px] leading-relaxed text-neutral-600">${verdict}</div>
-        </a>`).join('')}
-    </div>
-  </section>
+  <p class="mt-8 text-[12px] leading-relaxed text-neutral-400">
+    Five per form by default, ten at most. Removing an entry is as much of the job as adding one.
+  </p>
 
-  <div class="h-20"></div>
+  <div class="h-14"></div>
 </div>`;
+
+/* View all: 5 -> up to 10, per column */
+document.querySelectorAll('[data-viewall]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const more = btn.parentElement.querySelector('[data-more]');
+    const open = !more.classList.toggle('hidden');
+    btn.textContent = open ? 'Show top 5 only' : `View all (${more.children.length + 5})`;
+  });
+});
+
+const archiveBtn = document.getElementById('archiveBtn');
+archiveBtn.addEventListener('click', () => {
+  const open = !document.getElementById('archive').classList.toggle('hidden');
+  document.getElementById('archiveChev').style.transform = open ? 'rotate(180deg)' : '';
+});
 </script>
 </body>
 </html>

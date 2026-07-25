@@ -1,6 +1,8 @@
-/* Shell for the v2 mockup: top bar + use-case sidebar. */
+/* Shell + shared data for the v2 mockup.
+ * The product is a task-decision site: you arrive with a job, and each job shows
+ * the same three forms side by side. The left column is the task directory. */
 
-const CATEGORIES = [
+const TASKS = [
   ['content-writing', 'Content Writing'], ['video-generation', 'Video Generation'],
   ['image-generation', 'Image Generation'], ['voice-audio', 'Voice & Audio'],
   ['lead-gen', 'Lead Generation'], ['email-outreach', 'Email Outreach'],
@@ -16,9 +18,28 @@ const CATEGORIES = [
   ['architecture-diagram', 'Diagrams & Architecture'],
 ];
 
+/* The three forms, compared side by side for every task. */
+const TRACKS = [
+  { key: 'saas', label: 'App / SaaS', dot: '#4257c9' },
+  { key: 'oss', label: 'Open Source', dot: '#0d7d78' },
+  { key: 'skill', label: 'Skills / Agents', dot: '#7a49d6' },
+];
+
+/* Lifecycle: discovered -> watching -> listed, or delisted / rejected. */
+const STATUS = {
+  listed:     ['Listed',     'bg-emerald-50 text-emerald-700 ring-emerald-200'],
+  watching:   ['Watching',   'bg-amber-50 text-amber-700 ring-amber-200'],
+  discovered: ['Discovered', 'bg-blue-50 text-blue-700 ring-blue-200'],
+  delisted:   ['Delisted',   'bg-neutral-100 text-neutral-500 ring-neutral-300'],
+  rejected:   ['Rejected',   'bg-rose-50 text-rose-600 ring-rose-200'],
+};
+
+const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
+const mono = (n, i) => MONO[(n.charCodeAt(0) + i) % MONO.length];
+
 function shell({ active = '', home = false } = {}) {
-  const items = CATEGORIES.map(
-    ([slug, name]) => `<a href="category.html" class="rounded-lg px-4 py-[7px] text-[13.5px] transition ${
+  const items = TASKS.map(
+    ([slug, name]) => `<a href="category.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
       slug === active
         ? 'bg-blue-50 font-semibold text-blue-700'
         : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'
@@ -26,23 +47,19 @@ function shell({ active = '', home = false } = {}) {
   ).join('');
 
   document.body.insertAdjacentHTML('afterbegin', `
-    <header class="z-30 flex h-[60px] flex-shrink-0 items-center gap-6 border-b border-neutral-200 bg-white/90 px-5 backdrop-blur">
-      <a href="home.html" class="text-[21px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
-      <button class="ml-auto flex h-[38px] w-full max-w-[440px] items-center gap-2.5 rounded-full border border-neutral-200 px-4 text-left text-[13.5px] text-neutral-400 transition hover:border-neutral-300 hover:bg-neutral-50">
+    <header class="z-30 flex h-[58px] flex-shrink-0 items-center gap-5 border-b border-neutral-200 bg-white px-5">
+      <a href="home.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
+      <span class="hidden text-[12.5px] text-neutral-400 md:block">Pick by the job, not by the tool</span>
+      <button class="ml-auto flex h-[36px] w-full max-w-[380px] items-center gap-2.5 rounded-full border border-neutral-200 px-4 text-left text-[13px] text-neutral-400 transition hover:border-neutral-300 hover:bg-neutral-50">
         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        Search AI tools and use cases
+        Search
         <kbd class="ml-auto rounded border border-neutral-200 px-1.5 py-0.5 text-[10px] font-semibold text-neutral-400">⌘K</kbd>
       </button>
     </header>
     <div class="flex min-h-0 flex-1">
-      <aside class="hidden w-[236px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-4 lg:block">
-        <nav class="flex flex-col gap-px px-2">
-          <a href="home.html" class="rounded-lg px-4 py-[7px] text-[13.5px] transition ${
-            home ? 'bg-blue-50 font-semibold text-blue-700' : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'
-          }">Home</a>
-          <div class="my-2 h-px bg-neutral-200"></div>
-          ${items}
-        </nav>
+      <aside class="hidden w-[228px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-3 lg:block">
+        <div class="px-4 pb-2 text-[10.5px] font-bold uppercase tracking-[0.09em] text-neutral-400">Tasks</div>
+        <nav class="flex flex-col gap-px px-2">${items}</nav>
       </aside>
       <main id="main" class="min-w-0 flex-1 overflow-y-auto"></main>
     </div>
@@ -50,10 +67,108 @@ function shell({ active = '', home = false } = {}) {
   return document.getElementById('main');
 }
 
-const CONF = {
-  High: 'bg-emerald-50 text-emerald-700',
-  Medium: 'bg-amber-50 text-amber-700',
-  Low: 'bg-rose-50 text-rose-700',
+/* ---- one task's data: Content Writing, used by both screens ---- */
+const TASK = {
+  name: 'Content Writing',
+  note: 'General-purpose models absorbed most of this job. What is left for dedicated tools is brand voice and team workflow; the open-source side is genuinely thin.',
+  saas: [
+    { n:'ChatGPT', url:'openai.com', verdict:'The strongest all-round first draft.',
+      who:'Anyone who needs volume from a blank page.',
+      pro:'Best raw generation in this task', con:'Drifts off-voice past a few thousand words',
+      price:'Free tier · $20/mo', checked:'Jul 23' },
+    { n:'Claude', url:'claude.ai', verdict:'Holds a voice across a long document better than anything else here.',
+      who:'Long-form writers who care about tone consistency.',
+      pro:'Most consistent over long documents', con:'Free tier throttles quickly',
+      price:'Free tier · $20/mo', checked:'Jul 23' },
+    { n:'Jasper', url:'jasper.ai', verdict:'Built for brand voice and marketing teams, priced accordingly.',
+      who:'Marketing teams with a style guide to enforce.',
+      pro:'Real brand-voice and team controls', con:'Expensive, and output reads templated',
+      price:'No free tier · from $49/mo', checked:'Jul 20' },
+    { n:'Writesonic', url:'writesonic.com', verdict:'Cheap bulk marketing copy, with the quality swings that implies.',
+      who:'High-volume, low-stakes ad and SEO copy.',
+      pro:'Cheapest way to bulk-generate', con:'Quality varies hard between runs',
+      price:'Free tier · from $16/mo', checked:'Jul 20' },
+    { n:'Grammarly', url:'grammarly.com', verdict:'Edits what you already wrote. It will not write it for you.',
+      who:'People who can draft but not self-edit.',
+      pro:'Works inside almost every writing surface', con:'Flattens a deliberate voice',
+      price:'Free tier · $12/mo', checked:'Jul 23' },
+  ],
+  oss: [
+    { n:'Novel', url:'github.com/steven-tey/novel', verdict:'The de-facto open AI editor — an editor, not a writer.',
+      who:'Teams embedding AI writing into their own product.',
+      pro:'Clean Notion-style editing surface', con:'You supply the model, the keys and the hosting',
+      price:'Free · MIT · self-host', checked:'Jul 23' },
+    { n:'harper', url:'github.com/Automattic/harper', verdict:'Offline grammar checking, fast and private.',
+      who:'Anyone who cannot send text to a cloud service.',
+      pro:'Runs locally, no data leaves the machine', con:'Checks only — no rewriting, no generation',
+      price:'Free · Apache-2.0', checked:'Jul 25' },
+    { n:'Open WebUI', url:'github.com/open-webui/open-webui', verdict:'A self-hosted chat front-end you can point at any model.',
+      who:'Self-hosters who want ChatGPT ergonomics on their own models.',
+      pro:'Model-agnostic, mature UI', con:'A shell — writing quality is whatever model you attach',
+      price:'Free · self-host', checked:'Jul 22' },
+    { n:'Reor', url:'github.com/reorproject/reor', verdict:'Local-first notes with retrieval built in.',
+      who:'Researchers accumulating notes they later write from.',
+      pro:'Retrieval over your own corpus, offline', con:'Writing is adjacent, not the focus',
+      price:'Free · AGPL', checked:'Jul 18' },
+    { n:'AnythingLLM', url:'github.com/Mintplex-Labs/anything-llm', verdict:'Document-grounded drafting on your own files.',
+      who:'Writing that must cite an internal corpus.',
+      pro:'Straightforward RAG over local documents', con:'Heavier to run than the job usually needs',
+      price:'Free · MIT · self-host', checked:'Jul 18' },
+  ],
+  skill: [
+    { n:'Anthropic Document Skills', url:'github.com/anthropics/skills', verdict:'Produces genuinely editable .docx and .pptx, not text you reformat.',
+      who:'Anyone whose deliverable is a file, not a chat reply.',
+      pro:'Real file output, official and maintained', con:'No GUI — you install and wire it yourself',
+      price:'Free · official', checked:'Jul 23' },
+    { n:'content-research-writer', url:'github.com/ComposioHQ', verdict:'Research → outline → draft in one skill, with citations.',
+      who:'Long posts that need sourcing along the way.',
+      pro:'Covers the whole research-to-draft chain', con:'Adoption inherited from its parent collection',
+      price:'Free · OSS', checked:'Jul 18' },
+    { n:'seo-content-writer', url:'github.com/seo-geo-claude-skills', verdict:'Keyword-shaped drafting. Single-author, thin review history.',
+      who:'SEO writers already working inside an agent.',
+      pro:'Opinionated SEO structure out of the box', con:'One maintainer, little independent review',
+      price:'Free · OSS', checked:'Jul 18' },
+    { n:'writing-style-editor', url:'github.com/example/style-editor', verdict:'Enforces a style guide over an existing draft.',
+      who:'Teams with a written house style.',
+      pro:'Deterministic, rule-driven edits', con:'Needs a style guide you have actually written',
+      price:'Free · OSS', checked:'Jul 15' },
+    { n:'blog-post-agent', url:'github.com/example/blog-agent', verdict:'End-to-end post drafting; quality tracks the model behind it.',
+      who:'Solo bloggers wanting a repeatable pipeline.',
+      pro:'One command from brief to draft', con:'Little control over intermediate steps',
+      price:'Free · OSS', checked:'Jul 15' },
+  ],
+  /* extra rows revealed by View all (positions 6-10) */
+  more: {
+    saas: [
+      { n:'Copy.ai', url:'copy.ai', verdict:'Short-form ad and email variants, little beyond templates.',
+        who:'Performance marketers testing many variants.', pro:'Fast variant generation', con:'Thin outside its templates',
+        price:'Free tier · from $49/mo', checked:'Jul 20' },
+      { n:'Rytr', url:'rytr.me', verdict:'The budget option; you feel the price in the output.',
+        who:'Hobby projects with no budget.', pro:'Cheapest paid tier here', con:'Noticeably weaker generation',
+        price:'Free tier · from $9/mo', checked:'Jul 19' },
+    ],
+    oss: [
+      { n:'LibreChat', url:'github.com/danny-avila/LibreChat', verdict:'Multi-model chat you can host for a team.',
+        who:'Teams needing shared access to several models.', pro:'Solid multi-user hosting', con:'Not writing-specific',
+        price:'Free · MIT', checked:'Jul 17' },
+    ],
+    skill: [
+      { n:'docs-to-blog', url:'github.com/example/docs-to-blog', verdict:'Turns existing docs into posts. Narrow but reliable.',
+        who:'Devrel teams recycling documentation.', pro:'Very predictable output', con:'Only useful if the docs exist',
+        price:'Free · OSS', checked:'Jul 14' },
+    ],
+  },
+  radar: [
+    { n:'Automattic/harper', src:'GitHub Trending', note:'Offline grammar checker climbing fast', status:'watching', found:'Jul 24' },
+    { n:'Kortix/suna', src:'Hacker News', note:'General agent claiming long-form output', status:'discovered', found:'Jul 25' },
+    { n:'writer-mcp', src:'MCP registry', note:'Style-transfer server, unverified', status:'discovered', found:'Jul 25' },
+    { n:'DraftPilot', src:'Product Hunt', note:'Launch-day SaaS, pricing unclear', status:'discovered', found:'Jul 23' },
+  ],
+  archive: [
+    { n:'Office-PowerPoint-MCP-Server', url:'#', status:'rejected', why:'MCP server — out of scope' },
+    { n:'SlideSpeak MCP', url:'#', status:'rejected', why:'MCP server — out of scope' },
+    { n:'Sudowrite', url:'#', status:'delisted', why:'Fiction-only; moved out of this task' },
+    { n:'Peppertype', url:'#', status:'delisted', why:'Product discontinued' },
+    { n:'Wordtune', url:'#', status:'watching', why:'Re-checking after 2026 pricing change' },
+  ],
 };
-const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
-const mono = (name, i) => MONO[(name.charCodeAt(0) + i) % MONO.length];
