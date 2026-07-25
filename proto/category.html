@@ -13,35 +13,22 @@
 <script>
 const main = shell({ active: 'content-writing' });
 
-/* The whole card is the link to the detail page — the card itself never expands,
- * so the domain is shown as text rather than a second, competing link. */
+/* Rank, name, and three sentences — nothing else. Everything we know beyond
+ * this (pricing, who it suits, sources, when we last checked) lives on the
+ * detail page, because a list exists to decide what to open. */
 const card = (it, i) => `
-  <a href="product.html" class="group block border-b border-neutral-100 py-3.5 last:border-0">
-    <div class="flex items-start gap-2.5">
-      <span class="w-4 pt-1 text-center text-[12px] tabular-nums text-neutral-400">${i + 1}</span>
-      <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md text-[11px] font-bold text-white" style="background:${mono(it.n, i)}">${it.n[0]}</span>
+  <a href="#" class="group block border-b border-neutral-100 py-3 last:border-0">
+    <div class="flex items-baseline gap-2.5">
+      <span class="w-4 flex-shrink-0 text-center text-[12px] tabular-nums text-neutral-400">${i + 1}</span>
       <div class="min-w-0 flex-1">
-        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span class="text-[14px] font-semibold group-hover:text-blue-700">${it.n}</span>
-          <span class="text-[11px] text-neutral-400">${it.url}</span>
-        </div>
-
-        <p class="mt-1 text-[13px] font-medium leading-snug">${it.verdict}</p>
-
-        <p class="mt-1.5 text-[12.5px] leading-snug text-neutral-500">
-          <span class="text-neutral-400">Good for</span> ${it.who}
+        <div class="text-[14px] font-semibold group-hover:text-blue-700">${it.n}</div>
+        <p class="mt-0.5 text-[12.5px] leading-snug text-neutral-500">${it.desc}</p>
+        <p class="mt-1 flex gap-1.5 text-[12.5px] leading-snug">
+          <span class="text-emerald-600">✓</span><span>${it.edge}</span>
         </p>
-
-        <div class="mt-2 grid gap-1 text-[12.5px] leading-snug sm:grid-cols-2">
-          <div class="flex gap-1.5"><span class="text-emerald-600">✓</span><span>${it.pro}</span></div>
-          <div class="flex gap-1.5"><span class="text-rose-500">✗</span><span class="text-rose-700/90">${it.con}</span></div>
-        </div>
-
-        <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11.5px] text-neutral-400">
-          <span class="font-medium text-neutral-600">${it.price}</span>
-          <span class="text-neutral-300">·</span>
-          <span>checked ${it.checked}</span>
-        </div>
+        <p class="mt-0.5 flex gap-1.5 text-[12.5px] leading-snug text-rose-700/90">
+          <span class="text-rose-500">✗</span><span>${it.con}</span>
+        </p>
       </div>
     </div>
   </a>`;
@@ -51,11 +38,11 @@ const standing = (track, list) => {
   const all = TASK[track.key][list.key];
   const top = all.slice(0, 5);
   const rest = all.slice(5, 10);
-  const isChallenger = list.key === 'challengers';
+  const isEmerging = list.key === 'emerging';
   return `
   <section class="mt-6 first:mt-0">
-    <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 border-b-2 pb-2 ${isChallenger ? 'border-blue-200' : 'border-neutral-200'}">
-      <span class="text-[11.5px] font-bold tracking-[0.05em] ${isChallenger ? 'text-blue-700' : ''}">${list.label.toUpperCase()}</span>
+    <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 border-b-2 pb-2 ${isEmerging ? 'border-blue-200' : 'border-neutral-200'}">
+      <span class="text-[11.5px] font-bold tracking-[0.05em] ${isEmerging ? 'text-blue-700' : ''}">${list.label.toUpperCase()}</span>
       <span class="text-[11px] text-neutral-400">${list.note}</span>
       <span class="ml-auto text-[10.5px] font-semibold text-neutral-400">${all.length}</span>
     </div>
