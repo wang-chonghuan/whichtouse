@@ -20,46 +20,141 @@ const TASKS = [
 
 /* The three forms, compared side by side for every task. */
 const TRACKS = [
-  { key: 'saas', label: 'App / SaaS', dot: '#4257c9' },
-  { key: 'oss', label: 'Open Source', dot: '#0d7d78' },
-  { key: 'skill', label: 'Skills / Agents', dot: '#7a49d6' },
+  { key: 'saas', label: 'App / SaaS' },
+  { key: 'oss', label: 'Open Source' },
+  { key: 'skill', label: 'Skills / Agents' },
 ];
 
-const MONO = ['#3b6fb0', '#8e5bb5', '#0d7d78', '#c0662f', '#2f9e6b', '#b8860b'];
-const mono = (n, i) => MONO[(n.charCodeAt(0) + i) % MONO.length];
+/* ---------------------------------------------------------------------------
+ * Shell. Every measurement here is from DESIGN.md; the section is cited inline.
+ * ------------------------------------------------------------------------ */
+
+/* §3.3 — a logo is never a bare image, it is a contained mark on a tinted
+ * square. We have no logo files in the mockup, so the mark is the initial. */
+const tile = (name, size = 24) => {
+  const s = size === 24
+    ? 'size-6 rounded-sm text-[11px]'
+    : 'size-[50px] rounded-[13px] text-[20px]';
+  return `<span class="flex ${s} shrink-0 items-center justify-center bg-secondary font-bold text-secondary-foreground">${
+    name.replace(/^.*\//, '')[0].toUpperCase()
+  }</span>`;
+};
+
+/* §2.5 — sits above the sticky header, so it scrolls away. */
+const BANNER = `
+  <div class="relative shrink-0 border-b border-accent-foreground/10 bg-accent">
+    <div class="mx-auto flex h-[46px] max-w-container items-center justify-center gap-3 px-4 pr-14 sm:px-6 sm:pr-24 lg:px-8">
+      <span class="hidden shrink-0 rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold tracking-micro text-brand-foreground sm:block">UPDATED</span>
+      <span class="truncate text-[13.5px] text-accent-foreground">Content Writing re-checked — 3 entries dropped, 2 added</span>
+      <a href="category.html" class="hidden shrink-0 text-[13.5px] font-semibold text-accent-foreground sm:block">See what changed &rarr;</a>
+    </div>
+    <button aria-label="Dismiss"
+            class="absolute right-3.5 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-accent-foreground/60 transition-colors hover:bg-accent-foreground/10 hover:text-accent-foreground sm:right-5">
+      <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>`;
+
+/* §2.4 — 64px inner bar, white on the off-white canvas, 1px bottom border.
+ * §3.1 — ghost nav items, pill search, brand CTA. */
+const HEADER = `
+  <div class="sticky top-0 z-40 w-full shrink-0">
+    <header class="flex justify-center border-b border-border bg-card">
+      <div class="mx-auto flex h-16 w-full max-w-container items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+
+        <div class="flex min-w-0 items-center gap-3 lg:gap-6">
+          <button id="mobileNav" aria-label="Open tasks"
+                  class="-ml-1 flex size-9 shrink-0 items-center justify-center rounded-md text-foreground/60 transition-colors hover:bg-muted lg:hidden">
+            <svg class="size-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <a href="home.html" class="flex shrink-0 items-center gap-2">
+            <span class="flex size-8 items-center justify-center rounded-md bg-brand text-[17px] font-bold text-brand-foreground">W</span>
+            <span class="hidden text-[19px] font-bold tracking-tight sm:block">WhichToUse</span>
+          </a>
+          <nav class="hidden items-center gap-1 lg:flex">
+            <button id="sidebarToggle" aria-controls="use-case-sidebar"
+                    class="flex h-9 items-center gap-2 rounded-lg px-2 py-1.5 font-medium text-foreground/60 transition-colors hover:bg-muted">
+              <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+              Tasks
+            </button>
+            <a href="#" class="flex h-9 items-center rounded-lg px-2 py-1.5 font-medium text-foreground/60 transition-colors hover:bg-muted">Method</a>
+          </nav>
+        </div>
+
+        <div class="flex shrink-0 items-center gap-3">
+          <label class="hidden h-9 w-[260px] cursor-text items-center gap-1.5 rounded-full border border-border/70 bg-card px-3 text-sm font-medium text-foreground/70 transition-colors hover:border-foreground/20 md:flex">
+            <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input placeholder="Search tools and tasks" class="min-w-0 flex-1 bg-transparent outline-none placeholder:text-muted-foreground" />
+            <kbd class="shrink-0 font-sans text-[11px] font-semibold text-muted-foreground">&#8984;K</kbd>
+          </label>
+          <button aria-label="Search"
+                  class="flex size-9 shrink-0 items-center justify-center rounded-full border border-border/70 bg-card text-foreground/70 transition-colors hover:border-foreground/20 md:hidden">
+            <svg class="size-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </button>
+          <a href="#" class="inline-flex h-10 shrink-0 items-center gap-2 rounded-xl bg-brand px-[18px] text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand/85">
+            Suggest a tool
+          </a>
+        </div>
+
+      </div>
+    </header>
+  </div>`;
 
 function shell({ active = '', home = false } = {}) {
-  const items = TASKS.map(
-    ([slug, name]) => `<a href="category.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
-      slug === active
-        ? 'bg-blue-50 font-semibold text-blue-700'
-        : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'
-    }">${name}</a>`
-  ).join('');
+  /* §2.4/§1.3 — sidebar tokens: #fbfbfa surface, #3f3f3c text, brand for the
+   * one active row. Item geometry follows the nav item in §3.1 (36px, r12). */
+  const item = (href, label, on) => `
+    <a href="${href}" class="flex h-9 items-center rounded-lg px-3 text-[13.5px] transition-colors ${
+      on ? 'bg-brand font-semibold text-brand-foreground'
+         : 'text-sidebar-foreground hover:bg-muted'
+    }">${label}</a>`;
+
+  /* Below lg the sidebar becomes an overlay panel. Kept in one place rather
+   * than threaded through max-lg: variants on every class list. */
+  document.head.insertAdjacentHTML('beforeend', `<style>
+    @media (max-width: 1023px) {
+      #use-case-sidebar.is-open {
+        display: block; position: fixed; inset: 0 auto 0 0; z-index: 50;
+        width: 280px; box-shadow: 0 1px 3px 0 rgba(0,0,0,.10), 0 8px 10px -1px rgba(0,0,0,.10);
+      }
+      #sidebar-scrim.is-open { display: block; }
+    }
+  </style>`);
 
   document.body.insertAdjacentHTML('afterbegin', `
-    <header class="z-30 flex h-[58px] flex-shrink-0 items-center gap-5 border-b border-neutral-200 bg-white px-5">
-      <a href="home.html" class="text-[20px] font-extrabold tracking-tight">Which<span class="text-blue-600">ToUse</span></a>
-      <span class="hidden text-[12.5px] text-neutral-400 md:block">Pick by the job, not by the tool</span>
-      <button class="ml-auto flex h-[36px] w-full max-w-[380px] items-center gap-2.5 rounded-full border border-neutral-200 px-4 text-left text-[13px] text-neutral-400 transition hover:border-neutral-300 hover:bg-neutral-50">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        Search
-        <kbd class="ml-auto rounded border border-neutral-200 px-1.5 py-0.5 text-[10px] font-semibold text-neutral-400">⌘K</kbd>
-      </button>
-    </header>
+    ${BANNER}
+    ${HEADER}
+    <div id="sidebar-scrim" class="hidden fixed inset-0 z-40 bg-foreground/20"></div>
     <div class="flex min-h-0 flex-1">
-      <aside id="use-case-sidebar" class="hidden w-[228px] flex-shrink-0 overflow-y-auto border-r border-neutral-200 py-3 lg:block">
-        <nav class="flex flex-col gap-px px-2 pb-3">
-          <a href="home.html" class="rounded-lg px-3.5 py-[7px] text-[13.5px] transition ${
-            home ? 'bg-blue-50 font-semibold text-blue-700' : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-800'
-          }">Home</a>
+      <aside id="use-case-sidebar"
+             class="hidden w-[240px] shrink-0 overflow-y-auto border-r border-border bg-sidebar py-4 lg:block">
+        <nav class="flex flex-col gap-0.5 px-3">${item('home.html', 'Home', home)}</nav>
+        <div class="px-4 pb-2 pt-5 text-[11px] font-bold uppercase tracking-label text-muted-foreground">Tasks</div>
+        <nav class="flex flex-col gap-0.5 px-3 pb-4">
+          ${TASKS.map(([slug, name]) => item('category.html', name, slug === active)).join('')}
         </nav>
-        <div class="px-4 pb-2 text-[10.5px] font-bold uppercase tracking-[0.09em] text-neutral-400">Tasks</div>
-        <nav class="flex flex-col gap-px px-2">${items}</nav>
       </aside>
-      <main id="main" class="min-w-0 flex-1 overflow-y-auto bg-[#f7f8fa]"></main>
+      <main id="main" class="min-w-0 flex-1 overflow-y-auto bg-background"></main>
     </div>
   `);
+
+  const aside = document.getElementById('use-case-sidebar');
+  const scrim = document.getElementById('sidebar-scrim');
+
+  /* Desktop: the sidebar is a column that collapses out of the layout.
+   * Mobile: the same element is an overlay panel. One control each. */
+  document.getElementById('sidebarToggle')?.addEventListener('click', () => {
+    aside.classList.toggle('lg:hidden');
+  });
+  const closeMobile = () => {
+    aside.classList.remove('is-open');
+    scrim.classList.remove('is-open');
+  };
+  document.getElementById('mobileNav')?.addEventListener('click', () => {
+    aside.classList.add('is-open');
+    scrim.classList.add('is-open');
+  });
+  scrim.addEventListener('click', closeMobile);
+
   return document.getElementById('main');
 }
 

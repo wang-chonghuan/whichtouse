@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Content Writing — which tool to use — WhichToUse</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>body{font-family:Outfit,system-ui,sans-serif}</style>
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth}</style>
 </head>
-<body class="flex h-screen flex-col overflow-hidden bg-white text-[#171a21]">
+<body class="flex h-screen flex-col overflow-hidden bg-background font-sans text-foreground">
 <script src="shared.js"></script>
 <script>
 const main = shell({ active: 'content-writing' });
@@ -17,19 +20,19 @@ const main = shell({ active: 'content-writing' });
  * this (pricing, who it suits, sources, when we last checked) lives on the
  * detail page, because a list exists to decide what to open. */
 const card = (it, i) => `
-  <a href="product.html" class="group block border-b border-neutral-100 py-3 last:border-0">
-    <div class="flex items-baseline gap-2.5">
-      <span class="w-4 flex-shrink-0 text-center text-[12px] tabular-nums text-neutral-400">${i + 1}</span>
+  <a href="product.html" class="group block border-b border-border/70 px-0.5 py-3.5 transition-[padding] hover:pl-2.5">
+    <div class="flex gap-2.5">
+      <span class="w-3 shrink-0 pt-0.5 text-[12px] tabular-nums text-muted-foreground">${i + 1}</span>
       <div class="min-w-0 flex-1">
-        <div class="text-[14px] font-semibold group-hover:text-blue-700">${it.owner ? it.owner + '/' : ''}${it.n}</div>
-        <p class="mt-0.5 text-[12.5px] leading-snug text-neutral-500">${it.desc}</p>
-        <p class="mt-1 flex items-start gap-2 text-[12.5px] leading-snug">
-          <span class="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500"></span>
-          <span>${it.edge}</span>
+        <div class="text-sm font-semibold">${it.owner ? it.owner + '/' : ''}${it.n}</div>
+        <p class="mt-0.5 text-[13.5px] leading-normal text-muted-foreground">${it.desc}</p>
+        <!-- §5 EXTENSION — the two semantic dots. Dark cool green for the edge,
+             --destructive for the drawback. -->
+        <p class="mt-1.5 flex items-start gap-2 text-[13.5px] leading-normal">
+          <span class="mt-[7px] size-1.5 shrink-0 rounded-full bg-edge"></span><span>${it.edge}</span>
         </p>
-        <p class="mt-1 flex items-start gap-2 text-[12.5px] leading-snug">
-          <span class="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500"></span>
-          <span>${it.con}</span>
+        <p class="mt-1 flex items-start gap-2 text-[13.5px] leading-normal">
+          <span class="mt-[7px] size-1.5 shrink-0 rounded-full bg-con"></span><span>${it.con}</span>
         </p>
       </div>
     </div>
@@ -38,76 +41,92 @@ const card = (it, i) => `
 /* One standing: five by default, the rest revealed in place. */
 const standing = (track, list) => {
   const all = TASK[track.key][list.key];
-  const top = all.slice(0, 5);
   const rest = all.slice(5, 10);
-  const isEmerging = list.key === 'emerging';
+  const emerging = list.key === 'emerging';
+  /* §3.2 — the plan-tag ramp reused for standing weight: settled = grey,
+   * provisional = tinted brand. Contrast, not hue. */
+  const count = emerging
+    ? 'bg-accent text-accent-foreground'
+    : 'bg-secondary text-muted-foreground';
   return `
-  <section class="mt-6 first:mt-0">
-    <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 border-b-2 pb-2 ${isEmerging ? 'border-blue-200' : 'border-neutral-200'}">
-      <span class="text-[11.5px] font-bold tracking-[0.05em] ${isEmerging ? 'text-blue-700' : ''}">${list.label.toUpperCase()}</span>
-      <span class="text-[11px] text-neutral-400">${list.note}</span>
-      <span class="ml-auto text-[10.5px] font-semibold text-neutral-400">${all.length}</span>
+  <section class="mt-7 first:mt-0">
+    <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 border-b border-border pb-2">
+      <span class="text-[11px] font-bold uppercase tracking-label">${list.label}</span>
+      <span class="rounded-full px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-micro ${count}">${all.length}</span>
+      <span class="text-[12.5px] text-muted-foreground">${list.note}</span>
     </div>
-    ${top.map((it, i) => card(it, i)).join('')}
+    ${all.slice(0, 5).map((it, i) => card(it, i)).join('')}
     ${rest.length ? `
-      <div data-more class="hidden border-t border-neutral-100">${rest.map((it, i) => card(it, i + 5)).join('')}</div>
-      <button data-expand data-count="${rest.length}" class="mt-2.5 w-full rounded-lg bg-neutral-100 py-1.5 text-[12px] font-semibold text-neutral-600 transition hover:bg-blue-50 hover:text-blue-700">
-        Show ${rest.length} more
+      <div data-more class="hidden">${rest.map((it, i) => card(it, i + 5)).join('')}</div>
+      <button data-expand data-count="${rest.length}"
+              class="w-full pt-3.5 text-center text-[12.5px] font-semibold text-muted-foreground transition-colors hover:text-foreground">
+        See ${rest.length} more &rarr;
       </button>` : `
-      <p class="mt-2.5 text-center text-[11.5px] text-neutral-400">Only ${all.length} clear the bar here.</p>`}
+      <p class="pt-3.5 text-center text-[12.5px] text-muted-foreground">Only ${all.length} clear the bar here.</p>`}
   </section>`;
 };
 
-const column = (track) => `
-  <div class="min-w-0 xl:border-l xl:border-neutral-200 xl:pl-7 xl:first:border-l-0 xl:first:pl-0">
-    <div class="flex items-center gap-2 pb-3">
-      <span class="h-2.5 w-2.5 rounded-full" style="background:${track.dot}"></span>
-      <h2 class="text-[15px] font-bold tracking-tight">${track.label}</h2>
-    </div>
-    ${LISTS.map((list) => standing(track, list)).join('')}
-  </div>`;
-
 main.innerHTML = `
-<div class="mx-auto max-w-[1220px] px-6 py-6">
- <article class="rounded-2xl border border-neutral-200 bg-white px-8 py-7">
+<div class="mx-auto mb-16 mt-7 flex max-w-container flex-col gap-7 px-4 sm:px-6 lg:px-8">
 
-  <h1 class="text-[26px] font-extrabold tracking-tight">${TASK.name}</h1>
-  <p class="mt-2 max-w-[740px] text-[13.5px] leading-relaxed text-neutral-600">${TASK.note}</p>
-  <p class="mt-2 max-w-[740px] text-[12.5px] text-neutral-400">
-    Three forms, ranked separately — a hosted product, a repo you run, and a skill you drop into an
-    agent are not the same decision. Each form has two standings: what has held the top, and what is
-    coming for it.
-  </p>
+  <!-- §3.9 — breadcrumb row with a 36px circular back control -->
+  <nav class="flex items-center gap-3 text-sm text-muted-foreground">
+    <a href="home.html" aria-label="Back"
+       class="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-foreground/20">
+      <svg class="size-4 text-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5m0 0 7 7m-7-7 7-7"/></svg>
+    </a>
+    <a href="home.html" class="transition-colors hover:text-foreground">Home</a>
+    <span>&rsaquo;</span>
+    <span>Tasks</span>
+    <span>&rsaquo;</span>
+    <span class="font-semibold text-foreground">${TASK.name}</span>
+  </nav>
 
-  <div class="mt-7 grid gap-x-7 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
-    ${TRACKS.map(column).join('')}
-  </div>
+  <!-- §3.4 white panel: the whole standing lives on one surface -->
+  <section class="rounded-3xl bg-card p-7">
 
-  <section class="mt-12 border-t border-neutral-100 pt-6">
-    <div class="flex items-baseline gap-2.5">
-      <h2 class="text-[15px] font-bold tracking-tight">Watchlist</h2>
-      <span class="text-[12px] text-neutral-400">pulled or being re-checked</span>
+    <h1 class="text-3xl font-bold leading-tight tracking-tight sm:text-[34px]">${TASK.name}</h1>
+    <p class="mt-3 max-w-3xl text-[15.5px] leading-normal text-muted-foreground">${TASK.note}</p>
+    <p class="mt-2 max-w-3xl text-[14.5px] leading-normal text-muted-foreground">
+      Three forms, ranked separately — a hosted product, a repo you run, and a skill you drop into an
+      agent are not the same decision. Each form has two standings: what has held the top, and what is
+      coming for it.
+    </p>
+
+    <div class="mt-8 grid gap-x-9 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
+      ${TRACKS.map((track) => `
+        <div class="min-w-0">
+          <!-- §3.8 — the brand's one structural use: a 2px left bar on the heading -->
+          <h2 class="mb-3.5 border-l-2 border-brand pl-3.5 text-xl font-bold tracking-tight md:text-[22px]">${track.label}</h2>
+          ${LISTS.map((list) => standing(track, list)).join('')}
+        </div>`).join('')}
     </div>
-    <div class="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5">
-      ${TASK.watchlist.map((w) => `
-        <a href="${w.url}" class="text-[13px] text-neutral-500 underline decoration-neutral-300 underline-offset-2 transition hover:text-blue-700 hover:decoration-blue-400">${w.n}</a>`).join('')}
-    </div>
+
   </section>
 
-  <p class="mt-8 text-[12px] leading-relaxed text-neutral-400">
-    Five per standing by default, ten at most. Removing an entry is as much of the job as adding one.
-  </p>
+  <!-- §3.4 tinted panel -->
+  <section class="rounded-3xl border border-panel-tint-border bg-panel-tint p-5 sm:p-[26px]">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+      <h2 class="text-2xl font-bold tracking-tight">Watchlist</h2>
+      <span class="text-[14.5px] text-muted-foreground">pulled, or being re-checked</span>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-2">
+      ${TASK.watchlist.map((w) => `
+        <a href="${w.url}" class="rounded-full border border-border bg-card px-3 py-1 text-[13.5px] font-medium text-foreground/70 transition-colors hover:border-foreground/20">${w.n}</a>`).join('')}
+    </div>
+    <p class="mt-5 text-[12.5px] text-muted-foreground">
+      Five per standing by default, ten at most. Removing an entry is as much of the job as adding one.
+    </p>
+  </section>
 
- </article>
- <div class="h-14"></div>
 </div>`;
 
-/* Expand in place: the list grows, the cards do not change. */
+/* Expand in place: the list grows, the rows do not change. */
 document.querySelectorAll('[data-expand]').forEach((btn) => {
   const count = btn.dataset.count;
   btn.addEventListener('click', () => {
     const open = !btn.previousElementSibling.classList.toggle('hidden');
-    btn.textContent = open ? 'Show top 5 only' : `Show ${count} more`;
+    btn.innerHTML = open ? 'Show top 5 only &uarr;' : `See ${count} more &rarr;`;
   });
 });
 </script>
