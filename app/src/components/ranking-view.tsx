@@ -33,7 +33,7 @@ function toRows(items: RankItem[], track: Track): Row[] {
   return items.map((it) => ({
     ...it,
     track,
-    typeLabel: track === 'app' ? 'App / SaaS' : 'Skill / Repo',
+    typeLabel: track === 'app' ? 'App / SaaS' : 'Skill / Repo',  // detail-panel chip
     score: scoreFor(it.confidence, bandSeen[it.confidence]++),
     // The DB tool_slug, not position: the two right-hand tracks (oss + skill)
     // share a column, so `track:rank` is no longer unique, and a rank can move
@@ -141,6 +141,10 @@ function TrackColumn({
                   ) : (
                     <Badge variant="yellow" label="Not yet reviewed" />
                   )}
+                  {/* Which form this is, now that oss and skill share a column. */}
+                  {it.kind ? (
+                    <Badge variant="blue" label={it.kind === 'repo' ? 'Repo' : 'Skill'} />
+                  ) : null}
                   <span {...stylex.props(s.price)}>{it.pricing ?? '—'}</span>
                 </div>
               </div>
@@ -182,8 +186,14 @@ export function RankingView({ view }: { view: CategoryView }) {
         </p>
 
         <div {...stylex.props(s.cols)}>
-          <TrackColumn label="APP / SAAS" dotColor="#4257c9" rows={apps} selectedId={selected} onSelect={setSelected} />
-          <TrackColumn label="SKILL / REPO" dotColor="#7a49d6" rows={skills} selectedId={selected} onSelect={setSelected} />
+          {/* WHICHTOUSE-19: two columns, not three. The database keeps oss and
+              skill apart, but a dedicated skill column would be empty in 2 of 25
+              categories and hold one or two entries in 9 more — that reads as
+              missing coverage, not as breadth. The real decision a visitor makes
+              is hosted vs run-it-yourself; repo-or-skill is a detail of the
+              second option, so it rides on the row instead. */}
+          <TrackColumn label="HOSTED / SAAS" dotColor="#4a2fa8" rows={apps} selectedId={selected} onSelect={setSelected} />
+          <TrackColumn label="SELF-HOSTED" dotColor="#0f7a3d" rows={skills} selectedId={selected} onSelect={setSelected} />
         </div>
 
       </div>

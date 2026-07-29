@@ -162,8 +162,13 @@ function shell({ active = '', home = false } = {}) {
  * is a state that currently holds and can stop holding, which is what a
  * standing re-checked every few weeks actually is. */
 const LISTS = [
-  { key: 'leading',  label: 'Leading',  note: 'held the top for 12+ months' },
-  { key: 'emerging', label: 'Emerging', note: 'climbing fast, not yet proven' },
+  // "held the top for 12+ months" was written before the ranking method existed
+  // and nothing can back it: we keep no history, because order is re-derived
+  // from today's aggregated sources on every run. What `leading` actually means
+  // is "a human has opened this one, and it ranks highest across the sources we
+  // aggregate today" — weaker, and true.
+  { key: 'leading',  label: 'Leading',  note: 'reviewed by hand, top of today\u2019s aggregate' },
+  { key: 'emerging', label: 'Emerging', note: 'surfaced by two or more sources, not yet reviewed' },
 ];
 
 /* Each entry is exactly three sentences and they must not overlap:

@@ -22,35 +22,42 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
- * WhichToUse palette — white + blue, matched to the reference mockup.
+ * WhichToUse palette — DESIGN.md foundations (WHICHTOUSE-19).
+ *
+ * Three decisions carry most of the look, and they are the ones transcribed
+ * here: the canvas is warm off-white (#fafaf9) with white reserved for cards,
+ * so a surface reads as elevated with no shadow at all; structure is black,
+ * not brand-coloured; and the brand is a rationed violet rather than SaaS blue.
+ * Violet and not the reference site's lime because green and red are already
+ * load-bearing here — they mean "edge" and "drawback" on every ranking row.
  * Overrides the butter theme's COLOR tokens only (spacing/radius/typography
  * structural tokens are kept). The butter theme scopes its vars to the
  * [data-astryx-theme] wrapper inside @layer astryx-theme; we re-declare on the
  * same wrapper (and :root for the body outside it) UNLAYERED, which wins. */
 :root,
 [data-astryx-theme] {
-  --color-background-body: #ffffff !important;
+  --color-background-body: #fafaf9 !important;   /* canvas, not white */
   --color-background-surface: #ffffff !important;
   --color-background-card: #ffffff !important;
   --color-background-popover: #ffffff !important;
-  --color-background-muted: #f2f4f7 !important;
-  --color-overlay-hover: #f6f7f9 !important;
-  --color-overlay-pressed: #eceef2 !important;
+  --color-background-muted: #f4f5f2 !important;
+  --color-overlay-hover: #f7f4ff !important;
+  --color-overlay-pressed: #ede8ff !important;
 
-  --color-text-primary: #171a21 !important;
-  --color-text-secondary: #6b7280 !important;
+  --color-text-primary: #1a1a1a !important;
+  --color-text-secondary: #6b6b6b !important;
   --color-text-disabled: #9aa0aa !important;
-  --color-text-accent: #2563eb !important;
+  --color-text-accent: #4a2fa8 !important;   /* violet, AA on white */
 
-  --color-accent: #6f86f0 !important;
-  --color-accent-muted: #eef2fe !important;
+  --color-accent: #c4b0ff !important;
+  --color-accent-muted: #ede8ff !important;
   --color-on-accent: #ffffff !important;
-  --color-icon-accent: #2563eb !important;
+  --color-icon-accent: #4a2fa8 !important;
 
-  --color-border: #e6e8ec !important;
+  --color-border: #e6e6e2 !important;
 
-  --color-success: #1e9e52 !important;
-  --color-error: #d14343 !important;
+  --color-success: #0f7a3d !important;   /* the edge dot */
+  --color-error: #c0564f !important;     /* the drawback dot */
   --color-warning: #a9760c !important;
 }
 
