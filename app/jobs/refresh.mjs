@@ -188,20 +188,38 @@ async function githubSearch(query, { newOnly }) {
  * Two queries because GitHub topic filters AND together; OR needs both runs. */
 const SKILL_TOPICS = ['agent-skills', 'claude-skills']
 
-async function githubSkillSearch(query) {
+/** Category-agnostic queries. `mattpocock/skills` — 194k stars, one of the
+ * largest skill repos there is — carries no topics at all and its description
+ * is "Skills for Real Engineers", so no topic filter and no query containing
+ * "coding" can reach it. Both of my earlier methods were single-signal and
+ * both had the same shape of blind spot. Worse, keying discovery on topics
+ * selects for maintainers who tag their repos, which is repo SEO, not quality:
+ * the biggest repo in the category was invisible precisely because its author
+ * did not bother. */
+const SKILL_QUERIES = [
+  ...SKILL_TOPICS.map((t) => `topic:${t}`),
+  'skills in:name agent',
+  '"skills for" in:name,description',
+]
+
+/** Sweep, then classify. Twenty-five category-scoped searches structurally
+ * cannot place a generalist repo: nothing in "Skills for Real Engineers" says
+ * which of our categories it belongs to. So collect the top skill repos once,
+ * globally, and let the classifier read description/topics/README to decide
+ * where each one goes — the same way trending rows are categorised. */
+async function sweepSkills() {
   const merged = new Map()
-  for (const topic of SKILL_TOPICS) {
-    const q = encodeURIComponent(`topic:${topic} ${query}`)
+  for (const q of SKILL_QUERIES) {
     let data
     try {
       data = await githubThrottled(() =>
         getJson(
-          `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=20`,
+          `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=50`,
           githubHeaders(),
         ),
       )
     } catch {
-      continue // one topic failing must not lose the other
+      continue
     }
     for (const [i, repo] of (data.items ?? []).entries()) {
       if (LIST_REPO.test(repo.name ?? '') || LIST_DESC.test(repo.description ?? '')) continue
@@ -211,18 +229,32 @@ async function githubSkillSearch(query) {
     }
   }
   return [...merged.values()]
-    .sort((a, b) => a.i - b.i || (b.repo.stargazers_count ?? 0) - (a.repo.stargazers_count ?? 0))
-    .slice(0, 20)
-    .map(({ repo }, i) => ({
-      rank: i + 1,
-      name: repo.name,
-      owner: repo.owner?.login ?? null,
-      homepage: repo.homepage || repo.html_url,
-      repoFullName: repo.full_name,
-      url: repo.html_url,
-      track: 'skill', // the topic is the classification; do not re-guess it
-      metrics: { stars: repo.stargazers_count ?? 0 },
-    }))
+    .sort((a, b) => (b.repo.stargazers_count ?? 0) - (a.repo.stargazers_count ?? 0))
+    .map(({ repo }) => repo)
+}
+
+/** First matching rule wins, so `skillClassify` is ordered specific-first. */
+function classifySkill(repo) {
+  const hay = `${repo.name} ${repo.description ?? ''} ${(repo.topics ?? []).join(' ')}`.toLowerCase()
+  for (const [slug, words] of config.skillClassify ?? []) {
+    if (words.some((w) => hay.includes(w))) return slug
+  }
+  return null
+}
+
+/** Returns the swept repos that belong to `slug`, ranked by stars. */
+function skillsForCategory(sweep, slug) {
+  const hits = sweep.filter((repo) => classifySkill(repo) === slug)
+  return hits.slice(0, 20).map((repo, i) => ({
+    rank: i + 1,
+    name: repo.name,
+    owner: repo.owner?.login ?? null,
+    homepage: repo.homepage || repo.html_url,
+    repoFullName: repo.full_name,
+    url: repo.html_url,
+    track: 'skill',
+    metrics: { stars: repo.stargazers_count ?? 0 },
+  }))
 }
 
 /** Corroboration only — HN never introduces a hosted product.
@@ -368,6 +400,7 @@ async function main() {
     connection: { search_path: '"whichtouse-schema"' },
   })
 
+  let skillSweep = null
   const summary = { categories: 0, ranked: 0, created: 0, sourceErrors: [] }
 
   try {
@@ -403,8 +436,10 @@ async function main() {
           let entries = null
           if (source.id === 'github-stars') entries = await githubSearch(query, { newOnly: false })
           else if (source.id === 'github-new') entries = await githubSearch(query, { newOnly: true })
-          else if (source.id === 'github-skills')
-            entries = await githubSkillSearch(config.skillQueries?.[category.slug] ?? category.name)
+          else if (source.id === 'github-skills') {
+            skillSweep ??= await sweepSkills()
+            entries = skillsForCategory(skillSweep, category.slug)
+          }
           else if (source.id === 'hn') entries = await hnSearch(query, new Set(byDomain.keys()))
           else if (source.id === 'producthunt') entries = await productHuntSearch(query)
           else if (source.id === 'npm') {

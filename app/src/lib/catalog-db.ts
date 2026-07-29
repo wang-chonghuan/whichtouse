@@ -166,7 +166,11 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
 
   for (const c of categoryRows) {
     const rows = byCategory.get(c.slug) ?? []
-    const ranked = rows.filter((r) => r.standing !== 'watchlist')
+    // rank null means the refresh job considered this row and left it out of
+    // the standing — usually pushed past the ten-per-bucket cap by something
+    // better. Rendering it anyway would show exactly the rows the algorithm
+    // rejected, and would grow the column past the "ten at most" promise.
+    const ranked = rows.filter((r) => r.standing !== 'watchlist' && r.rank !== null)
 
     const category: Category = {
       slug: c.slug,

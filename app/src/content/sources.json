@@ -178,5 +178,262 @@
     "web-scraping": "scraping",
     "workflow-automation": "workflow",
     "architecture-diagram": "diagram"
-  }
+  },
+  "_classifyDoc": "Keyword rules for placing a swept skill repo into a category. Order matters: the first match wins, so specific rules come before generic ones. 'agent'/'agentic' deliberately does NOT map to workflow-automation — almost every agent skill mentions agents, so that rule swallowed everything, including mattpocock/skills ('Skills for Real Engineers').",
+  "skillClassify": [
+    [
+      "content-writing",
+      [
+        "writing",
+        "copywriting",
+        "blog",
+        "article",
+        "editor",
+        "prose",
+        "grammar"
+      ]
+    ],
+    [
+      "video-generation",
+      [
+        "video",
+        "animation",
+        "youtube",
+        "shorts"
+      ]
+    ],
+    [
+      "image-generation",
+      [
+        "image",
+        "diffusion",
+        "photo",
+        "illustration",
+        "design asset"
+      ]
+    ],
+    [
+      "voice-audio",
+      [
+        "audio",
+        "voice",
+        "speech",
+        "podcast",
+        "tts",
+        "transcri"
+      ]
+    ],
+    [
+      "lead-gen",
+      [
+        "lead generation",
+        "prospect",
+        "sales intelligence",
+        "sdr"
+      ]
+    ],
+    [
+      "email-outreach",
+      [
+        "cold email",
+        "outreach",
+        "newsletter",
+        "email campaign"
+      ]
+    ],
+    [
+      "seo-geo",
+      [
+        "seo",
+        "search optimi",
+        "keyword research",
+        "geo optimi"
+      ]
+    ],
+    [
+      "social-media",
+      [
+        "social media",
+        "twitter",
+        "linkedin",
+        "instagram",
+        "tiktok"
+      ]
+    ],
+    [
+      "ui-design",
+      [
+        "ui design",
+        "design system",
+        "frontend design",
+        "figma",
+        "component library"
+      ]
+    ],
+    [
+      "presentation",
+      [
+        "presentation",
+        "slide",
+        "pptx",
+        "powerpoint",
+        "deck"
+      ]
+    ],
+    [
+      "data-analysis",
+      [
+        "data analysis",
+        "analytics",
+        "dashboard",
+        "sql",
+        "spreadsheet",
+        "bi "
+      ]
+    ],
+    [
+      "research-search",
+      [
+        "research",
+        "literature",
+        "citation",
+        "scholar",
+        "search engine"
+      ]
+    ],
+    [
+      "customer-support",
+      [
+        "customer support",
+        "helpdesk",
+        "ticketing"
+      ]
+    ],
+    [
+      "meeting-notes",
+      [
+        "meeting",
+        "minutes",
+        "standup",
+        "note-taking"
+      ]
+    ],
+    [
+      "pdf-documents",
+      [
+        "pdf",
+        "docx",
+        "document",
+        "ocr",
+        "office"
+      ]
+    ],
+    [
+      "knowledge-base",
+      [
+        "rag",
+        "knowledge base",
+        "retrieval",
+        "vector",
+        "memory",
+        "second brain"
+      ]
+    ],
+    [
+      "translation",
+      [
+        "translation",
+        "translate",
+        "localis",
+        "localiz",
+        "i18n"
+      ]
+    ],
+    [
+      "resume-jobs",
+      [
+        "resume",
+        "cv ",
+        "job search",
+        "recruit",
+        "interview"
+      ]
+    ],
+    [
+      "bookkeeping",
+      [
+        "bookkeep",
+        "accounting",
+        "invoice",
+        "expense",
+        "finance",
+        "tax"
+      ]
+    ],
+    [
+      "legal-contract",
+      [
+        "legal",
+        "contract",
+        "compliance",
+        "licence review",
+        "license review"
+      ]
+    ],
+    [
+      "browser-automation",
+      [
+        "browser",
+        "playwright",
+        "puppeteer",
+        "selenium",
+        "web automation"
+      ]
+    ],
+    [
+      "web-scraping",
+      [
+        "scrap",
+        "crawler",
+        "extraction",
+        "harvest"
+      ]
+    ],
+    [
+      "architecture-diagram",
+      [
+        "diagram",
+        "architecture",
+        "uml",
+        "flowchart",
+        "drawio",
+        "mermaid"
+      ]
+    ],
+    [
+      "workflow-automation",
+      [
+        "workflow",
+        "orchestrat",
+        "pipeline",
+        "automation",
+        "integration"
+      ]
+    ],
+    [
+      "coding",
+      [
+        "coding",
+        "code",
+        "engineer",
+        "developer",
+        "programming",
+        "refactor",
+        "debug",
+        "test",
+        "git",
+        "review"
+      ]
+    ]
+  ]
 }
