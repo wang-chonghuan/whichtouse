@@ -45,6 +45,12 @@ create table listings (
   edge        text,
   con         text,
   best_for    text,
+  -- Why this sits where it sits, in prose. The design doc argued `evidence`
+  -- replaces this once ranking is algorithmic — true for a machine-placed row,
+  -- false for the 374 authored ones, every single of which has a distinct
+  -- rank_basis. Dropping it made the detail panel print its own description
+  -- twice. Machine rows leave it null and render `evidence` instead.
+  rank_basis  text,
   features    jsonb not null default '[]',
   pros        jsonb not null default '[]',
   cons        jsonb not null default '[]',

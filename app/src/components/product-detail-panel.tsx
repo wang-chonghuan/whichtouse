@@ -311,10 +311,17 @@ export function ProductDetailPanel({
           )}
         </div>
 
-        <div {...stylex.props(s.section)}>
-          <div {...stylex.props(s.secLabel)}>WHY IT RANKS #{item.rank}</div>
-          <p {...stylex.props(s.basis)}>{item.rankBasis ?? item.bestFor}</p>
-        </div>
+        {/* Only claim a reason when there is one. Falling back to `bestFor`
+            printed the description a second time under a heading promising an
+            explanation, which reads worse than saying nothing. Machine-placed
+            rows have no authored basis; their justification is the source list
+            further down. */}
+        {item.rankBasis ? (
+          <div {...stylex.props(s.section)}>
+            <div {...stylex.props(s.secLabel)}>WHY IT RANKS #{item.rank}</div>
+            <p {...stylex.props(s.basis)}>{item.rankBasis}</p>
+          </div>
+        ) : null}
 
         <div {...stylex.props(s.section)}>
           <div {...stylex.props(s.secLabel)}>PRICING</div>

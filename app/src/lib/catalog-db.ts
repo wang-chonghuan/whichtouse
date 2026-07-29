@@ -40,6 +40,7 @@ type ListingRow = {
   edge: string | null
   con: string | null
   best_for: string | null
+  rank_basis: string | null
   features: unknown
   pros: unknown
   cons: unknown
@@ -110,6 +111,7 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
     kind: row.track === 'oss' ? 'repo' : row.track === 'skill' ? 'skill' : undefined,
     reviewed: row.reviewed_at !== null,
     edge: row.edge,
+    rankBasis: row.rank_basis ?? undefined,
     con: row.con,
     pricingFree: row.pricing_free,
     pricingPaid: row.pricing_paid,
@@ -132,7 +134,7 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
     `,
     db<ListingRow[]>`
       select category_slug, tool_slug, name, owner, track, homepage,
-             standing, rank, reviewed_at, summary, edge, con, best_for,
+             standing, rank, reviewed_at, summary, edge, con, best_for, rank_basis,
              features, pros, cons, sources, confidence,
              pricing_model, pricing_free, pricing_paid, pricing_checked_at,
              evidence, refreshed_at
