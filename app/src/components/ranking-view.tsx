@@ -35,7 +35,10 @@ function toRows(items: RankItem[], track: Track): Row[] {
     track,
     typeLabel: track === 'app' ? 'App / SaaS' : 'Skill / Repo',
     score: scoreFor(it.confidence, bandSeen[it.confidence]++),
-    id: `${track}:${it.rank}`,
+    // The DB tool_slug, not position: the two right-hand tracks (oss + skill)
+    // share a column, so `track:rank` is no longer unique, and a rank can move
+    // under a deep link between refreshes.
+    id: it.id,
   }))
 }
 
@@ -130,7 +133,14 @@ function TrackColumn({
               <div {...stylex.props(s.body)}>
                 <div {...stylex.props(s.name)}>{it.name}</div>
                 <div {...stylex.props(s.meta)}>
-                  <Badge variant={conf.variant} label={conf.label} />
+                  {/* A row the refresh job placed by aggregation, that nobody has
+                      opened, must not look like one we sat down with — that
+                      difference is the entire premise of the site. */}
+                  {it.reviewed ? (
+                    <Badge variant={conf.variant} label={conf.label} />
+                  ) : (
+                    <Badge variant="yellow" label="Not yet reviewed" />
+                  )}
                   <span {...stylex.props(s.price)}>{it.pricing ?? '—'}</span>
                 </div>
               </div>

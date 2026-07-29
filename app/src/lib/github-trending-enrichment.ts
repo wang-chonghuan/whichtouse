@@ -334,6 +334,7 @@ export function buildTrendingDetailItem({
     bestFor: description,
     confidence: metadata && readme ? 'medium' : 'low',
     badge: 'provisional',
+    reviewed: false,
     sources,
     kind: 'repo',
     track: 'skill',

@@ -2,50 +2,78 @@
 --
 -- Per-project schema on the shared Azure easy-app Postgres: "whichtouse-schema".
 -- Applied with search_path = "whichtouse-schema" (see app/src/lib/db.ts).
--- Phase 1 (MVP): use-case categories × form-factor items × two-dimension rankings.
+--
+-- Design: specs/content-in-db.md. Two tables, natural keys, no history.
+-- Every scheduled run overwrites in place — order is a function of today's
+-- aggregated inputs, not of anything we recorded ourselves.
 
--- Business use-case categories (the site's primary axis).
-create table if not exists categories (
-  id          serial primary key,
-  slug        text unique not null,
-  name        text not null,
-  money_tier  text not null default 'green'   -- green | yellow | red (affiliate potential)
-              check (money_tier in ('green','yellow','red')),
-  sort        int  not null default 0,
-  created_at  timestamptz not null default now()
+drop table if exists rankings   cascade;   -- superseded (signal-driven design)
+drop table if exists items      cascade;   -- superseded
+drop table if exists listings   cascade;
+drop table if exists categories cascade;
+
+create table categories (
+  slug         text primary key,
+  name         text not null,
+  money_tier   text not null default 'green'
+               check (money_tier in ('green','yellow','red')),
+  sort         int  not null default 0,
+  note         text,                     -- per-category prose
+  refreshed_at timestamptz,              -- last successful refresh run
+  updated_at   timestamptz not null default now()
 );
 
--- Products/tools. Each item belongs to exactly ONE form factor (tracks never overlap).
-create table if not exists items (
-  id             serial primary key,
-  category_id    int  not null references categories(id) on delete cascade,
-  form_factor    text not null check (form_factor in ('app','skill','repo')),
+create table listings (
+  category_slug text not null references categories(slug) on delete cascade,
+  tool_slug     text not null,
+
+  -- identity
   name           text not null,
-  url            text,                          -- canonical link (repo / product / skill)
+  owner          text,                   -- null for hosted products
+  track          text not null check (track in ('saas','oss','skill')),
   homepage       text,
-  pricing        text,                          -- free | freemium | paid | open-source | ...
-  overall_signal numeric,                       -- native popularity (stars / installs / votes)
-  growth_signal  numeric,                       -- last-30d growth
-  badge          text not null default 'provisional'
-                 check (badge in ('provisional','sandbox-tested','free-tested','profiled')),
-  dedup_key      text not null,                 -- repo url / domain — unique within a category
-  source         text,                          -- where discovered / investigated
-  created_at     timestamptz not null default now(),
-  unique (category_id, dedup_key)
+  repo_full_name text,                   -- 'owner/repo' — drives GitHub polling
+  package_name   text,                   -- npm / PyPI name — drives download polling
+
+  -- placement. machine-owned for leading/emerging, human-set for watchlist.
+  standing text not null check (standing in ('leading','emerging','watchlist')),
+  rank     int,                          -- null for watchlist
+
+  -- editorial, human-owned. All null on a machine-discovered row.
+  reviewed_at timestamptz,               -- null = ranked by aggregation, never opened
+  summary     text,
+  edge        text,
+  con         text,
+  best_for    text,
+  features    jsonb not null default '[]',
+  pros        jsonb not null default '[]',
+  cons        jsonb not null default '[]',
+  sources     jsonb not null default '[]',   -- [{name, url}]
+  confidence  text check (confidence in ('high','medium','low')),
+
+  -- pricing. timestamped separately because it rots fastest and is the error
+  -- visitors punish hardest.
+  pricing_model      text,
+  pricing_free       text,
+  pricing_paid       text,
+  pricing_checked_at timestamptz,
+
+  -- machine-owned, overwritten every run
+  -- { score, sources: [{site, rank, url}], metrics: {stars, downloads_year, ...} }
+  evidence     jsonb not null default '{}',
+  refreshed_at timestamptz,
+
+  updated_at timestamptz not null default now(),
+
+  primary key (category_slug, tool_slug),
+
+  -- Includes track: leading #1 must be able to exist once per track.
+  -- Deferred so the refresh job can rewrite a whole standing inside one
+  -- transaction without tripping over intermediate states.
+  constraint uq_rank unique (category_slug, track, standing, rank)
+    deferrable initially deferred
 );
 
--- Rankings: category × track × dimension → ordered items.
--- form_factor 'best3' holds the cross-form-factor overall Best 3.
-create table if not exists rankings (
-  id           serial primary key,
-  category_id  int  not null references categories(id) on delete cascade,
-  form_factor  text not null check (form_factor in ('app','skill','repo','best3')),
-  dimension    text not null check (dimension in ('overall','growth')),
-  item_id      int  not null references items(id) on delete cascade,
-  rank         int  not null,
-  computed_at  timestamptz not null default now(),
-  unique (category_id, form_factor, dimension, rank)
-);
-
-create index if not exists idx_items_category on items(category_id);
-create index if not exists idx_rankings_lookup on rankings(category_id, form_factor, dimension, rank);
+create index idx_listings_placement  on listings (category_slug, track, standing, rank);
+create index idx_listings_unreviewed on listings (reviewed_at) where reviewed_at is null;
+create index idx_listings_repo       on listings (repo_full_name) where repo_full_name is not null;

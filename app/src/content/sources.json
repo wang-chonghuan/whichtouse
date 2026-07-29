@@ -1,0 +1,102 @@
+{
+  "_doc": "Phase-1 source allowlist. See specs/content-in-db.md §3.3. Adding a source is a reviewed commit, never a silent change. Directory sites (Toolify, TAAFT, Futurepedia) are deliberately absent: their ordering is SimilarWeb traffic — so aggregating several of them counts one signal repeatedly while looking like corroboration — and their top placements are purchasable.",
+  "rrfK": 60,
+  "topN": 10,
+  "minCorroborationForNew": 2,
+  "_placementDoc": "Reviewed listings hold `leading`, ordered by the fused score. Anything the job discovers goes to `emerging` and only when at least minCorroborationForNew sources rank it. Phase-1 sources cannot carry `leading` on their own: with GitHub the only true ranking source for repos, an unguarded run put three unknown keyword matches above aider, cline and continue.",
+  "sources": [
+    {
+      "id": "github-stars",
+      "label": "GitHub (stars)",
+      "origin": "github",
+      "weight": 1.0,
+      "tracks": [
+        "oss",
+        "skill"
+      ],
+      "dimension": "leading",
+      "enabled": true
+    },
+    {
+      "id": "github-new",
+      "label": "GitHub (created in the last year)",
+      "origin": "github",
+      "weight": 1.0,
+      "tracks": [
+        "oss",
+        "skill"
+      ],
+      "dimension": "emerging",
+      "enabled": true
+    },
+    {
+      "id": "hn",
+      "label": "Hacker News",
+      "weight": 1.0,
+      "tracks": [
+        "saas",
+        "oss",
+        "skill"
+      ],
+      "dimension": "both",
+      "enabled": true,
+      "note": "Corroboration only. A bare domain on HN means someone posted a link, not that the thing is a product — ranking raw domains put arstechnica.com above every real coding agent. Domains score only when they already match a listing; discovery is limited to GitHub links, where the URL proves what it is.",
+      "origin": "hn"
+    },
+    {
+      "id": "producthunt",
+      "label": "Product Hunt",
+      "weight": 1.0,
+      "tracks": [
+        "saas",
+        "oss"
+      ],
+      "dimension": "emerging",
+      "enabled": true,
+      "requiresEnv": "PRODUCTHUNT_TOKEN",
+      "note": "Free non-expiring developer token from producthunt.com/v2/oauth/applications. The job skips this source, loudly, when the variable is absent.",
+      "origin": "producthunt"
+    },
+    {
+      "id": "npm",
+      "label": "npm downloads (last year)",
+      "weight": 1.0,
+      "tracks": [
+        "oss",
+        "skill"
+      ],
+      "dimension": "leading",
+      "enabled": true,
+      "note": "Only contributes for listings that already carry package_name. The seed corpus has none, so this source is inert until package names are filled in — it is wired up rather than pretended away.",
+      "origin": "npm"
+    }
+  ],
+  "_queryDoc": "Search terms per category. Absent categories fall back to the category name. Keep these narrow: a broad term returns the whole field and drowns the specific tools.",
+  "queries": {
+    "content-writing": "ai writing assistant",
+    "video-generation": "ai video generation",
+    "image-generation": "ai image generation",
+    "voice-audio": "ai text to speech voice",
+    "lead-gen": "ai lead generation prospecting",
+    "email-outreach": "ai cold email outreach",
+    "seo-geo": "ai seo content optimization",
+    "social-media": "ai social media scheduler",
+    "ui-design": "ai ui design generator",
+    "presentation": "ai presentation slides generator",
+    "data-analysis": "ai data analysis assistant",
+    "research-search": "ai research search assistant",
+    "customer-support": "ai customer support agent",
+    "meeting-notes": "ai meeting notes transcription",
+    "pdf-documents": "ai pdf document processing",
+    "knowledge-base": "rag knowledge base retrieval",
+    "translation": "ai translation",
+    "resume-jobs": "ai resume job search",
+    "bookkeeping": "ai bookkeeping accounting",
+    "legal-contract": "ai legal contract review",
+    "coding": "ai coding agent assistant",
+    "browser-automation": "ai browser automation agent",
+    "web-scraping": "ai web scraping extraction",
+    "workflow-automation": "ai workflow automation",
+    "architecture-diagram": "ai architecture diagram generator"
+  }
+}

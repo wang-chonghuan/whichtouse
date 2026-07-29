@@ -28,7 +28,12 @@
 ## 数据库
 
 - 共享 Azure PG `pg-easyapp-shared`，db `easyapp`，per-project schema `whichtouse-schema`，role `whichtouse-user`。连接经 `EASYAPP_DATABASE_URL`/`DATABASE_URL`（`app/src/lib/db.ts`）。
-- **✅ 已 provision（D1/WHICHTOUSE-3）**：role `whichtouse-user`（派生密码）+ schema `whichtouse-schema` + 三表（categories/items/rankings，源 `ssot-schemas/db-schemas/whichtouse.sql`）已建；线上 `ca-whichtouse` 已注入 `DATABASE_URL`/`DATABASE_SCHEMA`。
+- **✅ 已 provision（D1/WHICHTOUSE-3）**：role `whichtouse-user`（派生密码）+ schema `whichtouse-schema` 已建；线上 `ca-whichtouse` 已注入 `DATABASE_URL`/`DATABASE_SCHEMA`。
+- **表结构（2026-07-26 起）**：两张表 `categories` + `listings`，源 `ssot-schemas/db-schemas/whichtouse.sql`，设计见 `specs/content-in-db.md`。旧的 `items`/`rankings` 已随该文件的 `drop table` 一并淘汰（信号驱动设计，与实际内容不匹配）。**不留历史**：每次 refresh job 就地覆盖。
+- **内容装载**：`node app/scripts/import-content.mjs`（`--dry` 只解析不写）。从 `app/src/content/c/*.json` 灌 25 个分类 / 372 条 listing（saas 164 · oss 143 · skill 65）。JSON 语料保留在 git 里作为 seed of record。
+- **每日重排**：`app/jobs/refresh.mjs` → 构建时由 `scripts/build-jobs.mjs` 打包进 `.output/jobs/refresh.mjs`（运行时镜像只 COPY `.output`）。源白名单在 `app/src/content/sources.json`。本地跑：`node --env-file=.env .output/jobs/refresh.mjs [--dry] [--category <slug>]`。
+- **job 的两个 env**：`GITHUB_TOKEN` —— **不设的话 GitHub search 限流 10 次/分钟**，job 会自动降速到每次 6.5s（全量约 6 分钟）；设了则 2.1s（约 2 分钟）。`PRODUCTHUNT_TOKEN` —— 不设则 saas 没有发现源，job 每个分类都会明确报一次 skip。
+- **job 的安全边界（改代码前先读 `specs/content-in-db.md` §3.1）**：不碰任何正文和 `reviewed_at`；不动 `saas`+`leading`（一期人工排序）；不动 `watchlist`。**已 review 的条目一定保留名次**——某次源全挂也不会让它掉出榜单。新发现的条目只进 `emerging`，且必须有 **2 个不同 origin** 佐证（`github-stars` 和 `github-new` 同属 `github`，互相印证不算数）。
 - **本地连库**（开发/迁移用）：`.pgpass` 放 `pg-easyapp-shared...:5432:easyapp:whichtouse-user:<PGPASSWORD>`（600 权限），`PGPASSFILE=<路径> psql "host=pg-easyapp-shared.postgres.database.azure.com port=5432 dbname=easyapp user=whichtouse-user sslmode=require"`。**凭据只走 .pgpass/env-file，不进命令行明文，也不写进本 charter**。`<PGPASSWORD>` 获取方式：仓库根 `.env` 的 `EASYAPP_DATABASE_URL`（未提交），或线上 `az containerapp show -g rg-easyapp-shared -n ca-whichtouse` 的 `DATABASE_URL` 环境变量。本机 IP 需在 PG 防火墙（规则 `allow-wt-dev-*`）。
 - 改 schema：编辑 `whichtouse.sql` → 以 admin 或 `whichtouse-user`（search_path 已设）psql `-f` 应用。
 

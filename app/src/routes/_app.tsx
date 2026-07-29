@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { createFileRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 
-import { getCatalogSearchEntries, getCategories } from '~/lib/catalog'
+import { getShellData } from '~/lib/catalog'
 import { useLayoutStore } from '~/lib/layout-store'
 import { NavBar } from '~/components/nav-bar'
 import { Sidebar } from '~/components/sidebar'
@@ -14,10 +14,7 @@ import { Sidebar } from '~/components/sidebar'
 // panel, closed by default and toggled from the nav bar or the hero button.
 export const Route = createFileRoute('/_app')({
   component: AppShell,
-  loader: () => ({
-    categories: getCategories(),
-    searchEntries: getCatalogSearchEntries(),
-  }),
+  loader: async () => await getShellData(),
 })
 
 const s = stylex.create({

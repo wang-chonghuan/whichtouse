@@ -6,8 +6,8 @@ import { buildPageMeta } from '~/lib/seo'
 
 export const Route = createFileRoute('/_app/c/$slug')({
   component: CategoryPage,
-  loader: ({ params }) => {
-    const view = getCategoryView(params.slug)
+  loader: async ({ params }) => {
+    const view = await getCategoryView({ data: params.slug })
     if (!view) throw notFound()
     return { view }
   },

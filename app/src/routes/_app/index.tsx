@@ -7,10 +7,13 @@ import { buildPageMeta, DEFAULT_DESCRIPTION, DEFAULT_TITLE } from '~/lib/seo'
 
 export const Route = createFileRoute('/_app/')({
   component: Home,
-  loader: async () => ({
-    trending: await getTrendingRepositories(),
-    categoryCount: getCategories().length,
-  }),
+  loader: async () => {
+    const [trending, categories] = await Promise.all([
+      getTrendingRepositories(),
+      getCategories(),
+    ])
+    return { trending, categoryCount: categories.length }
+  },
   head: () =>
     buildPageMeta({
       title: DEFAULT_TITLE,

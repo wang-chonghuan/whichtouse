@@ -305,6 +305,8 @@ function toPanelItem(repository: TrendingRepository): DetailPanelItem {
     bestFor: repository.description,
     confidence: 'low',
     badge: 'provisional',
+    // Trending is a live GitHub feed — nobody has sat down with these.
+    reviewed: false,
     sources: [{ name: 'GitHub repository', url: repository.url }],
     kind: 'repo',
     track: 'skill',
