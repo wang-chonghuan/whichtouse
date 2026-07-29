@@ -175,6 +175,56 @@ async function githubSearch(query, { newOnly }) {
     }))
 }
 
+/** Agent skills, found by classification rather than by keyword.
+ *
+ * The generic repo search finds almost no skills — it was returning 2-3 per
+ * category and two categories with none, which looked like the skill ecosystem
+ * being thin. It is not: `topic:agent-skills` alone carries 12,313 repos and
+ * `topic:claude-skills` 6,084. The search was wrong, not the world. A topic is
+ * an explicit self-classification by the author, so precision here is far
+ * higher than a name/description match — which is why this source is allowed
+ * to place a listing on its own (see `selfPlacing` in sources.json).
+ *
+ * Two queries because GitHub topic filters AND together; OR needs both runs. */
+const SKILL_TOPICS = ['agent-skills', 'claude-skills']
+
+async function githubSkillSearch(query) {
+  const merged = new Map()
+  for (const topic of SKILL_TOPICS) {
+    const q = encodeURIComponent(`topic:${topic} ${query}`)
+    let data
+    try {
+      data = await githubThrottled(() =>
+        getJson(
+          `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=20`,
+          githubHeaders(),
+        ),
+      )
+    } catch {
+      continue // one topic failing must not lose the other
+    }
+    for (const [i, repo] of (data.items ?? []).entries()) {
+      if (LIST_REPO.test(repo.name ?? '') || LIST_DESC.test(repo.description ?? '')) continue
+      const key = repo.full_name.toLowerCase()
+      const prev = merged.get(key)
+      if (!prev || i < prev.i) merged.set(key, { i, repo })
+    }
+  }
+  return [...merged.values()]
+    .sort((a, b) => a.i - b.i || (b.repo.stargazers_count ?? 0) - (a.repo.stargazers_count ?? 0))
+    .slice(0, 20)
+    .map(({ repo }, i) => ({
+      rank: i + 1,
+      name: repo.name,
+      owner: repo.owner?.login ?? null,
+      homepage: repo.homepage || repo.html_url,
+      repoFullName: repo.full_name,
+      url: repo.html_url,
+      track: 'skill', // the topic is the classification; do not re-guess it
+      metrics: { stars: repo.stargazers_count ?? 0 },
+    }))
+}
+
 /** Corroboration only — HN never introduces a hosted product.
  *
  * A bare domain on HN means "someone posted a link", not "this is a product".
@@ -273,7 +323,7 @@ const K = config.rrfK ?? 60
  * other. `k` damps the top so first place is not worth ten times second. */
 function fuse(perSource) {
   const scores = new Map()
-  for (const { source, origin, weight, entries } of perSource) {
+  for (const { source, origin, weight, selfPlacing, entries } of perSource) {
     // One contribution per source: a document appears once in a ranked list, so
     // if two entries resolve to the same listing, only its best rank counts.
     // Summing every occurrence is how a single row can outscore the field by an
@@ -288,12 +338,14 @@ function fuse(perSource) {
         score: 0,
         sources: [],
         origins: new Set(),
+        selfPlacing: false,
         metrics: {},
         entry,
       }
       current.score += weight / (K + entry.rank)
       current.sources.push({ site: source, rank: entry.rank, url: entry.url })
       current.origins.add(origin)
+      if (selfPlacing) current.selfPlacing = true
       Object.assign(current.metrics, entry.metrics ?? {})
       scores.set(entry.key, current)
     }
@@ -351,6 +403,8 @@ async function main() {
           let entries = null
           if (source.id === 'github-stars') entries = await githubSearch(query, { newOnly: false })
           else if (source.id === 'github-new') entries = await githubSearch(query, { newOnly: true })
+          else if (source.id === 'github-skills')
+            entries = await githubSkillSearch(config.skillQueries?.[category.slug] ?? category.name)
           else if (source.id === 'hn') entries = await hnSearch(query, new Set(byDomain.keys()))
           else if (source.id === 'producthunt') entries = await productHuntSearch(query)
           else if (source.id === 'npm') {
@@ -390,6 +444,7 @@ async function main() {
           }
           perSource.push({
             source: source.label,
+            selfPlacing: source.selfPlacing === true,
             // Corroboration counts distinct origins, not queries: github-stars
             // and github-new are two views of one source and agreeing with each
             // other proves nothing.
@@ -483,7 +538,12 @@ async function main() {
       const placed = new Set(placements.map((p) => p.key))
       for (const item of ordered) {
         if (placed.has(item.key) || frozen.has(item.key) || watchlisted.has(item.key)) continue
-        if (item.origins.size < minCorroboration) continue
+        // Two origins guard against keyword-match noise. A topic match is not a
+        // keyword match — the author classified the repo themselves — so a
+        // high-precision source stands on its own. Without this the skill track
+        // can never fill: every skill source is GitHub, so it could never reach
+        // two origins no matter how good the match.
+        if (!item.selfPlacing && item.origins.size < minCorroboration) continue
         const track = item.existing?.track ?? item.entry.track ?? 'oss'
         place(item.key, item.existing, item.entry, track, 'emerging', item)
       }
@@ -492,7 +552,12 @@ async function main() {
       summary.ranked += placements.length
 
       if (DRY) {
-        log(`${category.slug}: ${placements.length} placements (dry)`)
+        const buckets = {}
+        for (const p of placements) {
+          const k = `${p.track}/${p.standing}`
+          buckets[k] = (buckets[k] ?? 0) + 1
+        }
+        log(`${category.slug}: ${placements.length} placements (dry) ${JSON.stringify(buckets)}`)
         for (const p of placements.slice(0, 8)) {
           const s = p.evidence.score
           log(

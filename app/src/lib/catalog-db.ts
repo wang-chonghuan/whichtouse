@@ -54,14 +54,11 @@ type ListingRow = {
   refreshed_at: Date | null
 }
 
-/** The live site still renders two columns; the database carries three tracks.
- * `oss` and `skill` both belong in the right-hand column, open source first. */
-const UI_TRACK: Record<ListingRow['track'], Track> = {
-  saas: 'app',
-  oss: 'skill',
-  skill: 'skill',
-}
-const TRACK_ORDER: Record<ListingRow['track'], number> = { saas: 0, oss: 0, skill: 1 }
+/** One column per form. Skills get their own: the earlier merge was argued from
+ * a coverage gap that turned out to be an artefact of the search, not of the
+ * ecosystem — see the github-skills source in sources.json. */
+const UI_TRACK: Record<ListingRow['track'], Track> = { saas: 'app', oss: 'oss', skill: 'skill' }
+const COLUMN_ORDER: Record<Track, number> = { app: 0, oss: 1, skill: 2 }
 const STANDING_ORDER = { leading: 0, emerging: 1, watchlist: 2 } as const
 
 /** The rendered score is banded by confidence so the number can never contradict
@@ -183,20 +180,17 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
     const sorted = ranked.slice().sort((a, b) => {
       const ta = UI_TRACK[a.track]
       const tb = UI_TRACK[b.track]
-      if (ta !== tb) return ta === 'app' ? -1 : 1
+      if (ta !== tb) return COLUMN_ORDER[ta] - COLUMN_ORDER[tb]
       const sa = STANDING_ORDER[a.standing]
       const sb = STANDING_ORDER[b.standing]
       if (sa !== sb) return sa - sb
       const ca = confidenceRank(a.confidence)
       const cb = confidenceRank(b.confidence)
       if (ca !== cb) return ca - cb
-      if (TRACK_ORDER[a.track] !== TRACK_ORDER[b.track]) {
-        return TRACK_ORDER[a.track] - TRACK_ORDER[b.track]
-      }
       return (a.rank ?? 1e9) - (b.rank ?? 1e9)
     })
 
-    const tracks: CategoryView['tracks'] = { app: [], skill: [] }
+    const tracks: CategoryView['tracks'] = { app: [], oss: [], skill: [] }
     for (const row of sorted) {
       const track = UI_TRACK[row.track]
       tracks[track].push(toRankItem(row, tracks[track].length + 1))
@@ -227,7 +221,7 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
       categoryName: c.name,
       categorySlug: c.slug,
     })
-    for (const track of ['app', 'skill'] as const) {
+    for (const track of ['app', 'oss', 'skill'] as const) {
       for (const item of tracks[track]) {
         searchEntries.push({
           kind: 'product',

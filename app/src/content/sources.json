@@ -30,6 +30,19 @@
       "enabled": true
     },
     {
+      "id": "github-skills",
+      "label": "GitHub (agent-skills topics)",
+      "origin": "github",
+      "weight": 1.0,
+      "tracks": [
+        "skill"
+      ],
+      "dimension": "both",
+      "enabled": true,
+      "selfPlacing": true,
+      "note": "topic:agent-skills / topic:claude-skills. The generic repo search found 2-3 skills per category and none in two of them, which read as a thin ecosystem; the topics carry 12,313 and 6,084 repos respectively, so the search was wrong, not the world. A topic is the author's own classification, so precision is high enough to place a listing without a second origin — which is required, since every skill source is GitHub and could never reach two."
+    },
+    {
       "id": "hn",
       "label": "Hacker News",
       "weight": 1.0,
@@ -136,5 +149,34 @@
       "frontend generator",
       "component generator llm"
     ]
+  },
+  "_selfPlacingDoc": "A source may place a discovered listing alone when its match is an explicit classification (a topic) rather than a text match. minCorroborationForNew still governs everything else.",
+  "_skillQueryDoc": "Short terms for the topic-scoped skill search. GitHub ANDs every term with the topic filter, so a full category query returns nothing: 'topic:agent-skills ai pdf document processing' is 0 results while 'topic:agent-skills pdf' is 141. One or two words only.",
+  "skillQueries": {
+    "content-writing": "writing",
+    "video-generation": "video",
+    "image-generation": "image",
+    "voice-audio": "audio",
+    "lead-gen": "sales",
+    "email-outreach": "email",
+    "seo-geo": "seo",
+    "social-media": "social",
+    "ui-design": "design",
+    "presentation": "slides",
+    "data-analysis": "data",
+    "research-search": "research",
+    "customer-support": "support",
+    "meeting-notes": "meeting",
+    "pdf-documents": "pdf",
+    "knowledge-base": "rag",
+    "translation": "translation",
+    "resume-jobs": "resume",
+    "bookkeeping": "finance",
+    "legal-contract": "legal",
+    "coding": "coding",
+    "browser-automation": "browser",
+    "web-scraping": "scraping",
+    "workflow-automation": "workflow",
+    "architecture-diagram": "diagram"
   }
 }

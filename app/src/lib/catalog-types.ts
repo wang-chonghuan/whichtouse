@@ -4,7 +4,7 @@
 export type FormFactor = 'app' | 'skill'
 export type MoneyTier = 'green' | 'yellow' | 'red'
 export type Confidence = 'high' | 'medium' | 'low'
-export type Track = 'app' | 'skill'
+export type Track = 'app' | 'oss' | 'skill'
 
 export type Source = { name: string; url: string }
 
@@ -81,7 +81,7 @@ export type WatchlistEntry = { name: string; url: string | null }
 export type CategoryView = {
   category: Category
   updated: string
-  tracks: { app: RankItem[]; skill: RankItem[] }
+  tracks: { app: RankItem[]; oss: RankItem[]; skill: RankItem[] }
   notes: string | null
   watchlist: WatchlistEntry[]
 }

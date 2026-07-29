@@ -10,7 +10,7 @@ import {
 } from '~/components/product-detail-panel'
 import type { CategoryView, Confidence, RankItem } from '~/lib/catalog'
 
-type Track = 'app' | 'skill'
+type Track = 'app' | 'oss' | 'skill'
 type Row = DetailPanelItem & { score: number }
 
 const CONF: Record<Confidence, { variant: 'green' | 'yellow' | 'red'; label: string }> = {
@@ -33,7 +33,8 @@ function toRows(items: RankItem[], track: Track): Row[] {
   return items.map((it) => ({
     ...it,
     track,
-    typeLabel: track === 'app' ? 'App / SaaS' : 'Skill / Repo',  // detail-panel chip
+    typeLabel:
+      track === 'app' ? 'App / SaaS' : track === 'oss' ? 'Open Source' : 'Agent Skill',
     score: scoreFor(it.confidence, bandSeen[it.confidence]++),
     // The DB tool_slug, not position: the two right-hand tracks (oss + skill)
     // share a column, so `track:rank` is no longer unique, and a rank can move
@@ -49,7 +50,11 @@ const s = stylex.create({
   lede: { fontSize: 14, lineHeight: 1.5, color: 'var(--color-text-secondary)', margin: 0, marginBottom: 'var(--spacing-6)', maxWidth: 620 },
   cols: {
     display: 'grid',
-    gridTemplateColumns: { default: '1fr 1fr', '@media (max-width: 900px)': '1fr' },
+    gridTemplateColumns: {
+      default: '1fr 1fr 1fr',
+      '@media (max-width: 1180px)': '1fr 1fr',
+      '@media (max-width: 900px)': '1fr',
+    },
     gap: 'var(--spacing-6)',
     minWidth: 0,
   },
@@ -141,10 +146,6 @@ function TrackColumn({
                   ) : (
                     <Badge variant="yellow" label="Not yet reviewed" />
                   )}
-                  {/* Which form this is, now that oss and skill share a column. */}
-                  {it.kind ? (
-                    <Badge variant="blue" label={it.kind === 'repo' ? 'Repo' : 'Skill'} />
-                  ) : null}
                   <span {...stylex.props(s.price)}>{it.pricing ?? '—'}</span>
                 </div>
               </div>
@@ -159,8 +160,12 @@ function TrackColumn({
 
 export function RankingView({ view }: { view: CategoryView }) {
   const appRows = useMemo(() => toRows(view.tracks.app, 'app'), [view])
+  const ossRowsMemo = useMemo(() => toRows(view.tracks.oss, 'oss'), [view])
   const skillRows = useMemo(() => toRows(view.tracks.skill, 'skill'), [view])
-  const all = useMemo(() => [...appRows, ...skillRows], [appRows, skillRows])
+  const all = useMemo(
+    () => [...appRows, ...ossRowsMemo, ...skillRows],
+    [appRows, ossRowsMemo, skillRows],
+  )
   const hash = useRouterState({ select: (state) => state.location.hash })
   const [selected, setSelected] = useState<string | null>(null)
 
@@ -171,6 +176,7 @@ export function RankingView({ view }: { view: CategoryView }) {
   }, [all, hash, view.category.slug])
 
   const apps = appRows
+  const ossRows = ossRowsMemo
   const skills = skillRows
 
   const selItem = selected ? all.find((r) => r.id === selected) ?? null : null
@@ -186,14 +192,15 @@ export function RankingView({ view }: { view: CategoryView }) {
         </p>
 
         <div {...stylex.props(s.cols)}>
-          {/* WHICHTOUSE-19: two columns, not three. The database keeps oss and
-              skill apart, but a dedicated skill column would be empty in 2 of 25
-              categories and hold one or two entries in 9 more — that reads as
-              missing coverage, not as breadth. The real decision a visitor makes
-              is hosted vs run-it-yourself; repo-or-skill is a detail of the
-              second option, so it rides on the row instead. */}
-          <TrackColumn label="HOSTED / SAAS" dotColor="#4a2fa8" rows={apps} selectedId={selected} onSelect={setSelected} />
-          <TrackColumn label="SELF-HOSTED" dotColor="#0f7a3d" rows={skills} selectedId={selected} onSelect={setSelected} />
+          {/* One column per form. An earlier pass merged oss and skill because
+              the skill track held 0-2 entries in 11 of 25 categories — but that
+              gap was produced by searching repo names for "ai <category> skill"
+              rather than by the ecosystem. Searching the agent-skills topics
+              instead turned pdf-documents from 2 entries into 12. The column
+              earns its place; the search did not. */}
+          <TrackColumn label="APP / SAAS" dotColor="#4a2fa8" rows={apps} selectedId={selected} onSelect={setSelected} />
+          <TrackColumn label="OPEN SOURCE" dotColor="#0f7a3d" rows={ossRows} selectedId={selected} onSelect={setSelected} />
+          <TrackColumn label="AGENT SKILLS" dotColor="#c0662f" rows={skills} selectedId={selected} onSelect={setSelected} />
         </div>
 
       </div>

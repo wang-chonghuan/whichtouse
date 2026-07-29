@@ -8,7 +8,7 @@ import type { RankItem, Track } from '~/lib/catalog'
 export type DetailPanelItem = RankItem & {
   id: string
   track: Track
-  typeLabel: 'App / SaaS' | 'Skill / Repo'
+  typeLabel: string
 }
 
 export function monogramColor(name: string): string {
