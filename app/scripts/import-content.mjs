@@ -30,6 +30,19 @@ if (!url && !DRY) {
   process.exit(1)
 }
 
+// A plain JS string handed to a jsonb column is stored as a JSON *string*, not
+// as the array it spells out: jsonb_typeof comes back 'string' and everything
+// downstream that calls .map() on it throws. This shipped once and crashed the
+// whole detail panel. Values must be marked as JSON explicitly.
+const sql = url
+  ? postgres(url, {
+      ssl: url.includes('sslmode=disable') ? false : 'require',
+      max: 4,
+      connection: { search_path: '"whichtouse-schema"' },
+    })
+  : null
+const json = (value) => (sql ? sql.json(value ?? []) : (value ?? []))
+
 /** Stable, readable identity. Owner-qualified for repos so two projects named
  * `skills` in different orgs never collide inside one category. */
 function toolSlug(owner, name) {
@@ -138,10 +151,10 @@ async function main() {
           edge: firstOrNull(item.pros),
           con: firstOrNull(item.cons),
           best_for: item.bestFor ?? null,
-          features: JSON.stringify(item.features ?? []),
-          pros: JSON.stringify(item.pros ?? []),
-          cons: JSON.stringify(item.cons ?? []),
-          sources: JSON.stringify(item.sources ?? []),
+          features: json(item.features),
+          pros: json(item.pros),
+          cons: json(item.cons),
+          sources: json(item.sources),
           confidence: normalizeConfidence(item.confidence),
           pricing_model: item.pricing ?? null,
           pricing_free: item.pricingFree ?? null,
@@ -163,12 +176,6 @@ async function main() {
     console.log(JSON.stringify(listingRows.slice(0, 2), null, 1))
     return
   }
-
-  const sql = postgres(url, {
-    ssl: url.includes('sslmode=disable') ? false : 'require',
-    max: 4,
-    connection: { search_path: '"whichtouse-schema"' },
-  })
 
   try {
     await sql.begin(async (tx) => {

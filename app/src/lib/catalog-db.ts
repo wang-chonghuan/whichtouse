@@ -40,10 +40,10 @@ type ListingRow = {
   edge: string | null
   con: string | null
   best_for: string | null
-  features: string[]
-  pros: string[]
-  cons: string[]
-  sources: Source[]
+  features: unknown
+  pros: unknown
+  cons: unknown
+  sources: unknown
   confidence: Confidence | null
   pricing_model: string | null
   pricing_free: string | null
@@ -75,6 +75,24 @@ function isoDate(d: Date | null): string {
   return d ? d.toISOString().slice(0, 10) : ''
 }
 
+/** jsonb columns are trusted by every consumer that calls .map() on them, and a
+ * single bad row took the whole detail panel down with
+ * "features.map is not a function". The write path is fixed, but the read path
+ * must not be the thing that decides whether the site renders: coerce here, so
+ * bad data costs one empty list instead of a white screen. */
+function toArray<T>(value: unknown): T[] {
+  if (Array.isArray(value)) return value as T[]
+  if (typeof value === 'string') {
+    try {
+      const parsed = JSON.parse(value)
+      return Array.isArray(parsed) ? (parsed as T[]) : []
+    } catch {
+      return []
+    }
+  }
+  return []
+}
+
 function toRankItem(row: ListingRow, displayRank: number): RankItem {
   const label = row.owner ? `${row.owner}/${row.name}` : row.name
   return {
@@ -88,7 +106,7 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
     bestFor: row.best_for ?? row.summary ?? '',
     confidence: row.confidence ?? 'low',
     badge: '',
-    sources: row.sources ?? [],
+    sources: toArray<Source>(row.sources),
     kind: row.track === 'oss' ? 'repo' : row.track === 'skill' ? 'skill' : undefined,
     reviewed: row.reviewed_at !== null,
     edge: row.edge,
@@ -96,10 +114,10 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
     pricingFree: row.pricing_free,
     pricingPaid: row.pricing_paid,
     pricingCheckedAt: isoDate(row.pricing_checked_at) || null,
-    features: row.features ?? [],
-    pros: row.pros ?? [],
-    cons: row.cons ?? [],
-    evidence: row.evidence ?? {},
+    features: toArray<string>(row.features),
+    pros: toArray<string>(row.pros),
+    cons: toArray<string>(row.cons),
+    evidence: (row.evidence && typeof row.evidence === 'object' ? row.evidence : {}) as Evidence,
   }
 }
 
