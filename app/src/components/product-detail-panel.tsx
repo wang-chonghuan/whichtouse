@@ -354,6 +354,17 @@ export function ProductDetailPanel({
           </div>
         )}
 
+        {/* Facts, labelled as facts. Star counts and trending position are
+            evidence that something resonated; they are not strengths and they
+            are not a reason. Keeping them in their own section is what lets
+            STRENGTHS stay empty rather than be padded with them. */}
+        {item.signals?.length ? (
+          <div {...stylex.props(s.section)}>
+            <div {...stylex.props(s.secLabel)}>SIGNALS</div>
+            <p {...stylex.props(s.basis)}>{item.signals.join(' · ')}</p>
+          </div>
+        ) : null}
+
         <div {...stylex.props(s.section)}>
           <div {...stylex.props(s.secLabel)}>STRENGTHS &amp; LIMITATIONS</div>
           {hasPC ? (

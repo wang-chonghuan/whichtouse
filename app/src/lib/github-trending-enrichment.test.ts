@@ -98,12 +98,22 @@ describe('GitHub Trending enrichment', () => {
       ],
     })
 
-    expect(item.rankBasis).toContain('#2 on GitHub Trending')
+    // An unresearched repo gets no rankBasis: the heading promises a reason and
+    // a list of star counts is not one. The counts still appear, as signals.
+    expect(item.rankBasis).toBeUndefined()
+    expect(item.signals).toEqual(expect.arrayContaining([expect.stringContaining('#2 on GitHub Trending')]))
+    // No metric-shaped strengths. `.agents/skills/wt-enrich` names these exact
+    // shapes as forbidden, so assert the shapes, not just the count.
+    expect(item.pros ?? []).toHaveLength(0)
+    for (const pro of item.pros ?? []) {
+      expect(pro).not.toMatch(/stars|forks|momentum|trending|adoption signal/i)
+    }
     expect(item.pricingFree).toContain('MIT')
     expect(item.pricingPaid).toBeNull()
     expect(item.features?.length).toBeGreaterThanOrEqual(2)
-    expect(item.pros?.length).toBeGreaterThanOrEqual(2)
+    // Evidence-backed limitations survive; the generic filler does not.
     expect(item.cons?.[0]).toContain('Session cleanup')
+    expect(item.cons?.join(' ')).not.toMatch(/setup and ongoing maintenance/i)
     expect(item.sources.map((source) => source.name)).toContain('Community issues')
   })
 

@@ -50,7 +50,7 @@ type ListingRow = {
   pricing_free: string | null
   pricing_paid: string | null
   pricing_checked_at: Date | null
-  evidence: Evidence
+  evidence: unknown
   refreshed_at: Date | null
 }
 
@@ -94,6 +94,10 @@ function toArray<T>(value: unknown): T[] {
   return []
 }
 
+function evidenceOf(value: unknown): Evidence {
+  return value && typeof value === 'object' && !Array.isArray(value) ? (value as Evidence) : {}
+}
+
 function toRankItem(row: ListingRow, displayRank: number): RankItem {
   const label = row.owner ? `${row.owner}/${row.name}` : row.name
   return {
@@ -112,6 +116,15 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
     reviewed: row.reviewed_at !== null,
     edge: row.edge,
     rankBasis: row.rank_basis ?? undefined,
+    // WHICHTOUSE-16: a machine-placed row has no authored basis, and its
+    // aggregation inputs must not be dressed up as one. They render as
+    // signals — "GitHub (stars) #5", "Hacker News #6" — which is exactly what
+    // they are: where the ordering came from, not why the tool is good.
+    signals: row.rank_basis
+      ? undefined
+      : (evidenceOf(row.evidence).sources ?? []).map(
+          (s) => `${s.site} #${s.rank}`,
+        ),
     con: row.con,
     pricingFree: row.pricing_free,
     pricingPaid: row.pricing_paid,
@@ -119,7 +132,7 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
     features: toArray<string>(row.features),
     pros: toArray<string>(row.pros),
     cons: toArray<string>(row.cons),
-    evidence: (row.evidence && typeof row.evidence === 'object' ? row.evidence : {}) as Evidence,
+    evidence: evidenceOf(row.evidence),
   }
 }
 

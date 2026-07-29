@@ -98,5 +98,43 @@
     "web-scraping": "ai web scraping extraction",
     "workflow-automation": "ai workflow automation",
     "architecture-diagram": "ai architecture diagram generator"
+  },
+  "_mergedFrom": "resources/content/wt-sources.json (5 categories); its github_keywords are folded into queries below. That file and .agents/skills/wt-ingest are retired — the refresh job owns discovery now.",
+  "retiredKeywords": {
+    "lead-gen": [
+      "lead generation agent",
+      "sales agent",
+      "outbound automation",
+      "cold email ai",
+      "sdr agent"
+    ],
+    "seo-geo": [
+      "seo agent",
+      "generative engine optimization",
+      "geo llm seo",
+      "ai seo automation",
+      "keyword research ai"
+    ],
+    "content-writing": [
+      "ai writer",
+      "content generation agent",
+      "copywriting ai",
+      "blog writer llm",
+      "article generator"
+    ],
+    "video-generation": [
+      "text to video",
+      "video generation",
+      "ai video editor",
+      "talking avatar",
+      "video diffusion"
+    ],
+    "ui-design": [
+      "design to code",
+      "ui generation",
+      "figma ai",
+      "frontend generator",
+      "component generator llm"
+    ]
   }
 }

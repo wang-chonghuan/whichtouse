@@ -45,9 +45,16 @@ export type RankItem = {
   edge?: string | null
   /** the single biggest reason not to pick it (v2) */
   con?: string | null
-  /** narrative ranking reason. Retained for trending items, which still author
-   * one; catalog listings express the same thing through `evidence`. */
+  /** narrative ranking reason — a causal account of why this belongs here.
+   * Authored only. Never synthesised from metrics: `.agents/skills/wt-enrich`
+   * forbids leading with star growth or claiming something ranks because it is
+   * trending, and an absent reason is better than a fabricated one. */
   rankBasis?: string
+
+  /** Verifiable facts about the item — star counts, trending position, last
+   * push. Rendered as what they are. They are evidence that something resonated,
+   * never the explanation for it, and they must never appear as `pros`. */
+  signals?: string[]
 
   pricingFree?: string | null
   pricingPaid?: string | null

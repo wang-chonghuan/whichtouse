@@ -292,12 +292,13 @@ export function buildTrendingDetailItem({
     .sort((a, b) => b.comments - a.comments)
     .slice(0, 2)
 
+  // No synthesised pros. `.agents/skills/wt-enrich` names "many stars",
+  // "active repository" and "strong adoption" as the canonical bad strengths:
+  // a strength has to be a mechanism and the user benefit it produces, and
+  // nothing here has read the product closely enough to claim one. The counts
+  // still get shown — as `signals`, which is what they actually are.
   const pros = uniqueShort(
-    [
-      `Strong current momentum: +${repository.starsToday} stars today on GitHub Trending`,
-      `${totalStars} stars${forks ? ` and ${forks} forks` : ''} provide a concrete adoption signal`,
-      pushedAt ? `Repository activity is current, with the latest push on ${pushedAt}` : '',
-    ],
+    [],
     3,
   )
 
@@ -305,8 +306,10 @@ export function buildTrendingDetailItem({
     [
       ...issueSignals.map(issueLimitation),
       !recognizedLicense ? 'No recognized open-source license is reported by the GitHub API' : '',
-      'Trending placement is a short-term momentum signal, not a hands-on quality test',
-      'Using the repository directly may require local setup and ongoing maintenance',
+      // Dropped: "trending is a momentum signal, not a quality test" (true of
+      // every row, so it informs nobody) and "may require local setup and
+      // ongoing maintenance", which wt-enrich calls out by name as the
+      // limitation you must never auto-fill without evidence.
     ],
     3,
   ).slice(0, 3)
@@ -339,7 +342,11 @@ export function buildTrendingDetailItem({
     kind: 'repo',
     track: 'skill',
     typeLabel: 'Skill / Repo',
-    rankBasis: `${concreteSignals.join(', ')}. Categorized as ${category} from its official repository description, topics, and README.`,
+    // rankBasis is deliberately absent. It answers "why does this deserve this
+    // position", and a list of star counts does not answer that — it restates
+    // the position. The panel hides the section when there is no basis, which
+    // is the honest outcome for a row nobody has researched.
+    signals: concreteSignals.filter((s): s is string => Boolean(s)),
     pricingFree: recognizedLicense
       ? `Free & open-source (${recognizedLicense}; self-host)`
       : 'Public source on GitHub; no recognized open-source license detected',
