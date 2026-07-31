@@ -1,56 +1,57 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { createFileRoute, Outlet, useRouterState } from '@tanstack/react-router'
-import * as stylex from '@stylexjs/stylex'
 
 import { getShellData } from '~/lib/catalog'
 import { useLayoutStore } from '~/lib/layout-store'
-import { NavBar } from '~/components/nav-bar'
-import { Sidebar } from '~/components/sidebar'
+import { AppShell as Shell } from '~/components/app-shell'
+import { SearchOverlay } from '~/components/search-overlay'
 
-// App shell: top nav + use-case sidebar column + main area (Outlet).
-//
-// The sidebar is a layout column, open by default on desktop; the hero button
-// on Home collapses/expands it. Below 900px the same sidebar becomes a fixed
-// panel, closed by default and toggled from the nav bar or the hero button.
+// App shell: announcement banner + sticky header + task sidebar + main area.
+// Chrome lives in components/app-shell.tsx, ported class-for-class from
+// proto/shared.js — see the note at the top of that file.
 export const Route = createFileRoute('/_app')({
   component: AppShell,
   loader: async () => await getShellData(),
 })
 
-const s = stylex.create({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    // 100dvh tracks the *visible* viewport, so the mobile URL bar collapsing
-    // can't push the document taller than the screen and scroll the nav bar
-    // out of view. 100vh stays as the fallback for older browsers.
-    height: stylex.firstThatWorks('100dvh', '100vh'),
-    overflow: 'hidden',
-  },
-  body: { display: 'flex', flex: 1, minHeight: 0 },
-  content: { flex: 1, minWidth: 0, height: '100%' },
-})
-
 function AppShell() {
   const { categories, searchEntries } = Route.useLoaderData()
   const pathname = useRouterState({ select: (state) => state.location.pathname })
-  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen)
-  const mobileOpen = useLayoutStore((state) => state.mobileOpen)
   const setMobile = useLayoutStore((state) => state.setMobile)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   // Dismiss the mobile panel once a destination is picked; the desktop column
   // keeps whatever the reader chose.
   useEffect(() => setMobile(false), [pathname, setMobile])
 
+  // ⌘K / Ctrl-K, matching the hint rendered in the header pill.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setSearchOpen((v) => !v)
+      }
+      if (e.key === 'Escape') setSearchOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  const slug = pathname.startsWith('/c/') ? pathname.slice(3).split('/')[0] : null
+
   return (
-    <div {...stylex.props(s.root)}>
-      <NavBar entries={searchEntries} />
-      <div {...stylex.props(s.body)}>
-        <Sidebar categories={categories} desktopOpen={sidebarOpen} mobileOpen={mobileOpen} />
-        <main {...stylex.props(s.content)}>
-          <Outlet />
-        </main>
-      </div>
-    </div>
+    <Shell
+      categories={categories}
+      searchEntries={searchEntries}
+      activeSlug={slug}
+      isHome={pathname === '/'}
+      updated={null}
+      onSearch={() => setSearchOpen(true)}
+    >
+      <Outlet />
+      {searchOpen ? (
+        <SearchOverlay entries={searchEntries} onClose={() => setSearchOpen(false)} />
+      ) : null}
+    </Shell>
   )
 }

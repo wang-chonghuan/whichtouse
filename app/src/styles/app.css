@@ -1,13 +1,77 @@
+@import '@astryxdesign/core/reset.css';
+@import '@astryxdesign/core/astryx.css';
+
+@import 'tailwindcss';
+
+
+/* ---------------------------------------------------------------------------
+ * Design tokens — a direct port of proto/theme.js, which is itself a
+ * transcription of DESIGN.md. The app UI is a class-for-class port of proto/,
+ * so the token names must match the proto's Tailwind config exactly or the
+ * ported markup silently falls back to Tailwind defaults.
+ * ------------------------------------------------------------------------ */
+@theme {
+  --color-background: #fafaf9;          /* canvas, deliberately not white */
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-primary: #1a1a1a;             /* primary is BLACK */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f4f5f2;
+  --color-secondary-foreground: #3f3f3c;
+
+  --color-muted: #f2f2ee;
+  --color-muted-foreground: #8a8a8a;
+
+  --color-accent: #ede8ff;
+  --color-accent-foreground: #362073;
+
+  --color-brand: #c4b0ff;               /* rationed: <10 uses per page */
+  --color-brand-foreground: #1a1a1a;    /* black on brand, never white */
+
+  --color-destructive: #c0564f;
+  --color-border: #e6e6e2;
+  --color-input: #e0e1de;
+  --color-ring: #1a1a1a;
+
+  --color-sidebar: #fbfbfa;
+  --color-sidebar-foreground: #3f3f3c;
+
+  --color-brand-tint: #f7f4ff;
+  --color-panel-tint: #faf9ff;
+  --color-panel-tint-border: #efecfa;
+
+  /* the valence pair the ranking rows need; green and red are load-bearing */
+  --color-edge: #0f7a3d;
+  --color-con: #c0564f;
+
+  --font-sans: 'Space Grotesk', 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans SC', ui-sans-serif, sans-serif;
+
+  /* §1.4 — xl/2xl deliberately override Tailwind defaults, matching what the
+   * reference site's rounded-xl / rounded-2xl actually compute to. */
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 28px;
+
+  --container-container: 1440px;
+}
+
 /* WhichToUse global styles — Astryx design system (StyleX). Tailwind + shadcn
  * removed: Astryx is the single styling authority. The reset ships in @layer
  * reset and base component styles in @layer astryx-base; StyleX xstyle overrides
  * and our own layout styles compile to atomic CSS that layers above them. */
 
 /* Butter theme type: Outfit (body/heading) + Sarina (display accent). */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sarina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-@import '@astryxdesign/core/reset.css';
-@import '@astryxdesign/core/astryx.css';
+
 
 html,
 body {
@@ -49,7 +113,12 @@ body {
   --color-text-disabled: #9aa0aa !important;
   --color-text-accent: #4a2fa8 !important;   /* violet, AA on white */
 
-  --color-accent: #c4b0ff !important;
+  /* NOTE: --color-accent is also a Tailwind v4 theme key. While both systems
+   * are live these must agree, or !important here silently overrides the
+   * ported markup — it turned the pale banner into a saturated block. The
+   * brand violet lives on --color-text-accent / --color-icon-accent, which
+   * Tailwind does not claim. */
+  --color-accent: #ede8ff !important;
   --color-accent-muted: #ede8ff !important;
   --color-on-accent: #ffffff !important;
   --color-icon-accent: #4a2fa8 !important;

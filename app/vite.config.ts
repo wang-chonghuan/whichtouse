@@ -1,5 +1,6 @@
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import stylex from '@stylexjs/unplugin'
+import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
 import { nitro } from 'nitro/vite'
 import { defineConfig } from 'vite'
@@ -30,6 +31,10 @@ export default defineConfig({
     include: ['@astryxdesign/core', '@astryxdesign/theme-butter'],
   },
   plugins: [
+    // Tailwind v4. The proto in proto/ is authored in Tailwind, and the app UI
+    // is a class-for-class port of it — hand-translating utilities into StyleX is
+    // where visual drift comes from. StyleX stays for the files not yet migrated.
+    tailwindcss(),
     // StyleX is the single styling authority (Tailwind + shadcn removed). The
     // unplugin extracts atomic CSS into the app's CSS asset and must run before
     // the React plugin per the official Vite integration.
