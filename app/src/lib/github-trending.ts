@@ -16,7 +16,12 @@ export type TrendingRepositoriesResult = {
 let cachedResult: TrendingRepositoriesResult | null = null
 let cachedAt = 0
 
-const TRENDING_CACHE_MS = 15 * 60 * 1000
+// GitHub Trending is a once-a-day read. The cache lives in process memory, so
+// a restart or redeploy refetches — "once a day" is the ceiling on how often we
+// hit github.com/trending, not a guarantee of exactly one fetch. Failures are
+// deliberately not cached (see the catch below), so a bad scrape retries on the
+// next request instead of leaving the panel empty until tomorrow.
+const TRENDING_CACHE_MS = 24 * 60 * 60 * 1000
 
 
 
