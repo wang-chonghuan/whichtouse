@@ -1,67 +1,7 @@
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
 
-@import 'tailwindcss';
 
-
-/* ---------------------------------------------------------------------------
- * Design tokens — a direct port of proto/theme.js, which is itself a
- * transcription of DESIGN.md. The app UI is a class-for-class port of proto/,
- * so the token names must match the proto's Tailwind config exactly or the
- * ported markup silently falls back to Tailwind defaults.
- * ------------------------------------------------------------------------ */
-@theme {
-  --color-background: #fafaf9;          /* canvas, deliberately not white */
-  --color-foreground: #1a1a1a;
-
-  --color-card: #ffffff;
-  --color-card-foreground: #1a1a1a;
-
-  --color-primary: #1a1a1a;             /* primary is BLACK */
-  --color-primary-foreground: #ffffff;
-
-  --color-secondary: #f4f5f2;
-  --color-secondary-foreground: #3f3f3c;
-
-  --color-muted: #f2f2ee;
-  --color-muted-foreground: #8a8a8a;
-
-  --color-accent: #ede8ff;
-  --color-accent-foreground: #362073;
-
-  --color-brand: #c4b0ff;               /* rationed: <10 uses per page */
-  --color-brand-foreground: #1a1a1a;    /* black on brand, never white */
-
-  --color-destructive: #c0564f;
-  --color-border: #e6e6e2;
-  --color-input: #e0e1de;
-  --color-ring: #1a1a1a;
-
-  --color-sidebar: #fbfbfa;
-  --color-sidebar-foreground: #3f3f3c;
-
-  --color-brand-tint: #f7f4ff;
-  --color-panel-tint: #faf9ff;
-  --color-panel-tint-border: #efecfa;
-
-  /* the valence pair the ranking rows need; green and red are load-bearing */
-  --color-edge: #0f7a3d;
-  --color-con: #c0564f;
-
-  --font-sans: 'Space Grotesk', 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans SC', ui-sans-serif, sans-serif;
-
-  /* §1.4 — xl/2xl deliberately override Tailwind defaults, matching what the
-   * reference site's rounded-xl / rounded-2xl actually compute to. */
-  --radius-sm: 7px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 20px;
-  --radius-3xl: 28px;
-
-  --container-container: 1440px;
-}
 
 /* WhichToUse global styles — Astryx design system (StyleX). Tailwind + shadcn
  * removed: Astryx is the single styling authority. The reset ships in @layer
@@ -128,6 +68,49 @@ body {
   --color-success: #0f7a3d !important;   /* the edge dot */
   --color-error: #c0564f !important;     /* the drawback dot */
   --color-warning: #a9760c !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Demo tokens — the values DESIGN.md measured, which demo/theme.js transcribes.
+ * Named `--wt-*` so they can never collide with an Astryx or Tailwind key; that
+ * collision (--color-accent, set with !important on the Astryx side) silently
+ * overrode ported markup once already.
+ * ------------------------------------------------------------------------ */
+:root {
+  --wt-canvas: #fafaf9;            /* page, deliberately not white */
+  --wt-surface: #ffffff;           /* cards — elevated with no shadow at all */
+  --wt-panel-tint: #faf9ff;
+  --wt-panel-tint-border: #efecfa;
+  --wt-brand-tint: #f7f4ff;
+
+  --wt-ink: #1a1a1a;               /* structure is black, not brand */
+  --wt-ink-muted: #8a8a8a;
+  --wt-ink-secondary: #3f3f3c;
+
+  --wt-brand: #c4b0ff;             /* rationed: under ten uses per page */
+  --wt-on-brand: #1a1a1a;          /* black on brand, never white */
+  --wt-accent: #ede8ff;
+  --wt-on-accent: #362073;
+
+  --wt-line: #e6e6e2;
+  --wt-line-soft: rgba(230, 230, 226, 0.7);
+  --wt-fill: #f4f5f2;
+
+  --wt-edge: #0f7a3d;              /* the "does this well" dot */
+  --wt-con: #c0564f;               /* the "here is the catch" dot */
+
+  /* §1.4 radius ladder */
+  --wt-r-sm: 7px;
+  --wt-r-md: 10px;
+  --wt-r-lg: 12px;
+  --wt-r-xl: 16px;
+  --wt-r-2xl: 20px;
+  --wt-r-3xl: 28px;
+
+  --wt-container: 1440px;
+  --wt-sidebar-w: 240px;
+  --wt-header-h: 64px;
+  --wt-banner-h: 46px;
 }
 
 /* Confidence + type pills tuned to the mockup tints. */

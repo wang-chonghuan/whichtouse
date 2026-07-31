@@ -45,7 +45,6 @@ function AppShell() {
       searchEntries={searchEntries}
       activeSlug={slug}
       isHome={pathname === '/'}
-      updated={null}
       onSearch={() => setSearchOpen(true)}
     >
       <Outlet />
