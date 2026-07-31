@@ -33,5 +33,5 @@ state, and routes the task to exactly one n-prodfarm capability.
 | Machine-current module facts (reverse-engineered) | `.evodocs/modules/` |
 | Ticket spec / test basis | the ticket in the backend (plane, project WHICHTOUSE) |
 | Full product intent + market research | `resources/reference/PRODUCT-GOAL.md` + `MARKET-RESEARCH.md` |
-| UI design tokens & rules | `resources/reference/DESIGN.md` (+ `DESIGN.guide.md`) |
+| UI design tokens & rules | `DESIGN.md` (measured values) + `demo/` (frozen reference build) |
 | DB schema (SSOT) | `ssot-schemas/db-schemas/whichtouse.sql` |
