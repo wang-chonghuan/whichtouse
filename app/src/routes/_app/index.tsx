@@ -1,18 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { HomeView } from '~/components/home-view'
-import { getCategories } from '~/lib/catalog'
+import { getCategories, getHomeFeatured } from '~/lib/catalog'
 import { getTrendingRepositories } from '~/lib/github-trending'
 import { buildPageMeta, DEFAULT_DESCRIPTION, DEFAULT_TITLE } from '~/lib/seo'
 
 export const Route = createFileRoute('/_app/')({
   component: Home,
   loader: async () => {
-    const [trending, categories] = await Promise.all([
+    const [trending, categories, featured] = await Promise.all([
       getTrendingRepositories(),
       getCategories(),
+      getHomeFeatured(),
     ])
-    return { trending, categoryCount: categories.length }
+    return { trending, categories, featured }
   },
   head: () =>
     buildPageMeta({
@@ -23,6 +24,6 @@ export const Route = createFileRoute('/_app/')({
 })
 
 function Home() {
-  const { trending, categoryCount } = Route.useLoaderData()
-  return <HomeView trending={trending} categoryCount={categoryCount} />
+  const { trending, categories, featured } = Route.useLoaderData()
+  return <HomeView trending={trending} categories={categories} featured={featured} />
 }

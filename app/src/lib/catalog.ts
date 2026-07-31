@@ -90,5 +90,18 @@ export const getShellData = createServerFn().handler(
   },
 )
 
+/** The four columns the home page leads with. The demo shows four mini
+ * leaderboards; these are drawn from the real catalog, picking the categories
+ * that actually have depth rather than a hard-coded list. */
+export const getHomeFeatured = createServerFn().handler(
+  async (): Promise<Array<{ category: Category; items: CategoryView['tracks']['app'] }>> => {
+    const snap = await getSnapshot()
+    return snap.categories
+      .map((category) => ({ category, items: snap.views[category.slug]?.tracks.app ?? [] }))
+      .filter((c) => c.items.length >= 5)
+      .slice(0, 4)
+  },
+)
+
 /** The default category shown at the site root. */
 export const DEFAULT_SLUG = 'coding'

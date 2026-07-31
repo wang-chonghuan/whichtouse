@@ -1,484 +1,363 @@
-import { useMemo, useRef, useState } from 'react'
-import * as stylex from '@stylexjs/stylex'
-import { Badge } from '@astryxdesign/core/Badge'
-import { FolderGit2, LoaderCircle, PanelLeftClose, PanelLeftOpen, Star } from 'lucide-react'
+// Home — implements demo/home.html.
+//
+// Hero, then three stacked panels: the by-the-job columns, live GitHub
+// trending, and the claims. The demo's four use-case columns are filled from
+// the real catalog rather than the demo's sample data.
 
-import {
-  ProductDetailPanel,
-  type DetailPanelItem,
-} from '~/components/product-detail-panel'
-import {
-  getTrendingRepositoryDetail,
-  type TrendingRepositoriesResult,
-} from '~/lib/github-trending'
-import type { TrendingRepository } from '~/lib/github-trending'
-import { SIDEBAR_ID } from '~/components/sidebar'
-import { useLayoutStore } from '~/lib/layout-store'
-import { useIsMobile } from '~/lib/use-is-mobile'
+import * as stylex from '@stylexjs/stylex'
+import { Link } from '@tanstack/react-router'
+
+import { Mockup, MonoTile, Panel, Pill } from '~/components/ui/primitives'
+import type { TrendingRepositoriesResult } from '~/lib/github-trending'
+import type { Category, CategoryView } from '~/lib/catalog'
+
+const CLAIMS: Array<[string, string]> = [
+  ['Start from the job', 'Pick what you need done, not a tool name off an A-to-Z list.'],
+  ['Three forms side by side', 'Hosted product, open-source repo and agent skill, ranked separately.'],
+  ['Five, not five hundred', 'Each standing shows five by default, ten at most.'],
+  ['Drawbacks up front', 'Every entry names the single biggest reason not to pick it.'],
+  ['Emerging, tracked', 'A second standing for what is climbing but still unproven.'],
+]
 
 const s = stylex.create({
-  page: {
-    height: '100%',
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    backgroundColor: 'var(--color-background-body)',
+  hero: {
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'var(--wt-line)',
+    backgroundColor: 'var(--wt-surface)',
+    paddingInline: 24,
+    paddingTop: 32,
+    paddingBottom: 28,
   },
-  inner: {
-    width: '100%',
-    maxWidth: 1120,
-    marginInline: 'auto',
-    paddingInline: {
-      default: 'var(--spacing-6)',
-      '@media (max-width: 640px)': 'var(--spacing-4)',
-    },
-    paddingBlock: {
-      default: 'var(--spacing-7)',
-      '@media (max-width: 640px)': 'var(--spacing-5)',
-    },
-  },
-  // --- hero -------------------------------------------------------------
-  hero: { maxWidth: 720 },
+  heroInner: { maxWidth: 768, marginInline: 'auto', textAlign: 'center' },
   kicker: {
+    marginBottom: 14,
     display: 'inline-flex',
     alignItems: 'center',
-    color: 'var(--color-text-accent)',
-    fontSize: 12,
-    fontWeight: 700,
-    letterSpacing: '0.06em',
-    textTransform: 'uppercase',
-    marginBottom: 'var(--spacing-3)',
-  },
-  heroTitle: {
-    margin: 0,
-    color: 'var(--color-text-primary)',
-    fontSize: { default: 38, '@media (max-width: 640px)': 28 },
-    fontWeight: 800,
-    letterSpacing: '-0.02em',
-    lineHeight: 1.1,
-  },
-  tagline: {
-    marginTop: 'var(--spacing-4)',
-    marginBottom: 0,
-    color: 'var(--color-text-secondary)',
-    fontSize: { default: 16, '@media (max-width: 640px)': 15 },
-    lineHeight: 1.55,
-  },
-  browseCta: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: 'var(--spacing-2)',
-    marginTop: 'var(--spacing-5)',
-    height: 52,
-    paddingInline: 'var(--spacing-6)',
-    borderRadius: 'var(--radius-full)',
-    fontSize: 16,
-    fontWeight: 700,
-    fontFamily: 'inherit',
-    cursor: 'pointer',
-    transitionProperty: 'background-color, color, box-shadow, border-color',
-    transitionDuration: '0.14s',
-  },
-  // Closed: the inviting primary action.
-  ctaClosed: {
-    borderWidth: 0,
-    backgroundColor: { default: 'var(--color-text-accent)', ':hover': '#1d4ed8' },
-    color: '#fff',
-    boxShadow: '0 6px 20px -6px rgba(37,99,235,0.5)',
-  },
-  // Open: the job is done, so it steps back to a quiet secondary control.
-  ctaOpen: {
+    gap: 8,
+    borderRadius: 9999,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: 'var(--color-border)',
-    backgroundColor: {
-      default: 'var(--color-background-surface)',
-      ':hover': 'var(--color-overlay-hover)',
-    },
-    color: 'var(--color-text-secondary)',
-    boxShadow: 'none',
-  },
-  trust: {
-    marginTop: 'var(--spacing-3)',
-    marginBottom: 0,
-    color: 'var(--color-text-secondary)',
-    fontSize: 13,
-    fontWeight: 500,
-  },
-  // --- section scaffolding ---------------------------------------------
-  section: {
-    marginTop: 'var(--spacing-7)',
+    borderColor: 'var(--wt-line)',
+    backgroundColor: 'var(--wt-fill)',
+    paddingBlock: 4,
+    paddingLeft: 6,
+    paddingRight: 12,
+    fontSize: 12,
+    fontWeight: 600,
+    color: 'var(--wt-ink)',
   },
   h1: {
     margin: 0,
-    marginBottom: 'var(--spacing-2)',
-    color: 'var(--color-text-primary)',
-    fontSize: 20,
+    fontSize: { default: 42, '@media (max-width: 900px)': 34, '@media (max-width: 640px)': 28 },
+    lineHeight: 1.08,
     fontWeight: 700,
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.025em',
+    color: 'var(--wt-ink)',
+    textWrap: 'balance',
   },
-  sectionHead: {
+  // §3.7 — the one non-orthogonal element on the site
+  mark: {
+    display: 'inline-block',
+    transform: 'rotate(-2deg)',
+    borderRadius: 9,
+    backgroundColor: 'var(--wt-brand)',
+    color: 'var(--wt-on-brand)',
+    paddingInline: 8,
+  },
+  sub: {
+    marginBlock: 0,
+    marginTop: 12,
+    marginInline: 'auto',
+    maxWidth: 576,
+    fontSize: 15.5,
+    lineHeight: 1.5,
+    color: 'var(--wt-ink-muted)',
+  },
+  stats: {
+    marginTop: 18,
     display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'baseline',
+    justifyContent: 'center',
+    columnGap: 24,
+    rowGap: 8,
+  },
+  statNum: { fontSize: 15, fontWeight: 700, color: 'var(--wt-ink)' },
+  statLabel: { fontSize: 13.5, fontWeight: 400, color: 'var(--wt-ink-muted)' },
+
+  page: {
+    maxWidth: 'var(--wt-container)',
+    marginInline: 'auto',
+    marginTop: 28,
+    marginBottom: 64,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 28,
+    paddingInline: { default: 16, '@media (min-width: 640px)': 24, '@media (min-width: 1024px)': 32 },
+  },
+
+  panelHead: {
+    display: 'flex',
+    flexWrap: 'wrap',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    gap: 'var(--spacing-4)',
-    marginBottom: 'var(--spacing-2)',
+    gap: 12,
   },
-  sectionTitle: {
+  h2: { margin: 0, fontSize: 24, fontWeight: 700, letterSpacing: '-0.025em', color: 'var(--wt-ink)' },
+  lede: { marginBlock: 0, marginTop: 4, fontSize: 14.5, color: 'var(--wt-ink-muted)' },
+  quietLink: {
+    fontSize: 12.5,
+    fontWeight: 600,
+    color: { default: 'var(--wt-ink-muted)', ':hover': 'var(--wt-ink)' },
+    textDecoration: 'none',
+  },
+
+  colGrid: {
+    marginTop: 24,
+    display: 'grid',
+    gap: 36,
+    gridTemplateColumns: {
+      default: 'repeat(4, minmax(0, 1fr))',
+      '@media (max-width: 1180px)': 'repeat(2, minmax(0, 1fr))',
+      '@media (max-width: 640px)': '1fr',
+    },
+  },
+  col: { display: 'flex', flexDirection: 'column', minWidth: 0 },
+  colHead: {
+    paddingBottom: 8,
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 600,
+    color: 'var(--wt-ink)',
+    borderBottomWidth: 2,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'var(--wt-ink)',
     margin: 0,
-    color: 'var(--color-text-primary)',
-    fontSize: 20,
-    fontWeight: 700,
-    letterSpacing: '-0.01em',
   },
-  sectionSub: {
-    margin: 0,
-    marginBottom: 'var(--spacing-4)',
-    color: 'var(--color-text-secondary)',
-    fontSize: 13.5,
-    lineHeight: 1.5,
-    maxWidth: 640,
+
+  row: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    paddingBlock: 10,
+    paddingLeft: { default: 2, ':hover': 10 },
+    paddingRight: 2,
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'var(--wt-line-soft)',
+    fontSize: 14,
+    color: 'var(--wt-ink)',
+    textDecoration: 'none',
+    transitionProperty: 'padding',
+    transitionDuration: '150ms',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
   },
-  count: {
-    color: 'var(--color-text-secondary)',
+  rank: {
+    width: 12,
+    flexShrink: 0,
     fontSize: 12,
     fontVariantNumeric: 'tabular-nums',
-    whiteSpace: 'nowrap',
+    color: 'var(--wt-ink-muted)',
   },
-  // --- trending table ---------------------------------------------------
-  table: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'var(--color-border)',
-    borderRadius: 'var(--radius-element)',
-    backgroundColor: 'var(--color-background-surface)',
-    overflow: 'hidden',
-  },
-  tableHead: {
-    display: {
-      default: 'grid',
-      '@media (max-width: 760px)': 'none',
-    },
-    gridTemplateColumns: 'minmax(260px, 1fr) 100px 116px 168px',
-    gap: 'var(--spacing-4)',
-    padding: 'var(--spacing-3) var(--spacing-5)',
-    borderBottomWidth: 1,
-    borderBottomStyle: 'solid',
-    borderBottomColor: 'var(--color-border)',
-    backgroundColor: 'var(--color-background-muted)',
-    color: 'var(--color-text-secondary)',
-    fontSize: 11,
-    fontWeight: 700,
-    letterSpacing: 0,
-  },
-  row: {
-    width: '100%',
-    display: 'grid',
-    gridTemplateColumns: {
-      default: 'minmax(260px, 1fr) 100px 116px 168px',
-      '@media (max-width: 760px)': 'minmax(0, 1fr) auto',
-    },
-    alignItems: 'center',
-    gap: {
-      default: 'var(--spacing-4)',
-      '@media (max-width: 760px)': 'var(--spacing-3)',
-    },
-    minHeight: 76,
-    padding: {
-      default: 'var(--spacing-4) var(--spacing-5)',
-      '@media (max-width: 640px)': 'var(--spacing-4)',
-    },
-    borderWidth: 0,
-    borderBottomWidth: 1,
-    borderBottomStyle: 'solid',
-    borderBottomColor: 'var(--color-border)',
-    backgroundColor: {
-      default: 'var(--color-background-surface)',
-      ':hover': 'var(--color-overlay-hover)',
-    },
-    color: 'var(--color-text-primary)',
-    cursor: 'pointer',
-    fontFamily: 'inherit',
-    textAlign: 'left',
-  },
-  rowLast: {
-    borderBottomWidth: 0,
-  },
-  rowActive: {
-    backgroundColor: 'var(--color-accent-muted)',
-    boxShadow: 'inset 3px 0 0 var(--color-text-accent)',
-  },
-  product: {
-    minWidth: 0,
-  },
-  nameLine: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 'var(--spacing-2)',
-    minWidth: 0,
-  },
-  name: {
-    minWidth: 0,
-    overflow: 'hidden',
-    color: 'var(--color-text-primary)',
-    fontSize: 14,
-    fontWeight: 700,
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-  },
-  description: {
-    display: '-webkit-box',
-    marginTop: 4,
-    overflow: 'hidden',
-    color: 'var(--color-text-secondary)',
-    fontSize: 12.5,
-    lineHeight: 1.4,
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: 2,
-  },
-  metric: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 5,
-    color: 'var(--color-text-primary)',
-    fontSize: 13,
-    fontWeight: 650,
-    fontVariantNumeric: 'tabular-nums',
-    whiteSpace: 'nowrap',
-  },
-  growth: {
-    color: 'var(--color-success)',
-  },
-  category: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    minWidth: 0,
-  },
-  mobileMeta: {
-    display: {
-      default: 'none',
-      '@media (max-width: 760px)': 'flex',
-    },
-    gridColumn: '1 / -1',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: 'var(--spacing-3)',
-    marginTop: 'calc(var(--spacing-2) * -1)',
-  },
-  desktopOnly: {
-    display: {
-      default: 'flex',
-      '@media (max-width: 760px)': 'none',
-    },
-  },
-  loader: {
-    color: 'var(--color-text-accent)',
-    animationName: stylex.keyframes({
-      to: { transform: 'rotate(360deg)' },
-    }),
-    animationDuration: '0.8s',
-    animationIterationCount: 'infinite',
-    animationTimingFunction: 'linear',
-    '@media (prefers-reduced-motion: reduce)': {
-      animationName: 'none',
-    },
-  },
-  error: {
-    padding: 'var(--spacing-6)',
-    color: 'var(--color-text-secondary)',
-    fontSize: 13,
+  grow: { flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  chev: { flexShrink: 0, color: 'var(--wt-ink-muted)' },
+  seeMore: {
+    marginTop: 'auto',
+    paddingTop: 14,
     textAlign: 'center',
-  },
-  detailError: {
-    marginTop: 'var(--spacing-3)',
-    color: 'var(--color-error)',
     fontSize: 12.5,
+    fontWeight: 600,
+    color: { default: 'var(--wt-ink-muted)', ':hover': 'var(--wt-ink)' },
+    textDecoration: 'none',
   },
+
+  // §3.5 wide row
+  wideRow: {
+    display: 'grid',
+    alignItems: 'center',
+    gridTemplateColumns: { default: '56px 1fr 72px', '@media (max-width: 640px)': '36px 1fr 72px' },
+    gap: { default: 20, '@media (max-width: 640px)': 16 },
+    paddingBlock: 16,
+    paddingLeft: { default: 4, ':hover': 16 },
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
+    borderTopColor: 'rgba(26,26,26,0.1)',
+    color: 'var(--wt-ink)',
+    textDecoration: 'none',
+    transitionProperty: 'padding',
+    transitionDuration: '150ms',
+  },
+  wideIdent: { display: 'flex', alignItems: 'center', gap: 10 },
+  wideName: { display: 'block', fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  wideDesc: { display: 'block', marginTop: 2, fontSize: 13.5, color: 'var(--wt-ink-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
+  wideNums: { textAlign: 'end' },
+  wideStars: { display: 'block', fontSize: 14, fontWeight: 600, fontVariantNumeric: 'tabular-nums' },
+  wideToday: { display: 'block', marginTop: 2, fontSize: 12.5, fontWeight: 600, fontVariantNumeric: 'tabular-nums', color: 'var(--wt-edge)' },
+
+  claimGrid: {
+    marginTop: 28,
+    display: 'grid',
+    columnGap: 32,
+    rowGap: 24,
+    gridTemplateColumns: {
+      default: 'repeat(5, minmax(0, 1fr))',
+      '@media (max-width: 1180px)': 'repeat(2, minmax(0, 1fr))',
+      '@media (max-width: 640px)': '1fr',
+    },
+  },
+  claimNum: { fontSize: 24, fontWeight: 700, lineHeight: 1, color: 'rgba(26,26,26,0.25)', fontVariantNumeric: 'tabular-nums' },
+  claimTitle: { marginTop: 8, fontSize: 15, fontWeight: 700 },
+  claimBody: { marginBlock: 0, marginTop: 4, fontSize: 13.5, lineHeight: 1.5, color: 'rgba(26,26,26,0.75)' },
+  claimFoot: { marginTop: 32, marginBottom: 0, fontSize: 12.5, fontWeight: 600, color: 'rgba(26,26,26,0.6)' },
+  err: { marginBlock: 0, marginTop: 12, fontSize: 13.5, color: 'var(--wt-con)' },
 })
 
-function toPanelItem(repository: TrendingRepository): DetailPanelItem {
-  return {
-    id: repository.url,
-    rank: repository.rank,
-    name: repository.name,
-    homepage: repository.url,
-    pricing: 'Public GitHub repository',
-    bestFor: repository.description,
-    confidence: 'low',
-    badge: 'provisional',
-    // Trending is a live GitHub feed — nobody has sat down with these.
-    reviewed: false,
-    standing: 'emerging' as const,
-    sources: [{ name: 'GitHub repository', url: repository.url }],
-    kind: 'repo',
-    track: 'skill',
-    typeLabel: 'Skill / Repo',
-  }
-}
+const Chevron = () => (
+  <svg {...stylex.props(s.chev)} width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path d="m9 18 6-6-6-6" />
+  </svg>
+)
 
 export function HomeView({
   trending,
-  categoryCount,
+  categories,
+  featured,
 }: {
   trending: TrendingRepositoriesResult
-  categoryCount: number
+  categories: Category[]
+  featured: Array<{ category: Category; items: CategoryView['tracks']['app'] }>
 }) {
-  const [selectedItem, setSelectedItem] = useState<DetailPanelItem | null>(null)
-  const [loadingId, setLoadingId] = useState<string | null>(null)
-  const [detailError, setDetailError] = useState<string | null>(null)
-  const isMobile = useIsMobile()
-  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen)
-  const mobileOpen = useLayoutStore((state) => state.mobileOpen)
-  const toggleSidebar = useLayoutStore((state) => state.toggleSidebar)
-  const toggleMobile = useLayoutStore((state) => state.toggleMobile)
-  // One button, two surfaces: it drives whichever sidebar this viewport shows.
-  const catalogOpen = isMobile ? mobileOpen : sidebarOpen
-  const toggleCatalog = isMobile ? toggleMobile : toggleSidebar
-  const requestId = useRef(0)
-  const siblings = useMemo(
-    () => trending.repositories.map(toPanelItem),
-    [trending.repositories],
-  )
-
-  const openRepository = async (repository: TrendingRepository) => {
-    const currentRequest = ++requestId.current
-    setLoadingId(repository.url)
-    setDetailError(null)
-
-    try {
-      const item = await getTrendingRepositoryDetail({ data: repository })
-      if (requestId.current === currentRequest) setSelectedItem(item)
-    } catch {
-      if (requestId.current === currentRequest) {
-        setDetailError(`Could not research ${repository.name}. Try again.`)
-      }
-    } finally {
-      if (requestId.current === currentRequest) setLoadingId(null)
-    }
-  }
-
-  const selectAlternative = (id: string) => {
-    const repository = trending.repositories.find((item) => item.url === id)
-    if (repository) void openRepository(repository)
-  }
-
   return (
-    <div {...stylex.props(s.page)}>
-      <div {...stylex.props(s.inner)}>
-        <section {...stylex.props(s.hero)}>
-          <span {...stylex.props(s.kicker)}>Hands-on AI tool reviews</span>
-          <h1 {...stylex.props(s.heroTitle)}>
-            We actually open the tools before we rank them.
+    <div>
+      <section {...stylex.props(s.hero)}>
+        <div {...stylex.props(s.heroInner)}>
+          <span {...stylex.props(s.kicker)}>
+            <Pill tone="strong">Hands-on</Pill>
+            every tool opened, documented, tried
+          </span>
+
+          <h1 {...stylex.props(s.h1)}>
+            Pick by <span {...stylex.props(s.mark)}>the job</span>, not by the tool.
           </h1>
-          <p {...stylex.props(s.tagline)}>
-            For every pick we visit the product, read the documentation, and try it wherever we can —
-            then write down what it’s genuinely good at and where it falls short. No scraped
-            listicles. No affiliate order.
-          </p>
-          <button
-            type="button"
-            aria-expanded={catalogOpen}
-            aria-controls={SIDEBAR_ID}
-            {...stylex.props(s.browseCta, catalogOpen ? s.ctaOpen : s.ctaClosed)}
-            onClick={toggleCatalog}
-          >
-            {catalogOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
-            {catalogOpen ? 'Hide categories' : `Browse all ${categoryCount} use cases`}
-          </button>
-          <p {...stylex.props(s.trust)}>
-            {categoryCount} use cases · apps + open-source skills · every claim traceable to a source
-          </p>
-        </section>
 
-        <section {...stylex.props(s.section)}>
-          <div {...stylex.props(s.sectionHead)}>
-            <h2 {...stylex.props(s.h1)}>Trending on GitHub today</h2>
-            {!trending.error && (
-              <span {...stylex.props(s.count)}>{trending.repositories.length} repositories</span>
-            )}
+          <p {...stylex.props(s.sub)}>
+            Short lists, three forms compared side by side, and the drawback written where you
+            cannot miss it.
+          </p>
+
+          <div {...stylex.props(s.stats)}>
+            <span {...stylex.props(s.statNum)}>
+              {categories.length} <span {...stylex.props(s.statLabel)}>tasks covered</span>
+            </span>
+            <span {...stylex.props(s.statNum)}>
+              3 <span {...stylex.props(s.statLabel)}>forms per task</span>
+            </span>
+            <span {...stylex.props(s.statNum)}>
+              5 <span {...stylex.props(s.statLabel)}>shown by default</span>
+            </span>
+            <span {...stylex.props(s.statNum)}>
+              Daily <span {...stylex.props(s.statLabel)}>re-ranked</span>
+            </span>
           </div>
-          <p {...stylex.props(s.sectionSub)}>
-            A live snapshot of fast-growing open-source AI projects. Pick any repo for an instant
-            breakdown.
-          </p>
+        </div>
+      </section>
 
-          {trending.error ? (
-            <div {...stylex.props(s.table, s.error)}>{trending.error}</div>
-          ) : (
-            <div {...stylex.props(s.table)}>
-              <div {...stylex.props(s.tableHead)} aria-hidden="true">
-                <span>PRODUCT</span>
-                <span>TOTAL STARS</span>
-                <span>TODAY</span>
-                <span>CATEGORY</span>
-              </div>
-
-              {trending.repositories.map((repository, index) => {
-                const isLoading = loadingId === repository.url
-                const isSelected = selectedItem?.id === repository.url
-                return (
-                  <button
-                    key={repository.url}
-                    type="button"
-                    aria-busy={isLoading}
-                    {...stylex.props(
-                      s.row,
-                      index === trending.repositories.length - 1 && s.rowLast,
-                      (isLoading || isSelected) && s.rowActive,
-                    )}
-                    onClick={() => void openRepository(repository)}
-                  >
-                    <span {...stylex.props(s.product)}>
-                      <span {...stylex.props(s.nameLine)}>
-                        {isLoading ? (
-                          <LoaderCircle size={16} {...stylex.props(s.loader)} />
-                        ) : (
-                          <FolderGit2 size={16} />
-                        )}
-                        <span {...stylex.props(s.name)}>{repository.name}</span>
-                      </span>
-                      <span {...stylex.props(s.description)}>{repository.description}</span>
-                    </span>
-
-                    <span {...stylex.props(s.metric, s.desktopOnly)}>
-                      <Star size={13} />
-                      {repository.stars}
-                    </span>
-                    <span {...stylex.props(s.metric, s.growth, s.desktopOnly)}>
-                      +{repository.starsToday}
-                    </span>
-                    <span {...stylex.props(s.category, s.desktopOnly)}>
-                      <Badge variant="blue" label={repository.category} />
-                    </span>
-
-                    <span {...stylex.props(s.mobileMeta)}>
-                      <span {...stylex.props(s.metric)}>
-                        <Star size={13} />
-                        {repository.stars}
-                      </span>
-                      <span {...stylex.props(s.metric, s.growth)}>
-                        +{repository.starsToday} today
-                      </span>
-                      <Badge variant="blue" label={repository.category} />
-                    </span>
-                  </button>
-                )
-              })}
+      <div {...stylex.props(s.page)}>
+        <Panel>
+          <div {...stylex.props(s.panelHead)}>
+            <div>
+              <h2 {...stylex.props(s.h2)}>Find your tool by the job</h2>
+              <p {...stylex.props(s.lede)}>Top-ranked picks in the tasks people search most</p>
             </div>
-          )}
+            <Link to="/c/$slug" params={{ slug: categories[0]?.slug ?? 'coding' }} {...stylex.props(s.quietLink)}>
+              All {categories.length} tasks →
+            </Link>
+          </div>
 
-          {detailError && <div {...stylex.props(s.detailError)}>{detailError}</div>}
-        </section>
+          <div {...stylex.props(s.colGrid)}>
+            {featured.map(({ category, items }) => (
+              <div key={category.slug} {...stylex.props(s.col)}>
+                <h3 {...stylex.props(s.colHead)}>{category.name}</h3>
+                <div>
+                  {items.slice(0, 5).map((it, i) => (
+                    <Link
+                      key={it.id}
+                      to="/c/$slug/$item"
+                      params={{ slug: category.slug, item: it.id }}
+                      {...stylex.props(s.row)}
+                    >
+                      <span {...stylex.props(s.rank)}>{i + 1}</span>
+                      <MonoTile name={it.name} />
+                      <span {...stylex.props(s.grow)}>{it.name}</span>
+                      <Chevron />
+                    </Link>
+                  ))}
+                </div>
+                <Link to="/c/$slug" params={{ slug: category.slug }} {...stylex.props(s.seeMore)}>
+                  See more →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </Panel>
 
+        <Panel variant="tint">
+          <div {...stylex.props(s.panelHead)}>
+            <div>
+              <h2 {...stylex.props(s.h2)}>Trending today</h2>
+              <p {...stylex.props(s.lede)}>
+                Fast-growing open-source AI projects, refreshed through the day
+              </p>
+            </div>
+            <span {...stylex.props(s.quietLink)}>{trending.repositories.length} repositories</span>
+          </div>
+
+          {trending.error ? <p {...stylex.props(s.err)}>{trending.error}</p> : null}
+
+          <div style={{ marginTop: 20 }}>
+            {trending.repositories.map((r, i) => (
+              <a
+                key={r.url}
+                href={r.url}
+                target="_blank"
+                rel="noreferrer"
+                {...stylex.props(s.wideRow)}
+              >
+                <span {...stylex.props(s.wideIdent)}>
+                  <span {...stylex.props(s.rank)}>{i + 1}</span>
+                  <MonoTile name={r.name} />
+                </span>
+                <span style={{ minWidth: 0 }}>
+                  <span {...stylex.props(s.wideName)}>{r.name}</span>
+                  <span {...stylex.props(s.wideDesc)}>{r.description}</span>
+                </span>
+                <span {...stylex.props(s.wideNums)}>
+                  <span {...stylex.props(s.wideStars)}>{r.stars}</span>
+                  <span {...stylex.props(s.wideToday)}>+{r.starsToday}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </Panel>
+
+        <Panel variant="brand">
+          <h2 {...stylex.props(s.h2)}>What makes this different</h2>
+          <p {...stylex.props(s.claimBody)}>
+            Five rules we hold to. Each one costs us coverage, which is the point.
+          </p>
+          <div {...stylex.props(s.claimGrid)}>
+            {CLAIMS.map(([title, body], i) => (
+              <div key={title}>
+                <div {...stylex.props(s.claimNum)}>{i + 1}</div>
+                <div {...stylex.props(s.claimTitle)}>{title}</div>
+                <p {...stylex.props(s.claimBody)}>{body}</p>
+              </div>
+            ))}
+          </div>
+          <p {...stylex.props(s.claimFoot)}>We take no payment for placement.</p>
+        </Panel>
       </div>
-
-      {selectedItem && (
-        <ProductDetailPanel
-          item={selectedItem}
-          siblings={siblings}
-          onClose={() => setSelectedItem(null)}
-          onSelect={selectAlternative}
-        />
-      )}
     </div>
   )
 }

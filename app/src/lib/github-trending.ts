@@ -1,15 +1,9 @@
 import { createServerFn } from '@tanstack/react-start'
 
 import {
-  buildTrendingDetailItem,
-  type GitHubIssueSignal,
-  type GitHubRepositoryMetadata,
-} from './github-trending-enrichment'
-import {
   parseTrendingRepositories,
   type TrendingRepository,
 } from './github-trending-parser'
-import type { DetailPanelItem } from '~/components/product-detail-panel'
 
 export type { TrendingRepository } from './github-trending-parser'
 
@@ -21,46 +15,11 @@ export type TrendingRepositoriesResult = {
 
 let cachedResult: TrendingRepositoriesResult | null = null
 let cachedAt = 0
-const detailCache = new Map<string, { item: DetailPanelItem; cachedAt: number }>()
-const pendingDetails = new Map<string, Promise<DetailPanelItem>>()
 
 const TRENDING_CACHE_MS = 15 * 60 * 1000
-const DETAIL_CACHE_MS = 12 * 60 * 60 * 1000
 
-function githubHeaders(accept = 'application/vnd.github+json'): HeadersInit {
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN
-  return {
-    Accept: accept,
-    'X-GitHub-Api-Version': '2022-11-28',
-    'User-Agent': 'WhichToUse/1.0',
-    ...(token ? { Authorization: `Bearer ${token}` } : {}),
-  }
-}
 
-async function githubJson<T>(path: string): Promise<T | null> {
-  try {
-    const response = await fetch(`https://api.github.com${path}`, {
-      headers: githubHeaders(),
-      signal: AbortSignal.timeout(8000),
-    })
-    if (!response.ok) return null
-    return (await response.json()) as T
-  } catch {
-    return null
-  }
-}
 
-async function githubReadme(fullName: string): Promise<string> {
-  try {
-    const response = await fetch(`https://api.github.com/repos/${fullName}/readme`, {
-      headers: githubHeaders('application/vnd.github.raw+json'),
-      signal: AbortSignal.timeout(8000),
-    })
-    return response.ok ? await response.text() : ''
-  } catch {
-    return ''
-  }
-}
 
 function validateTrendingRepository(input: unknown): TrendingRepository {
   if (!input || typeof input !== 'object') throw new Error('Invalid repository')
@@ -90,42 +49,6 @@ function validateTrendingRepository(input: unknown): TrendingRepository {
   }
 }
 
-async function researchTrendingRepository(repository: TrendingRepository): Promise<DetailPanelItem> {
-  const cached = detailCache.get(repository.name)
-  if (cached && Date.now() - cached.cachedAt < DETAIL_CACHE_MS) return cached.item
-
-  const pending = pendingDetails.get(repository.name)
-  if (pending) return pending
-
-  const request = (async () => {
-    const encodedName = repository.name
-      .split('/')
-      .map((part) => encodeURIComponent(part))
-      .join('/')
-    const [metadata, readme, issueResponse] = await Promise.all([
-      githubJson<GitHubRepositoryMetadata>(`/repos/${encodedName}`),
-      githubReadme(encodedName),
-      githubJson<GitHubIssueSignal[]>(
-        `/repos/${encodedName}/issues?state=open&sort=comments&direction=desc&per_page=6`,
-      ),
-    ])
-    const item = buildTrendingDetailItem({
-      repository,
-      metadata,
-      readme,
-      issues: Array.isArray(issueResponse) ? issueResponse : [],
-    })
-    detailCache.set(repository.name, { item, cachedAt: Date.now() })
-    return item
-  })()
-
-  pendingDetails.set(repository.name, request)
-  try {
-    return await request
-  } finally {
-    pendingDetails.delete(repository.name)
-  }
-}
 
 export const getTrendingRepositories = createServerFn().handler(
   async (): Promise<TrendingRepositoriesResult> => {
@@ -161,6 +84,3 @@ export const getTrendingRepositories = createServerFn().handler(
   },
 )
 
-export const getTrendingRepositoryDetail = createServerFn({ method: 'GET' })
-  .validator(validateTrendingRepository)
-  .handler(async ({ data }): Promise<DetailPanelItem> => researchTrendingRepository(data))

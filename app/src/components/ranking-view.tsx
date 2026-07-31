@@ -5,19 +5,14 @@
 // comparative advantage, and the single biggest drawback — nothing else. A list
 // exists to decide what to open; everything further lives in the detail panel.
 
-import { useEffect, useMemo, useState } from 'react'
-import { useRouterState } from '@tanstack/react-router'
+import { useMemo, useState } from 'react'
+import { Link } from '@tanstack/react-router'
 import * as stylex from '@stylexjs/stylex'
 
-import {
-  monogramColor,
-  ProductDetailPanel,
-  type DetailPanelItem,
-} from '~/components/product-detail-panel'
 import { Mockup, Panel, Pill, SectionHeading, ValenceLine } from '~/components/ui/primitives'
 import type { CategoryView, RankItem, Track } from '~/lib/catalog'
 
-type Row = DetailPanelItem
+type Row = RankItem & { track: Track; typeLabel: string }
 
 const TRACKS: Array<{ key: Track; label: string; dot: string }> = [
   { key: 'app', label: 'App / SaaS', dot: '#4a2fa8' },
@@ -205,14 +200,12 @@ function StandingBlock({
   items,
   label,
   note,
-  selectedId,
-  onSelect,
+  slug,
 }: {
   items: Row[]
   label: string
   note: string
-  selectedId: string | null
-  onSelect: (id: string) => void
+  slug: string
 }) {
   const [expanded, setExpanded] = useState(false)
   const shown = expanded ? items : items.slice(0, CAP)
@@ -227,11 +220,11 @@ function StandingBlock({
       </div>
 
       {shown.map((it) => (
-        <button
+        <Link
           key={it.id}
-          type="button"
-          onClick={() => onSelect(it.id)}
-          {...stylex.props(s.row, selectedId === it.id && s.rowSel)}
+          to="/c/$slug/$item"
+          params={{ slug, item: it.id }}
+          {...stylex.props(s.row)}
         >
           <span {...stylex.props(s.rowInner)}>
             <span {...stylex.props(s.rank)}>{it.rank}</span>
@@ -254,7 +247,7 @@ function StandingBlock({
               </span>
             </span>
           </span>
-        </button>
+        </Link>
       ))}
 
       {items.length === 0 ? (
@@ -277,19 +270,6 @@ export function RankingView({ view }: { view: CategoryView }) {
     () => TRACKS.map((t) => ({ ...t, rows: toRows(view.tracks[t.key], t.key) })),
     [view],
   )
-  const all = useMemo(() => cols.flatMap((c) => c.rows), [cols])
-  const hash = useRouterState({ select: (state) => state.location.hash })
-  const [selected, setSelected] = useState<string | null>(null)
-
-  useEffect(() => {
-    const params = new URLSearchParams(hash.startsWith('#') ? hash.slice(1) : hash)
-    const itemId = params.get('item')
-    if (itemId && all.some((r) => r.id === itemId)) setSelected(itemId)
-  }, [hash, all])
-
-  const selItem = all.find((r) => r.id === selected) ?? null
-  const siblings = selItem ? all.filter((r) => r.track === selItem.track) : []
-
   return (
     <div {...stylex.props(s.main)}>
       <div {...stylex.props(s.page)}>
@@ -321,8 +301,7 @@ export function RankingView({ view }: { view: CategoryView }) {
                     label={st.label}
                     note={st.note}
                     items={col.rows.filter((r) => r.standing === st.key)}
-                    selectedId={selected}
-                    onSelect={setSelected}
+                    slug={view.category.slug}
                   />
                 ))}
               </div>
@@ -351,16 +330,6 @@ export function RankingView({ view }: { view: CategoryView }) {
         ) : null}
       </div>
 
-      {selItem ? (
-        <ProductDetailPanel
-          item={selItem}
-          siblings={siblings}
-          onClose={() => setSelected(null)}
-          onSelect={setSelected}
-        />
-      ) : null}
     </div>
   )
 }
-
-export { monogramColor }

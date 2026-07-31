@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
 import { Route as AppCSlugRouteImport } from './routes/_app/c.$slug'
+import { Route as AppCSlugItemRouteImport } from './routes/_app/c_.$slug.$item'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
@@ -27,27 +28,35 @@ const AppCSlugRoute = AppCSlugRouteImport.update({
   path: '/c/$slug',
   getParentRoute: () => AppRoute,
 } as any)
+const AppCSlugItemRoute = AppCSlugItemRouteImport.update({
+  id: '/c_/$slug/$item',
+  path: '/c/$slug/$item',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
   '/c/$slug': typeof AppCSlugRoute
+  '/c/$slug/$item': typeof AppCSlugItemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
   '/c/$slug': typeof AppCSlugRoute
+  '/c/$slug/$item': typeof AppCSlugItemRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/_app/': typeof AppIndexRoute
   '/_app/c/$slug': typeof AppCSlugRoute
+  '/_app/c_/$slug/$item': typeof AppCSlugItemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/c/$slug'
+  fullPaths: '/' | '/c/$slug' | '/c/$slug/$item'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/c/$slug'
-  id: '__root__' | '/_app' | '/_app/' | '/_app/c/$slug'
+  to: '/' | '/c/$slug' | '/c/$slug/$item'
+  id: '__root__' | '/_app' | '/_app/' | '/_app/c/$slug' | '/_app/c_/$slug/$item'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,17 +86,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppCSlugRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/c_/$slug/$item': {
+      id: '/_app/c_/$slug/$item'
+      path: '/c/$slug/$item'
+      fullPath: '/c/$slug/$item'
+      preLoaderRoute: typeof AppCSlugItemRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppCSlugRoute: typeof AppCSlugRoute
+  AppCSlugItemRoute: typeof AppCSlugItemRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppCSlugRoute: AppCSlugRoute,
+  AppCSlugItemRoute: AppCSlugItemRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
