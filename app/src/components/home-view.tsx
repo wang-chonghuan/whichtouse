@@ -176,7 +176,11 @@ const s = stylex.create({
   wideRow: {
     display: 'grid',
     alignItems: 'center',
-    gridTemplateColumns: { default: '56px 1fr 72px', '@media (max-width: 640px)': '36px 1fr 72px' },
+    gridTemplateColumns: {
+      default: '56px 1fr 72px 168px',
+      '@media (max-width: 1024px)': '56px 1fr 72px',
+      '@media (max-width: 640px)': '36px 1fr 72px',
+    },
     gap: { default: 20, '@media (max-width: 640px)': 16 },
     paddingBlock: 16,
     paddingLeft: { default: 4, ':hover': 16 },
@@ -192,6 +196,11 @@ const s = stylex.create({
   wideName: { display: 'block', fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
   wideDesc: { display: 'block', marginTop: 2, fontSize: 13.5, color: 'var(--wt-ink-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
   wideNums: { textAlign: 'end' },
+  catCell: {
+    display: { default: 'flex', '@media (max-width: 1024px)': 'none' },
+    justifyContent: 'flex-end',
+    minWidth: 0,
+  },
   wideStars: { display: 'block', fontSize: 14, fontWeight: 600, fontVariantNumeric: 'tabular-nums' },
   wideToday: { display: 'block', marginTop: 2, fontSize: 12.5, fontWeight: 600, fontVariantNumeric: 'tabular-nums', color: 'var(--wt-edge)' },
 
@@ -316,7 +325,7 @@ export function HomeView({
           {trending.error ? <p {...stylex.props(s.err)}>{trending.error}</p> : null}
 
           <div style={{ marginTop: 20 }}>
-            {trending.repositories.map((r, i) => (
+            {trending.repositories.map((r) => (
               <a
                 key={r.url}
                 href={r.url}
@@ -325,7 +334,10 @@ export function HomeView({
                 {...stylex.props(s.wideRow)}
               >
                 <span {...stylex.props(s.wideIdent)}>
-                  <span {...stylex.props(s.rank)}>{i + 1}</span>
+                  {/* r.rank is GitHub Trending's own position, scraped from the
+                      page. Renumbering by list index would silently substitute
+                      our ordering for theirs — the rank IS the datum here. */}
+                  <span {...stylex.props(s.rank)}>{r.rank}</span>
                   <MonoTile name={r.name} />
                 </span>
                 <span style={{ minWidth: 0 }}>
@@ -335,6 +347,9 @@ export function HomeView({
                 <span {...stylex.props(s.wideNums)}>
                   <span {...stylex.props(s.wideStars)}>{r.stars}</span>
                   <span {...stylex.props(s.wideToday)}>+{r.starsToday}</span>
+                </span>
+                <span {...stylex.props(s.catCell)}>
+                  <Pill tone="mid">{r.category}</Pill>
                 </span>
               </a>
             ))}
