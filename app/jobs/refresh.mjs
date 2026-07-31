@@ -202,6 +202,44 @@ const SKILL_QUERIES = [
   '"skills for" in:name,description',
 ]
 
+/** Topic-scoped search inside one category. Higher recall than the global
+ * sweep for skills whose metadata does name their domain. */
+async function githubSkillSearch(query) {
+  const merged = new Map()
+  for (const topic of SKILL_TOPICS) {
+    let data
+    try {
+      data = await githubThrottled(() =>
+        getJson(
+          `https://api.github.com/search/repositories?q=${encodeURIComponent(`topic:${topic} ${query}`)}&sort=stars&order=desc&per_page=20`,
+          githubHeaders(),
+        ),
+      )
+    } catch {
+      continue
+    }
+    for (const [i, repo] of (data.items ?? []).entries()) {
+      if (LIST_REPO.test(repo.name ?? '') || LIST_DESC.test(repo.description ?? '')) continue
+      const key = repo.full_name.toLowerCase()
+      const prev = merged.get(key)
+      if (!prev || i < prev.i) merged.set(key, { i, repo })
+    }
+  }
+  return [...merged.values()]
+    .sort((a, b) => a.i - b.i)
+    .slice(0, 20)
+    .map(({ repo }, i) => ({
+      rank: i + 1,
+      name: repo.name,
+      owner: repo.owner?.login ?? null,
+      homepage: repo.homepage || repo.html_url,
+      repoFullName: repo.full_name,
+      url: repo.html_url,
+      track: 'skill',
+      metrics: { stars: repo.stargazers_count ?? 0 },
+    }))
+}
+
 /** Sweep, then classify. Twenty-five category-scoped searches structurally
  * cannot place a generalist repo: nothing in "Skills for Real Engineers" says
  * which of our categories it belongs to. So collect the top skill repos once,
@@ -303,16 +341,41 @@ async function hnSearch(query, knownDomains) {
     })
 }
 
-async function productHuntSearch(query) {
+/** Product Hunt rate-limits too, and 25 back-to-back category queries trip it:
+ * a full run came back with 429 on the last third. Same serialised-interval
+ * treatment as GitHub. */
+let phChain = Promise.resolve()
+let phLast = 0
+const PH_MIN_INTERVAL_MS = 2500
+
+function phThrottled(fn) {
+  const run = phChain.then(async () => {
+    const wait = phLast + PH_MIN_INTERVAL_MS - Date.now()
+    if (wait > 0) await sleep(wait)
+    try {
+      return await fn()
+    } catch (error) {
+      if (!/\b429\b/.test(error.message)) throw error
+      await sleep(PH_MIN_INTERVAL_MS * 6)
+      return fn()
+    } finally {
+      phLast = Date.now()
+    }
+  })
+  phChain = run.then(() => undefined, () => undefined)
+  return run
+}
+
+async function productHuntSearch(topicSlug) {
   const token = process.env.PRODUCTHUNT_TOKEN
   if (!token) return null
   const body = {
     query: `query($q:String!){ posts(order:VOTES, postedAfter:"${new Date(
       Date.now() - 365 * 864e5,
     ).toISOString()}", first:20, topic:$q){ edges{ node{ name website votesCount } } } }`,
-    variables: { q: query.split(' ')[0] },
+    variables: { q: topicSlug },
   }
-  const response = await fetch('https://api.producthunt.com/v2/api/graphql', {
+  const response = await phThrottled(() => fetch('https://api.producthunt.com/v2/api/graphql', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -321,8 +384,10 @@ async function productHuntSearch(query) {
     },
     body: JSON.stringify(body),
     signal: AbortSignal.timeout(TIMEOUT),
-  })
-  if (!response.ok) throw new Error(`producthunt ${response.status}`)
+  }).then((r) => {
+    if (!r.ok) throw new Error(`producthunt ${r.status}`)
+    return r
+  }))
   const data = await response.json()
   const edges = data?.data?.posts?.edges ?? []
   return edges.map(({ node }, i) => ({
@@ -437,11 +502,29 @@ async function main() {
           if (source.id === 'github-stars') entries = await githubSearch(query, { newOnly: false })
           else if (source.id === 'github-new') entries = await githubSearch(query, { newOnly: true })
           else if (source.id === 'github-skills') {
+            // Union, not replacement. The global sweep is the only thing that
+            // can see a generalist repo like mattpocock/skills, whose metadata
+            // names no category; the per-category topic search has far better
+            // recall inside a category. Swapping one for the other cut skills
+            // from 304 to 141 — the same mistake as before, made a third time.
             skillSweep ??= await sweepSkills()
-            entries = skillsForCategory(skillSweep, category.slug)
+            const swept = skillsForCategory(skillSweep, category.slug)
+            const scoped = await githubSkillSearch(
+              config.skillQueries?.[category.slug] ?? category.name,
+            )
+            const seen = new Set()
+            entries = [...swept, ...scoped]
+              .filter((e) => {
+                const k = (e.repoFullName ?? e.name).toLowerCase()
+                if (seen.has(k)) return false
+                seen.add(k)
+                return true
+              })
+              .map((e, i) => ({ ...e, rank: i + 1 }))
           }
           else if (source.id === 'hn') entries = await hnSearch(query, new Set(byDomain.keys()))
-          else if (source.id === 'producthunt') entries = await productHuntSearch(query)
+          else if (source.id === 'producthunt')
+            entries = await productHuntSearch(config.phTopics?.[category.slug] ?? 'artificial-intelligence')
           else if (source.id === 'npm') {
             const named = listings.filter((r) => r.package_name)
             const scored = []

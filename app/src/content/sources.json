@@ -67,8 +67,9 @@
       "dimension": "emerging",
       "enabled": true,
       "requiresEnv": "PRODUCTHUNT_TOKEN",
-      "note": "Free non-expiring developer token from producthunt.com/v2/oauth/applications. The job skips this source, loudly, when the variable is absent.",
-      "origin": "producthunt"
+      "note": "Free non-expiring developer token from producthunt.com/v2/oauth/applications. Queried by topic slug (see phTopics) — an earlier version passed query.split(' ')[0], which is 'ai' for every category and is not a valid slug, so this source silently returned zero rows for all 25 categories while reporting no error. selfPlacing because a PH post is an explicit product submission with votes, not a text match; and because PH is the only saas discovery source, so the two-origin rule would otherwise keep saas/emerging permanently empty.",
+      "origin": "producthunt",
+      "selfPlacing": true
     },
     {
       "id": "npm",
@@ -435,5 +436,33 @@
         "review"
       ]
     ]
-  ]
+  ],
+  "_phTopicDoc": "Product Hunt topic slugs, verified against the topics API. The job previously passed query.split(' ')[0], which is 'ai' for every category — and 'ai' is not a slug, so Product Hunt returned zero rows for all 25 categories while reporting no error. PH's taxonomy is much coarser than ours, so several categories share a topic; that is the real shape of the source, not a gap.",
+  "phTopics": {
+    "content-writing": "writing",
+    "video-generation": "artificial-intelligence",
+    "image-generation": "design-tools",
+    "voice-audio": "artificial-intelligence",
+    "lead-gen": "marketing",
+    "email-outreach": "marketing",
+    "seo-geo": "growth-hacking",
+    "social-media": "social-media",
+    "ui-design": "design-tools",
+    "presentation": "productivity",
+    "data-analysis": "analytics",
+    "research-search": "artificial-intelligence",
+    "customer-support": "bots",
+    "meeting-notes": "productivity",
+    "pdf-documents": "productivity",
+    "knowledge-base": "artificial-intelligence",
+    "translation": "artificial-intelligence",
+    "resume-jobs": "productivity",
+    "bookkeeping": "fintech",
+    "legal-contract": "productivity",
+    "coding": "developer-tools",
+    "browser-automation": "developer-tools",
+    "web-scraping": "developer-tools",
+    "workflow-automation": "productivity",
+    "architecture-diagram": "design-tools"
+  }
 }
