@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
 import { Route as AppCSlugRouteImport } from './routes/_app/c.$slug'
+import { Route as AppTOwnerRepoRouteImport } from './routes/_app/t.$owner.$repo'
 import { Route as AppCSlugItemRouteImport } from './routes/_app/c_.$slug.$item'
 
 const AppRoute = AppRouteImport.update({
@@ -28,6 +29,11 @@ const AppCSlugRoute = AppCSlugRouteImport.update({
   path: '/c/$slug',
   getParentRoute: () => AppRoute,
 } as any)
+const AppTOwnerRepoRoute = AppTOwnerRepoRouteImport.update({
+  id: '/t/$owner/$repo',
+  path: '/t/$owner/$repo',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppCSlugItemRoute = AppCSlugItemRouteImport.update({
   id: '/c_/$slug/$item',
   path: '/c/$slug/$item',
@@ -38,11 +44,13 @@ export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
   '/c/$slug': typeof AppCSlugRoute
   '/c/$slug/$item': typeof AppCSlugItemRoute
+  '/t/$owner/$repo': typeof AppTOwnerRepoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
   '/c/$slug': typeof AppCSlugRoute
   '/c/$slug/$item': typeof AppCSlugItemRoute
+  '/t/$owner/$repo': typeof AppTOwnerRepoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -50,13 +58,20 @@ export interface FileRoutesById {
   '/_app/': typeof AppIndexRoute
   '/_app/c/$slug': typeof AppCSlugRoute
   '/_app/c_/$slug/$item': typeof AppCSlugItemRoute
+  '/_app/t/$owner/$repo': typeof AppTOwnerRepoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/c/$slug' | '/c/$slug/$item'
+  fullPaths: '/' | '/c/$slug' | '/c/$slug/$item' | '/t/$owner/$repo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/c/$slug' | '/c/$slug/$item'
-  id: '__root__' | '/_app' | '/_app/' | '/_app/c/$slug' | '/_app/c_/$slug/$item'
+  to: '/' | '/c/$slug' | '/c/$slug/$item' | '/t/$owner/$repo'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/_app/'
+    | '/_app/c/$slug'
+    | '/_app/c_/$slug/$item'
+    | '/_app/t/$owner/$repo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,6 +101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppCSlugRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/t/$owner/$repo': {
+      id: '/_app/t/$owner/$repo'
+      path: '/t/$owner/$repo'
+      fullPath: '/t/$owner/$repo'
+      preLoaderRoute: typeof AppTOwnerRepoRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/c_/$slug/$item': {
       id: '/_app/c_/$slug/$item'
       path: '/c/$slug/$item'
@@ -100,12 +122,14 @@ interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppCSlugRoute: typeof AppCSlugRoute
   AppCSlugItemRoute: typeof AppCSlugItemRoute
+  AppTOwnerRepoRoute: typeof AppTOwnerRepoRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppCSlugRoute: AppCSlugRoute,
   AppCSlugItemRoute: AppCSlugItemRoute,
+  AppTOwnerRepoRoute: AppTOwnerRepoRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)

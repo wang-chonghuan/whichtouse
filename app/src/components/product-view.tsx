@@ -234,11 +234,15 @@ export function ProductView({
   category,
   siblings,
   track,
+  backTo,
 }: {
   item: RankItem
   category: Category
   siblings: RankItem[]
   track: Track
+  /** Trending repos are not catalog listings, so they go back to Home rather
+   * than to a task page that does not exist for them. */
+  backTo?: '/'
 }) {
   const hasPricing = item.pricingFree != null || item.pricingPaid != null
   const alts = siblings.filter((x) => x.id !== item.id).slice(0, 5)
@@ -246,16 +250,26 @@ export function ProductView({
   return (
     <div {...stylex.props(s.page)}>
       <nav {...stylex.props(s.crumbs)}>
-        <Link to="/c/$slug" params={{ slug: category.slug }} aria-label={`Back to ${category.name}`} {...stylex.props(s.back)}>
+        <Link
+          {...(backTo
+            ? ({ to: '/' } as const)
+            : ({ to: '/c/$slug', params: { slug: category.slug } } as const))}
+          aria-label={`Back to ${backTo ? 'home' : category.name}`}
+          {...stylex.props(s.back)}
+        >
           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path d="M19 12H5m0 0 7 7m-7-7 7-7" />
           </svg>
         </Link>
         <Link to="/" {...stylex.props(s.crumbLink)}>Home</Link>
         <span>›</span>
-        <Link to="/c/$slug" params={{ slug: category.slug }} {...stylex.props(s.crumbLink)}>
-          {category.name}
-        </Link>
+        {backTo ? (
+          <span>{category.name}</span>
+        ) : (
+          <Link to="/c/$slug" params={{ slug: category.slug }} {...stylex.props(s.crumbLink)}>
+            {category.name}
+          </Link>
+        )}
         <span>›</span>
         <span {...stylex.props(s.crumbHere)}>{item.name}</span>
       </nav>

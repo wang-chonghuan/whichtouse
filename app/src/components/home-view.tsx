@@ -326,11 +326,10 @@ export function HomeView({
 
           <div style={{ marginTop: 20 }}>
             {trending.repositories.map((r) => (
-              <a
+              <Link
                 key={r.url}
-                href={r.url}
-                target="_blank"
-                rel="noreferrer"
+                to="/t/$owner/$repo"
+                params={{ owner: r.name.split('/')[0], repo: r.name.split('/')[1] }}
                 {...stylex.props(s.wideRow)}
               >
                 <span {...stylex.props(s.wideIdent)}>
@@ -351,7 +350,7 @@ export function HomeView({
                 <span {...stylex.props(s.catCell)}>
                   <Pill tone="mid">{r.category}</Pill>
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </Panel>
