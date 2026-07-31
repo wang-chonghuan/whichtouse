@@ -338,6 +338,7 @@ export function buildTrendingDetailItem({
     confidence: metadata && readme ? 'medium' : 'low',
     badge: 'provisional',
     reviewed: false,
+    standing: 'emerging' as const,
     sources,
     kind: 'repo',
     track: 'skill',

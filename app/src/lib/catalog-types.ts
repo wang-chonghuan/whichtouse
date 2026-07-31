@@ -27,6 +27,9 @@ export type RankItem = {
   id: string
   /** display position within the rendered column, 1-based */
   rank: number
+  /** which standing this sits in. The demo groups a column into Leading and
+   * Emerging; without this the two collapse into one undifferentiated list. */
+  standing: 'leading' | 'emerging'
   name: string
   homepage: string | null
   pricing: string | null

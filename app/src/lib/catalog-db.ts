@@ -100,6 +100,7 @@ function toRankItem(row: ListingRow, displayRank: number): RankItem {
   return {
     id: row.tool_slug,
     rank: displayRank,
+    standing: row.standing === 'emerging' ? 'emerging' : 'leading',
     name: label,
     homepage: row.homepage,
     pricing: row.pricing_model,
