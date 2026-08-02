@@ -595,5 +595,17 @@
       }
     ]
   },
-  "notes": "App track has strong, Reddit-corroborated consensus (Teal, Rezi, Simplify). Note that mass auto-apply bots like LazyApply are widely criticized (low Trustpilot scores, LinkedIn now flags 'human-impossible' velocity), so autofill-with-review tools (Simplify) are ranked over spray-and-pray automation. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes the notable open-source résumé repos (Reactive-Resume, Awesome-CV, RenderCV, best-resume-ever, OpenResume, sb2nov, JSON Resume) with the leading resume Agent Skills; Paramchoudhary's ResumeSkills is the strongest dedicated skill but now ranks below the far more adopted builder repos. Star counts verified via the GitHub API (Jul 2026); the tiny jananthan30/Resume-Builder (~64 stars) was dropped as below the quality bar."
+  "notes": "App track has strong, Reddit-corroborated consensus (Teal, Rezi, Simplify). Note that mass auto-apply bots like LazyApply are widely criticized (low Trustpilot scores, LinkedIn now flags 'human-impossible' velocity), so autofill-with-review tools (Simplify) are ranked over spray-and-pray automation. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes the notable open-source résumé repos (Reactive-Resume, Awesome-CV, RenderCV, best-resume-ever, OpenResume, sb2nov, JSON Resume) with the leading resume Agent Skills; Paramchoudhary's ResumeSkills is the strongest dedicated skill but now ranks below the far more adopted builder repos. Star counts verified via the GitHub API (Jul 2026); the tiny jananthan30/Resume-Builder (~64 stars) was dropped as below the quality bar.",
+  "beforeYouPick": {
+    "weigh": "Judge the exported file, not the score — no employer computes that score. Real application forms parse your upload and show you what they extracted.",
+    "avoid": "These tools have no record of your work, so their quantified bullets are estimates. Every number you keep, you must reconstruct in the interview.",
+    "moving": "The first round increasingly has no interviewer — recorded answers, machine-scored, often undisclosed. These products are extending from writing documents into rehearsing that.",
+    "sources": [
+      "https://support.greenhouse.io/hc/en-us/articles/200989175-Unsuccessful-resume-parse",
+      "https://www.greenhouse.com/newsroom/63-of-job-seekers-have-faced-an-ai-interview-most-havent-had-a-good-one-yet",
+      "https://www.greenhouse.com/recruiting-benchmarks",
+      "https://www.jobscan.co/resume-scanner"
+    ],
+    "updated": "2026-08-02"
+  }
 }

@@ -478,8 +478,8 @@
   },
   "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). Content writing has a genuinely thin OSS ecosystem, so this track is deliberately short rather than padded: the official Anthropic document skills (~164k★ parent repo, produce the actual deliverable) and steven-tey/novel (~16k★, the de-facto open AI editor) lead, then ComposioHQ's content-research-writer and Reor (writing-adjacent PKM), with a single-author SEO skill last. Previous SEO MCP-server entries were removed.",
   "beforeYouPick": {
-    "weigh": "Whether your house voice survives repeated drafts decides this. Brand-voice features all demo well on generic copy; test them against your own published archive.",
-    "avoid": "Buying for drafting speed. The bottleneck moves to review — fact-checking and rewriting generic passages routinely costs more time than the first draft saved.",
+    "weigh": "Voice holds for a paragraph and dissolves over a full article. That is the length to test at, against something you have already published.",
+    "avoid": "Drafts arrive competent and interchangeable. What remains is making them specific — the part nobody budgets, and where the time saved goes back.",
     "moving": "Built-in SEO scoring is being joined by AI-visibility checks — whether answer engines quote you. Extractable, source-backed passages now matter more than keyword density.",
     "sources": [
       "https://www.brafton.com/blog/content-marketing/the-4-biggest-challenges-in-ai-content-creation/",

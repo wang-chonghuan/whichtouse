@@ -96,7 +96,7 @@ const styles = stylex.create({
   // it onto #4F46E5 when it cuts the asset. So changing the primary means
   // re-running that script, not editing anything in this file.
   wordmark: {
-    height: 34,
+    height: 44,
     width: 'auto',
     display: 'block',
   },
@@ -111,11 +111,11 @@ const styles = stylex.create({
 export function Wordmark() {
   return (
     <img
-      src="/wordmark-116.webp"
-      srcSet="/wordmark-116.webp 1x, /wordmark-232.webp 2x"
+      src="/wordmark-150.webp"
+      srcSet="/wordmark-150.webp 1x, /wordmark-300.webp 2x"
       alt=""
-      width={116}
-      height={34}
+      width={150}
+      height={44}
       {...stylex.props(styles.wordmark)}
     />
   )

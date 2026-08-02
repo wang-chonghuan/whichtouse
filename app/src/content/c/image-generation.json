@@ -626,7 +626,7 @@
   },
   "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The open-source image-generation tools dominate and correctly outrank the agent skills: AUTOMATIC1111's WebUI (~164k★) and ComfyUI (~122k★) are the de-facto interfaces, followed by Fooocus, Diffusers, InvokeAI, Stability's official models and FLUX. The Nano-Banana Gemini-wrapper skills are genuine but far lower adoption, so they sit at the bottom. Previous MCP-server entries were removed.",
   "beforeYouPick": {
-    "weigh": "The cost of the near-miss decides this: how many rerolls to a usable frame, and whether fixing one thing preserves everything already right.",
+    "weigh": "Whether fixing one thing preserves everything already right decides this; otherwise each correction restarts the search for the frame you nearly had.",
     "avoid": "Commercial rights come from the licence and the plan tier, not from holding the image. Open weights and revenue thresholds quietly withdraw them.",
     "moving": "One-shot generation is levelling out; editing is where models now separate. Locking a face, product or style across a whole set is becoming the test.",
     "sources": [

@@ -34,9 +34,9 @@ const CONTAINER = 1320
 const NAV_WIDTH = 248
 
 const styles = stylex.create({
-  // Everything on the left of the bar: mark, wordmark, Tasks, search. Nothing
-  // on the right — this is a reading product, not an app with account chrome,
-  // and an empty right edge is quieter than one invented to fill it.
+  // Everything on the left of the bar: wordmark, Browse, search. Nothing on the
+  // right — this is a reading product, not an app with account chrome, and an
+  // empty right edge is quieter than one invented to fill it.
   search: {
     minWidth: 200,
   },
@@ -46,21 +46,17 @@ const styles = stylex.create({
   narrow: {
     display: {default: 'none', '@media (max-width: 720px)': 'flex'},
   },
-  // The header is white, so the mark's own white tile has nothing to sit
-  // against — the border is what keeps it from dissolving into the bar.
-  logo: {
-    borderRadius: 6,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: colorVars['--color-border'],
-  },
   // TopNavHeading takes `heading` as a string, so the drawn wordmark cannot go
-  // through it. The heading slot itself is a ReactNode, so the mark and the
-  // word are composed here instead.
+  // through it. The heading slot is a ReactNode, so the link is composed here.
+  //
+  // The mark tile that used to sit to its left is gone. It was the geometric
+  // three-colour WTU, and next to a hand-drawn neon script the two read as two
+  // logos rather than one lockup — the wordmark says the name on its own, and
+  // it is now large enough not to need a tile propping it up. The mark is still
+  // the favicon and every app icon, which is where a square mark belongs.
   brand: {
     display: 'inline-flex',
     alignItems: 'center',
-    gap: spacingVars['--spacing-2'],
     textDecoration: 'none',
   },
 
@@ -193,14 +189,6 @@ export function AppFrame({
           label="Main navigation"
           heading={
             <a href="/" aria-label="WhichToUse — home" {...stylex.props(styles.brand)}>
-              <img
-                src="/logo-mark-64.png"
-                srcSet="/logo-mark-64.png 1x, /logo-mark-96.png 1.5x"
-                alt=""
-                width={28}
-                height={28}
-                {...stylex.props(styles.logo)}
-              />
               <Wordmark />
             </a>
           }

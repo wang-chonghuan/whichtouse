@@ -31,13 +31,15 @@ const OUT = path.join(here, '../public')
 // is where the bloom has died down enough that the cut is invisible.
 const MARGIN = 0.15
 
-// Displayed at 34px tall (see `Wordmark` in src/components/bits.tsx).
+// Displayed at 44px tall (see `Wordmark` in src/components/bits.tsx).
 //
-// 34 rather than the 30 that matches the nav labels' cap height: this is a
-// script, and a script loses its joins before an upright face loses its stems.
-// It was compared against the bar at 26, 30 and 34 — the first two read as a
-// caption next to "Browse", not as the name of the site.
-const HEIGHT = 34
+// It began at 34, chosen to sit beside the square WTU mark: bigger than the nav
+// labels' cap height because a script loses its joins before an upright face
+// loses its stems, but still deferring to the tile next to it. The tile is gone
+// and the wordmark is the whole brand in the bar now, so it takes the room the
+// tile was using. 44 is the size at which it anchors the bar's left end by
+// itself rather than floating in it.
+const HEIGHT = 44
 
 // 2x covers every retina screen the site sees; the 1x file is under 4 kB, and a
 // phone on cellular should not pay for pixels it cannot show. The larger sizes

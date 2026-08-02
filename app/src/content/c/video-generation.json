@@ -593,7 +593,7 @@
   "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The open-source video-generation models are the category leaders and correctly outrank the agent skills: Open-Sora (~29k★) is the recognized open leader, followed by Wan, HunyuanVideo, CogVideoX and LTX-Video. Agent Skills (Video Toolkit, DeerFlow, Remotion) orchestrate a render pipeline and sit below the models by adoption. Previous aggregator MCP entries (fal, Replicate, mcp.film) and the thin inference.sh listing were removed; Sora stays omitted (OpenAI shut the Sora app 2026-04-26).",
   "beforeYouPick": {
     "weigh": "Cost per accepted shot, not price per second. Every rejected attempt bills the same, so control that raises your keep rate decides the bill.",
-    "avoid": "Judging on a single hero clip. Nothing carries identity between shots, so faces, hair and proportions drift once you assemble a sequence.",
+    "avoid": "Nothing carries identity between shots, so faces, hair and proportions drift the moment you assemble a sequence rather than judge one clip.",
     "moving": "Steering is replacing prompting: image, clip and audio references, first and last frames, per-shot direction. Synchronised sound now generates in the same pass.",
     "sources": [
       "https://www.seeles.ai/resources/blogs/ai-video-generation-cost",

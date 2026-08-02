@@ -653,8 +653,8 @@
   },
   "notes": "App list draws on multiple independent test/comparison roundups; ChatPDF, Acrobat AI Assistant, and NotebookLM top several lists. Reviewers flag confident-wrong answers with plausible citations as the main failure mode, favoring retrieval-first tools (NotebookLM). Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes notable open-source PDF repos with genuine Agent Skills: Stirling-PDF is the recognized de-facto OSS PDF toolkit, followed by the big document-extraction repos (MarkItDown, MinerU, Docling, marker) and Anthropic's official pdf skill, with pdfplumber/PyMuPDF/pypdf as lower-level libraries and community skill packs in the tail. Star counts verified via the GitHub API (Jul 2026).",
   "beforeYouPick": {
-    "weigh": "The parser beneath decides the answer, not the model on top: reading order across columns, and whether table cells arrive as cells.",
-    "avoid": "A page citation proves where it looked, not what it read there. Flattened tables come back as fluent, correctly cited, wrong numbers.",
+    "weigh": "Reading order across columns, and whether table cells survive as cells, is decided in the parser before any model sees the page.",
+    "avoid": "Flattened tables come back fluent, correctly cited and numerically wrong; the page reference confirms where it looked, not what it read.",
     "moving": "Parsing is shifting from OCR text to reading the page as an image, and output from prose answers toward typed fields carrying per-field confidence.",
     "sources": [
       "https://arxiv.org/abs/2603.18652",
