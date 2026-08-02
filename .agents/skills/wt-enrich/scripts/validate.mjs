@@ -55,6 +55,30 @@ for (const track of ['app', 'skill']) {
   })
 }
 
+// ── the category note ──────────────────────────────────────────────────────
+// Length and vocabulary only. Whether the note is *true* is the agent's job;
+// whether it is a changelog written in our own schema is checkable, and that is
+// how every version of this field has gone wrong so far.
+const note = data.notes
+if (typeof note !== 'string' || !note.trim()) {
+  issues.push(`notes: missing — every category needs its "How we ranked these" line`)
+} else {
+  const words = note.trim().split(/\s+/).length
+  if (words > 45) issues.push(`notes: ${words} words, ceiling is 45 — cut, do not compress`)
+
+  // Talking to ourselves about repair work the reader never saw.
+  const diff = /\b(previously|prior|this fixes|no longer|used to|was excluded|earlier version|the old )/i
+  if (diff.test(note)) issues.push(`notes: reads as a changelog — the reader never saw the old version`)
+
+  // Our schema, not the reader's vocabulary.
+  const jargon = /\b(rank determinant|track|rankBasis|kind \(|SKILL\.md|corpus|field)\b/i
+  if (jargon.test(note)) issues.push(`notes: uses our schema vocabulary, not the reader's`)
+
+  // Numbers order the list; they never supply the reason. Site-wide rule.
+  const metric = /(\d+\s*[k★]|\bstars?\b|★)/i
+  if (metric.test(note)) issues.push(`notes: quotes a metric as a reason — numbers order, they never explain`)
+}
+
 if (issues.length) {
   console.error(`✗ ${file}: ${issues.length} issue(s)`)
   for (const x of issues) console.error('  -', x)

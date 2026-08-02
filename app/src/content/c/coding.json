@@ -722,7 +722,7 @@
       }
     ]
   },
-  "notes": "Rich, high-consensus category with a genuine Agent Skill ecosystem. App track reflects settled 2026 developer consensus (Claude Code / Cursor / Copilot lead; Devin/Windsurf for autonomy). The skill track now ranks genuine SKILL.md skills AND notable open-source coding-agent repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only — NOT a rank determinant. This fixes the prior bug where all skills were forced above all repos regardless of quality (e.g. Trail of Bits ranked above agentskills.io): now Superpowers (~260k★ skill) leads, but hugely-adopted repos like OpenCode (~189k★) and Cline (~65k★) correctly outrank smaller skills, and agentskills.io (~23k★, high) sits above Trail of Bits (~6k★, medium). Confidence is consistent with rank (high→medium). Roo Code was excluded as its main repo is archived; Kilo Code is a live alternative not shown to keep the list focused. Previous MCP-server entries (Context7, GitHub, Playwright MCP) remain out of scope for this track.",
+  "notes": "Two different things share the skills column here: drop-in skills and open-source agents you run yourself. They are ordered together by how widely each is actually used, not by which kind it is. Every entry was opened before it was placed.",
   "beforeYouPick": {
     "weigh": "Model choice barely matters now; how the tool gathers context and verifies its edits does. Test that on your oldest repo, not a new one.",
     "avoid": "Agent pull requests wait far longer for review and get merged far less often; the constraint becomes deciding what is safe to merge.",

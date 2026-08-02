@@ -3,19 +3,25 @@
 //
 //   node scripts/gen-icons.mjs
 //
-// Source of truth: resources/brand/wtu-logo.svg, traced from the original
-// bitmap by scripts/trace-logo.mjs. Everything under app/public/ that shows the
-// brand is derived here, so a new logo is one file swap and one command rather
-// than a hunt through the repo.
+// Source of truth: resources/wtu-logo-2.png, a 1024² render of the "wtu" neon
+// lockup floating in an empty transparent field. Everything under app/public/
+// that shows the brand is derived here, so a new logo is one file swap and one
+// command rather than a hunt through the repo.
 //
-// Vector source matters at these sizes: every raster is now rasterised straight
-// at its target size instead of being downscaled from a 1254px bitmap, so the
-// 16px favicon gets hinted edges rather than a blur of a blur. It also means
-// recolouring the mark is three fill attributes, not an image edit.
+// It used to be a traced SVG of the old three-letter monogram, and vector was
+// the right call for that mark. This one is drawn art on the same terms as the
+// topbar wordmark: the letters carry a darker outline and the glow is a long
+// alpha falloff, neither of which survives a trace, so the master stays a
+// bitmap and every icon is a resample of it. Chromium's high-quality downscale
+// from 1024px is what makes that acceptable at 16px; see `render`.
+//
+// The crop box is measured, not hard-coded — the alpha channel gives the exact
+// bounding box of the lettering, so re-rendering the master at a different
+// position or scale needs no edit here.
 //
 // Rendering runs in Playwright's Chromium rather than an image library: the
 // project already depends on it, and a browser is the one renderer guaranteed
-// to draw the SVG the same way the site will.
+// to resample the master the way the site will.
 
 import fs from 'node:fs'
 import path from 'node:path'
@@ -23,7 +29,7 @@ import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-const SRC = path.join(here, '../../resources/brand/wtu-logo.svg')
+const SRC = path.join(here, '../../resources/wtu-logo-2.png')
 const OUT = path.join(here, '../public')
 
 // Colours and the font come from the same file the app reads, so a theme swap
@@ -32,13 +38,31 @@ const OUT = path.join(here, '../public')
 // why brand.json exists as JSON rather than as another TypeScript module.
 const brand = JSON.parse(fs.readFileSync(path.join(here, '../src/theme/brand.json'), 'utf8'))
 
-// The SVG's viewBox is already cropped to the ink, so "padding" here is exactly
-// what the platform sees — no margin is inherited from the source file.
+// The glow is what makes the mark a neon sign rather than a script font, and
+// cropping to the letters alone slices it off mid-fade — a visible hard edge
+// once the transparent falloff is composited onto the opaque tile. 12% of the
+// ink height is where the bloom has died down enough that the cut does not
+// read. Matches the intent of MARGIN in crop-wordmark.mjs, a little tighter
+// because an icon has less room to spend on air than a header lockup.
+const MARGIN = 0.12
+
+// PADDING is the share of each side of the tile left clear *outside* the crop
+// box, so the ink itself sits inside a little more air than these numbers say:
+// the bloom margin above already accounts for ~9% of the crop's width.
+//
+// The mark is wide — 571×415 of ink, about 1.3:1 — so every icon is fitted to
+// the tile's width and centred in its height, and the vertical air is a
+// consequence of the lockup's shape rather than a number chosen here. That is
+// also why these are smaller than the monogram's were: a square mark at 6%
+// padding and a 1.3:1 mark at 6% padding do not carry the same visual weight,
+// and the wide one needs the width back.
 const PADDING = {
-  favicon: 0.06, // tiny sizes: the mark needs the pixels more than it needs air
-  touch: 0.1, // iOS rounds the corners itself and adds nothing
-  android: 0.1,
-  maskable: 0.2, // Android may crop to a circle; keep content in the safe zone
+  favicon: 0.02, // tiny sizes: the mark needs the pixels more than it needs air
+  touch: 0.06, // iOS rounds the corners itself and adds nothing
+  android: 0.06,
+  // Android may crop to a circle. A 1.3:1 box inscribed in the 80% safe circle
+  // can be 0.63 of the tile wide; 0.2 padding leaves it 0.6, just inside.
+  maskable: 0.2,
 }
 
 // Icons stay on their own opaque tile rather than the theme's canvas: a favicon
@@ -100,19 +124,74 @@ const browser = await chromium.launch()
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } })
 await page.goto('about:blank')
 
-const markup = fs.readFileSync(SRC, 'utf8')
+const master = 'data:image/png;base64,' + fs.readFileSync(SRC).toString('base64')
+
+/** Finds the lettering in the master and cuts it out with the bloom margin, so
+ * everything below draws one tight image instead of re-finding the ink and
+ * re-carrying 1024² of empty canvas at every size. */
+const cropped = await page.evaluate(
+  async ({ src, margin }) => {
+    const img = new Image()
+    img.src = src
+    await img.decode()
+
+    const c = document.createElement('canvas')
+    c.width = img.width
+    c.height = img.height
+    const ctx = c.getContext('2d', { willReadFrequently: true })
+    ctx.drawImage(img, 0, 0)
+    const data = ctx.getImageData(0, 0, c.width, c.height).data
+
+    // Threshold well above the bloom: the letters are opaque, the glow around
+    // them is not, and a low threshold would return the whole canvas.
+    let x0 = Infinity, y0 = Infinity, x1 = -1, y1 = -1
+    for (let y = 0; y < c.height; y++) {
+      for (let x = 0; x < c.width; x++) {
+        if (data[(y * c.width + x) * 4 + 3] < 160) continue
+        if (x < x0) x0 = x
+        if (x > x1) x1 = x
+        if (y < y0) y0 = y
+        if (y > y1) y1 = y
+      }
+    }
+    if (x1 < 0) throw new Error('no opaque pixels found in the master')
+
+    const pad = Math.round((y1 - y0 + 1) * margin)
+    const box = { x: x0 - pad, y: y0 - pad, w: x1 - x0 + 1 + pad * 2, h: y1 - y0 + 1 + pad * 2 }
+
+    const out = document.createElement('canvas')
+    out.width = box.w
+    out.height = box.h
+    out.getContext('2d').drawImage(c, box.x, box.y, box.w, box.h, 0, 0, box.w, box.h)
+
+    return {
+      ink: { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1 },
+      box,
+      url: out.toDataURL('image/png'),
+    }
+  },
+  { src: master, margin: MARGIN },
+)
+console.log(`ink ${cropped.ink.w}x${cropped.ink.h} at ${cropped.ink.x},${cropped.ink.y}`)
+console.log(`crop ${cropped.box.w}x${cropped.box.h}`)
+
+const mark = `<img src="${cropped.url}" alt="" style="max-width:100%;max-height:100%">`
 
 /** Rasterises the mark at exactly `size`, centred on an opaque tile with `pad`
- * of the square left clear on each side. Rendering at the target size rather
- * than downscaling is the whole reason for the vector source. */
+ * of the square left clear on each side. The mark keeps its aspect and takes
+ * whichever of the two the box runs out of first — width, for this lockup. */
 async function render(size, pad) {
   const inner = Math.round(size * (1 - pad * 2))
   await page.setViewportSize({ width: size, height: size })
   await page.setContent(
     `<body style="margin:0;width:${size}px;height:${size}px;background:${BACKGROUND};` +
       `display:grid;place-items:center">` +
-      `<div style="width:${inner}px;line-height:0">${markup}</div></body>`,
+      `<div style="width:${inner}px;height:${inner}px;display:grid;place-items:center;line-height:0">` +
+      `${mark}</div></body>`,
   )
+  // A screenshot does not wait for an <img>, and a data URL is decoded late
+  // enough to lose the race: without this the small sizes come out blank.
+  await page.evaluate(() => Promise.all([...document.images].map((i) => i.decode())))
   return await page.screenshot({ omitBackground: false })
 }
 

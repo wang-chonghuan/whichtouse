@@ -59,13 +59,29 @@ const CORAL = {
 // does that job instead, and the only tinted surfaces left are the ones that
 // mean something — the task rail, and the demoted blocks.
 const SURFACE = '#FFFFFF' // the page, and cards on it
-// The one warm value in the frame. It is `recessed` from scheme C, "Sage on
-// warm paper", in the prototype; the rest of this block is still scheme A, whose
-// recessed was #EBF0EF — the same tone with a green-grey cast instead of a
-// paper one. Only this token moved, deliberately: the demoted surfaces are the
-// largest tinted area on a page, so the warmth reads without dragging the ink,
-// the lines or the callouts off the scheme they were costed on.
-const RECESSED = '#ECEDE4' // the task rail, Signals, Quick facts, Emerging
+// The one warm value in the frame, and the only tint most pages carry: it is
+// the area rail, the Quick facts and Signals blocks, Emerging, and the skeleton
+// — one token behind all of them, which is why it is worth getting right and
+// why moving it moves every demoted surface at once.
+//
+// Warm because it comes from scheme C, "Sage on warm paper", in the prototype;
+// the rest of this block is still scheme A, whose recessed was #EBF0EF — the
+// same tone with a green-grey cast instead of a paper one. Only this token
+// crossed over, deliberately, so the warmth reads without dragging the ink, the
+// lines or the callouts off the scheme they were costed on.
+//
+// It was scheme C's `recessed`, #ECEDE4, and read heavy: at 1.18:1 against the
+// white page it announced itself as a panel rather than sitting behind the
+// content. This is scheme C's `canvas` instead — the same scheme's paper tone,
+// a real designed value rather than a value nudged until it looked right —
+// which lands at 1.094:1. Still a surface, no longer a slab.
+//
+// The floor is lower than it looks: a large filled area needs far less contrast
+// to read than a line does. What must not follow it down is anything hairline
+// — the group-heading rule in app-frame.tsx is on `border-emphasized` for
+// exactly that reason, and dropping it to `border` would put it at 1.09 and
+// erase it.
+const RECESSED = '#F5F5F0' // the task rail, Signals, Quick facts, Emerging
 const LINE = '#DDE5E3'
 const INK = '#12201E'
 const INK_2 = '#5A6764'

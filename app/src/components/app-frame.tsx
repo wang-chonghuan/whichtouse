@@ -2,10 +2,9 @@ import { useEffect, useState, type ReactNode } from 'react'
 import * as stylex from '@stylexjs/stylex'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 import { AppShell } from '@astryxdesign/core/AppShell'
-import { TopNav, TopNavItem } from '@astryxdesign/core/TopNav'
+import { TopNav } from '@astryxdesign/core/TopNav'
 import { Button } from '@astryxdesign/core/Button'
 import { Icon } from '@astryxdesign/core/Icon'
-import { Kbd } from '@astryxdesign/core/Kbd'
 import { List, ListItem } from '@astryxdesign/core/List'
 import { Text } from '@astryxdesign/core/Text'
 
@@ -254,17 +253,19 @@ export function AppFrame({
           }
           startContent={
             <>
-              {/* Home, not /#areas: the section that anchor pointed at is gone.
-                * Browsing is what the rail beside this does, on every page. */}
-              <TopNavItem label="Browse" href="/" isSelected={false} />
+              {/* No "Browse" item. It pointed at Home, which the wordmark to its
+                * left already does, and browsing is what the rail beside this
+                * does on every page — a nav item that duplicates two things
+                * next to it is a third place to look, not a way in. */}
               <div {...stylex.props(styles.wide)}>
+                {/* No ⌘K hint on the button. The binding still works — see the
+                  * keydown handler above — it is just not advertised here. */}
                 <Button
                   variant="ghost"
                   icon={<Icon icon="search" size="sm" />}
                   label="Search"
                   width="auto"
                   xstyle={styles.search}
-                  endContent={<Kbd keys="mod+k" />}
                   onClick={() => setSearchOpen(true)}
                 />
               </div>

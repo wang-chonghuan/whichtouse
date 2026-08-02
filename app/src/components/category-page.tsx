@@ -117,6 +117,11 @@ export function CategoryPage({ view }: { view: CategoryView }) {
         </VStack>
       </Section>
 
+      {/* What "Leading" and "Emerging" mean is one fact about the page, not
+        * three, so it is explained once and the other two columns carry the
+        * bare labels. The first *populated* route rather than a fixed one: a
+        * route with no entries renders an empty state and no standings at all,
+        * which would leave the explanation nowhere on the page. */}
       <Section variant="transparent" padding={0} paddingBlock={0}>
         <Grid columns={{ minWidth: 320, max: 3 }} gap={4} align="stretch">
           {TRACKS.map((track) => (
@@ -125,6 +130,7 @@ export function CategoryPage({ view }: { view: CategoryView }) {
               track={track}
               items={tracks[track]}
               categorySlug={category.slug}
+              hasHints={track === TRACKS.find((t) => tracks[t].length > 0)}
             />
           ))}
         </Grid>
@@ -238,10 +244,12 @@ function TrackColumn({
   track,
   items,
   categorySlug,
+  hasHints,
 }: {
   track: Track
   items: RankItem[]
   categorySlug: string
+  hasHints: boolean
 }) {
   const leading = items.filter((item) => item.standing === 'leading')
   const emerging = items.filter((item) => item.standing === 'emerging')
@@ -266,7 +274,7 @@ function TrackColumn({
         <>
           <Standing
             label="Leading"
-            hint="Established picks, at the top of today's aggregate."
+            hint={hasHints ? "Established picks, at the top of today's aggregate." : undefined}
             items={leading}
             categorySlug={categorySlug}
             xstyle={styles.leading}
@@ -276,7 +284,7 @@ function TrackColumn({
             * spending a second colour on them. */}
           <Standing
             label="Emerging"
-            hint="Newer challengers, surfaced by two or more sources."
+            hint={hasHints ? 'Newer challengers, surfaced by two or more sources.' : undefined}
             items={emerging}
             categorySlug={categorySlug}
             xstyle={styles.emerging}
@@ -287,11 +295,14 @@ function TrackColumn({
   )
 }
 
-/** Five is the shortlist; the rest is available but not spent on first read.
+/** Five is the shortlist; ten is everything this page will ever show.
  *
  * The Skills column on a busy area runs to sixteen entries, and a sixteen-row
- * column is a directory — the thing this product is defined against. */
+ * column is a directory — the thing this product is defined against. Expanding
+ * is for the reader who wants more than the shortlist, not for exhausting the
+ * corpus, so the ceiling holds even when there are more rows behind it. */
 const SHORTLIST = 5
+const EXPANDED = 10
 
 function Standing({
   label,
@@ -301,7 +312,7 @@ function Standing({
   xstyle,
 }: {
   label: string
-  hint: string
+  hint?: string
   items: RankItem[]
   categorySlug: string
   xstyle?: stylex.StyleXStyles
@@ -310,15 +321,29 @@ function Standing({
 
   if (items.length === 0) return null
 
-  const shown = isExpanded ? items : items.slice(0, SHORTLIST)
+  const shown = items.slice(0, isExpanded ? EXPANDED : SHORTLIST)
   const hidden = items.length - shown.length
 
   return (
     <VStack gap={2} xstyle={xstyle}>
-      <VStack gap={0.5}>
+      {/* The caption used to sit on its own line under the label, in every
+        * column — three routes times two standings, six lines of the same two
+        * sentences on every area page. As a tooltip it costs no height, and
+        * Button carries it rather than a bare Icon so it is focusable and
+        * reachable by keyboard and touch instead of hover-only. */}
+      <HStack gap={1} vAlign="center">
         <Text type="label">{label}</Text>
-        <Text type="supporting">{hint}</Text>
-      </VStack>
+        {hint ? (
+          <Button
+            variant="ghost"
+            size="sm"
+            isIconOnly
+            icon={<Icon icon="info" size="sm" color="secondary" />}
+            label={`What ${label} means`}
+            tooltip={hint}
+          />
+        ) : null}
+      </HStack>
       <List density="balanced" hasDividers>
         {shown.map((item, index) => (
           <ListItem
@@ -339,12 +364,20 @@ function Standing({
           />
         ))}
       </List>
+      {/* "View all 16" would be a promise this control cannot keep now that
+        * expanding stops at ten. It says what pressing it actually does. */}
       {hidden > 0 || isExpanded ? (
         <HStack>
           <Button
             variant="ghost"
             size="sm"
-            label={isExpanded ? 'Show fewer' : `View all ${items.length}`}
+            label={
+              isExpanded
+                ? 'Show fewer'
+                : items.length > EXPANDED
+                  ? `View top ${EXPANDED}`
+                  : `View all ${items.length}`
+            }
             onClick={() => setExpanded((open) => !open)}
           />
         </HStack>
