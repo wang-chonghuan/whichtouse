@@ -644,5 +644,17 @@
       }
     ]
   },
-  "notes": "App track has strong multi-source consensus. There is no dedicated Agent Skill (SKILL.md) ecosystem for bookkeeping, so the skill track is filled with notable open-source accounting repos (kind:repo) an agent can run or integrate against, ranked strictly by real adoption/reputation (GitHub stars) rather than form factor: ERPNext (~37k★, full accounting/ERP, the OSS QuickBooks analog) leads, followed by Firefly III (~24k★, the recognized self-hosted bookkeeping manager) and the popular business/plaintext accounting tools. maybe-finance (~54k★) was excluded as archived/discontinued; actualbudget was excluded as budgeting rather than bookkeeping; apache/fineract (core banking) is out of scope. MCP servers and vendor API connectors are intentionally excluded from this track."
+  "notes": "App track has strong multi-source consensus. There is no dedicated Agent Skill (SKILL.md) ecosystem for bookkeeping, so the skill track is filled with notable open-source accounting repos (kind:repo) an agent can run or integrate against, ranked strictly by real adoption/reputation (GitHub stars) rather than form factor: ERPNext (~37k★, full accounting/ERP, the OSS QuickBooks analog) leads, followed by Firefly III (~24k★, the recognized self-hosted bookkeeping manager) and the popular business/plaintext accounting tools. maybe-finance (~54k★) was excluded as archived/discontinued; actualbudget was excluded as budgeting rather than bookkeeping; apache/fineract (core banking) is out of scope. MCP servers and vendor API connectors are intentionally excluded from this track.",
+  "beforeYouPick": {
+    "weigh": "Every tool automates most transactions. Who works the leftover exceptions, and whether they also file your return, decides this.",
+    "avoid": "Migration is the regret: prior-year history arrives incomplete, tax codes and chart of accounts don't map across, and receipts attached to transactions rarely export.",
+    "moving": "The close is going continuous: agents reconcile overnight and queue journal entries for human approval, and ledgers are opening to outside agents through APIs.",
+    "sources": [
+      "https://www.inkle.ai/blog/myths-about-ai-bookkeeping",
+      "https://www.switchmybooks.com/7-common-quickbooks-to-xero-migration-mistakes/",
+      "https://beancount.io/blog/2026/04/25/switching-from-quickbooks-migration-guide-small-business",
+      "https://corporatefinanceinstitute.com/resources/artificial-intelligence-ai/ai-agents-for-month-end-close-automation/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

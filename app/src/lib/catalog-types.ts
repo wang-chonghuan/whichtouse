@@ -81,11 +81,27 @@ export type Category = {
 
 export type WatchlistEntry = { name: string; url: string | null }
 
+/** How to choose in this category — not which product to choose.
+ *
+ * Researched per category, then authored. Every line is a generalisation about
+ * the class of product: naming a vendor turns the card into a news bulletin,
+ * and a line that would read equally well on another category's page is
+ * filler. Any of the three may be null; a category with nothing worth saying
+ * shows no card rather than an empty one. */
+export type BeforeYouPick = {
+  weigh: string | null
+  avoid: string | null
+  moving: string | null
+  sources: string[]
+  updated: string | null
+}
+
 export type CategoryView = {
   category: Category
   updated: string
   tracks: { app: RankItem[]; oss: RankItem[]; skill: RankItem[] }
   notes: string | null
+  beforeYouPick: BeforeYouPick
   watchlist: WatchlistEntry[]
 }
 

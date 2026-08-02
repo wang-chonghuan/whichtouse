@@ -19,11 +19,11 @@
     "description": "SaaS, open source and agent skills across 25 areas of work, with the limits of each written down."
   },
   "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
-  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
+  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree. The app itself no longer sets the wordmark as type — the topbar renders the drawn lockup, public/wordmark-116.webp — so the only thing still asking for this family is the social card in scripts/gen-icons.mjs. Drop it from this URL and the card loses its logo.",
   "mark": {
     "w": "#0164E5",
     "t": "#60B333",
     "u": "#FE7701"
   },
-  "_markNote": "The mark's colours, not the interface's. They are duplicated in the Wordmark component (StyleX needs literals) and baked into resources/brand/wtu-logo.svg. All three move together or none do. Deliberately independent of the theme: the logo should not change colour because the product did."
+  "_markNote": "The mark's colours, not the interface's. They are baked into resources/brand/wtu-logo.svg, which every icon is rendered from; the two move together or neither does. Deliberately independent of the theme: the logo should not change colour because the product did. Note that the topbar wordmark beside the mark is now a separate drawn lockup with its own palette (blue and coral, no green) and does not read these."
 }

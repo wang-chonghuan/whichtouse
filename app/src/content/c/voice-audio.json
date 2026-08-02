@@ -578,5 +578,18 @@
       }
     ]
   },
-  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The category is dominated by heavyweight open-source models — Coqui TTS (~46k★), Bark, OpenVoice, RVC, Fish Speech and Chatterbox are the recognized leaders and correctly outrank the ElevenLabs official skill (~400★) and thinner single-author skills. Previous aggregator MCP entries (fal, mcp.film) and the vendor LuvVoice listing were removed. Music-first generation (Suno/Udio) still has no comparable dedicated open skill/repo, so it stays in the app track."
+  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). The category is dominated by heavyweight open-source models — Coqui TTS (~46k★), Bark, OpenVoice, RVC, Fish Speech and Chatterbox are the recognized leaders and correctly outrank the ElevenLabs official skill (~400★) and thinner single-author skills. Previous aggregator MCP entries (fal, mcp.film) and the vendor LuvVoice listing were removed. Music-first generation (Suno/Udio) still has no comparable dedicated open skill/repo, so it stays in the app track.",
+  "beforeYouPick": {
+    "weigh": "Every engine nails a demo sentence. Paste your own text — names, acronyms, numbers — and count retakes across a full hour; retakes bill as fresh generation.",
+    "avoid": "Free tiers, community voices and open checkpoints all sound shippable. Whether you may ship turns on plan tier, model license and the speaker's written consent.",
+    "moving": "Voice quality is converging, open weights included. Control is shifting from markup and sliders to plain-language direction — you describe the delivery, the model performs it.",
+    "sources": [
+      "https://deepgram.com/learn/tts-playground-vs-api-pronunciation-gap",
+      "https://ttsaudit.com/blog/ai-narration-qa-audiobooks",
+      "https://freetts.org/tts-licensing-commercial-use-matrix",
+      "https://www.licenseorg.com/blog/ai-commercial-use-guide-2026",
+      "https://offlinetts.com/blog/tts-arena-leaderboard-2026/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

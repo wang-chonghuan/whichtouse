@@ -81,6 +81,7 @@ reading before touching any copy the app generates.
 | `app/src/components/` | seven files; every page is one of them |
 | `app/public/prototype/` | design artifact, served at `/prototype`. See "Design decisions" |
 | `resources/brand/wtu-logo.svg` | the mark. Every icon is generated from it |
+| `resources/wtu-logo-name.png` | the wordmark master. The topbar lockup is cut from it |
 | `specs/content-in-db.md` | why content lives in Postgres and how the refresh job works |
 | `ssot-schemas/db-schemas/whichtouse.sql` | the schema, single source of truth |
 | `.prodfarm/charter/runbook.md` | deploy, database and job operations |
@@ -105,12 +106,12 @@ one file, written to be read. Colour, type scale and motion are token
 definitions there, so a rebrand is an edit in that file — **no component carries
 an interface colour**.
 
-There is exactly one deliberate exception. `Wordmark` in `components/bits.tsx`
-holds the mark's three hexes as literals, because StyleX needs literals and
-because the logo is *meant* to be independent of the palette: it should not
-change colour because the product did. Those three values also live in
-`brand.json` and in the SVG; all three move together or none do. Any other hex
-in `app/src/components/` is a bug.
+There are now **no colour literals in `app/src/components/` at all**. There used
+to be one deliberate exception — `Wordmark` set "WhichToUse" as type and held
+the mark's three hexes, because a logo should not recolour when the palette
+does. The wordmark is drawn art now (see "Brand assets"), so it carries its own
+colour inside the file and the exception is gone. Any hex in a component is a
+bug.
 
 It is written fresh rather than scaffolded from a shipped Astryx theme. A
 600-line inherited palette is not a file anyone re-reads, and re-reading this
@@ -138,9 +139,10 @@ once.** Changing `--color-background-body` without changing
 canvas colour. Move them together.
 
 Type is two families with two jobs: **Inter** for the interface — dense rows,
-tabular figures, gets out of the way — and **Bricolage Grotesque** for the
-wordmark and nothing else, because it has the character a logo wants and would
-be exhausting at 12px.
+tabular figures, gets out of the way — and **Bricolage Grotesque**, which the
+app no longer renders at all now that the wordmark is drawn rather than set. The
+only thing still asking for it is the social card in `scripts/gen-icons.mjs`,
+which is why it stays in the font URL.
 
 ### Three rules that have each been violated once
 
@@ -176,6 +178,20 @@ overwrites it.
 `scripts/trace-logo.mjs` is the one-off that produced
 `resources/brand/wtu-logo.svg` from the original bitmap. Re-run it only if the
 raster master changes.
+
+The topbar wordmark is a different asset with a different master. It is drawn
+art — a neon lockup whose bloom no font and no trace can reproduce — so it stays
+a bitmap:
+
+```bash
+cd app && npm run wordmark
+```
+
+`scripts/crop-wordmark.mjs` measures the lettering's bounding box in
+`resources/wtu-logo-name.png`, crops to it with a margin for the glow, and
+writes `public/wordmark-116.webp` and its 2x. It takes 2.1 MB of mostly empty
+transparent canvas down to 3.7 kB. The display height lives in two places that
+must agree — `HEIGHT` in that script and `wordmark` in `components/bits.tsx`.
 
 ## How content gets there
 

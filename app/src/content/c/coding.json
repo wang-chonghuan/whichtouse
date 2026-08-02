@@ -722,5 +722,18 @@
       }
     ]
   },
-  "notes": "Rich, high-consensus category with a genuine Agent Skill ecosystem. App track reflects settled 2026 developer consensus (Claude Code / Cursor / Copilot lead; Devin/Windsurf for autonomy). The skill track now ranks genuine SKILL.md skills AND notable open-source coding-agent repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only — NOT a rank determinant. This fixes the prior bug where all skills were forced above all repos regardless of quality (e.g. Trail of Bits ranked above agentskills.io): now Superpowers (~260k★ skill) leads, but hugely-adopted repos like OpenCode (~189k★) and Cline (~65k★) correctly outrank smaller skills, and agentskills.io (~23k★, high) sits above Trail of Bits (~6k★, medium). Confidence is consistent with rank (high→medium). Roo Code was excluded as its main repo is archived; Kilo Code is a live alternative not shown to keep the list focused. Previous MCP-server entries (Context7, GitHub, Playwright MCP) remain out of scope for this track."
+  "notes": "Rich, high-consensus category with a genuine Agent Skill ecosystem. App track reflects settled 2026 developer consensus (Claude Code / Cursor / Copilot lead; Devin/Windsurf for autonomy). The skill track now ranks genuine SKILL.md skills AND notable open-source coding-agent repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only — NOT a rank determinant. This fixes the prior bug where all skills were forced above all repos regardless of quality (e.g. Trail of Bits ranked above agentskills.io): now Superpowers (~260k★ skill) leads, but hugely-adopted repos like OpenCode (~189k★) and Cline (~65k★) correctly outrank smaller skills, and agentskills.io (~23k★, high) sits above Trail of Bits (~6k★, medium). Confidence is consistent with rank (high→medium). Roo Code was excluded as its main repo is archived; Kilo Code is a live alternative not shown to keep the list focused. Previous MCP-server entries (Context7, GitHub, Playwright MCP) remain out of scope for this track.",
+  "beforeYouPick": {
+    "weigh": "Model choice barely matters now; how the tool gathers context and verifies its edits does. Test that on your oldest repo, not a new one.",
+    "avoid": "Buying for generation speed. The bottleneck moves to deciding what is safe to merge; agent pull requests wait longer and get merged far less often.",
+    "moving": "Assistants are becoming fleets — parallel agents in isolated sandboxes opening several attempts at once. The instructions you write for them increasingly port across tools.",
+    "sources": [
+      "https://www.faros.ai/blog/harness-engineering",
+      "https://www.aviator.co/blog/the-ai-code-verification-bottleneck-why-faster-code-generation-means-slower-reviews/",
+      "https://moderne.ai/blog/ai-didnt-break-coding-it-broke-code-review",
+      "https://tianpan.co/blog/2026-04-19-ai-coding-agents-brownfield-legacy-code",
+      "https://northflank.com/blog/best-sandboxes-for-coding-agents"
+    ],
+    "updated": "2026-08-02"
+  }
 }

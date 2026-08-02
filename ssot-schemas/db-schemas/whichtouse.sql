@@ -19,6 +19,17 @@ create table categories (
                check (money_tier in ('green','yellow','red')),
   sort         int  not null default 0,
   note         text,                     -- per-category prose
+
+  -- "Before you pick": how to choose in this category, not which product to
+  -- choose. Researched per category and authored; deliberately NOT written by
+  -- the refresh job, which may never author prose. Three separate columns
+  -- rather than one blob so a half-answered category is visible in a query.
+  pick_weigh   text,                     -- what actually decides the choice
+  pick_avoid   text,                     -- the pitfall specific to this class
+  pick_moving  text,                     -- where the category's capabilities are going
+  pick_sources jsonb not null default '[]',
+  pick_updated_at timestamptz,           -- these decay; this is the review clock
+
   refreshed_at timestamptz,              -- last successful refresh run
   updated_at   timestamptz not null default now()
 );

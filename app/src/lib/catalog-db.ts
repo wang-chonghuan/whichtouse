@@ -23,6 +23,11 @@ type CategoryRow = {
   money_tier: MoneyTier
   sort: number
   note: string | null
+  pick_weigh: string | null
+  pick_avoid: string | null
+  pick_moving: string | null
+  pick_sources: Array<string>
+  pick_updated_at: Date | null
   refreshed_at: Date | null
 }
 
@@ -139,7 +144,8 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
 
   const [categoryRows, listingRows] = await Promise.all([
     db<CategoryRow[]>`
-      select slug, name, money_tier, sort, note, refreshed_at
+      select slug, name, money_tier, sort, note, refreshed_at,
+             pick_weigh, pick_avoid, pick_moving, pick_sources, pick_updated_at
       from categories
       order by sort
     `,
@@ -215,6 +221,14 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
       updated: isoDate(newest),
       tracks,
       notes: c.note,
+      // Only rendered when at least one line exists — see BeforeYouPick.
+      beforeYouPick: {
+        weigh: c.pick_weigh,
+        avoid: c.pick_avoid,
+        moving: c.pick_moving,
+        sources: c.pick_sources ?? [],
+        updated: isoDate(c.pick_updated_at),
+      },
       watchlist: rows
         .filter((r) => r.standing === 'watchlist')
         .map((r) => ({ name: r.owner ? `${r.owner}/${r.name}` : r.name, url: r.homepage })),

@@ -106,6 +106,16 @@ async function main() {
       money_tier: category.moneyTier ?? 'green',
       sort: category.sort ?? 0,
       note: content?.notes ?? null,
+      // Authored research, same provenance as every other field here. Absent
+      // is a legitimate state: a category with nothing worth saying yet shows
+      // no card rather than an empty one.
+      pick_weigh: content?.beforeYouPick?.weigh || null,
+      pick_avoid: content?.beforeYouPick?.avoid || null,
+      pick_moving: content?.beforeYouPick?.moving || null,
+      pick_sources: JSON.stringify(content?.beforeYouPick?.sources ?? []),
+      pick_updated_at: content?.beforeYouPick?.updated
+        ? new Date(`${content.beforeYouPick.updated}T00:00:00Z`)
+        : null,
     })
     stats.categories++
     if (!content) continue
@@ -185,7 +195,11 @@ async function main() {
           insert into categories ${tx(row)}
           on conflict (slug) do update set
             name = excluded.name, money_tier = excluded.money_tier,
-            sort = excluded.sort, note = excluded.note, updated_at = now()
+            sort = excluded.sort, note = excluded.note,
+            pick_weigh = excluded.pick_weigh, pick_avoid = excluded.pick_avoid,
+            pick_moving = excluded.pick_moving, pick_sources = excluded.pick_sources,
+            pick_updated_at = excluded.pick_updated_at,
+            updated_at = now()
         `
       }
 

@@ -15,7 +15,7 @@ import { Breadcrumbs, BreadcrumbItem } from '@astryxdesign/core/Breadcrumbs'
 import { EmptyState } from '@astryxdesign/core/EmptyState'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
-import type { CategoryView, RankItem, Track } from '~/lib/catalog'
+import type { BeforeYouPick, CategoryView, RankItem, Track } from '~/lib/catalog'
 import { itemHref, RankMarker, TRACK_BLURB, TRACK_LABEL } from './bits'
 import { SectionHeading } from './home-page'
 
@@ -62,22 +62,14 @@ const styles = stylex.create({
   // reads as an answer table rather than a paragraph. Collapses on narrow.
   answerRow: {
     display: 'grid',
-    gridTemplateColumns: {default: '120px minmax(0, 1fr)', '@media (max-width: 640px)': '1fr'},
+    gridTemplateColumns: {default: '150px minmax(0, 1fr)', '@media (max-width: 640px)': '1fr'},
     gap: spacingVars['--spacing-3'],
     alignItems: 'baseline',
   },
 })
 
 export function CategoryPage({ view }: { view: CategoryView }) {
-  const { category, tracks, notes, watchlist } = view
-
-  // The top Leading entry of each route. Not a computation over the data —
-  // just the first row of each column, said once at the top so the answer is
-  // not something you have to assemble by reading three lists.
-  const shortAnswer = TRACKS.map((track) => ({
-    track,
-    item: tracks[track].find((entry) => entry.standing === 'leading'),
-  })).filter((row): row is { track: Track; item: RankItem } => Boolean(row.item))
+  const { category, tracks, notes, watchlist, beforeYouPick } = view
 
   return (
     <VStack>
@@ -98,44 +90,19 @@ export function CategoryPage({ view }: { view: CategoryView }) {
             * thing site-wide: a judgement we made, as opposed to a number an
             * aggregate produced.
             *
-            * It used to hold the editor's ranking note — several paragraphs of
-            * internal reasoning about why one entry outranks another. That is
-            * real content, but it is *our* process, and nobody arriving at an
-            * area page wants the methodology before the answer. The note moves
-            * below the columns; this slot now carries the answer: the top pick
-            * on each route, which is what the reader came to find out.
+            * It carries how to choose here, never which product to choose —
+            * the lists below already answer that, and a card that repeats them
+            * costs a screenful to say nothing. Two earlier drafts failed on
+            * exactly that: one held the editor's ranking methodology, which is
+            * our process rather than the reader's question; the next held the
+            * top pick of each route, which was the first row of each list
+            * quoted back.
             *
-            * Nothing here is synthesised — it is the first Leading entry of
-            * each route and its own authored line. */}
-          {shortAnswer.length ? (
-            <Card variant="blue" padding={4}>
-              <VStack gap={3}>
-                <VStack gap={1}>
-                  <Text type="label" color="accent">
-                    Our read
-                  </Text>
-                  <Heading level={2}>If you only read one thing</Heading>
-                </VStack>
-                <VStack gap={3}>
-                  {shortAnswer.map(({ track, item }) => (
-                    <div key={track} {...stylex.props(styles.answerRow)}>
-                      <Text type="label" color="secondary">
-                        {TRACK_LABEL[track]}
-                      </Text>
-                      <VStack gap={0.5}>
-                        <Text type="body" weight="semibold">
-                          {item.name}
-                        </Text>
-                        <Text type="supporting" textWrap="pretty">
-                          {item.edge || item.bestFor}
-                        </Text>
-                      </VStack>
-                    </div>
-                  ))}
-                </VStack>
-              </VStack>
-            </Card>
-          ) : null}
+            * Every line is a generalisation about the class of product. Naming
+            * a vendor would turn it into a news bulletin; a line that would
+            * read equally well on another category's page is filler. Both
+            * tests are in the research prompt that produces these. */}
+          <BeforeYouPickCard tips={beforeYouPick} />
         </VStack>
       </Section>
 
@@ -189,6 +156,41 @@ export function CategoryPage({ view }: { view: CategoryView }) {
         </Section>
       ) : null}
     </VStack>
+  )
+}
+
+/** Three lines, each optional. Research decays, so a category that has not
+ * been looked at yet shows nothing rather than an empty frame — the same rule
+ * the rest of the site follows for absent content. */
+function BeforeYouPickCard({ tips }: { tips: BeforeYouPick }) {
+  const lines = (
+    [
+      ['What decides it', tips.weigh],
+      ['What to avoid', tips.avoid],
+      ['What is changing', tips.moving],
+    ] as const
+  ).filter(([, body]) => Boolean(body))
+
+  if (lines.length === 0) return null
+
+  return (
+    <Card variant="blue" padding={4}>
+      <VStack gap={3}>
+        <Heading level={2}>Before you pick</Heading>
+        <VStack gap={3}>
+          {lines.map(([label, body]) => (
+            <div key={label} {...stylex.props(styles.answerRow)}>
+              <Text type="label" color="accent">
+                {label}
+              </Text>
+              <Text type="body" textWrap="pretty">
+                {body}
+              </Text>
+            </div>
+          ))}
+        </VStack>
+      </VStack>
+    </Card>
   )
 }
 

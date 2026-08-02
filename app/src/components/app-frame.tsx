@@ -54,9 +54,9 @@ const styles = stylex.create({
     borderStyle: 'solid',
     borderColor: colorVars['--color-border'],
   },
-  // TopNavHeading takes `heading` as a string, so the tricoloured wordmark
-  // cannot go through it. The heading slot itself is a ReactNode, so the mark
-  // and the word are composed here instead.
+  // TopNavHeading takes `heading` as a string, so the drawn wordmark cannot go
+  // through it. The heading slot itself is a ReactNode, so the mark and the
+  // word are composed here instead.
   brand: {
     display: 'inline-flex',
     alignItems: 'center',

@@ -82,42 +82,40 @@ const styles = stylex.create({
   limit: { backgroundColor: colorVars['--color-error'] },
   limitTone: { color: colorVars['--color-text-red'] },
 
-  // The wordmark. "WhichToUse" is three words and the mark is three colours, so
-  // each word takes one — no ink left over, and the join between word and mark
-  // needs no explaining.
+  // The wordmark is drawn art, not set type: the neon bloom around the letters
+  // is the whole character of it and no font can carry that. So it is an image,
+  // and the only thing this style decides is how tall it stands.
   //
-  // Bricolage Grotesque only here. It is the one string on the site allowed a
-  // face with character; the interface stays on Inter. The matching webfont
-  // request is in src/theme/brand.json — the two have to be changed together,
-  // and the family cannot move into the theme's `tokens` map because that map
-  // is typed to Astryx's own token names.
+  // Width is left to the file's own aspect ratio rather than pinned to a second
+  // number here, so a re-cut master cannot come out stretched. The width/height
+  // attributes reserve the box before the image lands; the height below is what
+  // actually decides the size, and the two must agree or the bar reflows.
   //
-  // The three colours are literals, and that is the point: they belong to the
-  // mark, not to the theme, and must NOT follow a palette change — the logo
-  // should not recolour because the product did. They mirror `mark` in
-  // brand.json and the fills in resources/brand/wtu-logo.svg; StyleX needs
-  // static values, so the three places move together by hand.
+  // No colour: the file carries its own, deliberately independent of the theme
+  // — the logo should not recolour because the product did.
   wordmark: {
-    fontFamily: '"Bricolage Grotesque", "Inter", -apple-system, sans-serif',
-    fontWeight: 700,
-    fontSize: 19,
-    letterSpacing: '-0.03em',
-    whiteSpace: 'nowrap',
+    height: 34,
+    width: 'auto',
+    display: 'block',
   },
-  wmWhich: { color: '#0164E5' },
-  wmTo: { color: '#60B333' },
-  wmUse: { color: '#FE7701' },
 })
 
-/** WhichToUse: three words, the mark's three colours, one each. The spans are
- * decoration — a screen reader still reads a single unbroken word. */
+/** WhichToUse, as the neon lockup. Cut out of resources/wtu-logo-name.png by
+ * scripts/crop-wordmark.mjs — the two files are one crop at 1x and 2x, and
+ * neither is edited by hand.
+ *
+ * `alt` is empty on purpose: the link wrapping this in `app-frame` already
+ * carries the accessible name, and a second copy would read the brand twice. */
 export function Wordmark() {
   return (
-    <span {...stylex.props(styles.wordmark)}>
-      <span {...stylex.props(styles.wmWhich)}>Which</span>
-      <span {...stylex.props(styles.wmTo)}>To</span>
-      <span {...stylex.props(styles.wmUse)}>Use</span>
-    </span>
+    <img
+      src="/wordmark-116.webp"
+      srcSet="/wordmark-116.webp 1x, /wordmark-232.webp 2x"
+      alt=""
+      width={116}
+      height={34}
+      {...stylex.props(styles.wordmark)}
+    />
   )
 }
 

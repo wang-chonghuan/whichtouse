@@ -16,6 +16,7 @@ import type {
 } from './catalog-types'
 
 export type {
+  BeforeYouPick,
   CatalogSearchEntry,
   Category,
   CategoryView,
