@@ -600,5 +600,17 @@
       }
     ]
   },
-  "notes": "There is no single winner in the app track — sources agree the right tool depends on workflow: DeepL for European/professional docs, Google for coverage, ChatGPT/Claude for tone and Asian languages. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes notable open-source translation repos (openai-translator, Immersive Translate, LibreTranslate, translate-shell, OpenNMT, Argos Translate) with the genuine translate Agent Skills that lead this still-emerging niche. The previous top-of-list translate-book skill now ranks below the far more adopted repos. Star counts verified via the GitHub API (Jul 2026); the tiny senshinji/claude-translation-skill (~14 stars) was dropped as below the quality bar."
+  "notes": "There is no single winner in the app track — sources agree the right tool depends on workflow: DeepL for European/professional docs, Google for coverage, ChatGPT/Claude for tone and Asian languages. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag. It mixes notable open-source translation repos (openai-translator, Immersive Translate, LibreTranslate, translate-shell, OpenNMT, Argos Translate) with the genuine translate Agent Skills that lead this still-emerging niche. The previous top-of-list translate-book skill now ranks below the far more adopted repos. Star counts verified via the GitHub API (Jul 2026); the tiny senshinji/claude-translation-skill (~14 stars) was dropped as below the quality bar.",
+  "beforeYouPick": {
+    "weigh": "Terminology decides this, not whether a glossary exists. A term applied as a constraint holds; a term named in a prompt drifts at volume.",
+    "avoid": "The cleaner a draft reads, the less anyone checks it against the source. Errors that change meaning survive — a dropped negation reads perfectly.",
+    "moving": "Reviewing everything is giving way to per-segment confidence scoring: high-scoring text ships unread, flagged segments reach a human. Scores are vendor-defined and don't compare.",
+    "sources": [
+      "https://www.oneword.de/en/post-editing-machine-translation/",
+      "https://www.emergentmind.com/topics/terminology-constrained-machine-translation",
+      "https://slator.com/amta-translation-quality-estimation-evaluation/",
+      "https://www.locize.com/blog/ai-translation-quality-estimation"
+    ],
+    "updated": "2026-08-02"
+  }
 }

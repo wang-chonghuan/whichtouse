@@ -441,5 +441,17 @@
       }
     ]
   },
-  "notes": "Contract review is dominated by integrated SaaS products; there is no meaningful Agent Skill (SKILL.md) ecosystem for legal/contract work, so the skill track lists notable open-source legal-automation repos (kind:repo) ranked by real adoption/reputation rather than form factor. This is a genuinely thin OSS niche, so the list is intentionally short (4) rather than padded: OpenContracts (~1.4k★, contract analytics — the closest parallel to the review apps) and docassemble (~1k★, the recognized document-assembly leader) lead, then Accord Project and open-agreements as smaller niche tools. Catala (~2.3k★, law-as-code for statutes/tax) and Blackstone (legal NLP, unmaintained since 2024) were considered but excluded as off-topic to contract drafting/review. MCP servers are excluded. On the app track, several sources (LegalOn, Spellbook, Definely) are vendor blogs ranking their own product #1; app ranking weights cross-source consensus (Spellbook, LegalOn, Harvey, CoCounsel recur across independent lists) over any single vendor's self-placement."
+  "notes": "Contract review is dominated by integrated SaaS products; there is no meaningful Agent Skill (SKILL.md) ecosystem for legal/contract work, so the skill track lists notable open-source legal-automation repos (kind:repo) ranked by real adoption/reputation rather than form factor. This is a genuinely thin OSS niche, so the list is intentionally short (4) rather than padded: OpenContracts (~1.4k★, contract analytics — the closest parallel to the review apps) and docassemble (~1k★, the recognized document-assembly leader) lead, then Accord Project and open-agreements as smaller niche tools. Catala (~2.3k★, law-as-code for statutes/tax) and Blackstone (legal NLP, unmaintained since 2024) were considered but excluded as off-topic to contract drafting/review. MCP servers are excluded. On the app track, several sources (LegalOn, Spellbook, Definely) are vendor blogs ranking their own product #1; app ranking weights cross-source consensus (Spellbook, LegalOn, Harvey, CoCounsel recur across independent lists) over any single vendor's self-placement.",
+  "beforeYouPick": {
+    "weigh": "Whose paper you review decides this: your own templates with written fallback positions suit playbook tools; incoming third-party drafting rewards a copilot plus research.",
+    "avoid": "Nothing flagged means the clause is fine, missing, or simply not found; the report looks identical in all three cases.",
+    "moving": "These tools are moving past detection into disposition: applying the playbook, clearing low-risk agreements unaided, escalating exceptions, and logging who decided what.",
+    "sources": [
+      "https://swiftwaterco.com/insights/ai-for-contract-review-in-house-counsel/",
+      "https://arxiv.org/abs/2508.03080",
+      "https://natlawreview.com/article/ten-ai-predictions-2026-what-leading-analysts-say-legal-teams-should-expect",
+      "https://legalcha.in/legal-ai-trends-2026-6-shifts-reshaping-the-profession/"
+    ],
+    "updated": "2026-08-02"
+  }
 }
