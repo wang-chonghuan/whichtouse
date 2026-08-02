@@ -11,7 +11,7 @@
 <title>WhichToUse — palette prototype (internal)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&family=Inter:wght@300..800&family=Roboto:wght@300..800&family=Bricolage+Grotesque:wght@300..800&display=swap" rel="stylesheet">
 <style>
 /* ---------------------------------------------------------------------------
  * Every colour below is a CSS variable set by the palette switcher. The three
@@ -22,7 +22,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: Outfit, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font, Outfit), -apple-system, BlinkMacSystemFont, sans-serif;
   background: #0f1211;
   color: #e8ece9;
   padding-bottom: 80px;
@@ -38,6 +38,14 @@ body {
 }
 .bar h1 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
 .bar .hint { font-size: 12px; color: #7d8783; }
+.picker { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #b9c2be; }
+.picker input[type=color] { width: 30px; height: 26px; padding: 0; border: 1px solid #2c332f; border-radius: 6px; background: none; cursor: pointer; }
+.picker code { font-size: 11.5px; color: #7d8783; }
+.picker select {
+  font: inherit; font-size: 12px; cursor: pointer;
+  background: #1b201e; color: #b9c2be; border: 1px solid #2c332f;
+  border-radius: 6px; padding: 5px 8px;
+}
 .tabs { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
 .tabs button {
   font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer;
@@ -64,6 +72,7 @@ body {
  * clickable prototype, and a dead link that responds to a click reads as a
  * bug in the design rather than as a still image. */
 .mock {
+  font-family: var(--font, Outfit), -apple-system, BlinkMacSystemFont, sans-serif;
   pointer-events: none; user-select: none;
   border: 1px solid #2c332f; border-radius: 14px; overflow: hidden;
   background: var(--canvas);
@@ -157,7 +166,28 @@ table.m td.mut { color: var(--ink-2); }
 .kv { display: flex; justify-content: space-between; font-size: 12.5px; padding: 7px 0; border-bottom: 1px solid var(--border); }
 .kv span { color: var(--ink-2); }
 .kv b { font-weight: 500; }
-.link { color: var(--brand); font-weight: 500; font-size: 13px; }
+.link { color: var(--pri-600); font-weight: 500; font-size: 13px; }
+
+/* ---- primary colour, derived at runtime from one hex ------------------- */
+/* Standard stop is the button; the palest stop is the one callout a page is
+ * allowed. #EEF5FE against a white surface is 1.10:1 — invisible on its own —
+ * so the border does the containing and the tint only carries the mood. */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--pri-500); color: #fff; font-weight: 600; font-size: 13px;
+  border-radius: 8px; padding: 9px 16px;
+}
+.btn.ghost { background: transparent; color: var(--pri-600); border: 1px solid var(--border); font-weight: 500; }
+.callout-pri {
+  background: var(--pri-50); border: 1px solid var(--pri-100);
+  border-radius: 11px; padding: 15px 17px; margin-bottom: 20px;
+}
+.callout-pri h4, .callout-pri .lbl-pri { color: var(--pri-700); }
+.lbl-pri { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; margin-bottom: 3px; }
+.hero-pri { background: var(--pri-50); border: 1px solid var(--pri-100); border-radius: 12px; padding: 20px 22px; }
+.bd.pri { background: var(--pri-500); color: #fff; }
+.bd.pri-soft { background: var(--pri-50); color: var(--pri-700); }
+.m-side a.on { color: var(--pri-700); }
 .feat { display: flex; gap: 6px; flex-wrap: wrap; }
 .chip { font-size: 11.5px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 5px 11px; }
 </style>
@@ -166,7 +196,14 @@ table.m td.mut { color: var(--ink-2); }
 
 <div class="bar">
   <h1>WhichToUse · palette prototype</h1>
-  <span class="hint">Same markup, four schemes. Nothing here is clickable except these tabs.</span>
+  <span class="hint">Same markup, four schemes. Nothing here is clickable except these controls.</span>
+  <div class="picker">
+    Primary <input type="color" id="pri" value="#0064E5">
+    <select id="priPreset"></select>
+    <code id="priHex">#0064E5</code>
+    <span style="margin-left:6px">Type</span>
+    <select id="fontPick"></select>
+  </div>
   <div class="tabs" id="tabs"></div>
 </div>
 
@@ -192,9 +229,12 @@ table.m td.mut { color: var(--ink-2); }
         <a>Voice &amp; Audio</a><a>Lead Generation</a><a>Email Outreach</a><a>SEO &amp; GEO</a>
       </div>
       <div class="m-main">
-        <h3 class="m">Find the best AI tool for your task — limits first.</h3>
-        <p class="sub">SaaS, open source and agent skills, side by side. Leading and emerging picks in each.</p>
-        <div class="stats"><div><b>25</b> <span>tasks</span></div><div><b>3</b> <span>routes per task</span></div><div><b>Limits</b> <span>checked by hand</span></div></div>
+        <div class="hero-pri">
+          <h3 class="m">Find the best AI tool for your task — limits first.</h3>
+          <p class="sub">SaaS, open source and agent skills, side by side. Leading and emerging picks in each.</p>
+          <div class="stats"><div><b>25</b> <span>tasks</span></div><div><b>3</b> <span>routes per task</span></div><div><b>Limits</b> <span>checked by hand</span></div></div>
+          <div style="margin-top:14px;display:flex;gap:9px"><span class="btn">Browse all 25 tasks</span><span class="btn ghost">How we rank</span></div>
+        </div>
 
         <h4 class="m" style="margin-top:26px">Start with a task</h4>
         <p class="tiny">The tasks with the most depth behind them right now.</p>
@@ -254,7 +294,7 @@ table.m td.mut { color: var(--ink-2); }
         <div class="crumb">Home / Coding</div>
         <h3 class="m">Coding</h3>
         <p class="sub">SaaS, open source and skills for coding work — with the limits of each written down.</p>
-        <div class="note"><h5 class="m">How this task was ranked</h5>
+        <div class="callout-pri"><div class="lbl-pri">Our read</div><h5 class="m">How this task was ranked</h5>
           <p class="tiny" style="line-height:1.55">Rich, high-consensus category with a genuine Agent Skill ecosystem. The skill track ranks genuine SKILL.md skills and notable open-source coding-agent repos together by real adoption, with kind as a tag only — not a rank determinant.</p></div>
 
         <div class="cols3">
@@ -328,17 +368,17 @@ table.m td.mut { color: var(--ink-2); }
         <div class="crumb">Home / Content Writing / Claude</div>
         <h3 class="m">Claude</h3>
         <div class="badges">
-          <span class="bd brand">Leading</span>
+          <span class="bd pri">Leading</span>
           <span class="bd neutral">#2 in SaaS</span>
-          <span class="bd brand-soft">high confidence</span>
+          <span class="bd pri-soft">high confidence</span>
           <span class="bd coral">Freemium</span>
         </div>
         <p class="sub">Nuanced, natural long-form. Reddit's pick for voice-sensitive drafts and research-heavy articles.</p>
-        <p class="link" style="margin-top:8px">Open Claude ↗</p>
+        <div style="margin-top:10px;display:flex;gap:9px"><span class="btn">Open Claude ↗</span><span class="btn ghost">Compare with ChatGPT</span></div>
 
         <div class="pcols">
           <div>
-            <div class="block"><h4 class="m">Why it ranks #2</h4>
+            <div class="callout-pri"><div class="lbl-pri">Our read</div><h4 class="m">Why it ranks #2</h4>
               <p class="sub">Recommended in all three cited roundups and repeatedly favored in Reddit writing discussions for natural long-form voice and handling large source packets.</p></div>
 
             <div class="callout"><h4 class="m">Here is the catch</h4>
@@ -435,24 +475,173 @@ const PALETTES = [
 
 const SWATCH_ORDER = [
   ['canvas', 'shell'], ['surface', 'content'], ['recessed', 'demoted'],
-  ['brand', 'brand'], ['brand-tint', 'brand tint'],
   ['coral', 'limits'], ['coral-tint', 'limits tint'],
   ['ink', 'text'], ['ink-2', 'secondary'], ['border', 'lines'],
 ];
 
+/* ---------------------------------------------------------------------------
+ * The primary ramp is derived at runtime from a single hex, so the picker is
+ * not a demo — it is the same operation the theme file will do. Six stops is
+ * all this product needs: a button, its hover, a link, and a tint plus border
+ * plus heading for the one callout a page is allowed.
+ *
+ * Default is the blue sampled out of the logo: #0064E5, the W. (The U is
+ * #FE7701 and the T is green — the mark already carries three hues, which is
+ * why exactly one of them can become the interface colour.)
+ * ------------------------------------------------------------------------ */
+const LOGO_BLUE = '#0064E5';
+
+/* Ten candidates to try the frame against. Every one was checked at the 500
+ * stop for white text: the lowest is Azure at 4.98, so a primary button is
+ * legible on all ten. A swatch that failed AA would be a trap in a picker, not
+ * an option.
+ *
+ * The pale end matters as much as the button. Hue drives how the 96%-lightness
+ * callout tint reads: blues and greens go to paper-with-a-cast, while warm hues
+ * go to a colour that has an opinion. Clay is in the list because it is a real
+ * current choice, but it is also within a few degrees of the coral that carries
+ * "the catch" — labelled, so the collision is visible before it is chosen. */
+const PRESETS = [
+  ['Logo blue',        '#0064E5'],
+  ['Ink green · 墨绿',  '#0F6B4C'],
+  ['Teal',             '#0E6E66'],
+  ['Navy',             '#1B4D8F'],
+  ['Azure',            '#0A72C4'],
+  ['Indigo',           '#4F46E5'],
+  ['Violet',           '#6D28D9'],
+  ['Plum',             '#8A2B6B'],
+  ['Graphite',         '#2B3138'],
+  ['Clay — clashes with coral', '#A8562F'],
+];
+
+const toHsl = (hex) => {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
+  if (!d) return [0, 0, l * 100];
+  const s = d / (1 - Math.abs(2 * l - 1));
+  const h = mx === r ? 60 * (((g - b) / d) % 6) : mx === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
+  return [(h + 360) % 360, s * 100, l * 100];
+};
+
+const toHex = (h, s, l) => {
+  s /= 100; l /= 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s, x = c * (1 - Math.abs((h / 60) % 2 - 1)), m = l - c / 2;
+  const [r, g, b] = h < 60 ? [c, x, 0] : h < 120 ? [x, c, 0] : h < 180 ? [0, c, x]
+    : h < 240 ? [0, x, c] : h < 300 ? [x, 0, c] : [c, 0, x];
+  return '#' + [r, g, b].map((v) => Math.round((v + m) * 255).toString(16).padStart(2, '0')).join('').toUpperCase();
+};
+
+/* Saturation eases off at the pale end on purpose: held at full chroma, a 96%
+ * lightness tint reads as a washed-out button rather than as paper with a cast
+ * of the brand.
+ *
+ * The dark stops are a *proportion* of the base lightness, not fixed values.
+ * Absolute stops (600 at 39%, 700 at 32%) work for a mid-lightness blue and
+ * invert for anything darker: ink green sits at L=24, so a "darker" 700 came
+ * out lighter than the button it was meant to deepen. Multiplying keeps the
+ * ramp monotonic for every hue and leaves the blue where it already was. */
+function ramp(base) {
+  const [h, s, l] = toHsl(base);
+  const darker = (factor) => toHex(h, s, Math.max(10, l * factor));
+  return {
+    'pri-50':  toHex(h, Math.min(s, 100) * 0.92, 96.5),
+    'pri-100': toHex(h, Math.min(s, 96) * 0.90, 91),
+    'pri-200': toHex(h, Math.min(s, 92) * 0.88, 83),
+    'pri-500': base.toUpperCase(),
+    'pri-600': darker(0.86),
+    'pri-700': darker(0.70),
+  };
+}
+
+const priInput = document.getElementById('pri');
+const priHex = document.getElementById('priHex');
+let primary = LOGO_BLUE;
+
+function applyPrimary(hex) {
+  primary = hex.toUpperCase();
+  const r = ramp(primary);
+  for (const [k, v] of Object.entries(r)) {
+    document.documentElement.style.setProperty('--' + k, v);
+  }
+  /* The scheme no longer owns a brand colour — the picker does. A scheme that
+   * kept its own accent would leave two theme colours on the page (the D frame
+   * still had green links under a blue button), which is exactly the muddle
+   * this control exists to prevent. Schemes now decide the neutral frame and
+   * the coral; everything interactive comes from here. */
+  document.documentElement.style.setProperty('--brand', r['pri-600']);
+  document.documentElement.style.setProperty('--brand-tint', r['pri-50']);
+  document.documentElement.style.setProperty('--brand-ink', r['pri-700']);
+  document.documentElement.style.setProperty('--on-brand', '#FFFFFF');
+  priInput.value = primary;
+  priHex.textContent = primary;
+  // Keep the dropdown honest when the colour came from the swatch instead.
+  const match = PRESETS.find(([, hex]) => hex.toUpperCase() === primary);
+  priPreset.value = match ? match[1] : 'custom';
+  if (typeof renderSwatches === 'function') renderSwatches();
+}
+
+/* Type is a separate decision from colour, so it gets its own control rather
+ * than being folded into a scheme. All four load up front: switching has to be
+ * instant, and a flash of fallback between the two faces being compared would
+ * sit exactly where the comparison is. */
+const FONTS = [
+  ['Outfit — current', 'Outfit'],
+  ['Inter', 'Inter'],
+  ['Roboto', 'Roboto'],
+  ['Bricolage Grotesque', 'Bricolage Grotesque'],
+];
+
+const fontPick = document.getElementById('fontPick');
+fontPick.innerHTML = FONTS.map(([label, family], i) =>
+  `<option value="${family}"${i === 0 ? ' selected' : ''}>${label}</option>`).join('');
+fontPick.addEventListener('change', (e) => {
+  document.documentElement.style.setProperty('--font', `"${e.target.value}"`);
+});
+document.documentElement.style.setProperty('--font', '"Outfit"');
+
+const priPreset = document.getElementById('priPreset');
+priPreset.innerHTML =
+  PRESETS.map(([name, hex]) => `<option value="${hex}">${name} · ${hex}</option>`).join('') +
+  '<option value="custom">Custom…</option>';
+
+priInput.addEventListener('input', (e) => applyPrimary(e.target.value));
+priPreset.addEventListener('change', (e) => {
+  if (e.target.value !== 'custom') applyPrimary(e.target.value);
+});
+
 const tabs = document.getElementById('tabs');
 const swatches = document.getElementById('swatches');
 
+let current = 0;
+
+function renderSwatches() {
+  const p = PALETTES[current];
+  const r = ramp(primary);
+  const scheme = SWATCH_ORDER.map(([key, use]) =>
+    `<div class="swatch"><i style="background:${p.vars[key]}"></i>` +
+    `<b>${key}<br>${p.vars[key].toUpperCase()}<br><span>${use}</span></b></div>`).join('');
+  const pri = [['pri-50', 'callout bg'], ['pri-100', 'callout line'], ['pri-500', 'button · link'],
+    ['pri-600', 'hover · link'], ['pri-700', 'callout heading']]
+    .map(([key, use]) =>
+      `<div class="swatch"><i style="background:${r[key]}"></i>` +
+      `<b>${key}<br>${r[key]}<br><span>${use}</span></b></div>`).join('');
+  swatches.innerHTML = scheme + '<div style="width:100%;height:0"></div>' + pri;
+}
+
+const SCHEME_OWNED = new Set(['brand', 'brand-tint', 'brand-ink', 'on-brand']);
+
 function apply(index) {
+  current = index;
   const p = PALETTES[index];
   for (const [k, v] of Object.entries(p.vars)) {
+    // Skip the brand keys: the picker owns those now. Left in the palette
+    // objects so each scheme still records the accent it was designed around.
+    if (SCHEME_OWNED.has(k)) continue;
     document.documentElement.style.setProperty('--' + k, v);
   }
   document.getElementById('pName').textContent = p.name;
   document.getElementById('pNote').textContent = p.note;
-  swatches.innerHTML = SWATCH_ORDER.map(([key, use]) =>
-    `<div class="swatch"><i style="background:${p.vars[key]}"></i>` +
-    `<b>${key}<br>${p.vars[key].toUpperCase()}<br><span>${use}</span></b></div>`).join('');
+  renderSwatches();
   [...tabs.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
   location.hash = p.id;
 }
@@ -464,8 +653,11 @@ PALETTES.forEach((p, i) => {
   tabs.appendChild(b);
 });
 
+applyPrimary(LOGO_BLUE);
 const fromHash = PALETTES.findIndex((p) => p.id === location.hash.slice(1));
-apply(fromHash >= 0 ? fromHash : 0);
+// D is the default: the near-mono frame is the one that lets a single primary
+// colour do all the signalling, which is what the picker above is for.
+apply(fromHash >= 0 ? fromHash : 3);
 </script>
 </body>
 </html>
