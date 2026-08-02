@@ -254,7 +254,9 @@ export function AppFrame({
           }
           startContent={
             <>
-              <TopNavItem label="Browse" href="/#areas" isSelected={false} />
+              {/* Home, not /#areas: the section that anchor pointed at is gone.
+                * Browsing is what the rail beside this does, on every page. */}
+              <TopNavItem label="Browse" href="/" isSelected={false} />
               <div {...stylex.props(styles.wide)}>
                 <Button
                   variant="ghost"

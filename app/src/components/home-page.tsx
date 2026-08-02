@@ -8,7 +8,6 @@ import { Text } from '@astryxdesign/core/Text'
 import { Link } from '@astryxdesign/core/Link'
 import { List, ListItem } from '@astryxdesign/core/List'
 import { Divider } from '@astryxdesign/core/Divider'
-import { Token } from '@astryxdesign/core/Token'
 import { Table, pixel, proportional } from '@astryxdesign/core/Table'
 import { Icon } from '@astryxdesign/core/Icon'
 import { EmptyState } from '@astryxdesign/core/EmptyState'
@@ -16,7 +15,7 @@ import { spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Category, CategoryView } from '~/lib/catalog'
 import type { TrendingRepositoriesResult, TrendingRepository } from '~/lib/github-trending'
-import { ActionLink, Bullet, itemHref, RankMarker } from './bits'
+import { Bullet, itemHref, RankMarker } from './bits'
 
 // Home, in three moves: say what the site decides for you, show the shortlists
 // it has, and show what the internet is excited about today — clearly
@@ -124,9 +123,6 @@ export function HomePage({
               what leads today, and what is gaining on it
             </Dimension>
           </VStack>
-          <HStack gap={2} wrap="wrap">
-            <ActionLink href="#areas">See all 25 areas</ActionLink>
-          </HStack>
         </VStack>
         </Card>
       </Section>
@@ -193,25 +189,6 @@ export function HomePage({
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={0} paddingBlock={6}>
-        <VStack gap={4}>
-          <SectionHeading
-            id="areas"
-            title="All 25 areas"
-            description="Pick the one your job falls under."
-          />
-          <HStack gap={2} wrap="wrap">
-            {categories.map((category) => (
-              <Token
-                key={category.slug}
-                label={category.name}
-                href={category.ready ? `/c/${category.slug}` : undefined}
-                isDisabled={!category.ready}
-              />
-            ))}
-          </HStack>
-        </VStack>
-      </Section>
     </VStack>
   )
 }

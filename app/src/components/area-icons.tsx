@@ -31,6 +31,7 @@ import {
 // StyleX's babel plugin resolves a defineVars import itself, at compile time,
 // and does not read Vite's aliases. With `~/theme/…` the build fails outright
 // with "Could not resolve the path to the imported file".
+import { colorVars } from '@astryxdesign/core/theme/tokens.stylex'
 import { areaHues, familyHues } from '../theme/areaHues.stylex'
 
 // One icon per area, for the rail. Two things are being decided here — which
@@ -44,10 +45,17 @@ import { areaHues, familyHues } from '../theme/areaHues.stylex'
 // same-weight text has nothing to aim at and every competitor solves it this
 // way.
 //
-// Two palettes are kept here and `PALETTE` picks between them. They are a live
-// comparison, not a feature: once the choice is settled, delete the loser and
-// the switch with it. Leaving a toggle in place turns one decision into a
+// Three palettes are kept here and `PALETTE` picks between them. They are a
+// live comparison, not a feature: once the choice is settled, delete the losers
+// and the switch with them. Leaving a toggle in place turns one decision into a
 // permanent second thing to maintain.
+//
+//   'primary' — every glyph in the interface primary. The only option that
+//     does not bend the palette rule at all: it adds no colour the product did
+//     not already have, so the rail stays a demoted grey surface with the brand
+//     drawn on it. What it gives up is the thing the icons were added for —
+//     with one colour the glyph shapes have to do all the aiming, and at 16px
+//     a reader scanning for "Bookkeeping" is back to reading words.
 //
 //   'family' — five hues over twenty-five areas, grouped by the kind of work.
 //     Repetition is the point: the colour says which neighbourhood a row is in,
@@ -65,12 +73,18 @@ import { areaHues, familyHues } from '../theme/areaHues.stylex'
 //     alone says "this row is not that row" and nothing more, which is why the
 //     group captions above the rows have to do that work instead.
 //
-// Both sets are legible on the rail by measurement rather than by eye: the
-// family hues at a constant 4.2:1 against #ECEDE4, the per-area ones between
-// 4.00 and 4.52:1. The floor for a graphic that carries meaning is 3:1, which
-// is why Astryx's `orange` (2.74), `cyan` (2.32) and `yellow` (1.40) appear in
-// neither.
-const PALETTE: 'family' | 'unique' = 'unique'
+// All three are legible on the rail by measurement rather than by eye: the
+// family hues at a constant 4.2:1 against #ECEDE4, the per-area ones the same,
+// the primary at 7.41:1. The floor for a graphic that carries meaning is 3:1,
+// which is why Astryx's `orange` (2.74), `cyan` (2.32) and `yellow` (1.40)
+// appear in none of them.
+//
+// The `as` is load-bearing. TypeScript narrows a const of a literal-union type
+// down to whichever literal it was initialised with, so the comparisons below
+// become comparisons with no overlap and fail to compile — on whichever
+// branches are not currently selected. Widening back to the union keeps every
+// arm type-checked, which is the whole point of leaving the switch here.
+const PALETTE = 'primary' as 'family' | 'unique' | 'primary'
 
 // ── the glyph ─────────────────────────────────────────────────────────────
 // Lucide, matching the rest of the app's icon set. Each names the *work*
@@ -83,6 +97,12 @@ const base = stylex.create({
     display: 'block',
     flexShrink: 0,
   },
+  // The brand, straight from the token — no generated value, nothing to keep
+  // a measured distance from, and it follows a theme swap like everything else.
+  // `icon-accent` rather than a raw primary: it is the token Astryx names for
+  // an icon carrying the accent, and it resolves to the ramp's 600 stop, which
+  // is the darker of the two and the one that holds up at 16px.
+  primary: { color: colorVars['--color-icon-accent'] },
 })
 
 const family = stylex.create({
@@ -166,7 +186,8 @@ const AREAS: Record<string, [LucideIcon, Family, Own]> = {
   'resume-jobs': [BriefcaseBusiness, 'business', 'resumeJobs'],
 }
 
-const tone = (f: Family, own: Own) => (PALETTE === 'family' ? family[f] : unique[own])
+const tone = (f: Family, own: Own) =>
+  PALETTE === 'primary' ? base.primary : PALETTE === 'family' ? family[f] : unique[own]
 
 /** The five families, in the order the rail lists them, with the label a
  * reader sees.
