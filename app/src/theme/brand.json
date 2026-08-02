@@ -1,26 +1,25 @@
 {
-  "_comment": "The values the active Astryx theme cannot reach. Everything a React component renders reads semantic tokens and follows the theme by itself; these four places do not, because they are consumed outside React: an HTML <meta> the browser paints its chrome with, a webfont URL, a static manifest, and a social card rendered by a node script. Keeping them here means one theme swap edits one file, not four. Values must match the corresponding tokens in the active theme file.",
-  "theme": "butter",
-
-  "_fontNote": "Butter also names Sarina for display-* text. Nothing in this product renders a display type — Astryx scopes that treatment to the Text component and every hero here is a Heading — so requesting Sarina would ship a face the page never paints. Add it back the moment a display type appears.",
-  "fontStylesheet": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap",
-
-  "backgroundBody": "#FDFBE4",
-
+  "_comment": "The values the active theme cannot reach. Everything a React component renders reads semantic tokens and follows the theme by itself; these do not, because they are consumed outside React: an HTML <meta> the browser paints its chrome with, a webfont URL, a generated manifest, and a social card rendered by a node script. One theme swap edits this file and the import in __root.tsx. Values must match the corresponding tokens in src/theme/wtuTheme.ts.",
+  "theme": "wtu",
+  "fontStylesheet": "https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Bricolage+Grotesque:wght@600;700&display=swap",
+  "backgroundBody": "#F4F7F6",
   "iconBackground": "#FFFFFF",
-
   "ogCard": {
-    "background": "#FDFBE4",
+    "background": "#F4F7F6",
     "surface": "#FFFFFF",
-    "text": "#1d1c11",
-    "textMuted": "#605f52",
-    "border": "#e5e3d4",
-    "fontFamily": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif"
+    "text": "#12201E",
+    "textMuted": "#5A6764",
+    "border": "#DDE5E3",
+    "accent": "#4F46E5",
+    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
   },
-
   "manifest": {
-    "name": "WhichToUse — compare SaaS, open source and skills",
+    "name": "WhichToUse — find the best AI tool for your task",
     "shortName": "WhichToUse",
-    "description": "Leading and emerging picks for every task, with the limits of each written down."
-  }
+    "description": "SaaS, open source and agent skills for every task, with the limits of each written down."
+  },
+  "_iconNote": "Icon tiles are white. The mark's three letters are balanced to read on it: indigo 6.29:1, green 3.62:1, coral 4.07:1. An earlier lime T measured 1.30:1 and vanished at 16px; an ink tile was tried to rescue it and looked like a rendering fault in the tab bar. The colour was the thing to change.",
+  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
+  "markGreen": "#249A4E",
+  "markCoral": "#D4553C"
 }

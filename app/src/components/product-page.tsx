@@ -8,16 +8,19 @@ import { List, ListItem } from '@astryxdesign/core/List'
 import { Divider } from '@astryxdesign/core/Divider'
 import { Token } from '@astryxdesign/core/Token'
 import { Icon } from '@astryxdesign/core/Icon'
+import { Card } from '@astryxdesign/core/Card'
 import { Badge } from '@astryxdesign/core/Badge'
-import { StatusDot } from '@astryxdesign/core/StatusDot'
 import { Breadcrumbs, BreadcrumbItem } from '@astryxdesign/core/Breadcrumbs'
 import { MetadataList, MetadataListItem } from '@astryxdesign/core/MetadataList'
 import { spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Category, RankItem, Track } from '~/lib/catalog'
 import {
+  ActionLink,
+  Bullet,
   ConfidenceBadge,
   itemHref,
+  LimitTone,
   Placeholder,
   RankMarker,
   StandingBadge,
@@ -50,10 +53,6 @@ const styles = stylex.create({
   rail: {
     position: {default: 'sticky', '@media (max-width: 960px)': 'static'},
     top: spacingVars['--spacing-6'],
-  },
-  bullet: {
-    marginTop: 6,
-    flexShrink: 0,
   },
 })
 
@@ -98,10 +97,13 @@ export function ProductPage({
               {item.bestFor}
             </Text>
             {item.homepage ? (
-              <HStack>
-                <Link href={item.homepage} isExternalLink isStandalone>
-                  Open {item.name}
-                </Link>
+              <HStack gap={2} wrap="wrap">
+                <ActionLink href={item.homepage} isExternal>
+                  {`Open ${item.name} ↗`}
+                </ActionLink>
+                <ActionLink href={backTo ?? `/c/${category.slug}`} variant="secondary">
+                  {`See all ${TRACK_LABEL[track]}`}
+                </ActionLink>
               </HStack>
             ) : null}
           </VStack>
@@ -111,37 +113,57 @@ export function ProductPage({
       <Section variant="transparent" padding={6} paddingBlock={0}>
         <div {...stylex.props(styles.columns)}>
           <VStack gap={8}>
-            <Block title={`Why it ranks #${item.rank}`}>
-              {item.rankBasis ? (
-                <Text textWrap="pretty">{item.rankBasis}</Text>
-              ) : (
+            {/* The one primary callout this page gets, and it carries the same
+              * meaning everywhere on the site: a judgement we made, as against
+              * a position an aggregate produced. When nobody has written one,
+              * the slot says so — it never borrows a metric to fill itself. */}
+            {item.rankBasis ? (
+              <Card variant="blue" padding={4}>
+                <VStack gap={1.5}>
+                  <Text type="label" color="accent">
+                    Our read
+                  </Text>
+                  <Heading level={2}>{`Why it ranks #${item.rank}`}</Heading>
+                  <Text textWrap="pretty">{item.rankBasis}</Text>
+                </VStack>
+              </Card>
+            ) : (
+              <Block title={`Why it ranks #${item.rank}`}>
                 <Placeholder>
                   No written reasoning for this entry yet — its position comes
                   from aggregated source rankings alone.
                 </Placeholder>
-              )}
-            </Block>
+              </Block>
+            )}
 
-            <Block title="Strengths and limitations">
-              {pros.length === 0 && cons.length === 0 ? (
-                <Placeholder>
-                  No strengths or limitations recorded yet.
-                </Placeholder>
-              ) : (
-                <HStack gap={8} wrap="wrap" vAlign="start">
-                  <PointList
-                    heading="Does this well"
-                    variant="success"
-                    points={pros}
-                  />
-                  <PointList
-                    heading="Here is the catch"
-                    variant="error"
-                    points={cons}
-                  />
-                </HStack>
-              )}
-            </Block>
+            {pros.length === 0 && cons.length === 0 ? (
+              <Block title="Strengths and limitations">
+                <Placeholder>No strengths or limitations recorded yet.</Placeholder>
+              </Block>
+            ) : (
+              <>
+                {/* Limits get the only other coloured surface on the page. It is
+                  * what the reader came for, and it is the thing every other
+                  * directory leaves out. */}
+                {cons.length ? (
+                  <Card variant="red" padding={4}>
+                    <VStack gap={2}>
+                      <LimitTone>
+                        <Heading level={2} color="inherit">
+                          Here is the catch
+                        </Heading>
+                      </LimitTone>
+                      <PointList tone="limit" points={cons} />
+                    </VStack>
+                  </Card>
+                ) : null}
+                {pros.length ? (
+                  <Block title="Does this well">
+                    <PointList tone="ink" points={pros} />
+                  </Block>
+                ) : null}
+              </>
+            )}
 
             <Block title="Pricing">
               {item.pricingFree || item.pricingPaid || item.pricing ? (
@@ -186,15 +208,17 @@ export function ProductPage({
             ) : null}
 
             {item.signals?.length ? (
-              <Block
-                title="Signals"
-                description="Observations, not reasons. These say something resonated; they never say it is good.">
-                <List density="compact" hasDividers>
-                  {item.signals.map((signal) => (
-                    <ListItem key={signal} label={signal} />
-                  ))}
-                </List>
-              </Block>
+              <Card variant="muted" padding={4}>
+                <Block
+                  title="Signals"
+                  description="Observations, not reasons. These say something resonated; they never say it is good.">
+                  <List density="compact" hasDividers>
+                    {item.signals.map((signal) => (
+                      <ListItem key={signal} label={signal} />
+                    ))}
+                  </List>
+                </Block>
+              </Card>
             ) : null}
 
             {item.evidence?.sources?.length ? (
@@ -240,7 +264,8 @@ export function ProductPage({
           </VStack>
 
           <VStack gap={6} xstyle={styles.rail}>
-            <Block title="Quick facts" level={3}>
+            <Card variant="muted" padding={4}>
+              <Block title="Quick facts" level={3}>
               <MetadataList label={{ position: 'start', width: 110 }}>
                 <MetadataListItem label="Route">{TRACK_LABEL[track]}</MetadataListItem>
                 <MetadataListItem label="Standing">
@@ -258,7 +283,8 @@ export function ProductPage({
                   </MetadataListItem>
                 ) : null}
               </MetadataList>
-            </Block>
+              </Block>
+            </Card>
 
             {others.length ? (
               <VStack gap={3}>
@@ -315,30 +341,17 @@ function Block({
   )
 }
 
-function PointList({
-  heading,
-  variant,
-  points,
-}: {
-  heading: string
-  variant: 'success' | 'error'
-  points: string[]
-}) {
-  if (points.length === 0) return null
-
+function PointList({ tone, points }: { tone: 'ink' | 'limit'; points: string[] }) {
   return (
     <VStack gap={2}>
-      <Text type="label">{heading}</Text>
-      <VStack gap={2}>
-        {points.map((point) => (
-          <HStack key={point} gap={2} vAlign="start">
-            <StatusDot variant={variant} label={heading} xstyle={styles.bullet} />
-            <Text type="body" textWrap="pretty">
-              {point}
-            </Text>
-          </HStack>
-        ))}
-      </VStack>
+      {points.map((point) => (
+        <HStack key={point} gap={2} vAlign="start">
+          <Bullet tone={tone} />
+          <Text type="body" textWrap="pretty">
+            {point}
+          </Text>
+        </HStack>
+      ))}
     </VStack>
   )
 }

@@ -18,7 +18,8 @@ function AppLayout() {
       categories={categories}
       searchEntries={searchEntries}
       activeSlug={activeSlug}
-      isHome={pathname === '/'}>
+      isHome={pathname === '/'}
+      pathname={pathname}>
       <Outlet />
     </AppFrame>
   )

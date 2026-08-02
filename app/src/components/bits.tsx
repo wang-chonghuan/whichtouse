@@ -40,28 +40,108 @@ const styles = stylex.create({
   rank: {
     minWidth: 20,
   },
+  // Two things here are worked around rather than written the obvious way,
+  // both for the same reason: Astryx's reset lives in @layer reset, which is
+  // declared AFTER our StyleX layers, so its zero-specificity rules still win.
+  //   :where(a)  { color: inherit }        -> colour cannot be set on the <a>
+  //   :where(*)  { border-color: currentColor } -> nor can border-color
+  // Hence the colour goes on an inner <span> (not an anchor, so the rule does
+  // not reach it) and the outline is an inset box-shadow, which the reset does
+  // not touch. background-color has no reset rule and is set normally.
+  action: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: spacingVars['--spacing-1-5'],
+    borderRadius: 8,
+    paddingBlock: spacingVars['--spacing-2'],
+    paddingInline: spacingVars['--spacing-4'],
+    fontWeight: 600,
+    textDecoration: 'none',
+  },
+  primary: {
+    backgroundColor: colorVars['--color-accent'],
+  },
+  primaryLabel: {
+    color: colorVars['--color-on-accent'],
+  },
+  secondary: {
+    backgroundColor: colorVars['--color-background-surface'],
+    boxShadow: `inset 0 0 0 1px ${colorVars['--color-border']}`,
+  },
+  secondaryLabel: {
+    color: colorVars['--color-text-accent'],
+  },
+  bullet: {
+    width: 6,
+    height: 6,
+    borderRadius: '50%',
+    flexShrink: 0,
+    marginTop: 7,
+  },
+  ink: { backgroundColor: colorVars['--color-text-primary'] },
+  limit: { backgroundColor: colorVars['--color-error'] },
+  limitTone: { color: colorVars['--color-text-red'] },
+
+  // The wordmark. "WhichToUse" is three words and the mark is three colours, so
+  // each word takes one — no ink left over, and the join between word and mark
+  // needs no explaining.
+  //
+  // Bricolage Grotesque only here. It is the one string on the site allowed a
+  // face with character; the interface stays on Inter. The matching webfont
+  // request is in src/theme/brand.json — the two have to be changed together,
+  // and the family cannot move into the theme's `tokens` map because that map
+  // is typed to Astryx's own token names.
+  wordmark: {
+    fontFamily: '"Bricolage Grotesque", "Inter", -apple-system, sans-serif',
+    fontWeight: 700,
+    fontSize: 19,
+    letterSpacing: '-0.03em',
+    whiteSpace: 'nowrap',
+  },
+  wmWhich: { color: colorVars['--color-accent'] },
+  wmTo: { color: colorVars['--color-text-green'] },
+  wmUse: { color: colorVars['--color-error'] },
 })
 
+/** WhichToUse: three words, the mark's three colours, one each. The spans are
+ * decoration — a screen reader still reads a single unbroken word. */
+export function Wordmark() {
+  return (
+    <span {...stylex.props(styles.wordmark)}>
+      <span {...stylex.props(styles.wmWhich)}>Which</span>
+      <span {...stylex.props(styles.wmTo)}>To</span>
+      <span {...stylex.props(styles.wmUse)}>Use</span>
+    </span>
+  )
+}
+
+/** Astryx's Text/Heading colour enum has no member for the limits hue, and
+ * Card's coloured variants set a background but not a text colour. Setting the
+ * colour once on a wrapper and letting the heading inherit keeps the element
+ * semantic and the value in a token. */
+export function LimitTone({ children }: { children: React.ReactNode }) {
+  return <div {...stylex.props(styles.limitTone)}>{children}</div>
+}
+
 /** Standing is an enum, so it renders as a Badge; the two values are the whole
- * hierarchy of a column and must never look interchangeable. */
+ * hierarchy of a column and must never look interchangeable.
+ *
+ * Leading takes the primary tint rather than green: green as "good" is retired
+ * across this product, and the soft stop is deliberate — a solid indigo chip on
+ * every top row would shout louder than the ranking it labels. */
 export function StandingBadge({ standing }: { standing: RankItem['standing'] }) {
   return standing === 'leading' ? (
-    <Badge variant="success" label="Leading" />
+    <Badge variant="blue" label="Leading" />
   ) : (
     <Badge variant="neutral" label="Emerging" />
   )
 }
 
-const CONFIDENCE_VARIANT: Record<Confidence, 'success' | 'warning' | 'neutral'> = {
-  high: 'success',
-  medium: 'warning',
-  low: 'neutral',
-}
-
+/** Confidence is neutral in every state. It is a third meaning, and the palette
+ * has exactly two jobs left — indigo for our judgement, coral for limits.
+ * Spending a colour here would dilute both; the word already says it. */
 export function ConfidenceBadge({ confidence }: { confidence: Confidence }) {
-  return (
-    <Badge variant={CONFIDENCE_VARIANT[confidence]} label={`${confidence} confidence`} />
-  )
+  return <Badge variant="neutral" label={`${confidence} confidence`} />
 }
 
 /** Stands in for content the app cannot supply yet. Never a blank space and
@@ -75,6 +155,45 @@ export function Placeholder({ children }: { children: string }) {
       </Text>
     </div>
   )
+}
+
+/** A link that has to read as the page's primary action.
+ *
+ * Astryx's Button takes no href and its Link is a text link, so nothing in the
+ * system covers "navigate, and look like the main thing to do". Built on our
+ * own <a> rather than by overriding one of theirs: a component that owns
+ * padding and colour cannot be argued with from a consumer stylesheet, and
+ * every value here still comes from a theme token, so a theme swap carries it. */
+export function ActionLink({
+  href,
+  children,
+  variant = 'primary',
+  isExternal = false,
+}: {
+  href: string
+  children: string
+  variant?: 'primary' | 'secondary'
+  isExternal?: boolean
+}) {
+  return (
+    <a
+      href={href}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...stylex.props(styles.action, styles[variant])}>
+      <span {...stylex.props(variant === 'primary' ? styles.primaryLabel : styles.secondaryLabel)}>
+        {children}
+      </span>
+    </a>
+  )
+}
+
+/** Strengths are marked in ink, never in green.
+ *
+ * Green as "good" collides with green as a brand colour, and green/red is the
+ * one pair colour-blind readers cannot separate. Coral carries the limits on
+ * its own — which is also what the product promises. */
+export function Bullet({ tone }: { tone: 'ink' | 'limit' }) {
+  return <span {...stylex.props(styles.bullet, styles[tone])} aria-hidden />
 }
 
 export function RankMarker({ rank }: { rank: number }) {

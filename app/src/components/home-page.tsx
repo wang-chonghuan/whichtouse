@@ -16,7 +16,7 @@ import { spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Category, CategoryView } from '~/lib/catalog'
 import type { TrendingRepositoriesResult, TrendingRepository } from '~/lib/github-trending'
-import { itemHref, RankMarker } from './bits'
+import { ActionLink, itemHref, RankMarker } from './bits'
 
 // Home, in three moves: say what the site decides for you, show the shortlists
 // it has, and show what the internet is excited about today — clearly
@@ -35,7 +35,7 @@ const styles = stylex.create({
     width: '100%',
   },
   heroText: {
-    maxWidth: 640,
+    maxWidth: 720,
   },
   cardHeader: {
     paddingBlock: spacingVars['--spacing-3'],
@@ -62,7 +62,11 @@ export function HomePage({
 
   return (
     <VStack xstyle={styles.page}>
-      <Section variant="transparent" padding={6} paddingBlock={10}>
+      <Section variant="transparent" padding={6} paddingBlock={8}>
+        {/* The hero is this page's one primary callout. Site-wide that surface
+          * means the same thing — a judgement we made — and on the home page
+          * the judgement is the product's whole claim. */}
+        <Card variant="blue" padding={6}>
         <VStack gap={5} xstyle={styles.heroText}>
           {/* Name the three routes rather than calling them "three forms":
             * SaaS, open source and skills are what a reader already has words
@@ -71,10 +75,9 @@ export function HomePage({
             * — it belongs in the headline, not in a paragraph below it.
             *
             * No `type="display-*"`: Astryx scopes the display treatment to the
-            * Text component, so on a Heading the prop changes nothing — it was
-            * measurably inert here (27px with it and without). The theme's own
-            * display face is a brush script reserved for marketing-scale text,
-            * and this headline is a technical claim; see brand.json. */}
+            * Text component, so on a Heading the prop does nothing — measured
+            * identical with it and without. Size belongs to the theme's type
+            * scale, not to a prop here. */}
           <VStack gap={3}>
             <Heading level={1} textWrap="balance">
               Find the best AI tool for your task — limits first.
@@ -89,7 +92,11 @@ export function HomePage({
             <Stat value="3" label="routes per task" />
             <Stat value="Limits" label="checked by hand" />
           </HStack>
+          <HStack gap={2} wrap="wrap">
+            <ActionLink href="/c/coding">Browse all tasks</ActionLink>
+          </HStack>
         </VStack>
+        </Card>
       </Section>
 
       <Section variant="transparent" padding={6}>
@@ -97,7 +104,6 @@ export function HomePage({
           <SectionHeading
             title="Start with a task"
             description="The tasks with the most depth behind them right now."
-            action={<Link href="/c/coding">Browse all tasks</Link>}
           />
           <Grid columns={{ minWidth: 260, max: 4 }} gap={4}>
             {featured.map(({ category, items }) => (
@@ -154,6 +160,7 @@ export function HomePage({
       <Section variant="transparent" padding={6}>
         <VStack gap={4}>
           <SectionHeading
+            id="tasks"
             title="Every task"
             description="Twenty-five tasks people actually search for."
           />
@@ -185,10 +192,12 @@ function Stat({ value, label }: { value: string; label: string }) {
 }
 
 export function SectionHeading({
+  id,
   title,
   description,
   action,
 }: {
+  id?: string
   title: string
   description?: string
   action?: React.ReactNode
@@ -196,7 +205,9 @@ export function SectionHeading({
   return (
     <HStack hAlign="between" vAlign="end" gap={4} wrap="wrap">
       <VStack gap={1}>
-        <Heading level={2}>{title}</Heading>
+        <Heading level={2} id={id}>
+          {title}
+        </Heading>
         {description ? (
           <Text type="supporting" textWrap="pretty">
             {description}

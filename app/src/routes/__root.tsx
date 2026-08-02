@@ -8,7 +8,7 @@ import {
 import { Theme } from '@astryxdesign/core/theme'
 
 import '~/styles/app.css'
-import { butterTheme } from '~/theme/butterTheme'
+import { wtuTheme } from '~/theme/wtuTheme'
 import brand from '~/theme/brand.json'
 import { RouterLinkProvider } from '~/components/router-link'
 import {
@@ -100,7 +100,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
          * mode="light" rather than "system": the theme has a full dark
          * counterpart, but nothing in the product has been read in dark mode
          * yet, so following the OS would ship an unreviewed skin. */}
-        <Theme theme={butterTheme} mode="light">
+        <Theme theme={wtuTheme} mode="light">
           <RouterLinkProvider>{children}</RouterLinkProvider>
         </Theme>
         {/* Cloudflare Web Analytics — manual beacon. The apex stays grey-cloud
