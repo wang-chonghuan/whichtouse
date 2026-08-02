@@ -11,9 +11,14 @@ export const CF_BEACON_TOKEN = '7b865c217db54a438ad2f5d118483264'
 export const SITE_NAME = 'WhichToUse'
 export const SITE_URL = 'https://whichtouse.com'
 export const OG_IMAGE = `${SITE_URL}/og.png`
-export const DEFAULT_TITLE = 'WhichToUse — Hands-on AI tool reviews and rankings'
+export const DEFAULT_TITLE =
+  'WhichToUse — find the best AI tool for your task, limits first'
+// This is the search-result snippet, so it has to say the same thing the home
+// page says. It still spoke of "apps and open-source skills" — the vocabulary
+// the rest of the site dropped — and led with how we work rather than with what
+// the reader gets.
 export const DEFAULT_DESCRIPTION =
-  'We open each AI tool, read its documentation, and try it wherever we can — then rank apps and open-source skills across 25 real use cases, with the reasoning and sources behind every pick.'
+  'SaaS, open source and agent skills for 25 real tasks, side by side. Leading and emerging picks in each, with what every tool is bad at written down and checked by hand.'
 
 type MetaTag = Record<string, string>
 

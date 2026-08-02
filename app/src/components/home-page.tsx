@@ -16,7 +16,7 @@ import { spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Category, CategoryView } from '~/lib/catalog'
 import type { TrendingRepositoriesResult, TrendingRepository } from '~/lib/github-trending'
-import { itemHref, RankMarker, ReviewMark } from './bits'
+import { itemHref, RankMarker } from './bits'
 
 // Home, in three moves: say what the site decides for you, show the shortlists
 // it has, and show what the internet is excited about today — clearly
@@ -68,19 +68,25 @@ export function HomePage({
             * SaaS, open source and skills are what a reader already has words
             * for, and an abstraction they have to decode is a sentence they do
             * not read. "Limits first" is the promise the rest of the site keeps
-            * — it belongs in the headline, not in a paragraph below it. */}
+            * — it belongs in the headline, not in a paragraph below it.
+            *
+            * No `type="display-*"`: Astryx scopes the display treatment to the
+            * Text component, so on a Heading the prop changes nothing — it was
+            * measurably inert here (27px with it and without). The theme's own
+            * display face is a brush script reserved for marketing-scale text,
+            * and this headline is a technical claim; see brand.json. */}
           <VStack gap={3}>
-            <Heading level={1} type="display-2" textWrap="balance">
-              Compare SaaS, open source and skills — limits first.
+            <Heading level={1} textWrap="balance">
+              Find the best AI tool for your task — limits first.
             </Heading>
             <Text type="large" color="secondary" textWrap="pretty">
-              Leading and emerging picks for every task, so you can choose fast
-              and get back to work.
+              SaaS, open source and agent skills, side by side. Leading and
+              emerging picks in each.
             </Text>
           </VStack>
           <HStack gap={6} wrap="wrap">
             <Stat value={String(ready.length)} label="tasks" />
-            <Stat value="Leading + emerging" label="in each of the three" />
+            <Stat value="3" label="routes per task" />
             <Stat value="Limits" label="checked by hand" />
           </HStack>
         </VStack>
@@ -134,7 +140,7 @@ export function HomePage({
         <VStack gap={4}>
           <SectionHeading
             title="Trending on GitHub today"
-            description="Ranked by GitHub, not by us. Nobody here has opened these — open one to see what we can tell you and what we cannot."
+            description="Ranked by GitHub, not by us. Open one to see what we can tell you about it."
             action={
               <Text type="supporting">
                 {trending.repositories.length} repositories
@@ -275,12 +281,6 @@ function TrendingTable({ trending }: { trending: TrendingRepositoriesResult }) {
               {row.starsToday}
             </Text>
           ),
-        },
-        {
-          key: 'reviewed',
-          header: 'Standing',
-          width: pixel(160),
-          renderCell: () => <ReviewMark reviewed={false} />,
         },
       ]}
     />

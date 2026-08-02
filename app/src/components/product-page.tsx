@@ -20,7 +20,6 @@ import {
   itemHref,
   Placeholder,
   RankMarker,
-  ReviewMark,
   StandingBadge,
   TRACK_LABEL,
 } from './bits'
@@ -94,7 +93,6 @@ export function ProductPage({
               <Badge variant="neutral" label={`#${item.rank} in ${TRACK_LABEL[track]}`} />
               {item.badge ? <Badge variant="blue" label={item.badge} /> : null}
               <ConfidenceBadge confidence={item.confidence} />
-              <ReviewMark reviewed={item.reviewed} />
             </HStack>
             <Text type="large" color="secondary" textWrap="pretty">
               {item.bestFor}
@@ -118,8 +116,8 @@ export function ProductPage({
                 <Text textWrap="pretty">{item.rankBasis}</Text>
               ) : (
                 <Placeholder>
-                  No one has written the reasoning for this entry yet. Its position
-                  comes from aggregated source rankings alone.
+                  No written reasoning for this entry yet — its position comes
+                  from aggregated source rankings alone.
                 </Placeholder>
               )}
             </Block>
@@ -127,7 +125,7 @@ export function ProductPage({
             <Block title="Strengths and limitations">
               {pros.length === 0 && cons.length === 0 ? (
                 <Placeholder>
-                  Nobody has recorded what this does well or badly yet.
+                  No strengths or limitations recorded yet.
                 </Placeholder>
               ) : (
                 <HStack gap={8} wrap="wrap" vAlign="start">
@@ -254,9 +252,6 @@ export function ProductPage({
                 {item.pricing ? (
                   <MetadataListItem label="Pricing">{item.pricing}</MetadataListItem>
                 ) : null}
-                <MetadataListItem label="Reviewed">
-                  {item.reviewed ? 'By hand' : 'Not yet'}
-                </MetadataListItem>
                 {item.evidence?.score !== undefined ? (
                   <MetadataListItem label="Fusion score">
                     {item.evidence.score.toFixed(2)}

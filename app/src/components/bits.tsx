@@ -1,16 +1,14 @@
 import * as stylex from '@stylexjs/stylex'
 import { Badge } from '@astryxdesign/core/Badge'
-import { StatusDot } from '@astryxdesign/core/StatusDot'
 import { Text } from '@astryxdesign/core/Text'
-import { HStack } from '@astryxdesign/core/Stack'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Confidence, RankItem, Track } from '~/lib/catalog'
 
 // Small shared pieces. Anything here is a rendering of one of the product's
-// load-bearing distinctions — reviewed vs not, leading vs emerging, a real
-// value vs an absent one — so they live in one file rather than being
-// re-improvised per page, where they would drift apart.
+// load-bearing distinctions — leading vs emerging, a real value vs an absent
+// one — so they live in one file rather than being re-improvised per page,
+// where they would drift apart.
 
 export const TRACK_LABEL: Record<Track, string> = {
   app: 'SaaS',
@@ -51,25 +49,6 @@ export function StandingBadge({ standing }: { standing: RankItem['standing'] }) 
     <Badge variant="success" label="Leading" />
   ) : (
     <Badge variant="neutral" label="Emerging" />
-  )
-}
-
-/** The site's central claim. An entry nobody has opened says so, in the same
- * place and the same shape as one that has been. */
-export function ReviewMark({ reviewed }: { reviewed: boolean }) {
-  return (
-    <HStack gap={1.5} vAlign="center">
-      <StatusDot
-        variant={reviewed ? 'success' : 'neutral'}
-        label={reviewed ? 'Reviewed by hand' : 'Not yet reviewed'}
-        tooltip={
-          reviewed
-            ? 'Someone opened this tool and wrote the entry.'
-            : 'Surfaced by two or more sources. No one has opened it yet.'
-        }
-      />
-      <Text type="supporting">{reviewed ? 'Reviewed' : 'Not yet reviewed'}</Text>
-    </HStack>
   )
 }
 

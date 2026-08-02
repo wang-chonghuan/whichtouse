@@ -13,7 +13,7 @@ import { EmptyState } from '@astryxdesign/core/EmptyState'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { CategoryView, RankItem, Track } from '~/lib/catalog'
-import { itemHref, RankMarker, ReviewMark, TRACK_BLURB, TRACK_LABEL } from './bits'
+import { itemHref, RankMarker, TRACK_BLURB, TRACK_LABEL } from './bits'
 import { SectionHeading } from './home-page'
 
 // One task, three columns. The columns are the page: a hosted product, a repo
@@ -97,7 +97,7 @@ export function CategoryPage({ view }: { view: CategoryView }) {
           <VStack gap={4}>
             <SectionHeading
               title="On the watchlist"
-              description="Named by a source we trust, but not ranked here — nobody has opened them yet."
+              description="Named by a source we trust, but not on the shortlist."
             />
             <HStack gap={2} wrap="wrap">
               {watchlist.map((entry) => (
@@ -140,19 +140,19 @@ function TrackColumn({
         <EmptyState
           isCompact
           title="Nothing ranked here yet"
-          description="No entry on this route has cleared review or been surfaced by two sources."
+          description="Nothing on this route has made the shortlist yet."
         />
       ) : (
         <VStack gap={5}>
           <Standing
             label="Leading"
-            hint="Reviewed by hand, top of today's aggregate."
+            hint="Established picks, at the top of today's aggregate."
             items={leading}
             categorySlug={categorySlug}
           />
           <Standing
             label="Emerging"
-            hint="Surfaced by two or more sources. Not yet reviewed."
+            hint="Newer challengers, surfaced by two or more sources."
             items={emerging}
             categorySlug={categorySlug}
           />
@@ -189,12 +189,9 @@ function Standing({
             href={itemHref(categorySlug, item)}
             startContent={<RankMarker rank={item.rank} />}
             description={
-              <VStack gap={1.5}>
-                <Text type="supporting" maxLines={2}>
-                  {item.bestFor}
-                </Text>
-                <ReviewMark reviewed={item.reviewed} />
-              </VStack>
+              <Text type="supporting" maxLines={2}>
+                {item.bestFor}
+              </Text>
             }
             endContent={<Icon icon="chevronRight" size="sm" color="secondary" />}
           />

@@ -22,6 +22,12 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 const SRC = path.join(here, '../../resources/reference/wtu-logo.png')
 const OUT = path.join(here, '../public')
 
+// Colours and the font come from the same file the app reads, so a theme swap
+// cannot leave the social card and the manifest wearing the previous palette.
+// This script is plain node and cannot import the .ts theme, which is exactly
+// why brand.json exists as JSON rather than as another TypeScript module.
+const brand = JSON.parse(fs.readFileSync(path.join(here, '../src/theme/brand.json'), 'utf8'))
+
 // The mark does not fill its own canvas — it ships with ~14% padding baked in,
 // and it is wider than it is tall. Every output re-crops to the measured
 // content box and re-pads deliberately, so "padding" below means what the
@@ -33,7 +39,10 @@ const PADDING = {
   maskable: 0.2, // Android may crop to a circle; keep content in the safe zone
 }
 
-const BACKGROUND = '#ffffff'
+// Icons stay on their own opaque tile rather than the theme's canvas: a
+// favicon is composited against browser chrome we do not control, and a cream
+// square on a grey tab bar reads as a rendering bug.
+const BACKGROUND = brand.iconBackground
 
 /** Icons are square and opaque. A transparent favicon inverts unpredictably
  * against light and dark browser chrome; a white tile never does. */
@@ -180,25 +189,26 @@ await page.setContent(`<!doctype html>
 <html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="${brand.fontStylesheet}" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    width: 1200px; height: 630px; background: #ffffff; color: #0a0a0a;
-    font-family: Figtree, -apple-system, sans-serif;
+    width: 1200px; height: 630px; background: ${brand.ogCard.background}; color: ${brand.ogCard.text};
+    font-family: ${brand.ogCard.fontFamily};
     padding: 72px 80px; display: flex; flex-direction: column; justify-content: space-between;
   }
   .top { display: flex; align-items: center; justify-content: space-between; }
   .brand { display: flex; align-items: center; gap: 16px; }
-  .brand img { width: 56px; height: 56px; border-radius: 12px; border: 1px solid #e5e5e5; }
+  .brand img { width: 56px; height: 56px; border-radius: 12px; border: 1px solid ${brand.ogCard.border}; background: ${brand.ogCard.surface}; }
   .brand span { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
-  .domain { font-size: 22px; color: #737373; }
+  .domain { font-size: 22px; color: ${brand.ogCard.textMuted}; }
   h1 { font-size: 64px; line-height: 1.1; font-weight: 700; letter-spacing: -0.028em; max-width: 20ch; }
-  p { font-size: 27px; line-height: 1.45; color: #525252; max-width: 52ch; margin-top: 24px; }
+  p { font-size: 27px; line-height: 1.45; color: ${brand.ogCard.textMuted}; max-width: 52ch; margin-top: 24px; }
   .routes { display: flex; gap: 12px; }
   .routes span {
-    font-size: 21px; font-weight: 500; color: #262626;
-    border: 1px solid #e5e5e5; border-radius: 999px; padding: 10px 22px;
+    font-size: 21px; font-weight: 500; color: ${brand.ogCard.text};
+    border: 1px solid ${brand.ogCard.border}; border-radius: 999px; padding: 10px 22px;
+    background: ${brand.ogCard.surface};
   }
 </style></head>
 <body>
@@ -207,14 +217,37 @@ await page.setContent(`<!doctype html>
     <div class="domain">whichtouse.com</div>
   </div>
   <div>
-    <h1>Compare SaaS, open source and skills — limits first.</h1>
-    <p>Leading and emerging picks for every task, so you can choose fast and get back to work.</p>
+    <h1>Find the best AI tool for your task — limits first.</h1>
+    <p>SaaS, open source and agent skills, side by side. Leading and emerging picks in each.</p>
   </div>
-  <div class="routes"><span>SaaS</span><span>Open source</span><span>Skills</span></div>
+  <div class="routes"><span>SaaS</span><span>Open source</span><span>Agent skills</span></div>
 </body></html>`)
 await page.evaluate(() => document.fonts.ready)
 await page.waitForTimeout(500)
 await page.screenshot({ path: path.join(OUT, 'og.png') })
 console.log(`og.png                   1200×630  ${(fs.statSync(path.join(OUT, 'og.png')).size / 1024).toFixed(1)} kB`)
+
+// ---------------------------------------------------------------------------
+// The manifest is generated rather than hand-kept: two of its fields are theme
+// colours, and a hand-edited copy is exactly the file nobody remembers to
+// change.
+const manifest = {
+  name: brand.manifest.name,
+  short_name: brand.manifest.shortName,
+  description: brand.manifest.description,
+  start_url: '/',
+  scope: '/',
+  display: 'standalone',
+  background_color: brand.backgroundBody,
+  theme_color: brand.backgroundBody,
+  icons: [
+    { src: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    { src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+    { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+    { src: '/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+  ],
+}
+fs.writeFileSync(path.join(OUT, 'site.webmanifest'), JSON.stringify(manifest, null, 2) + '\n')
+console.log(`site.webmanifest         theme ${brand.theme}`)
 
 await browser.close()

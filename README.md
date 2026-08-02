@@ -1,27 +1,32 @@
 # WhichToUse
 
-Pick an AI tool by the job you need done, not by the tool's name.
+Find the best AI tool for your task — limits first.
 
 Live at **[whichtouse.com](https://whichtouse.com)**. 25 tasks; each shows three
-forms side by side — a hosted product, an open-source repo you run, and an agent
-skill you drop into a coding agent — because those are three different
-decisions, not three flavours of one.
+routes side by side — SaaS, an open-source repo you run, and an agent skill you
+drop into a coding agent — because those are three different decisions, not
+three flavours of one.
 
-Each form carries two standings: **Leading** (reviewed by hand, top of today's
-aggregate) and **Emerging** (surfaced by two or more sources, not yet reviewed).
-Five entries by default, ten at most.
+Each route carries two standings: **Leading** (established picks, top of today's
+aggregate) and **Emerging** (newer challengers, surfaced by two or more
+sources). Five entries by default, ten at most.
 
 ## The one rule everything else follows
 
 **Numbers decide the order. They never supply the reason.**
 
 Stars, upvotes and trending position order a list; they do not explain why a
-tool is good, and they must never be dressed up as if they did. An entry no
-human has opened is labelled *Not yet reviewed*, and content the app cannot
-supply yet renders in grey as a visible placeholder rather than a convincing
-blank. The whole product is the difference between "ranked by aggregation" and
-"we actually opened this" — a UI that blurs the two destroys the only thing it
+tool is good, and they must never be dressed up as if they did. Where the app
+has no authored reasoning for an entry, it renders a grey placeholder saying so
+rather than a convincing blank, and never borrows a metric to fill the hole.
+The whole product is the difference between "ranked by aggregation" and "we
+actually opened this" — a UI that blurs the two destroys the only thing it
 sells.
+
+The per-entry review state is tracked in the database (`reviewed_at`) and
+governs what the refresh job may overwrite, but it is **not surfaced in the
+UI**. An earlier build labelled every row *Reviewed* / *Not yet reviewed*; that
+was removed deliberately. Do not reintroduce it without asking.
 
 `.agents/skills/wt-enrich` is the written form of this rule, and is worth
 reading before touching any copy the app generates.
