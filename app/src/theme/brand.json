@@ -2,10 +2,10 @@
   "_comment": "The values the active theme cannot reach. Everything a React component renders reads semantic tokens and follows the theme by itself; these do not, because they are consumed outside React: an HTML <meta> the browser paints its chrome with, a webfont URL, a generated manifest, and a social card rendered by a node script. One theme swap edits this file and the import in __root.tsx. Values must match the corresponding tokens in src/theme/wtuTheme.ts.",
   "theme": "wtu",
   "fontStylesheet": "https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Bricolage+Grotesque:wght@600;700&display=swap",
-  "backgroundBody": "#F4F7F6",
+  "backgroundBody": "#FFFFFF",
   "iconBackground": "#FFFFFF",
   "ogCard": {
-    "background": "#F4F7F6",
+    "background": "#FFFFFF",
     "surface": "#FFFFFF",
     "text": "#12201E",
     "textMuted": "#5A6764",
@@ -14,12 +14,12 @@
     "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
   },
   "manifest": {
-    "name": "WhichToUse — find the best AI tool for your task",
+    "name": "WhichToUse \u2014 find the best AI tool for your task",
     "shortName": "WhichToUse",
     "description": "SaaS, open source and agent skills for every task, with the limits of each written down."
   },
-  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
-  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
+  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it \u2014 the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
+  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else \u2014 it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
   "mark": {
     "w": "#0164E5",
     "t": "#60B333",
