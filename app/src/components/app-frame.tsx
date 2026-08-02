@@ -108,6 +108,16 @@ const styles = stylex.create({
   // pale rail — the heaviest thing in the column, next to the lightest content.
   // scrollbarColor/-width are standard CSS now, so the thumb can come from a
   // token like everything else and the track can disappear entirely.
+  //
+  // `track`, not `border-emphasized`. Two reasons, and the first is what makes
+  // it the right token rather than merely a lighter one: Astryx names this
+  // colour for exactly this job, the groove a control slides in, so a scrollbar
+  // asking for it is asking by meaning instead of borrowing a value that
+  // happens to look right. The second is weight — #D6DFDD against the rail's
+  // #ECEDE4 measures 1.15:1 where border-emphasized measured 1.32:1, so the
+  // thumb reads as a soft shadow in the groove rather than a bar drawn over the
+  // list. `--color-border` was the other candidate and lands at 1.09, which is
+  // low enough that the affordance disappears.
   navScroll: {
     // Was a flat 180px, of which 52 was the bar as it stood. Splitting the bar
     // back out keeps the rail's own breathing room at the 128px it was tuned
@@ -115,7 +125,7 @@ const styles = stylex.create({
     maxHeight: 'calc(100dvh - var(--appshell-header-height, 0px) - 128px)',
     overflowY: 'auto',
     scrollbarWidth: 'thin',
-    scrollbarColor: `${colorVars['--color-border-emphasized']} transparent`,
+    scrollbarColor: `${colorVars['--color-track']} transparent`,
   },
   navHeading: {
     paddingInline: spacingVars['--spacing-3'],
