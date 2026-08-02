@@ -59,7 +59,13 @@ const CORAL = {
 // does that job instead, and the only tinted surfaces left are the ones that
 // mean something — the task rail, and the demoted blocks.
 const SURFACE = '#FFFFFF' // the page, and cards on it
-const RECESSED = '#EBF0EF' // the task rail, Signals, Quick facts, Emerging
+// The one warm value in the frame. It is `recessed` from scheme C, "Sage on
+// warm paper", in the prototype; the rest of this block is still scheme A, whose
+// recessed was #EBF0EF — the same tone with a green-grey cast instead of a
+// paper one. Only this token moved, deliberately: the demoted surfaces are the
+// largest tinted area on a page, so the warmth reads without dragging the ink,
+// the lines or the callouts off the scheme they were costed on.
+const RECESSED = '#ECEDE4' // the task rail, Signals, Quick facts, Emerging
 const LINE = '#DDE5E3'
 const INK = '#12201E'
 const INK_2 = '#5A6764'
@@ -179,6 +185,19 @@ export const wtuTheme = defineTheme({
   },
 
   components: {
+    // Tabular figures for the whole app, set once on the outermost element and
+    // inherited from there.
+    //
+    // Not decoration — a correction. Inter's figures were tabular by default
+    // and Bricolage's are emphatically not: measured at 40px, "111" sets 34.5px
+    // wide against 76.1px for "000". A ranking column of star counts and
+    // positions would ripple at every row. `tabular-nums` is supported by the
+    // family and levels them exactly.
+    'app-shell': {
+      base: {
+        fontVariantNumeric: 'tabular-nums',
+      },
+    },
     // The page is white throughout, so this is belt and braces on the bar's own
     // tone — kept explicit so the header cannot drift if AppShell's `wash`
     // variant ever resolves to something other than the body colour.

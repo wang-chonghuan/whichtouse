@@ -28,6 +28,7 @@ type CategoryRow = {
   pick_moving: string | null
   pick_sources: Array<string>
   pick_updated_at: Date | null
+  pick_details: Record<string, { detail?: string }> | null
   refreshed_at: Date | null
 }
 
@@ -144,10 +145,18 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
 
   const [categoryRows, listingRows] = await Promise.all([
     db<CategoryRow[]>`
-      select slug, name, money_tier, sort, note, refreshed_at,
-             pick_weigh, pick_avoid, pick_moving, pick_sources, pick_updated_at
-      from categories
-      order by sort
+      select c.slug, c.name, c.money_tier, c.sort, c.note, c.refreshed_at,
+             c.pick_weigh, c.pick_avoid, c.pick_moving, c.pick_sources, c.pick_updated_at,
+             -- The expanded prose lives with the run that produced it rather
+             -- than on the category, so the card reads the newest run instead
+             -- of a second copy that could drift from it.
+             r.byp_details as pick_details
+      from categories c
+      left join lateral (
+        select byp_details from before_you_pick_runs
+        where category_slug = c.slug order by batch_id desc, id desc limit 1
+      ) r on true
+      order by c.sort
     `,
     db<ListingRow[]>`
       select category_slug, tool_slug, name, owner, track, homepage,
@@ -228,6 +237,11 @@ export async function loadSnapshot(): Promise<CatalogSnapshot> {
         moving: c.pick_moving,
         sources: c.pick_sources ?? [],
         updated: isoDate(c.pick_updated_at),
+        details: {
+          weigh: c.pick_details?.weigh?.detail ?? null,
+          avoid: c.pick_details?.avoid?.detail ?? null,
+          moving: c.pick_details?.moving?.detail ?? null,
+        },
       },
       watchlist: rows
         .filter((r) => r.standing === 'watchlist')

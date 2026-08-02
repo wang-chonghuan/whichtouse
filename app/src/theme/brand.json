@@ -25,5 +25,5 @@
     "t": "#60B333",
     "u": "#FE7701"
   },
-  "_markNote": "The mark's colours, not the interface's. They are baked into resources/brand/wtu-logo.svg, which every icon is rendered from; the two move together or neither does. Deliberately independent of the theme: the logo should not change colour because the product did. Note that the topbar wordmark beside the mark is a separate drawn lockup on a different palette — blue and coral, no green — and does not read these. Its blue is not one of the mark's: it is the interface primary, #4F46E5, applied by scripts/crop-wordmark.mjs, so the primary and the wordmark move together."
+  "_markNote": "The mark's colours, not the interface's. They are baked into resources/brand/wtu-logo.svg, which every icon is rendered from; the two move together or neither does. Deliberately independent of the theme: the logo should not change colour because the product did. Note that the topbar wordmark beside the mark is a separate drawn lockup on a different palette — blue and coral, no green — and does not read these. Its colours are not the mark's: 'Which' is the interface primary #4F46E5 and 'Use' is the prototype's deep teal #0E6E66, both applied by scripts/crop-wordmark.mjs, so the primary and the wordmark move together."
 }

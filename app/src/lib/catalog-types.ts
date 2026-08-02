@@ -92,6 +92,11 @@ export type BeforeYouPick = {
   weigh: string | null
   avoid: string | null
   moving: string | null
+  /** What "View all" reveals: a few sentences per line giving the mechanism,
+   * what it means when choosing, and what to do about it. Null until that
+   * category has been through an expansion pass — the card then has nothing to
+   * expand and does not offer to. */
+  details: { weigh: string | null; avoid: string | null; moving: string | null }
   sources: string[]
   updated: string | null
 }

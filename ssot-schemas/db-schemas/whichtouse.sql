@@ -37,25 +37,33 @@ create table categories (
 -- Every "Before you pick" investigation, appended and never updated.
 --
 -- `categories.pick_*` holds the *published* answer — one row, overwritten on
--- each publish, and what the site renders. This table holds the *record*: every
--- run that has ever been made, so a change in what the site says can be traced
--- to a run, a batch and a date. Rows are only ever inserted.
+-- each publish, and what the card renders collapsed. This table holds the
+-- record: every run ever made, plus the expanded prose the card reveals when a
+-- reader opens it. Rows are only ever inserted.
 create table before_you_pick_runs (
   id            bigserial primary key,
-  -- slug is what joins; name is carried because a run is a record of what was
-  -- investigated at that moment, and category names get renamed.
+
+  -- slug joins; code is the stable identity; name is what was displayed.
+  -- Three columns for what looks like one thing, because they drift apart:
+  -- a slug is a URL and may be short, a display name gets rewritten for tone,
+  -- and neither should silently change what a historical row refers to.
   category_slug text not null references categories(slug) on delete cascade,
+  category_code text not null,             -- lower-case, hyphen-joined, from the name at write time
   category_name text not null,
 
-  -- The three lines the card renders: {weigh, avoid, moving}. Any may be null —
-  -- an unsupported line is stored as null, never as filler.
+  -- The three lines the card renders collapsed: {weigh, avoid, moving}.
+  -- Any may be null — an unsupported line is stored as null, never as filler.
   byp_summary   jsonb not null,
 
-  -- Everything behind them that survived: the exact prompt the researcher was
-  -- given, the sources it returned, and any editorial change made before
-  -- publication. The subagents' own reasoning is NOT here — their transcripts
-  -- were not retained, and this batch is the poorer for it.
+  -- Reader-facing. What "View all" reveals: for each of the three, a few
+  -- sentences giving the mechanism, what it means when choosing, and what to
+  -- do about it. Shaped {weigh:{detail}, avoid:{detail}, moving:{detail}}.
+  -- Empty until a category has been through an expansion pass.
   byp_details   jsonb not null default '{}',
+
+  -- Machinery, never shown to a reader: the brief the researcher was given,
+  -- the sources returned, and any editorial change made before publication.
+  meta          jsonb not null default '{}',
 
   batch_id      int not null,
   created_at    timestamptz not null default now()

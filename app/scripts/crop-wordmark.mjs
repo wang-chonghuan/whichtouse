@@ -61,22 +61,41 @@ const DENSITIES = [1, 2]
 // not visible next to the primary button, and it has been checked against it.
 const QUALITY = 0.92
 
-// The master was drawn in #2A38A4, a navy-leaning royal blue, and the interface
-// primary is #4F46E5. Two indigos that close read as a mistake rather than as
-// two decisions — a near-miss is worse than either a match or a clear contrast
-// — so the blue is pulled onto the primary here.
+// The master was drawn with two colours: #2A38A4, a navy-leaning royal blue,
+// for "Which" and "Use", and #FE553C for "To". Three words come out of it.
 //
-// This is the one place the logo follows the palette, and it is deliberate:
-// re-point the primary and the wordmark has to be re-cut with it. The coral is
-// left alone. It is the neon in a neon sign and is meant to be hotter than the
-// interface's #D4553C limits colour, which has to sit under body text.
-//
-// The shift is applied in HSL as a *relationship*, not as a fill: every blue
-// pixel gets the same hue offset and the same saturation and lightness ratios
-// that carry #2A38A4 to #4F46E5. That keeps the dark outline a darkened version
-// of the new blue and keeps the bloom's falloff intact — flooding the blue
+// Each rule is an HSL *relationship*, not a fill: every pixel in the hue band
+// takes the same hue offset and the same saturation and lightness ratios that
+// carry `from` to `to`. That keeps the letters' dark outline a darkened version
+// of the new colour and keeps the bloom's falloff intact — flooding the matched
 // pixels with one flat value would erase both.
-const RECOLOUR = { from: '#2A38A4', to: '#4F46E5', hueBand: [200, 280] }
+//
+// Order matters, and the rules are applied in the order written. "Use" is
+// recoloured out of the blue band first; teal sits at hue 175 and so is no
+// longer in that band when the general blue rule runs over the whole image.
+//
+// `xFrom` is what separates two words painted in one colour. The blue ink has a
+// clean 163px vertical gap between x=790 and x=952 — that is the width of the
+// coral "To" standing between them — so a cut anywhere inside it splits "Which"
+// from "Use" without touching a letter. 871 is the middle of that gap, the
+// furthest a cut can be from either word. Measured from the master; if the
+// master is ever redrawn, re-measure rather than nudging this number.
+const SPLIT_X = 871
+const RECOLOUR = [
+  // "Use" in teal. #0E6E66 is the prototype's own deep teal — the brand colour
+  // of scheme A, "Deep teal on cool paper" — not a hue invented here.
+  { from: '#2A38A4', to: '#0E6E66', hueBand: [200, 280], xFrom: SPLIT_X },
+  // "Which" onto the interface primary. Two indigos as close as #2A38A4 and
+  // #4F46E5 read as a mistake rather than as two decisions, and a near-miss is
+  // worse than either a match or a clear contrast.
+  //
+  // This is the one place the logo follows the palette, and it is deliberate:
+  // re-point the primary and the wordmark has to be re-cut with it.
+  { from: '#2A38A4', to: '#4F46E5', hueBand: [200, 280] },
+  // "To" is left alone. It is the neon in a neon sign and is meant to run
+  // hotter than the interface's #D4553C limits colour, which has to sit under
+  // body text.
+]
 
 const browser = await chromium.launch()
 const page = await browser.newPage()
@@ -124,30 +143,36 @@ const rendered = await page.evaluate(
     const frame = ctx.getImageData(0, 0, c.width, c.height)
     const data = frame.data
 
-    // Pull the blue family onto the interface primary. The offsets are measured
-    // between the two named colours, then applied to every pixel in the band, so
-    // shading and bloom keep their relationships instead of being flattened.
-    const from = rgbToHsl(...parse(recolour.from))
-    const to = rgbToHsl(...parse(recolour.to))
-    const hueShift = to[0] - from[0]
-    const satScale = to[1] / from[1]
-    const lightScale = to[2] / from[2]
-    let touched = 0
-    for (let i = 0; i < data.length; i += 4) {
-      if (data[i + 3] === 0) continue
-      const [h, s, l] = rgbToHsl(data[i], data[i + 1], data[i + 2])
-      // Hue is meaningless on a near-grey pixel and rotating one produces a
-      // coloured speck, so the band check is guarded by a saturation floor.
-      if (s < 0.1 || h < recolour.hueBand[0] || h > recolour.hueBand[1]) continue
-      const [r, g, b] = hslToRgb(
-        h + hueShift,
-        Math.min(1, s * satScale),
-        Math.min(1, l * lightScale),
-      )
-      data[i] = Math.round(r)
-      data[i + 1] = Math.round(g)
-      data[i + 2] = Math.round(b)
-      touched++
+    // Each rule shifts one hue band onto a named colour. The offsets are
+    // measured between the two named colours, then applied to every pixel the
+    // rule matches, so shading and bloom keep their relationships instead of
+    // being flattened.
+    const touched = []
+    for (const rule of recolour) {
+      const from = rgbToHsl(...parse(rule.from))
+      const to = rgbToHsl(...parse(rule.to))
+      const hueShift = to[0] - from[0]
+      const satScale = to[1] / from[1]
+      const lightScale = to[2] / from[2]
+      let n = 0
+      for (let i = 0; i < data.length; i += 4) {
+        if (data[i + 3] === 0) continue
+        if (rule.xFrom != null && (i / 4) % c.width < rule.xFrom) continue
+        const [h, s, l] = rgbToHsl(data[i], data[i + 1], data[i + 2])
+        // Hue is meaningless on a near-grey pixel and rotating one produces a
+        // coloured speck, so the band check is guarded by a saturation floor.
+        if (s < 0.1 || h < rule.hueBand[0] || h > rule.hueBand[1]) continue
+        const [r, g, b] = hslToRgb(
+          h + hueShift,
+          Math.min(1, s * satScale),
+          Math.min(1, l * lightScale),
+        )
+        data[i] = Math.round(r)
+        data[i + 1] = Math.round(g)
+        data[i + 2] = Math.round(b)
+        n++
+      }
+      touched.push({ to: rule.to, n })
     }
     ctx.putImageData(frame, 0, 0)
 
@@ -204,7 +229,9 @@ await browser.close()
 
 console.log(`ink ${rendered.ink.w}x${rendered.ink.h} at ${rendered.ink.x},${rendered.ink.y}`)
 console.log(`crop ${rendered.box.w}x${rendered.box.h}`)
-console.log(`recolour ${RECOLOUR.from} -> ${RECOLOUR.to}, ${rendered.touched} px`)
+for (const step of rendered.touched) {
+  console.log(`recolour -> ${step.to}  ${step.n} px`)
+}
 for (const file of rendered.files) {
   const name = `wordmark-${file.w}.webp`
   const bytes = Buffer.from(file.url.split(',')[1], 'base64')

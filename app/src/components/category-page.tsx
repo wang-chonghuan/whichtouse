@@ -174,29 +174,58 @@ export function CategoryPage({ view }: { view: CategoryView }) {
  * been looked at yet shows nothing rather than an empty frame — the same rule
  * the rest of the site follows for absent content. */
 function BeforeYouPickCard({ tips }: { tips: BeforeYouPick }) {
+  const [isOpen, setOpen] = useState(false)
+
   const lines = (
     [
-      ['What decides it', tips.weigh],
-      ['What to avoid', tips.avoid],
-      ['What is changing', tips.moving],
+      ['What decides it', tips.weigh, tips.details.weigh],
+      ['What to avoid', tips.avoid, tips.details.avoid],
+      ['What is changing', tips.moving, tips.details.moving],
     ] as const
   ).filter(([, body]) => Boolean(body))
 
   if (lines.length === 0) return null
 
+  // Only offered when there is something behind it. A control that expands to
+  // nothing teaches the reader not to press it again.
+  const expandable = lines.some(([, , detail]) => Boolean(detail))
+
   return (
     <Card variant="blue" padding={4}>
       <VStack gap={3}>
-        <Heading level={2}>Before you pick</Heading>
-        <VStack gap={3}>
-          {lines.map(([label, body]) => (
+        <HStack hAlign="between" vAlign="center" gap={3} wrap="wrap">
+          <Heading level={2}>Before you pick</Heading>
+          {expandable ? (
+            <Button
+              variant="ghost"
+              size="sm"
+              label={isOpen ? 'Show less' : 'View all'}
+              endContent={
+                <Icon icon={isOpen ? 'chevronDown' : 'chevronRight'} size="sm" />
+              }
+              onClick={() => setOpen((open) => !open)}
+            />
+          ) : null}
+        </HStack>
+        <VStack gap={isOpen ? 5 : 3}>
+          {lines.map(([label, body, detail]) => (
             <div key={label} {...stylex.props(styles.answerRow)}>
               <Text type="label" color="accent">
                 {label}
               </Text>
-              <Text type="body" textWrap="pretty">
-                {body}
-              </Text>
+              <VStack gap={2}>
+                <Text type="body" textWrap="pretty">
+                  {body}
+                </Text>
+                {/* The one-line finding stays put when the detail opens under
+                  * it — the reader keeps the claim in view while reading what
+                  * it rests on, rather than the summary being replaced. */}
+                {isOpen && detail ? (
+                  <Text type="body" color="secondary" textWrap="pretty">
+                    {detail}
+                  </Text>
+                ) : null}
+              </VStack>
             </div>
           ))}
         </VStack>

@@ -14,5 +14,6 @@
   "ui-design": {"weigh": "Rewritten to drop 'they all look equal on a blank first screen'."},
   "video-generation": {"avoid": "Rewritten to drop 'judging on a single hero clip'. Mechanism unchanged."},
   "research-search": {"avoid": "Trimmed from 26 words to 24 to meet the length limit. Mechanism unchanged."},
-  "bookkeeping": {"weigh": "Removed 'roughly 90-95%' — no source stated it; the researcher inferred it from vendors' own claims."}
+  "bookkeeping": {"weigh": "Removed 'roughly 90-95%' — no source stated it; the researcher inferred it from vendors' own claims."},
+  "legal-contract": {"weighDetail": "Removed a clause relaying the source's own product shortlist (three named tools). A third party's picks have no standing on a page whose job is our ranking. Mechanism unchanged."}
 }

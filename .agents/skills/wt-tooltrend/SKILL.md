@@ -68,10 +68,28 @@ change in what the site says can be traced back to a batch and a date.
 The row keeps the exact brief the researcher was given, the sources it returned,
 and any editorial change made before publication (`src/content/byp-edits.json`).
 
-**Capture the subagent's own reasoning next time.** Batch 1 did not: the task
-transcripts were empty by the time the table existed, so every row carries a
-note saying the evidence trail is missing. Ask the researcher to return its
-working alongside the JSON, and store it in `byp_details`.
+## The expansion pass
+
+`byp_details` is the prose behind each line, revealed by "View all" on the card.
+It is a **second pass with its own subagent**, not a longer first answer — the
+one-liner has to survive a 25-word limit, and a researcher writing both at once
+writes the short one to fit the long one.
+
+```bash
+#   ... one expansion subagent per category, fed that category's three lines ...
+node --env-file=.env scripts/write-byp-details.mjs --batch <n> < details.json
+```
+
+Brief the expander to **verify before it expands**. Batch 1's pass is the
+argument for it: given three published lines to elaborate, the agents instead
+found that Coding's `avoid` was half wrong at the level it claimed, that Voice &
+Audio's `moving` overstated how far control had shifted, and that a source
+behind Voice & Audio's `avoid` stated a revenue threshold its own licence text
+does not contain. An expander that only elaborates would have dressed all three.
+
+Detail runs about 200 words a point. That is three times the card's collapsed
+height, which is why it is behind a toggle — and why the writer refuses anything
+under 60 words, since a "detail" the length of the line is the line again.
 
 ## Before it goes live
 

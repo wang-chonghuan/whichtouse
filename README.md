@@ -113,13 +113,13 @@ does. The wordmark is drawn art now (see "Brand assets") and carries its own
 colour inside the file, so the exception is gone. Any hex in a component is a
 bug.
 
-The rule it stood for got one carve-out in the process. The wordmark's blue *is*
-the primary: the master was drawn in #2A38A4 and the interface is #4F46E5, and
-two indigos that close read as a mistake rather than as two decisions. So
-`crop-wordmark.mjs` pulls the blue onto the primary as it cuts the asset —
-**change the primary and that script has to be re-run**. The coral is left where
-the artist put it, hotter than the #D4553C limits colour, because a neon sign
-should be.
+The rule it stood for got one carve-out in the process. "Which" *is* the
+primary: the master was drawn in #2A38A4 and the interface is #4F46E5, and two
+indigos that close read as a mistake rather than as two decisions. So
+`crop-wordmark.mjs` pulls it onto the primary as it cuts the asset — **change
+the primary and that script has to be re-run**. "Use" is #0E6E66, the
+prototype's deep teal. The coral "To" is left where the artist put it, hotter
+than the #D4553C limits colour, because a neon sign should be.
 
 It is written fresh rather than scaffolded from a shipped Astryx theme. A
 600-line inherited palette is not a file anyone re-reads, and re-reading this
@@ -146,11 +146,20 @@ once.** Changing `--color-background-body` without changing
 `brand.backgroundBody` shipped a mobile browser chrome painted in the previous
 canvas colour. Move them together.
 
-Type is two families with two jobs: **Inter** for the interface — dense rows,
-tabular figures, gets out of the way — and **Bricolage Grotesque**, which the
-app no longer renders at all now that the wordmark is drawn rather than set. The
-only thing still asking for it is the social card in `scripts/gen-icons.mjs`,
-which is why it stays in the font URL.
+Type is **one family, everywhere**: Bricolage Grotesque, across body, headings,
+labels and numbers. It used to be two — Inter for the interface, Bricolage
+reserved for the wordmark — and Inter is now gone from the app entirely.
+
+The font URL asks for the variable font's whole 200–800 weight range plus the
+optical-size axis, because one file now has to cover 11px row text and display
+headings. Narrowing it back to a few static weights flattens the type scale
+without erroring.
+
+**Bricolage's figures are proportional, and Inter's were tabular.** Measured at
+40px, "111" sets 34.5px wide against 76.1px for "000" — a ranking column would
+ripple at every row. The theme turns `font-variant-numeric: tabular-nums` on at
+`app-shell` so the whole app inherits it. That line is load-bearing; deleting it
+does not break anything visibly enough to notice, which is the problem.
 
 ### Three rules that have each been violated once
 
@@ -202,10 +211,15 @@ takes 2.1 MB of mostly empty transparent canvas down to 3.8 kB. The display
 height lives in two places that must agree — `HEIGHT` in that script and
 `wordmark` in `components/bits.tsx`.
 
-The recolour is a hue/saturation/lightness *shift* measured between the two
-colours and applied to every blue pixel, not a fill: the letters have a darker
-outline and the bloom is a long alpha falloff, and flooding them with one value
-flattens both.
+Three words, three colours, none of them painted by hand. The master carries two
+— blue for "Which" *and* "Use", coral for "To" — so the script separates them
+with `SPLIT_X`, the midpoint of the 163px gap in the blue ink where the coral
+"To" stands between the two words. "Use" is shifted to teal, then everything
+still blue is shifted to the primary.
+
+Each shift is a hue/saturation/lightness *relationship* measured between two
+named colours, not a fill: the letters have a darker outline and the bloom is a
+long alpha falloff, and flooding matched pixels with one value flattens both.
 
 ## How content gets there
 

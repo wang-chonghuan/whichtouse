@@ -9,6 +9,7 @@
     "tips:due": "node scripts/before-you-pick.mjs due",
     "tips:publish": "node --env-file=.env scripts/publish-before-you-pick.mjs",
     "tips:record": "node --env-file=.env scripts/record-byp-run.mjs",
+    "tips:details": "node --env-file=.env scripts/write-byp-details.mjs",
     "wordmark": "node scripts/crop-wordmark.mjs",
     "build": "vite build && node scripts/build-jobs.mjs",
     "start": "node .output/server/index.mjs",
