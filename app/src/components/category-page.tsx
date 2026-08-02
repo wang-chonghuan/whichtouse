@@ -56,13 +56,26 @@ const styles = stylex.create({
     paddingBlock: spacingVars['--spacing-3'],
     paddingInline: spacingVars['--spacing-4'],
   },
-  note: {
-    maxWidth: 900,
+  // Three columns of "route label | pick", so the labels line up and the card
+  // reads as an answer table rather than a paragraph. Collapses on narrow.
+  answerRow: {
+    display: 'grid',
+    gridTemplateColumns: {default: '120px minmax(0, 1fr)', '@media (max-width: 640px)': '1fr'},
+    gap: spacingVars['--spacing-3'],
+    alignItems: 'baseline',
   },
 })
 
 export function CategoryPage({ view }: { view: CategoryView }) {
   const { category, tracks, notes, watchlist } = view
+
+  // The top Leading entry of each route. Not a computation over the data —
+  // just the first row of each column, said once at the top so the answer is
+  // not something you have to assemble by reading three lists.
+  const shortAnswer = TRACKS.map((track) => ({
+    track,
+    item: tracks[track].find((entry) => entry.standing === 'leading'),
+  })).filter((row): row is { track: Track; item: RankItem } => Boolean(row.item))
 
   return (
     <VStack>
@@ -81,18 +94,43 @@ export function CategoryPage({ view }: { view: CategoryView }) {
           </VStack>
           {/* This page's one primary callout, and it always means the same
             * thing site-wide: a judgement we made, as opposed to a number an
-            * aggregate produced. The category note is an editor's account of
-            * how this column was decided. */}
-          {notes ? (
-            <Card variant="blue" padding={4} xstyle={styles.note}>
-              <VStack gap={1.5}>
-                <Text type="label" color="accent">
-                  Our read
-                </Text>
-                <Heading level={2}>How we ranked these</Heading>
-                <Text type="body" textWrap="pretty">
-                  {notes}
-                </Text>
+            * aggregate produced.
+            *
+            * It used to hold the editor's ranking note — several paragraphs of
+            * internal reasoning about why one entry outranks another. That is
+            * real content, but it is *our* process, and nobody arriving at an
+            * area page wants the methodology before the answer. The note moves
+            * below the columns; this slot now carries the answer: the top pick
+            * on each route, which is what the reader came to find out.
+            *
+            * Nothing here is synthesised — it is the first Leading entry of
+            * each route and its own authored line. */}
+          {shortAnswer.length ? (
+            <Card variant="blue" padding={4}>
+              <VStack gap={3}>
+                <VStack gap={1}>
+                  <Text type="label" color="accent">
+                    Our read
+                  </Text>
+                  <Heading level={2}>If you only read one thing</Heading>
+                </VStack>
+                <VStack gap={3}>
+                  {shortAnswer.map(({ track, item }) => (
+                    <div key={track} {...stylex.props(styles.answerRow)}>
+                      <Text type="label" color="secondary">
+                        {TRACK_LABEL[track]}
+                      </Text>
+                      <VStack gap={0.5}>
+                        <Text type="body" weight="semibold">
+                          {item.name}
+                        </Text>
+                        <Text type="supporting" textWrap="pretty">
+                          {item.edge || item.bestFor}
+                        </Text>
+                      </VStack>
+                    </div>
+                  ))}
+                </VStack>
               </VStack>
             </Card>
           ) : null}
@@ -111,6 +149,22 @@ export function CategoryPage({ view }: { view: CategoryView }) {
           ))}
         </Grid>
       </Section>
+
+      {/* Demoted, and below the thing it describes. The note is an editor's
+        * account of how this area was decided — worth publishing, worth
+        * reading second. */}
+      {notes ? (
+        <Section variant="transparent" padding={0} paddingBlock={6}>
+          <Card variant="muted" padding={4}>
+            <VStack gap={1.5}>
+              <Heading level={2}>How we ranked these</Heading>
+              <Text type="body" color="secondary" textWrap="pretty">
+                {notes}
+              </Text>
+            </VStack>
+          </Card>
+        </Section>
+      ) : null}
 
       {watchlist.length > 0 ? (
         <Section variant="transparent" padding={0} paddingBlock={6}>

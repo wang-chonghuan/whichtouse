@@ -102,9 +102,15 @@ const styles = stylex.create({
   },
   // Its own scroller, so a long task list never pushes the sticky column past
   // the viewport and strands the last few tasks below the fold.
+  // The default scrollbar is painted by the OS and lands almost black on this
+  // pale rail — the heaviest thing in the column, next to the lightest content.
+  // scrollbarColor/-width are standard CSS now, so the thumb can come from a
+  // token like everything else and the track can disappear entirely.
   navScroll: {
     maxHeight: 'calc(100dvh - 180px)',
     overflowY: 'auto',
+    scrollbarWidth: 'thin',
+    scrollbarColor: `${colorVars['--color-border-emphasized']} transparent`,
   },
   navHeading: {
     paddingInline: spacingVars['--spacing-3'],
