@@ -19,6 +19,7 @@
 import postgres from 'postgres'
 
 import config from '../src/content/sources.json' with { type: 'json' }
+import { assignCategory, clearsSoloBar } from '../src/lib/category-rule.ts'
 
 const DRY = process.argv.includes('--dry')
 const ONLY = (() => {
@@ -171,6 +172,7 @@ async function githubSearch(query, { newOnly }) {
       repoFullName: repo.full_name,
       url: repo.html_url,
       description: repo.description ?? null,
+      topics: repo.topics ?? [],
       track: 'oss',
       metrics: { stars: repo.stargazers_count ?? 0 },
     }))
@@ -237,6 +239,7 @@ async function githubSkillSearch(query) {
       repoFullName: repo.full_name,
       url: repo.html_url,
       description: repo.description ?? null,
+      topics: repo.topics ?? [],
       track: 'skill',
       metrics: { stars: repo.stargazers_count ?? 0 },
     }))
@@ -293,6 +296,7 @@ function skillsForCategory(sweep, slug) {
     repoFullName: repo.full_name,
     url: repo.html_url,
     description: repo.description ?? null,
+    topics: repo.topics ?? [],
     track: 'skill',
     metrics: { stars: repo.stargazers_count ?? 0 },
   }))
@@ -674,8 +678,31 @@ async function main() {
         // high-precision source stands on its own. Without this the skill track
         // can never fill: every skill source is GitHub, so it could never reach
         // two origins no matter how good the match.
-        if (!item.selfPlacing && item.origins.size < minCorroboration) continue
         const track = item.existing?.track ?? item.entry.track ?? 'oss'
+
+        // The assignment gate. Until this existed, the category of a row was
+        // whichever category's search happened to find it — the query string
+        // was the classifier, and a query of "support" collected every repo
+        // that supports something. The rule scores the candidate against all
+        // 25 areas and confirms or discards; it never re-files into a better
+        // category, because a search that did not run for that category has
+        // not seen its competition (ticket D1).
+        const assignment = assignCategory({
+          name: item.entry.name,
+          description: item.entry.description ?? '',
+          topics: item.entry.topics ?? [],
+          track,
+        })
+        if (assignment?.slug !== category.slug) continue
+
+        // `selfPlacing` used to mean "this source may place a row with no
+        // second origin at all", which is how one team mailbox reached three
+        // unrelated categories. It now means "may place alone *if* the
+        // assignment also clears the higher solo bar" (D2) — the precision
+        // claim the config always made, actually checked.
+        const soloOk = item.selfPlacing && clearsSoloBar(assignment)
+        if (!soloOk && item.origins.size < minCorroboration) continue
+
         place(item.key, item.existing, item.entry, track, 'emerging', item)
       }
 

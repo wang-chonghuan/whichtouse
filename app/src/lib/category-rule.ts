@@ -585,6 +585,57 @@ export const CATEGORY_VOCABULARY: Record<string, CategoryVocabulary> = {
   },
 }
 
+
+/** Evidence-driven addenda, merged into the vocabulary above at module load.
+ *
+ * The first measurement against the 287 labelled production rows confirmed
+ * only 51% of the rows a human pass had judged correctly filed, and emptied
+ * pdf-documents outright. A 3x3 sweep of the thresholds moved that between 44%
+ * and 51%, and rows carrying full evidence (repo + topics) scored the same as
+ * rows carrying little — so neither the bar nor the inputs were the constraint.
+ * The vocabulary simply had no word for what these tools say about themselves.
+ *
+ * These terms come from reading the dropped rows, not from guessing: a GitHub
+ * topic is normalised to spaces before matching, so `browser-automation` on a
+ * repo is the phrase "browser automation" here.
+ *
+ * Deliberately NOT added: `marketing` to seo-geo / social-media / email-outreach
+ * / lead-gen. The general "120 marketing skills" libraries sit in all four at
+ * once; a shared term would score them equally everywhere, collapse the margin
+ * and discard them from all four. They are genuinely ambiguous and discarding
+ * them is the right answer, so the gap is left open on purpose. */
+export const VOCABULARY_ADDENDA: Record<string, CategoryVocabulary> = {
+  'browser-automation': { strong: ['browser automation', 'web automation', 'cloud browser', 'headless browser', 'anti bot', 'browser agent', 'searxng'], weak: ['browser', 'browse'] },
+  coding: { strong: ['coding agent', 'code review', 'software engineering', 'refactor', 'pull request'], weak: ['engineer', 'developer', 'codebase'] },
+  'content-writing': { strong: ['copywriting', 'academic writing', 'blog post', 'creative writing', 'novel writing', 'content writer', 'wechat'], weak: ['writing', 'article', 'prose'] },
+  'email-outreach': { strong: ['cold email', 'email enrichment', 'email sequence', 'deliverability', 'outreach'], weak: ['email', 'inbox'] },
+  'image-generation': { strong: ['text to image', 'image generation', 'generative media', 'diffusion'], weak: ['image'] },
+  'knowledge-base': { strong: ['knowledge graph', 'knowledge base', 'second brain', 'retrieval'], weak: ['memory', 'vault'] },
+  'lead-gen': { strong: ['lead generation', 'sales automation', 'prospecting', 'linkedin automation'], weak: ['leads', 'enrichment'] },
+  'legal-contract': { strong: ['legal', 'contract analysis', 'bluebook', 'jurisdiction', 'legal writing'], weak: ['law', 'compliance'] },
+  'meeting-notes': { strong: ['meeting notes', 'meeting assistant', 'note taker', 'transcription', 'meeting'], weak: ['minutes', 'transcript'] },
+  'pdf-documents': { strong: ['pdf', 'docx', 'document conversion', 'study vault'], weak: ['document', 'docs'] },
+  presentation: { strong: ['powerpoint', 'pptx', 'slide deck', 'presentation', 'slides'], weak: ['deck'] },
+  'research-search': { strong: ['deep research', 'literature review', 'web search'], weak: ['research'] },
+  // `resume` alone is not usable here and the test proves it: a tool named
+  // `resume-skills` that resumes a coding session matches it on its own
+  // name, which is the exact defect this module exists to remove. Only
+  // phrases that cannot mean "resume a session" are strong.
+  'resume-jobs': { strong: ['job search', 'cover letter', 'resume writing', 'applicant tracking'], weak: ['resume', 'cv', 'career', 'interview'] },
+  translation: { strong: ['video translation', 'dubbing', 'subtitles', 'localization', 'localisation'], weak: ['translate', 'multilingual'] },
+  'video-generation': { strong: ['video generation', 'text to video', 'ai video', 'video editing', 'video recap'], weak: ['video'] },
+  'voice-audio': { strong: ['text to speech', 'audio generation', 'voice cloning', 'notebooklm', 'podcast', 'speech'], weak: ['audio', 'voice'] },
+  'web-scraping': { strong: ['web scraping', 'scraper', 'crawler'], weak: ['scrape', 'crawl'] },
+  'workflow-automation': { strong: ['workflow', 'orchestration', 'agent harness', 'plugin marketplace'], weak: ['automation', 'pipeline'] },
+}
+
+for (const [slug, extra] of Object.entries(VOCABULARY_ADDENDA)) {
+  const base = CATEGORY_VOCABULARY[slug]
+  if (!base) continue
+  base.strong = [...new Set([...base.strong, ...extra.strong])]
+  base.weak = [...new Set([...base.weak, ...extra.weak])]
+}
+
 export const CATEGORY_SLUGS: string[] = Object.keys(CATEGORY_VOCABULARY)
 
 export type Track = 'saas' | 'oss' | 'skill'
