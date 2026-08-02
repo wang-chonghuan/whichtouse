@@ -54,11 +54,12 @@ nothing and is worse than no line at all.
 - **Do not rank, praise or recommend.** No "the best", "the most popular", "the
   go-to". Position is what the list itself says; this line says what the thing
   is. A star count is not a description.
-- **Say what it actually is** when that differs from what it is filed as. If a
-  row turns out to be a curated list of links, a tutorial, a personal
-  dotfiles repo, or a tool for a completely different job, say so plainly in
-  the line and flag it in your notes — a wrongly filed row is more useful to us
-  than a description that covers for it.
+- **A row that does not belong in this area gets an empty string**, and a line
+  in your notes saying what it actually is. Do not write the disclaimer into
+  the description: "a library of offensive-security skills; nothing to do with
+  design" is true, but on the page it tells a reader we knew the row was wrong
+  and published it anyway. Misfiling is ours to fix, not the reader's to
+  discover. Flag it and move on.
 - **If you cannot tell what it does** after opening it, return an empty string
   for that row. A blank line is honest; an invented one is not, and it will sit
   under a name on a page that promises the opposite.
