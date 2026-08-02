@@ -42,7 +42,7 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: OG_IMAGE },
     ],
-    // Every one of these is generated from resources/reference/wtu-logo.png by
+    // Every one of these is generated from resources/wtu-logo-2.png by
     // scripts/gen-icons.mjs — never edit a file in public/ by hand, or the next
     // run of that script will silently undo it.
     links: [

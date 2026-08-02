@@ -722,7 +722,7 @@
       }
     ]
   },
-  "notes": "Two different things share the skills column here: drop-in skills and open-source agents you run yourself. They are ordered together by how widely each is actually used, not by which kind it is. Every entry was opened before it was placed.",
+  "notes": "The three columns are ranked separately and nothing is compared across them — they answer three different questions. Inside a column, order follows how widely a tool is actually used, and every entry was opened before it was placed.",
   "beforeYouPick": {
     "weigh": "Model choice barely matters now; how the tool gathers context and verifies its edits does. Test that on your oldest repo, not a new one.",
     "avoid": "Agent pull requests wait far longer for review and get merged far less often; the constraint becomes deciding what is safe to merge.",

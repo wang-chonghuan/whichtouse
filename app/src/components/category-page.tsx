@@ -76,7 +76,7 @@ const styles = stylex.create({
 })
 
 export function CategoryPage({ view }: { view: CategoryView }) {
-  const { category, tracks, notes, watchlist, beforeYouPick } = view
+  const { category, tracks, watchlist, beforeYouPick } = view
 
   return (
     <VStack>
@@ -136,21 +136,20 @@ export function CategoryPage({ view }: { view: CategoryView }) {
         </Grid>
       </Section>
 
-      {/* Demoted, and below the thing it describes. The note is an editor's
-        * account of how this area was decided — worth publishing, worth
-        * reading second. */}
-      {notes ? (
-        <Section variant="transparent" padding={0} paddingBlock={6}>
-          <Card variant="muted" padding={4}>
-            <VStack gap={1.5}>
-              <Heading level={2}>How we ranked these</Heading>
-              <Text type="body" color="secondary" textWrap="pretty">
-                {notes}
-              </Text>
-            </VStack>
-          </Card>
-        </Section>
-      ) : null}
+      {/* "How we ranked these" was here: a demoted card carrying an editor's
+        * account of how the area was decided. Removed, and the reason is worth
+        * keeping because the idea will come back.
+        *
+        * Every honest version of it said the same thing — each column is ranked
+        * on its own, by adoption, checked by hand — which is one fact about the
+        * whole site, not twenty-five facts about twenty-five areas. Said once
+        * per area it is filler; the versions that avoided sounding like filler
+        * did so by drifting into our own process notes, which is worse. If the
+        * method needs stating, it belongs in one place site-wide, not below
+        * every list.
+        *
+        * The `notes` field still exists in the corpus, the database and
+        * CategoryView — nothing reads it now. */}
 
       {watchlist.length > 0 ? (
         <Section variant="transparent" padding={0} paddingBlock={6}>

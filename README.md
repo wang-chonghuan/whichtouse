@@ -80,7 +80,7 @@ reading before touching any copy the app generates.
 | `app/src/theme/brand.json` | the handful of values the theme cannot reach |
 | `app/src/components/` | seven files; every page is one of them |
 | `app/public/prototype/` | design artifact, served at `/prototype`. See "Design decisions" |
-| `resources/brand/wtu-logo.svg` | the mark. Every icon is generated from it |
+| `resources/wtu-logo-2.png` | the mark. Every icon is generated from it |
 | `resources/wtu-logo-name.png` | the wordmark master. The topbar lockup is cut from it |
 | `specs/content-in-db.md` | why content lives in Postgres and how the refresh job works |
 | `ssot-schemas/db-schemas/whichtouse.sql` | the schema, single source of truth |
@@ -182,7 +182,7 @@ does not break anything visibly enough to notice, which is the problem.
 
 ## Brand assets
 
-Every favicon, app icon, the social card and the manifest come from one SVG:
+Every favicon, app icon, the social card and the manifest come from one image:
 
 ```bash
 cd app && npm run icons
@@ -192,13 +192,27 @@ cd app && npm run icons
 the way it is. **Nothing under `app/public/` is edited by hand** — the next run
 overwrites it.
 
-`scripts/trace-logo.mjs` is the one-off that produced
-`resources/brand/wtu-logo.svg` from the original bitmap. Re-run it only if the
-raster master changes.
+The master is `resources/wtu-logo-2.png`, the "wtu" neon lockup. It replaced a
+traced SVG of a three-letter W/T/U monogram, and the tradeoff is worth knowing
+before anyone "fixes" it: the monogram was upright geometric letterforms and
+resolved at 16px; **this one does not.** At 32px — what a retina tab actually
+draws — it reads; at 16px it is three coloured smudges. That is a property of
+setting a cursive script into 16 pixels, not of the padding, and no crop
+recovers it. `scripts/trace-logo.mjs` and `resources/brand/wtu-logo.svg` are the
+retired monogram, kept because they are the only vector the brand has ever had.
 
-The topbar wordmark is a different asset with a different master. It is drawn
-art — a neon lockup whose bloom no font and no trace can reproduce — so it stays
-a bitmap:
+The script measures the crop box off the alpha channel rather than hard-coding
+it, so re-rendering the master at a different position or scale needs no edit.
+Two numbers there were measured against *this* file and would have to be
+re-measured for another one: the alpha threshold, because the master carries a
+stray smudge at alpha 1–3 well below the lettering that swells the box by half
+if it is counted, and `MARGIN`, which is deliberately near zero — this master
+has a hard alpha edge, so unlike the wordmark below there is no bloom outside
+the ink to protect.
+
+The topbar wordmark is a different asset with a different master, and it *does*
+have that bloom — drawn art no font and no trace can reproduce — so it stays a
+bitmap:
 
 ```bash
 cd app && npm run wordmark

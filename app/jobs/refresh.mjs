@@ -170,6 +170,7 @@ async function githubSearch(query, { newOnly }) {
       homepage: repo.homepage || repo.html_url,
       repoFullName: repo.full_name,
       url: repo.html_url,
+      description: repo.description ?? null,
       track: 'oss',
       metrics: { stars: repo.stargazers_count ?? 0 },
     }))
@@ -235,6 +236,7 @@ async function githubSkillSearch(query) {
       homepage: repo.homepage || repo.html_url,
       repoFullName: repo.full_name,
       url: repo.html_url,
+      description: repo.description ?? null,
       track: 'skill',
       metrics: { stars: repo.stargazers_count ?? 0 },
     }))
@@ -290,6 +292,7 @@ function skillsForCategory(sweep, slug) {
     homepage: repo.homepage || repo.html_url,
     repoFullName: repo.full_name,
     url: repo.html_url,
+    description: repo.description ?? null,
     track: 'skill',
     metrics: { stars: repo.stargazers_count ?? 0 },
   }))
@@ -335,6 +338,8 @@ async function hnSearch(query, knownDomains) {
         homepage: isRepo ? `https://github.com/${full}` : `https://${key}`,
         repoFullName: full,
         url: isRepo ? `https://github.com/${full}` : `https://${key}`,
+        // HN gives a link and a score, never a blurb.
+        description: null,
         track: isRepo ? 'oss' : 'saas',
         metrics: { hn_points: points },
       }
@@ -372,7 +377,7 @@ async function productHuntSearch(topicSlug) {
   const body = {
     query: `query($q:String!){ posts(order:VOTES, postedAfter:"${new Date(
       Date.now() - 365 * 864e5,
-    ).toISOString()}", first:20, topic:$q){ edges{ node{ name website votesCount } } } }`,
+    ).toISOString()}", first:20, topic:$q){ edges{ node{ name website tagline votesCount } } } }`,
     variables: { q: topicSlug },
   }
   const response = await phThrottled(() => fetch('https://api.producthunt.com/v2/api/graphql', {
@@ -397,6 +402,7 @@ async function productHuntSearch(topicSlug) {
     homepage: node.website,
     repoFullName: repoOf(node.website),
     url: node.website,
+    description: node.tagline ?? null,
     track: repoOf(node.website) ? 'oss' : 'saas',
     metrics: { ph_votes: node.votesCount ?? 0 },
   }))
@@ -444,6 +450,13 @@ function fuse(perSource) {
       current.origins.add(origin)
       if (selfPlacing) current.selfPlacing = true
       Object.assign(current.metrics, entry.metrics ?? {})
+      // First source to carry a blurb wins. `current.entry` is whichever source
+      // saw this key first, and that is often HN, which only ever hands over a
+      // link and a score — without this the GitHub description behind the same
+      // row is discarded because a scoring-only source got there first.
+      if (!current.entry.description && entry.description) {
+        current.entry = { ...current.entry, description: entry.description }
+      }
       scores.set(entry.key, current)
     }
   }
@@ -701,6 +714,7 @@ async function main() {
               update listings set
                 standing = ${p.standing}, rank = ${p.rank},
                 evidence = ${tx.json(p.evidence)}, refreshed_at = now(),
+                source_description = coalesce(source_description, ${p.entry?.description ?? null}),
                 updated_at = now()
               where category_slug = ${category.slug} and tool_slug = ${p.key}
             `
@@ -709,15 +723,19 @@ async function main() {
             await tx`
               insert into listings (
                 category_slug, tool_slug, name, owner, track, homepage,
-                repo_full_name, standing, rank, evidence, refreshed_at
+                repo_full_name, standing, rank, evidence, source_description,
+                refreshed_at
               ) values (
                 ${category.slug}, ${p.key}, ${p.entry.name}, ${p.entry.owner},
                 ${p.track}, ${p.entry.homepage}, ${p.entry.repoFullName},
-                ${p.standing}, ${p.rank}, ${tx.json(p.evidence)}, now()
+                ${p.standing}, ${p.rank}, ${tx.json(p.evidence)},
+                ${p.entry?.description ?? null}, now()
               )
               on conflict (category_slug, tool_slug) do update set
                 standing = excluded.standing, rank = excluded.rank,
                 evidence = excluded.evidence, refreshed_at = now(),
+                source_description = coalesce(
+                  listings.source_description, excluded.source_description),
                 updated_at = now()
             `
           }

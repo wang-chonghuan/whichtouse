@@ -87,6 +87,13 @@ create table listings (
   standing text not null check (standing in ('leading','emerging','watchlist')),
   rank     int,                          -- null for watchlist
 
+  -- What the source said about itself: a GitHub repo description, a Product
+  -- Hunt tagline. Captured at discovery so a machine-placed row is not a bare
+  -- name, and kept apart from `best_for` on purpose — this is the vendor's own
+  -- copy, unread by us, and it must never render where a checked line renders.
+  -- It is raw material for the pass that writes `best_for`, nothing more.
+  source_description text,
+
   -- editorial, human-owned. All null on a machine-discovered row.
   reviewed_at timestamptz,               -- null = ranked by aggregation, never opened
   summary     text,

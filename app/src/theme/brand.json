@@ -18,12 +18,12 @@
     "shortName": "WhichToUse",
     "description": "SaaS, open source and agent skills across 25 areas of work, with the limits of each written down."
   },
-  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
+  "_iconNote": "Icon tiles are white. The mark is a neon lockup drawn for a dark field and is composited onto white anyway, for the reason a favicon always is: browser chrome is a background we do not control, and a transparent mark inverts unpredictably between light and dark tab bars. White is also what the topbar already stands the same kind of artwork on, so the two agree. Its blue sits at 5.5 on white and its coral at 2.7 — the second is low for text, but this is a logotype and the pair is balanced, which is what makes the three letters read as one object.",
   "_fontNote": "One family, every job: Bricolage Grotesque across body, headings, labels and numbers. Inter is gone — it used to carry the interface while Bricolage was reserved for the wordmark, and this URL requested both. The request is the variable font's full 200-800 weight range plus the optical-size axis, because the interface now needs everything from 11px row text to display headings out of one file; narrowing it back to a few static weights will silently flatten the type scale. The URL must agree with typography.body/heading in wtuTheme.ts, and it is also what the social card in scripts/gen-icons.mjs renders with.",
   "mark": {
-    "w": "#0164E5",
-    "t": "#60B333",
-    "u": "#FE7701"
+    "w": "#5848FF",
+    "t": "#FF7050",
+    "u": "#5848FF"
   },
-  "_markNote": "The mark's colours, not the interface's. They are baked into resources/brand/wtu-logo.svg, which every icon is rendered from; the two move together or neither does. Deliberately independent of the theme: the logo should not change colour because the product did. Note that the topbar wordmark beside the mark is a separate drawn lockup on a different palette — blue and coral, no green — and does not read these. Its colours are not the mark's: 'Which' is the interface primary #4F46E5 and 'Use' is the prototype's deep teal #0E6E66, both applied by scripts/crop-wordmark.mjs, so the primary and the wordmark move together."
+  "_markNote": "The mark's colours, not the interface's. They are measured out of resources/wtu-logo-2.png, which every icon is rendered from; the two move together or neither does. Deliberately independent of the theme: the logo should not change colour because the product did. Only the social card reads them, to set 'WhichToUse' beside the mark in the mark's own colours, so w and u are the same value on purpose — the neon lockup paints 'w' and 'u' one blue and 't' coral. The retired monogram had three, one per letter, which is why this object is keyed by letter. Note that the topbar wordmark is a third asset again, on its own palette, and does not read these: 'Which' is the interface primary #4F46E5 and 'Use' is the prototype's deep teal #0E6E66, both applied by scripts/crop-wordmark.mjs, so the primary and the wordmark move together."
 }

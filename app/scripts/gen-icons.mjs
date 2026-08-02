@@ -38,30 +38,29 @@ const OUT = path.join(here, '../public')
 // why brand.json exists as JSON rather than as another TypeScript module.
 const brand = JSON.parse(fs.readFileSync(path.join(here, '../src/theme/brand.json'), 'utf8'))
 
-// The glow is what makes the mark a neon sign rather than a script font, and
-// cropping to the letters alone slices it off mid-fade — a visible hard edge
-// once the transparent falloff is composited onto the opaque tile. 12% of the
-// ink height is where the bloom has died down enough that the cut does not
-// read. Matches the intent of MARGIN in crop-wordmark.mjs, a little tighter
-// because an icon has less room to spend on air than a header lockup.
-const MARGIN = 0.12
+// Bare clearance around the lettering, as a fraction of the ink height — not a
+// bloom margin. crop-wordmark.mjs keeps 15% because its master's glow is a long
+// alpha falloff and a tight cut slices it mid-fade; this master is not built
+// that way. Measured: the alpha≥4 box is 571×417 and the alpha≥160 box is
+// 571×415, so the glow is painted into the letter shapes and the file ends in a
+// hard edge. There is nothing outside the ink to preserve, and a margin sized
+// for a fade that does not exist just spends favicon pixels on white. 2% is the
+// antialiased edge and no more; PADDING does the framing.
+const MARGIN = 0.02
 
-// PADDING is the share of each side of the tile left clear *outside* the crop
-// box, so the ink itself sits inside a little more air than these numbers say:
-// the bloom margin above already accounts for ~9% of the crop's width.
+// The share of each side of the tile left clear outside the crop box.
 //
-// The mark is wide — 571×415 of ink, about 1.3:1 — so every icon is fitted to
-// the tile's width and centred in its height, and the vertical air is a
-// consequence of the lockup's shape rather than a number chosen here. That is
-// also why these are smaller than the monogram's were: a square mark at 6%
-// padding and a 1.3:1 mark at 6% padding do not carry the same visual weight,
-// and the wide one needs the width back.
+// The mark is wide — 571×415 of ink, 1.36:1 once the clearance is on — so every
+// icon is fitted to the tile's *width* and centred in its height. The vertical
+// air is a consequence of the lockup's shape, not a number chosen here, and it
+// is why these cannot simply be read across from the monogram's: a square mark
+// and a 1.36:1 mark at the same padding do not carry the same weight.
 const PADDING = {
-  favicon: 0.02, // tiny sizes: the mark needs the pixels more than it needs air
-  touch: 0.06, // iOS rounds the corners itself and adds nothing
-  android: 0.06,
-  // Android may crop to a circle. A 1.3:1 box inscribed in the 80% safe circle
-  // can be 0.63 of the tile wide; 0.2 padding leaves it 0.6, just inside.
+  favicon: 0.04, // tiny sizes: the mark needs the pixels more than it needs air
+  touch: 0.1, // iOS rounds the corners itself and adds nothing
+  android: 0.1,
+  // Android may crop to a circle. A 1.36:1 box inscribed in the 80% safe circle
+  // can be 0.65 of the tile wide; 0.2 padding leaves it 0.6, comfortably in.
   maskable: 0.2,
 }
 
@@ -126,9 +125,9 @@ await page.goto('about:blank')
 
 const master = 'data:image/png;base64,' + fs.readFileSync(SRC).toString('base64')
 
-/** Finds the lettering in the master and cuts it out with the bloom margin, so
- * everything below draws one tight image instead of re-finding the ink and
- * re-carrying 1024² of empty canvas at every size. */
+/** Finds the lettering in the master and cuts it out, so everything below draws
+ * one tight image instead of re-finding the ink and re-carrying 1024² of mostly
+ * empty canvas at every size. */
 const cropped = await page.evaluate(
   async ({ src, margin }) => {
     const img = new Image()
@@ -142,8 +141,10 @@ const cropped = await page.evaluate(
     ctx.drawImage(img, 0, 0)
     const data = ctx.getImageData(0, 0, c.width, c.height).data
 
-    // Threshold well above the bloom: the letters are opaque, the glow around
-    // them is not, and a low threshold would return the whole canvas.
+    // 160 rather than 1: the master carries a stray smudge of alpha 1–3 running
+    // 300px below the lettering, and at a threshold of 1 the box comes back
+    // 612×725 instead of 571×415 — a third of the icon would be empty and the
+    // mark would sit visibly high. Anything from 4 up measures the same box.
     let x0 = Infinity, y0 = Infinity, x1 = -1, y1 = -1
     for (let y = 0; y < c.height; y++) {
       for (let x = 0; x < c.width; x++) {
@@ -228,8 +229,8 @@ await page.setContent(`<!doctype html>
   }
   .top { display: flex; align-items: center; justify-content: space-between; }
   .brand { display: flex; align-items: center; gap: 16px; }
-  .brand .mark { width: 56px; height: 56px; border-radius: 12px; background: ${brand.iconBackground}; display: grid; place-items: center; }
-  .brand .mark svg { width: 40px; }
+  .brand .mark { width: 72px; height: 56px; border-radius: 12px; background: ${brand.iconBackground}; display: grid; place-items: center; }
+  .brand .mark img { width: 100%; }
   .brand .word { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; }
   .brand .word .a { color: ${brand.mark.w}; }
   .brand .word .b { color: ${brand.mark.t}; }
@@ -246,7 +247,7 @@ await page.setContent(`<!doctype html>
 </style></head>
 <body>
   <div class="top">
-    <div class="brand"><div class="mark">${markup}</div><span class="word"><span class="a">Which</span><span class="b">To</span><span class="c">Use</span></span></div>
+    <div class="brand"><div class="mark">${mark}</div><span class="word"><span class="a">Which</span><span class="b">To</span><span class="c">Use</span></span></div>
     <div class="domain">whichtouse.com</div>
   </div>
   <div>
@@ -256,6 +257,7 @@ await page.setContent(`<!doctype html>
   <div class="routes"><span>SaaS</span><span>Open source</span><span>Agent skills</span></div>
 </body></html>`)
 await page.evaluate(() => document.fonts.ready)
+await page.evaluate(() => Promise.all([...document.images].map((i) => i.decode())))
 await page.waitForTimeout(500)
 await page.screenshot({ path: path.join(OUT, 'og.png') })
 console.log(`og.png                   1200×630  ${(fs.statSync(path.join(OUT, 'og.png')).size / 1024).toFixed(1)} kB`)

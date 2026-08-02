@@ -1,6 +1,6 @@
 ---
 name: wt-enrich
-description: WhichToUse detail-panel enrichment. Research a product or repository's official docs, code entry path, user workflow, popularity causes, pricing, strengths, and limitations; then produce rankBasis, pricingFree, pricingPaid, features, pros, and cons — plus the category's own "How we ranked these" note. Load when the user says "enrich the item details", "fill rankBasis/pricing/pros/cons", "rewrite the category note", "wt-enrich a category", or wants a bare ranked item turned into a researched detail card. Do not load for ranking/ordering items or candidate discovery.
+description: WhichToUse detail-panel enrichment. Research a product or repository's official docs, code entry path, user workflow, popularity causes, pricing, strengths, and limitations; then produce rankBasis, pricingFree, pricingPaid, features, pros, and cons. Load when the user says "enrich the item details", "fill rankBasis/pricing/pros/cons", "wt-enrich a category", or wants a bare ranked item turned into a researched detail card. Do not load for ranking/ordering items or candidate discovery.
 ---
 
 # wt-enrich
@@ -58,40 +58,6 @@ read `references/field-spec.md`.
    sources unless they directly create a concrete user benefit.
 8. **cons** — inspect current issues/discussions, reviews, support docs, and architectural tradeoffs.
    Prefer a measured limitation with a named failure mode over generic self-hosting/setup caveats.
-
-## The category note (`notes`)
-
-One string per file, beside `tracks` — not inside it. The app renders it under
-**"How we ranked these"**, in a demoted card below the three route columns.
-
-It is written for a reader who has just looked at the lists and wants to know
-whether to trust them. **It is not a changelog, and it is not for us.**
-
-| rule | why |
-|---|---|
-| **45 words, hard ceiling.** Two or three sentences. | It sits below the content it describes. A reader who has to work at it will simply not read it, and a long note is a worse answer than a short one, not a more thorough one. |
-| **Plain words only.** No `rank determinant`, no `kind ('skill'\|'repo')`, no field names, no `track`. | These are our schema, not the reader's vocabulary. If a sentence needs a word that only exists inside this repo, it is being written to the wrong audience. |
-| **Say what decided the order.** | The one thing the reader actually asked. "Ordered by how widely each one is actually used, then checked by hand" is a whole answer. |
-| **Never a diff.** No "previously", "this fixes", "the prior bug", "was excluded because", "no longer". | The reader never saw the old version. Repair work is a commit message. |
-| **No numbers as reasons.** No star counts, no "~260k★", no rankings quoted as justification. | Site-wide rule: numbers decide the order, they never supply the reason. This field is where that rule has been broken most. |
-| **Only what is true of this category.** | A note that would read identically on another area page is filler — cut it rather than pad. |
-
-If there is nothing specific to say, say the method plainly in one sentence and
-stop. A short honest note beats a long one that performs thoroughness.
-
-Bad — 152 words, and every clause is us talking to ourselves:
-
-> Rich, high-consensus category with a genuine Agent Skill ecosystem. App track reflects settled
-> 2026 developer consensus… The skill track now ranks genuine SKILL.md skills AND notable
-> open-source coding-agent repos TOGETHER by real adoption/reputation (GitHub stars), with kind
-> ('skill'|'repo') as a tag only — NOT a rank determinant. This fixes the prior bug where all
-> skills were forced above all repos… Roo Code was excluded as its main repo is archived…
-
-Good — 38 words, same facts a reader can use:
-
-> Skills and open-source agents are ranked together here, by how widely each is
-> actually used rather than by which kind of thing it is. Every entry was opened
-> and tried; the write-ups are ours, not the vendors'.
 
 ## Honesty redlines (this is the whole point — do not violate)
 
