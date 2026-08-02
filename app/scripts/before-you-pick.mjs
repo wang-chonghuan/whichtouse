@@ -2,8 +2,9 @@
 // The deterministic half of "Before you pick".
 //
 //   node scripts/before-you-pick.mjs due [--days 90]
-//   node scripts/before-you-pick.mjs prompt <slug>
+//   node scripts/before-you-pick.mjs prompt <slug>          — pass 1, the lines
 //   node scripts/before-you-pick.mjs apply <slug> < result.json
+//   node scripts/before-you-pick.mjs detail-prompt <slug>   — pass 2, the prose
 //
 // The research itself is a judgement task and belongs to an agent — see
 // .agents/skills/wt-tooltrend. What lives here is everything that must be
@@ -138,6 +139,41 @@ function prompt(slug) {
 }
 
 // ---------------------------------------------------------------------------
+// detail-prompt — fill the second pass's placeholders
+//
+// The expansion behind each line, for the card's "View all". Separate from
+// `prompt` because it is a separate job with a separate failure mode: the
+// researcher writing both at once writes the short line to fit the long one.
+function detailPrompt(slug) {
+  const content = loadCategory(slug)
+  const meta = loadIndex().find((c) => c.slug === slug)
+  if (!meta) throw new Error(`${slug} is not in categories.json`)
+
+  const tips = content.beforeYouPick
+  if (!tips?.weigh && !tips?.avoid && !tips?.moving) {
+    throw new Error(`${slug} has no published lines yet — run the research pass first`)
+  }
+
+  const doc = read(join(appDir, '../.agents/skills/wt-tooltrend/references/detail-prompt.md'))
+  const body = doc.split('```text')[1]?.split('```')[0]?.trim()
+  if (!body) throw new Error('no ```text block in the detail prompt')
+
+  const lines = LINES.filter((k) => tips[k])
+    .map((k) => `  ${k.padEnd(7)} "${tips[k]}"`)
+    .join('\n')
+
+  const filled = body
+    .replaceAll('{{CATEGORY}}', meta.name)
+    .replaceAll('{{CATEGORY_BLURB}}', meta.blurb ?? meta.name)
+    .replaceAll('{{LINES}}', lines)
+    .replaceAll('{{SOURCES}}', (tips.sources ?? []).map((s) => `    ${s}`).join('\n'))
+
+  const left = filled.match(/\{\{(\w+)\}\}/g)
+  if (left) throw new Error(`unfilled placeholders: ${[...new Set(left)].join(', ')}`)
+  process.stdout.write(filled + '\n')
+}
+
+// ---------------------------------------------------------------------------
 // apply — validate, then write
 //
 // Structural checks only. Whether a line is true is the researcher's problem
@@ -235,6 +271,9 @@ try {
   } else if (cmd === 'prompt') {
     if (!arg) throw new Error('usage: prompt <slug>')
     prompt(arg)
+  } else if (cmd === 'detail-prompt') {
+    if (!arg) throw new Error('usage: detail-prompt <slug>')
+    detailPrompt(arg)
   } else if (cmd === 'apply') {
     if (!arg) throw new Error('usage: apply <slug> < result.json')
     await apply(arg)

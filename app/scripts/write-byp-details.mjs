@@ -78,9 +78,12 @@ try {
     const details = {}
     for (const key of LINES) if (entry.details[key]) details[key] = { detail: entry.details[key] }
 
+    // Merged, not replaced. Rewriting one point is the common case — a line
+    // gets corrected, or its detail reads badly — and a full replace would
+    // silently drop the two points you did not resupply.
     const rows = await sql`
       update before_you_pick_runs
-         set byp_details = ${sql.json(details)}
+         set byp_details = byp_details || ${sql.json(details)}
        where category_slug = ${slug} and batch_id = ${batchId}
       returning category_code`
     if (rows.length === 0) {
