@@ -3,7 +3,7 @@
 //
 //   node --env-file=.env scripts/describe-emerging.mjs due
 //   node --env-file=.env scripts/describe-emerging.mjs prompt <slug>
-//   node --env-file=.env scripts/describe-emerging.mjs apply < result.json
+//   node --env-file=.env scripts/describe-emerging.mjs apply <slug> < result.json
 //
 // Leading rows get `best_for` from a human writing the corpus. Emerging rows
 // are placed by the refresh job and arrive with a name and a link, so the
@@ -110,7 +110,7 @@ const MARKETING =
   /\b(powerful|seamless|blazing|comprehensive|cutting[- ]edge|revolutionary|best[- ]in[- ]class|state[- ]of[- ]the[- ]art|game[- ]chang\w+)\b/i
 const EMOJI = /\p{Extended_Pictographic}/u
 
-async function apply() {
+async function apply(slug) {
   const raw = readFileSync(0, 'utf8')
   const json = raw.includes('```') ? raw.split('```')[1].replace(/^json\n/, '') : raw
   const parsed = JSON.parse(json)
@@ -140,11 +140,19 @@ async function apply() {
 
   let written = 0
   for (const [id, text] of writable) {
-    // Scoped to emerging with no line: this pass must never overwrite a human's
-    // best_for, and a tool_slug is only unique within a category.
+    // A tool_slug is unique only *within* a category — the same repo is ranked
+    // in several. Without category_slug here one answer writes its line into
+    // every category holding that tool: applying UI Design's batch put
+    // open-design's UI blurb onto its rows in coding, pdf-documents,
+    // presentation, video-generation and image-generation, and marked them
+    // described so their own pass would skip them.
+    //
+    // `best_for is null` also matters: this pass must never overwrite a line a
+    // human wrote.
     const rows = await sql`
       update listings set best_for = ${text}, updated_at = now()
-      where tool_slug = ${id}
+      where category_slug = ${slug}
+        and tool_slug = ${id}
         and standing = 'emerging'
         and (best_for is null or btrim(best_for) = '')
       returning category_slug`
@@ -165,7 +173,10 @@ try {
   else if (cmd === 'prompt') {
     if (!arg) throw new Error('usage: prompt <slug>')
     await prompt(arg)
-  } else if (cmd === 'apply') await apply()
+  } else if (cmd === 'apply') {
+    if (!arg) throw new Error('usage: apply <slug> < result.json')
+    await apply(arg)
+  }
   else {
     console.error(readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 6).join('\n'))
     process.exit(2)
