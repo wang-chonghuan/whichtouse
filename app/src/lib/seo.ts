@@ -13,11 +13,14 @@ export const SITE_URL = 'https://whichtouse.com'
 export const OG_IMAGE = `${SITE_URL}/og.png`
 export const DEFAULT_TITLE =
   'WhichToUse — find the best AI tool for the job, limits first'
-// The search-result snippet, so it has to say what the home page says, in the
-// same words. See the vocabulary block at the top of components/home-page.tsx —
-// "the job" is the reader's side, "area" is one of the 25.
+// The search-result snippet. It makes the home page's promise, in the home
+// page's words — see the vocabulary block at the top of components/home-page.tsx.
+//
+// The title above is deliberately not the headline. A headline speaks to
+// someone already here; a title has to be findable, and nobody searches "pick
+// the wrong AI tool". "Find the best AI tool for the job" is what they type.
 export const DEFAULT_DESCRIPTION =
-  'SaaS, open source and agent skills across 25 areas of work, side by side. Leading and emerging picks in each, with what every tool is bad at written down and checked by hand.'
+  'How to choose in each of 25 areas — what actually decides the pick, what to avoid, what is changing. Then SaaS, open source and agent skills side by side, limits checked by hand.'
 
 type MetaTag = Record<string, string>
 

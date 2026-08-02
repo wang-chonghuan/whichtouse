@@ -16,7 +16,7 @@ import { spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 
 import type { Category, CategoryView } from '~/lib/catalog'
 import type { TrendingRepositoriesResult, TrendingRepository } from '~/lib/github-trending'
-import { ActionLink, itemHref, RankMarker } from './bits'
+import { ActionLink, Bullet, itemHref, RankMarker } from './bits'
 
 // Home, in three moves: say what the site decides for you, show the shortlists
 // it has, and show what the internet is excited about today — clearly
@@ -89,11 +89,15 @@ export function HomePage({
           * the judgement is the product's whole claim. */}
         <Card variant="blue" padding={6}>
         <VStack gap={5} xstyle={styles.heroText}>
-          {/* Name the three routes rather than calling them "three forms":
-            * SaaS, open source and skills are what a reader already has words
-            * for, and an abstraction they have to decode is a sentence they do
-            * not read. "Limits first" is the promise the rest of the site keeps
-            * — it belongs in the headline, not in a paragraph below it.
+          {/* The headline names the cost of getting this wrong, because that is
+            * the reader's actual position — they are not browsing, they have a
+            * job to do and one shot at picking a tool for it. The subtitle then
+            * says what we hand them instead of a feature table.
+            *
+            * Coverage moved below into the dimension list. It was three bare
+            * numbers in a row, which read as a marketing stat strip and said
+            * nothing a reader could use; the same three facts as a list can
+            * each carry a clause explaining what they mean.
             *
             * No `type="display-*"`: Astryx scopes the display treatment to the
             * Text component, so on a Heading the prop does nothing — measured
@@ -101,18 +105,25 @@ export function HomePage({
             * scale, not to a prop here. */}
           <VStack gap={3}>
             <Heading level={1} textWrap="balance">
-              Find the best AI tool for the job — limits first.
+              Pick the wrong AI tool and you lose the week.
             </Heading>
             <Text type="large" color="secondary" textWrap="pretty">
-              SaaS, open source and agent skills, side by side. Leading and
-              emerging picks in each.
+              Every area tells you what actually decides the choice, what to
+              avoid, and what&rsquo;s changing — before you look at a single
+              product.
             </Text>
           </VStack>
-          <HStack gap={6} wrap="wrap">
-            <Stat value={String(ready.length)} label="areas of work" />
-            <Stat value="3" label="routes in each" />
-            <Stat value="Limits" label="checked by hand" />
-          </HStack>
+          <VStack gap={2}>
+            <Dimension label={`${ready.length} areas of work`}>
+              from coding to bookkeeping
+            </Dimension>
+            <Dimension label="Three routes in each">
+              SaaS, open source and agent skills, compared side by side
+            </Dimension>
+            <Dimension label="Two standings">
+              what leads today, and what is gaining on it
+            </Dimension>
+          </VStack>
           <HStack gap={2} wrap="wrap">
             <ActionLink href="#areas">See all 25 areas</ActionLink>
           </HStack>
@@ -205,13 +216,24 @@ export function HomePage({
   )
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+/** One axis the catalog is organised along: areas, routes, standings.
+ *
+ * Label and gloss sit in one Text rather than two side by side, because two
+ * would be two flex children and the gloss would wrap into a column of its own
+ * on a narrow screen instead of flowing under the label. Astryx's Text is
+ * inline by default, so a nested one is a span and the whole row wraps as a
+ * single paragraph. */
+function Dimension({ label, children }: { label: string; children: string }) {
   return (
-    <HStack gap={1.5} vAlign="center">
-      <Text type="body" weight="semibold">
-        {value}
+    <HStack gap={2} vAlign="start">
+      <Bullet tone="ink" />
+      <Text type="body" color="secondary" textWrap="pretty">
+        <Text type="body" weight="semibold">
+          {label}
+        </Text>
+        {' — '}
+        {children}
       </Text>
-      <Text type="supporting">{label}</Text>
     </HStack>
   )
 }
