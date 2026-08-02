@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import * as stylex from '@stylexjs/stylex'
 import { Section } from '@astryxdesign/core/Section'
 import { Grid } from '@astryxdesign/core/Grid'
@@ -9,6 +10,7 @@ import { List, ListItem } from '@astryxdesign/core/List'
 import { Divider } from '@astryxdesign/core/Divider'
 import { Token } from '@astryxdesign/core/Token'
 import { Icon } from '@astryxdesign/core/Icon'
+import { Button } from '@astryxdesign/core/Button'
 import { Breadcrumbs, BreadcrumbItem } from '@astryxdesign/core/Breadcrumbs'
 import { EmptyState } from '@astryxdesign/core/EmptyState'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
@@ -243,6 +245,12 @@ function TrackColumn({
   )
 }
 
+/** Five is the shortlist; the rest is available but not spent on first read.
+ *
+ * The Skills column on a busy area runs to sixteen entries, and a sixteen-row
+ * column is a directory — the thing this product is defined against. */
+const SHORTLIST = 5
+
 function Standing({
   label,
   hint,
@@ -256,7 +264,12 @@ function Standing({
   categorySlug: string
   xstyle?: stylex.StyleXStyles
 }) {
+  const [isExpanded, setExpanded] = useState(false)
+
   if (items.length === 0) return null
+
+  const shown = isExpanded ? items : items.slice(0, SHORTLIST)
+  const hidden = items.length - shown.length
 
   return (
     <VStack gap={2} xstyle={xstyle}>
@@ -265,12 +278,16 @@ function Standing({
         <Text type="supporting">{hint}</Text>
       </VStack>
       <List density="balanced" hasDividers>
-        {items.map((item) => (
+        {shown.map((item, index) => (
           <ListItem
             key={item.id}
             label={item.name}
             href={itemHref(categorySlug, item)}
-            startContent={<RankMarker rank={item.rank} />}
+            // Position within this standing, not the row's global rank. The
+            // two standings answer different questions, so an Emerging row
+            // numbered 8 read as "eighth best" when it means "first
+            // challenger".
+            startContent={<RankMarker rank={index + 1} />}
             description={
               <Text type="supporting" maxLines={2}>
                 {item.bestFor}
@@ -280,6 +297,16 @@ function Standing({
           />
         ))}
       </List>
+      {hidden > 0 || isExpanded ? (
+        <HStack>
+          <Button
+            variant="ghost"
+            size="sm"
+            label={isExpanded ? 'Show fewer' : `View all ${items.length}`}
+            onClick={() => setExpanded((open) => !open)}
+          />
+        </HStack>
+      ) : null}
     </VStack>
   )
 }

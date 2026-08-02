@@ -64,6 +64,11 @@ export function ProductPage({
   track: Track
   backTo?: string
 }) {
+  // Position within its own standing, matching how the area page numbers its
+  // lists. The global rank would have this page say "#8 in SaaS" about a row
+  // the reader just saw listed as the first challenger.
+  const sameStanding = siblings.filter((sibling) => sibling.standing === item.standing)
+  const position = Math.max(1, sameStanding.findIndex((sibling) => sibling.id === item.id) + 1)
   const others = siblings.filter((sibling) => sibling.id !== item.id).slice(0, 6)
   const pros = item.pros?.length ? item.pros : item.edge ? [item.edge] : []
   const cons = item.cons?.length ? item.cons : item.con ? [item.con] : []
@@ -84,7 +89,7 @@ export function ProductPage({
             <Heading level={1}>{item.name}</Heading>
             <HStack gap={2} wrap="wrap" vAlign="center">
               <StandingBadge standing={item.standing} />
-              <Badge variant="neutral" label={`#${item.rank} in ${TRACK_LABEL[track]}`} />
+              <Badge variant="neutral" label={`#${position} in ${TRACK_LABEL[track]}`} />
               {item.badge ? <Badge variant="blue" label={item.badge} /> : null}
               <ConfidenceBadge confidence={item.confidence} />
             </HStack>
@@ -118,12 +123,12 @@ export function ProductPage({
                   <Text type="label" color="accent">
                     Our read
                   </Text>
-                  <Heading level={2}>{`Why it ranks #${item.rank}`}</Heading>
+                  <Heading level={2}>{`Why it ranks #${position}`}</Heading>
                   <Text textWrap="pretty">{item.rankBasis}</Text>
                 </VStack>
               </Card>
             ) : (
-              <Block title={`Why it ranks #${item.rank}`}>
+              <Block title={`Why it ranks #${position}`}>
                 <Placeholder>
                   No written reasoning for this entry yet — its position comes
                   from aggregated source rankings alone.
@@ -264,7 +269,7 @@ export function ProductPage({
               <MetadataList label={{ position: 'start', width: 110 }}>
                 <MetadataListItem label="Route">{TRACK_LABEL[track]}</MetadataListItem>
                 <MetadataListItem label="Standing">
-                  {item.standing} · #{item.rank}
+                  {item.standing} · #{position}
                 </MetadataListItem>
                 {item.kind ? (
                   <MetadataListItem label="Kind">{item.kind}</MetadataListItem>
