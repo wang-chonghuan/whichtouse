@@ -381,7 +381,7 @@ async function productHuntSearch(topicSlug) {
   const body = {
     query: `query($q:String!){ posts(order:VOTES, postedAfter:"${new Date(
       Date.now() - 365 * 864e5,
-    ).toISOString()}", first:20, topic:$q){ edges{ node{ name website tagline votesCount } } } }`,
+    ).toISOString()}", first:20, topic:$q){ edges{ node{ name website tagline description votesCount } } } }`,
     variables: { q: topicSlug },
   }
   const response = await phThrottled(() => fetch('https://api.producthunt.com/v2/api/graphql', {
@@ -406,7 +406,11 @@ async function productHuntSearch(topicSlug) {
     homepage: node.website,
     repoFullName: repoOf(node.website),
     url: node.website,
-    description: node.tagline ?? null,
+    // The tagline is one marketing line and is usually too thin for the
+    // assignment gate to place anything on; the longer description is what
+    // actually says what the product does. Both are stored, so a row stays
+    // judgeable later from what the database keeps.
+    description: [node.description, node.tagline].filter(Boolean).join(' — ') || null,
     track: repoOf(node.website) ? 'oss' : 'saas',
     metrics: { ph_votes: node.votesCount ?? 0 },
   }))
@@ -695,12 +699,23 @@ async function main() {
         })
         if (assignment?.slug !== category.slug) continue
 
-        // `selfPlacing` used to mean "this source may place a row with no
-        // second origin at all", which is how one team mailbox reached three
-        // unrelated categories. It now means "may place alone *if* the
-        // assignment also clears the higher solo bar" (D2) — the precision
-        // claim the config always made, actually checked.
-        const soloOk = item.selfPlacing && clearsSoloBar(assignment)
+        // Two distinct origins, OR an assignment confident enough to stand on
+        // its own.
+        //
+        // The corroboration rule existed to catch keyword-match noise, and it
+        // was the only guard there was. The gate above now catches that
+        // directly and far better — it reads the candidate rather than
+        // counting who mentioned it. Left as an absolute rule it does not
+        // protect the corpus, it starves it: `github-stars` and `github-new`
+        // share the `github` origin so they cannot corroborate each other, and
+        // Hacker News is the only other source that ever names a repo. An oss
+        // row therefore needed HN to have discussed it, which is why 47 of 75
+        // emerging bands were empty while the skill track — whose source is
+        // selfPlacing, so the gate was its only filter — filled normally.
+        //
+        // `clearsSoloBar` is deliberately stricter than the ordinary bar: a
+        // row nobody else mentioned has to be unambiguous on its own text.
+        const soloOk = clearsSoloBar(assignment)
         if (!soloOk && item.origins.size < minCorroboration) continue
 
         place(item.key, item.existing, item.entry, track, 'emerging', item)
