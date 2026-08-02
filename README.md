@@ -137,24 +137,19 @@ be exhausting at 12px.
 
 ## Brand assets
 
-Every icon, the social card and the manifest are generated from one SVG:
+Every favicon, app icon, the social card and the manifest come from one SVG:
 
 ```bash
 cd app && npm run icons
 ```
 
-Reads `resources/brand/wtu-logo.svg` and writes `favicon.ico` (16/32/48 packed
-by hand), `favicon-16/32/48.png`, `apple-touch-icon.png` (180², opaque),
-`icon-192`/`icon-512`, `icon-maskable-512` (20% safe zone for Android's circle
-crop), `logo-mark-64/96`, `og.png` and `site.webmanifest`.
+`scripts/gen-icons.mjs` is the list of what it emits and why each size is padded
+the way it is. **Nothing under `app/public/` is edited by hand** — the next run
+overwrites it.
 
-**Nothing under `app/public/` is edited by hand** — the next run overwrites it.
-Rendering goes through Playwright's Chromium rather than an image library,
-because the project already depends on it and canvas gives the downscaler, the
-padding maths and the social card in one place.
-
-`scripts/trace-logo.mjs` is the one-off that produced the SVG from the original
-bitmap. Re-run it only if the raster master changes.
+`scripts/trace-logo.mjs` is the one-off that produced
+`resources/brand/wtu-logo.svg` from the original bitmap. Re-run it only if the
+raster master changes.
 
 ## How content gets there
 
