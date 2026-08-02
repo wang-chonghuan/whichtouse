@@ -23,6 +23,20 @@ The whole product is the difference between "ranked by aggregation" and "we
 actually opened this" — a UI that blurs the two destroys the only thing it
 sells.
 
+The interface enforces this with colour. Exactly three surfaces are tinted, and
+each means one thing:
+
+| surface | means |
+|---|---|
+| indigo | **a judgement we made** — one callout per page, always labelled *Our read* |
+| coral | **limits**, and nothing else |
+| grey | **demoted** — Signals, evidence, Quick facts, the task rail, Emerging |
+
+Strengths are marked in plain ink, never green. Green as "good" collides with
+green as a brand colour, and green/red is the one pair colour-blind readers
+cannot separate — so coral carries the signal alone, which is also what the
+product promises.
+
 The per-entry review state is tracked in the database (`reviewed_at`) and
 governs what the refresh job may overwrite, but it is **not surfaced in the
 UI**. An earlier build labelled every row *Reviewed* / *Not yet reviewed*; that
@@ -36,8 +50,11 @@ reading before touching any copy the app generates.
 | path | what it is |
 |---|---|
 | `app/` | the site — TanStack Start + Astryx + StyleX, Postgres-backed |
-| `app/src/theme/neutralTheme.ts` | **the whole look**, as tokens. See "Theming" below |
-| `app/src/components/` | the five view components; every page is one of them |
+| `app/src/theme/wtuTheme.ts` | **the whole look**, as tokens. See "Theming" |
+| `app/src/theme/brand.json` | the handful of values the theme cannot reach |
+| `app/src/components/` | seven files; every page is one of them |
+| `app/public/prototype/` | design artifact, served at `/prototype`. See "Design decisions" |
+| `resources/brand/wtu-logo.svg` | the mark. Every icon is generated from it |
 | `specs/content-in-db.md` | why content lives in Postgres and how the refresh job works |
 | `ssot-schemas/db-schemas/whichtouse.sql` | the schema, single source of truth |
 | `.prodfarm/charter/runbook.md` | deploy, database and job operations |
@@ -57,31 +74,87 @@ cd app && npm run build && npm test
 
 ## Theming
 
-The entire visual system is [`app/src/theme/neutralTheme.ts`](app/src/theme/neutralTheme.ts) —
-scaffolded from Astryx's `neutral` theme and owned by this repo. Colour, type
-scale, radius and motion are all token definitions in that one file, so a
-rebrand is an edit there and nothing else. To start over from a different
-Astryx theme:
+The visual system is [`app/src/theme/wtuTheme.ts`](app/src/theme/wtuTheme.ts):
+one file, written to be read. Colour, type scale and motion are token
+definitions there, so a rebrand is an edit in that file — **no component carries
+an interface colour**.
+
+There is exactly one deliberate exception. `Wordmark` in `components/bits.tsx`
+holds the mark's three hexes as literals, because StyleX needs literals and
+because the logo is *meant* to be independent of the palette: it should not
+change colour because the product did. Those three values also live in
+`brand.json` and in the SVG; all three move together or none do. Any other hex
+in `app/src/components/` is a bug.
+
+It is written fresh rather than scaffolded from a shipped Astryx theme. A
+600-line inherited palette is not a file anyone re-reads, and re-reading this
+one is the point. `npx @astryxdesign/cli theme add <slug> src/theme` still
+works if you want to start over from one of theirs.
+
+The primary is a six-stop ramp derived from one hex by a lightness-proportional
+rule, so changing it is six values rather than a redesign. **Proportional, not
+absolute**: fixed stops (600 at 39% lightness, 700 at 32%) work for a mid blue
+and invert for anything darker — ink green sits at L=24, where a "darker" 700
+came out lighter than the button it was meant to deepen.
+
+### brand.json
+
+Four things consume a colour or a font outside React and so cannot follow the
+theme: the `theme-color` meta the browser paints its chrome with, the webfont
+`<link>`, the generated `site.webmanifest`, and the social card rendered by a
+node script. They read
+[`app/src/theme/brand.json`](app/src/theme/brand.json), which both the app and
+`scripts/gen-icons.mjs` import.
+
+**Its values duplicate theme tokens, and that duplication has already drifted
+once.** Changing `--color-background-body` without changing
+`brand.backgroundBody` shipped a mobile browser chrome painted in the previous
+canvas colour. Move them together.
+
+Type is two families with two jobs: **Inter** for the interface — dense rows,
+tabular figures, gets out of the way — and **Bricolage Grotesque** for the
+wordmark and nothing else, because it has the character a logo wants and would
+be exhausting at 12px.
+
+### Three rules that have each been violated once
+
+- **No colour, spacing or radius literals outside the theme.** Components use
+  semantic tokens (`colorVars['--color-border']`). A value written into a
+  component is invisible from the theme and survives a theme swap looking wrong.
+- **Where an Astryx component owns a property, set it with that component's
+  prop, not `xstyle`.** Astryx's pre-compiled CSS carries a `:not(#\#)`
+  specificity boost and wins silently. Our StyleX is namespaced
+  `classNamePrefix: 'wt'` (`vite.config.ts`) so the two builds can no longer
+  emit the same atomic class name — without it, our `display` and Astryx's were
+  literally the same class, and a media query of ours could not turn it off.
+- **On an `<a>`, `color` and `border-color` cannot be set from StyleX at all.**
+  Astryx's reset has `:where(a){color:inherit}` and
+  `:where(*){border-color:currentColor}` — zero specificity, but `@layer reset`
+  is declared *after* our StyleX layers, and layer order beats specificity.
+  `background-color` has no reset rule, which is why it worked and the other two
+  did not. `ActionLink` in `components/bits.tsx` puts the colour on an inner
+  `<span>` and draws its outline with an inset `box-shadow`.
+
+## Brand assets
+
+Every icon, the social card and the manifest are generated from one SVG:
 
 ```bash
-cd app && npx @astryxdesign/cli theme add <slug> src/theme
+cd app && npm run icons
 ```
 
-then point the `<Theme theme={…}>` in `app/src/routes/__root.tsx` at it.
-`npx @astryxdesign/cli theme list` shows what ships.
+Reads `resources/brand/wtu-logo.svg` and writes `favicon.ico` (16/32/48 packed
+by hand), `favicon-16/32/48.png`, `apple-touch-icon.png` (180², opaque),
+`icon-192`/`icon-512`, `icon-maskable-512` (20% safe zone for Android's circle
+crop), `logo-mark-64/96`, `og.png` and `site.webmanifest`.
 
-Two rules keep that promise real, and both have already been violated once:
+**Nothing under `app/public/` is edited by hand** — the next run overwrites it.
+Rendering goes through Playwright's Chromium rather than an image library,
+because the project already depends on it and canvas gives the downscaler, the
+padding maths and the social card in one place.
 
-- **No colour, spacing or radius literals outside the theme file.** Component
-  code uses semantic tokens (`colorVars['--color-border']`), never hex. A value
-  written into `app.css` or a component is invisible from the theme and will
-  survive a theme swap looking wrong.
-- **Where an Astryx component owns a property, set it with the component's own
-  prop, not `xstyle`.** Astryx's pre-compiled CSS carries a `:not(#\#)`
-  specificity boost; a consumer rule for the same property loses silently. Our
-  StyleX is namespaced `classNamePrefix: 'wt'` (see `vite.config.ts`) so the two
-  builds can no longer produce the same atomic class name — without that, our
-  `display` and Astryx's were literally the same class.
+`scripts/trace-logo.mjs` is the one-off that produced the SVG from the original
+bitmap. Re-run it only if the raster master changes.
 
 ## How content gets there
 
@@ -99,23 +172,47 @@ The job **never** touches editorial prose or `reviewed_at`, never moves
 `watchlist` rows, and can never drop a reviewed listing out of a standing — if
 every source fails, hand-curated entries keep their place.
 
+## Design decisions
+
+`app/public/prototype/index.html` is a self-contained page for choosing a
+direction: candidate schemes over the three real page shapes, a live primary
+picker, and a type switcher. The three mockups are written once and switching
+only repaints CSS variables — a scheme that only works because a mockup was
+hand-tuned for it would not survive contact with the app.
+
+It is served from production so it can be looked at on a real screen, carries
+`noindex`, and is disallowed in `robots.txt`. **It is not the source of truth
+for anything.** Once a decision is implemented the values live in
+`app/src/theme/`, and the directory should be deleted.
+
 ## Development notes
 
-**The design system decides, not a mockup.** The frontend was rebuilt on Astryx
-components against the `neutral` theme; there is no longer a static reference to
-diff against. Compose from `npx @astryxdesign/cli component <Name>` before
-reaching for a `<div>`, and read `npx @astryxdesign/cli docs layout` before
-inventing a page frame — dense rankings are rows, not cards.
+**The design system decides, not a mockup.** Compose from
+`npx @astryxdesign/cli component <Name>` before reaching for a `<div>`, and read
+`npx @astryxdesign/cli docs layout` before inventing a page frame. A Card is a
+widget container — it wraps a whole leaderboard, never an individual row, which
+Astryx calls card soup.
 
 **Verify by measuring the DOM, not by eyeballing screenshots.** Screenshots have
 been actively misleading in this repo. A style that fails to apply looks like a
-design choice; `getComputedStyle` says which it is. The specificity collision
-described under Theming was invisible in a screenshot and obvious in one
-`getComputedStyle(el).display`.
+design choice; `getComputedStyle` says which it is. Both specificity traps above
+were invisible in a screenshot and obvious in one computed value.
 
 **One styling system.** Astryx + StyleX, no exceptions. Tailwind was tried and
 removed: both systems define `--color-accent`, Astryx sets it with `!important`,
 and it silently overrode ported markup.
+
+**`vite dev` needs a hand to deliver StyleX's CSS.** The unplugin ships its
+atomic CSS by rewriting `index.html`; TanStack Start renders the document from a
+component and serves no `index.html`, so that hook never fires and every StyleX
+class comes up unstyled. `__root.tsx` loads `/@id/virtual:stylex:runtime` in dev
+to do the job the plugin would have. Production is unaffected.
+
+**Router scroll restoration is off on purpose.** It manages window scroll, and
+it also wrote a stale offset onto the layout's scroll container after every
+navigation — opening a listing from halfway down a task page landed halfway down
+the listing. `AppFrame` resets scroll on each navigation instead. Consequence:
+back also returns to the top.
 
 **Verify a source with a must-hit sample, never with a summary line.** Every
 source bug in this project's history was silent, not loud:
@@ -148,3 +245,5 @@ python3 ~/.claude/skills/n-easyapp/scripts/redeploy_current_repo.py --project wh
 
 Build from the repo root, never from `app/`, and always pass a revision suffix
 or Container Apps silently keeps the old image. Both traps are in the runbook.
+Note that this script runs `git add -A` and commits before it deploys, so leave
+nothing in the working tree you did not intend to ship.
