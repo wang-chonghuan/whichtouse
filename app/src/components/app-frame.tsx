@@ -128,10 +128,6 @@ const styles = stylex.create({
     scrollbarWidth: 'thin',
     scrollbarColor: `${colorVars['--color-track']} transparent`,
   },
-  navHeading: {
-    paddingInline: spacingVars['--spacing-3'],
-    paddingBottom: spacingVars['--spacing-2'],
-  },
   // A group's caption, and the rule under it. The rule is a border on the
   // caption rather than a Divider between the lists because it belongs to the
   // heading — it is what makes the caption read as a break in the column
@@ -286,9 +282,6 @@ export function AppFrame({
       <div {...stylex.props(styles.page)}>
         <div {...stylex.props(styles.columns)}>
           <nav aria-label="Areas of work" {...stylex.props(styles.nav)}>
-            <div {...stylex.props(styles.navHeading)}>
-              <Text type="label">What are you working on?</Text>
-            </div>
             <div {...stylex.props(styles.navScroll)}>
               {/* Home stands outside the groups: it is not an area, and giving
                 * it a heading of its own would imply it were one. */}

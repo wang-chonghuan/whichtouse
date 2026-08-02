@@ -27,12 +27,11 @@ import {
   Video,
   Workflow,
 } from 'lucide-react'
-import { colorVars } from '@astryxdesign/core/theme/tokens.stylex'
 // Relative, not the `~` alias every other import in this directory uses:
 // StyleX's babel plugin resolves a defineVars import itself, at compile time,
 // and does not read Vite's aliases. With `~/theme/…` the build fails outright
 // with "Could not resolve the path to the imported file".
-import { areaHues } from '../theme/areaHues.stylex'
+import { areaHues, familyHues } from '../theme/areaHues.stylex'
 
 // One icon per area, for the rail. Two things are being decided here — which
 // glyph, and which colour — and only the first is obvious.
@@ -52,23 +51,26 @@ import { areaHues } from '../theme/areaHues.stylex'
 //
 //   'family' — five hues over twenty-five areas, grouped by the kind of work.
 //     Repetition is the point: the colour says which neighbourhood a row is in,
-//     which is information a reader can use. It also stays inside Astryx's
-//     categorical icon tokens, so a theme swap moves it, and five families do
-//     not need the whole wheel — which lets coral be excluded outright, and
-//     coral means limits everywhere else in this product.
+//     which is information a reader can use. Five families also do not need the
+//     whole wheel, which is what lets the set stand clear of both reserved
+//     colours — see familyHues in theme/areaHues.stylex.ts for how far, and why
+//     Astryx's categorical icon tokens could not be used for it.
 //
 //   'unique' — one generated hue per area, from theme/areaHues.stylex.ts.
-//     Closest to what competitors do. Its two costs are written down in that
-//     file: an even wheel cannot avoid the reds, so three areas end up wearing
-//     the limits colour, and a hue belonging to one row alone says only "this
-//     row is not that row".
+//     Closest to what competitors do, and what the rail ships. Both reserved
+//     colours are cut out of the wheel before the hues are spaced, so the cost
+//     is not a collision but spacing: 26 hues over the arc that is left sit 10°
+//     apart, and only the scattered order keeps neighbouring rows from reading
+//     alike. What it cannot do is carry meaning — a hue belonging to one row
+//     alone says "this row is not that row" and nothing more, which is why the
+//     group captions above the rows have to do that work instead.
 //
-// Both sets are legible on the rail by measurement rather than by eye — the
-// family hues sit at 3.11:1 and above against #ECEDE4, the generated ones
-// between 4.00 and 4.52:1. Astryx's `orange` (2.74), `cyan` (2.32) and `yellow`
-// (1.40) are in neither set, having failed the 3:1 floor for a graphic that
-// carries meaning.
-const PALETTE: 'family' | 'unique' = 'family'
+// Both sets are legible on the rail by measurement rather than by eye: the
+// family hues at a constant 4.2:1 against #ECEDE4, the per-area ones between
+// 4.00 and 4.52:1. The floor for a graphic that carries meaning is 3:1, which
+// is why Astryx's `orange` (2.74), `cyan` (2.32) and `yellow` (1.40) appear in
+// neither.
+const PALETTE: 'family' | 'unique' = 'unique'
 
 // ── the glyph ─────────────────────────────────────────────────────────────
 // Lucide, matching the rest of the app's icon set. Each names the *work*
@@ -85,15 +87,15 @@ const base = stylex.create({
 
 const family = stylex.create({
   // Language and text: what the reader writes, reads or converts.
-  language: { color: colorVars['--color-icon-blue'] },
+  language: { color: familyHues.language },
   // Media: what gets generated as picture, motion or sound.
-  media: { color: colorVars['--color-icon-purple'] },
+  media: { color: familyHues.media },
   // Go-to-market: reaching people and answering them.
-  growth: { color: colorVars['--color-icon-pink'] },
+  growth: { color: familyHues.growth },
   // Engineering: code, and the machines that run it unattended.
-  engineering: { color: colorVars['--color-icon-teal'] },
+  engineering: { color: familyHues.engineering },
   // Business: money, law, evidence, and the decisions on top of them.
-  business: { color: colorVars['--color-icon-green'] },
+  business: { color: familyHues.business },
 })
 
 const unique = stylex.create({
