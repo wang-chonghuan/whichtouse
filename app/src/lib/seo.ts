@@ -12,13 +12,12 @@ export const SITE_NAME = 'WhichToUse'
 export const SITE_URL = 'https://whichtouse.com'
 export const OG_IMAGE = `${SITE_URL}/og.png`
 export const DEFAULT_TITLE =
-  'WhichToUse — find the best AI tool for your task, limits first'
-// This is the search-result snippet, so it has to say the same thing the home
-// page says. It still spoke of "apps and open-source skills" — the vocabulary
-// the rest of the site dropped — and led with how we work rather than with what
-// the reader gets.
+  'WhichToUse — find the best AI tool for the job, limits first'
+// The search-result snippet, so it has to say what the home page says, in the
+// same words. See the vocabulary block at the top of components/home-page.tsx —
+// "the job" is the reader's side, "area" is one of the 25.
 export const DEFAULT_DESCRIPTION =
-  'SaaS, open source and agent skills for 25 real tasks, side by side. Leading and emerging picks in each, with what every tool is bad at written down and checked by hand.'
+  'SaaS, open source and agent skills across 25 areas of work, side by side. Leading and emerging picks in each, with what every tool is bad at written down and checked by hand.'
 
 type MetaTag = Record<string, string>
 

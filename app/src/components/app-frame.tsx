@@ -183,7 +183,7 @@ export function AppFrame({
           }
           startContent={
             <>
-              <TopNavItem label="Tasks" href="/#tasks" isSelected={false} />
+              <TopNavItem label="Browse" href="/#areas" isSelected={false} />
               <div {...stylex.props(styles.wide)}>
                 <Button
                   variant="ghost"
@@ -200,7 +200,7 @@ export function AppFrame({
                   variant="ghost"
                   icon={<Icon icon="search" size="sm" />}
                   isIconOnly
-                  label="Search tasks and tools"
+                  label="Search areas and tools"
                   onClick={() => setSearchOpen(true)}
                 />
               </div>
@@ -210,11 +210,11 @@ export function AppFrame({
       }>
       <div {...stylex.props(styles.page)}>
         <div {...stylex.props(styles.columns)}>
-          <nav aria-label="Tasks" {...stylex.props(styles.nav)}>
+          <nav aria-label="Areas of work" {...stylex.props(styles.nav)}>
             <div {...stylex.props(styles.navHeading)}>
-              <Text type="label">Tasks</Text>
+              <Text type="label">What are you working on?</Text>
               <Text type="supporting" display="block">
-                {categories.length} tasks, three routes each
+                {categories.length} areas, three routes each
               </Text>
             </div>
             <div {...stylex.props(styles.navScroll)}>

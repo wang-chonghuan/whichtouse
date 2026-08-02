@@ -89,7 +89,7 @@ export function CategoryPage({ view }: { view: CategoryView }) {
                 <Text type="label" color="accent">
                   Our read
                 </Text>
-                <Heading level={2}>How this task was ranked</Heading>
+                <Heading level={2}>How we ranked these</Heading>
                 <Text type="body" textWrap="pretty">
                   {notes}
                 </Text>

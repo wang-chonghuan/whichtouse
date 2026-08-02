@@ -1,7 +1,7 @@
 {
-  "name": "WhichToUse — find the best AI tool for your task",
+  "name": "WhichToUse — find the best AI tool for the job",
   "short_name": "WhichToUse",
-  "description": "SaaS, open source and agent skills for every task, with the limits of each written down.",
+  "description": "SaaS, open source and agent skills across 25 areas of work, with the limits of each written down.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

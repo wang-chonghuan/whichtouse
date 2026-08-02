@@ -25,8 +25,8 @@ function toEntry(entry: CatalogSearchEntry): Entry {
     id: href,
     label: entry.label,
     auxiliaryData: {
-      group: entry.kind === 'category' ? 'Tasks' : 'Tools',
-      context: entry.kind === 'category' ? 'Task' : entry.categoryName,
+      group: entry.kind === 'category' ? 'Areas' : 'Tools',
+      context: entry.kind === 'category' ? 'Area' : entry.categoryName,
     },
   }
 }
@@ -48,8 +48,8 @@ export function SearchPalette({
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       searchSource={source}
-      label="Search tasks and tools"
-      emptyBootstrapText="Search a task, or a tool by name."
+      label="Search areas and tools"
+      emptyBootstrapText="Search an area, or a tool by name."
       emptySearchText="Nothing in the catalog matches that."
       onValueChange={(href) => {
         onOpenChange(false)

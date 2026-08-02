@@ -14,12 +14,12 @@
     "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
   },
   "manifest": {
-    "name": "WhichToUse \u2014 find the best AI tool for your task",
+    "name": "WhichToUse — find the best AI tool for the job",
     "shortName": "WhichToUse",
-    "description": "SaaS, open source and agent skills for every task, with the limits of each written down."
+    "description": "SaaS, open source and agent skills across 25 areas of work, with the limits of each written down."
   },
-  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it \u2014 the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
-  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else \u2014 it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
+  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
+  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
   "mark": {
     "w": "#0164E5",
     "t": "#60B333",

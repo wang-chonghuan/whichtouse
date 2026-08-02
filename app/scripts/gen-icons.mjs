@@ -169,7 +169,7 @@ await page.setContent(`<!doctype html>
     <div class="domain">whichtouse.com</div>
   </div>
   <div>
-    <h1>Find the best AI tool for your task — limits first.</h1>
+    <h1>Find the best AI tool for the job — limits first.</h1>
     <p>SaaS, open source and agent skills, side by side. Leading and emerging picks in each.</p>
   </div>
   <div class="routes"><span>SaaS</span><span>Open source</span><span>Agent skills</span></div>

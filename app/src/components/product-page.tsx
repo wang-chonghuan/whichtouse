@@ -285,7 +285,7 @@ export function ProductPage({
               <VStack gap={3}>
                 <Divider />
                 <VStack gap={1}>
-                  <Heading level={3}>Same task, same route</Heading>
+                  <Heading level={3}>More in this area</Heading>
                   <Text type="supporting">
                     The rest of the {TRACK_LABEL[track]} column.
                   </Text>

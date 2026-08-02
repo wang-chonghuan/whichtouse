@@ -22,11 +22,20 @@ import { ActionLink, itemHref, RankMarker } from './bits'
 // it has, and show what the internet is excited about today — clearly
 // separated, because the last one is aggregation and the first two are not.
 //
-// Vocabulary is fixed across every view and must not drift: the 25 are *tasks*;
-// the three are *SaaS*, *open source* and *skills*, collectively *routes*;
-// within a route the two standings are *leading* and *emerging*. Earlier drafts
-// also called these "jobs" and "forms", which read as four concepts instead of
-// two.
+// Vocabulary is fixed across every view and must not drift.
+//
+//   the job    what the reader is trying to get done. Second person, prose
+//              only — "the best AI tool for the job". Never a label.
+//   area       one of the 25. They are broad on purpose: half of them span
+//              several verbs (Voice & Audio is TTS *and* music *and*
+//              listening), so naming them after one action would make the
+//              label lie about its own list.
+//   route      SaaS, open source, skills — the three per area.
+//   standing   leading, emerging — the two within a route.
+//
+// "task" was the word here until it was checked against the list and did not
+// fit: an area covers many tasks, so the container could not be one. It also
+// carried a to-do-list connotation the product does not want.
 
 const styles = stylex.create({
   heroText: {
@@ -75,7 +84,7 @@ export function HomePage({
             * scale, not to a prop here. */}
           <VStack gap={3}>
             <Heading level={1} textWrap="balance">
-              Find the best AI tool for your task — limits first.
+              Find the best AI tool for the job — limits first.
             </Heading>
             <Text type="large" color="secondary" textWrap="pretty">
               SaaS, open source and agent skills, side by side. Leading and
@@ -83,12 +92,12 @@ export function HomePage({
             </Text>
           </VStack>
           <HStack gap={6} wrap="wrap">
-            <Stat value={String(ready.length)} label="tasks" />
-            <Stat value="3" label="routes per task" />
+            <Stat value={String(ready.length)} label="areas of work" />
+            <Stat value="3" label="routes in each" />
             <Stat value="Limits" label="checked by hand" />
           </HStack>
           <HStack gap={2} wrap="wrap">
-            <ActionLink href="/c/coding">Browse all tasks</ActionLink>
+            <ActionLink href="#areas">See all 25 areas</ActionLink>
           </HStack>
         </VStack>
         </Card>
@@ -97,12 +106,12 @@ export function HomePage({
       <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <SectionHeading
-            title="Start with a task"
-            description="The tasks with the most depth behind them right now."
+            title="Where to start"
+            description="The areas with the most depth behind them right now."
           />
-          {/* 220, not 260: with the task rail inside the container the content
+          {/* 220, not 260: with the area rail inside the container the content
               column is ~990px at 1440, where a 260 minimum fits only three of
-              the four featured tasks and strands the fourth alone on a second
+              the four featured areas and strands the fourth alone on a second
               row. */}
           <Grid columns={{ minWidth: 220, max: 4 }} gap={4}>
             {featured.map(({ category, items }) => (
@@ -159,9 +168,9 @@ export function HomePage({
       <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <SectionHeading
-            id="tasks"
-            title="Every task"
-            description="Twenty-five tasks people actually search for."
+            id="areas"
+            title="All 25 areas"
+            description="Pick the one your job falls under."
           />
           <HStack gap={2} wrap="wrap">
             {categories.map((category) => (

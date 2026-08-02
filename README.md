@@ -1,11 +1,11 @@
 # WhichToUse
 
-Find the best AI tool for your task — limits first.
+Find the best AI tool for the job — limits first.
 
-Live at **[whichtouse.com](https://whichtouse.com)**. 25 tasks; each shows three
-routes side by side — SaaS, an open-source repo you run, and an agent skill you
-drop into a coding agent — because those are three different decisions, not
-three flavours of one.
+Live at **[whichtouse.com](https://whichtouse.com)**. 25 areas of work; each
+shows three routes side by side — SaaS, an open-source repo you run, and an
+agent skill you drop into a coding agent — because those are three different
+decisions, not three flavours of one.
 
 Each route carries two standings: **Leading** (established picks, top of today's
 aggregate) and **Emerging** (newer challengers, surfaced by two or more
@@ -30,7 +30,7 @@ each means one thing:
 |---|---|
 | indigo | **a judgement we made** — one callout per page, always labelled *Our read* |
 | coral | **limits**, and nothing else |
-| grey | **demoted** — Signals, evidence, Quick facts, the task rail, Emerging |
+| grey | **demoted** — Signals, evidence, Quick facts, the area rail, Emerging |
 
 Strengths are marked in plain ink, never green. Green as "good" collides with
 green as a brand colour, and green/red is the one pair colour-blind readers
@@ -41,6 +41,32 @@ The per-entry review state is tracked in the database (`reviewed_at`) and
 governs what the refresh job may overwrite, but it is **not surfaced in the
 UI**. An earlier build labelled every row *Reviewed* / *Not yet reviewed*; that
 was removed deliberately. Do not reintroduce it without asking.
+
+## Vocabulary
+
+Fixed, and it has already drifted twice. The block at the top of
+`app/src/components/home-page.tsx` is the canonical copy.
+
+| word | means | where it may appear |
+|---|---|---|
+| **the job** | what the reader is trying to get done | prose only — "the best AI tool for the job". Never a label |
+| **area** | one of the 25 | anywhere it must be named |
+| **route** | SaaS, open source, skills | the three per area |
+| **standing** | leading, emerging | the two within a route |
+
+"task" was the word for the container until it was checked against the list.
+Half of the 25 span several verbs — Voice & Audio is TTS *and* music *and*
+listening; Bookkeeping & Finance is ledgers *and* spend management *and* CFO
+services — so naming them after one action makes the label lie about its own
+list. That is the same failure the rule above forbids, in the navigation instead
+of the content. "Task" also reads as a to-do item, which undersells a decision
+you live with for months.
+
+The labels themselves are broad subject nouns on purpose. Do not verb them.
+
+**The database still says `category`** — the table, the type, the `/c/:slug`
+route. That is schema vocabulary and changing it buys nothing a reader can see.
+The split is deliberate; do not "fix" it.
 
 `.agents/skills/wt-enrich` is the written form of this rule, and is worth
 reading before touching any copy the app generates.
@@ -205,7 +231,7 @@ to do the job the plugin would have. Production is unaffected.
 
 **Router scroll restoration is off on purpose.** It manages window scroll, and
 it also wrote a stale offset onto the layout's scroll container after every
-navigation — opening a listing from halfway down a task page landed halfway down
+navigation — opening a listing from halfway down an area page landed halfway down
 the listing. `AppFrame` resets scroll on each navigation instead. Consequence:
 back also returns to the top.
 
