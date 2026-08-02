@@ -159,7 +159,13 @@ function validate(tips) {
       continue
     }
     if (line === '') continue // an empty slot is a legitimate, honest answer
-    const words = line.trim().split(/\s+/).length
+    // Standalone punctuation is not a word. An em-dash written with spaces
+    // around it — like this — was counting as one, so a 25-word line failed a
+    // 25-word limit. The limit is about how long the line takes to read.
+    const words = line
+      .trim()
+      .split(/\s+/)
+      .filter((w) => /[\p{L}\p{N}]/u.test(w)).length
     if (words > MAX_WORDS) issues.push(`${key}: ${words} words, limit is ${MAX_WORDS}`)
     // Observed failure: a number the sources never stated, inferred from
     // vendors' own claims. Percentages and multipliers are the shapes that

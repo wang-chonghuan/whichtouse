@@ -644,5 +644,18 @@
       }
     ]
   },
-  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not by form factor; kind (skill|repo) is only a tag. Anthropic's official xlsx skill leads for AI file-based analysis (it is the purpose-built, production-used equivalent of the app track's ChatGPT ADA), followed by the foundational open-source data stack pandas, Superset, Metabase, and Jupyter, then K-Dense's large EDA skill library. PostHog covers product analytics. Small community skill collections (nimrodfisher, juanlurg) are genuine but low-star, so they rank last at low confidence. All entries are real Agent Skills (SKILL.md) or notable open-source repos — no MCP servers. Star counts verified on GitHub. App leaders (ChatGPT, Julius, Hex) recur across most independent lists; several data-analysis ranking sites are vendor/affiliate blogs, so app consensus weights tools appearing across multiple independent sources."
+  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not by form factor; kind (skill|repo) is only a tag. Anthropic's official xlsx skill leads for AI file-based analysis (it is the purpose-built, production-used equivalent of the app track's ChatGPT ADA), followed by the foundational open-source data stack pandas, Superset, Metabase, and Jupyter, then K-Dense's large EDA skill library. PostHog covers product analytics. Small community skill collections (nimrodfisher, juanlurg) are genuine but low-star, so they rank last at low confidence. All entries are real Agent Skills (SKILL.md) or notable open-source repos — no MCP servers. Star counts verified on GitHub. App leaders (ChatGPT, Julius, Hex) recur across most independent lists; several data-analysis ranking sites are vendor/affiliate blogs, so app consensus weights tools appearing across multiple independent sources.",
+  "beforeYouPick": {
+    "weigh": "Whether your definitions live outside the chat decides this. Otherwise each question re-infers which column means revenue and which join is right; answers drift.",
+    "avoid": "Wrong answers don't error: the query runs, the chart renders, the number is plausible. Verifying every result by hand costs back the time saved.",
+    "moving": "Accuracy gains now come from the loop, not the model: write a query, run it, read what came back, rewrite. Single-shot generation no longer competes.",
+    "sources": [
+      "https://arxiv.org/abs/2411.07763",
+      "https://spider2-sql.github.io/",
+      "https://arxiv.org/html/2512.21345",
+      "https://arxiv.org/abs/2508.15276",
+      "https://aclanthology.org/2023.findings-acl.352/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

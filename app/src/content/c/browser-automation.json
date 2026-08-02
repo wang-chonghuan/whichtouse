@@ -505,5 +505,18 @@
       }
     ]
   },
-  "notes": "Rich two-sided category. App track = consumer agentic browsers (ChatGPT Agent, Claude for Chrome, Comet, Gemini, Atlas). The skill track ranks the genuine SKILL.md skill AND the notable open-source browser-automation frameworks/repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only. This fixes the prior bug where Playwright Skill was placed #1 purely for being a skill: by real adoption Browser Use (~107k★, the recognized leader), Playwright (~93k★, the foundational framework) and Stagehand/Skyvern (~23k★) correctly outrank the ~2.9k★ Playwright Skill, which now sits at #7. Confidence tracks rank (high→medium→low). LaVague (~6k★) was excluded as unmaintained since early 2025. Benchmark figures (WebVoyager) and star counts come from cited sources / live GitHub. MCP servers (Playwright MCP) and managed-service-only offerings (Browserbase, Bright Data Agent Browser) remain out of scope for this track."
+  "notes": "Rich two-sided category. App track = consumer agentic browsers (ChatGPT Agent, Claude for Chrome, Comet, Gemini, Atlas). The skill track ranks the genuine SKILL.md skill AND the notable open-source browser-automation frameworks/repos TOGETHER by real adoption/reputation (GitHub stars), with kind ('skill'|'repo') as a tag only. This fixes the prior bug where Playwright Skill was placed #1 purely for being a skill: by real adoption Browser Use (~107k★, the recognized leader), Playwright (~93k★, the foundational framework) and Stagehand/Skyvern (~23k★) correctly outrank the ~2.9k★ Playwright Skill, which now sits at #7. Confidence tracks rank (high→medium→low). LaVague (~6k★) was excluded as unmaintained since early 2025. Benchmark figures (WebVoyager) and star counts come from cited sources / live GitHub. MCP servers (Playwright MCP) and managed-service-only offerings (Browserbase, Bright Data Agent Browser) remain out of scope for this track.",
+  "beforeYouPick": {
+    "weigh": "Whether it runs in your logged-in browser or a fresh remote one. Login walls, expiring cookies and bot checks decide more than model quality.",
+    "avoid": "Page text and your instructions reach the model through one channel, and it acts with your logged-in privileges. Restrict which sites it may open.",
+    "moving": "Agents are learning to record a successful run and replay it as deterministic steps, calling the model only when the page changes.",
+    "sources": [
+      "https://arxiv.org/abs/2510.03285",
+      "https://brave.com/blog/comet-prompt-injection/",
+      "https://claude.com/blog/claude-for-chrome",
+      "https://docs.stagehand.dev/best-practices/caching",
+      "https://github.com/browser-use/workflow-use"
+    ],
+    "updated": "2026-08-02"
+  }
 }

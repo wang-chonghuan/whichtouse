@@ -636,5 +636,18 @@
       }
     ]
   },
-  "notes": "Category is contaminated by vendor blogs that rank their own product #1 (e.g. CustomGPT.ai, Chitika) — those are weighted down in the app track. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag, so a hugely-adopted RAG repo outranks a niche skill. It mixes the notable open-source RAG/knowledge-base frameworks (LangChain, Dify, RAGFlow, AnythingLLM, LlamaIndex, Quivr, Khoj, Haystack) with genuine Agent Skills for a personal knowledge base (kepano's official Obsidian skills and the Obsidian second-brain skill family). Star counts verified via the GitHub API (Jul 2026)."
+  "notes": "Category is contaminated by vendor blogs that rank their own product #1 (e.g. CustomGPT.ai, Chitika) — those are weighted down in the app track. The Skill/Repo track is now ranked by real quality, reputation, and adoption (GitHub stars) rather than form factor — kind ('skill' vs 'repo') is only a tag, so a hugely-adopted RAG repo outranks a niche skill. It mixes the notable open-source RAG/knowledge-base frameworks (LangChain, Dify, RAGFlow, AnythingLLM, LlamaIndex, Quivr, Khoj, Haystack) with genuine Agent Skills for a personal knowledge base (kepano's official Obsidian skills and the Obsidian second-brain skill family). Star counts verified via the GitHub API (Jul 2026).",
+  "beforeYouPick": {
+    "weigh": "Your corpus is mostly near-duplicates — drafts, revisions, superseded policies. Similarity alone can't rank them; ask what breaks the tie: recency, ownership, version.",
+    "avoid": "They respect permissions but end obscurity. Sharing links set too broadly years ago become one question away, and the cleanup lands after go-live.",
+    "moving": "Retrieval is becoming a planned loop: the model splits one question into several searches, reranks each, then merges. Slower and costlier per answer.",
+    "sources": [
+      "https://arxiv.org/html/2605.05253v1",
+      "https://arxiv.org/html/2510.08109v1",
+      "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+      "https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance",
+      "https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview"
+    ],
+    "updated": "2026-08-02"
+  }
 }

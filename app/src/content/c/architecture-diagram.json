@@ -631,5 +631,18 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS diagramming tools lead as kind:repo — Mermaid is placed #1 as the de-facto diagram-as-code / architecture standard (natively rendered on GitHub and what agents emit), ahead of the higher-starred but freeform Excalidraw whiteboard — followed by the diagram-as-code leaders (Diagrams, D2, PlantUML, C4-PlantUML, draw.io). Genuine diagram Claude skills are a young, entirely Mermaid-centric space topping out in the low thousands of stars, so softaworks' toolkit and the standalone Agents365 skill rank below the major tools. Removed all MCP-server entries (Mermaid MCP, Claude Mermaid, Whimsical MCP). Star counts verified live 2026-07-24."
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS diagramming tools lead as kind:repo — Mermaid is placed #1 as the de-facto diagram-as-code / architecture standard (natively rendered on GitHub and what agents emit), ahead of the higher-starred but freeform Excalidraw whiteboard — followed by the diagram-as-code leaders (Diagrams, D2, PlantUML, C4-PlantUML, draw.io). Genuine diagram Claude skills are a young, entirely Mermaid-centric space topping out in the low thousands of stars, so softaworks' toolkit and the standalone Agents365 skill rank below the major tools. Removed all MCP-server entries (Mermaid MCP, Claude Mermaid, Whimsical MCP). Star counts verified live 2026-07-24.",
+  "beforeYouPick": {
+    "weigh": "The update path, not the first render. If the next version means re-drawing instead of re-running a source, the diagram stops matching the system.",
+    "avoid": "Generated layouts need hand-tidying, and the tidying lives nowhere in the source. Regenerating discards it, so people stop regenerating and the diagram freezes.",
+    "moving": "Generation is moving from prompt-to-picture toward reading the repository or infrastructure state, then regenerating in CI so the diagram's diff shows in review.",
+    "sources": [
+      "https://github.com/mermaid-js/mermaid/issues/2483",
+      "https://github.com/mermaid-js/mermaid/issues/7267",
+      "https://dev.to/erajasekar/the-real-reason-architecture-diagrams-go-stale-35ok",
+      "https://www.pulumi.com/blog/automating-diagramming-in-your-ci-cd/",
+      "https://github.com/marketplace/actions/architecture-diagram-generator"
+    ],
+    "updated": "2026-08-02"
+  }
 }

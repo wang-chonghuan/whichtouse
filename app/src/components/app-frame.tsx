@@ -93,7 +93,13 @@ const styles = stylex.create({
   nav: {
     display: {default: 'block', '@media (max-width: 1024px)': 'none'},
     position: 'sticky',
-    top: spacingVars['--spacing-6'],
+    // Clear of the bar, not of the viewport. The header is sticky too, so a
+    // plain `top: 24px` parked the rail's first 28px underneath it — "Home"
+    // was half-eaten on every scrolled page, and a taller bar makes it worse.
+    // AppShell measures its own header into --appshell-header-height in auto
+    // mode; reading it here means this offset follows the bar instead of
+    // needing a second edit whenever its height changes.
+    top: `calc(var(--appshell-header-height, 0px) + ${spacingVars['--spacing-6']})`,
     minWidth: 0,
     backgroundColor: colorVars['--color-background-muted'],
     borderRadius: 12,
@@ -107,7 +113,10 @@ const styles = stylex.create({
   // scrollbarColor/-width are standard CSS now, so the thumb can come from a
   // token like everything else and the track can disappear entirely.
   navScroll: {
-    maxHeight: 'calc(100dvh - 180px)',
+    // Was a flat 180px, of which 52 was the bar as it stood. Splitting the bar
+    // back out keeps the rail's own breathing room at the 128px it was tuned
+    // to and lets the header's real height do the rest.
+    maxHeight: 'calc(100dvh - var(--appshell-header-height, 0px) - 128px)',
     overflowY: 'auto',
     scrollbarWidth: 'thin',
     scrollbarColor: `${colorVars['--color-border-emphasized']} transparent`,
@@ -169,6 +178,14 @@ export function AppFrame({
       // white, and with the nav now inside that region the whole page went one
       // flat tone. On the wash the canvas shows through and cards read as
       // raised again — which is what the callouts and route cards depend on.
+      //
+      // Not `section` either, though it is the variant that owns a divider
+      // between nav and content. Its rule goes on the inner LayoutHeader, which
+      // sits inside the header's own inline padding, so it stopped 16px short
+      // of both window edges while the bar's white ran past it — an inset line
+      // under a full-bleed surface reads as a mistake. The rule is on
+      // `app-shell-header` in the theme instead, which is the element that
+      // spans the window.
       variant="wash"
       contentPadding={0}
       topNav={

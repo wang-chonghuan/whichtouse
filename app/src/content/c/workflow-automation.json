@@ -596,5 +596,18 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS workflow-automation platforms lead as kind:repo — n8n (~197.8k★) is the runaway leader, followed by Activepieces, Node-RED, Windmill and Trigger.dev — with the genuine Claude skills ranked among them: Członkowski's n8n-skills (~5.9k★) is the de-facto skill pack, plus the official n8n-io/skills and haunchen alternatives. The dedicated skill ecosystem here is almost entirely n8n-focused; Kestra is included as a broader (data-adjacent) orchestration option. Removed all MCP entries (Zapier MCP, n8n MCP, Activepieces MCP, Composio; note czlonkowski/n8n-mcp ~22k★ is an MCP server, excluded). Huginn (~49.7k★) and Automatisch were left out as stalled/slow-maintenance. Star counts verified live 2026-07-24."
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS workflow-automation platforms lead as kind:repo — n8n (~197.8k★) is the runaway leader, followed by Activepieces, Node-RED, Windmill and Trigger.dev — with the genuine Claude skills ranked among them: Członkowski's n8n-skills (~5.9k★) is the de-facto skill pack, plus the official n8n-io/skills and haunchen alternatives. The dedicated skill ecosystem here is almost entirely n8n-focused; Kestra is included as a broader (data-adjacent) orchestration option. Removed all MCP entries (Zapier MCP, n8n MCP, Activepieces MCP, Composio; note czlonkowski/n8n-mcp ~22k★ is an MCP server, excluded). Huginn (~49.7k★) and Automatisch were left out as stalled/slow-maintenance. Star counts verified live 2026-07-24.",
+  "beforeYouPick": {
+    "weigh": "Ask what a run that dies halfway does next: resume at the failed step, or replay from the top and repeat everything already done.",
+    "avoid": "The meter matters more than the price: where billing is per successful step, replaying a failed run recharges every step that already worked.",
+    "moving": "Connector catalogs are turning into tool surfaces: the same integrations now answer agent calls, and workflows themselves get exposed as tools other agents invoke.",
+    "sources": [
+      "https://help.zapier.com/hc/en-us/articles/8496196837261-Zapier-tasks-explained",
+      "https://docs.n8n.io/build/understand-workflows/understand-executions/",
+      "https://help.make.com/incomplete-executions",
+      "https://www.inngest.com/blog/durable-execution-key-to-harnessing-ai-agents",
+      "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

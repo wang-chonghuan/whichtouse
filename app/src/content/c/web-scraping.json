@@ -651,5 +651,17 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor (fixing the prior bug where a 78★ personal skill outranked Crawl4AI). Ranked by live GitHub stars and de-facto reputation: the recognized OSS scraping leaders (Crawl4AI, Scrapy, Playwright, Puppeteer, Beautiful Soup, Scrapling) lead as kind:repo, with the two most-adopted genuine SKILL.md scraping skills (Cedriccmh scrapling skill, Mindrally) below. Genuine Claude scraping skills top out in the low hundreds of stars, so they rank below the major libraries. Removed all MCP-server entries. Firecrawl OSS is omitted here as it already leads the App track. Star counts verified live 2026-07-24."
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor (fixing the prior bug where a 78★ personal skill outranked Crawl4AI). Ranked by live GitHub stars and de-facto reputation: the recognized OSS scraping leaders (Crawl4AI, Scrapy, Playwright, Puppeteer, Beautiful Soup, Scrapling) lead as kind:repo, with the two most-adopted genuine SKILL.md scraping skills (Cedriccmh scrapling skill, Mindrally) below. Genuine Claude scraping skills top out in the low hundreds of stars, so they rank below the major libraries. Removed all MCP-server entries. Firecrawl OSS is omitted here as it already leads the App track. Star counts verified live 2026-07-24.",
+  "beforeYouPick": {
+    "weigh": "Your hardest target sets the bill: a page needing a browser and a residential exit costs many times a plain fetch.",
+    "avoid": "Blocks rarely arrive as errors: a challenge page returns 200, the model extracts confident fields from it, and the pipeline records success over nothing.",
+    "moving": "Sites are shifting from blocking to identifying: crawlers present signed keys, and the answer is increasingly a price per fetch rather than a refusal.",
+    "sources": [
+      "https://docs.scraperapi.com/resources/faq/anti-bots-and-captchas",
+      "https://scrapfly.io/docs/scrape-api/getting-started",
+      "https://scrapeops.io/web-scraping-playbook/web-scraping-blocking-case-study/",
+      "https://blog.cloudflare.com/introducing-pay-per-crawl/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

@@ -182,6 +182,19 @@ export const wtuTheme = defineTheme({
     'app-shell-header': {
       base: {
         backgroundColor: 'var(--color-background-surface)',
+        // TopNav sizes itself from its contents plus 8px of its own padding,
+        // which put the bar at 52px — tight enough that the wordmark looked
+        // wedged in rather than placed. This is the height, and it lives here
+        // because TopNav exposes no height prop and owns its own padding.
+        // 8px each side takes the bar to a measured 69: a 36px content row —
+        // the search Button, which is taller than the 34px wordmark beside it
+        // — plus 16 above and below, plus the rule.
+        paddingBlock: 'var(--spacing-2)',
+        // The rule under the bar. AppShell's `section` variant offers one, but
+        // draws it on the inner LayoutHeader — inside the padding below, so it
+        // stops short of both window edges while this element's white does not.
+        // On this element it spans the window, like the surface it closes.
+        borderBlockEnd: '1px solid var(--color-border)',
         // 16, not the page's 24: TopNav adds 8px of its own inline padding
         // that a consumer stylesheet cannot remove (it owns the property, and
         // Astryx's CSS outranks ours), so the two together land the logo on the

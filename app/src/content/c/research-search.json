@@ -527,5 +527,17 @@
       }
     ]
   },
-  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not form factor; kind (skill|repo) is only a tag. last30days (53.4k★, #1 trending) and imbad0202's research pipeline (39.3k★) are the highest-adoption skills; GPT Researcher (28k★) is the recognized de-facto open-source deep-research agent and STORM (30.3k★) is Stanford's report generator — both major repos now ranked alongside the skills on merit. Deep-research/citation skills fill the mid and low tiers. All still depend on an underlying web-search tool and can fabricate citations — verify before citing. No MCP servers. Star counts verified on GitHub. App-track deep-research consensus is stable: OpenAI, Perplexity, Claude, and Gemini lead general research; Elicit/Consensus/NotebookLM lead academic and document-grounded work."
+  "notes": "Skill/Repo track is ranked by real quality, reputation, and adoption — not form factor; kind (skill|repo) is only a tag. last30days (53.4k★, #1 trending) and imbad0202's research pipeline (39.3k★) are the highest-adoption skills; GPT Researcher (28k★) is the recognized de-facto open-source deep-research agent and STORM (30.3k★) is Stanford's report generator — both major repos now ranked alongside the skills on merit. Deep-research/citation skills fill the mid and low tiers. All still depend on an underlying web-search tool and can fabricate citations — verify before citing. No MCP servers. Star counts verified on GitHub. App-track deep-research consensus is stable: OpenAI, Perplexity, Claude, and Gemini lead general research; Elicit/Consensus/NotebookLM lead academic and document-grounded work.",
+  "beforeYouPick": {
+    "weigh": "Reach decides the answer, not writing quality: SEO-ranked search results, a closed scholarly index, or the paywalled material most of them cannot open.",
+    "avoid": "A citation that resolves and looks on-topic often does not support the sentence it is attached to; support falls as a run gathers pages.",
+    "moving": "Source authority and citation checking are moving out of the model into the plumbing: curated authority indexes before retrieval, automated link verification after drafting.",
+    "sources": [
+      "https://arxiv.org/abs/2605.06635v1",
+      "https://arxiv.org/abs/2604.03173",
+      "https://zylos.ai/research/2026-04-21-deep-research-agent-architectures",
+      "https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php"
+    ],
+    "updated": "2026-08-02"
+  }
 }
