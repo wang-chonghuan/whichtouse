@@ -29,11 +29,6 @@ import { SectionHeading } from './home-page'
 const TRACKS: Track[] = ['app', 'oss', 'skill']
 
 const styles = stylex.create({
-  page: {
-    maxWidth: 1400,
-    marginInline: 'auto',
-    width: '100%',
-  },
   // The routes hold different numbers of entries, so content-height cards put
   // the Emerging band at three different altitudes and the ragged edge reads as
   // noise. Equal height plus a bottom-anchored Emerging block lines the two
@@ -70,8 +65,8 @@ export function CategoryPage({ view }: { view: CategoryView }) {
   const { category, tracks, notes, watchlist } = view
 
   return (
-    <VStack xstyle={styles.page}>
-      <Section variant="transparent" padding={6}>
+    <VStack>
+      <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <Breadcrumbs variant="supporting">
             <BreadcrumbItem href="/">Home</BreadcrumbItem>
@@ -104,7 +99,7 @@ export function CategoryPage({ view }: { view: CategoryView }) {
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={6} paddingBlock={0}>
+      <Section variant="transparent" padding={0} paddingBlock={0}>
         <Grid columns={{ minWidth: 320, max: 3 }} gap={4} align="stretch">
           {TRACKS.map((track) => (
             <TrackColumn
@@ -118,7 +113,7 @@ export function CategoryPage({ view }: { view: CategoryView }) {
       </Section>
 
       {watchlist.length > 0 ? (
-        <Section variant="transparent" padding={6}>
+        <Section variant="transparent" padding={0} paddingBlock={6}>
           <VStack gap={4}>
             <SectionHeading
               title="On the watchlist"
@@ -155,10 +150,10 @@ function TrackColumn({
 
   return (
     <Card padding={0} xstyle={styles.card}>
-      <HStack hAlign="between" vAlign="center" gap={2} xstyle={styles.header}>
+      <VStack gap={0.5} xstyle={styles.header}>
         <Heading level={3}>{TRACK_LABEL[track]}</Heading>
         <Text type="supporting">{TRACK_BLURB[track]}</Text>
-      </HStack>
+      </VStack>
       <Divider />
 
       {items.length === 0 ? (

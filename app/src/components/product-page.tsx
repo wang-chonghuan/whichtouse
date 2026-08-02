@@ -34,11 +34,6 @@ import {
 // borrowing a metric to fill itself.
 
 const styles = stylex.create({
-  page: {
-    maxWidth: 1200,
-    marginInline: 'auto',
-    width: '100%',
-  },
   // Asymmetric two-column: the aside is a fixed reference rail, not a second
   // reading column, so it gets a pixel budget and the prose gets the rest.
   columns: {
@@ -74,8 +69,8 @@ export function ProductPage({
   const cons = item.cons?.length ? item.cons : item.con ? [item.con] : []
 
   return (
-    <VStack xstyle={styles.page}>
-      <Section variant="transparent" padding={6}>
+    <VStack>
+      <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <Breadcrumbs variant="supporting">
             <BreadcrumbItem href="/">Home</BreadcrumbItem>
@@ -110,7 +105,7 @@ export function ProductPage({
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={6} paddingBlock={0}>
+      <Section variant="transparent" padding={0} paddingBlock={0}>
         <div {...stylex.props(styles.columns)}>
           <VStack gap={8}>
             {/* The one primary callout this page gets, and it carries the same

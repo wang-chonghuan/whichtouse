@@ -54,9 +54,12 @@ const CORAL = {
 } as const;
 
 // ── frame ───────────────────────────────────────────────────────────────────
-const CANVAS = '#F4F7F6' // shell; near-white, a hair cooler than the content
-const SURFACE = '#FFFFFF' // content and cards
-const RECESSED = '#EBF0EF' // demoted material: signals, evidence, the rail
+// One white for the page and for cards. The earlier near-white canvas gave the
+// shell a faint tone the content floated on; on plain white the hairline border
+// does that job instead, and the only tinted surfaces left are the ones that
+// mean something — the task rail, and the demoted blocks.
+const SURFACE = '#FFFFFF' // the page, and cards on it
+const RECESSED = '#EBF0EF' // the task rail, Signals, Quick facts, Emerging
 const LINE = '#DDE5E3'
 const INK = '#12201E'
 const INK_2 = '#5A6764'
@@ -98,7 +101,7 @@ export const wtuTheme = defineTheme({
 
   tokens: {
     // ── surfaces ────────────────────────────────────────────────────────────
-    '--color-background-body': [CANVAS, '#141817'],
+    '--color-background-body': [SURFACE, '#141817'],
     '--color-background-surface': [SURFACE, '#1C2120'],
     '--color-background-card': [SURFACE, '#1C2120'],
     '--color-background-popover': [SURFACE, '#222827'],
@@ -168,12 +171,25 @@ export const wtuTheme = defineTheme({
   },
 
   components: {
-    // The top bar is white while the shell around it stays on the canvas tone.
-    // Done here rather than with AppShell's variant prop because `surface` would
-    // repaint the side nav and the content too, collapsing the frame to a single
-    // tone and losing the chrome/content separation the layout depends on.
+    // The page is white throughout, so this is belt and braces on the bar's own
+    // tone — kept explicit so the header cannot drift if AppShell's `wash`
+    // variant ever resolves to something other than the body colour.
+    // The padding puts the bar's *contents* on the same left edge as the page,
+    // while the white keeps running to both edges of the window. Without it the
+    // logo sat hard against the viewport while the content began 84px in, so
+    // the page had two different left margins. max() keeps the rule from going
+    // negative on windows narrower than the container.
     'app-shell-header': {
-      base: {backgroundColor: 'var(--color-background-surface)'},
+      base: {
+        backgroundColor: 'var(--color-background-surface)',
+        // 16, not the page's 24: TopNav adds 8px of its own inline padding
+        // that a consumer stylesheet cannot remove (it owns the property, and
+        // Astryx's CSS outranks ours), so the two together land the logo on the
+        // container's edge. Measured, not guessed — logo x and rail x both read
+        // 84 at 1440. If TopNav's padding ever changes, this drifts by that
+        // much and the fix is here.
+        paddingInline: 'max(16px, calc((100% - 1320px) / 2 + 16px))',
+      },
     },
   },
 

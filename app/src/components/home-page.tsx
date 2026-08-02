@@ -29,11 +29,6 @@ import { ActionLink, itemHref, RankMarker } from './bits'
 // two.
 
 const styles = stylex.create({
-  page: {
-    maxWidth: 1200,
-    marginInline: 'auto',
-    width: '100%',
-  },
   heroText: {
     maxWidth: 720,
   },
@@ -61,8 +56,8 @@ export function HomePage({
   const ready = categories.filter((category) => category.ready)
 
   return (
-    <VStack xstyle={styles.page}>
-      <Section variant="transparent" padding={6} paddingBlock={8}>
+    <VStack>
+      <Section variant="transparent" padding={0} paddingBlock={8}>
         {/* The hero is this page's one primary callout. Site-wide that surface
           * means the same thing — a judgement we made — and on the home page
           * the judgement is the product's whole claim. */}
@@ -99,13 +94,17 @@ export function HomePage({
         </Card>
       </Section>
 
-      <Section variant="transparent" padding={6}>
+      <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <SectionHeading
             title="Start with a task"
             description="The tasks with the most depth behind them right now."
           />
-          <Grid columns={{ minWidth: 260, max: 4 }} gap={4}>
+          {/* 220, not 260: with the task rail inside the container the content
+              column is ~990px at 1440, where a 260 minimum fits only three of
+              the four featured tasks and strands the fourth alone on a second
+              row. */}
+          <Grid columns={{ minWidth: 220, max: 4 }} gap={4}>
             {featured.map(({ category, items }) => (
               <Card key={category.slug} padding={0}>
                 <VStack>
@@ -142,7 +141,7 @@ export function HomePage({
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={6}>
+      <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <SectionHeading
             title="Trending on GitHub today"
@@ -157,7 +156,7 @@ export function HomePage({
         </VStack>
       </Section>
 
-      <Section variant="transparent" padding={6}>
+      <Section variant="transparent" padding={0} paddingBlock={6}>
         <VStack gap={4}>
           <SectionHeading
             id="tasks"

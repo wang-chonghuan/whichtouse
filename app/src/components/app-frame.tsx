@@ -2,52 +2,51 @@ import { useEffect, useState, type ReactNode } from 'react'
 import * as stylex from '@stylexjs/stylex'
 import { colorVars, spacingVars } from '@astryxdesign/core/theme/tokens.stylex'
 import { AppShell } from '@astryxdesign/core/AppShell'
-import { SideNav, SideNavItem, SideNavSection } from '@astryxdesign/core/SideNav'
 import { TopNav, TopNavItem } from '@astryxdesign/core/TopNav'
 import { Button } from '@astryxdesign/core/Button'
 import { Icon } from '@astryxdesign/core/Icon'
 import { Kbd } from '@astryxdesign/core/Kbd'
-import { Home, ListOrdered } from 'lucide-react'
+import { List, ListItem } from '@astryxdesign/core/List'
+import { Text } from '@astryxdesign/core/Text'
 
 import type { Category, CatalogSearchEntry } from '~/lib/catalog'
 import { SearchPalette } from './search-palette'
 import { Wordmark } from './bits'
 
 // The frame. Every page renders inside it, so it is decided once here and the
-// page views below never touch chrome.
+// page views never touch chrome.
+//
+// The task list is a column *inside* the page container, not a shell rail
+// pinned to the viewport edge. A flush-left rail reads as an application — a
+// console you work in — and this is a site you read. Keeping the nav on the
+// same measure as the content also stops the content fighting a fixed 260px
+// off its left edge on a narrow laptop.
 //
 // Responsive contract:
-//   > 1024px  side nav 260 (collapsible) | content
-//  <= 1024px  side nav becomes AppShell's mobile drawer, opened from the
-//             hamburger AppShell puts in the top nav
-//
-// height="fill": the task list is 25 entries and outlives any one page, so the
-// nav column keeps its own scroll position while the content scrolls.
+//   > 1024px  task column 248 | content, nav sticky under the bar
+//  <= 1024px  one column, no task rail. Twenty-five rows stacked above every
+//             page would bury the content, and laying them into a horizontal
+//             strip is not available: List owns its own display and Astryx's
+//             CSS outranks ours. Navigation moves to the bar instead — "Tasks"
+//             goes to the full list, and search is a tap or ⌘K away.
+
+const CONTAINER = 1320
+const NAV_WIDTH = 248
 
 const styles = stylex.create({
-  // Everything lives on the left: mark, wordmark, Tasks, search. Nothing sits
+  // Everything on the left of the bar: mark, wordmark, Tasks, search. Nothing
   // on the right — this is a reading product, not an app with account chrome,
   // and an empty right edge is quieter than one invented to fill it.
   search: {
     minWidth: 200,
   },
-  // Two renderings of one control rather than one that adapts: the wide form
-  // is a labelled field, the narrow form is an icon. At 390px the labelled
-  // form plus the logo left no room for AppShell's own nav toggle, which then
-  // sat off the edge of the bar.
-  //
-  // These go on plain elements we own, not on an Astryx component's xstyle.
-  // Astryx ships its atomic CSS with a `:not(#\#)` specificity boost, so a
-  // property the component already sets — display, on any Stack — cannot be
-  // overridden from a consumer stylesheet. Overriding our own <div> has no
-  // such contest. Where a component owns the property, use its prop instead.
   wide: {
     display: {default: 'flex', '@media (max-width: 720px)': 'none'},
   },
   narrow: {
     display: {default: 'none', '@media (max-width: 720px)': 'flex'},
   },
-  // The header is white now, so the mark's own white tile has nothing to sit
+  // The header is white, so the mark's own white tile has nothing to sit
   // against — the border is what keeps it from dissolving into the bar.
   logo: {
     borderRadius: 6,
@@ -64,23 +63,63 @@ const styles = stylex.create({
     gap: spacingVars['--spacing-2'],
     textDecoration: 'none',
   },
+
+  page: {
+    maxWidth: CONTAINER,
+    marginInline: 'auto',
+    width: '100%',
+    // One value at every width, because the top bar has to match it and a
+    // theme-level component override cannot carry a media query.
+    paddingInline: spacingVars['--spacing-6'],
+    paddingBlock: spacingVars['--spacing-6'],
+  },
+  columns: {
+    display: 'grid',
+    gridTemplateColumns: {
+      default: `${NAV_WIDTH}px minmax(0, 1fr)`,
+      '@media (max-width: 1024px)': 'minmax(0, 1fr)',
+    },
+    gap: spacingVars['--spacing-8'],
+    alignItems: 'start',
+  },
+  // Sticky rather than fixed: it travels with the page until it meets the bar,
+  // which keeps it tied to the container instead of to the viewport.
+  //
+  // On a white page the task list is the one standing tinted surface. It earns
+  // it: twenty-five rows that persist across every page are a different kind of
+  // thing from the content beside them, and the tone says so without spending a
+  // colour. Same recessed tone as Signals and Quick facts — demoted, not
+  // decorated.
+  nav: {
+    display: {default: 'block', '@media (max-width: 1024px)': 'none'},
+    position: 'sticky',
+    top: spacingVars['--spacing-6'],
+    minWidth: 0,
+    backgroundColor: colorVars['--color-background-muted'],
+    borderRadius: 12,
+    paddingBlock: spacingVars['--spacing-3'],
+    paddingInline: spacingVars['--spacing-2'],
+  },
+  // Its own scroller, so a long task list never pushes the sticky column past
+  // the viewport and strands the last few tasks below the fold.
+  navScroll: {
+    maxHeight: 'calc(100dvh - 180px)',
+    overflowY: 'auto',
+  },
+  navHeading: {
+    paddingInline: spacingVars['--spacing-3'],
+    paddingBottom: spacingVars['--spacing-2'],
+  },
 })
 
-/** The element AppShell actually scrolls.
+/** Reset the scroll position on navigation.
  *
- * height="fill" puts the scrollbar on an inner container rather than on the
- * document, so `window.scrollY` is permanently 0 and the router's
- * scrollRestoration — which manages window scroll — has nothing to reset.
- * Without this, opening a listing from halfway down a task page landed halfway
- * down the listing.
- *
- * Queried by Astryx's own component class, which its styling docs name as the
- * supported selector surface. Written defensively anyway: if the class ever
- * moves, navigation still works and only the scroll reset is lost. */
+ * The shell is height="auto", so the document is the scroller and
+ * window.scrollTo is the call that does the work here. The container query
+ * stays because height="fill" puts the scrollbar on an inner element instead,
+ * and this keeps working if that is ever switched back. */
 function scrollContentToTop() {
   document.querySelector('.astryx-layout-content')?.scrollTo({ top: 0 })
-  // Belt and braces for any layout where the document is the scroller after
-  // all — a no-op in the current shell.
   window.scrollTo({ top: 0 })
 }
 
@@ -101,10 +140,6 @@ export function AppFrame({
 }) {
   const [isSearchOpen, setSearchOpen] = useState(false)
 
-  // Every navigation starts at the top. This resets on back/forward too: the
-  // inner container was never restored in the first place, so nothing is lost —
-  // but per-page restoration would have to save and replay the container's
-  // offset itself, which is a feature rather than a fix.
   useEffect(() => {
     scrollContentToTop()
   }, [pathname])
@@ -123,7 +158,12 @@ export function AppFrame({
 
   return (
     <AppShell
-      height="fill"
+      height="auto"
+      // wash, not the default `elevated`: elevated paints the content region
+      // white, and with the nav now inside that region the whole page went one
+      // flat tone. On the wash the canvas shows through and cards read as
+      // raised again — which is what the callouts and route cards depend on.
+      variant="wash"
       contentPadding={0}
       topNav={
         <TopNav
@@ -167,32 +207,37 @@ export function AppFrame({
             </>
           }
         />
-      }
-      sideNav={
-        <SideNav collapsible>
-          <SideNavSection title="Browse" isHeaderHidden>
-            <SideNavItem label="Home" icon={Home} href="/" isSelected={isHome} />
-          </SideNavSection>
-          <SideNavSection
-            title="Tasks"
-            subtitle={`${categories.length} tasks, three routes each`}>
-            {categories.map((category) => (
-              <SideNavItem
-                key={category.slug}
-                label={category.name}
-                icon={ListOrdered}
-                href={`/c/${category.slug}`}
-                isSelected={category.slug === activeSlug}
-                // A task with nothing ranked in it yet is still part of the
-                // map — hiding it would misrepresent the scope — but it is
-                // not somewhere to send a reader.
-                isDisabled={!category.ready}
-              />
-            ))}
-          </SideNavSection>
-        </SideNav>
       }>
-      {children}
+      <div {...stylex.props(styles.page)}>
+        <div {...stylex.props(styles.columns)}>
+          <nav aria-label="Tasks" {...stylex.props(styles.nav)}>
+            <div {...stylex.props(styles.navHeading)}>
+              <Text type="label">Tasks</Text>
+              <Text type="supporting" display="block">
+                {categories.length} tasks, three routes each
+              </Text>
+            </div>
+            <div {...stylex.props(styles.navScroll)}>
+              <List density="compact">
+                <ListItem label="Home" href="/" isSelected={isHome} />
+                {categories.map((category) => (
+                  <ListItem
+                    key={category.slug}
+                    label={category.name}
+                    href={`/c/${category.slug}`}
+                    isSelected={category.slug === activeSlug}
+                    // A task with nothing ranked in it yet is still part of the
+                    // map — hiding it would misrepresent the scope — but it is
+                    // not somewhere to send a reader.
+                    isDisabled={!category.ready}
+                  />
+                ))}
+              </List>
+            </div>
+          </nav>
+          <div>{children}</div>
+        </div>
+      </div>
       <SearchPalette
         entries={searchEntries}
         isOpen={isSearchOpen}
