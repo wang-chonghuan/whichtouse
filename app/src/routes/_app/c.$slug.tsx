@@ -1,11 +1,11 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { getCategoryView } from '~/lib/catalog'
-import { RankingView } from '~/components/ranking-view'
+import { CategoryPage } from '~/components/category-page'
 import { buildPageMeta } from '~/lib/seo'
 
 export const Route = createFileRoute('/_app/c/$slug')({
-  component: CategoryPage,
+  component: CategoryRoute,
   loader: async ({ params }) => {
     const view = await getCategoryView({ data: params.slug })
     if (!view) throw notFound()
@@ -22,7 +22,7 @@ export const Route = createFileRoute('/_app/c/$slug')({
   },
 })
 
-function CategoryPage() {
+function CategoryRoute() {
   const { view } = Route.useLoaderData()
-  return <RankingView view={view} />
+  return <CategoryPage view={view} />
 }

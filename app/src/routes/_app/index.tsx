@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { HomeView } from '~/components/home-view'
+import { HomePage } from '~/components/home-page'
 import { getCategories, getHomeFeatured } from '~/lib/catalog'
 import { getTrendingRepositories } from '~/lib/github-trending'
 import { buildPageMeta, DEFAULT_DESCRIPTION, DEFAULT_TITLE } from '~/lib/seo'
@@ -25,5 +25,5 @@ export const Route = createFileRoute('/_app/')({
 
 function Home() {
   const { trending, categories, featured } = Route.useLoaderData()
-  return <HomeView trending={trending} categories={categories} featured={featured} />
+  return <HomePage trending={trending} categories={categories} featured={featured} />
 }

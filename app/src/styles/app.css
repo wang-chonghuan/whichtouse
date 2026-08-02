@@ -1,146 +1,24 @@
+/* Global stylesheet. Astryx is the only styling authority: this file carries
+ * the design system's reset and base layer, the webfont the theme asks for,
+ * and nothing else.
+ *
+ * There are deliberately no colour, spacing or radius declarations here. Every
+ * one of those lives in src/theme/neutralTheme.ts, which is the single place a
+ * future theme change has to touch — see the note at the top of that file. A
+ * palette override written here would be invisible from there and would be the
+ * first thing to rot. */
+
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
 
+/* Figtree is what neutralTheme names for body and heading. Loading it here
+ * keeps the theme file a pure token definition. Swap the family in the theme
+ * and this URL together. */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
-
-/* WhichToUse global styles — Astryx design system (StyleX). Tailwind + shadcn
- * removed: Astryx is the single styling authority. The reset ships in @layer
- * reset and base component styles in @layer astryx-base; StyleX xstyle overrides
- * and our own layout styles compile to atomic CSS that layers above them. */
-
-/* Butter theme type: Outfit (body/heading) + Sarina (display accent). */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
-
-
+/* AppShell height="fill" measures against the document, so the document has to
+ * have a height to measure. */
 html,
 body {
-  margin: 0;
   height: 100%;
-  /* The app scrolls inside its own panes; locking the document prevents the
-   * mobile rubber-band/overscroll that visually drags the fixed nav bar. */
-  overflow: hidden;
-  overscroll-behavior: none;
-  background: var(--color-background-body);
-  color: var(--color-text-primary);
-}
-
-/* ---------------------------------------------------------------------------
- * WhichToUse palette — DESIGN.md foundations (WHICHTOUSE-19).
- *
- * Three decisions carry most of the look, and they are the ones transcribed
- * here: the canvas is warm off-white (#fafaf9) with white reserved for cards,
- * so a surface reads as elevated with no shadow at all; structure is black,
- * not brand-coloured; and the brand is a rationed violet rather than SaaS blue.
- * Violet and not the reference site's lime because green and red are already
- * load-bearing here — they mean "edge" and "drawback" on every ranking row.
- * Overrides the butter theme's COLOR tokens only (spacing/radius/typography
- * structural tokens are kept). The butter theme scopes its vars to the
- * [data-astryx-theme] wrapper inside @layer astryx-theme; we re-declare on the
- * same wrapper (and :root for the body outside it) UNLAYERED, which wins. */
-:root,
-[data-astryx-theme] {
-  --color-background-body: #fafaf9 !important;   /* canvas, not white */
-  --color-background-surface: #ffffff !important;
-  --color-background-card: #ffffff !important;
-  --color-background-popover: #ffffff !important;
-  --color-background-muted: #f4f5f2 !important;
-  --color-overlay-hover: #f7f4ff !important;
-  --color-overlay-pressed: #ede8ff !important;
-
-  --color-text-primary: #1a1a1a !important;
-  --color-text-secondary: #6b6b6b !important;
-  --color-text-disabled: #9aa0aa !important;
-  --color-text-accent: #4a2fa8 !important;   /* violet, AA on white */
-
-  /* NOTE: --color-accent is also a Tailwind v4 theme key. While both systems
-   * are live these must agree, or !important here silently overrides the
-   * ported markup — it turned the pale banner into a saturated block. The
-   * brand violet lives on --color-text-accent / --color-icon-accent, which
-   * Tailwind does not claim. */
-  --color-accent: #ede8ff !important;
-  --color-accent-muted: #ede8ff !important;
-  --color-on-accent: #ffffff !important;
-  --color-icon-accent: #4a2fa8 !important;
-
-  --color-border: #e6e6e2 !important;
-
-  --color-success: #0f7a3d !important;   /* the edge dot */
-  --color-error: #c0564f !important;     /* the drawback dot */
-  --color-warning: #a9760c !important;
-}
-
-/* ---------------------------------------------------------------------------
- * Demo tokens — the values DESIGN.md measured, which demo/theme.js transcribes.
- * Named `--wt-*` so they can never collide with an Astryx or Tailwind key; that
- * collision (--color-accent, set with !important on the Astryx side) silently
- * overrode ported markup once already.
- * ------------------------------------------------------------------------ */
-:root {
-  --wt-canvas: #fafaf9;            /* page, deliberately not white */
-  --wt-surface: #ffffff;           /* cards — elevated with no shadow at all */
-  --wt-panel-tint: #faf9ff;
-  --wt-panel-tint-border: #efecfa;
-  --wt-brand-tint: #f7f4ff;
-
-  --wt-ink: #1a1a1a;               /* structure is black, not brand */
-  --wt-ink-muted: #8a8a8a;
-  --wt-ink-secondary: #3f3f3c;
-
-  --wt-brand: #c4b0ff;             /* rationed: under ten uses per page */
-  --wt-on-brand: #1a1a1a;          /* black on brand, never white */
-  --wt-accent: #ede8ff;
-  --wt-on-accent: #362073;
-
-  --wt-line: #e6e6e2;
-  --wt-line-soft: rgba(230, 230, 226, 0.7);
-  --wt-fill: #f4f5f2;
-
-  --wt-edge: #0f7a3d;              /* the "does this well" dot */
-  --wt-con: #c0564f;               /* the "here is the catch" dot */
-
-  /* §1.4 radius ladder */
-  --wt-r-sm: 7px;
-  --wt-r-md: 10px;
-  --wt-r-lg: 12px;
-  --wt-r-xl: 16px;
-  --wt-r-2xl: 20px;
-  --wt-r-3xl: 28px;
-
-  --wt-container: 1440px;
-  --wt-sidebar-w: 240px;
-  --wt-header-h: 64px;
-  --wt-banner-h: 46px;
-}
-
-/* Confidence + type pills tuned to the mockup tints. */
-.astryx-badge[data-variant='green'] {
-  background-color: #e4f7ea !important;
-  color: #1e8a4a !important;
-}
-.astryx-badge[data-variant='yellow'] {
-  background-color: #fdf1df !important;
-  color: #a9760c !important;
-}
-.astryx-badge[data-variant='red'] {
-  background-color: #fce7e7 !important;
-  color: #cf3b3b !important;
-}
-.astryx-badge[data-variant='blue'] {
-  background-color: #eef2ff !important;
-  color: #4257c9 !important;
-}
-.astryx-badge[data-variant='purple'] {
-  background-color: #f1ecfe !important;
-  color: #7a49d6 !important;
-}
-.astryx-badge[data-variant='neutral'] {
-  background-color: #f2f4f7 !important;
-  color: #5b6472 !important;
-}
-
-/* "Read full review" = soft blue outline button. */
-.astryx-button[data-variant='secondary'] {
-  border-color: #c9d5f7 !important;
-  color: #2f5fe0 !important;
 }

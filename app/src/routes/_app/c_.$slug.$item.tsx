@@ -1,14 +1,14 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { getCategoryView } from '~/lib/catalog'
-import { ProductView } from '~/components/product-view'
+import { ProductPage } from '~/components/product-page'
 import { buildPageMeta } from '~/lib/seo'
 import type { Track } from '~/lib/catalog'
 
 const TRACKS: Track[] = ['app', 'oss', 'skill']
 
 export const Route = createFileRoute('/_app/c_/$slug/$item')({
-  component: ProductPage,
+  component: ProductRoute,
   loader: async ({ params }) => {
     const view = await getCategoryView({ data: params.slug })
     if (!view) throw notFound()
@@ -34,9 +34,9 @@ export const Route = createFileRoute('/_app/c_/$slug/$item')({
   },
 })
 
-function ProductPage() {
+function ProductRoute() {
   const { view, item, track, siblings } = Route.useLoaderData()
   return (
-    <ProductView item={item} category={view.category} siblings={siblings} track={track} />
+    <ProductPage item={item} category={view.category} siblings={siblings} track={track} />
   )
 }

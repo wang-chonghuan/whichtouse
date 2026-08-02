@@ -7,7 +7,7 @@
 
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { ProductView } from '~/components/product-view'
+import { ProductPage } from '~/components/product-page'
 import { getTrendingRepositories, getTrendingRepositoryDetail } from '~/lib/github-trending'
 import { buildPageMeta } from '~/lib/seo'
 
@@ -38,7 +38,7 @@ export const Route = createFileRoute('/_app/t/$owner/$repo')({
 function TrendingDetailPage() {
   const { item, repository } = Route.useLoaderData()
   return (
-    <ProductView
+    <ProductPage
       item={item}
       category={{
         slug: '',

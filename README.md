@@ -30,9 +30,9 @@ reading before touching any copy the app generates.
 
 | path | what it is |
 |---|---|
-| `app/` | the site — TanStack Start + StyleX + Astryx, Postgres-backed |
-| `demo/` | **frozen** design reference (static HTML). The app is built to match it |
-| `DESIGN.md` | the measured values behind `demo/` — radii, type scale, spacing, colour |
+| `app/` | the site — TanStack Start + Astryx + StyleX, Postgres-backed |
+| `app/src/theme/neutralTheme.ts` | **the whole look**, as tokens. See "Theming" below |
+| `app/src/components/` | the five view components; every page is one of them |
 | `specs/content-in-db.md` | why content lives in Postgres and how the refresh job works |
 | `ssot-schemas/db-schemas/whichtouse.sql` | the schema, single source of truth |
 | `.prodfarm/charter/runbook.md` | deploy, database and job operations |
@@ -43,16 +43,40 @@ reading before touching any copy the app generates.
 cd app && npm ci && npm run dev
 ```
 
-http://localhost:5200. Needs `EASYAPP_DATABASE_URL` in the repo-root `.env`
-(gitignored). Serve the design reference alongside it to compare:
-
-```bash
-cd demo && python3 -m http.server 5300 --bind 127.0.0.1
-```
+http://localhost:5200. Needs `EASYAPP_DATABASE_URL` in `app/.env` (gitignored;
+the repo-root `.env` holds the source API tokens, not the database).
 
 ```bash
 cd app && npm run build && npm test
 ```
+
+## Theming
+
+The entire visual system is [`app/src/theme/neutralTheme.ts`](app/src/theme/neutralTheme.ts) —
+scaffolded from Astryx's `neutral` theme and owned by this repo. Colour, type
+scale, radius and motion are all token definitions in that one file, so a
+rebrand is an edit there and nothing else. To start over from a different
+Astryx theme:
+
+```bash
+cd app && npx @astryxdesign/cli theme add <slug> src/theme
+```
+
+then point the `<Theme theme={…}>` in `app/src/routes/__root.tsx` at it.
+`npx @astryxdesign/cli theme list` shows what ships.
+
+Two rules keep that promise real, and both have already been violated once:
+
+- **No colour, spacing or radius literals outside the theme file.** Component
+  code uses semantic tokens (`colorVars['--color-border']`), never hex. A value
+  written into `app.css` or a component is invisible from the theme and will
+  survive a theme swap looking wrong.
+- **Where an Astryx component owns a property, set it with the component's own
+  prop, not `xstyle`.** Astryx's pre-compiled CSS carries a `:not(#\#)`
+  specificity boost; a consumer rule for the same property loses silently. Our
+  StyleX is namespaced `classNamePrefix: 'wt'` (see `vite.config.ts`) so the two
+  builds can no longer produce the same atomic class name — without that, our
+  `display` and Astryx's were literally the same class.
 
 ## How content gets there
 
@@ -72,15 +96,21 @@ every source fails, hand-curated entries keep their place.
 
 ## Development notes
 
-**Match `demo/`, and settle disagreements with `DESIGN.md`.** `demo/` is frozen:
-editing it while building against it means "does the app match?" stops having an
-answer. Verify by measuring the DOM against DESIGN.md's numbers rather than
-eyeballing screenshots — screenshots have been actively misleading in this repo.
+**The design system decides, not a mockup.** The frontend was rebuilt on Astryx
+components against the `neutral` theme; there is no longer a static reference to
+diff against. Compose from `npx @astryxdesign/cli component <Name>` before
+reaching for a `<div>`, and read `npx @astryxdesign/cli docs layout` before
+inventing a page frame — dense rankings are rows, not cards.
 
-**One styling system.** StyleX + Astryx. Tailwind was tried and removed: both
-systems define `--color-accent`, Astryx sets it with `!important`, and it
-silently overrode ported markup. Tokens ported from the demo are namespaced
-`--wt-*` so that cannot recur.
+**Verify by measuring the DOM, not by eyeballing screenshots.** Screenshots have
+been actively misleading in this repo. A style that fails to apply looks like a
+design choice; `getComputedStyle` says which it is. The specificity collision
+described under Theming was invisible in a screenshot and obvious in one
+`getComputedStyle(el).display`.
+
+**One styling system.** Astryx + StyleX, no exceptions. Tailwind was tried and
+removed: both systems define `--color-accent`, Astryx sets it with `!important`,
+and it silently overrode ported markup.
 
 **Verify a source with a must-hit sample, never with a summary line.** Every
 source bug in this project's history was silent, not loud:
