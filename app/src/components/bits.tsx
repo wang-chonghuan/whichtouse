@@ -91,6 +91,12 @@ const styles = stylex.create({
   // request is in src/theme/brand.json — the two have to be changed together,
   // and the family cannot move into the theme's `tokens` map because that map
   // is typed to Astryx's own token names.
+  //
+  // The three colours are literals, and that is the point: they belong to the
+  // mark, not to the theme, and must NOT follow a palette change — the logo
+  // should not recolour because the product did. They mirror `mark` in
+  // brand.json and the fills in resources/brand/wtu-logo.svg; StyleX needs
+  // static values, so the three places move together by hand.
   wordmark: {
     fontFamily: '"Bricolage Grotesque", "Inter", -apple-system, sans-serif',
     fontWeight: 700,
@@ -98,9 +104,9 @@ const styles = stylex.create({
     letterSpacing: '-0.03em',
     whiteSpace: 'nowrap',
   },
-  wmWhich: { color: colorVars['--color-accent'] },
-  wmTo: { color: colorVars['--color-text-green'] },
-  wmUse: { color: colorVars['--color-error'] },
+  wmWhich: { color: '#0164E5' },
+  wmTo: { color: '#60B333' },
+  wmUse: { color: '#FE7701' },
 })
 
 /** WhichToUse: three words, the mark's three colours, one each. The spans are

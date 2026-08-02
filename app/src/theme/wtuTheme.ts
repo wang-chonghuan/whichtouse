@@ -53,20 +53,6 @@ const CORAL = {
   ink: '#9C3A26',
 } as const;
 
-// ── the mark ────────────────────────────────────────────────────────────────
-// The logo is three letters in three colours, and the wordmark spells the same
-// three: W-hich-T-o-U-se. Two of them are already interface colours; the green
-// exists only for the mark, so it lives here rather than as a literal in a
-// component. Its hue (141) sits almost exactly between indigo and coral, and it
-// carries coral's weight on white — see scripts/trace-logo.mjs.
-const MARK_GREEN = '#249A4E'
-
-// The wordmark's face is Bricolage Grotesque, and it is deliberately NOT the
-// body font: it has the character a logo wants and would be tiring across a
-// page of 12px ranking rows. It cannot live in `tokens` below — that map is
-// typed to Astryx's own token names — so it sits in the Wordmark component,
-// paired with the webfont request in brand.json. Change the two together.
-
 // ── frame ───────────────────────────────────────────────────────────────────
 const CANVAS = '#F4F7F6' // shell; near-white, a hair cooler than the content
 const SURFACE = '#FFFFFF' // content and cards
@@ -169,10 +155,6 @@ export const wtuTheme = defineTheme({
     '--color-border-red': [CORAL.line, '#7A3624'],
     '--color-icon-red': [CORAL.base, '#E8785F'],
     '--color-text-red': [CORAL.ink, '#F3B8A6'],
-
-    // Green exists for one thing: the T, in the mark and in the wordmark.
-    '--color-text-green': [MARK_GREEN, '#5FC98A'],
-    '--color-icon-green': [MARK_GREEN, '#5FC98A'],
 
     '--color-background-gray': [RECESSED, '#232A28'],
     '--color-border-gray': [LINE, '#3D4644'],

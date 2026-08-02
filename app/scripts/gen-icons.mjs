@@ -150,9 +150,9 @@ await page.setContent(`<!doctype html>
   .brand .mark { width: 56px; height: 56px; border-radius: 12px; background: ${brand.iconBackground}; display: grid; place-items: center; }
   .brand .mark svg { width: 40px; }
   .brand .word { font-family: "Bricolage Grotesque", ${brand.ogCard.fontFamily}; font-size: 32px; font-weight: 700; letter-spacing: -0.03em; }
-  .brand .word .a { color: ${brand.ogCard.accent}; }
-  .brand .word .b { color: ${brand.markGreen}; }
-  .brand .word .c { color: ${brand.markCoral}; }
+  .brand .word .a { color: ${brand.mark.w}; }
+  .brand .word .b { color: ${brand.mark.t}; }
+  .brand .word .c { color: ${brand.mark.u}; }
   .domain { font-size: 22px; color: ${brand.ogCard.textMuted}; }
   h1 { font-size: 64px; line-height: 1.1; font-weight: 700; letter-spacing: -0.028em; max-width: 20ch; }
   p { font-size: 27px; line-height: 1.45; color: ${brand.ogCard.textMuted}; max-width: 52ch; margin-top: 24px; }

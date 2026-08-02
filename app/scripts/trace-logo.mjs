@@ -3,7 +3,7 @@
 //
 //   node scripts/trace-logo.mjs
 //
-// resources/reference/wtu-logo.png is a 1254² bitmap, so every icon derived
+// resources/wtu-logo.png is a 1254² bitmap, so every icon derived
 // from it was a downscale of a downscale and its three colours were baked in —
 // recolouring meant editing pixels. This traces each letter's colour region
 // into paths, writes resources/brand/wtu-logo.svg, and from then on the mark is
@@ -20,23 +20,22 @@ import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-const SRC = path.join(here, '../../resources/reference/wtu-logo.png')
+const SRC = path.join(here, '../../resources/wtu-logo.png')
 const OUT = path.join(here, '../../resources/brand/wtu-logo.svg')
 
-// The letters as they are drawn in the source, and the colour each one takes in
-// the new palette. W is the largest form and carries the interface colour; U
-// takes the limits coral.
+// The letters as they are drawn in the source, and the colour each one keeps.
 //
-// The green is picked to sit with the other two rather than beside them. Its
-// hue (141) is very close to an even three-way split against indigo (243) and
-// coral (10), and at 3.62:1 on white it carries about the weight coral does
-// (4.07) — so all three letters read as one mark. An earlier lime measured
-// 1.30:1 and the T all but disappeared at favicon sizes; the fix for that is
-// the colour, not a black tile behind it.
+// These are the mark's own colours, sampled out of the source file — not the
+// interface palette. The two were briefly the same thing: the mark was
+// recoloured to indigo/green/coral so it would match the app, and the result
+// was a worse logo. A mark earns its colours from its own balance (green 2.63
+// and orange 2.67 on white are within a hair of each other, which is why the
+// three read as one object) and it should not move every time the interface
+// does. Interface colour lives in src/theme/wtuTheme.ts; this is the brand.
 const LETTERS = [
-  { id: 'w', source: [0x00, 0x64, 0xe5], fill: '#4F46E5', label: 'W · indigo, the interface colour' },
-  { id: 't', source: [0x62, 0xb2, 0x2f], fill: '#249A4E', label: 'T · green' },
-  { id: 'u', source: [0xfe, 0x77, 0x01], fill: '#D4553C', label: 'U · coral' },
+  { id: 'w', source: [0x01, 0x64, 0xe5], fill: '#0164E5', label: 'W · blue' },
+  { id: 't', source: [0x60, 0xb3, 0x33], fill: '#60B333', label: 'T · green' },
+  { id: 'u', source: [0xfe, 0x77, 0x01], fill: '#FE7701', label: 'U · orange' },
 ]
 
 const browser = await chromium.launch()

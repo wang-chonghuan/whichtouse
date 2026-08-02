@@ -18,8 +18,12 @@
     "shortName": "WhichToUse",
     "description": "SaaS, open source and agent skills for every task, with the limits of each written down."
   },
-  "_iconNote": "Icon tiles are white. The mark's three letters are balanced to read on it: indigo 6.29:1, green 3.62:1, coral 4.07:1. An earlier lime T measured 1.30:1 and vanished at 16px; an ink tile was tried to rescue it and looked like a rendering fault in the tab bar. The colour was the thing to change.",
+  "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
   "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree.",
-  "markGreen": "#249A4E",
-  "markCoral": "#D4553C"
+  "mark": {
+    "w": "#0164E5",
+    "t": "#60B333",
+    "u": "#FE7701"
+  },
+  "_markNote": "The mark's colours, not the interface's. They are duplicated in the Wordmark component (StyleX needs literals) and baked into resources/brand/wtu-logo.svg. All three move together or none do. Deliberately independent of the theme: the logo should not change colour because the product did."
 }
