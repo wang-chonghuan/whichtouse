@@ -318,7 +318,33 @@ function Standing({
 }) {
   const [isExpanded, setExpanded] = useState(false)
 
-  if (items.length === 0) return null
+  // An absent band is named, not silently omitted (ticket WHICHTOUSE-21, D7).
+  // Since the assignment gate started discarding candidates it cannot place,
+  // a route can legitimately have nothing emerging — and a band that simply
+  // vanishes tells the reader the field is thin when the truth is that we
+  // found things and threw them out.
+  if (items.length === 0) {
+    return (
+      <VStack gap={2} xstyle={xstyle}>
+        <HStack gap={1} vAlign="center">
+          <Text type="label">{label}</Text>
+          {hint ? (
+            <Button
+              variant="ghost"
+              size="sm"
+              isIconOnly
+              icon={<Icon icon="info" size="sm" color="secondary" />}
+              label={`What ${label} means`}
+              tooltip={hint}
+            />
+          ) : null}
+        </HStack>
+        <Text type="supporting" textWrap="pretty">
+          Nothing here we could place with confidence.
+        </Text>
+      </VStack>
+    )
+  }
 
   const shown = items.slice(0, isExpanded ? EXPANDED : SHORTLIST)
   const hidden = items.length - shown.length
