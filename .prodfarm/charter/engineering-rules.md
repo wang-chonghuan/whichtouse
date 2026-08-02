@@ -14,7 +14,7 @@
 - **验证靠真跑**：以浏览器/runbook 命令实际运行产品来验证，绝不"看代码想象"。
 - **诚实优先于产能**：Phase 1 未测的排名一律标 `provisional`；不假装评测过。不写 TEMP/降级分支/mock 绕过失败的外部依赖——宁可 abort。
 - **简单有效优先**：v1 不追求复杂；每阶段只做该阶段最小集。
-- **复用 stemrobin**：架构与设计系统尽量复用（TanStack Start + Tailwind 设计令牌见 `resources/reference/DESIGN.md`）。
+- **设计系统说了算**：UI 一律用 `@astryxdesign/core` 组件搭（`npx @astryxdesign/cli component <Name>` / `docs layout`），别先写 `<div>`。颜色/间距/圆角只用语义令牌，字面量一律进 `app/src/theme/neutralTheme.ts`。**组件已经拥有的属性用它自己的 prop 设，不要用 `xstyle`**——Astryx 预编译 CSS 带 `:not(#\#)` 提权，消费侧同名属性会静默失效。
 - **git**：主分支保护；改动走工单对应的 worktree（n-im 驱动）。
 
 ## 数据采集纪律（Phase 2 起）

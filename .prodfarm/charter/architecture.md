@@ -6,7 +6,8 @@
 ## Stack & constraints
 
 - **基座**：`tanstack-start`（TanStack Start SSR 单体，React 19 + TS + Node 24），**复用自 stemrobin 参照架构**。构建 Vite + Nitro → `app/.output`；单测独立 `app/vitest.config.ts`。
-- **样式/设计系统**：Tailwind CSS 4 + 设计令牌，复用 stemrobin（`resources/reference/DESIGN.md` / `DESIGN.guide.md`）。**约束：紧凑、浅色、无 landing、分类优先**（见 goal.md）。
+- **样式/设计系统**：**Astryx + StyleX，唯一样式权威**。整套观感是 `app/src/theme/neutralTheme.ts`（由 Astryx `neutral` 主题脚手架生成、本仓库自有的令牌文件），换肤只改这一个文件。组件优先用 `@astryxdesign/core`，自写 StyleX 仅用于布局且 `classNamePrefix: 'wt'`（避免与 Astryx 预编译 CSS 的原子类名冲突，见 README「Theming」）。Tailwind 已移除（两边都定义 `--color-accent`，Astryx 带 `!important` 会静默覆盖）；旧的 `demo/` 静态参照与 `DESIGN.md` 已随之删除，不再有可 diff 的设计基准。**约束：紧凑、浅色、无 landing、分类优先**（见 goal.md）。
+- **品牌资产**：`app/public/` 下所有图标/社交卡片由 `app/scripts/gen-icons.mjs`（`npm run icons`）从 `resources/reference/wtu-logo.png` 生成，**不可手改**——下次跑脚本会覆盖。
 - **数据库**：Azure easy-app 共享 PostgreSQL，per-project schema `whichtouse-schema`，经 `app/src/lib/db.ts`（`postgres` 客户端，惰性连接）。SSOT：`ssot-schemas/db-schemas/whichtouse.sql`。
 - **部署**：Azure Container Apps `ca-whichtouse`，经 **n-easyapp**；根 `Dockerfile`（build context = repo 根，n-easyapp 硬编码，不可移动）。
 - **无谓依赖铁律**见 `engineering-rules.md`。
