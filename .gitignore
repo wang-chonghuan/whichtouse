@@ -156,3 +156,7 @@ vite.config.ts.timestamp-*
 .autoqa/test-results/
 .autoqa/playwright-report/
 .autoqa/blob-report/
+
+# macOS Finder metadata. The n-easyapp redeploy script does `git add -A`,
+# so anything untracked here rides along into a deploy commit.
+.DS_Store
