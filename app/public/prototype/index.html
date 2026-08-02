@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Served from the production origin so it can be looked at on a real screen,
+     but it is an internal design artifact: unfinished copy, four contradictory
+     colour schemes, and mockups that are not the product. Indexing it would put
+     a page that argues with whichtouse.com into the same search results. -->
+<meta name="robots" content="noindex, nofollow">
+<title>WhichToUse — palette prototype (internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ---------------------------------------------------------------------------
+ * Every colour below is a CSS variable set by the palette switcher. The three
+ * page mockups are written once; switching a palette re-paints them, which is
+ * the whole point — if a scheme only works because a mockup was hand-tuned for
+ * it, it will not survive contact with the real app.
+ * ------------------------------------------------------------------------ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Outfit, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f1211;
+  color: #e8ece9;
+  padding-bottom: 80px;
+}
+
+/* ---- chrome of the prototype itself (deliberately dark, so it can never be
+ * mistaken for one of the schemes being judged) ------------------------- */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(15,18,17,.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid #262b29;
+  padding: 14px 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+}
+.bar h1 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
+.bar .hint { font-size: 12px; color: #7d8783; }
+.tabs { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.tabs button {
+  font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer;
+  background: #1b201e; color: #b9c2be; border: 1px solid #2c332f;
+  border-radius: 999px; padding: 7px 15px;
+}
+.tabs button[aria-pressed="true"] { background: #e8ece9; color: #12201e; border-color: #e8ece9; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+.lede { padding: 30px 0 8px; }
+.lede h2 { font-size: 20px; font-weight: 600; }
+.lede p { font-size: 13.5px; color: #98a29e; margin-top: 6px; max-width: 70ch; line-height: 1.55; }
+
+.swatches { display: flex; gap: 9px; flex-wrap: wrap; margin: 20px 0 34px; }
+.swatch { width: 116px; border: 1px solid #2c332f; border-radius: 9px; overflow: hidden; }
+.swatch i { display: block; height: 50px; }
+.swatch b { display: block; padding: 6px 8px; background: #161a19; font-weight: 500; font-size: 10.5px; font-style: normal; line-height: 1.5; }
+.swatch b span { color: #7d8783; }
+
+.label { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: #7d8783; font-weight: 600; margin: 34px 0 12px; }
+
+/* ---- the mockups ------------------------------------------------------- */
+/* Nothing inside a mockup is interactive: this is a colour decision, not a
+ * clickable prototype, and a dead link that responds to a click reads as a
+ * bug in the design rather than as a still image. */
+.mock {
+  pointer-events: none; user-select: none;
+  border: 1px solid #2c332f; border-radius: 14px; overflow: hidden;
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.m-top { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: var(--canvas); border-bottom: 1px solid var(--border); }
+.m-logo { width: 26px; height: 26px; border-radius: 7px; border: 1px solid var(--border); background: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 700; color: var(--brand); }
+.m-brand { font-weight: 700; font-size: 15px; }
+.m-search { margin-left: auto; font-size: 12.5px; color: var(--ink-2); border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 7px 14px; display: flex; gap: 8px; align-items: center; }
+.m-kbd { font-size: 10px; border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
+
+.m-body { display: grid; grid-template-columns: 190px 1fr; min-height: 380px; }
+.m-side { background: var(--canvas); border-right: 1px solid var(--border); padding: 14px 10px; }
+.m-side .sec { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-2); padding: 0 8px; margin: 12px 0 6px; font-weight: 600; }
+.m-side a { display: block; padding: 6px 9px; border-radius: 7px; font-size: 12.5px; color: var(--ink); text-decoration: none; }
+.m-side a.on { background: var(--recessed); font-weight: 600; }
+.m-main { background: var(--surface); padding: 26px 28px; }
+
+h3.m { font-size: 22px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 8px; }
+h4.m { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+h5.m { font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+.sub { font-size: 14px; color: var(--ink-2); line-height: 1.5; max-width: 62ch; }
+.tiny { font-size: 11.5px; color: var(--ink-2); }
+.crumb { font-size: 11.5px; color: var(--ink-2); margin-bottom: 12px; }
+
+.stats { display: flex; gap: 22px; margin-top: 16px; font-size: 12px; flex-wrap: wrap; }
+.stats b { font-weight: 600; }
+.stats span { color: var(--ink-2); }
+
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; overflow: hidden; }
+.card > .hd { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 12.5px; font-weight: 600; }
+.card > .hd span { font-weight: 400; color: var(--ink-2); font-size: 11px; }
+.row { display: flex; gap: 9px; align-items: center; padding: 7px 12px; border-bottom: 1px solid var(--border); font-size: 12.5px; }
+.row:last-child { border-bottom: 0; }
+.row .n { color: var(--ink-2); font-size: 11px; width: 10px; }
+.row .ch { margin-left: auto; color: var(--ink-2); }
+.ft { padding: 8px 12px; border-top: 1px solid var(--border); font-size: 11.5px; color: var(--brand); font-weight: 500; }
+
+table.m { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12.5px; }
+table.m th { text-align: left; font-weight: 600; font-size: 11px; color: var(--ink-2); padding: 7px 10px; border-bottom: 1px solid var(--border); }
+table.m td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+table.m td.rep { font-weight: 500; color: var(--brand); }
+table.m td.mut { color: var(--ink-2); }
+
+/* stretch, not start: the three routes hold different numbers of entries, so
+ * content-height cards put the Emerging band at three different altitudes and
+ * the eye reads the ragged edge as noise. Equal height plus a bottom-anchored
+ * Emerging block lines the two standings up across all three columns, which is
+ * the comparison the page exists to make. */
+.cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; align-items: stretch; }
+.cols3 .tk { display: flex; flex-direction: column; }
+.cols3 .tk .grp.dim { margin-top: auto; }
+.item { padding: 9px 0; border-top: 1px solid var(--border); display: flex; gap: 9px; }
+.item .n { color: var(--ink-2); font-size: 11px; }
+.item .nm { font-size: 13px; font-weight: 500; }
+.item .ds { font-size: 11.5px; color: var(--ink-2); line-height: 1.45; margin-top: 2px; }
+
+/* One card per route — a card is a widget container, so it wraps the whole
+ * leaderboard, never an individual row. Same shape the home page already uses,
+ * which is why that page reads cleanly and this one did not. */
+.tk .grp { padding: 11px 13px 13px; }
+/* Emerging sits on the recessed tone: the incumbent/challenger split gets a
+ * hard edge, and the challengers read as secondary without a second colour. */
+.tk .grp.dim { background: var(--recessed); border-top: 1px solid var(--border); }
+.tk .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--ink-2); }
+.tk .hint { font-size: 11px; color: var(--ink-2); line-height: 1.4; margin: 2px 0 4px; }
+.tk .item { padding: 8px 0; }
+.tk .grp .item:first-of-type { border-top: 0; }
+
+.note { background: var(--recessed); border-radius: 10px; padding: 13px 16px; margin-top: 14px; }
+
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+.bd { font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 999px; }
+.bd.brand { background: var(--brand); color: var(--on-brand); }
+.bd.brand-soft { background: var(--brand-tint); color: var(--brand-ink); }
+.bd.neutral { background: var(--recessed); color: var(--ink-2); }
+.bd.coral { background: var(--coral-tint); color: var(--coral-ink); }
+
+.pcols { display: grid; grid-template-columns: 1fr 250px; gap: 22px; align-items: start; margin-top: 18px; }
+.block { margin-bottom: 20px; }
+.callout { background: var(--coral-tint); border: 1px solid var(--coral-line); border-radius: 11px; padding: 15px 17px; margin-bottom: 20px; }
+.callout h4 { color: var(--coral-ink); }
+.recess { background: var(--recessed); border-radius: 11px; padding: 15px 17px; margin-bottom: 20px; }
+.bul { display: flex; gap: 9px; align-items: baseline; font-size: 13px; margin: 6px 0; line-height: 1.45; }
+.dot { width: 6px; height: 6px; border-radius: 50%; flex: 0 0 auto; position: relative; top: -1px; }
+.dot.ink { background: var(--ink); }
+.dot.coral { background: var(--coral); }
+.kv { display: flex; justify-content: space-between; font-size: 12.5px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.kv span { color: var(--ink-2); }
+.kv b { font-weight: 500; }
+.link { color: var(--brand); font-weight: 500; font-size: 13px; }
+.feat { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: 11.5px; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 5px 11px; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <h1>WhichToUse · palette prototype</h1>
+  <span class="hint">Same markup, four schemes. Nothing here is clickable except these tabs.</span>
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="wrap">
+  <div class="lede">
+    <h2 id="pName"></h2>
+    <p id="pNote"></p>
+  </div>
+
+  <div class="swatches" id="swatches"></div>
+
+  <div class="label">1 · Home</div>
+  <div class="mock">
+    <div class="m-top">
+      <div class="m-logo">W</div><div class="m-brand">WhichToUse</div>
+      <div class="m-search">Search tasks and tools <span class="m-kbd">⌘K</span></div>
+    </div>
+    <div class="m-body">
+      <div class="m-side">
+        <a class="on">Home</a>
+        <div class="sec">Tasks</div>
+        <a>Content Writing</a><a>Video Generation</a><a>Image Generation</a>
+        <a>Voice &amp; Audio</a><a>Lead Generation</a><a>Email Outreach</a><a>SEO &amp; GEO</a>
+      </div>
+      <div class="m-main">
+        <h3 class="m">Find the best AI tool for your task — limits first.</h3>
+        <p class="sub">SaaS, open source and agent skills, side by side. Leading and emerging picks in each.</p>
+        <div class="stats"><div><b>25</b> <span>tasks</span></div><div><b>3</b> <span>routes per task</span></div><div><b>Limits</b> <span>checked by hand</span></div></div>
+
+        <h4 class="m" style="margin-top:26px">Start with a task</h4>
+        <p class="tiny">The tasks with the most depth behind them right now.</p>
+        <div class="grid4">
+          <div class="card"><div class="hd">Content Writing <span>SaaS</span></div>
+            <div class="row"><i class="n">1</i>ChatGPT<i class="ch">›</i></div>
+            <div class="row"><i class="n">2</i>Claude<i class="ch">›</i></div>
+            <div class="row"><i class="n">3</i>Jasper<i class="ch">›</i></div>
+            <div class="row"><i class="n">4</i>Writesonic<i class="ch">›</i></div>
+            <div class="ft">Compare all three →</div></div>
+          <div class="card"><div class="hd">Video Generation <span>SaaS</span></div>
+            <div class="row"><i class="n">1</i>Google Veo<i class="ch">›</i></div>
+            <div class="row"><i class="n">2</i>Runway<i class="ch">›</i></div>
+            <div class="row"><i class="n">3</i>Kling AI<i class="ch">›</i></div>
+            <div class="row"><i class="n">4</i>Pika<i class="ch">›</i></div>
+            <div class="ft">Compare all three →</div></div>
+          <div class="card"><div class="hd">Image Generation <span>SaaS</span></div>
+            <div class="row"><i class="n">1</i>GPT Image 2<i class="ch">›</i></div>
+            <div class="row"><i class="n">2</i>Nano Banana Pro<i class="ch">›</i></div>
+            <div class="row"><i class="n">3</i>Midjourney<i class="ch">›</i></div>
+            <div class="row"><i class="n">4</i>FLUX.2<i class="ch">›</i></div>
+            <div class="ft">Compare all three →</div></div>
+          <div class="card"><div class="hd">Voice &amp; Audio <span>SaaS</span></div>
+            <div class="row"><i class="n">1</i>ElevenLabs<i class="ch">›</i></div>
+            <div class="row"><i class="n">2</i>Suno<i class="ch">›</i></div>
+            <div class="row"><i class="n">3</i>Murf<i class="ch">›</i></div>
+            <div class="row"><i class="n">4</i>Speechify<i class="ch">›</i></div>
+            <div class="ft">Compare all three →</div></div>
+        </div>
+
+        <h4 class="m" style="margin-top:26px">Trending on GitHub today</h4>
+        <p class="tiny">Ranked by GitHub, not by us.</p>
+        <table class="m">
+          <tr><th>#</th><th>Repository</th><th>What it is</th><th>Language</th><th style="text-align:right">Stars today</th></tr>
+          <tr><td class="mut">1</td><td class="rep">microsoft/AI-For-Beginners</td><td class="mut">12 Weeks, 24 Lessons, AI for All!</td><td class="mut">Jupyter</td><td class="mut" style="text-align:right">949</td></tr>
+          <tr><td class="mut">2</td><td class="rep">paperswithbacktest/awesome-sy…</td><td class="mut">A curated list of awesome libraries…</td><td class="mut">Python</td><td class="mut" style="text-align:right">523</td></tr>
+          <tr><td class="mut">3</td><td class="rep">usekaneo/kaneo</td><td class="mut">Open source project management</td><td class="mut">TypeScript</td><td class="mut" style="text-align:right">760</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">2 · Task (category)</div>
+  <div class="mock">
+    <div class="m-top">
+      <div class="m-logo">W</div><div class="m-brand">WhichToUse</div>
+      <div class="m-search">Search tasks and tools <span class="m-kbd">⌘K</span></div>
+    </div>
+    <div class="m-body">
+      <div class="m-side">
+        <a>Home</a>
+        <div class="sec">Tasks</div>
+        <a>Content Writing</a><a>Video Generation</a><a>Image Generation</a>
+        <a>Voice &amp; Audio</a><a class="on">Coding</a><a>Web Scraping</a><a>Translation</a>
+      </div>
+      <div class="m-main">
+        <div class="crumb">Home / Coding</div>
+        <h3 class="m">Coding</h3>
+        <p class="sub">SaaS, open source and skills for coding work — with the limits of each written down.</p>
+        <div class="note"><h5 class="m">How this task was ranked</h5>
+          <p class="tiny" style="line-height:1.55">Rich, high-consensus category with a genuine Agent Skill ecosystem. The skill track ranks genuine SKILL.md skills and notable open-source coding-agent repos together by real adoption, with kind as a tag only — not a rank determinant.</p></div>
+
+        <div class="cols3">
+          <div class="card tk">
+            <div class="hd">SaaS <span>Hosted products you sign up for</span></div>
+            <div class="grp">
+              <div class="lbl">Leading</div>
+              <p class="hint">Established picks, top of today's aggregate.</p>
+              <div class="item"><i class="n">1</i><div><div class="nm">Claude Code</div><div class="ds">Terminal-first agentic coding on large repos.</div></div></div>
+              <div class="item"><i class="n">2</i><div><div class="nm">Cursor</div><div class="ds">The gold-standard AI IDE, most broadly adopted.</div></div></div>
+              <div class="item"><i class="n">3</i><div><div class="nm">GitHub Copilot</div><div class="ds">Safest enterprise default, broadest editor coverage.</div></div></div>
+            </div>
+            <div class="grp dim">
+              <div class="lbl">Emerging</div>
+              <p class="hint">Newer challengers, surfaced by two or more sources.</p>
+              <div class="item"><i class="n">4</i><div><div class="nm">Windsurf</div><div class="ds">Clean agent-UX editor at a lower price point.</div></div></div>
+              <div class="item"><i class="n">5</i><div><div class="nm">Devin</div><div class="ds">The purest autonomous agent — delegate well-scoped tasks.</div></div></div>
+            </div>
+          </div>
+          <div class="card tk">
+            <div class="hd">Open source <span>Repositories you run yourself</span></div>
+            <div class="grp">
+              <div class="lbl">Leading</div>
+              <p class="hint">Established picks, top of today's aggregate.</p>
+              <div class="item"><i class="n">1</i><div><div class="nm">OpenCode</div><div class="ds">The most-starred open-source coding agent.</div></div></div>
+              <div class="item"><i class="n">2</i><div><div class="nm">Cline</div><div class="ds">The most widely installed open-source coding agent.</div></div></div>
+              <div class="item"><i class="n">3</i><div><div class="nm">goose</div><div class="ds">Block's open-source on-machine agent.</div></div></div>
+            </div>
+            <div class="grp dim">
+              <div class="lbl">Emerging</div>
+              <p class="hint">Newer challengers, surfaced by two or more sources.</p>
+              <div class="item"><i class="n">4</i><div><div class="nm">Continue</div><div class="ds">Popular open-source autopilot for VS Code.</div></div></div>
+              <div class="item"><i class="n">5</i><div><div class="nm">Aider</div><div class="ds">Battle-tested terminal pair-programmer with deep Git support.</div></div></div>
+            </div>
+          </div>
+          <div class="card tk">
+            <div class="hd">Skills <span>Dropped into a coding agent</span></div>
+            <div class="grp">
+              <div class="lbl">Leading</div>
+              <p class="hint">Established picks, top of today's aggregate.</p>
+              <div class="item"><i class="n">1</i><div><div class="nm">Superpowers</div><div class="ds">The recognized leader of the Claude Code skills ecosystem.</div></div></div>
+              <div class="item"><i class="n">2</i><div><div class="nm">Anthropic Skills</div><div class="ds">Anthropic's official SKILL.md skill library.</div></div></div>
+              <div class="item"><i class="n">3</i><div><div class="nm">awesome-claude-skills</div><div class="ds">The most-starred curated directory of Agent Skills.</div></div></div>
+            </div>
+            <div class="grp dim">
+              <div class="lbl">Emerging</div>
+              <p class="hint">Newer challengers, surfaced by two or more sources.</p>
+              <div class="item"><i class="n">4</i><div><div class="nm">Vercel Agent Skills</div><div class="ds">Vercel's official SKILL.md collection.</div></div></div>
+              <div class="item"><i class="n">5</i><div><div class="nm">agentskills.io</div><div class="ds">The open Agent Skills spec and directory.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="label">3 · Tool (product detail)</div>
+  <div class="mock">
+    <div class="m-top">
+      <div class="m-logo">W</div><div class="m-brand">WhichToUse</div>
+      <div class="m-search">Search tasks and tools <span class="m-kbd">⌘K</span></div>
+    </div>
+    <div class="m-body">
+      <div class="m-side">
+        <a>Home</a>
+        <div class="sec">Tasks</div>
+        <a class="on">Content Writing</a><a>Video Generation</a><a>Image Generation</a>
+        <a>Voice &amp; Audio</a><a>Coding</a><a>Web Scraping</a><a>Translation</a>
+      </div>
+      <div class="m-main">
+        <div class="crumb">Home / Content Writing / Claude</div>
+        <h3 class="m">Claude</h3>
+        <div class="badges">
+          <span class="bd brand">Leading</span>
+          <span class="bd neutral">#2 in SaaS</span>
+          <span class="bd brand-soft">high confidence</span>
+          <span class="bd coral">Freemium</span>
+        </div>
+        <p class="sub">Nuanced, natural long-form. Reddit's pick for voice-sensitive drafts and research-heavy articles.</p>
+        <p class="link" style="margin-top:8px">Open Claude ↗</p>
+
+        <div class="pcols">
+          <div>
+            <div class="block"><h4 class="m">Why it ranks #2</h4>
+              <p class="sub">Recommended in all three cited roundups and repeatedly favored in Reddit writing discussions for natural long-form voice and handling large source packets.</p></div>
+
+            <div class="callout"><h4 class="m">Here is the catch</h4>
+              <div class="bul"><span class="dot coral"></span>usage caps can interrupt long editing sessions</div>
+              <div class="bul"><span class="dot coral"></span>citations and factual claims still require verification</div>
+              <div class="bul"><span class="dot coral"></span>fewer marketing-specific workflow tools than dedicated suites</div></div>
+
+            <div class="block"><h4 class="m">Does this well</h4>
+              <div class="bul"><span class="dot ink"></span>natural, less formulaic long-form prose</div>
+              <div class="bul"><span class="dot ink"></span>strong at preserving tone during edits</div>
+              <div class="bul"><span class="dot ink"></span>handles long documents and source synthesis well</div></div>
+
+            <div class="block"><h4 class="m">Pricing</h4>
+              <div class="kv"><span>Model</span><b>Freemium</b></div>
+              <div class="kv"><span>Free plan</span><b>Limited usage of current general-purpose models</b></div>
+              <div class="kv"><span>Entry paid</span><b>Claude Pro $20/mo</b></div>
+              <p class="tiny" style="margin-top:8px">Checked by hand on 2026-07-23. Prices change often — if this looks wrong, it probably is.</p></div>
+
+            <div class="block"><h4 class="m">Key features</h4>
+              <div class="feat"><span class="chip">Long-form drafting</span><span class="chip">Large-context analysis</span><span class="chip">Projects</span><span class="chip">Web research</span></div></div>
+
+            <div class="recess"><h4 class="m">Signals</h4>
+              <p class="tiny" style="margin-bottom:6px">Observations, not reasons.</p>
+              <div class="bul" style="color:var(--ink-2)">#1 on GitHub Trending · 57,133 stars · last pushed 2026-07-21</div></div>
+          </div>
+
+          <div>
+            <div class="recess" style="margin-bottom:16px">
+              <h4 class="m">Quick facts</h4>
+              <div class="kv"><span>Route</span><b>SaaS</b></div>
+              <div class="kv"><span>Standing</span><b>leading · #2</b></div>
+              <div class="kv"><span>Pricing</span><b>Freemium</b></div>
+              <div class="kv" style="border-bottom:0"><span>Checked</span><b>2026-07-23</b></div>
+            </div>
+            <h5 class="m">Same task, same route</h5>
+            <p class="tiny" style="margin-bottom:4px">The rest of the SaaS column.</p>
+            <div class="item"><i class="n">1</i><div><div class="nm">ChatGPT</div><div class="ds">The default all-rounder.</div></div></div>
+            <div class="item"><i class="n">3</i><div><div class="nm">Jasper</div><div class="ds">Brand voice and templates.</div></div></div>
+            <div class="item"><i class="n">4</i><div><div class="nm">Writesonic</div><div class="ds">Writing plus SEO in one workflow.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Four directions around the brief: a deep green-teal brand with coral as the
+ * one accent. They differ in how warm the paper is and how heavy the brand
+ * green sits — the two things that change the character most.
+ *
+ * Green and coral are NOT decoration here: coral is the limits colour and the
+ * only hue with a job on the page, which is why "Does this well" uses plain ink
+ * bullets. Retiring the old green/red pair also removes the red-green pairing
+ * that colour-blind readers cannot separate. */
+const PALETTES = [
+  {
+    id: 'teal',
+    name: 'A · Deep teal on cool paper',
+    note: 'The version I costed out: canvas is a near-white with a faint green cast, brand is a deep desaturated teal that reads closer to ink than to a tropical green. Coolest and most neutral of the four — the least likely to date, the least characterful.',
+    vars: { canvas:'#F4F7F6', surface:'#FFFFFF', recessed:'#EBF0EF', border:'#DDE5E3',
+      ink:'#12201E', 'ink-2':'#5A6764', brand:'#0E6E66', 'brand-tint':'#DCECE9',
+      'brand-ink':'#0A4F49', 'on-brand':'#FFFFFF', coral:'#D4553C', 'coral-tint':'#FBE8E2',
+      'coral-ink':'#9C3A26', 'coral-line':'#F3CFC4' },
+  },
+  {
+    id: 'ink',
+    name: 'B · Ink green, higher-contrast frame',
+    note: 'Answers the open question about the frame: the shell is a full step darker than the content, so the page reads as a document on a desk. Brand is a true dark green (墨绿) rather than a teal. Most serious and most editorial; also the heaviest.',
+    vars: { canvas:'#E9EEEA', surface:'#FFFFFF', recessed:'#DFE7E1', border:'#CFDAD3',
+      ink:'#111C16', 'ink-2':'#546055', brand:'#1F4D3D', 'brand-tint':'#D7E5DC',
+      'brand-ink':'#16382C', 'on-brand':'#FFFFFF', coral:'#CE5137', 'coral-tint':'#F9E5DE',
+      'coral-ink':'#94341F', 'coral-line':'#EFC9BC' },
+  },
+  {
+    id: 'sage',
+    name: 'C · Sage on warm paper',
+    note: 'Keeps a little of the warmth butter had, without the yellow. Brand is a softened sage rather than a saturated teal, coral runs slightly warmer to sit with the paper. Friendliest of the four; the brand colour carries the least authority.',
+    vars: { canvas:'#F5F5F0', surface:'#FFFFFF', recessed:'#ECEDE4', border:'#DEDFD3',
+      ink:'#1B1F17', 'ink-2':'#5E6356', brand:'#3F6B54', 'brand-tint':'#E0EAE2',
+      'brand-ink':'#2E5140', 'on-brand':'#FFFFFF', coral:'#D9603F', 'coral-tint':'#FAE9E1',
+      'coral-ink':'#9E3F23', 'coral-line':'#F1CFBF' },
+  },
+  {
+    id: 'mono',
+    name: 'D · Near-mono, coral only',
+    note: 'The most disciplined reading of "limits first": the frame is greyscale, the brand teal appears only on links and the Leading badge, and coral is the single hue with a job. Ruthless about hierarchy — the catch is impossible to miss. Risk: little brand personality.',
+    vars: { canvas:'#F5F6F6', surface:'#FFFFFF', recessed:'#EDEFEF', border:'#E0E3E3',
+      ink:'#15191A', 'ink-2':'#5C6465', brand:'#12615C', 'brand-tint':'#E3EDEC',
+      'brand-ink':'#0D4642', 'on-brand':'#FFFFFF', coral:'#DC5B3C', 'coral-tint':'#FCEAE3',
+      'coral-ink':'#A03B21', 'coral-line':'#F4D0C2' },
+  },
+];
+
+const SWATCH_ORDER = [
+  ['canvas', 'shell'], ['surface', 'content'], ['recessed', 'demoted'],
+  ['brand', 'brand'], ['brand-tint', 'brand tint'],
+  ['coral', 'limits'], ['coral-tint', 'limits tint'],
+  ['ink', 'text'], ['ink-2', 'secondary'], ['border', 'lines'],
+];
+
+const tabs = document.getElementById('tabs');
+const swatches = document.getElementById('swatches');
+
+function apply(index) {
+  const p = PALETTES[index];
+  for (const [k, v] of Object.entries(p.vars)) {
+    document.documentElement.style.setProperty('--' + k, v);
+  }
+  document.getElementById('pName').textContent = p.name;
+  document.getElementById('pNote').textContent = p.note;
+  swatches.innerHTML = SWATCH_ORDER.map(([key, use]) =>
+    `<div class="swatch"><i style="background:${p.vars[key]}"></i>` +
+    `<b>${key}<br>${p.vars[key].toUpperCase()}<br><span>${use}</span></b></div>`).join('');
+  [...tabs.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
+  location.hash = p.id;
+}
+
+PALETTES.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.textContent = p.name.split(' · ')[0] + ' · ' + p.name.split(' · ')[1].split(',')[0];
+  b.addEventListener('click', () => apply(i));
+  tabs.appendChild(b);
+});
+
+const fromHash = PALETTES.findIndex((p) => p.id === location.hash.slice(1));
+apply(fromHash >= 0 ? fromHash : 0);
+</script>
+</body>
+</html>
