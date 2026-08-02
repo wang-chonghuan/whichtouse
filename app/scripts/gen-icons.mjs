@@ -3,15 +3,19 @@
 //
 //   node scripts/gen-icons.mjs
 //
-// Source of truth: resources/reference/wtu-logo.png (1254², mark on a near-white
-// field). Everything under app/public/ that shows the brand is derived here, so
-// a new logo is one file swap and one command rather than a hunt through the
-// repo.
+// Source of truth: resources/brand/wtu-logo.svg, traced from the original
+// bitmap by scripts/trace-logo.mjs. Everything under app/public/ that shows the
+// brand is derived here, so a new logo is one file swap and one command rather
+// than a hunt through the repo.
+//
+// Vector source matters at these sizes: every raster is now rasterised straight
+// at its target size instead of being downscaled from a 1254px bitmap, so the
+// 16px favicon gets hinted edges rather than a blur of a blur. It also means
+// recolouring the mark is three fill attributes, not an image edit.
 //
 // Rendering runs in Playwright's Chromium rather than an image library: the
-// project already depends on it for verification, and canvas gives us the
-// high-quality downscaler, the padding maths and the social card in one place
-// without adding sharp/ImageMagick to the toolchain.
+// project already depends on it, and a browser is the one renderer guaranteed
+// to draw the SVG the same way the site will.
 
 import fs from 'node:fs'
 import path from 'node:path'
@@ -19,7 +23,7 @@ import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-const SRC = path.join(here, '../../resources/reference/wtu-logo.png')
+const SRC = path.join(here, '../../resources/brand/wtu-logo.svg')
 const OUT = path.join(here, '../public')
 
 // Colours and the font come from the same file the app reads, so a theme swap
@@ -28,10 +32,8 @@ const OUT = path.join(here, '../public')
 // why brand.json exists as JSON rather than as another TypeScript module.
 const brand = JSON.parse(fs.readFileSync(path.join(here, '../src/theme/brand.json'), 'utf8'))
 
-// The mark does not fill its own canvas — it ships with ~14% padding baked in,
-// and it is wider than it is tall. Every output re-crops to the measured
-// content box and re-pads deliberately, so "padding" below means what the
-// platform actually sees.
+// The SVG's viewBox is already cropped to the ink, so "padding" here is exactly
+// what the platform sees — no margin is inherited from the source file.
 const PADDING = {
   favicon: 0.06, // tiny sizes: the mark needs the pixels more than it needs air
   touch: 0.1, // iOS rounds the corners itself and adds nothing
@@ -39,9 +41,9 @@ const PADDING = {
   maskable: 0.2, // Android may crop to a circle; keep content in the safe zone
 }
 
-// Icons stay on their own opaque tile rather than the theme's canvas: a
-// favicon is composited against browser chrome we do not control, and a cream
-// square on a grey tab bar reads as a rendering bug.
+// Icons stay on their own opaque tile rather than the theme's canvas: a favicon
+// is composited against browser chrome we do not control, and a transparent
+// mark inverts unpredictably between light and dark tab bars.
 const BACKGROUND = brand.iconBackground
 
 /** Icons are square and opaque. A transparent favicon inverts unpredictably
@@ -96,72 +98,20 @@ const browser = await chromium.launch()
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } })
 await page.goto('about:blank')
 
-const source = 'data:image/png;base64,' + fs.readFileSync(SRC).toString('base64')
+const markup = fs.readFileSync(SRC, 'utf8')
 
-// One measurement, reused by every target.
-const box = await page.evaluate(async (src) => {
-  const img = new Image()
-  img.src = src
-  await img.decode()
-  const canvas = document.createElement('canvas')
-  canvas.width = img.width
-  canvas.height = img.height
-  const ctx = canvas.getContext('2d')
-  ctx.drawImage(img, 0, 0)
-  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data
-  const at = (x, y) => {
-    const i = (y * canvas.width + x) * 4
-    return [data[i], data[i + 1], data[i + 2]]
-  }
-  const bg = at(2, 2)
-  let minX = canvas.width
-  let minY = canvas.height
-  let maxX = 0
-  let maxY = 0
-  for (let y = 0; y < canvas.height; y++) {
-    for (let x = 0; x < canvas.width; x++) {
-      const [r, g, b] = at(x, y)
-      if (Math.abs(r - bg[0]) + Math.abs(g - bg[1]) + Math.abs(b - bg[2]) > 40) {
-        if (x < minX) minX = x
-        if (x > maxX) maxX = x
-        if (y < minY) minY = y
-        if (y > maxY) maxY = y
-      }
-    }
-  }
-  return { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 }
-}, source)
-
-console.log(`content box ${box.w}×${box.h} at (${box.x}, ${box.y})`)
-
+/** Rasterises the mark at exactly `size`, centred on an opaque tile with `pad`
+ * of the square left clear on each side. Rendering at the target size rather
+ * than downscaling is the whole reason for the vector source. */
 async function render(size, pad) {
-  const dataUrl = await page.evaluate(
-    async ({ src, size, pad, box, background }) => {
-      const img = new Image()
-      img.src = src
-      await img.decode()
-
-      const canvas = document.createElement('canvas')
-      canvas.width = size
-      canvas.height = size
-      const ctx = canvas.getContext('2d')
-      ctx.imageSmoothingEnabled = true
-      ctx.imageSmoothingQuality = 'high'
-      ctx.fillStyle = background
-      ctx.fillRect(0, 0, size, size)
-
-      // Fit the content box inside the padded square without distorting it.
-      const inner = size * (1 - pad * 2)
-      const scale = Math.min(inner / box.w, inner / box.h)
-      const w = box.w * scale
-      const h = box.h * scale
-      ctx.drawImage(img, box.x, box.y, box.w, box.h, (size - w) / 2, (size - h) / 2, w, h)
-
-      return canvas.toDataURL('image/png')
-    },
-    { src: source, size, pad, box, background: BACKGROUND },
+  const inner = Math.round(size * (1 - pad * 2))
+  await page.setViewportSize({ width: size, height: size })
+  await page.setContent(
+    `<body style="margin:0;width:${size}px;height:${size}px;background:${BACKGROUND};` +
+      `display:grid;place-items:center">` +
+      `<div style="width:${inner}px;line-height:0">${markup}</div></body>`,
   )
-  return Buffer.from(dataUrl.split(',')[1], 'base64')
+  return await page.screenshot({ omitBackground: false })
 }
 
 for (const target of PNG_TARGETS) {
@@ -182,8 +132,6 @@ console.log(`favicon.ico              ${ICO_SIZES.join('/')}px  ${(ico.length / 
 // Social card. 1200×630 is what every scraper crops to, and the copy here has
 // to track the home page — a card promising something the page does not say is
 // the one kind of staleness nobody notices until it is shared.
-const mark = 'data:image/png;base64,' + (await render(512, PADDING.favicon)).toString('base64')
-
 await page.setViewportSize({ width: 1200, height: 630 })
 await page.setContent(`<!doctype html>
 <html><head><meta charset="utf-8">
@@ -199,8 +147,12 @@ await page.setContent(`<!doctype html>
   }
   .top { display: flex; align-items: center; justify-content: space-between; }
   .brand { display: flex; align-items: center; gap: 16px; }
-  .brand img { width: 56px; height: 56px; border-radius: 12px; border: 1px solid ${brand.ogCard.border}; background: ${brand.ogCard.surface}; }
-  .brand span { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand .mark { width: 56px; height: 56px; border-radius: 12px; background: ${brand.iconBackground}; display: grid; place-items: center; }
+  .brand .mark svg { width: 40px; }
+  .brand .word { font-family: "Bricolage Grotesque", ${brand.ogCard.fontFamily}; font-size: 32px; font-weight: 700; letter-spacing: -0.03em; }
+  .brand .word .a { color: ${brand.ogCard.accent}; }
+  .brand .word .b { color: ${brand.markGreen}; }
+  .brand .word .c { color: ${brand.markCoral}; }
   .domain { font-size: 22px; color: ${brand.ogCard.textMuted}; }
   h1 { font-size: 64px; line-height: 1.1; font-weight: 700; letter-spacing: -0.028em; max-width: 20ch; }
   p { font-size: 27px; line-height: 1.45; color: ${brand.ogCard.textMuted}; max-width: 52ch; margin-top: 24px; }
@@ -213,7 +165,7 @@ await page.setContent(`<!doctype html>
 </style></head>
 <body>
   <div class="top">
-    <div class="brand"><img src="${mark}" alt=""><span>WhichToUse</span></div>
+    <div class="brand"><div class="mark">${markup}</div><span class="word"><span class="a">Which</span><span class="b">To</span><span class="c">Use</span></span></div>
     <div class="domain">whichtouse.com</div>
   </div>
   <div>
