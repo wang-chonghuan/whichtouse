@@ -1,8 +1,8 @@
 /**
  * @file icons.tsx
  * @input Uses lucide-react icon components, IconRegistry type
- * @output Exports neutralIconRegistry for the neutral theme
- * @position Icon configuration for the neutral theme; consumed by index.ts
+ * @output Exports iconRegistry, shared by every theme in src/theme/
+ * @position Icon configuration; consumed by the active theme file
  *
  * Maps semantic icon names to Lucide icon components.
  * These icons are bundled with the theme, not with @astryxdesign/core.
@@ -45,7 +45,7 @@ const iconProps = {
   'aria-hidden': true as const,
 };
 
-export const neutralIconRegistry: IconRegistry = {
+export const iconRegistry: IconRegistry = {
   close: <X {...iconProps} />,
   chevronDown: <ChevronDown {...iconProps} />,
   chevronLeft: <ChevronLeft {...iconProps} />,

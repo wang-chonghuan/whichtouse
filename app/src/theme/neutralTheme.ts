@@ -28,7 +28,7 @@
  */
 
 import {defineTheme, defineSyntaxTheme} from '@astryxdesign/core/theme';
-import {neutralIconRegistry} from './icons';
+import {iconRegistry} from './icons';
 
 /**
  * Neutral syntax palette — pulled from the OKLCH T30 (light) / T80 (dark)
@@ -628,5 +628,5 @@ export const neutralTheme = defineTheme({
     // h3/h4 bold weights come from typography.heading.weights above.
   },
 
-  icons: neutralIconRegistry,
+  icons: iconRegistry,
 });

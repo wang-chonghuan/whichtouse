@@ -1,0 +1,26 @@
+{
+  "_comment": "The values the active Astryx theme cannot reach. Everything a React component renders reads semantic tokens and follows the theme by itself; these four places do not, because they are consumed outside React: an HTML <meta> the browser paints its chrome with, a webfont URL, a static manifest, and a social card rendered by a node script. Keeping them here means one theme swap edits one file, not four. Values must match the corresponding tokens in the active theme file.",
+  "theme": "butter",
+
+  "_fontNote": "Butter also names Sarina for display-* text. Nothing in this product renders a display type — Astryx scopes that treatment to the Text component and every hero here is a Heading — so requesting Sarina would ship a face the page never paints. Add it back the moment a display type appears.",
+  "fontStylesheet": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap",
+
+  "backgroundBody": "#FDFBE4",
+
+  "iconBackground": "#FFFFFF",
+
+  "ogCard": {
+    "background": "#FDFBE4",
+    "surface": "#FFFFFF",
+    "text": "#1d1c11",
+    "textMuted": "#605f52",
+    "border": "#e5e3d4",
+    "fontFamily": "Outfit, -apple-system, BlinkMacSystemFont, sans-serif"
+  },
+
+  "manifest": {
+    "name": "WhichToUse — compare SaaS, open source and skills",
+    "shortName": "WhichToUse",
+    "description": "Leading and emerging picks for every task, with the limits of each written down."
+  }
+}

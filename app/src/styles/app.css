@@ -1,20 +1,19 @@
 /* Global stylesheet. Astryx is the only styling authority: this file carries
- * the design system's reset and base layer, the webfont the theme asks for,
- * and nothing else.
+ * the design system's reset and base layer, and nothing else.
  *
- * There are deliberately no colour, spacing or radius declarations here. Every
- * one of those lives in src/theme/neutralTheme.ts, which is the single place a
- * future theme change has to touch — see the note at the top of that file. A
- * palette override written here would be invisible from there and would be the
- * first thing to rot. */
+ * There are deliberately no colour, spacing, radius or font declarations here.
+ * The look lives in the active theme file under src/theme/, and the handful of
+ * values that have to exist outside React — the webfont URL, the browser
+ * chrome colour, the social card palette — live in src/theme/brand.json. A
+ * declaration written here would be invisible from both and would be the first
+ * thing to rot after a theme swap.
+ *
+ * The webfont in particular used to be an @import here; it is now a <link> in
+ * __root.tsx driven by brand.json, so it cannot silently disagree with the
+ * `family` the theme asks for. */
 
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
-
-/* Figtree is what neutralTheme names for body and heading. Loading it here
- * keeps the theme file a pure token definition. Swap the family in the theme
- * and this URL together. */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* AppShell height="fill" measures against the document, so the document has to
  * have a height to measure. */

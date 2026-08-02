@@ -8,7 +8,8 @@ import {
 import { Theme } from '@astryxdesign/core/theme'
 
 import '~/styles/app.css'
-import { neutralTheme } from '~/theme/neutralTheme'
+import { butterTheme } from '~/theme/butterTheme'
+import brand from '~/theme/brand.json'
 import { RouterLinkProvider } from '~/components/router-link'
 import {
   CF_BEACON_TOKEN,
@@ -30,9 +31,9 @@ export const Route = createRootRoute({
       { title: DEFAULT_TITLE },
       { name: 'description', content: DEFAULT_DESCRIPTION },
       // Constant, site-wide social tags (variable ones live in each leaf route).
-      // Matches --color-background-body in the light theme, so the browser
+      // Matches --color-background-body in the active theme, so the browser
       // chrome on mobile is continuous with the page rather than a seam.
-      { name: 'theme-color', content: '#f1f1f1' },
+      { name: 'theme-color', content: brand.backgroundBody },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: SITE_NAME },
       { property: 'og:image', content: OG_IMAGE },
@@ -53,6 +54,13 @@ export const Route = createRootRoute({
       // iOS ignores sizes and takes this one; it must be opaque, which it is.
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
+      // The webfont the active theme asks for. It lives in brand.json rather
+      // than in app.css because a stylesheet cannot read the theme, and a font
+      // that silently disagrees with the theme's `family` is the first thing to
+      // rot after a theme swap.
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: '' },
+      { rel: 'stylesheet', href: brand.fontStylesheet },
     ],
   }),
   component: RootComponent,
@@ -85,11 +93,14 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         ) : null}
       </head>
       <body>
-        {/* mode="light" rather than "system": every colour decision in
-         * neutralTheme has a dark counterpart, but nothing in the product has
-         * been read in dark mode yet, so following the OS would ship an
-         * unreviewed skin. Flip this to "system" once dark has been looked at. */}
-        <Theme theme={neutralTheme} mode="light">
+        {/* The one line that picks the product's entire look. Swapping themes
+         * is this import plus src/theme/brand.json — every component reads
+         * semantic tokens, so nothing else carries a colour.
+         *
+         * mode="light" rather than "system": the theme has a full dark
+         * counterpart, but nothing in the product has been read in dark mode
+         * yet, so following the OS would ship an unreviewed skin. */}
+        <Theme theme={butterTheme} mode="light">
           <RouterLinkProvider>{children}</RouterLinkProvider>
         </Theme>
         {/* Cloudflare Web Analytics — manual beacon. The apex stays grey-cloud
