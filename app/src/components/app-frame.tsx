@@ -1,13 +1,13 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import * as stylex from '@stylexjs/stylex'
+import { colorVars } from '@astryxdesign/core/theme/tokens.stylex'
 import { AppShell } from '@astryxdesign/core/AppShell'
 import { SideNav, SideNavItem, SideNavSection } from '@astryxdesign/core/SideNav'
 import { TopNav, TopNavHeading } from '@astryxdesign/core/TopNav'
-import { NavIcon } from '@astryxdesign/core/NavIcon'
 import { Button } from '@astryxdesign/core/Button'
 import { Icon } from '@astryxdesign/core/Icon'
 import { Kbd } from '@astryxdesign/core/Kbd'
-import { Compass, Home, ListOrdered } from 'lucide-react'
+import { Home, ListOrdered } from 'lucide-react'
 
 import type { Category, CatalogSearchEntry } from '~/lib/catalog'
 import { SearchPalette } from './search-palette'
@@ -44,6 +44,15 @@ const styles = stylex.create({
   },
   narrow: {
     display: {default: 'none', '@media (max-width: 720px)': 'flex'},
+  },
+  // The mark ships on its own near-white field, so it needs a rounded edge and
+  // a hairline to read as a logo tile rather than as a white hole punched in
+  // the nav bar.
+  logo: {
+    borderRadius: 6,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: colorVars['--color-border'],
   },
 })
 
@@ -85,7 +94,16 @@ export function AppFrame({
             <TopNavHeading
               heading="WhichToUse"
               headingHref="/"
-              logo={<NavIcon icon={<Compass size={16} aria-hidden />} />}
+              logo={
+                <img
+                  src="/logo-mark-64.png"
+                  srcSet="/logo-mark-64.png 1x, /logo-mark-96.png 1.5x"
+                  alt=""
+                  width={28}
+                  height={28}
+                  {...stylex.props(styles.logo)}
+                />
+              }
             />
           }
           endContent={

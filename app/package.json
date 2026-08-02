@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "prebuild": "node scripts/gen-crawl-surface.mjs",
+    "icons": "node scripts/gen-icons.mjs",
     "build": "vite build && node scripts/build-jobs.mjs",
     "start": "node .output/server/index.mjs",
     "test": "vitest run",

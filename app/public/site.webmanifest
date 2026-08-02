@@ -1,0 +1,21 @@
+{
+  "name": "WhichToUse — compare SaaS, open source and skills",
+  "short_name": "WhichToUse",
+  "description": "Leading and emerging picks for every task, with the limits of each written down.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f1f1f1",
+  "theme_color": "#f1f1f1",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

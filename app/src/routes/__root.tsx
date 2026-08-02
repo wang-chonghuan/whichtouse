@@ -30,7 +30,9 @@ export const Route = createRootRoute({
       { title: DEFAULT_TITLE },
       { name: 'description', content: DEFAULT_DESCRIPTION },
       // Constant, site-wide social tags (variable ones live in each leaf route).
-      { name: 'theme-color', content: '#fafafa' },
+      // Matches --color-background-body in the light theme, so the browser
+      // chrome on mobile is continuous with the page rather than a seam.
+      { name: 'theme-color', content: '#f1f1f1' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: SITE_NAME },
       { property: 'og:image', content: OG_IMAGE },
@@ -39,9 +41,18 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: OG_IMAGE },
     ],
+    // Every one of these is generated from resources/reference/wtu-logo.png by
+    // scripts/gen-icons.mjs — never edit a file in public/ by hand, or the next
+    // run of that script will silently undo it.
     links: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      // .ico first and unsized: it is what a bare /favicon.ico request and old
+      // Windows surfaces get, and it carries 16/32/48 in one file.
+      { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      // iOS ignores sizes and takes this one; it must be opaque, which it is.
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
     ],
   }),
   component: RootComponent,
