@@ -6,6 +6,7 @@ import { TopNav } from '@astryxdesign/core/TopNav'
 import { Button } from '@astryxdesign/core/Button'
 import { Icon } from '@astryxdesign/core/Icon'
 import { List, ListItem } from '@astryxdesign/core/List'
+import { MobileNav } from '@astryxdesign/core/MobileNav'
 import { Text } from '@astryxdesign/core/Text'
 
 import type { Category, CatalogSearchEntry } from '~/lib/catalog'
@@ -24,11 +25,14 @@ import { AreaIcon, FAMILIES, familyOf, HomeIcon } from './area-icons'
 //
 // Responsive contract:
 //   > 1024px  task column 248 | content, nav sticky under the bar
-//  <= 1024px  one column, no task rail. Twenty-five rows stacked above every
-//             page would bury the content, and laying them into a horizontal
-//             strip is not available: List owns its own display and Astryx's
-//             CSS outranks ours. Navigation moves to the bar instead — "Tasks"
-//             goes to the full list, and search is a tap or ⌘K away.
+//  <= 1024px  one column, no rail — the same list moves into the AppShell
+//             drawer, whose breakpoint is set to `lg` so the handover is
+//             exact. It was not: the rail hid at 1024 while the drawer
+//             defaulted to 768, and the page-level area index that had
+//             covered the gap was deleted, so 769-1024px reached no area at
+//             all and <=768px reached none either — the drawer was empty
+//             because AppShell builds it from its own `sideNav` slot, which
+//             this rail deliberately does not use.
 
 const CONTAINER = 1320
 const NAV_WIDTH = 248
@@ -226,9 +230,82 @@ export function AppFrame({
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  // One list, rendered twice: in the rail on wide screens and inside the
+  // drawer below `lg`. Built here rather than duplicated, because the two
+  // copies drifting apart is exactly how the narrow-screen nav went missing
+  // in the first place — the rail was the only copy, and when the page-level
+  // fallback that served narrow screens was deleted nothing replaced it.
+  const areaList = (
+    <>
+      {/* Home stands outside the groups: it is not an area, and giving
+        * it a heading of its own would imply it were one. */}
+      <List density="compact">
+        <ListItem label="Home" href="/" isSelected={isHome} startContent={<HomeIcon />} />
+      </List>
+      {groups.map((group) => (
+        <List
+          key={group.key}
+          density="compact"
+          header={
+            group.label ? (
+              <div {...stylex.props(styles.groupHeading)}>
+                <Text type="supporting">{group.label}</Text>
+              </div>
+            ) : undefined
+          }>
+          {group.items.map((category) => (
+            <ListItem
+              key={category.slug}
+              label={category.name}
+              href={`/c/${category.slug}`}
+              isSelected={category.slug === activeSlug}
+              // Twenty-five rows of same-weight text give a reader
+              // nothing to aim at. The glyph is the aiming point and
+              // its colour is the group it belongs to — see
+              // area-icons.tsx, which also carries why this is allowed
+              // to put colour in a surface the palette calls demoted.
+              startContent={<AreaIcon slug={category.slug} />}
+              // A task with nothing ranked in it yet is still part of
+              // the map — hiding it would misrepresent the scope — but
+              // it is not somewhere to send a reader.
+              isDisabled={!category.ready}
+            />
+          ))}
+        </List>
+      ))}
+    </>
+  )
+
   return (
     <AppShell
       height="auto"
+      // The drawer is the narrow-screen home of the area list, and its
+      // breakpoint has to be the same number the rail hides at. AppShell
+      // defaults to `md` (768) while the rail hid at 1024, which left
+      // 769-1024px with no rail and no drawer — twenty-five areas reachable
+      // only through search. `lg` is 1024, so the two hand over cleanly.
+      //
+      // `content` rather than letting AppShell auto-generate: it builds the
+      // drawer from its own `sideNav` slot, and this rail is deliberately a
+      // column inside the page container instead (see the note at the top),
+      // so there is nothing there for it to pick up.
+      mobileNav={{
+        breakpoint: 'lg',
+        content: (
+          // No wordmark in the header. The bar behind the drawer still shows
+          // it, and the two together read as the brand twice.
+          <MobileNav header="Areas of work">
+            <Button
+              variant="secondary"
+              icon={<Icon icon="search" size="sm" />}
+              label="Search areas and tools"
+              width="full"
+              onClick={() => setSearchOpen(true)}
+            />
+            {areaList}
+          </MobileNav>
+        ),
+      }}
       // wash, not the default `elevated`: elevated paints the content region
       // white, and with the nav now inside that region the whole page went one
       // flat tone. On the wash the canvas shows through and cards read as
@@ -286,16 +363,7 @@ export function AppFrame({
         <div {...stylex.props(styles.columns)}>
           <nav aria-label="Areas of work" {...stylex.props(styles.nav)}>
             <div {...stylex.props(styles.navScroll)}>
-              {/* Home stands outside the groups: it is not an area, and giving
-                * it a heading of its own would imply it were one. */}
-              <List density="compact">
-                <ListItem
-                  label="Home"
-                  href="/"
-                  isSelected={isHome}
-                  startContent={<HomeIcon />}
-                />
-              </List>
+              {areaList}
               {/* One labelled List per family rather than one List with
                 * headings dropped between the rows. `header` is List's own
                 * slot and wires the heading to the list with aria-labelledby,
@@ -303,37 +371,6 @@ export function AppFrame({
                 * is the same grouping a screen reader announces. Headings
                 * faked with sibling divs would leave twenty-five items in one
                 * flat list to anything that is not looking at it. */}
-              {groups.map((group) => (
-                <List
-                  key={group.key}
-                  density="compact"
-                  header={
-                    group.label ? (
-                      <div {...stylex.props(styles.groupHeading)}>
-                        <Text type="supporting">{group.label}</Text>
-                      </div>
-                    ) : undefined
-                  }>
-                  {group.items.map((category) => (
-                    <ListItem
-                      key={category.slug}
-                      label={category.name}
-                      href={`/c/${category.slug}`}
-                      isSelected={category.slug === activeSlug}
-                      // Twenty-five rows of same-weight text give a reader
-                      // nothing to aim at. The glyph is the aiming point and
-                      // its colour is the group it belongs to — see
-                      // area-icons.tsx, which also carries why this is allowed
-                      // to put colour in a surface the palette calls demoted.
-                      startContent={<AreaIcon slug={category.slug} />}
-                      // A task with nothing ranked in it yet is still part of
-                      // the map — hiding it would misrepresent the scope — but
-                      // it is not somewhere to send a reader.
-                      isDisabled={!category.ready}
-                    />
-                  ))}
-                </List>
-              ))}
             </div>
           </nav>
           <div>{children}</div>
