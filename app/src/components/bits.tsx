@@ -91,8 +91,10 @@ const styles = stylex.create({
   // attributes reserve the box before the image lands; the height below is what
   // actually decides the size, and the two must agree or the bar reflows.
   //
-  // No colour: the file carries its own, deliberately independent of the theme
-  // — the logo should not recolour because the product did.
+  // No colour here: the file carries its own. Its blue is the interface primary
+  // — the master was drawn a shade off it, and scripts/crop-wordmark.mjs pulls
+  // it onto #4F46E5 when it cuts the asset. So changing the primary means
+  // re-running that script, not editing anything in this file.
   wordmark: {
     height: 34,
     width: 'auto',

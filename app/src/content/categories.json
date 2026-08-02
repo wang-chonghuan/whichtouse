@@ -3,19 +3,28 @@
     "slug": "content-writing",
     "name": "Content Writing",
     "moneyTier": "green",
-    "sort": 1
+    "sort": 1,
+    "blurb": "AI writing assistants and marketing-copy platforms",
+    "practitioners": "editors, content leads and freelance writers",
+    "domainHint": "Whether a house voice survives the tool, and how output is detected downstream, are unusually decisive here."
   },
   {
     "slug": "video-generation",
     "name": "Video Generation",
     "moneyTier": "green",
-    "sort": 2
+    "sort": 2,
+    "blurb": "text-to-video, image-to-video and AI video editing tools",
+    "practitioners": "video editors and motion designers",
+    "domainHint": "Render economics and footage rights are unusually decisive here; find out how they work as a class, not per vendor."
   },
   {
     "slug": "image-generation",
     "name": "Image Generation",
     "moneyTier": "green",
-    "sort": 3
+    "sort": 3,
+    "blurb": "text-to-image models and AI image editing tools",
+    "practitioners": "designers and illustrators",
+    "domainHint": "Commercial-use rights and the cost of iterating to a usable frame are unusually decisive here."
   },
   {
     "slug": "voice-audio",
@@ -30,85 +39,127 @@
     "slug": "lead-gen",
     "name": "Lead Generation",
     "moneyTier": "green",
-    "sort": 5
+    "sort": 5,
+    "blurb": "AI prospecting, contact enrichment and lead scoring tools",
+    "practitioners": "SDR leads and growth marketers",
+    "domainHint": "Data coverage, staleness and compliance exposure are unusually decisive here."
   },
   {
     "slug": "email-outreach",
     "name": "Email Outreach",
     "moneyTier": "green",
-    "sort": 6
+    "sort": 6,
+    "blurb": "AI cold email, sequencing and inbox warming tools",
+    "practitioners": "sales and growth teams running outbound",
+    "domainHint": "Deliverability and sending-domain reputation are unusually decisive here; find out how they behave as a class."
   },
   {
     "slug": "seo-geo",
     "name": "SEO & GEO",
     "moneyTier": "green",
-    "sort": 7
+    "sort": 7,
+    "blurb": "AI SEO tooling and generative-engine optimisation",
+    "practitioners": "SEO leads and content strategists",
+    "domainHint": "How these tools measure their own effect is unusually decisive here."
   },
   {
     "slug": "social-media",
     "name": "Social Media",
     "moneyTier": "green",
-    "sort": 8
+    "sort": 8,
+    "blurb": "AI social scheduling, content generation and analytics",
+    "practitioners": "social media managers",
+    "domainHint": "Platform API access, and what happens when it changes, is unusually decisive here."
   },
   {
     "slug": "ui-design",
     "name": "UI Design",
     "moneyTier": "green",
-    "sort": 9
+    "sort": 9,
+    "blurb": "AI design tools, design-to-code and component generation",
+    "practitioners": "product designers and front-end engineers",
+    "domainHint": "Handoff fidelity into a real codebase and an existing design system is unusually decisive here."
   },
   {
     "slug": "presentation",
     "name": "Presentations & Slides",
     "moneyTier": "green",
-    "sort": 10
+    "sort": 10,
+    "blurb": "AI deck builders and slide generation tools",
+    "practitioners": "consultants, founders and marketers",
+    "domainHint": "Export fidelity into PowerPoint or Google Slides, and template control, are unusually decisive here."
   },
   {
     "slug": "data-analysis",
     "name": "Data Analysis",
     "moneyTier": "yellow",
-    "sort": 11
+    "sort": 11,
+    "blurb": "AI analytics assistants, notebook copilots and chat-with-your-data tools",
+    "practitioners": "analysts and data engineers",
+    "domainHint": "How the tool behaves when it is confidently wrong about a query is unusually decisive here."
   },
   {
     "slug": "research-search",
     "name": "Research & Search",
     "moneyTier": "yellow",
-    "sort": 12
+    "sort": 12,
+    "blurb": "AI search engines and deep research agents",
+    "practitioners": "researchers and analysts",
+    "domainHint": "Citation quality and whether a claim can be traced back to its source are unusually decisive here."
   },
   {
     "slug": "customer-support",
     "name": "Customer Support",
     "moneyTier": "yellow",
-    "sort": 13
+    "sort": 13,
+    "blurb": "AI support agents, help-centre automation and ticket deflection",
+    "practitioners": "support leads and CX managers",
+    "domainHint": "How resolution is defined, measured and billed is unusually decisive here."
   },
   {
     "slug": "meeting-notes",
     "name": "Meeting Notes",
     "moneyTier": "yellow",
-    "sort": 14
+    "sort": 14,
+    "blurb": "AI meeting recorders, transcription and summary tools",
+    "practitioners": "operations leads and managers",
+    "domainHint": "Recording consent, retention and where the audio lives are unusually decisive here."
   },
   {
     "slug": "pdf-documents",
     "name": "PDF & Documents",
     "moneyTier": "yellow",
-    "sort": 15
+    "sort": 15,
+    "blurb": "AI document chat, extraction, editing and conversion tools",
+    "practitioners": "knowledge workers and researchers",
+    "domainHint": "Extraction fidelity on real documents — tables, scans, multi-column layouts — is unusually decisive here."
   },
   {
     "slug": "knowledge-base",
     "name": "Knowledge Base / RAG",
     "moneyTier": "yellow",
-    "sort": 16
+    "sort": 16,
+    "blurb": "RAG platforms and internal knowledge assistants",
+    "practitioners": "platform engineers and IT leads",
+    "domainHint": "Retrieval quality, permission inheritance and index freshness are unusually decisive here."
   },
   {
     "slug": "translation",
     "name": "Translation",
     "moneyTier": "yellow",
-    "sort": 17
+    "sort": 17,
+    "blurb": "AI translation and localisation tools",
+    "practitioners": "localisation managers and professional translators",
+    "domainHint": "Terminology control and whether output can be reviewed efficiently are unusually decisive here."
   },
   {
     "slug": "resume-jobs",
     "name": "Resume & Job Search",
     "moneyTier": "yellow",
-    "sort": 18
+    "sort": 18,
+    "blurb": "AI resume builders, job matching and interview preparation tools",
+    "practitioners": "job seekers and recruiters",
+    "domainHint": "What an applicant tracking system actually parses, and what an employer sees, are unusually decisive here."
   },
   {
     "slug": "bookkeeping",
@@ -123,7 +174,10 @@
     "slug": "legal-contract",
     "name": "Legal & Contracts",
     "moneyTier": "yellow",
-    "sort": 20
+    "sort": 20,
+    "blurb": "AI contract review, drafting and legal research tools",
+    "practitioners": "in-house counsel and contract managers",
+    "domainHint": "Confidentiality, privilege and who is accountable for a missed clause are unusually decisive here."
   },
   {
     "slug": "coding",
@@ -137,24 +191,36 @@
     "slug": "browser-automation",
     "name": "Browser Automation",
     "moneyTier": "red",
-    "sort": 22
+    "sort": 22,
+    "blurb": "AI browser agents and web task automation",
+    "practitioners": "automation engineers",
+    "domainHint": "Reliability on real sites — authentication, changing markup, bot detection — is unusually decisive here."
   },
   {
     "slug": "web-scraping",
     "name": "Web Scraping",
     "moneyTier": "red",
-    "sort": 23
+    "sort": 23,
+    "blurb": "AI-assisted scrapers, extraction APIs and crawl infrastructure",
+    "practitioners": "data engineers",
+    "domainHint": "Blocking, proxy economics and legal exposure are unusually decisive here."
   },
   {
     "slug": "workflow-automation",
     "name": "Workflow Automation",
     "moneyTier": "red",
-    "sort": 24
+    "sort": 24,
+    "blurb": "AI workflow builders and agentic automation platforms",
+    "practitioners": "operations engineers and internal-tools builders",
+    "domainHint": "What happens when a step fails halfway through a run is unusually decisive here."
   },
   {
     "slug": "architecture-diagram",
     "name": "Diagrams & Architecture",
     "moneyTier": "red",
-    "sort": 25
+    "sort": 25,
+    "blurb": "AI diagramming and architecture visualisation tools",
+    "practitioners": "software architects and engineers",
+    "domainHint": "Whether a diagram stays in sync with the system it describes is unusually decisive here."
   }
 ]

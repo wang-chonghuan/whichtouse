@@ -14,9 +14,22 @@
         "rankBasis": "Appears in all three cited writing-tool roundups and is the broad Reddit-consensus default for general drafting, giving it the widest cross-source support in this list.",
         "pricingFree": "Free plan with limited messages, uploads, image generation and deep-research access",
         "pricingPaid": "ChatGPT Plus $20/mo — expanded model, message, upload, image-generation and deep-research limits",
-        "features": ["Conversational drafting and rewriting", "File-aware analysis and summarization", "Web research with citations", "Custom GPTs and reusable workflows"],
-        "pros": ["most versatile all-rounder across formats and writing tasks", "strong instruction following and iterative editing", "large ecosystem of integrations and reusable GPTs"],
-        "cons": ["can produce confident factual errors without source checking", "voice can become generic unless tightly prompted", "usage limits and model availability vary by plan"],
+        "features": [
+          "Conversational drafting and rewriting",
+          "File-aware analysis and summarization",
+          "Web research with citations",
+          "Custom GPTs and reusable workflows"
+        ],
+        "pros": [
+          "most versatile all-rounder across formats and writing tasks",
+          "strong instruction following and iterative editing",
+          "large ecosystem of integrations and reusable GPTs"
+        ],
+        "cons": [
+          "can produce confident factual errors without source checking",
+          "voice can become generic unless tightly prompted",
+          "usage limits and model availability vary by plan"
+        ],
         "sources": [
           {
             "name": "DIYAI (reddit consensus)",
@@ -43,9 +56,22 @@
         "rankBasis": "Recommended in all three cited roundups and repeatedly favored in Reddit writing discussions for natural long-form voice and handling large source packets.",
         "pricingFree": "Free plan with limited usage of Claude's current general-purpose models",
         "pricingPaid": "Claude Pro $20/mo — more usage, model access, projects and research features",
-        "features": ["Long-form drafting and revision", "Large-context document analysis", "Projects with reusable knowledge", "Web research and citations"],
-        "pros": ["natural, less formulaic long-form prose", "strong at preserving tone during edits", "handles long documents and source synthesis well"],
-        "cons": ["usage caps can interrupt long editing sessions", "citations and factual claims still require verification", "fewer marketing-specific workflow tools than dedicated suites"],
+        "features": [
+          "Long-form drafting and revision",
+          "Large-context document analysis",
+          "Projects with reusable knowledge",
+          "Web research and citations"
+        ],
+        "pros": [
+          "natural, less formulaic long-form prose",
+          "strong at preserving tone during edits",
+          "handles long documents and source synthesis well"
+        ],
+        "cons": [
+          "usage caps can interrupt long editing sessions",
+          "citations and factual claims still require verification",
+          "fewer marketing-specific workflow tools than dedicated suites"
+        ],
         "sources": [
           {
             "name": "DIYAI (reddit consensus)",
@@ -72,9 +98,22 @@
         "rankBasis": "Included in all three cited professional writing roundups and remains one of the most-reviewed dedicated AI marketing-writing platforms rather than a general chatbot.",
         "pricingFree": null,
         "pricingPaid": "Pro from $59/mo when billed annually — 1 seat with brand voice, knowledge and marketing-workflow features; trial available",
-        "features": ["Brand Voice and style controls", "Marketing campaign workflows", "Content templates and editor", "Team knowledge and governance"],
-        "pros": ["purpose-built controls for consistent brand copy", "broad library of marketing workflows", "better collaboration and governance than chat-only tools"],
-        "cons": ["materially more expensive than general AI assistants", "output still needs human editing to avoid formulaic copy", "limited value for users outside marketing teams"],
+        "features": [
+          "Brand Voice and style controls",
+          "Marketing campaign workflows",
+          "Content templates and editor",
+          "Team knowledge and governance"
+        ],
+        "pros": [
+          "purpose-built controls for consistent brand copy",
+          "broad library of marketing workflows",
+          "better collaboration and governance than chat-only tools"
+        ],
+        "cons": [
+          "materially more expensive than general AI assistants",
+          "output still needs human editing to avoid formulaic copy",
+          "limited value for users outside marketing teams"
+        ],
         "sources": [
           {
             "name": "Nightwatch top 5",
@@ -101,9 +140,22 @@
         "rankBasis": "Placed in both cited marketing-writing roundups and is commonly compared with Jasper as a lower-cost suite combining article generation and SEO tooling.",
         "pricingFree": "Limited free plan for trying core writing and chat features; current allowance can vary",
         "pricingPaid": "Paid individual and team tiers available — generation, SEO and brand limits vary by plan",
-        "features": ["Long-form article generation", "SEO research and optimization", "Brand Voice controls", "AI chat and rewriting tools"],
-        "pros": ["combines writing and SEO in one workflow", "lower entry cost than many enterprise marketing suites", "useful templates for solo marketers"],
-        "cons": ["credit and feature packaging changes frequently", "long articles can become repetitive without editing", "advanced SEO and audit features sit on higher tiers"],
+        "features": [
+          "Long-form article generation",
+          "SEO research and optimization",
+          "Brand Voice controls",
+          "AI chat and rewriting tools"
+        ],
+        "pros": [
+          "combines writing and SEO in one workflow",
+          "lower entry cost than many enterprise marketing suites",
+          "useful templates for solo marketers"
+        ],
+        "cons": [
+          "credit and feature packaging changes frequently",
+          "long articles can become repetitive without editing",
+          "advanced SEO and audit features sit on higher tiers"
+        ],
         "sources": [
           {
             "name": "Nightwatch top 5",
@@ -126,9 +178,22 @@
         "rankBasis": "The cited Reddit-consensus and writing-tool roundups consistently select Grammarly for editing rather than first-draft generation, backed by its broad browser and workplace adoption.",
         "pricingFree": "Free plan with grammar, spelling and basic tone assistance",
         "pricingPaid": "Grammarly Pro from $12/mo when billed annually — full rewrites, tone adjustment, plagiarism/AI checks and expanded generative use",
-        "features": ["Grammar and clarity correction", "Tone and style suggestions", "Full-sentence rewrites", "Browser and desktop integrations"],
-        "pros": ["works inside most common writing surfaces", "fast, approachable line-level editing", "strong grammar and tone feedback"],
-        "cons": ["suggestions can flatten intentional voice", "not designed for research or full article creation", "advanced rewrites and checks require Pro"],
+        "features": [
+          "Grammar and clarity correction",
+          "Tone and style suggestions",
+          "Full-sentence rewrites",
+          "Browser and desktop integrations"
+        ],
+        "pros": [
+          "works inside most common writing surfaces",
+          "fast, approachable line-level editing",
+          "strong grammar and tone feedback"
+        ],
+        "cons": [
+          "suggestions can flatten intentional voice",
+          "not designed for research or full article creation",
+          "advanced rewrites and checks require Pro"
+        ],
         "sources": [
           {
             "name": "DIYAI (reddit consensus)",
@@ -151,9 +216,22 @@
         "rankBasis": "Appears in both cited AI-writing comparisons and is most often distinguished for short-form sales copy and repeatable go-to-market workflows rather than general prose.",
         "pricingFree": "Free account with limited chat usage for evaluating the platform",
         "pricingPaid": "Paid Chat and workflow tiers available — seats, workflow credits and model access vary by plan",
-        "features": ["Sales and marketing copy generation", "Go-to-market workflow automation", "Brand Voice and knowledge", "Reusable prompt and workflow templates"],
-        "pros": ["strong templates for ads, email and social copy", "workflow automation goes beyond a blank chat box", "team-oriented brand and process controls"],
-        "cons": ["pricing and workflow-credit structure is complex", "weaker fit for nuanced long-form editorial work", "generated copy can feel templated without substantial input"],
+        "features": [
+          "Sales and marketing copy generation",
+          "Go-to-market workflow automation",
+          "Brand Voice and knowledge",
+          "Reusable prompt and workflow templates"
+        ],
+        "pros": [
+          "strong templates for ads, email and social copy",
+          "workflow automation goes beyond a blank chat box",
+          "team-oriented brand and process controls"
+        ],
+        "cons": [
+          "pricing and workflow-credit structure is complex",
+          "weaker fit for nuanced long-form editorial work",
+          "generated copy can feel templated without substantial input"
+        ],
         "sources": [
           {
             "name": "NoGood 11 tools",
@@ -176,9 +254,22 @@
         "rankBasis": "Its cited Reddit-consensus placement is narrower than the leaders, but it is one of the most frequently recommended tools for source-backed research and briefing before drafting.",
         "pricingFree": "Free plan with unlimited basic searches and a limited daily allowance of advanced searches",
         "pricingPaid": "Perplexity Pro $20/mo — expanded advanced searches, model choice, file analysis and image generation",
-        "features": ["Web search with inline citations", "Deep multi-step research", "Source discovery and follow-up questions", "File and collection-based research"],
-        "pros": ["fast source-backed briefing and outline creation", "citations make claims easier to audit", "good at exploring unfamiliar topics interactively"],
-        "cons": ["not optimized for polished final prose", "citations can be incomplete or support only part of a claim", "best models and research volume require Pro"],
+        "features": [
+          "Web search with inline citations",
+          "Deep multi-step research",
+          "Source discovery and follow-up questions",
+          "File and collection-based research"
+        ],
+        "pros": [
+          "fast source-backed briefing and outline creation",
+          "citations make claims easier to audit",
+          "good at exploring unfamiliar topics interactively"
+        ],
+        "cons": [
+          "not optimized for polished final prose",
+          "citations can be incomplete or support only part of a claim",
+          "best models and research volume require Pro"
+        ],
         "sources": [
           {
             "name": "DIYAI (reddit consensus)",
@@ -200,9 +291,22 @@
         "rankBasis": "Official Anthropic skills from the cited anthropics/skills repository (~164k GitHub stars), with the document skills used as production examples for DOCX, PDF, PPTX and XLSX creation.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["DOCX creation and editing", "PDF generation and form workflows", "PowerPoint deck production", "Spreadsheet creation and analysis"],
-        "pros": ["official, actively maintained skill instructions", "covers the four main business-document formats", "encodes render-and-verify workflows rather than prompt snippets"],
-        "cons": ["requires a capable agent runtime and local dependencies", "not a standalone end-user writing app", "quality still depends on the host model and artifact review"],
+        "features": [
+          "DOCX creation and editing",
+          "PDF generation and form workflows",
+          "PowerPoint deck production",
+          "Spreadsheet creation and analysis"
+        ],
+        "pros": [
+          "official, actively maintained skill instructions",
+          "covers the four main business-document formats",
+          "encodes render-and-verify workflows rather than prompt snippets"
+        ],
+        "cons": [
+          "requires a capable agent runtime and local dependencies",
+          "not a standalone end-user writing app",
+          "quality still depends on the host model and artifact review"
+        ],
         "sources": [
           {
             "name": "anthropics/skills repo (~164k★, official)",
@@ -230,9 +334,22 @@
         "rankBasis": "About 16k GitHub stars and prominent placement in the ai-writing ecosystem make Novel the most adopted dedicated open-source writing surface in this track.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["Notion-style rich-text editor", "AI autocomplete and editing commands", "Slash commands and Markdown shortcuts", "Embeddable React editor components"],
-        "pros": ["polished open-source editor experience", "easy foundation for building a custom AI writing product", "familiar block-editor interactions"],
-        "cons": ["repository maintenance has been intermittent", "AI features require configuring external model services", "developers must supply hosting, auth and production data storage"],
+        "features": [
+          "Notion-style rich-text editor",
+          "AI autocomplete and editing commands",
+          "Slash commands and Markdown shortcuts",
+          "Embeddable React editor components"
+        ],
+        "pros": [
+          "polished open-source editor experience",
+          "easy foundation for building a custom AI writing product",
+          "familiar block-editor interactions"
+        ],
+        "cons": [
+          "repository maintenance has been intermittent",
+          "AI features require configuring external model services",
+          "developers must supply hosting, auth and production data storage"
+        ],
         "sources": [
           {
             "name": "GitHub steven-tey/novel (~16.4k★)",
@@ -256,9 +373,22 @@
         "rankBasis": "A frequently indexed skill inside ComposioHQ's cited awesome-claude-skills collection, but it has little independent review volume and inherits adoption signals from the parent collection.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["Topic research and source gathering", "Outline generation", "Citation-aware drafting", "Iterative voice-preserving revision"],
-        "pros": ["covers a complete research-to-draft workflow", "explicitly asks for sources and citations", "simple portable SKILL.md format"],
-        "cons": ["no standalone product or dedicated maintainer signals", "quality depends heavily on search tools available to the agent", "limited independent user feedback"],
+        "features": [
+          "Topic research and source gathering",
+          "Outline generation",
+          "Citation-aware drafting",
+          "Iterative voice-preserving revision"
+        ],
+        "pros": [
+          "covers a complete research-to-draft workflow",
+          "explicitly asks for sources and citations",
+          "simple portable SKILL.md format"
+        ],
+        "cons": [
+          "no standalone product or dedicated maintainer signals",
+          "quality depends heavily on search tools available to the agent",
+          "limited independent user feedback"
+        ],
         "sources": [
           {
             "name": "ComposioHQ awesome-claude-skills",
@@ -286,9 +416,22 @@
         "rankBasis": "Approximately 8.6k GitHub stars provide a meaningful adoption signal, though Reor is primarily a local-first knowledge app and only indirectly a content-writing tool.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["Local-first Markdown knowledge base", "Semantic search over notes", "AI chat with personal documents", "Linked-note organization"],
-        "pros": ["keeps notes and embeddings local", "useful research memory for long-form writing", "open Markdown files reduce lock-in"],
-        "cons": ["writing assistance is secondary to personal knowledge management", "local models and indexing add setup and hardware demands", "smaller editing workflow than purpose-built writing suites"],
+        "features": [
+          "Local-first Markdown knowledge base",
+          "Semantic search over notes",
+          "AI chat with personal documents",
+          "Linked-note organization"
+        ],
+        "pros": [
+          "keeps notes and embeddings local",
+          "useful research memory for long-form writing",
+          "open Markdown files reduce lock-in"
+        ],
+        "cons": [
+          "writing assistance is secondary to personal knowledge management",
+          "local models and indexing add setup and hardware demands",
+          "smaller editing workflow than purpose-built writing suites"
+        ],
         "sources": [
           {
             "name": "GitHub reorproject/reor (~8.6k★)",
@@ -308,9 +451,22 @@
         "rankBasis": "A real but thin single-author skill with limited GitHub and independent-review signals; it ranks on its specialized CORE-EEAT/CITE SEO workflow rather than broad adoption.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["Keyword-led content planning", "CORE-EEAT article structure", "CITE-based source handling", "SEO and GEO optimization checks"],
-        "pros": ["more opinionated than a generic writing prompt", "combines search intent, credibility and citation steps", "portable skill that can be inspected and customized"],
-        "cons": ["very limited independent usage evidence", "SEO frameworks do not guarantee ranking performance", "requires external research and keyword data tools for strong results"],
+        "features": [
+          "Keyword-led content planning",
+          "CORE-EEAT article structure",
+          "CITE-based source handling",
+          "SEO and GEO optimization checks"
+        ],
+        "pros": [
+          "more opinionated than a generic writing prompt",
+          "combines search intent, credibility and citation steps",
+          "portable skill that can be inspected and customized"
+        ],
+        "cons": [
+          "very limited independent usage evidence",
+          "SEO frameworks do not guarantee ranking performance",
+          "requires external research and keyword data tools for strong results"
+        ],
         "sources": [
           {
             "name": "GitHub seo-geo-claude-skills",
@@ -320,5 +476,19 @@
       }
     ]
   },
-  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). Content writing has a genuinely thin OSS ecosystem, so this track is deliberately short rather than padded: the official Anthropic document skills (~164k★ parent repo, produce the actual deliverable) and steven-tey/novel (~16k★, the de-facto open AI editor) lead, then ComposioHQ's content-research-writer and Reor (writing-adjacent PKM), with a single-author SEO skill last. Previous SEO MCP-server entries were removed."
+  "notes": "Rebuilt to rank by real reputation/adoption, not form factor (kind is a metadata tag only). Content writing has a genuinely thin OSS ecosystem, so this track is deliberately short rather than padded: the official Anthropic document skills (~164k★ parent repo, produce the actual deliverable) and steven-tey/novel (~16k★, the de-facto open AI editor) lead, then ComposioHQ's content-research-writer and Reor (writing-adjacent PKM), with a single-author SEO skill last. Previous SEO MCP-server entries were removed.",
+  "beforeYouPick": {
+    "weigh": "Whether your house voice survives repeated drafts decides this. Brand-voice features all demo well on generic copy; test them against your own published archive.",
+    "avoid": "Buying for drafting speed. The bottleneck moves to review — fact-checking and rewriting generic passages routinely costs more time than the first draft saved.",
+    "moving": "Built-in SEO scoring is being joined by AI-visibility checks — whether answer engines quote you. Extractable, source-backed passages now matter more than keyword density.",
+    "sources": [
+      "https://www.brafton.com/blog/content-marketing/the-4-biggest-challenges-in-ai-content-creation/",
+      "https://eloritescontent.com/research/impact-of-generative-ai-on-content-writing-industry/",
+      "https://www.glean.com/perspectives/how-to-create-a-brand-voice-guide-for-ai-tools",
+      "https://llmrefs.com/generative-engine-optimization",
+      "https://business.adobe.com/blog/seo-in-2026-fundamentals",
+      "https://keywordseverywhere.com/blog/does-google-penalize-ai-content/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

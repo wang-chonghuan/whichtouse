@@ -542,5 +542,18 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source repos. Corey Haines' marketingskills cold-email skill leads (~41.5k stars) as the recognized cold-outreach craft resource. Honest caveat: the highest-star repos here (listmonk, BillionMail) are newsletter/sending infrastructure, and Mautic is nurture-oriented automation, so none is truly cold-native — they are marked medium for this use case and pair with an app-track cold-email platform for sending. OpenOutreach is the closest purpose-built OSS cold-outreach tool. No MCP servers; the prior MCP entries were removed as out of scope."
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source repos. Corey Haines' marketingskills cold-email skill leads (~41.5k stars) as the recognized cold-outreach craft resource. Honest caveat: the highest-star repos here (listmonk, BillionMail) are newsletter/sending infrastructure, and Mautic is nurture-oriented automation, so none is truly cold-native — they are marked medium for this use case and pair with an app-track cold-email platform for sending. OpenOutreach is the closest purpose-built OSS cold-outreach tool. No MCP servers; the prior MCP entries were removed as out of scope.",
+  "beforeYouPick": {
+    "weigh": "Inbox placement comes from the domains and DNS underneath, not the software. Compare what each meters: mailboxes are unlimited, contacts and sends are not.",
+    "avoid": "Warmup scores come from pools of mailboxes emailing each other; providers discount that traffic. A green warmup dashboard predicts nothing about real recipients.",
+    "moving": "Sending platforms now sell the domains and mailboxes themselves. Check whether infrastructure bought inside a tool can be transferred out when you leave.",
+    "sources": [
+      "https://support.google.com/a/answer/81126",
+      "https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730",
+      "https://support.google.com/mail/answer/9981691",
+      "https://www.gmass.co/blog/warmup-shutting-down/",
+      "https://helpcenter.smartlead.ai/en/articles/256-smartsenders-faqs-and-troubleshooting-everything-you-need-to-know"
+    ],
+    "updated": "2026-08-02"
+  }
 }

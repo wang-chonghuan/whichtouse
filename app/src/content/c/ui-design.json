@@ -555,5 +555,18 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS UI leaders (shadcn/ui, Tailwind, MUI, Ant Design, and the primitives behind them) rank as kind:repo alongside the standout design skills: Anthropic's official first-party frontend-design skill and the very popular UI/UX Pro Max. Note: UI/UX Pro Max (~109.6k★) is real but its star surge on a young repo outpaces its actual track record, so it ranks below shadcn/Tailwind/the official skill rather than at the very top. Two other heavily-starred DESIGN.md collections (VoltAgent/awesome-design-md ~104k) show the same inflation pattern and were left out in favor of the more organic bergside list. Removed all MCP entries (shadcn MCP, Figma Dev Mode MCP, AIDesigner MCP). Star counts verified live 2026-07-24."
+  "notes": "Skill/Repo track rebuilt to rank by real adoption, not form factor. The recognized OSS UI leaders (shadcn/ui, Tailwind, MUI, Ant Design, and the primitives behind them) rank as kind:repo alongside the standout design skills: Anthropic's official first-party frontend-design skill and the very popular UI/UX Pro Max. Note: UI/UX Pro Max (~109.6k★) is real but its star surge on a young repo outpaces its actual track record, so it ranks below shadcn/Tailwind/the official skill rather than at the very top. Two other heavily-starred DESIGN.md collections (VoltAgent/awesome-design-md ~104k) show the same inflation pattern and were left out in favor of the more organic bergside list. Removed all MCP entries (shadcn MCP, Figma Dev Mode MCP, AIDesigner MCP). Star counts verified live 2026-07-24.",
+  "beforeYouPick": {
+    "weigh": "Judge them on how much of your existing tokens and components they can read; all of them look equal on a blank first screen.",
+    "avoid": "Generated markup looks right without being right — hard-coded colours, no keyboard handling, no ARIA states. Reviewers check pixels, so the rework surfaces much later.",
+    "moving": "Generation is shifting from inventing components to assembling yours: tools now read your tokens, component registry and codebase, making conformance an input rather than cleanup.",
+    "sources": [
+      "https://www.managed-code.com/blog-post/design-to-code-ai-tools-2026",
+      "https://master.dev/blog/ai-generated-ui-is-inaccessible-by-default/",
+      "https://www.figma.com/blog/design-systems-ai-mcp/",
+      "https://vercel.com/blog/ai-powered-prototyping-with-design-systems",
+      "https://superdesign.dev/blog/i-tested-8-ai-ui-generators"
+    ],
+    "updated": "2026-08-02"
+  }
 }

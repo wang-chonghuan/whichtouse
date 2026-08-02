@@ -539,5 +539,20 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes notable open-source repos and genuine SKILL.md Agent Skills. Postiz leads decisively (~33.7k stars) as the de-facto open-source social-media scheduler/publisher, with Mixpost the established #2 — both outrank the skills on adoption. The skills (blacktwist, Typefully, etc.) are mostly advisory content/strategy engines that draft posts and calendars; unless a posting backend (or Typefully's API) is attached they do not publish, so pair them with an app-track or self-hosted scheduler. No MCP servers; the prior MCP entries (Postiz/Zernio/OpenTweet/BrandGhost MCP) were removed as out of scope — Postiz appears here as its full open-source app repo."
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, de-facto status) rather than by form factor — 'kind' is a tag only. It now mixes notable open-source repos and genuine SKILL.md Agent Skills. Postiz leads decisively (~33.7k stars) as the de-facto open-source social-media scheduler/publisher, with Mixpost the established #2 — both outrank the skills on adoption. The skills (blacktwist, Typefully, etc.) are mostly advisory content/strategy engines that draft posts and calendars; unless a posting backend (or Typefully's API) is attached they do not publish, so pair them with an app-track or self-hosted scheduler. No MCP servers; the prior MCP entries (Postiz/Zernio/OpenTweet/BrandGhost MCP) were removed as out of scope — Postiz appears here as its full open-source app repo.",
+  "beforeYouPick": {
+    "weigh": "Every tool claims the same networks. What separates them is which of your post formats publish unattended, and which ping your phone to finish.",
+    "avoid": "Buying for the reporting. Depth stops at what each network's API exposes, backfill is partial, and none of the history follows you out.",
+    "moving": "Publishing APIs are absorbing native-app composition — audio, tagging, collaborators, AI and partnership labels — while analytics fields get deprecated and replaced under existing reports.",
+    "sources": [
+      "https://developers.facebook.com/docs/instagram-platform/content-publishing",
+      "https://developers.facebook.com/docs/instagram-platform/insights",
+      "https://developers.facebook.com/docs/instagram-platform/changelog/",
+      "https://developers.facebook.com/docs/threads/changelog",
+      "https://developers.tiktok.com/doc/content-posting-api-get-started",
+      "https://developers.tiktok.com/doc/changelog",
+      "https://support.buffer.com/article/560-analytics-faq"
+    ],
+    "updated": "2026-08-02"
+  }
 }

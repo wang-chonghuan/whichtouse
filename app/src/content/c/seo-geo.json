@@ -14,9 +14,22 @@
         "rankBasis": "The only full-suite vendor recurring across all three source roundups, backed by one of the largest SEO review communities and a mature toolkit now extended into AI-search visibility.",
         "pricingFree": "Limited free account — up to 10 searches/day with restricted reports; no full AI Visibility plan",
         "pricingPaid": "SEO Toolkit Pro $139.95/mo — 5 projects, 500 tracked keywords and 10,000 results/report",
-        "features": ["keyword and competitor research", "site audit and rank tracking", "backlink analytics", "AI-search brand and citation monitoring"],
-        "pros": ["broadest all-in-one SEO workflow in this list", "large data set and mature reporting", "combines classic SEO with AI visibility"],
-        "cons": ["expensive once AI and extra-user add-ons are included", "interface and product catalog can feel overwhelming", "usage limits remain even on paid plans"],
+        "features": [
+          "keyword and competitor research",
+          "site audit and rank tracking",
+          "backlink analytics",
+          "AI-search brand and citation monitoring"
+        ],
+        "pros": [
+          "broadest all-in-one SEO workflow in this list",
+          "large data set and mature reporting",
+          "combines classic SEO with AI visibility"
+        ],
+        "cons": [
+          "expensive once AI and extra-user add-ons are included",
+          "interface and product catalog can feel overwhelming",
+          "usage limits remain even on paid plans"
+        ],
         "sources": [
           {
             "name": "Semrush",
@@ -43,9 +56,22 @@
         "rankBasis": "A top-two entry across enterprise GEO comparisons, differentiated by prompt-volume data and multi-engine tracking; independent review volume remains smaller than legacy SEO suites.",
         "pricingFree": null,
         "pricingPaid": "Starter $99/mo — 50 prompts tracked",
-        "features": ["AI answer-engine visibility tracking", "prompt-volume intelligence", "citation and source analysis", "content and optimization workflows"],
-        "pros": ["purpose-built for AI-search measurement", "strong enterprise and multi-market reporting", "prompt-volume data helps prioritize tracked queries"],
-        "cons": ["limited independent review history", "less useful for traditional backlink and technical SEO", "larger deployments move to custom enterprise pricing"],
+        "features": [
+          "AI answer-engine visibility tracking",
+          "prompt-volume intelligence",
+          "citation and source analysis",
+          "content and optimization workflows"
+        ],
+        "pros": [
+          "purpose-built for AI-search measurement",
+          "strong enterprise and multi-market reporting",
+          "prompt-volume data helps prioritize tracked queries"
+        ],
+        "cons": [
+          "limited independent review history",
+          "less useful for traditional backlink and technical SEO",
+          "larger deployments move to custom enterprise pricing"
+        ],
         "sources": [
           {
             "name": "Profound",
@@ -72,9 +98,22 @@
         "rankBasis": "Appears in all three independent GEO/AI-visibility sources here and retains category-leading backlink-data mindshare, giving it the strongest classic-SEO adoption signal after Semrush.",
         "pricingFree": "Ahrefs Webmaster Tools — free for verified sites with limited Site Audit and Site Explorer access",
         "pricingPaid": "Lite $119/mo — 5 projects, 1,000 reports/user/mo and up to 100,000 total Site Audit crawl pages",
-        "features": ["backlink and competitor analysis", "keyword research and rank tracking", "technical site auditing", "Brand Radar for AI and web mentions"],
-        "pros": ["exceptionally strong backlink and competitive data", "fast, polished research workflow", "AI visibility sits alongside established SEO data"],
-        "cons": ["no general-purpose free plan for competitor research", "credit and report limits frustrate some reviewers", "AI tracking is newer and less specialized than dedicated GEO tools"],
+        "features": [
+          "backlink and competitor analysis",
+          "keyword research and rank tracking",
+          "technical site auditing",
+          "Brand Radar for AI and web mentions"
+        ],
+        "pros": [
+          "exceptionally strong backlink and competitive data",
+          "fast, polished research workflow",
+          "AI visibility sits alongside established SEO data"
+        ],
+        "cons": [
+          "no general-purpose free plan for competitor research",
+          "credit and report limits frustrate some reviewers",
+          "AI tracking is newer and less specialized than dedicated GEO tools"
+        ],
         "sources": [
           {
             "name": "SitePoint",
@@ -101,9 +140,22 @@
         "rankBasis": "Repeatedly shortlisted as the content-plus-GEO option; its large writing-tool user base is a stronger adoption signal than its still-new AI-visibility module.",
         "pricingFree": null,
         "pricingPaid": "Starter $99/mo — 50 prompts and 50 answers tracked daily, 1 user and 1 project",
-        "features": ["AI visibility tracking across major engines", "citation and competitor analysis", "AI content creation", "optimization agents and content workflows"],
-        "pros": ["connects monitoring directly to content production", "covers multiple AI engines in one dashboard", "accessible workflow for content teams"],
-        "cons": ["no standing free GEO plan; free access is trial-oriented", "product packaging changes frequently", "reviewers report variable output quality that still needs editing"],
+        "features": [
+          "AI visibility tracking across major engines",
+          "citation and competitor analysis",
+          "AI content creation",
+          "optimization agents and content workflows"
+        ],
+        "pros": [
+          "connects monitoring directly to content production",
+          "covers multiple AI engines in one dashboard",
+          "accessible workflow for content teams"
+        ],
+        "cons": [
+          "no standing free GEO plan; free access is trial-oriented",
+          "product packaging changes frequently",
+          "reviewers report variable output quality that still needs editing"
+        ],
         "sources": [
           {
             "name": "Semrush",
@@ -126,9 +178,22 @@
         "rankBasis": "Included by both Semrush and SitePoint as a lower-cost full-suite alternative, with a substantial established SEO review base but less GEO-specific community evidence.",
         "pricingFree": null,
         "pricingPaid": "Essential from about $65/mo — 5 projects and 500 keywords tracked daily; 14-day trial only",
-        "features": ["keyword rank tracking", "site and competitor audits", "backlink monitoring", "AI visibility and traffic insights"],
-        "pros": ["good feature-to-price ratio for an SEO suite", "clear rank-tracking and reporting workflows", "more approachable than the largest enterprise suites"],
-        "cons": ["no permanent free plan", "historical and backlink databases are smaller than Ahrefs or Semrush", "AI visibility is an extension rather than the product's core"],
+        "features": [
+          "keyword rank tracking",
+          "site and competitor audits",
+          "backlink monitoring",
+          "AI visibility and traffic insights"
+        ],
+        "pros": [
+          "good feature-to-price ratio for an SEO suite",
+          "clear rank-tracking and reporting workflows",
+          "more approachable than the largest enterprise suites"
+        ],
+        "cons": [
+          "no permanent free plan",
+          "historical and backlink databases are smaller than Ahrefs or Semrush",
+          "AI visibility is an extension rather than the product's core"
+        ],
         "sources": [
           {
             "name": "Semrush",
@@ -151,9 +216,22 @@
         "rankBasis": "A recurring specialist recommendation in AI-visibility roundups and one of the lowest-cost dedicated trackers, though it has a much smaller review footprint than full SEO suites.",
         "pricingFree": null,
         "pricingPaid": "Lite $29/mo — 15 search prompts tracked across 4 AI search engines",
-        "features": ["brand-mention monitoring", "citation and link tracking", "prompt-level AI search reports", "competitor visibility comparison"],
-        "pros": ["low entry price for dedicated GEO monitoring", "simple setup and focused reporting", "covers the main AI answer engines"],
-        "cons": ["15 prompts is restrictive for multi-product brands", "no traditional SEO research toolkit", "smaller ecosystem and review base than established suites"],
+        "features": [
+          "brand-mention monitoring",
+          "citation and link tracking",
+          "prompt-level AI search reports",
+          "competitor visibility comparison"
+        ],
+        "pros": [
+          "low entry price for dedicated GEO monitoring",
+          "simple setup and focused reporting",
+          "covers the main AI answer engines"
+        ],
+        "cons": [
+          "15 prompts is restrictive for multi-product brands",
+          "no traditional SEO research toolkit",
+          "smaller ecosystem and review base than established suites"
+        ],
         "sources": [
           {
             "name": "Rankability",
@@ -176,9 +254,22 @@
         "rankBasis": "A newer specialist with limited independent coverage; it ranks on its action-oriented GEO workflow and a concrete free entry tier rather than broad market adoption.",
         "pricingFree": "Essential free plan — $25 in credit, equivalent to 300 credits",
         "pricingPaid": "Starter $295/mo — 3,600 credits plus add-on credit options",
-        "features": ["AI-search visibility scoring", "prompt-volume tracking", "action center for optimizations", "brand accuracy and hallucination monitoring"],
-        "pros": ["free credits allow a real product evaluation", "turns visibility findings into prioritized actions", "focuses on brand accuracy as well as mentions"],
-        "cons": ["paid entry price is high for smaller teams", "thin independent review volume", "credit consumption is less intuitive than prompt-based plans"],
+        "features": [
+          "AI-search visibility scoring",
+          "prompt-volume tracking",
+          "action center for optimizations",
+          "brand accuracy and hallucination monitoring"
+        ],
+        "pros": [
+          "free credits allow a real product evaluation",
+          "turns visibility findings into prioritized actions",
+          "focuses on brand accuracy as well as mentions"
+        ],
+        "cons": [
+          "paid entry price is high for smaller teams",
+          "thin independent review volume",
+          "credit consumption is less intuitive than prompt-based plans"
+        ],
         "sources": [
           {
             "name": "MaxAEO",
@@ -200,9 +291,22 @@
         "rankBasis": "With about 12.2k GitHub stars and 1.8k forks, this is the most-adopted dedicated SEO agent-skill repository and remains actively maintained.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["25 SEO sub-skills and 18 sub-agents", "technical SEO and schema audits", "GEO/AEO and citability analysis", "local, ecommerce and international SEO workflows"],
-        "pros": ["unusually comprehensive skill coverage", "MIT-licensed and actively maintained", "produces structured audits and action plans"],
-        "cons": ["live ranking and backlink data require external providers", "broad workflow has a learning curve", "output quality depends on agent context and source access"],
+        "features": [
+          "25 SEO sub-skills and 18 sub-agents",
+          "technical SEO and schema audits",
+          "GEO/AEO and citability analysis",
+          "local, ecommerce and international SEO workflows"
+        ],
+        "pros": [
+          "unusually comprehensive skill coverage",
+          "MIT-licensed and actively maintained",
+          "produces structured audits and action plans"
+        ],
+        "cons": [
+          "live ranking and backlink data require external providers",
+          "broad workflow has a learning curve",
+          "output quality depends on agent context and source access"
+        ],
         "sources": [
           {
             "name": "GitHub AgriciDaniel/claude-seo — 12.2k★",
@@ -226,9 +330,22 @@
         "rankBasis": "About 9.1k GitHub stars and 1.5k forks make it the second-largest dedicated GEO skill here, but the repo's promotional tie-in warrants more caution than the raw star count suggests.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["citability scoring", "AI-crawler and robots.txt analysis", "llms.txt and schema generation", "platform-specific GEO audits"],
-        "pros": ["deep focus on AI-search optimization", "covers major AI crawlers and answer engines", "clear deliverables for technical GEO fixes"],
-        "cons": ["promotional material is mixed into the repository", "real visibility data still needs external checks", "less independent validation than the star count implies"],
+        "features": [
+          "citability scoring",
+          "AI-crawler and robots.txt analysis",
+          "llms.txt and schema generation",
+          "platform-specific GEO audits"
+        ],
+        "pros": [
+          "deep focus on AI-search optimization",
+          "covers major AI crawlers and answer engines",
+          "clear deliverables for technical GEO fixes"
+        ],
+        "cons": [
+          "promotional material is mixed into the repository",
+          "real visibility data still needs external checks",
+          "less independent validation than the star count implies"
+        ],
         "sources": [
           {
             "name": "GitHub zubair-trabzada/geo-seo-claude — 9.1k★",
@@ -248,9 +365,22 @@
         "rankBasis": "Roughly 2.0k GitHub stars and 271 forks make SerpBear the highest-adoption standalone open-source rank tracker in this set.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["keyword rank tracking", "unlimited domains and keywords", "Google Search Console integration", "scheduled email reports and alerts"],
-        "pros": ["no per-keyword subscription fee", "focused, understandable self-hosted UI", "strong fit for agencies managing many domains"],
-        "cons": ["requires hosting and scheduled-job maintenance", "Google scraping needs proxies or a SERP API at scale", "does not provide backlink or GEO citation analysis"],
+        "features": [
+          "keyword rank tracking",
+          "unlimited domains and keywords",
+          "Google Search Console integration",
+          "scheduled email reports and alerts"
+        ],
+        "pros": [
+          "no per-keyword subscription fee",
+          "focused, understandable self-hosted UI",
+          "strong fit for agencies managing many domains"
+        ],
+        "cons": [
+          "requires hosting and scheduled-job maintenance",
+          "Google scraping needs proxies or a SERP API at scale",
+          "does not provide backlink or GEO citation analysis"
+        ],
         "sources": [
           {
             "name": "GitHub towfiqi/serpbear — 2.0k★",
@@ -270,9 +400,22 @@
         "rankBasis": "About 1.4k GitHub stars, 247 forks and long-running documentation give it the strongest practitioner-library reputation among scriptable OSS SEO tools here.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["SEO crawling with Scrapy", "robots.txt and sitemap analysis", "SERP and search-ad data helpers", "log, URL and text analysis in pandas"],
-        "pros": ["powerful for reproducible analysis in Python", "integrates naturally with pandas workflows", "mature documentation and broad technical scope"],
-        "cons": ["code-first rather than a ready-made dashboard", "SERP APIs and infrastructure can cost extra", "requires Python and data-analysis competence"],
+        "features": [
+          "SEO crawling with Scrapy",
+          "robots.txt and sitemap analysis",
+          "SERP and search-ad data helpers",
+          "log, URL and text analysis in pandas"
+        ],
+        "pros": [
+          "powerful for reproducible analysis in Python",
+          "integrates naturally with pandas workflows",
+          "mature documentation and broad technical scope"
+        ],
+        "cons": [
+          "code-first rather than a ready-made dashboard",
+          "SERP APIs and infrastructure can cost extra",
+          "requires Python and data-analysis competence"
+        ],
         "sources": [
           {
             "name": "GitHub eliasdabbas/advertools — 1.4k★",
@@ -296,9 +439,22 @@
         "rankBasis": "Its roughly 1.0k GitHub stars and 286 forks are strong for a curated SEO directory, but it ranks below executable tools because it is a reference list rather than software.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["curated SEO tool directory", "tools grouped across 10 categories", "open-source contribution workflow", "links to technical and content utilities"],
-        "pros": ["useful discovery starting point", "maintained by an established search-data vendor", "broad coverage without vendor lock-in"],
-        "cons": ["not an executable SEO tool", "listed projects vary widely in quality and freshness", "users must evaluate and assemble their own stack"],
+        "features": [
+          "curated SEO tool directory",
+          "tools grouped across 10 categories",
+          "open-source contribution workflow",
+          "links to technical and content utilities"
+        ],
+        "pros": [
+          "useful discovery starting point",
+          "maintained by an established search-data vendor",
+          "broad coverage without vendor lock-in"
+        ],
+        "cons": [
+          "not an executable SEO tool",
+          "listed projects vary widely in quality and freshness",
+          "users must evaluate and assemble their own stack"
+        ],
         "sources": [
           {
             "name": "GitHub serpapi/awesome-seo-tools — 1.0k★",
@@ -318,9 +474,22 @@
         "rankBasis": "About 802 GitHub stars show meaningful adoption, but the last code push was in 2023 and the 41 open issues make its maintenance signal weaker than newer crawlers.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["Lighthouse performance audits", "security-header checks", "sitemap and keyword extraction", "SERP, image and page summaries"],
-        "pros": ["combines several audit utilities in one app", "self-hosted with no usage subscription", "covers performance and security alongside SEO"],
-        "cons": ["project appears largely inactive since 2023", "setup and dependency maintenance fall on the user", "less depth than dedicated crawlers and rank trackers"],
+        "features": [
+          "Lighthouse performance audits",
+          "security-header checks",
+          "sitemap and keyword extraction",
+          "SERP, image and page summaries"
+        ],
+        "pros": [
+          "combines several audit utilities in one app",
+          "self-hosted with no usage subscription",
+          "covers performance and security alongside SEO"
+        ],
+        "cons": [
+          "project appears largely inactive since 2023",
+          "setup and dependency maintenance fall on the user",
+          "less depth than dedicated crawlers and rank trackers"
+        ],
         "sources": [
           {
             "name": "GitHub StanGirard/seo-audits-toolkit — 802★",
@@ -340,9 +509,22 @@
         "rankBasis": "Roughly 787 GitHub stars and 166 forks show solid early interest in a free desktop crawler, with active 2026 development but a smaller community than mature SEO tools.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["desktop site crawling", "JavaScript rendering", "link and technical SEO analysis", "Core Web Vitals and multi-format export"],
-        "pros": ["desktop alternative to subscription crawlers", "supports rendered pages and useful exports", "active and extensible open-source codebase"],
-        "cons": ["newer project with limited long-term track record", "desktop resources constrain very large crawls", "community support is smaller than commercial crawler ecosystems"],
+        "features": [
+          "desktop site crawling",
+          "JavaScript rendering",
+          "link and technical SEO analysis",
+          "Core Web Vitals and multi-format export"
+        ],
+        "pros": [
+          "desktop alternative to subscription crawlers",
+          "supports rendered pages and useful exports",
+          "active and extensible open-source codebase"
+        ],
+        "cons": [
+          "newer project with limited long-term track record",
+          "desktop resources constrain very large crawls",
+          "community support is smaller than commercial crawler ecosystems"
+        ],
         "sources": [
           {
             "name": "GitHub PhialsBasement/LibreCrawl — 787★",
@@ -362,9 +544,22 @@
         "rankBasis": "About 741 GitHub stars and 122 forks, active 2026 maintenance and a focused technical-audit UI support its place among the smaller self-hosted SEO apps.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["technical site crawling", "severity-ranked issue reports", "broken-link and redirect checks", "metadata, heading and indexability audits"],
-        "pros": ["clear dashboard for recurring technical audits", "lightweight Go-based self-hosting", "actionable issue severity rather than raw crawl data"],
-        "cons": ["requires database and server administration", "no backlink, keyword or AI-visibility database", "smaller community and integration ecosystem"],
+        "features": [
+          "technical site crawling",
+          "severity-ranked issue reports",
+          "broken-link and redirect checks",
+          "metadata, heading and indexability audits"
+        ],
+        "pros": [
+          "clear dashboard for recurring technical audits",
+          "lightweight Go-based self-hosting",
+          "actionable issue severity rather than raw crawl data"
+        ],
+        "cons": [
+          "requires database and server administration",
+          "no backlink, keyword or AI-visibility database",
+          "smaller community and integration ecosystem"
+        ],
         "sources": [
           {
             "name": "GitHub stjudewashere/seonaut — 741★",
@@ -384,9 +579,22 @@
         "rankBasis": "About 615 GitHub stars and 76 forks show notable early adoption for a dedicated open-source GEO toolkit, with active development but limited independent review evidence.",
         "pricingFree": "Free & open-source (self-host)",
         "pricingPaid": null,
-        "features": ["AI citation and mention audits", "ChatGPT, Perplexity, Gemini and AI Overview checks", "robots.txt, llms.txt and JSON-LD fixes", "CLI, Python and MCP interfaces"],
-        "pros": ["directly measures GEO outcomes rather than only classic SEO", "multiple interfaces suit agents and developers", "MIT-licensed and actively maintained"],
-        "cons": ["new project with a small independent user base", "AI-engine checks may require provider credentials and incur usage cost", "results can vary as answer engines change behavior"],
+        "features": [
+          "AI citation and mention audits",
+          "ChatGPT, Perplexity, Gemini and AI Overview checks",
+          "robots.txt, llms.txt and JSON-LD fixes",
+          "CLI, Python and MCP interfaces"
+        ],
+        "pros": [
+          "directly measures GEO outcomes rather than only classic SEO",
+          "multiple interfaces suit agents and developers",
+          "MIT-licensed and actively maintained"
+        ],
+        "cons": [
+          "new project with a small independent user base",
+          "AI-engine checks may require provider credentials and incur usage cost",
+          "results can vary as answer engines change behavior"
+        ],
         "sources": [
           {
             "name": "GitHub Auriti-Labs/geo-optimizer-skill — 615★",
@@ -396,5 +604,17 @@
       }
     ]
   },
-  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, professional reputation) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source SEO/GEO repos. Daniel Agrici's claude-seo skill leads (~12.2k stars) as the most-adopted, most-comprehensive SEO Agent Skill. Skills carry strategy and audit checklists; repos (SerpBear, advertools, the crawlers/auditors) do the live crawling, rank tracking and GEO-citation measurement — pair both with an app-track suite for backlink/AI-visibility data. All stars verified via the GitHub API. No MCP servers; the prior MCP entries (Ahrefs/DataForSEO/GSC MCP) were removed as out of scope."
+  "notes": "Skill/Repo track rebuilt and re-ranked by real quality/reputation/adoption (verified GitHub stars, professional reputation) rather than by form factor — 'kind' is a tag only. It now mixes genuine SKILL.md Agent Skills and notable open-source SEO/GEO repos. Daniel Agrici's claude-seo skill leads (~12.2k stars) as the most-adopted, most-comprehensive SEO Agent Skill. Skills carry strategy and audit checklists; repos (SerpBear, advertools, the crawlers/auditors) do the live crawling, rank tracking and GEO-citation measurement — pair both with an app-track suite for backlink/AI-visibility data. All stars verified via the GitHub API. No MCP servers; the prior MCP entries (Ahrefs/DataForSEO/GSC MCP) were removed as out of scope.",
+  "beforeYouPick": {
+    "weigh": "How many times it re-runs each prompt decides whether the number means anything. Identical prompts return different answers; single-run scores are noise.",
+    "avoid": "You pay per tracked prompt, so the list stays short and generic. The questions you lose on are the ones nobody thought to add.",
+    "moving": "Measurement is moving from polling answers to server-side evidence: which AI crawlers fetched what, and what traffic followed. Dashboards increasingly emit fixes, not just scores.",
+    "sources": [
+      "https://searchengineland.com/make-prompt-tracking-more-accurate-479708",
+      "https://www.growth-memo.com/p/how-to-make-prompt-tracking-much",
+      "https://crawl-lab.com/en/blog/server-logs-seo/server-log-analysis-seo-guide-2026/",
+      "https://nicklafferty.com/blog/llm-tracking-tools/"
+    ],
+    "updated": "2026-08-02"
+  }
 }

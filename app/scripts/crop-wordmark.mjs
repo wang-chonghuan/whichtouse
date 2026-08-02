@@ -52,13 +52,64 @@ const DENSITIES = [1, 2]
 // two are indistinguishable at display size and WebP is less than half the
 // bytes. Alpha survives — the header is white today but the file should not
 // assume that.
+//
+// Lossy costs a measured 3/255 on the blue: the shipped 2x file reads #4C44E4
+// where the recolour asks for #4F46E5. Lossless removes that and doubles the
+// file, 9.3 kB to 17.1 kB. It was not worth it — a 1% drift on one channel is
+// not visible next to the primary button, and it has been checked against it.
 const QUALITY = 0.92
+
+// The master was drawn in #2A38A4, a navy-leaning royal blue, and the interface
+// primary is #4F46E5. Two indigos that close read as a mistake rather than as
+// two decisions — a near-miss is worse than either a match or a clear contrast
+// — so the blue is pulled onto the primary here.
+//
+// This is the one place the logo follows the palette, and it is deliberate:
+// re-point the primary and the wordmark has to be re-cut with it. The coral is
+// left alone. It is the neon in a neon sign and is meant to be hotter than the
+// interface's #D4553C limits colour, which has to sit under body text.
+//
+// The shift is applied in HSL as a *relationship*, not as a fill: every blue
+// pixel gets the same hue offset and the same saturation and lightness ratios
+// that carry #2A38A4 to #4F46E5. That keeps the dark outline a darkened version
+// of the new blue and keeps the bloom's falloff intact — flooding the blue
+// pixels with one flat value would erase both.
+const RECOLOUR = { from: '#2A38A4', to: '#4F46E5', hueBand: [200, 280] }
 
 const browser = await chromium.launch()
 const page = await browser.newPage()
 
 const rendered = await page.evaluate(
-  async ({ src, margin, height, densities, quality }) => {
+  async ({ src, margin, height, densities, quality, recolour }) => {
+    const rgbToHsl = (r, g, b) => {
+      r /= 255; g /= 255; b /= 255
+      const max = Math.max(r, g, b), min = Math.min(r, g, b)
+      const l = (max + min) / 2
+      const d = max - min
+      if (d === 0) return [0, 0, l]
+      const s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+      let h
+      if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6
+      else if (max === g) h = ((b - r) / d + 2) / 6
+      else h = ((r - g) / d + 4) / 6
+      return [h * 360, s, l]
+    }
+    const hslToRgb = (h, s, l) => {
+      h = ((h % 360) + 360) % 360 / 360
+      if (s === 0) return [l * 255, l * 255, l * 255]
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+      const p = 2 * l - q
+      const chan = (t) => {
+        t = (t + 1) % 1
+        if (t < 1 / 6) return p + (q - p) * 6 * t
+        if (t < 1 / 2) return q
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+        return p
+      }
+      return [chan(h + 1 / 3) * 255, chan(h) * 255, chan(h - 1 / 3) * 255]
+    }
+    const parse = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
+
     const img = new Image()
     img.src = src
     await img.decode()
@@ -68,7 +119,35 @@ const rendered = await page.evaluate(
     c.height = img.height
     const ctx = c.getContext('2d', { willReadFrequently: true })
     ctx.drawImage(img, 0, 0)
-    const data = ctx.getImageData(0, 0, c.width, c.height).data
+    const frame = ctx.getImageData(0, 0, c.width, c.height)
+    const data = frame.data
+
+    // Pull the blue family onto the interface primary. The offsets are measured
+    // between the two named colours, then applied to every pixel in the band, so
+    // shading and bloom keep their relationships instead of being flattened.
+    const from = rgbToHsl(...parse(recolour.from))
+    const to = rgbToHsl(...parse(recolour.to))
+    const hueShift = to[0] - from[0]
+    const satScale = to[1] / from[1]
+    const lightScale = to[2] / from[2]
+    let touched = 0
+    for (let i = 0; i < data.length; i += 4) {
+      if (data[i + 3] === 0) continue
+      const [h, s, l] = rgbToHsl(data[i], data[i + 1], data[i + 2])
+      // Hue is meaningless on a near-grey pixel and rotating one produces a
+      // coloured speck, so the band check is guarded by a saturation floor.
+      if (s < 0.1 || h < recolour.hueBand[0] || h > recolour.hueBand[1]) continue
+      const [r, g, b] = hslToRgb(
+        h + hueShift,
+        Math.min(1, s * satScale),
+        Math.min(1, l * lightScale),
+      )
+      data[i] = Math.round(r)
+      data[i + 1] = Math.round(g)
+      data[i + 2] = Math.round(b)
+      touched++
+    }
+    ctx.putImageData(frame, 0, 0)
 
     // Threshold well above the bloom: the letters are opaque, the glow around
     // them is not, and a low threshold would return the whole canvas.
@@ -92,6 +171,10 @@ const rendered = await page.evaluate(
     return {
       ink: { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1 },
       box,
+      touched,
+      // Resampled from the recoloured canvas, not from the original <img>:
+      // recolouring after the downscale would work on pixels that already
+      // blend blue into coral along the join between the two words.
       files: densities.map((d) => {
         const w = baseWidth * d
         const h = height * d
@@ -100,7 +183,7 @@ const rendered = await page.evaluate(
         out.height = h
         const octx = out.getContext('2d')
         octx.imageSmoothingQuality = 'high'
-        octx.drawImage(img, box.x, box.y, box.w, box.h, 0, 0, w, h)
+        octx.drawImage(c, box.x, box.y, box.w, box.h, 0, 0, w, h)
         return { d, w, h, url: out.toDataURL('image/webp', quality) }
       }),
     }
@@ -111,6 +194,7 @@ const rendered = await page.evaluate(
     height: HEIGHT,
     densities: DENSITIES,
     quality: QUALITY,
+    recolour: RECOLOUR,
   },
 )
 
@@ -118,6 +202,7 @@ await browser.close()
 
 console.log(`ink ${rendered.ink.w}x${rendered.ink.h} at ${rendered.ink.x},${rendered.ink.y}`)
 console.log(`crop ${rendered.box.w}x${rendered.box.h}`)
+console.log(`recolour ${RECOLOUR.from} -> ${RECOLOUR.to}, ${rendered.touched} px`)
 for (const file of rendered.files) {
   const name = `wordmark-${file.w}.webp`
   const bytes = Buffer.from(file.url.split(',')[1], 'base64')

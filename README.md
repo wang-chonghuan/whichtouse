@@ -109,9 +109,17 @@ an interface colour**.
 There are now **no colour literals in `app/src/components/` at all**. There used
 to be one deliberate exception — `Wordmark` set "WhichToUse" as type and held
 the mark's three hexes, because a logo should not recolour when the palette
-does. The wordmark is drawn art now (see "Brand assets"), so it carries its own
-colour inside the file and the exception is gone. Any hex in a component is a
+does. The wordmark is drawn art now (see "Brand assets") and carries its own
+colour inside the file, so the exception is gone. Any hex in a component is a
 bug.
+
+The rule it stood for got one carve-out in the process. The wordmark's blue *is*
+the primary: the master was drawn in #2A38A4 and the interface is #4F46E5, and
+two indigos that close read as a mistake rather than as two decisions. So
+`crop-wordmark.mjs` pulls the blue onto the primary as it cuts the asset —
+**change the primary and that script has to be re-run**. The coral is left where
+the artist put it, hotter than the #D4553C limits colour, because a neon sign
+should be.
 
 It is written fresh rather than scaffolded from a shipped Astryx theme. A
 600-line inherited palette is not a file anyone re-reads, and re-reading this
@@ -188,10 +196,16 @@ cd app && npm run wordmark
 ```
 
 `scripts/crop-wordmark.mjs` measures the lettering's bounding box in
-`resources/wtu-logo-name.png`, crops to it with a margin for the glow, and
-writes `public/wordmark-116.webp` and its 2x. It takes 2.1 MB of mostly empty
-transparent canvas down to 3.7 kB. The display height lives in two places that
-must agree — `HEIGHT` in that script and `wordmark` in `components/bits.tsx`.
+`resources/wtu-logo-name.png`, pulls its blue onto the theme primary, crops with
+a margin for the glow, and writes `public/wordmark-116.webp` and its 2x. It
+takes 2.1 MB of mostly empty transparent canvas down to 3.8 kB. The display
+height lives in two places that must agree — `HEIGHT` in that script and
+`wordmark` in `components/bits.tsx`.
+
+The recolour is a hue/saturation/lightness *shift* measured between the two
+colours and applied to every blue pixel, not a fill: the letters have a darker
+outline and the bloom is a long alpha falloff, and flooding them with one value
+flattens both.
 
 ## How content gets there
 
