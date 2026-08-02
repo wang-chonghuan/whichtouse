@@ -1,0 +1,18 @@
+{
+  "_comment": "Editorial changes made between research and publication, so the record shows where a published line is not verbatim what the researcher returned. Written by hand during the cross-category pass; see commit 92b3fe0.",
+  "coding": {"avoid": "Rewritten to drop the 'buying for speed; the bottleneck moves to' shape, which Content Writing had repeated almost word for word. Finding unchanged."},
+  "content-writing": {
+    "weigh": "Rewritten to drop the 'they all demo well on a trivial sample' shape, used on five pages. Finding unchanged.",
+    "avoid": "Rewritten: as returned it was Coding's line with two nouns swapped. Now leads with drafts arriving competent and interchangeable, which was the researcher's own finding."
+  },
+  "pdf-documents": {
+    "weigh": "Rewritten to drop 'not the model, the layer beneath', which Coding keeps. Leads with reading order and table cells instead.",
+    "avoid": "Rewritten to drop 'the citation proves where it looked', which Research & Search keeps. Leads with flattened tables instead."
+  },
+  "data-analysis": {"moving": "Rewritten to drop 'not the model'. Leads with the loop itself."},
+  "image-generation": {"weigh": "Rewritten to drop 'cost per usable output', which Video keeps. Leads with whether fixing one thing preserves what is already right."},
+  "ui-design": {"weigh": "Rewritten to drop 'they all look equal on a blank first screen'."},
+  "video-generation": {"avoid": "Rewritten to drop 'judging on a single hero clip'. Mechanism unchanged."},
+  "research-search": {"avoid": "Trimmed from 26 words to 24 to meet the length limit. Mechanism unchanged."},
+  "bookkeeping": {"weigh": "Removed 'roughly 90-95%' — no source stated it; the researcher inferred it from vendors' own claims."}
+}

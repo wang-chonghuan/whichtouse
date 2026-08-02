@@ -1,7 +1,7 @@
 {
   "_comment": "The values the active theme cannot reach. Everything a React component renders reads semantic tokens and follows the theme by itself; these do not, because they are consumed outside React: an HTML <meta> the browser paints its chrome with, a webfont URL, a generated manifest, and a social card rendered by a node script. One theme swap edits this file and the import in __root.tsx. Values must match the corresponding tokens in src/theme/wtuTheme.ts.",
   "theme": "wtu",
-  "fontStylesheet": "https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Bricolage+Grotesque:wght@600;700&display=swap",
+  "fontStylesheet": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap",
   "backgroundBody": "#FFFFFF",
   "iconBackground": "#FFFFFF",
   "ogCard": {
@@ -11,7 +11,7 @@
     "textMuted": "#5A6764",
     "border": "#DDE5E3",
     "accent": "#4F46E5",
-    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+    "fontFamily": "\"Bricolage Grotesque\", -apple-system, BlinkMacSystemFont, sans-serif"
   },
   "manifest": {
     "name": "WhichToUse — find the best AI tool for the job",
@@ -19,7 +19,7 @@
     "description": "SaaS, open source and agent skills across 25 areas of work, with the limits of each written down."
   },
   "_iconNote": "Icon tiles are white. The mark's own three colours sit at 5.31 / 2.63 / 2.67 on it — the last two are low for text but this is a logotype, and they are balanced with each other, which is what makes the three letters read as one object.",
-  "_fontNote": "Two families, two jobs. Inter is the interface: dense rows, tabular figures, gets out of the way. Bricolage Grotesque is the wordmark and nothing else — it has the character a logo wants and would be exhausting at 12px. Adding it here also adds it to the theme's --font-wordmark token; the two must agree. The app itself no longer sets the wordmark as type — the topbar renders the drawn lockup, public/wordmark-116.webp — so the only thing still asking for this family is the social card in scripts/gen-icons.mjs. Drop it from this URL and the card loses its logo.",
+  "_fontNote": "One family, every job: Bricolage Grotesque across body, headings, labels and numbers. Inter is gone — it used to carry the interface while Bricolage was reserved for the wordmark, and this URL requested both. The request is the variable font's full 200-800 weight range plus the optical-size axis, because the interface now needs everything from 11px row text to display headings out of one file; narrowing it back to a few static weights will silently flatten the type scale. The URL must agree with typography.body/heading in wtuTheme.ts, and it is also what the social card in scripts/gen-icons.mjs renders with.",
   "mark": {
     "w": "#0164E5",
     "t": "#60B333",

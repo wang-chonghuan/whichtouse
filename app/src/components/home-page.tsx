@@ -38,6 +38,19 @@ import { ActionLink, itemHref, RankMarker } from './bits'
 // carried a to-do-list connotation the product does not want.
 
 const styles = stylex.create({
+  // The first section on a page starts flush with the area rail beside it.
+  //
+  // Both columns begin at the page wrapper's top padding, so any block padding
+  // on this section pushes the content down while the rail stays where it is —
+  // 32px of drift on this page, and the two tops visibly disagreed. Section's
+  // `paddingBlock` is symmetric and it owns the property (Astryx compiles it to
+  // padding-block-start/end with a specificity boost, so an xstyle longhand
+  // loses silently), which is why the gap *below* comes back as a margin
+  // instead: margin is not a property Section sets, so there is nothing to win
+  // against, and every gap further down the page is unchanged.
+  firstSection: {
+    marginBlockEnd: spacingVars['--spacing-8'],
+  },
   heroText: {
     maxWidth: 720,
   },
@@ -66,7 +79,11 @@ export function HomePage({
 
   return (
     <VStack>
-      <Section variant="transparent" padding={0} paddingBlock={8}>
+      <Section
+        variant="transparent"
+        padding={0}
+        paddingBlock={0}
+        xstyle={styles.firstSection}>
         {/* The hero is this page's one primary callout. Site-wide that surface
           * means the same thing — a judgement we made — and on the home page
           * the judgement is the product's whole claim. */}

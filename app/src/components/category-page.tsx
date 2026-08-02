@@ -31,6 +31,13 @@ import { SectionHeading } from './home-page'
 const TRACKS: Track[] = ['app', 'oss', 'skill']
 
 const styles = stylex.create({
+  // Starts flush with the area rail beside it — see `firstSection` in
+  // home-page.tsx for why the gap below is a margin and not this section's own
+  // block padding. The section under this one has none of its own, so zeroing
+  // the padding without putting the 24px back would collapse the two together.
+  firstSection: {
+    marginBlockEnd: spacingVars['--spacing-6'],
+  },
   // The routes hold different numbers of entries, so content-height cards put
   // the Emerging band at three different altitudes and the ragged edge reads as
   // noise. Equal height plus a bottom-anchored Emerging block lines the two
@@ -73,7 +80,11 @@ export function CategoryPage({ view }: { view: CategoryView }) {
 
   return (
     <VStack>
-      <Section variant="transparent" padding={0} paddingBlock={6}>
+      <Section
+        variant="transparent"
+        padding={0}
+        paddingBlock={0}
+        xstyle={styles.firstSection}>
         <VStack gap={4}>
           <Breadcrumbs variant="supporting">
             <BreadcrumbItem href="/">Home</BreadcrumbItem>

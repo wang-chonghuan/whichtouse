@@ -58,10 +58,12 @@ const PNG_TARGETS = [
   { file: 'icon-192.png', size: 192, pad: PADDING.android },
   { file: 'icon-512.png', size: 512, pad: PADDING.android },
   { file: 'icon-maskable-512.png', size: 512, pad: PADDING.maskable },
-  // In-app: the mark in the top nav, at 2× for retina.
-  { file: 'logo-mark-64.png', size: 64, pad: PADDING.favicon },
+  // The mark on its own, full size. The 64 and 96 that used to sit beside it
+  // were the top nav's copies at 1× and 1.5×; the bar shows the drawn wordmark
+  // alone now and nothing in the app renders the tile, so they were dropped.
+  // This one stays as the plain raster export — it is what to reach for when
+  // something outside the app needs the mark.
   { file: 'logo-mark.png', size: 512, pad: PADDING.favicon },
-  { file: 'logo-mark-96.png', size: 96, pad: PADDING.favicon },
 ]
 
 const ICO_SIZES = [16, 32, 48]
@@ -149,7 +151,7 @@ await page.setContent(`<!doctype html>
   .brand { display: flex; align-items: center; gap: 16px; }
   .brand .mark { width: 56px; height: 56px; border-radius: 12px; background: ${brand.iconBackground}; display: grid; place-items: center; }
   .brand .mark svg { width: 40px; }
-  .brand .word { font-family: "Bricolage Grotesque", ${brand.ogCard.fontFamily}; font-size: 32px; font-weight: 700; letter-spacing: -0.03em; }
+  .brand .word { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; }
   .brand .word .a { color: ${brand.mark.w}; }
   .brand .word .b { color: ${brand.mark.t}; }
   .brand .word .c { color: ${brand.mark.u}; }

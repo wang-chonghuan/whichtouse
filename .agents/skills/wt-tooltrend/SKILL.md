@@ -53,6 +53,26 @@ listing and overwrites `standing` and `rank` from the corpus, discarding
 whatever the daily refresh job has computed since. Write only the five
 `pick_*` columns for the affected slugs.
 
+## Recording the run
+
+```bash
+node --env-file=.env scripts/record-byp-run.mjs --batch <n>
+```
+
+Appends one row per researched category to `before_you_pick_runs`, which is the
+history: every investigation ever made, never updated. `categories.pick_*` is
+the published answer the site renders — one row per category, overwritten each
+time. Two different jobs, so a run can be recorded without being shipped, and a
+change in what the site says can be traced back to a batch and a date.
+
+The row keeps the exact brief the researcher was given, the sources it returned,
+and any editorial change made before publication (`src/content/byp-edits.json`).
+
+**Capture the subagent's own reasoning next time.** Batch 1 did not: the task
+transcripts were empty by the time the table existed, so every row carries a
+note saying the evidence trail is missing. Ask the researcher to return its
+working alongside the JSON, and store it in `byp_details`.
+
 ## Before it goes live
 
 The three lines are opinions, some of them strong — "model choice barely matters

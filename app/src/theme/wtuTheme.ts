@@ -67,25 +67,33 @@ const INK_2 = '#5A6764'
 export const wtuTheme = defineTheme({
   name: 'wtu',
 
-  // Inter across body and headings. Chosen against Outfit, Roboto and
-  // Bricolage Grotesque in the prototype, on the three things this product
-  // actually does: 11–12px row descriptions, where Inter's taller x-height and
-  // open apertures hold up and a geometric face blurs; a page full of star
-  // counts, ranks, prices and dates, where Inter's tabular figures and
-  // distinguishable 1/7 and 0/O matter; and a palette carrying meaning, which
-  // wants a face that gets out of the way.
+  // Bricolage Grotesque throughout — body, headings, every label and number.
+  // One voice, no exceptions.
+  //
+  // It replaces Inter, which was picked here for three reasons worth writing
+  // down because they are what to watch now that it is gone: 11–12px row
+  // descriptions, where a tall x-height and open apertures hold up; pages full
+  // of star counts, ranks, prices and dates, where tabular figures keep columns
+  // from dancing; and a palette that carries meaning, which wants a face that
+  // gets out of the way. Bricolage has more character than that brief asked
+  // for, which is the point of the change and also the thing to keep an eye on
+  // in the densest tables.
+  //
+  // Numerals: Bricolage's are proportional by default, so the theme asks for
+  // tabular figures explicitly under `components` below rather than relying on
+  // the family to supply them.
   //
   // base 15 rather than 14: this is a reading product, and the ranking rows are
   // the smallest thing on the page.
   typography: {
     scale: {base: 15, ratio: 1.22},
     body: {
-      family: 'Inter',
+      family: 'Bricolage Grotesque',
       fallbacks:
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
     },
     heading: {
-      family: 'Inter',
+      family: 'Bricolage Grotesque',
       fallbacks:
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       weights: {3: 'bold', 4: 'bold'},
@@ -186,9 +194,9 @@ export const wtuTheme = defineTheme({
         // which put the bar at 52px — tight enough that the wordmark looked
         // wedged in rather than placed. This is the height, and it lives here
         // because TopNav exposes no height prop and owns its own padding.
-        // 8px each side takes the bar to a measured 69: a 36px content row —
-        // the search Button, which is taller than the 34px wordmark beside it
-        // — plus 16 above and below, plus the rule.
+        // 8px each side takes the bar to a measured 77: the 44px wordmark,
+        // which is the tallest thing in the row, plus 16 above and below, plus
+        // the rule. Resize the wordmark and the bar follows it.
         paddingBlock: 'var(--spacing-2)',
         // The rule under the bar. AppShell's `section` variant offers one, but
         // draws it on the inner LayoutHeader — inside the padding below, so it

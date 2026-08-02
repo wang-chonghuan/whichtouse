@@ -34,6 +34,35 @@ create table categories (
   updated_at   timestamptz not null default now()
 );
 
+-- Every "Before you pick" investigation, appended and never updated.
+--
+-- `categories.pick_*` holds the *published* answer — one row, overwritten on
+-- each publish, and what the site renders. This table holds the *record*: every
+-- run that has ever been made, so a change in what the site says can be traced
+-- to a run, a batch and a date. Rows are only ever inserted.
+create table before_you_pick_runs (
+  id            bigserial primary key,
+  -- slug is what joins; name is carried because a run is a record of what was
+  -- investigated at that moment, and category names get renamed.
+  category_slug text not null references categories(slug) on delete cascade,
+  category_name text not null,
+
+  -- The three lines the card renders: {weigh, avoid, moving}. Any may be null —
+  -- an unsupported line is stored as null, never as filler.
+  byp_summary   jsonb not null,
+
+  -- Everything behind them that survived: the exact prompt the researcher was
+  -- given, the sources it returned, and any editorial change made before
+  -- publication. The subagents' own reasoning is NOT here — their transcripts
+  -- were not retained, and this batch is the poorer for it.
+  byp_details   jsonb not null default '{}',
+
+  batch_id      int not null,
+  created_at    timestamptz not null default now()
+);
+
+create index on before_you_pick_runs (category_slug, batch_id);
+
 create table listings (
   category_slug text not null references categories(slug) on delete cascade,
   tool_slug     text not null,
