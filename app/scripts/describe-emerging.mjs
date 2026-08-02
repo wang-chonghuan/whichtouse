@@ -29,13 +29,18 @@ const url = process.env.EASYAPP_DATABASE_URL || process.env.DATABASE_URL
 if (!url) throw new Error('Missing EASYAPP_DATABASE_URL / DATABASE_URL')
 const sql = postgres(url, { max: 1 })
 
+// null means nobody has looked at this row. Empty string means somebody did,
+// and deliberately wrote no line — the row is misfiled, or unidentifiable. The
+// page renders both as nothing, but only the first is work outstanding, and
+// without the distinction a re-run spends an agent per known-misfiled row and
+// `due` can never reach zero.
 const needsLine = (slug) => sql`
   select l.category_slug, l.tool_slug, l.name, l.owner, l.track,
          l.homepage, l.repo_full_name, l.source_description
   from listings l
   where l.standing = 'emerging'
     and l.rank is not null
-    and (l.best_for is null or btrim(l.best_for) = '')
+    and l.best_for is null
     ${slug ? sql`and l.category_slug = ${slug}` : sql``}
   order by l.category_slug, l.track, l.rank`
 
@@ -124,7 +129,12 @@ async function apply(slug) {
       continue
     }
     const text = line.trim()
-    if (text === '') continue // an honest blank; leave the row without a line
+    // An honest blank is still an answer: record it as one so the row is not
+    // re-researched on every future run. See `needsLine`.
+    if (text === '') {
+      writable.push([id, ''])
+      continue
+    }
     const words = text.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length
     if (words < MIN_WORDS) issues.push(`${id}: ${words} words, too short to separate it from its neighbours`)
     if (words > MAX_WORDS) issues.push(`${id}: ${words} words, limit is ${MAX_WORDS}`)
@@ -154,7 +164,7 @@ async function apply(slug) {
       where category_slug = ${slug}
         and tool_slug = ${id}
         and standing = 'emerging'
-        and (best_for is null or btrim(best_for) = '')
+        and best_for is null
       returning category_slug`
     if (rows.length === 0) {
       console.error(`  ${id}: no matching row without a line — skipped`)
@@ -162,8 +172,8 @@ async function apply(slug) {
     }
     written += rows.length
   }
-  const blank = entries.length - writable.length
-  console.log(`wrote ${written} lines${blank ? `, ${blank} returned blank` : ''}`)
+  const blank = writable.filter(([, t]) => t === '').length
+  console.log(`wrote ${written - blank} lines, ${blank} recorded as misfiled`)
 }
 
 // ---------------------------------------------------------------------------
