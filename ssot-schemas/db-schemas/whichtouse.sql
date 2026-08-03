@@ -124,6 +124,17 @@ create table listings (
   evidence     jsonb not null default '{}',
   refreshed_at timestamptz,
 
+  -- Retirement. A row lands here when someone opened its link and found the
+  -- tool does not belong in this category, or does not exist any more. It is a
+  -- verdict about this placement, not about the tool — the same tool_slug can
+  -- stay ranked in the category it actually fits.
+  --
+  -- Deleting the row instead would lose the verdict: discovery would re-place
+  -- it on the next run and the same person would open the same dead link again.
+  -- So the row stays, unranked, carrying the reason.
+  retired_at     timestamptz,
+  retired_reason text,
+
   updated_at timestamptz not null default now(),
 
   primary key (category_slug, tool_slug),

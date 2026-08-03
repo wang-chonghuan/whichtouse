@@ -53,6 +53,14 @@ const NOT_IDENTITY = new Set([
   'pypi.org',
   'huggingface.co',
   'marketplace.visualstudio.com',
+  // Product Hunt hands out `producthunt.com/r/<hash>` redirects, not the
+  // product's own URL. Left in, every Product Hunt row in a category shared one
+  // domain and therefore one identity: the second row matched the first, took
+  // its slug, and overwrote it with its own description. That is how `youmind`
+  // came to carry Fathom's copy and `orange-slice` OpenSEO's. Resolving the
+  // redirect (below) is the real fix; this is the guard that keeps any future
+  // shortener from doing the same thing.
+  'producthunt.com',
 ])
 
 function domainOf(url) {
@@ -504,6 +512,14 @@ function phThrottled(fn) {
   return run
 }
 
+// Product Hunt's `website` field is a `producthunt.com/r/<hash>` tracking
+// redirect, never the product's own URL. Following it server-side does not
+// work and should not be attempted again: the /r/ endpoint sits behind
+// Cloudflare and answers 403 to every non-browser client, browser user-agent
+// or not — measured at 12 of 99 resolving, the rest blocked. It resolves fine
+// in a real browser, which is where readers click it, so the link works; what
+// it cannot do is serve as identity. That is handled by keeping
+// producthunt.com out of NOT_IDENTITY's domain matching above.
 async function productHuntSearch(topicSlug) {
   const token = process.env.PRODUCTHUNT_TOKEN
   if (!token) return null
@@ -627,7 +643,8 @@ async function main() {
       const query = config.queries?.[category.slug] ?? category.name
       const listings = await sql`
         select category_slug, tool_slug, name, owner, track, homepage,
-               repo_full_name, package_name, standing, rank, reviewed_at
+               repo_full_name, package_name, standing, rank, reviewed_at,
+               retired_at
         from listings where category_slug = ${category.slug}
       `
 
@@ -750,6 +767,16 @@ async function main() {
         listings.filter((r) => r.standing === 'watchlist').map((r) => r.tool_slug),
       )
 
+      // Somebody opened this row's link and found the tool does not belong in
+      // this category, or does not exist any more. Discovery has no way to see
+      // that — the source still lists it, the score is still respectable — so
+      // the verdict has to be carried forward or the row returns tomorrow.
+      // Scoped to the category: retiring `nuvos` from social-media says nothing
+      // about whether it belongs in video-generation.
+      const retired = new Set(
+        listings.filter((r) => r.retired_at != null).map((r) => r.tool_slug),
+      )
+
       const topN = config.topN ?? 10
       const minCorroboration = config.minCorroborationForNew ?? 2
       const scored = new Map(ordered.map((o) => [o.key, o]))
@@ -789,7 +816,8 @@ async function main() {
           (r) =>
             r.reviewed_at != null &&
             !frozen.has(r.tool_slug) &&
-            !watchlisted.has(r.tool_slug),
+            !watchlisted.has(r.tool_slug) &&
+            !retired.has(r.tool_slug),
         )
         .sort((a, b) => {
           const sa = scored.get(a.tool_slug)?.score ?? -1
@@ -810,6 +838,7 @@ async function main() {
       const placed = new Set(placements.map((p) => p.key))
       for (const item of ordered) {
         if (placed.has(item.key) || frozen.has(item.key) || watchlisted.has(item.key)) continue
+        if (retired.has(item.key)) continue
         // Two origins guard against keyword-match noise. A topic match is not a
         // keyword match — the author classified the repo themselves — so a
         // high-precision source stands on its own. Without this the skill track
