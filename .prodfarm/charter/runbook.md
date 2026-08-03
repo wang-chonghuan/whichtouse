@@ -37,6 +37,11 @@
   - Product Hunt 用 developer token，按 topic slug 查询（`sources.json` 的 `phTopics`）。**注意**：早期版本传 `query.split(' ')[0]`，即每个分类都是 `"ai"`，而 `"ai"` 不是合法 slug —— 该源对 25 个分类**全部返回 0 条且不报错**。改源时务必用"必中样本"验证，不要只看 `sourceErrors`。
   - 换 key：`az containerapp job secret set -g rg-easyapp-shared -n caj-whichtouse-refresh --secrets github-token=<v>`，job 下次执行即生效，不必重新部署。
 - **job 的安全边界（改代码前先读 `specs/content-in-db.md` §3.1）**：不碰任何正文和 `reviewed_at`；不动 `saas`+`leading`（一期人工排序）；不动 `watchlist`。**已 review 的条目一定保留名次**——某次源全挂也不会让它掉出榜单。新发现的条目只进 `emerging`，且必须有 **2 个不同 origin** 佐证（`github-stars` 和 `github-new` 同属 `github`，互相印证不算数）。
+- **refresh 之后还有三步，缺了榜就烂在那儿。** job 只负责换人，不负责把新人介绍给读者，所以每次 refresh（含每天 3 点的 cron）都会留下一批只有名字的新条目。
+  1. `npm run describe:due` —— 列出还没有说明行的条目。refresh 自己在 done 日志里也会报 `undescribed` 计数。逐个类目跑 `scripts/describe-emerging.mjs prompt <slug>`，让能上网的 agent 逐条打开链接后写，再 `apply <slug>` 写回。**必须真的打开链接**：源自带的 `source_description` 大量是过期的，甚至属于别的产品。
+  2. `npm run retire:pending` —— 上一步里被判为错分或已死的条目会留空说明，这条命令把它们收集起来，`scripts/retire-listings.mjs retire` 落库。退榜后 refresh 不会再把它们排回来（`retired_at`）。
+  3. `npm run links:check` —— 打开每条已排名条目的链接。`gone` 和 `moved` 要看，`blocked` 基本是大站拒绝非浏览器客户端（Perplexity、Canva、Midjourney 都在里面），不用管。修链接用 `scripts/relink.mjs`：`to-repo` 自动把死掉的 demo 链接指回条目自己的仓库；改名换域名的必须点名走 `follow`，因为「公司改名」和「域名被卖掉」的 301 长得一模一样（featureflux.com 现在是个博彩站）。
+- **本地跑 job 要用仓库根的 `.env`，或者把 token 抄进 `app/.env`。** `GITHUB_TOKEN` 和 `PRODUCTHUNT_TOKEN` 只在根 `.env` 里，而 job 是在 `app/` 下跑的 —— 少了它们，GitHub 限流 10 次/分、Product Hunt 整个源静默跳过，跑出来的榜比线上差一大截，而且日志只有一行 warning。云上的 job 两个都有，所以只影响本地。
 - **本地连库**（开发/迁移用）：`.pgpass` 放 `pg-easyapp-shared...:5432:easyapp:whichtouse-user:<PGPASSWORD>`（600 权限），`PGPASSFILE=<路径> psql "host=pg-easyapp-shared.postgres.database.azure.com port=5432 dbname=easyapp user=whichtouse-user sslmode=require"`。**凭据只走 .pgpass/env-file，不进命令行明文，也不写进本 charter**。`<PGPASSWORD>` 获取方式：仓库根 `.env` 的 `EASYAPP_DATABASE_URL`（未提交），或线上 `az containerapp show -g rg-easyapp-shared -n ca-whichtouse` 的 `DATABASE_URL` 环境变量。本机 IP 需在 PG 防火墙（规则 `allow-wt-dev-*`）。
 - 改 schema：编辑 `whichtouse.sql` → 以 admin 或 `whichtouse-user`（search_path 已设）psql `-f` 应用。
 
