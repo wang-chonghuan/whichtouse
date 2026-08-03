@@ -15,7 +15,9 @@
     "start": "node .output/server/index.mjs",
     "test": "vitest run",
     "e2e": "playwright test",
-    "describe:due": "node --env-file=.env scripts/describe-emerging.mjs due"
+    "describe:due": "node --env-file=.env scripts/describe-emerging.mjs due",
+    "links:check": "node --env-file=.env scripts/check-links.mjs",
+    "retire:pending": "node --env-file=.env scripts/retire-listings.mjs pending"
   },
   "dependencies": {
     "@astryxdesign/core": "^0.1.8",
