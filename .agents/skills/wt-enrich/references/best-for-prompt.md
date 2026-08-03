@@ -75,6 +75,10 @@ abandoned, or not what its name suggests. That note is for the editor and
 does not go on the page.
 ```
 
+An empty string is not a shrug — it takes the row off the board. `retire-listings.mjs pending` collects every row left blank, and retiring it unranks the row and keeps discovery from putting it back. So the note matters: it is the only record of *why*, and it becomes the row's `retired_reason`. One specific sentence ("dealight.ai is now a LinkedIn sales tool; no mention of decks anywhere") is worth more than five vague ones.
+
+The reverse also holds. Blank a row you were merely unsure about and you have deleted something no later run will rediscover. If the tool is real and in-area but thin, describe it and say it is thin.
+
 ## Why each part is load-bearing
 
 **"Open the link before you write" exists because the input is vendor copy.**

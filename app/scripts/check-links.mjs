@@ -43,9 +43,11 @@ async function check(link) {
       signal: AbortSignal.timeout(TIMEOUT),
     })
     if (r.status === 404 || r.status === 410) return { kind: GONE, detail: `HTTP ${r.status}` }
-    if (r.status === 403 || r.status === 401 || r.status === 429)
-      return { kind: BLOCKED, detail: `HTTP ${r.status}` }
-    if (r.status >= 500) return { kind: GONE, detail: `HTTP ${r.status}` }
+    // 999 is LinkedIn's private code for "you are a robot".
+    if ([401, 403, 429, 999].includes(r.status)) return { kind: BLOCKED, detail: `HTTP ${r.status}` }
+    // One 5xx is a bad minute, not a dead product — microsoft.com/excel served
+    // a 500 on the first sweep. Report it, but never as gone.
+    if (r.status >= 500) return { kind: SLOW, detail: `HTTP ${r.status}` }
     // A redirect that lands on a different registrable domain is the shape of
     // a domain that has been sold on — featureflux.com now serves an
     // Indonesian betting site. Worth naming even though it answers 200.
@@ -56,7 +58,11 @@ async function check(link) {
     return null
   } catch (error) {
     const msg = String(error?.cause?.code || error?.message || error)
-    if (/TimeoutError|timed out|aborted/i.test(msg)) return { kind: SLOW, detail: 'no answer' }
+    if (/TimeoutError|timed out|aborted|CONNECT_TIMEOUT/i.test(msg))
+      return { kind: SLOW, detail: 'no answer' }
+    // gemini.google.com sends more header bytes than undici will accept. The
+    // site is fine; our client is what gave up.
+    if (/HEADERS_OVERFLOW/i.test(msg)) return { kind: BLOCKED, detail: 'response too large to parse' }
     return { kind: GONE, detail: msg.replace(/^.*(ENOTFOUND|ECONNREFUSED|EAI_AGAIN).*$/, '$1') }
   }
 }
