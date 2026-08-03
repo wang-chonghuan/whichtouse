@@ -19,9 +19,14 @@
 
 ## 数据获取原则（合规 + 轻量，核心）
 
-- **不拖库、不镜像任何单一竞品整库**；每分类 × 每源只取 top-N（≈10），跨源汇编成**自己的库、自己打分**。规避欧盟数据库特殊权利/各源 ToS，也正是产品价值。
-- 优先官方 API（GitHub / 官方 MCP Registry / Glama / aiagentsdirectory `/api` / Product Hunt）；封 bot 的（PulseMCP/aiagentslist/Glama ai-train=no）走官方 API 或不用；Product Hunt 默认禁商用。
-- 去重以 repo URL / 域名为主键。数据源明细见 `resources/reference/MARKET-RESEARCH.md`。
+> 2026-08-03 起，选源与 ETL 方法不再是红线，由编码 agent 自主决定（见 `redlines.md`）。转移的是责任不是约束——下面这几条是 agent 现在自己守的线，写在这里以便后来者知道当初为什么这么选。
+
+- **不拖库、不镜像任何单一竞品整库**；每分类 × 每源只取 top-N（≈10），跨源汇编成**自己的库、自己打分**。这既规避欧盟数据库特殊权利与各源 ToS，本身也正是产品价值——榜单的价值在于横跨多源之后的判断，不在于任何单一来源的副本。
+- 优先官方 API：GitHub、官方 MCP Registry、Glama、aiagentsdirectory `/api`、Product Hunt、StartupBase（saas 轨道主力）、Zapier 应用目录。明确封 bot 的源（PulseMCP、aiagentslist、Glama `ai-train=no`）只走官方 API，没有官方 API 就不用。
+- **不把中转链接当身份。** 去重主键是 repo URL 与域名，但 Product Hunt 的 `website` 字段发的是 `producthunt.com/r/<hash>` 跳转，整类条目共享一个域名，于是同类目下第二条会认领第一条的身份并覆盖它的文案——`youmind` 挂上 Fathom 的介绍就是这么来的。跳转在服务端跟不动（`/r/` 走 Cloudflare，非浏览器一律 403，实测 99 条只过 12 条），所以处理办法是把这类域名排除在身份匹配之外，而不是解析它。
+- **判类目要靠条目自己的文字，不靠是哪个查询找到它。** 归属闸门 `src/lib/category-rule.ts` 会拿候选词对全部 25 个类目打分并要求领先边际，否则丢弃；它从不改判到更合适的类目，因为没跑过那个类目的检索就没见过那里的竞争。
+- **人看过的判决要能留下。** 打开链接后发现错分或已死的条目走 `retired_at`，行留着、排名清空——删掉只会明天被重新发现，同一个人再打开一次同一个死链。
+- 数据源明细见 `resources/reference/MARKET-RESEARCH.md`。
 
 ## Phase 1 (MVP) 架构范围
 
