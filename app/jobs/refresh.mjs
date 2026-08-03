@@ -302,6 +302,129 @@ function skillsForCategory(sweep, slug) {
   }))
 }
 
+/** Zapier's app directory — the saas track's category-shaped source.
+ *
+ * Product Hunt is organised by launch topic and its taxonomy collapses five of
+ * our areas onto `productivity`, whose top posts are general productivity
+ * products. Zapier is organised by what an app *does*, and has already built
+ * out an AI sub-taxonomy — `ai-meeting-assistants`, `ai-content-generation`,
+ * `ai-web-scraping`. Every entry carries an editorial `description` and
+ * `external_url`, the vendor's own domain, which is what dedup keys on.
+ *
+ * Two properties of this source decide how it is used. It is undocumented and
+ * `robots.txt` disallows `/api/`, so it is harvested slowly into our own store
+ * and never sits on a request path — treat it as a feed that may vanish. And
+ * multi-product vendors return a vendor root rather than a product page
+ * (Gmail -> google.com), so a handful of rows collapse onto one domain; the
+ * existing NOT_IDENTITY guard already drops the worst of those.
+ */
+async function zapierApps(categorySlug) {
+  if (!categorySlug) return []
+  const data = await getJson(
+    `https://zapier.com/api/v4/apps/?limit=25&category=${encodeURIComponent(categorySlug)}`,
+  )
+  return (data.results ?? data.objects ?? [])
+    .filter((app) => app.title && app.external_url)
+    .slice(0, 20)
+    .map((app, i) => ({
+      rank: i + 1,
+      name: app.title,
+      owner: null,
+      homepage: app.external_url,
+      repoFullName: repoOf(app.external_url),
+      url: app.external_url,
+      description: app.description ?? null,
+      topics: [],
+      track: repoOf(app.external_url) ? 'oss' : 'saas',
+      metrics: { zapier_popularity: app.popularity ?? 0 },
+    }))
+}
+
+/** StartupBase — the saas track's primary source.
+ *
+ * One request returns the whole corpus: `llms-full.txt` is the bulk entry point
+ * the site publishes for machine use, ~4.3MB, 3299 products, and every record
+ * carries Website, Launch date, Pricing, Topics and a paragraph Description.
+ * That last field is why it displaced Zapier here — the assignment gate needs
+ * text to read, and a feed whose records are one marketing line cannot fill a
+ * track.
+ *
+ * Fetched once per run and cached, never once per category.
+ *
+ * Per the site's ai.txt we may use this metadata to discover and classify, and
+ * must not republish its descriptions as our own copy. So the text feeds the
+ * gate, and the reader-facing line for a row is written separately.
+ */
+let sbCache = null
+
+async function startupBaseAll() {
+  if (sbCache) return sbCache
+  const response = await fetch('https://startupbase.io/llms-full.txt', {
+    headers: { 'User-Agent': UA },
+    signal: AbortSignal.timeout(60000),
+  })
+  if (!response.ok) throw new Error(`startupbase ${response.status}`)
+  const text = await response.text()
+  const field = (block, label) => {
+    const m = new RegExp(`^- ${label}:\\s*(.+)$`, 'm').exec(block)
+    return m ? m[1].trim() : null
+  }
+  sbCache = text
+    .split('### Product:')
+    .slice(1)
+    .map((block) => {
+      const name = block.split('\n')[0].trim()
+      const website = field(block, 'Website')
+      if (!name || !website) return null
+      const topics = [...block.matchAll(/\[([^\]]+)\]\(https:\/\/startupbase\.io\/topics\//g)].map(
+        (m) => m[1],
+      )
+      const desc = /- Description:\n([\s\S]*?)(?:\n- |\n### |$)/.exec(block)
+      return {
+        name,
+        website,
+        launchDate: field(block, 'Launch date'),
+        description: [field(block, 'Tagline'), desc?.[1]?.replace(/^\s*>\s?/gm, ' ').trim()]
+          .filter(Boolean)
+          .join(' — ')
+          .slice(0, 1200),
+        topics,
+      }
+    })
+    .filter(Boolean)
+  return sbCache
+}
+
+/** The slice of that corpus this category should see. The gate decides the
+ * category; this only narrows the field. Newest first — the track is emerging. */
+async function startupBaseFor(categorySlug) {
+  const all = await startupBaseAll()
+  const hits = all.filter(
+    (p) =>
+      assignCategory({
+        name: p.name,
+        description: `${p.description ?? ''} ${p.topics.join(' ')}`,
+        topics: [],
+        track: 'saas',
+      })?.slug === categorySlug,
+  )
+  return hits
+    .sort((a, b) => String(b.launchDate ?? '').localeCompare(String(a.launchDate ?? '')))
+    .slice(0, 20)
+    .map((p, i) => ({
+      rank: i + 1,
+      name: p.name,
+      owner: null,
+      homepage: p.website,
+      repoFullName: repoOf(p.website),
+      url: p.website,
+      description: p.description,
+      topics: p.topics,
+      track: repoOf(p.website) ? 'oss' : 'saas',
+      metrics: { startupbase_launch: p.launchDate ?? '' },
+    }))
+}
+
 /** Corroboration only — HN never introduces a hosted product.
  *
  * A bare domain on HN means "someone posted a link", not "this is a product".
@@ -313,11 +436,17 @@ function skillsForCategory(sweep, slug) {
  * URL itself proves what the thing is.
  *
  * @param knownDomains domains of the listings already in this category */
+/** `show_hn`, not `story`. A URL-only HN submission carries no body text at
+ * all — HN does not store one — so a `story` result arrives with nothing for
+ * the assignment gate to read and is always discarded. Show HN is where a
+ * founder posts their own product and is expected to say what it does.
+ * Measured on the same query: of 50 hits, `story` gave 19 with both a URL and
+ * a description, `show_hn` gave 46. */
 async function hnSearch(query, knownDomains) {
   const since = Math.floor((Date.now() - 365 * 864e5) / 1000)
   const q = encodeURIComponent(query)
   const data = await getJson(
-    `https://hn.algolia.com/api/v1/search?query=${q}&tags=story&numericFilters=created_at_i>${since},points>10&hitsPerPage=100`,
+    `https://hn.algolia.com/api/v1/search?query=${q}&tags=show_hn&numericFilters=created_at_i>${since},points>10&hitsPerPage=100`,
   )
 
   const scored = new Map()
@@ -543,6 +672,10 @@ async function main() {
               })
               .map((e, i) => ({ ...e, rank: i + 1 }))
           }
+          else if (source.id === 'startupbase')
+            entries = await startupBaseFor(category.slug)
+          else if (source.id === 'zapier')
+            entries = await zapierApps(config.zapierCategories?.[category.slug])
           else if (source.id === 'hn') entries = await hnSearch(query, new Set(byDomain.keys()))
           else if (source.id === 'producthunt')
             entries = await productHuntSearch(config.phTopics?.[category.slug] ?? 'artificial-intelligence')

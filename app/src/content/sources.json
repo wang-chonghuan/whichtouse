@@ -6,6 +6,19 @@
   "_placementDoc": "Reviewed listings hold `leading`, ordered by the fused score. Anything the job discovers goes to `emerging` and only when at least minCorroborationForNew sources rank it. Phase-1 sources cannot carry `leading` on their own: with GitHub the only true ranking source for repos, an unguarded run put three unknown keyword matches above aider, cline and continue.",
   "sources": [
     {
+      "id": "startupbase",
+      "label": "StartupBase",
+      "origin": "startupbase",
+      "weight": 1,
+      "tracks": [
+        "saas"
+      ],
+      "dimension": "emerging",
+      "enabled": true,
+      "selfPlacing": true,
+      "note": "Single bulk llms-full.txt published by the site for machine use; ai.txt permits discovery and classification. Every record carries a paragraph description and a launch date."
+    },
+    {
       "id": "github-stars",
       "label": "GitHub (stars)",
       "origin": "github",
@@ -83,6 +96,18 @@
       "enabled": true,
       "note": "Only contributes for listings that already carry package_name. The seed corpus has none, so this source is inert until package names are filled in — it is wired up rather than pretended away.",
       "origin": "npm"
+    },
+    {
+      "id": "zapier",
+      "label": "Zapier app directory",
+      "origin": "zapier",
+      "weight": 1,
+      "tracks": [
+        "saas"
+      ],
+      "dimension": "emerging",
+      "enabled": true,
+      "note": "Undocumented public JSON. Category-shaped taxonomy with an AI sub-tree; carries description + vendor domain. robots.txt disallows /api/, so harvest politely and never put it on a request path."
     }
   ],
   "_queryDoc": "Search terms per category. Absent categories fall back to the category name. Keep these narrow: a broad term returns the whole field and drowns the specific tools.",
@@ -440,29 +465,50 @@
   "_phTopicDoc": "Product Hunt topic slugs, verified against the topics API. The job previously passed query.split(' ')[0], which is 'ai' for every category — and 'ai' is not a slug, so Product Hunt returned zero rows for all 25 categories while reporting no error. PH's taxonomy is much coarser than ours, so several categories share a topic; that is the real shape of the source, not a gap.",
   "phTopics": {
     "content-writing": "writing",
-    "video-generation": "artificial-intelligence",
+    "video-generation": "video",
     "image-generation": "design-tools",
-    "voice-audio": "artificial-intelligence",
-    "lead-gen": "marketing",
-    "email-outreach": "marketing",
-    "seo-geo": "growth-hacking",
+    "voice-audio": "audio",
+    "lead-gen": "sales",
+    "email-outreach": "email-marketing",
+    "seo-geo": "seo",
     "social-media": "social-media",
     "ui-design": "design-tools",
     "presentation": "productivity",
-    "data-analysis": "analytics",
-    "research-search": "artificial-intelligence",
-    "customer-support": "bots",
-    "meeting-notes": "productivity",
+    "data-analysis": "data-analytics",
+    "research-search": "search",
+    "customer-support": "customer-communication",
+    "meeting-notes": "meetings",
     "pdf-documents": "productivity",
-    "knowledge-base": "artificial-intelligence",
+    "knowledge-base": "notes",
     "translation": "artificial-intelligence",
     "resume-jobs": "productivity",
-    "bookkeeping": "fintech",
-    "legal-contract": "productivity",
-    "coding": "developer-tools",
-    "browser-automation": "developer-tools",
+    "bookkeeping": "accounting",
+    "legal-contract": "legal",
+    "coding": "vibe-coding",
+    "browser-automation": "browser-extensions",
     "web-scraping": "developer-tools",
-    "workflow-automation": "productivity",
+    "workflow-automation": "no-code",
     "architecture-diagram": "design-tools"
+  },
+  "zapierCategories": {
+    "meeting-notes": "ai-meeting-assistants",
+    "content-writing": "ai-content-generation",
+    "web-scraping": "ai-web-scraping",
+    "browser-automation": "ai-web-scraping",
+    "customer-support": "customer-support",
+    "bookkeeping": "accounting",
+    "workflow-automation": "ai-agents",
+    "knowledge-base": "ai-assistants",
+    "coding": "ai-agents",
+    "data-analysis": "business-intelligence",
+    "image-generation": "ai-content-generation",
+    "translation": "transcription",
+    "voice-audio": "transcription",
+    "pdf-documents": "ai-document-extraction",
+    "lead-gen": "ai-sales-tools",
+    "email-outreach": "email",
+    "presentation": "documents",
+    "research-search": "ai-assistants",
+    "resume-jobs": "hr"
   }
 }
