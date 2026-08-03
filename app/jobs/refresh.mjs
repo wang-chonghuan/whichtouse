@@ -922,11 +922,27 @@ async function main() {
       })
       log(`${category.slug}: ${placements.length} placements written`)
     }
+    // What a reader would see as a bare name. The refresh replaces listing
+    // members but never writes `best_for`, and writing one is not something an
+    // unattended job can do — the line has to be written after opening the
+    // product, which needs a model and a browser this environment has neither
+    // of. So the run reports the gap rather than leaving it to be discovered:
+    // the only way to learn that a run had left 131 rows undescribed was to
+    // query the database on a hunch.
+    //
+    // Counted here, inside the try, because `sql` is closed in the finally.
+    const [{ n }] = await sql`
+      select count(*)::int as n from listings
+      where rank is not null and standing = 'emerging' and best_for is null`
+    summary.undescribed = n
   } finally {
     await sql.end({ timeout: 5 })
   }
 
   log('done', JSON.stringify({ ...summary, sourceErrors: summary.sourceErrors.length }))
+  if (summary.undescribed > 0) {
+    log(`${summary.undescribed} ranked rows still have no description — see: npm run describe:due`)
+  }
   // Source failures are reported, never silent — a job that quietly ranks on
   // half its inputs is worse than one that fails.
   for (const e of summary.sourceErrors) console.warn('  source:', e)
