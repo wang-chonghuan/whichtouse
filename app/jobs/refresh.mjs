@@ -815,6 +815,11 @@ async function main() {
         // high-precision source stands on its own. Without this the skill track
         // can never fill: every skill source is GitHub, so it could never reach
         // two origins no matter how good the match.
+        // The safety list. Not taste — the assignment gate handles off-topic.
+        // These are rows that would put a reader at risk if published, and a
+        // source saying otherwise does not get a vote.
+        if (config.excludedTools?.[item.key]) continue
+
         const track = item.existing?.track ?? item.entry.track ?? 'oss'
 
         // The assignment gate. Until this existed, the category of a row was

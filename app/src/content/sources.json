@@ -510,5 +510,10 @@
     "presentation": "documents",
     "research-search": "ai-assistants",
     "resume-jobs": "hr"
+  },
+  "excludedTools": {
+    "_doc": "Rows the discovery must never place again, whatever a source says. Keyed by tool_slug. This is a safety list, not a taste list — a row belongs here when listing it would put a reader at risk, not when it is merely off-topic (that is what the assignment gate is for).",
+    "abwor9658-social-media-skills": "README is a Download-for-Windows page for a ZIP committed in the repo, with instructions to run the .exe and click through SmartScreen. Found 2026-08-03 during per-row verification.",
+    "aditya923-c-xpoz-agent-skills": "Same shape, same instructions; also an unattributed copy of XPOZpublic/xpoz-agent-skills, so it duplicated a row already listed."
   }
 }
